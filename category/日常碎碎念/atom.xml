@@ -7,11 +7,14 @@
     <category term="Blog" />
     <category term="日常" />
     <category term="JavaScript" />
+    <category term="C language" />
+    <category term="Linux" />
+    <category term="software security" />
     <entry>
         <id>http://example.com/dailysharing/%E7%AC%AC%E4%B8%80%E7%AF%87ovo/</id>
         <title>第一篇ovo</title>
         <link rel="alternate" href="http://example.com/dailysharing/%E7%AC%AC%E4%B8%80%E7%AF%87ovo/"/>
-        <content type="html">&lt;p&gt;这是第一篇～&lt;/p&gt;
+        <content type="html">&lt;p&gt;这是第一篇~&lt;/p&gt;
 </content>
         <category term="Blog" />
         <category term="日常" />
