@@ -7,15 +7,15 @@
         <language>zh-CN</language>
         <pubDate>Fri, 18 Oct 2024 21:28:05 +1000</pubDate>
         <lastBuildDate>Fri, 18 Oct 2024 21:28:05 +1000</lastBuildDate>
-        <category>C language</category>
-        <category>Linux</category>
-        <category>software security</category>
-        <category>C</category>
-        <category>vulnerability</category>
-        <category>gdb</category>
         <category>Blog</category>
         <category>日常</category>
         <category>JavaScript</category>
+        <category>C</category>
+        <category>software security</category>
+        <category>vulnerability</category>
+        <category>C language</category>
+        <category>Linux</category>
+        <category>gdb</category>
         <item>
             <guid isPermalink="true">http://example.com/dailysharing/%E7%AC%AC%E4%B8%80%E7%AF%87ovo/</guid>
             <title>第一篇ovo</title>
@@ -23,7 +23,7 @@
             <category>Blog</category>
             <category>日常</category>
             <pubDate>Fri, 18 Oct 2024 21:28:05 +1000</pubDate>
-            <description><![CDATA[ &lt;p&gt;这是第一篇～&lt;/p&gt;
+            <description><![CDATA[ &lt;p&gt;这是第一篇~&lt;/p&gt;
  ]]></description>
         </item>
     </channel>

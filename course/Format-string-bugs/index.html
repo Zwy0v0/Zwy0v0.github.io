@@ -1,0 +1,711 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="" href="http://example.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="C,software security,vulnerability" />
+
+
+<link rel="canonical" href="http://example.com/course/Format-string-bugs/">
+
+
+
+  <title>
+Format string bugs - Principles of Software Security - 课程笔记 |
+AtoposZz =  = 此处存放一些学习笔记</title>
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">Format string bugs
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2024-10-26 21:52:22">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2024-10-26T21:52:22+10:00">2024-10-26</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>4.2k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>4 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">AtoposZz</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a9a63310.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a9382651.png"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a97b6ba9.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a9b05892.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a94b2174.png"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a94f1d92.png"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/course/" itemprop="item" rel="index" title="分类于 课程笔记"><span itemprop="name">课程笔记</span></a>
+<meta itemprop="position" content="1" /></span>
+<i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/course/Principles-of-Software-Security/" itemprop="item" rel="index" title="分类于 Principles of Software Security"><span itemprop="name">Principles of Software Security</span></a>
+<meta itemprop="position" content="2" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://example.com/course/Format-string-bugs/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Zz">
+    <meta itemprop="description" content="此处存放一些学习笔记, 🌸">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="Format Functions" class="active"><a class="anchor"  href="#Format Functions">#</a>Format Functions</h1>
+
+<ol>
+<li>Format Functions</li>
+</ol>
+<ul>
+<li><code>printf</code> Output a formatted string</li>
+<li><code>fprintf</code> Writes the printf to a file</li>
+<li><code>sprintf</code> Prints into a string</li>
+<li><code>snprintf</code> Prints into a string checking the length</li>
+<li><code>vprintf</code> Prints the argument list to stdout</li>
+<li><code>vfprintf</code> Prints the argument list to a file</li>
+<li><code>vsprintf</code> Prints the argument list to a string</li>
+<li><code>vsnprintf</code> Prints the argument to a string checking the length<br>总结：<code>printf</code> 和 <code>fprintf</code> 用于输出格式化字符串到标准输出或文件。<br><code>sprintf</code> 和 <code>snprintf</code> 用于将格式化字符串写入字符串缓冲区，<code>snprintf</code> 更安全。<br><code>vprintf</code>、<code>vfprintf</code>、<code>vsprintf</code> 和 <code>vsnprintf</code> 用于处理可变参数列表，与前面的函数类似，但专门用于 <code>va_list</code> 参数的处理。</li>
+</ul>
+<ol start="2">
+<li>Format Strings</li>
+</ol>
+<ul>
+<li>Format String is the argument of format functions that contains format parameters. Format parameters are placeholders to be replaced with user inputs </li>
+<li>For example, the statement will output different sentences, depending on what is contained in the variable name: <code>printf(&quot;Hello, %s.&quot;, &amp;name);</code></li>
+<li>If the variable name contains the string “Zz”, then <code>printf()</code> will output: Hello, Zz.</li>
+</ul>
+<ol start="3">
+<li>Common Parameters Used in Format String Attacks</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>传递方式</th>
+<th>在攻击中的作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%s</td>
+<td>打印字符串</td>
+<td>引用（指向字符串的指针）</td>
+<td>攻击者可以利用 %s 打印出内存中的任意数据，通过提供特定的内存地址，读取敏感数据（如密码、密钥等）。</td>
+</tr>
+<tr>
+<td>%d</td>
+<td>打印有符号十进制整数</td>
+<td>整数值</td>
+<td>虽然 %d 通常用于整数显示，但攻击者可以通过它来泄露内存中的整数值。</td>
+</tr>
+<tr>
+<td>%u</td>
+<td>打印无符号十进制整数</td>
+<td>无符号整数值</td>
+<td>与 %d 类似，但用于无符号整数的显示。</td>
+</tr>
+<tr>
+<td>%x</td>
+<td>打印十六进制整数（小写）</td>
+<td>无符号整数值</td>
+<td>攻击者可以通过 %x 逐步读取内存，以十六进制显示地址中的数据内容。</td>
+</tr>
+<tr>
+<td>%c</td>
+<td>打印单个字符</td>
+<td>字符值</td>
+<td>用于显示单个字符，但在攻击中用途有限。</td>
+</tr>
+<tr>
+<td>%n</td>
+<td>将已打印的字符数写入指定变量</td>
+<td>引用（指向整数的指针）</td>
+<td>攻击者可以利用 %n 修改任意内存地址的值，这是格式字符串攻击中最危险的参数之一，可能被用来修改程序的控制流。</td>
+</tr>
+<tr>
+<td>%%</td>
+<td>打印 % 字符</td>
+<td>无</td>
+<td>用于输出 % 字符，无特别的攻击价值。</td>
+</tr>
+</tbody></table>
+<ol start="4">
+<li>How Do Format Functions Work?<br> According to the data format dictated by the format parameters, format functions retrieve the arguments from the stack</li>
+</ol>
+<ul>
+<li>printf(“A is the number %d, B is the string %s”, A, &amp;B);<br>The <code>printf()</code> function will attempt to retrieve the value of A and the address of string B from the stack<br>在格式化字符串中，每个格式参数（如 <code>%d</code>、<code>%s</code>）都告诉 <code>printf()</code> 如何解释栈中的数据：<code>%d</code> 表示检索一个 整数值。<code>%s</code> 表示检索一个 字符串指针（地址），然后根据地址打印对应的字符串。</li>
+</ul>
+<h1 id="Exploit" class="active"><a class="anchor"  href="#Exploit">#</a>Exploit</h1>
+The vulnerability occurs when there is a mismatch between the number of format parameters and the number of function arguments provided to fill those places 
+- For example, if an attacker is able to supply more placeholders than there are arguments, he/she can use format functions to read or write the stack! 
+Format functions can be exploited when an attacker is given direct control over the format string fed into the function
+
+<ol>
+<li>Reading Data from Stack</li>
+</ol>
+<ul>
+<li>printf(“A is the number <code>%d</code>, reading stack data: <code>%x</code>“, A); <ul>
+<li><code>printf()</code> will attempt to retrieve two values from the stack </li>
+<li>But only one of those is placed on the stack </li>
+<li><code>printf()</code> will retrieve the next value on the stack and display it in hex format!</li>
+</ul>
+</li>
+<li>To print the next 20 items on the stack: <ul>
+<li>printf(“%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x”);</li>
+</ul>
+</li>
+<li>To print the tenth element next on the stack: <ul>
+<li>printf(“%10$x”);</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>Reading Data at Arbitrary Location <code>%s</code></li>
+</ol>
+<ul>
+<li>Format functions treat the data on the stack as an address to go fetch a string <ul>
+<li>Note that <code>%s</code> is passed as reference!</li>
+</ul>
+</li>
+<li>How to control the address accessed by <code>%s</code>? <ul>
+<li>Place an address on the format string (the string is stored on stack) </li>
+<li>Get <code>%s</code> to dereference it!</li>
+</ul>
+</li>
+<li>To print the string located at address 0x12345678: <ul>
+<li>printf(“\x78\x56\x34\x12%x%x%x%s”, A, B, C);</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>Writing Data at Arbitrary Location <code>%n</code></li>
+</ol>
+<ul>
+<li><code>%n</code> stores the number of characters written so far into the corresponding function argument! For example, the following code put the integer 5 into the variable <code>num_char</code>   <figure class="highlight c"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> num_char; </span><br><span class="line"> <span class="built_in">printf</span>(<span class="string">&quot;11111%n&quot;</span>, &amp;num_char); </span><br></pre></td></tr></table></figure>
+With width-controlling format parameters, the attacker can write arbitrary integers to the location pointed to by the function argument </li>
+<li>Write 10 to num_char using width-controlling format parameter  <figure class="highlight c"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> num_char; </span><br><span class="line"> <span class="built_in">printf</span>(<span class="string">&quot;%10d%n&quot;</span>, <span class="number">0</span>, &amp;num_char);</span><br></pre></td></tr></table></figure></li>
+<li>Control the amount of data written with length parameter <ul>
+<li><code>printf(&quot;%10d%hn&quot;, 0, &amp;num_char);</code></li>
+<li>Writes 2 bytes (instead of 4 bytes) to <code>&amp;num_char</code></li>
+</ul>
+</li>
+<li>Combined with the trick to access arbitrary memory locations, the attacker can write to arbitrary memory locations</li>
+</ul>
+<ol start="4">
+<li>Example <figure class="highlight c"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span> </span><br><span class="line"> &#123; </span><br><span class="line">     <span class="type">char</span> buf[<span class="number">512</span>]; </span><br><span class="line">     fgets(buf, <span class="keyword">sizeof</span>(buf), <span class="built_in">stdin</span>); <span class="comment">// 安全读取输入，不会导致缓冲区溢出</span></span><br><span class="line">     <span class="built_in">printf</span>(<span class="string">&quot;The input is:&quot;</span>); </span><br><span class="line">     <span class="built_in">printf</span>(buf);  <span class="comment">// 存在格式化字符串漏洞</span></span><br><span class="line">     <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line"> &#125; </span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li><code>printf(buf);</code> 直接使用了用户输入的内容作为格式化字符串。如果 <code>buf</code> 中包含格式化占位符（如 <code>%s</code>、<code>%x</code>、<code>%n</code> 等），<code>printf()</code> 会将其解释为格式化指令，从而造成安全隐患。</li>
+<li>修复： <code>printf(&quot;The input is: %s&quot;, buf);</code>：%s 确保输入内容被当作普通字符串处理，而不是格式化字符串</li>
+</ul>
+<h1 id="Denial of Service Attacks" class="active"><a class="anchor"  href="#Denial of Service Attacks">#</a>Denial of Service Attacks</h1>
+
+<ul>
+<li><p>Crash the program by attempting to access an invalid address </p>
+<ul>
+<li>Use <code>%s</code> to retrieve a value from the stack till encountering an invalid memory location</li>
+</ul>
+</li>
+<li><p>The exploit string would look something like this </p>
+<ul>
+<li>·printf(“%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s”);·</li>
+</ul>
+</li>
+<li><p>The more %s used in the format string, the higher the chance of an invalid address</p>
+</li>
+</ul>
+<h1 id="Format String Attacks Prevention" class="active"><a class="anchor"  href="#Format String Attacks Prevention">#</a>Format String Attacks Prevention</h1>
+
+<ol>
+<li>Hard-coded format strings (e.g. no <code>printf(arg)</code>)  </li>
+<li>Do not use the fancy <code>%n</code> </li>
+<li>Be careful with pass as references</li>
+</ol>
+<ul>
+<li>e.g. <code>%s</code> and <code>sprintf</code> can be used to create disclosure attacks</li>
+</ul>
+<ol start="4">
+<li>Compiler support to match <code>printf</code> arguments with format string</li>
+</ol>
+<ul>
+<li>e.g. the <code>gcc</code> compiler provides options to check format strings</li>
+</ul>
+
+      <div class="tags">
+          <a href="/tags/C/" rel="tag"><i class="ic i-tag"></i> C</a>
+          <a href="/tags/software-security/" rel="tag"><i class="ic i-tag"></i> software security</a>
+          <a href="/tags/vulnerability/" rel="tag"><i class="ic i-tag"></i> vulnerability</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2024-10-26 23:40:29" itemprop="dateModified" datetime="2024-10-26T23:40:29+10:00">2024-10-26</time>
+  </span>
+  <span id="course/Format-string-bugs/" class="item leancloud_visitors" data-flag-title="Format string bugs" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Zz <i class="ic i-at"><em>@</em></i>
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/course/Format-string-bugs/" title="Format string bugs">http://example.com/course/Format-string-bugs/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/course/Integer-overflow/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;18&#x2F;67123a94b2174.png" title="Integer overflow">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> Principles of Software Security</span>
+  <h3>Integer overflow</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Format%20Functions"><span class="toc-number">1.</span> <span class="toc-text">Format Functions</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Exploit"><span class="toc-number">2.</span> <span class="toc-text">Exploit</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Denial%20of%20Service%20Attacks"><span class="toc-number">3.</span> <span class="toc-text">Denial of Service Attacks</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Format%20String%20Attacks%20Prevention"><span class="toc-number">4.</span> <span class="toc-text">Format String Attacks Prevention</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/course/C-language-basics-and-Computer-memory/" rel="bookmark" title="C language basics and Computer memory">C language basics and Computer memory</a></li><li><a href="/course/x86-architecture-and-Assembly-basics/" rel="bookmark" title="x86 architecture and Assembly basics">x86 architecture and Assembly basics</a></li><li><a href="/course/Stack-buffer-overflow/" rel="bookmark" title="Stack buffer overflow">Stack buffer overflow</a></li><li><a href="/course/Integer-overflow/" rel="bookmark" title="Integer overflow">Integer overflow</a></li><li class="active"><a href="/course/Format-string-bugs/" rel="bookmark" title="Format string bugs">Format string bugs</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Zz"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Zz</p>
+  <div class="description" itemprop="description">🌸</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">9</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">5</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">9</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL1p3eTB2MA==" title="https:&#x2F;&#x2F;github.com&#x2F;Zwy0v0"><i class="ic i-github"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOnp3eTk5OTAuMEBtYWlsLmNvbQ==" title="mailto:zwy9990.0@mail.com"><i class="ic i-envelope"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>友链</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/links/" rel="section"><i class="ic i-magic"></i>links</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/dailysharing/" title="分类于 日常碎碎念">日常碎碎念</a>
+</div>
+
+    <span><a href="/dailysharing/%E7%AC%AC%E4%B8%80%E7%AF%87ovo/" title="第一篇ovo">第一篇ovo</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Integer-overflow/" title="Integer overflow">Integer overflow</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/study/" title="分类于 自学笔记">自学笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/study/JavaScript/" title="分类于 JavaScript">JavaScript</a>
+</div>
+
+    <span><a href="/study/js%E7%BB%A7%E6%89%BF/" title="js继承">js继承</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/study/" title="分类于 自学笔记">自学笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/study/JavaScript/" title="分类于 JavaScript">JavaScript</a>
+</div>
+
+    <span><a href="/study/JS%E4%B8%AD%E7%9A%84this%E4%B8%8E%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/" title="JS中的this与相关函数">JS中的this与相关函数</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Format-string-bugs/" title="Format string bugs">Format string bugs</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/C-language-basics-and-Computer-memory/" title="C language basics and Computer memory">C language basics and Computer memory</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Stack-buffer-overflow/" title="Stack buffer overflow">Stack buffer overflow</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/dailysharing/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/x86-architecture-and-Assembly-basics/" title="x86 architecture and Assembly basics">x86 architecture and Assembly basics</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Zz @ AtoposZz</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'course/Format-string-bugs/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
