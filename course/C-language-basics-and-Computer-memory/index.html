@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="/css/app.css?v=0.2.5">
 
   
-  <meta name="keywords" content="C language,Linux,software security" />
+  <meta name="keywords" content="software security,C language,Linux" />
 
 
 <link rel="canonical" href="http://example.com/course/C-language-basics-and-Computer-memory/">
@@ -117,12 +117,12 @@ AtoposZz =  = 此处存放一些学习笔记</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a9b05892.jpg"></li>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a97b6ba9.jpg"></li>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a94f1d92.png"></li>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a9a63310.jpg"></li>
           <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a94b2174.png"></li>
           <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a9382651.png"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a9a63310.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a94f1d92.png"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a97b6ba9.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a9b05892.jpg"></li>
         </ul>
       </div>
     </header>
@@ -173,33 +173,36 @@ AtoposZz =  = 此处存放一些学习笔记</title>
 
     <h1 id="C language basics" class="active"><a class="anchor"  href="#C language basics">#</a>C language basics</h1>
 <h2 id="input/output" class="active"><a class="anchor"  href="#input/output">#</a> input/output</h2>
+
 <ol>
 <li>To print output to the terminal screen:</li>
 </ol>
 <ul>
 <li>printf(“Hello\n”);</li>
-<li>printf(“Hello %s”, “haxor”);  // using a format string</li>
+<li>printf(“Hello %s”, “haxor”);  &#x2F;&#x2F; using a format string</li>
 </ul>
 <ol start="2">
 <li>To get input from the user:</li>
 </ol>
 <ul>
-<li>scanf(&quot;%d&quot;, &amp;number);</li>
+<li>scanf(“%d”, &amp;number);</li>
 </ul>
  <figure class="highlight c"><figcaption><span>Input/output format symbols</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;test\n&quot;</span>);   <span class="comment">// `\n`:  Carriage return/new line</span></span><br><span class="line"> <span class="built_in">printf</span>(<span class="string">&quot;test %d&quot;</span>, <span class="number">123</span>);  <span class="comment">//`%d`:  Decimal value</span></span><br><span class="line"> <span class="built_in">printf</span>(<span class="string">&quot;test %s&quot;</span>, <span class="string">&quot;123&quot;</span>);  <span class="comment">//`%s`:  String value</span></span><br><span class="line"> <span class="built_in">printf</span>(<span class="string">&quot;test %x&quot;</span>, <span class="number">0x123</span>);  <span class="comment">//`%x`:  Hex value</span></span><br></pre></td></tr></table></figure>
+
  <figure class="highlight c"><figcaption><span>C Program takes command-line arguments</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//meet.c</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line">greeting(<span class="type">char</span> *temp1, <span class="type">char</span> *temp2) <span class="comment">// greeting function to say hello</span></span><br><span class="line">&#123;  </span><br><span class="line">    <span class="type">char</span> name[<span class="number">400</span>];  <span class="comment">// string variable to hold the name</span></span><br><span class="line">    <span class="built_in">strcpy</span>(name, temp2);  <span class="comment">// copy function argument to name</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello %s %s\n&quot;</span>, temp1, name);  <span class="comment">// print out the greeting</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">main(<span class="type">int</span> argc, <span class="type">char</span> *argv[]) <span class="comment">// note the format for arguments</span></span><br><span class="line">&#123;  </span><br><span class="line">    greeting(argv[<span class="number">1</span>], argv[<span class="number">2</span>]);  <span class="comment">// call function, pass title &amp; name</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Bye %s %s\n&quot;</span>, argv[<span class="number">1</span>], argv[<span class="number">2</span>]);  <span class="comment">// say “bye&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="Compiling C programs" class="active"><a class="anchor"  href="#Compiling C programs">#</a> Compiling C programs</h2>
 Compiling C programs(Linux) Using gcc
+
 <ol>
-<li>To compile our  <code>meet.c</code>  program, type</li>
-</ol>
+<li><p>To compile our <code>meet.c</code> program, type</p>
  <figure class="highlight bash"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$gcc</span> -o meet meet.c</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>Then to execute the new program, type</li>
-</ol>
+</li>
+<li><p>Then to execute the new program, type</p>
  <figure class="highlight bash"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./meet zz</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>Commonly used gcc flags</li>
+</li>
+<li><p>Commonly used gcc flags</p>
+</li>
 </ol>
 <ul>
 <li>-o <filename>: produces compiled binary file with filename (a.out by default).</li>
@@ -212,14 +215,11 @@ Compiling C programs(Linux) Using gcc
 <li>32-bit vs 64-bit compilation</li>
 </ol>
 <ul>
-<li>To compile into 32-bit binaries:</li>
+<li>To compile into 32-bit binaries: <figure class="highlight bash"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$gcc</span> -m32 hello.c -o hello</span><br></pre></td></tr></table></figure></li>
+<li>install a standard library of  <figure class="highlight bash"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> apt install gcc-multilib </span><br></pre></td></tr></table></figure></li>
 </ul>
- <figure class="highlight bash"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$gcc</span> -m32 hello.c -o hello</span><br></pre></td></tr></table></figure>
-<ul>
-<li>install a standard library of</li>
-</ul>
- <figure class="highlight bash"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> apt install gcc-multilib </span><br></pre></td></tr></table></figure>
 <h2 id="C vs C#" class="active"><a class="anchor"  href="#C vs C#">#</a> C vs C#</h2>
+
 <ol>
 <li>C# is type-safe</li>
 </ol>
@@ -230,19 +230,14 @@ Compiling C programs(Linux) Using gcc
 <li>C is type-unsafe</li>
 </ol>
 <ul>
-<li>Pointers + no runtime check (out-of-bound access, bad type casts), manual memory management<br>
-Runtime array bounds check in C#</li>
+<li>Pointers + no runtime check (out-of-bound access, bad type casts), manual memory management<br>Runtime array bounds check in C#</li>
 </ul>
-<p>If the following C# code is executed on .NET:</p>
- <figure class="highlight c#"><figcaption><span>(●ˇ∀ˇ●)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> arr[<span class="number">10</span>];</span><br><span class="line"> arr[<span class="number">10</span>] = <span class="number">50</span>;</span><br></pre></td></tr></table></figure>
-<p>An exception will be raised at runtime!</p>
+<p>If the following C# code is executed on .NET:<br> <figure class="highlight c#"><figcaption><span>(●ˇ∀ˇ●)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> arr[<span class="number">10</span>];</span><br><span class="line"> arr[<span class="number">10</span>] = <span class="number">50</span>;</span><br></pre></td></tr></table></figure><br>An exception will be raised at runtime!</p>
 <p>The length of the array is recorded and checked by the runtime</p>
 <ul>
 <li>The length of an array is fixed once created</li>
 </ul>
-<p>No runtime array bounds check in C, If the same C code is executed:</p>
- <figure class="highlight c"><figcaption><span>(●ˇ∀ˇ●)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> arr[<span class="number">10</span>];</span><br><span class="line"> arr[<span class="number">10</span>] = <span class="number">50</span>;</span><br></pre></td></tr></table></figure>
-<p>No error, result in a silent buffer overflow!</p>
+<p>No runtime array bounds check in C, If the same C code is executed:<br> <figure class="highlight c"><figcaption><span>(●ˇ∀ˇ●)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> arr[<span class="number">10</span>];</span><br><span class="line"> arr[<span class="number">10</span>] = <span class="number">50</span>;</span><br></pre></td></tr></table></figure><br>No error, result in a silent buffer overflow!</p>
 <ul>
 <li>Unexpected behaviours such as mysterious crashes depending on what was overwritten</li>
 <li>Attackers may exploit this if they can control the overwritten data</li>
@@ -250,13 +245,11 @@ Runtime array bounds check in C#</li>
 <ol start="3">
 <li>Automatic memory management in C#</li>
 </ol>
-<p>Programmers do not write code to perform memory management tasks<br>
-Garbage collector manages the allocation and release of memory<br>
-C# has no common memory problems such as buffer overflow</p>
+<p>Programmers do not write code to perform memory management tasks<br>Garbage collector manages the allocation and release of memory<br>C# has no common memory problems such as buffer overflow</p>
 <ol start="4">
 <li>C# strings</li>
 </ol>
-<p>C# strings are  <code>objects</code>  of the  <code>String</code>  class</p>
+<p>C# strings are <code>objects</code> of the <code>String</code> class</p>
 <ul>
 <li>Similar to an array of chars, but immutable</li>
 <li>The length is stored on the object for bounds checks at runtime</li>
@@ -264,41 +257,33 @@ C# has no common memory problems such as buffer overflow</p>
 <p>All string manipulation operations do not modify the original string</p>
 <ul>
 <li>A new string is created upon modification</li>
-<li>For example,  <code>str.Trim()</code>  returns a new string</li>
+<li>For example, <code>str.Trim()</code> returns a new string</li>
 </ul>
 <ol start="5">
 <li>C strings</li>
 </ol>
 <p>C strings are arrays of characters</p>
 <ul>
-<li>Terminated by and including the first occurrence of the null character  <code>\0</code></li>
+<li>Terminated by and including the first occurrence of the null character <code>\0</code></li>
 </ul>
 <p>String length is not automatically tracked</p>
 <ul>
-<li>It is determined by the number of bytes (character) preceding the null character.</li>
+<li>It is determined by the number of bytes (character) preceding the null character. </li>
 <li>The memory required to store a string is the number of characters plus one</li>
 </ul>
 <p>A string can be manipulated just like any other arrays</p>
 <ul>
-<li>We usually use some built-in string functions in C libraries</li>
-</ul>
- <figure class="highlight c"><figcaption><span>copy one string to another</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span>    <span class="comment">// use string library     </span></span></span><br><span class="line">...</span><br><span class="line"><span class="type">char</span> str1[] = <span class="string">&quot;Hello, Z&quot;</span>;</span><br><span class="line"><span class="type">char</span> str2[<span class="number">20</span>];</span><br><span class="line"><span class="built_in">strcpy</span>(str2, str1);  <span class="comment">// copy each character in str1 into str2</span></span><br></pre></td></tr></table></figure>
-<p>The function  <code>strcpy</code>  copies each character in the source string (a series of characters ending with and including a null character) into the destination string</p>
- <figure class="highlight c"><figcaption><span>To compare two strings</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> str1[] = <span class="string">&quot;hello&quot;</span>;</span><br><span class="line"> <span class="type">char</span> str2[] = <span class="string">&quot;haxor&quot;</span>;</span><br><span class="line"> <span class="keyword">if</span> (<span class="built_in">strcmp</span>(str1, str2) == <span class="number">0</span>)</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;Strings are the same.\n&quot;</span>);</span><br><span class="line"> <span class="keyword">else</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;Strings are different.\n&quot;</span>);</span><br></pre></td></tr></table></figure>
-<p>This code prints out: Strings are different.<br>
-Note that the function  <code>strcmp()</code>  does not return a  <code>boolean</code>  result</p>
-<ul>
+<li>We usually use some built-in string functions in C libraries <figure class="highlight c"><figcaption><span>copy one string to another</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span>    <span class="comment">// use string library     </span></span></span><br><span class="line">...</span><br><span class="line"><span class="type">char</span> str1[] = <span class="string">&quot;Hello, Z&quot;</span>;</span><br><span class="line"><span class="type">char</span> str2[<span class="number">20</span>];</span><br><span class="line"><span class="built_in">strcpy</span>(str2, str1);  <span class="comment">// copy each character in str1 into str2</span></span><br></pre></td></tr></table></figure>
+ The function <code>strcpy</code> copies each character in the source string (a series of characters ending with and including a null character) into the destination string <figure class="highlight c"><figcaption><span>To compare two strings</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> str1[] = <span class="string">&quot;hello&quot;</span>;</span><br><span class="line"> <span class="type">char</span> str2[] = <span class="string">&quot;haxor&quot;</span>;</span><br><span class="line"> <span class="keyword">if</span> (<span class="built_in">strcmp</span>(str1, str2) == <span class="number">0</span>)</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;Strings are the same.\n&quot;</span>);</span><br><span class="line"> <span class="keyword">else</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;Strings are different.\n&quot;</span>);</span><br></pre></td></tr></table></figure>
+ This code prints out: Strings are different.<br> Note that the function <code>strcmp()</code> does not return a <code>boolean</code> result</li>
 <li>Zero represents false, anything else represents true</li>
-<li>No  <code>boolean</code>  type in C language prior to C99</li>
+<li>No <code>boolean</code> type in C language prior to C99</li>
 </ul>
 <ol start="6">
-<li><strong>Other common string functions</strong> <span class="exturl" data-url="aHR0cHM6Ly9lbi53aWtpYm9va3Mub3JnL3dpa2kvQ19Qcm9ncmFtbWluZy9TdHJpbmdfbWFuaXB1bGF0aW9u">More can be found</span><br>
- <code>strlen</code> : gets the length of a string<br>
- <code>strncpy</code> : copies one string to another with a bound<br>
- <code>strcat</code> ,  <code>strncat</code> : string concatenation<br>
- <code>gets</code> ,  <code>fgets</code> : receives input into a string</li>
+<li><strong>Other common string functions</strong> <span class="exturl" data-url="aHR0cHM6Ly9lbi53aWtpYm9va3Mub3JnL3dpa2kvQ19Qcm9ncmFtbWluZy9TdHJpbmdfbWFuaXB1bGF0aW9u">More can be found</span><br> <code>strlen</code>: gets the length of a string<br> <code>strncpy</code>: copies one string to another with a bound<br> <code>strcat</code>, <code>strncat</code>: string concatenation<br> <code>gets</code>, <code>fgets</code>: receives input into a string</li>
 </ol>
 <h2 id="C strings is error prone" class="active"><a class="anchor"  href="#C strings is error prone">#</a>C strings is error prone</h2>
+
 <ol>
 <li>Common string manipulation errors:</li>
 </ol>
@@ -309,77 +294,57 @@ Note that the function  <code>strcmp()</code>  does not return a  <code>boolean<
 <li>Integer overflows</li>
 <li>Other memory, pointer and type errors</li>
 </ul>
-<p><strong>When data is copied from an unbounded source to a fixed‐length sink</strong></p>
- <figure class="highlight c"><figcaption><span>Unbounded string copy</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line"> &#123;</span><br><span class="line"> 	<span class="type">char</span> username[<span class="number">8</span>];</span><br><span class="line"> 	<span class="built_in">puts</span>(<span class="string">&quot;Please enter your username:&quot;</span>);</span><br><span class="line"> 	gets(username);</span><br><span class="line"> 	<span class="built_in">printf</span>(<span class="string">&quot;Your username is %s\n&quot;</span>, username);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>When data is copied from an unbounded source to a fixed‐length sink</strong><br> <figure class="highlight c"><figcaption><span>Unbounded string copy</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line"> &#123;</span><br><span class="line"> 	<span class="type">char</span> username[<span class="number">8</span>];</span><br><span class="line"> 	<span class="built_in">puts</span>(<span class="string">&quot;Please enter your username:&quot;</span>);</span><br><span class="line"> 	gets(username);</span><br><span class="line"> 	<span class="built_in">printf</span>(<span class="string">&quot;Your username is %s\n&quot;</span>, username);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
 <ul>
-<li>Use of  <code>gets()</code>  Function</li>
+<li>Use of <code>gets()</code> Function</li>
 </ul>
-<p>The function  <code>gets()</code>  reads input from the user into a buffer, but it does not check the length of the input against the buffer’s size.<br>
-In this code, the  <code>username</code>  array is only 8 bytes long. However,  <code>gets()</code>  allows users to enter an input of any length, which means it can write beyond the 8 bytes allocated for  <code>username</code> .<br>
-This can cause a buffer overflow, which can lead to memory corruption, unexpected behavior, or even security vulnerabilities where attackers can execute arbitrary code.</p>
+<p>The function <code>gets()</code> reads input from the user into a buffer, but it does not check the length of the input against the buffer’s size.<br>In this code, the <code>username</code> array is only 8 bytes long. However, <code>gets()</code> allows users to enter an input of any length, which means it can write beyond the 8 bytes allocated for <code>username</code>.<br>This can cause a buffer overflow, which can lead to memory corruption, unexpected behavior, or even security vulnerabilities where attackers can execute arbitrary code.</p>
 <ul>
 <li>Fixed-Length Buffer</li>
 </ul>
-<p>The username array is declared to have a size of 8, but we need to reserve one byte for the null-terminator  <code>\0</code> , which marks the end of the string.<br>
-This means only 7 characters can safely be stored in the username buffer.<br>
-If the input exceeds this limit, it will overflow into adjacent memory, potentially causing the program to crash or behave unpredictably.</p>
- <figure class="highlight c"><figcaption><span>Unbounded string copy(fixed)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> </span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> username[<span class="number">8</span>];  <span class="comment">// Buffer limited to 8 bytes</span></span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">&quot;Please enter your username:&quot;</span>);</span><br><span class="line">    fgets(username, <span class="keyword">sizeof</span>(username), <span class="built_in">stdin</span>);  <span class="comment">// Limit input size to prevent overflow</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Your username is %s\n&quot;</span>, username);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;  <span class="comment">// Standard return type</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>Better string functions from libraries</strong><br>
-Should use functions that restrict the number of bytes for safer programming</p>
+<p>The username array is declared to have a size of 8, but we need to reserve one byte for the null-terminator <code>\0</code>, which marks the end of the string.<br>This means only 7 characters can safely be stored in the username buffer.<br>If the input exceeds this limit, it will overflow into adjacent memory, potentially causing the program to crash or behave unpredictably.<br> <figure class="highlight c"><figcaption><span>Unbounded string copy(fixed)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> </span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> username[<span class="number">8</span>];  <span class="comment">// Buffer limited to 8 bytes</span></span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">&quot;Please enter your username:&quot;</span>);</span><br><span class="line">    fgets(username, <span class="keyword">sizeof</span>(username), <span class="built_in">stdin</span>);  <span class="comment">// Limit input size to prevent overflow</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Your username is %s\n&quot;</span>, username);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;  <span class="comment">// Standard return type</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><strong>Better string functions from libraries</strong><br> Should use functions that restrict the number of bytes for safer programming</p>
 <ul>
-<li>Use  <code>fgets()</code> , instead of  <code>gets()</code></li>
-<li>Use  <code>strncpy()</code> , instead of  <code>strcpy()</code></li>
-<li>Use  <code>strncat()</code> , instead of  <code>strcat()</code></li>
-<li>Use  <code>snprintf()</code> , instead of instead of  <code>sprintf()</code></li>
+<li>Use <code>fgets()</code>, instead of <code>gets()</code></li>
+<li>Use <code>strncpy()</code>, instead of <code>strcpy()</code></li>
+<li>Use <code>strncat()</code>, instead of <code>strcat()</code></li>
+<li>Use <code>snprintf()</code>, instead of instead of <code>sprintf()</code></li>
 </ul>
-<p><strong>Null‐termination errors</strong></p>
- <figure class="highlight c"><figcaption><span>Null‐termination errors</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line"> &#123;</span><br><span class="line">	<span class="type">char</span> arr[<span class="number">10</span>];</span><br><span class="line">	<span class="built_in">strncpy</span>(arr, <span class="string">&quot;0123456789&quot;</span>, <span class="keyword">sizeof</span>(arr));</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, arr);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<p>The array is not properly terminated by a null character!</p>
+<p><strong>Null‐termination errors</strong><br> <figure class="highlight c"><figcaption><span>Null‐termination errors</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line"> &#123;</span><br><span class="line">	<span class="type">char</span> arr[<span class="number">10</span>];</span><br><span class="line">	<span class="built_in">strncpy</span>(arr, <span class="string">&quot;0123456789&quot;</span>, <span class="keyword">sizeof</span>(arr));</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, arr);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure><br>The array is not properly terminated by a null character! </p>
 <ul>
-<li>When there is no null character among the first n character of the source, the string placed in the<br>
-destination will not be null-terminated!<br>
-The  <code>printf()</code>  call prints out all bytes as character till reaching a null!</li>
+<li>When there is no null character among the first n character of the source, the string placed in the<br>destination will not be null-terminated!<br>The <code>printf()</code> call prints out all bytes as character till reaching a null!</li>
 </ul>
-<p>To test out, let’s add another array:</p>
- <figure class="highlight c"><figcaption><span>Null‐termination errors</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line"> &#123;</span><br><span class="line">	<span class="type">char</span> arr[<span class="number">10</span>];</span><br><span class="line">	<span class="type">char</span> arr2[<span class="number">10</span>];</span><br><span class="line">	<span class="built_in">strncpy</span>(arr, <span class="string">&quot;0123456789&quot;</span>, <span class="keyword">sizeof</span>(arr));</span><br><span class="line">	<span class="built_in">strncpy</span>(arr2, <span class="string">&quot;9876543210&quot;</span>, <span class="keyword">sizeof</span>(arr2));</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, arr);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<p>The program will print out 01234567899876543210<br>
-Where the length of source string is the same or greater than the length of target string</p>
+<p>To test out, let’s add another array:<br> <figure class="highlight c"><figcaption><span>Null‐termination errors</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line"> &#123;</span><br><span class="line">	<span class="type">char</span> arr[<span class="number">10</span>];</span><br><span class="line">	<span class="type">char</span> arr2[<span class="number">10</span>];</span><br><span class="line">	<span class="built_in">strncpy</span>(arr, <span class="string">&quot;0123456789&quot;</span>, <span class="keyword">sizeof</span>(arr));</span><br><span class="line">	<span class="built_in">strncpy</span>(arr2, <span class="string">&quot;9876543210&quot;</span>, <span class="keyword">sizeof</span>(arr2));</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, arr);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure><br> The program will print out 01234567899876543210<br> Where the length of source string is the same or greater than the length of target string</p>
 <ul>
 <li>The source string gets truncated</li>
 <li>The target string may not be properly terminated by null!</li>
 </ul>
-<p>How can we fix it?<br>
-Manually add a null character at the end of the target string:</p>
- <figure class="highlight c"><figcaption><span>Null‐termination errors(fixed)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line"> &#123;</span><br><span class="line">	<span class="type">char</span> arr[<span class="number">10</span>];</span><br><span class="line">	<span class="built_in">strncpy</span>(arr, <span class="string">&quot;0123456789&quot;</span>, <span class="keyword">sizeof</span>(arr)<span class="number">-1</span>);</span><br><span class="line">	arr[<span class="keyword">sizeof</span>(arr)<span class="number">-1</span>] = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, arr);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<p>The function char  <code>*fgets(char *str, int n, FILE *stream)</code>  reads  <code>(n-1)</code>  characters from the specific stream plus the final null character</p>
+<p> How can we fix it?<br> Manually add a null character at the end of the target string:<br> <figure class="highlight c"><figcaption><span>Null‐termination errors(fixed)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line"> &#123;</span><br><span class="line">	<span class="type">char</span> arr[<span class="number">10</span>];</span><br><span class="line">	<span class="built_in">strncpy</span>(arr, <span class="string">&quot;0123456789&quot;</span>, <span class="keyword">sizeof</span>(arr)<span class="number">-1</span>);</span><br><span class="line">	arr[<span class="keyword">sizeof</span>(arr)<span class="number">-1</span>] = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, arr);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure><br>The function char <code>*fgets(char *str, int n, FILE *stream)</code> reads <code>(n-1)</code> characters from the specific stream plus the final null character</p>
 <h1 id=" Computer memory" class="active"><a class="anchor"  href="# Computer memory">#</a> Computer memory</h1>
+
 <h2 id=" Intel x86 (32-bit)" class="active"><a class="anchor"  href="# Intel x86 (32-bit)">#</a> Intel x86 (32-bit)</h2>
+
 <ol>
 <li>von Neumann architecture</li>
 </ol>
 <ul>
-<li>
-<p>Central processing unit (CPU) executes code</p>
+<li><p>Central processing unit (CPU) executes code </p>
 </li>
-<li>
-<p>Main memory of the system (RAM) stores all data and code</p>
+<li><p>Main memory of the system (RAM) stores all data and code</p>
 </li>
-<li>
-<p>Input/output system (I/O) interfaces with devices such as hard drives, keyboards, and monitors</p>
+<li><p>Input&#x2F;output system (I&#x2F;O) interfaces with devices such as hard drives, keyboards, and monitors</p>
 <p><img data-src="https://img.picui.cn/free/2024/10/24/671a56f0c953f.png" alt="img"></p>
 </li>
 </ul>
 <ol start="2">
 <li>CPU</li>
 </ol>
-<p>The <strong>control unit</strong> gets instructions to execute from RAM using the instruction pointer, which stores the address of the instruction to execute<br>
-<strong>Registers</strong> are the CPU’s basic data storage units and are often used to save time so that the CPU doesn’t need to access RAM.</p>
+<p>The <strong>control unit</strong> gets instructions to execute from RAM using the instruction pointer, which stores the address of the instruction to execute<br><strong>Registers</strong> are the CPU’s basic data storage units and are often used to save time so that the CPU doesn’t need to access RAM. </p>
 <p>在 32 位 x86 架构中，主要的通用寄存器包括：</p>
 <ul>
 <li>EAX: 累加器寄存器，用于算术运算和返回值。</li>
 <li>EBX: 基址寄存器，常用于基址存取。</li>
 <li>ECX: 计数器寄存器，常用于循环和移位操作。</li>
-<li>EDX: 数据寄存器，用于 I/O 操作和乘除法。</li>
+<li>EDX: 数据寄存器，用于 I&#x2F;O 操作和乘除法。</li>
 <li>ESI: 源索引寄存器，常用于指向内存数据源。</li>
 <li>EDI: 目标索引寄存器，常用于指向内存数据目标。</li>
 <li>EBP: 基址指针寄存器，用于栈帧基址指针。</li>
@@ -388,39 +353,34 @@ Manually add a null character at the end of the target string:</p>
 <p>The <strong>Arithmetic Logic Unit (ALU)</strong> executes an instruction fetched from RAM and places the results in registers or memory</p>
 <p>CPU runs a program by fetching and executing each instruction</p>
 <h2 id="Programs in the main memory" class="active"><a class="anchor"  href="#Programs in the main memory"> #</a>  Programs in the main memory</h2>
-<p>Processes are programs loaded into memory, broken into small sections</p>
+
+<p> Processes are programs loaded into memory, broken into small sections</p>
 <ul>
-<li>
-<p>.text section</p>
+<li><p>.text section</p>
 </li>
-<li>
-<p>.data section</p>
+<li><p>.data section</p>
 </li>
-<li>
-<p>.bss section</p>
+<li><p>.bss section</p>
 </li>
-<li>
-<p>Heap section</p>
+<li><p>Heap section</p>
 </li>
-<li>
-<p>Stack section</p>
+<li><p>Stack section</p>
 </li>
-<li>
-<p>Environment/Arguments section</p>
+<li><p>Environment&#x2F;Arguments section</p>
 <p><img data-src="https://img.picui.cn/free/2024/10/24/671a56f09cb3d.png" alt="img"></p>
 </li>
 </ul>
 <ol>
 <li>.text section</li>
 </ol>
-<p>Correspond to the .text portion of the binary executable file.</p>
+<p>Correspond to the .text portion of the binary executable file. </p>
 <p>Contain the machine instructions to get the task done</p>
 <ol start="2">
 <li>.data section</li>
 </ol>
 <p>Store global initialised variables such as:</p>
 <ul>
-<li>int a = 0;</li>
+<li>int a &#x3D; 0;</li>
 </ul>
 <ol start="3">
 <li>.bss section</li>
@@ -438,7 +398,7 @@ Manually add a null character at the end of the target string:</p>
 </ul>
 <p>Grows from the lower-addressed memory to the higher-addressed memory</p>
 <ul>
-<li>int *I = malloc (sizeof (int));</li>
+<li>int *I &#x3D; malloc (sizeof (int));</li>
 </ul>
 <ol start="5">
 <li>Stack section</li>
@@ -447,7 +407,7 @@ Manually add a null character at the end of the target string:</p>
 <p>Grow from the higher-addressed memory to the lower-addressed memory</p>
 <p>Local variables are in the stack section</p>
 <ol start="6">
-<li>Environment/Arguments section</li>
+<li>Environment&#x2F;Arguments section</li>
 </ol>
 <p>Store a copy of system-level variables that may be required by the process</p>
 <ul>
@@ -455,39 +415,37 @@ Manually add a null character at the end of the target string:</p>
 </ul>
 <p>Command-line arguments are stored in this area.</p>
 <h2 id=" Buffers" class="active"><a class="anchor"  href="# Buffers">#</a> Buffers</h2>
-<p>A storage place used to receive and hold data until it can be handled by a process<br>
-Each process can have its own set of buffers</p>
+
+<p> A storage place used to receive and hold data until it can be handled by a process<br> Each process can have its own set of buffers</p>
 <ul>
-<li>E.g. memory allocated within the .data or .bss section of the process’s memory<br>
-Buffer is of <strong>fixed length once allocated</strong>.</li>
+<li>E.g. memory allocated within the .data or .bss section of the process’s memory<br> Buffer is of <strong>fixed length once allocated</strong>.</li>
 <li>Hold any predefined type of data</li>
 </ul>
 <h2 id=" Pointers" class="active"><a class="anchor"  href="# Pointers">#</a> Pointers</h2>
+
 <p>Pointers hold the address of other pieces of memory</p>
 <ul>
 <li>Their size is fixed of 4 bytes for 32-bit memory address</li>
 </ul>
 <p>C string can be written as a pointer to character:</p>
 <ul>
-<li>char * str;</li>
+<li>char * str; </li>
 <li>int * point1;</li>
 </ul>
-<p>C#’s reference types implicitly use pointers<br>
-Use dereference to read the value inside the memory address pointed to by the pointer:</p>
+<p>C#’s reference types implicitly use pointers<br>Use dereference to read the value inside the memory address pointed to by the pointer:</p>
 <ul>
-<li>printf(&quot;%d&quot;, *point1);</li>
+<li>printf(“%d”, *point1);</li>
 </ul>
-<p>The  <code>*</code>  symbol dereferences the pointer called point1 and displays the value of the integer using the  <code>printf()</code>  function</p>
+<p>The <code>*</code> symbol dereferences the pointer called point1 and displays the value of the integer using the <code>printf()</code> function</p>
 <ul>
-<li>The type of  <code>point1</code>  is a pointer</li>
-<li>The type of  <code>*point1</code>  is an integer</li>
+<li>The type of <code>point1</code> is a pointer</li>
+<li>The type of <code>*point1</code> is an integer <figure class="highlight c"><figcaption><span>Putting the pieces of memory together</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> ind = <span class="number">5</span>;                     <span class="comment">// integer stored in .data (initialized)</span></span><br><span class="line"> <span class="type">char</span> *str;                       <span class="comment">// string pointer stored in .bss (uninitialized)</span></span><br><span class="line"> <span class="type">int</span> nothing;                     <span class="comment">// integer stored in .bss (uninitialized)</span></span><br><span class="line"></span><br><span class="line"> <span class="type">void</span> <span class="title function_">fun</span><span class="params">(<span class="type">int</span> c)</span> </span><br><span class="line">&#123;                                              </span><br><span class="line"> 	<span class="type">int</span> i = c;                                  <span class="comment">// stored in stack section</span></span><br><span class="line"> 	str = (<span class="type">char</span> *)<span class="built_in">malloc</span>(<span class="number">10</span> * <span class="keyword">sizeof</span>(<span class="type">char</span>));    <span class="comment">// reserves 10 characters in heap region </span></span><br><span class="line"> 	<span class="built_in">strncpy</span>(str, <span class="string">&quot;abcde&quot;</span>, <span class="number">5</span>);                   <span class="comment">// copies &quot;abcde&quot; into str</span></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="type">void</span> <span class="title function_">main</span><span class="params">()</span> </span><br><span class="line">&#123; </span><br><span class="line">	fun(<span class="number">1</span>); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
- <figure class="highlight c"><figcaption><span>Putting the pieces of memory together</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> ind = <span class="number">5</span>;                     <span class="comment">// integer stored in .data (initialized)</span></span><br><span class="line"> <span class="type">char</span> *str;                       <span class="comment">// string pointer stored in .bss (uninitialized)</span></span><br><span class="line"> <span class="type">int</span> nothing;                     <span class="comment">// integer stored in .bss (uninitialized)</span></span><br><span class="line"></span><br><span class="line"> <span class="type">void</span> <span class="title function_">fun</span><span class="params">(<span class="type">int</span> c)</span> </span><br><span class="line">&#123;                                              </span><br><span class="line"> 	<span class="type">int</span> i = c;                                  <span class="comment">// stored in stack section</span></span><br><span class="line"> 	str = (<span class="type">char</span> *)<span class="built_in">malloc</span>(<span class="number">10</span> * <span class="keyword">sizeof</span>(<span class="type">char</span>));    <span class="comment">// reserves 10 characters in heap region </span></span><br><span class="line"> 	<span class="built_in">strncpy</span>(str, <span class="string">&quot;abcde&quot;</span>, <span class="number">5</span>);                   <span class="comment">// copies &quot;abcde&quot; into str</span></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="type">void</span> <span class="title function_">main</span><span class="params">()</span> </span><br><span class="line">&#123; </span><br><span class="line">	fun(<span class="number">1</span>); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       <div class="tags">
+          <a href="/tags/software-security/" rel="tag"><i class="ic i-tag"></i> software security</a>
           <a href="/tags/C-language/" rel="tag"><i class="ic i-tag"></i> C language</a>
           <a href="/tags/Linux/" rel="tag"><i class="ic i-tag"></i> Linux</a>
-          <a href="/tags/software-security/" rel="tag"><i class="ic i-tag"></i> software security</a>
       </div>
   </div>
 
@@ -539,7 +497,7 @@ Use dereference to read the value inside the memory address pointed to by the po
     <div class="item left">
       
 
-  <a href="/study/js%E7%BB%A7%E6%89%BF/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;18&#x2F;67123a94b2174.png" title="js继承">
+  <a href="/study/js%E7%BB%A7%E6%89%BF/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;18&#x2F;67123a9b05892.jpg" title="js继承">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> JavaScript</span>
   <h3>js继承</h3>
@@ -549,7 +507,7 @@ Use dereference to read the value inside the memory address pointed to by the po
     <div class="item right">
       
 
-  <a href="/course/x86-architecture-and-Assembly-basics/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;18&#x2F;67123a9382651.png" title="x86 architecture and Assembly basics">
+  <a href="/course/x86-architecture-and-Assembly-basics/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;18&#x2F;67123a9b05892.jpg" title="x86 architecture and Assembly basics">
   <span class="type">下一篇</span>
   <span class="category"><i class="ic i-flag"></i> Principles of Software Security</span>
   <h3>x86 architecture and Assembly basics</h3>
@@ -575,7 +533,7 @@ Use dereference to read the value inside the memory address pointed to by the po
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li class="active"><a href="/course/C-language-basics-and-Computer-memory/" rel="bookmark" title="C language basics and Computer memory">C language basics and Computer memory</a></li><li><a href="/course/x86-architecture-and-Assembly-basics/" rel="bookmark" title="x86 architecture and Assembly basics">x86 architecture and Assembly basics</a></li>
+          <li class="active"><a href="/course/C-language-basics-and-Computer-memory/" rel="bookmark" title="C language basics and Computer memory">C language basics and Computer memory</a></li><li><a href="/course/x86-architecture-and-Assembly-basics/" rel="bookmark" title="x86 architecture and Assembly basics">x86 architecture and Assembly basics</a></li><li><a href="/course/Stack-buffer-overflow/" rel="bookmark" title="Stack buffer overflow">Stack buffer overflow</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -589,7 +547,7 @@ Use dereference to read the value inside the memory address pointed to by the po
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">6</span>
+        <span class="count">7</span>
         <span class="name">文章</span>
       </a>
     </div>
@@ -601,7 +559,7 @@ Use dereference to read the value inside the memory address pointed to by the po
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">7</span>
+        <span class="count">9</span>
         <span class="name">标签</span>
       </a>
     </div>
@@ -703,10 +661,12 @@ Use dereference to read the value inside the memory address pointed to by the po
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/dailysharing/" title="分类于 日常碎碎念">日常碎碎念</a>
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
 </div>
 
-    <span><a href="/dailysharing/%E7%AC%AC%E4%B8%80%E7%AF%87ovo/" title="第一篇ovo">第一篇ovo</a></span>
+    <span><a href="/course/Stack-buffer-overflow/" title="Stack buffer overflow">Stack buffer overflow</a></span>
   </li>
 
       
@@ -716,6 +676,18 @@ Use dereference to read the value inside the memory address pointed to by the po
 </div>
 
     <span><a href="/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/C-language-basics-and-Computer-memory/" title="C language basics and Computer memory">C language basics and Computer memory</a></span>
   </li>
 
       
@@ -746,12 +718,10 @@ Use dereference to read the value inside the memory address pointed to by the po
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+<a href="/categories/dailysharing/" title="分类于 日常碎碎念">日常碎碎念</a>
 </div>
 
-    <span><a href="/course/C-language-basics-and-Computer-memory/" title="C language basics and Computer memory">C language basics and Computer memory</a></span>
+    <span><a href="/dailysharing/%E7%AC%AC%E4%B8%80%E7%AF%87ovo/" title="第一篇ovo">第一篇ovo</a></span>
   </li>
 
   </ul>
