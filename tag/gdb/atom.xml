@@ -4,15 +4,15 @@
     <title> • Posts by &#34;gdb&#34; tag</title>
     <link href="http://example.com" />
     <updated>2024-10-25T07:43:11.000Z</updated>
-    <category term="Blog" />
-    <category term="日常" />
-    <category term="JavaScript" />
-    <category term="C" />
-    <category term="software security" />
-    <category term="vulnerability" />
     <category term="C language" />
     <category term="Linux" />
+    <category term="software security" />
+    <category term="C" />
+    <category term="vulnerability" />
     <category term="gdb" />
+    <category term="JavaScript" />
+    <category term="Blog" />
+    <category term="日常" />
     <entry>
         <id>http://example.com/course/x86-architecture-and-Assembly-basics/</id>
         <title>x86 architecture and Assembly basics</title>
@@ -251,9 +251,9 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 </content>
-        <category term="software security" />
         <category term="C language" />
         <category term="Linux" />
+        <category term="software security" />
         <category term="gdb" />
         <updated>2024-10-25T07:43:11.000Z</updated>
     </entry>

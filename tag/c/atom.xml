@@ -4,15 +4,15 @@
     <title> • Posts by &#34;c&#34; tag</title>
     <link href="http://example.com" />
     <updated>2024-10-26T11:52:22.000Z</updated>
-    <category term="Blog" />
-    <category term="日常" />
-    <category term="JavaScript" />
-    <category term="C" />
-    <category term="software security" />
-    <category term="vulnerability" />
     <category term="C language" />
     <category term="Linux" />
+    <category term="software security" />
+    <category term="C" />
+    <category term="vulnerability" />
     <category term="gdb" />
+    <category term="JavaScript" />
+    <category term="Blog" />
+    <category term="日常" />
     <entry>
         <id>http://example.com/course/Format-string-bugs/</id>
         <title>Format string bugs</title>
@@ -197,8 +197,8 @@ With width-controlling format parameters, the attacker can write arbitrary integ
 &lt;li&gt;e.g. the &lt;code&gt;gcc&lt;/code&gt; compiler provides options to check format strings&lt;/li&gt;
 &lt;/ul&gt;
 </content>
-        <category term="C" />
         <category term="software security" />
+        <category term="C" />
         <category term="vulnerability" />
         <updated>2024-10-26T11:52:22.000Z</updated>
     </entry>
@@ -285,8 +285,8 @@ Integer overflow is very hard to discover and prevent
 &lt;li&gt;Static analysis tools and formal verification techniques&lt;br&gt;在程序编译前对源代码进行分析，寻找潜在的整数溢出问题。这些工具可以检测代码中的常见整数运算错误，包括加减乘除溢出、类型转换溢出等&lt;/li&gt;
 &lt;/ol&gt;
 </content>
-        <category term="C" />
         <category term="software security" />
+        <category term="C" />
         <updated>2024-10-26T10:33:32.000Z</updated>
     </entry>
     <entry>
@@ -504,8 +504,8 @@ Integer overflow is very hard to discover and prevent
 &lt;li&gt;Attacker cannot jump directly to exec function&lt;/li&gt;
 &lt;/ul&gt;
 </content>
-        <category term="C" />
         <category term="software security" />
+        <category term="C" />
         <category term="vulnerability" />
         <updated>2024-10-26T07:50:30.000Z</updated>
     </entry>
