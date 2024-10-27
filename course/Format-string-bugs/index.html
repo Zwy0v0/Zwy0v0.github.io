@@ -76,7 +76,7 @@ AtoposZz =  = 此处存放一些学习笔记</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">本文字数</span>
-    <span>4.2k</span>
+    <span>4.3k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -117,12 +117,12 @@ AtoposZz =  = 此处存放一些学习笔记</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf70db78e1.jpg"></li>
           <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf6bb9fdaf.jpg"></li>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf60a21b5d.jpg"></li>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf69b7c48b.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a94b2174.png"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf7643bf1a.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a94f1d92.png"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf696303c4.jpg"></li>
           <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a97b6ba9.jpg"></li>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a9382651.png"></li>
         </ul>
       </div>
     </header>
@@ -172,27 +172,29 @@ AtoposZz =  = 此处存放一些学习笔记</title>
     
 
     <h1 id="Format Functions" class="active"><a class="anchor"  href="#Format Functions">#</a>Format Functions</h1>
-
 <ol>
 <li>Format Functions</li>
 </ol>
 <ul>
-<li><code>printf</code> Output a formatted string</li>
-<li><code>fprintf</code> Writes the printf to a file</li>
-<li><code>sprintf</code> Prints into a string</li>
-<li><code>snprintf</code> Prints into a string checking the length</li>
-<li><code>vprintf</code> Prints the argument list to stdout</li>
-<li><code>vfprintf</code> Prints the argument list to a file</li>
-<li><code>vsprintf</code> Prints the argument list to a string</li>
-<li><code>vsnprintf</code> Prints the argument to a string checking the length<br>总结：<code>printf</code> 和 <code>fprintf</code> 用于输出格式化字符串到标准输出或文件。<br><code>sprintf</code> 和 <code>snprintf</code> 用于将格式化字符串写入字符串缓冲区，<code>snprintf</code> 更安全。<br><code>vprintf</code>、<code>vfprintf</code>、<code>vsprintf</code> 和 <code>vsnprintf</code> 用于处理可变参数列表，与前面的函数类似，但专门用于 <code>va_list</code> 参数的处理。</li>
+<li><code>printf</code>  Output a formatted string</li>
+<li><code>fprintf</code>  Writes the printf to a file</li>
+<li><code>sprintf</code>  Prints into a string</li>
+<li><code>snprintf</code>  Prints into a string checking the length</li>
+<li><code>vprintf</code>  Prints the argument list to stdout</li>
+<li><code>vfprintf</code>  Prints the argument list to a file</li>
+<li><code>vsprintf</code>  Prints the argument list to a string</li>
+<li><code>vsnprintf</code>  Prints the argument to a string checking the length<br>
+ 总结： <code>printf</code>  和  <code>fprintf</code>  用于输出格式化字符串到标准输出或文件。<br>
+ <code>sprintf</code>  和  <code>snprintf</code>  用于将格式化字符串写入字符串缓冲区， <code>snprintf</code>  更安全。<br>
+ <code>vprintf</code> 、 <code>vfprintf</code> 、 <code>vsprintf</code>  和  <code>vsnprintf</code>  用于处理可变参数列表，与前面的函数类似，但专门用于  <code>va_list</code>  参数的处理。</li>
 </ul>
 <ol start="2">
 <li>Format Strings</li>
 </ol>
 <ul>
-<li>Format String is the argument of format functions that contains format parameters. Format parameters are placeholders to be replaced with user inputs </li>
-<li>For example, the statement will output different sentences, depending on what is contained in the variable name: <code>printf(&quot;Hello, %s.&quot;, &amp;name);</code></li>
-<li>If the variable name contains the string “Zz”, then <code>printf()</code> will output: Hello, Zz.</li>
+<li>Format String is the argument of format functions that contains format parameters. Format parameters are placeholders to be replaced with user inputs</li>
+<li>For example, the statement will output different sentences, depending on what is contained in the variable name:  <code>printf(&quot;Hello, %s.&quot;, &amp;name);</code></li>
+<li>If the variable name contains the string “Zz”, then  <code>printf()</code>  will output: Hello, Zz.</li>
 </ul>
 <ol start="3">
 <li>Common Parameters Used in Format String Attacks</li>
@@ -206,29 +208,30 @@ AtoposZz =  = 此处存放一些学习笔记</title>
 <th>在攻击中的作用</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>%s</td>
 <td>打印字符串</td>
 <td>引用（指向字符串的指针）</td>
-<td>攻击者可以利用 %s 打印出内存中的任意数据，通过提供特定的内存地址，读取敏感数据（如密码、密钥等）。</td>
+<td>攻击者可以利用 % s 打印出内存中的任意数据，通过提供特定的内存地址，读取敏感数据（如密码、密钥等）。</td>
 </tr>
 <tr>
 <td>%d</td>
 <td>打印有符号十进制整数</td>
 <td>整数值</td>
-<td>虽然 %d 通常用于整数显示，但攻击者可以通过它来泄露内存中的整数值。</td>
+<td>虽然 % d 通常用于整数显示，但攻击者可以通过它来泄露内存中的整数值。</td>
 </tr>
 <tr>
 <td>%u</td>
 <td>打印无符号十进制整数</td>
 <td>无符号整数值</td>
-<td>与 %d 类似，但用于无符号整数的显示。</td>
+<td>与 % d 类似，但用于无符号整数的显示。</td>
 </tr>
 <tr>
 <td>%x</td>
 <td>打印十六进制整数（小写）</td>
 <td>无符号整数值</td>
-<td>攻击者可以通过 %x 逐步读取内存，以十六进制显示地址中的数据内容。</td>
+<td>攻击者可以通过 % x 逐步读取内存，以十六进制显示地址中的数据内容。</td>
 </tr>
 <tr>
 <td>%c</td>
@@ -240,7 +243,7 @@ AtoposZz =  = 此处存放一些学习笔记</title>
 <td>%n</td>
 <td>将已打印的字符数写入指定变量</td>
 <td>引用（指向整数的指针）</td>
-<td>攻击者可以利用 %n 修改任意内存地址的值，这是格式字符串攻击中最危险的参数之一，可能被用来修改程序的控制流。</td>
+<td>攻击者可以利用 % n 修改任意内存地址的值，这是格式字符串攻击中最危险的参数之一，可能被用来修改程序的控制流。</td>
 </tr>
 <tr>
 <td>%%</td>
@@ -248,107 +251,125 @@ AtoposZz =  = 此处存放一些学习笔记</title>
 <td>无</td>
 <td>用于输出 % 字符，无特别的攻击价值。</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <ol start="4">
-<li>How Do Format Functions Work?<br> According to the data format dictated by the format parameters, format functions retrieve the arguments from the stack</li>
+<li>How Do Format Functions Work?<br>
+According to the data format dictated by the format parameters, format functions retrieve the arguments from the stack</li>
 </ol>
 <ul>
-<li>printf(“A is the number %d, B is the string %s”, A, &amp;B);<br>The <code>printf()</code> function will attempt to retrieve the value of A and the address of string B from the stack<br>在格式化字符串中，每个格式参数（如 <code>%d</code>、<code>%s</code>）都告诉 <code>printf()</code> 如何解释栈中的数据：<code>%d</code> 表示检索一个 整数值。<code>%s</code> 表示检索一个 字符串指针（地址），然后根据地址打印对应的字符串。</li>
+<li>printf(“A is the number %d, B is the string %s”, A, &amp;B);<br>
+The  <code>printf()</code>  function will attempt to retrieve the value of A and the address of string B from the stack<br>
+ 在格式化字符串中，每个格式参数（如  <code>%d</code> 、 <code>%s</code> ）都告诉  <code>printf()</code>  如何解释栈中的数据： <code>%d</code>  表示检索一个 整数值。 <code>%s</code>  表示检索一个 字符串指针（地址），然后根据地址打印对应的字符串。</li>
 </ul>
 <h1 id="Exploit" class="active"><a class="anchor"  href="#Exploit">#</a>Exploit</h1>
 The vulnerability occurs when there is a mismatch between the number of format parameters and the number of function arguments provided to fill those places 
 - For example, if an attacker is able to supply more placeholders than there are arguments, he/she can use format functions to read or write the stack! 
 Format functions can be exploited when an attacker is given direct control over the format string fed into the function
-
 <ol>
 <li>Reading Data from Stack</li>
 </ol>
 <ul>
-<li>printf(“A is the number <code>%d</code>, reading stack data: <code>%x</code>“, A); <ul>
-<li><code>printf()</code> will attempt to retrieve two values from the stack </li>
-<li>But only one of those is placed on the stack </li>
-<li><code>printf()</code> will retrieve the next value on the stack and display it in hex format!</li>
+<li>printf(&quot;A is the number  <code>%d</code> , reading stack data:  <code>%x</code> &quot;, A);
+<ul>
+<li><code>printf()</code>  will attempt to retrieve two values from the stack</li>
+<li>But only one of those is placed on the stack</li>
+<li><code>printf()</code>  will retrieve the next value on the stack and display it in hex format!</li>
 </ul>
 </li>
-<li>To print the next 20 items on the stack: <ul>
-<li>printf(“%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x”);</li>
+<li>To print the next 20 items on the stack:
+<ul>
+<li>printf(&quot;%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x&quot;);</li>
 </ul>
 </li>
-<li>To print the tenth element next on the stack: <ul>
-<li>printf(“%10$x”);</li>
+<li>To print the tenth element next on the stack:
+<ul>
+<li>printf(&quot;%10$x&quot;);</li>
 </ul>
 </li>
 </ul>
 <ol start="2">
-<li>Reading Data at Arbitrary Location <code>%s</code></li>
+<li>Reading Data at Arbitrary Location  <code>%s</code></li>
 </ol>
 <ul>
-<li>Format functions treat the data on the stack as an address to go fetch a string <ul>
-<li>Note that <code>%s</code> is passed as reference!</li>
+<li>Format functions treat the data on the stack as an address to go fetch a string
+<ul>
+<li>Note that  <code>%s</code>  is passed as reference!</li>
 </ul>
 </li>
-<li>How to control the address accessed by <code>%s</code>? <ul>
-<li>Place an address on the format string (the string is stored on stack) </li>
-<li>Get <code>%s</code> to dereference it!</li>
+<li>How to control the address accessed by  <code>%s</code> ?
+<ul>
+<li>Place an address on the format string (the string is stored on stack)</li>
+<li>Get  <code>%s</code>  to dereference it!</li>
 </ul>
 </li>
-<li>To print the string located at address 0x12345678: <ul>
-<li>printf(“\x78\x56\x34\x12%x%x%x%s”, A, B, C);</li>
+<li>To print the string located at address 0x12345678:
+<ul>
+<li>printf(&quot;\x78\x56\x34\x12%x%x%x%s&quot;, A, B, C);</li>
 </ul>
 </li>
 </ul>
 <ol start="3">
-<li>Writing Data at Arbitrary Location <code>%n</code></li>
+<li>Writing Data at Arbitrary Location  <code>%n</code></li>
 </ol>
 <ul>
-<li><code>%n</code> stores the number of characters written so far into the corresponding function argument! For example, the following code put the integer 5 into the variable <code>num_char</code>   <figure class="highlight c"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> num_char; </span><br><span class="line"> <span class="built_in">printf</span>(<span class="string">&quot;11111%n&quot;</span>, &amp;num_char); </span><br></pre></td></tr></table></figure>
-With width-controlling format parameters, the attacker can write arbitrary integers to the location pointed to by the function argument </li>
-<li>Write 10 to num_char using width-controlling format parameter  <figure class="highlight c"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> num_char; </span><br><span class="line"> <span class="built_in">printf</span>(<span class="string">&quot;%10d%n&quot;</span>, <span class="number">0</span>, &amp;num_char);</span><br></pre></td></tr></table></figure></li>
-<li>Control the amount of data written with length parameter <ul>
+<li><code>%n</code>  stores the number of characters written so far into the corresponding function argument! For example, the following code put the integer 5 into the variable  <code>num_char</code></li>
+</ul>
+ <figure class="highlight c"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> num_char; </span><br><span class="line"> <span class="built_in">printf</span>(<span class="string">&quot;11111%n&quot;</span>, &amp;num_char); </span><br></pre></td></tr></table></figure>
+<p>With width-controlling format parameters, the attacker can write arbitrary integers to the location pointed to by the function argument</p>
+<ul>
+<li>Write 10 to num_char using width-controlling format parameter</li>
+</ul>
+ <figure class="highlight c"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> num_char; </span><br><span class="line"> <span class="built_in">printf</span>(<span class="string">&quot;%10d%n&quot;</span>, <span class="number">0</span>, &amp;num_char);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Control the amount of data written with length parameter
+<ul>
 <li><code>printf(&quot;%10d%hn&quot;, 0, &amp;num_char);</code></li>
-<li>Writes 2 bytes (instead of 4 bytes) to <code>&amp;num_char</code></li>
+<li>Writes 2 bytes (instead of 4 bytes) to  <code>&amp;num_char</code></li>
 </ul>
 </li>
 <li>Combined with the trick to access arbitrary memory locations, the attacker can write to arbitrary memory locations</li>
 </ul>
 <ol start="4">
-<li>Example <figure class="highlight c"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span> </span><br><span class="line"> &#123; </span><br><span class="line">     <span class="type">char</span> buf[<span class="number">512</span>]; </span><br><span class="line">     fgets(buf, <span class="keyword">sizeof</span>(buf), <span class="built_in">stdin</span>); <span class="comment">// 安全读取输入，不会导致缓冲区溢出</span></span><br><span class="line">     <span class="built_in">printf</span>(<span class="string">&quot;The input is:&quot;</span>); </span><br><span class="line">     <span class="built_in">printf</span>(buf);  <span class="comment">// 存在格式化字符串漏洞</span></span><br><span class="line">     <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line"> &#125; </span><br></pre></td></tr></table></figure></li>
+<li>Example</li>
 </ol>
+ <figure class="highlight c"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span> </span><br><span class="line"> &#123; </span><br><span class="line">     <span class="type">char</span> buf[<span class="number">512</span>]; </span><br><span class="line">     fgets(buf, <span class="keyword">sizeof</span>(buf), <span class="built_in">stdin</span>); <span class="comment">// 安全读取输入，不会导致缓冲区溢出</span></span><br><span class="line">     <span class="built_in">printf</span>(<span class="string">&quot;The input is:&quot;</span>); </span><br><span class="line">     <span class="built_in">printf</span>(buf);  <span class="comment">// 存在格式化字符串漏洞</span></span><br><span class="line">     <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line"> &#125; </span><br></pre></td></tr></table></figure>
 <ul>
-<li><code>printf(buf);</code> 直接使用了用户输入的内容作为格式化字符串。如果 <code>buf</code> 中包含格式化占位符（如 <code>%s</code>、<code>%x</code>、<code>%n</code> 等），<code>printf()</code> 会将其解释为格式化指令，从而造成安全隐患。</li>
-<li>修复： <code>printf(&quot;The input is: %s&quot;, buf);</code>：%s 确保输入内容被当作普通字符串处理，而不是格式化字符串</li>
+<li><code>printf(buf);</code>  直接使用了用户输入的内容作为格式化字符串。如果  <code>buf</code>  中包含格式化占位符（如  <code>%s</code> 、 <code>%x</code> 、 <code>%n</code>  等）， <code>printf()</code>  会将其解释为格式化指令，从而造成安全隐患。</li>
+<li>修复：  <code>printf(&quot;The input is: %s&quot;, buf);</code> ：% s 确保输入内容被当作普通字符串处理，而不是格式化字符串</li>
 </ul>
 <h1 id="Denial of Service Attacks" class="active"><a class="anchor"  href="#Denial of Service Attacks">#</a>Denial of Service Attacks</h1>
-
 <ul>
-<li><p>Crash the program by attempting to access an invalid address </p>
+<li>
+<p>Crash the program by attempting to access an invalid address</p>
 <ul>
-<li>Use <code>%s</code> to retrieve a value from the stack till encountering an invalid memory location</li>
+<li>Use  <code>%s</code>  to retrieve a value from the stack till encountering an invalid memory location</li>
 </ul>
 </li>
-<li><p>The exploit string would look something like this </p>
+<li>
+<p>The exploit string would look something like this</p>
 <ul>
-<li>·printf(“%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s”);·</li>
+<li>·printf(&quot;%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s&quot;);·</li>
 </ul>
 </li>
-<li><p>The more %s used in the format string, the higher the chance of an invalid address</p>
+<li>
+<p>The more %s used in the format string, the higher the chance of an invalid address</p>
 </li>
 </ul>
 <h1 id="Format String Attacks Prevention" class="active"><a class="anchor"  href="#Format String Attacks Prevention">#</a>Format String Attacks Prevention</h1>
-
 <ol>
-<li>Hard-coded format strings (e.g. no <code>printf(arg)</code>)  </li>
-<li>Do not use the fancy <code>%n</code> </li>
+<li>Hard-coded format strings (e.g. no  <code>printf(arg)</code> )</li>
+<li>Do not use the fancy  <code>%n</code></li>
 <li>Be careful with pass as references</li>
 </ol>
 <ul>
-<li>e.g. <code>%s</code> and <code>sprintf</code> can be used to create disclosure attacks</li>
+<li>e.g.  <code>%s</code>  and  <code>sprintf</code>  can be used to create disclosure attacks</li>
 </ul>
 <ol start="4">
-<li>Compiler support to match <code>printf</code> arguments with format string</li>
+<li>Compiler support to match  <code>printf</code>  arguments with format string</li>
 </ol>
 <ul>
-<li>e.g. the <code>gcc</code> compiler provides options to check format strings</li>
+<li>e.g. the  <code>gcc</code>  compiler provides options to check format strings</li>
 </ul>
 
       <div class="tags">
@@ -406,7 +427,7 @@ With width-controlling format parameters, the attacker can write arbitrary integ
     <div class="item left">
       
 
-  <a href="/course/Integer-overflow/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;18&#x2F;67123a97b6ba9.jpg" title="Integer overflow">
+  <a href="/course/Integer-overflow/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;26&#x2F;671cf60cc9be5.jpg" title="Integer overflow">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> Principles of Software Security</span>
   <h3>Integer overflow</h3>
@@ -414,6 +435,14 @@ With width-controlling format parameters, the attacker can write arbitrary integ
 
     </div>
     <div class="item right">
+      
+
+  <a href="/course/Fuzz-testing/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;26&#x2F;671cf60cc9be5.jpg" title="Fuzz testing">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> Principles of Software Security</span>
+  <h3>Fuzz testing</h3>
+  </a>
+
     </div>
 </div>
 
@@ -434,7 +463,7 @@ With width-controlling format parameters, the attacker can write arbitrary integ
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="/course/C-language-basics-and-Computer-memory/" rel="bookmark" title="C language basics and Computer memory">C language basics and Computer memory</a></li><li><a href="/course/x86-architecture-and-Assembly-basics/" rel="bookmark" title="x86 architecture and Assembly basics">x86 architecture and Assembly basics</a></li><li><a href="/course/Stack-buffer-overflow/" rel="bookmark" title="Stack buffer overflow">Stack buffer overflow</a></li><li><a href="/course/Integer-overflow/" rel="bookmark" title="Integer overflow">Integer overflow</a></li><li class="active"><a href="/course/Format-string-bugs/" rel="bookmark" title="Format string bugs">Format string bugs</a></li>
+          <li><a href="/course/C-language-basics-and-Computer-memory/" rel="bookmark" title="C language basics and Computer memory">C language basics and Computer memory</a></li><li><a href="/course/x86-architecture-and-Assembly-basics/" rel="bookmark" title="x86 architecture and Assembly basics">x86 architecture and Assembly basics</a></li><li><a href="/course/Stack-buffer-overflow/" rel="bookmark" title="Stack buffer overflow">Stack buffer overflow</a></li><li><a href="/course/Integer-overflow/" rel="bookmark" title="Integer overflow">Integer overflow</a></li><li class="active"><a href="/course/Format-string-bugs/" rel="bookmark" title="Format string bugs">Format string bugs</a></li><li><a href="/course/Fuzz-testing/" rel="bookmark" title="Fuzz testing">Fuzz testing</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -448,7 +477,7 @@ With width-controlling format parameters, the attacker can write arbitrary integ
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">9</span>
+        <span class="count">10</span>
         <span class="name">文章</span>
       </a>
     </div>
@@ -523,10 +552,12 @@ With width-controlling format parameters, the attacker can write arbitrary integ
 
   <ul id="quick">
     <li class="prev pjax">
+        <a href="/course/Integer-overflow/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
+        <a href="/course/Fuzz-testing/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -553,7 +584,31 @@ With width-controlling format parameters, the attacker can write arbitrary integ
 <a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
 </div>
 
-    <span><a href="/course/Stack-buffer-overflow/" title="Stack buffer overflow">Stack buffer overflow</a></span>
+    <span><a href="/course/Fuzz-testing/" title="Fuzz testing">Fuzz testing</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/study/" title="分类于 自学笔记">自学笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/study/JavaScript/" title="分类于 JavaScript">JavaScript</a>
+</div>
+
+    <span><a href="/study/js%E7%BB%A7%E6%89%BF/" title="js继承">js继承</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Integer-overflow/" title="Integer overflow">Integer overflow</a></span>
   </li>
 
       
@@ -564,6 +619,39 @@ With width-controlling format parameters, the attacker can write arbitrary integ
 </div>
 
     <span><a href="/dailysharing/%E7%AC%AC%E4%B8%80%E7%AF%87ovo/" title="第一篇ovo">第一篇ovo</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/study/" title="分类于 自学笔记">自学笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/study/JavaScript/" title="分类于 JavaScript">JavaScript</a>
+</div>
+
+    <span><a href="/study/JS%E4%B8%AD%E7%9A%84this%E4%B8%8E%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/" title="JS中的this与相关函数">JS中的this与相关函数</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/x86-architecture-and-Assembly-basics/" title="x86 architecture and Assembly basics">x86 architecture and Assembly basics</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/dailysharing/hello-world/" title="Hello World">Hello World</a></span>
   </li>
 
       
@@ -587,64 +675,19 @@ With width-controlling format parameters, the attacker can write arbitrary integ
 <a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
 </div>
 
+    <span><a href="/course/Stack-buffer-overflow/" title="Stack buffer overflow">Stack buffer overflow</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
     <span><a href="/course/Format-string-bugs/" title="Format string bugs">Format string bugs</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
-</div>
-
-    <span><a href="/course/x86-architecture-and-Assembly-basics/" title="x86 architecture and Assembly basics">x86 architecture and Assembly basics</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
-</div>
-
-    <span><a href="/course/Integer-overflow/" title="Integer overflow">Integer overflow</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/study/" title="分类于 自学笔记">自学笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/study/JavaScript/" title="分类于 JavaScript">JavaScript</a>
-</div>
-
-    <span><a href="/study/js%E7%BB%A7%E6%89%BF/" title="js继承">js继承</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/dailysharing/hello-world/" title="Hello World">Hello World</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/study/" title="分类于 自学笔记">自学笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/study/JavaScript/" title="分类于 JavaScript">JavaScript</a>
-</div>
-
-    <span><a href="/study/JS%E4%B8%AD%E7%9A%84this%E4%B8%8E%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/" title="JS中的this与相关函数">JS中的this与相关函数</a></span>
   </li>
 
   </ul>
