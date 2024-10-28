@@ -1,0 +1,844 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="" href="http://example.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="C,software security" />
+
+
+<link rel="canonical" href="http://example.com/course/Heap-buffer-overflow/">
+
+
+
+  <title>
+Heap buffer overflow - Principles of Software Security - 课程笔记 |
+AtoposZz =  = 此处存放一些学习笔记</title>
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">Heap buffer overflow
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2024-10-28 21:57:22">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2024-10-28T21:57:22+10:00">2024-10-28</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>7.9k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>7 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">AtoposZz</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf69b7c48b.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf60a21b5d.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf60cc9be5.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a94f1d92.png"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf75f16bed.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a94b2174.png"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/course/" itemprop="item" rel="index" title="分类于 课程笔记"><span itemprop="name">课程笔记</span></a>
+<meta itemprop="position" content="1" /></span>
+<i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/course/Principles-of-Software-Security/" itemprop="item" rel="index" title="分类于 Principles of Software Security"><span itemprop="name">Principles of Software Security</span></a>
+<meta itemprop="position" content="2" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://example.com/course/Heap-buffer-overflow/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Zz">
+    <meta itemprop="description" content="此处存放一些学习笔记, 🌸">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="Heap allocation" class="active"><a class="anchor"  href="#Heap allocation">#</a>Heap allocation</h1>
+
+<h2 id="Memory Allocation" class="active"><a class="anchor"  href="#Memory Allocation">#</a>Memory Allocation</h2>
+
+<ol>
+<li>Static memory</li>
+</ol>
+<ul>
+<li>Store global variables, permanent for the entire lifetime of the process</li>
+</ul>
+<ol start="2">
+<li>Automatic memory</li>
+</ol>
+<ul>
+<li>Stack stores local variables, stackframes are added or removed for functional calls</li>
+</ul>
+<ol start="3">
+<li>Dynamic memory</li>
+</ol>
+<ul>
+<li>Heap stores shared data structures in a large pool of memory </li>
+<li>Not allocated in contiguous order由程序员管理</li>
+</ul>
+<h2 id="Stack Allocation" class="active"><a class="anchor"  href="#Stack Allocation">#</a>Stack Allocation</h2>
+
+<ol>
+<li>Stack is contiguous blocks of memory managed by OS</li>
+</ol>
+<ul>
+<li>Cannot be modified</li>
+</ul>
+<ol start="2">
+<li>Stack grows and shrinks as functions are called and exited</li>
+</ol>
+<ul>
+<li>Usually has an upper bound, may raise exceptions</li>
+</ul>
+<ol start="3">
+<li>Variables are allocated and freed automatically</li>
+</ol>
+<ul>
+<li>Only exist when the function that created them is active on the stack</li>
+</ul>
+<h2 id="Heap Allocation" class="active"><a class="anchor"  href="#Heap Allocation">#</a>Heap Allocation</h2>
+
+<ol>
+<li>Heap is noncontiguous blocks of memory managed by the programmer</li>
+</ol>
+<ul>
+<li>Can be modified programatically</li>
+</ul>
+<ol start="2">
+<li>Heap is large and boundless, usually limited by only the physical memory available </li>
+<li>Variables are allocated and freed by using library functions or build-in language constructs</li>
+</ol>
+<ul>
+<li>C calls standard library functions, e.g. malloc, realloc, calloc and free  </li>
+<li>C++ also uses these functions, but adds build-in operators new and delete </li>
+<li>Pointers are required to access data on the heap</li>
+</ul>
+<figure class="highlight c"><figcaption><span>Memory Allocation Example</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"> <span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"> <span class="type">int</span> x;  <span class="comment">// 静态变量，存储在静态内存区，生命周期与进程相同</span></span><br><span class="line"> <span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line"> &#123;</span><br><span class="line">     <span class="type">int</span> y;          <span class="comment">// 栈变量</span></span><br><span class="line">     <span class="type">char</span> *str;      <span class="comment">// 指向堆内存的指针</span></span><br><span class="line"> </span><br><span class="line">     y = <span class="number">4</span>;</span><br><span class="line">     <span class="built_in">printf</span>(<span class="string">&quot;stack memory: %d\n&quot;</span>, y);</span><br><span class="line"> </span><br><span class="line">     <span class="comment">// 分配 100 个字符的堆内存</span></span><br><span class="line">     str = <span class="built_in">malloc</span>(<span class="number">100</span> * <span class="keyword">sizeof</span>(<span class="type">char</span>));</span><br><span class="line">     str[<span class="number">0</span>] = <span class="string">&#x27;m&#x27;</span>;</span><br><span class="line">     <span class="built_in">printf</span>(<span class="string">&quot;heap memory: %c\n&quot;</span>, str[<span class="number">0</span>]);</span><br><span class="line"> </span><br><span class="line">     <span class="comment">// 释放分配的堆内存</span></span><br><span class="line">     <span class="built_in">free</span>(str);</span><br><span class="line"> </span><br><span class="line">     <span class="keyword">return</span> <span class="number">0</span>;  <span class="comment">// 栈上的局部变量 y 和 str 会在这里被自动释放</span></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://img.picui.cn/free/2024/10/28/671f7e7bed371.png" alt="img"></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Stack</th>
+<th>Heap</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Basic</strong></td>
+<td>Memory is allocated in a contiguous block</td>
+<td>Memory is allocated in any random order</td>
+</tr>
+<tr>
+<td><strong>Allocation and Deallocation</strong></td>
+<td>Automatic by compiler instructions</td>
+<td>Manual by programmer</td>
+</tr>
+<tr>
+<td><strong>Cost</strong></td>
+<td>Less</td>
+<td>More</td>
+</tr>
+<tr>
+<td><strong>Implementation</strong></td>
+<td>Hard</td>
+<td>Easy</td>
+</tr>
+<tr>
+<td><strong>Access time</strong></td>
+<td>Faster</td>
+<td>Slower</td>
+</tr>
+<tr>
+<td><strong>Main Issue</strong></td>
+<td>Shortage of memory</td>
+<td>Memory fragmentation</td>
+</tr>
+<tr>
+<td><strong>Locality of reference</strong></td>
+<td>Excellent</td>
+<td>Adequate</td>
+</tr>
+<tr>
+<td><strong>Flexibility</strong></td>
+<td>Fixed size</td>
+<td>Resizing is possible</td>
+</tr>
+<tr>
+<td><strong>Data type structure</strong></td>
+<td>Linear</td>
+<td>Hierarchical</td>
+</tr>
+</tbody></table>
+<h1 id="Heap buffer overflow" class="active"><a class="anchor"  href="#Heap buffer overflow">#</a>Heap buffer overflow</h1>
+
+<h2 id="Dereference" class="active"><a class="anchor"  href="#Dereference">#</a>Dereference</h2>
+
+<p>Much harder to exploit heap overflows: </p>
+<ul>
+<li>Heap memory is not flat or contiguous </li>
+<li>There is no return address saved on the heap </li>
+<li>The address to overwrite is hard to find </li>
+<li>General exploitation techniques manipulate the metadata used by memory allocator</li>
+</ul>
+<p>To read&#x2F;write the value inside the memory address pointed to by the pointer </p>
+<figure class="highlight c"><figcaption><span>Dereference a Pointer</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x; </span><br><span class="line"> <span class="type">int</span> *p; <span class="comment">// p 是一个指向整数的指针  *p is an integer</span></span><br><span class="line"> x = <span class="number">0</span>;  <span class="comment">// x 现在等于 0 </span></span><br><span class="line"> p = &amp;x; <span class="comment">// p 指向 x 的地址   now *p == 0, since *p == x</span></span><br><span class="line"> *p = <span class="number">1</span>; <span class="comment">// 相当于 x = 1，因为 p == &amp;x</span></span><br><span class="line">	     <span class="comment">// 现在 *p 和 x 都等于 1</span></span><br></pre></td></tr></table></figure>
+
+<p> A C-language structure is a basic data structure that holds multiple fields</p>
+<figure class="highlight c"><figcaption><span>Dereference a Structure Pointer</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">MY_STRUCT</span> &#123;</span> </span><br><span class="line">     <span class="type">int</span> my_int; </span><br><span class="line">     <span class="type">float</span> my_float; </span><br><span class="line"> &#125; MY_STRUCT_T; </span><br><span class="line"></span><br><span class="line"> MY_STRUCT_T info = &#123;<span class="number">1</span>, <span class="number">3.141593F</span>&#125;; </span><br><span class="line"> MY_STRUCT_T *instance = &amp;info; </span><br><span class="line"></span><br><span class="line"> <span class="type">int</span> a = info.my_int;        <span class="comment">// 使用 &#x27;.&#x27; 操作符选择字段</span></span><br><span class="line"> <span class="type">int</span> b = (*instance).my_int; <span class="comment">// 解引用后选择字段</span></span><br><span class="line"> <span class="type">int</span> c = instance-&gt;my_int;   <span class="comment">// &#x27;-&gt;&#x27; 是前一种情况的语法糖</span></span><br></pre></td></tr></table></figure>
+<p>访问结构体字段的三种方式：</p>
+<ul>
+<li><code>info.my_int</code>：使用 <code>.</code> 操作符直接访问结构体变量 <code>info</code> 中的字段 <code>my_int</code>。这是最简单的访问方式，因为 <code>info</code> 是结构体变量，不是指针。</li>
+<li><code>*instance</code>：解引用指针 <code>instance</code>，获取它指向的结构体 <code>info</code>。<code>(*instance)</code> 代表结构体本身。<br>  <code>(*instance).my_int</code>：在解引用后使用<code>.</code>操作符访问结构体字段 <code>my_int</code>。这种方式相当于对 info 变量的直接访问，只不过是通过指针来完成的。</li>
+<li><code>instance-&gt;my_int</code>：<code>-&gt;</code> 是一种简便写法（语法糖），用于访问指针指向的结构体的字段。这相当于 <code>(*instance).my_int</code>，但写法更加简洁。<code>-&gt;</code> 只能用于指针，而 <code>.</code> 用于直接的结构体变量。</li>
+</ul>
+<h2 id="Heap Overflow" class="active"><a class="anchor"  href="#Heap Overflow">#</a>Heap Overflow</h2>
+
+<ol>
+<li>Simple Heap Overflow<figure class="highlight c"><figcaption><span>Simple Heap Overflow</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"> <span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"> <span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">target</span> &#123;</span></span><br><span class="line">     <span class="type">char</span> buf[<span class="number">100</span>];        <span class="comment">// 易受攻击的缓冲区</span></span><br><span class="line">     <span class="type">void</span> (*fun)(<span class="type">char</span> *);  <span class="comment">// 函数指针</span></span><br><span class="line"> &#125; <span class="type">target_t</span>;</span><br><span class="line"> <span class="type">void</span> <span class="title function_">foo</span><span class="params">(<span class="type">char</span> *buf)</span> &#123;</span><br><span class="line">     <span class="comment">// 目标函数，可能被攻击者控制的数据替换</span></span><br><span class="line"> &#125;</span><br><span class="line"> <span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span> &#123;</span><br><span class="line">     <span class="type">target_t</span> *rec = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">target_t</span>)); <span class="comment">// 动态分配结构体内存</span></span><br><span class="line">     rec-&gt;fun = foo; <span class="comment">// 将函数指针初始化为 foo</span></span><br><span class="line">     gets(rec-&gt;buf); <span class="comment">// 易受攻击的函数，可能导致缓冲区溢出</span></span><br><span class="line">     rec-&gt;fun(<span class="string">&quot;test&quot;</span>); <span class="comment">// 调用函数指针</span></span><br><span class="line">     <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>结构体定义<figure class="highlight c"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">target</span> &#123;</span></span><br><span class="line">     <span class="type">char</span> buf[<span class="number">100</span>];        <span class="comment">// 缓冲区</span></span><br><span class="line">     <span class="type">void</span> (*fun)(<span class="type">char</span> *);  <span class="comment">// 函数指针</span></span><br><span class="line"> &#125; <span class="type">target_t</span>;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>结构体 <code>target</code> 包含两个字段：<br><code>buf</code>：一个大小为 100 字节的字符数组，是易受攻击的缓冲区。<br><code>fun</code>：一个函数指针，指向接受一个字符指针参数的函数。</p>
+<ul>
+<li>缓冲区溢出<figure class="highlight c"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gets(rec-&gt;buf);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><code>gets()</code> 是一个危险的函数，它从标准输入读取数据并存储到指定的缓冲区 <code>buf</code> 中。<br><code>gets()</code> 不会检查输入数据的长度，如果输入超过了 <code>buf</code> 的 100 字节大小限制，就会导致缓冲区溢出。</p>
+<ul>
+<li>利用堆溢出<br>当攻击者提供的输入长度超过 100 字节时，超出的数据将会覆盖 <code>fun</code> 函数指针。<br>攻击者可以利用这种情况，将 <code>fun</code> 指针重写为攻击者控制的地址，从而在程序中执行任意代码。</li>
+</ul>
+<ol start="2">
+<li>Difficult to Overwrite Non-Contiguous Memory<br>Heap buffers are not adjacent, there may some extra space</li>
+</ol>
+<ul>
+<li>It may be possible to calculate the extra space to craft an exploit </li>
+<li>But the exploit will be application-specific! <ol>
+<li>堆内存的分散性<ul>
+<li>堆上的缓冲区并不总是相邻的，因为它们根据内存分配器的策略进行分配。</li>
+<li>不同分配之间可能存在空隙（padding）或元数据（metadata），使得直接覆盖非连续内存变得困难。</li>
+</ul>
+</li>
+<li>内存分配器的元数据<ul>
+<li>堆内存中分配的每个块通常带有元数据（如大小、状态、指向下一个块的指针等），用于管理内存块的分配和释放。</li>
+<li>攻击者在试图覆盖非连续内存时，还需要考虑这些元数据的存在，否则可能导致分配器崩溃或异常，暴露攻击的痕迹。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="Heap Allocator" class="active"><a class="anchor"  href="#Heap Allocator">#</a>Heap Allocator</h2>
+
+<ol>
+<li>How heap memory is allocated?<br>Heap allocator maintains a <strong>doubly-linked list</strong> of allocated and free chunks (blocks of memory)  <ul>
+<li><code>malloc()</code> and <code>free()</code> add or remove chunks from this list<br>Chunk management information is stored together with user data in memory </li>
+<li>Writing data past the end of a chunk boundary may overwrite the management fields</li>
+</ul>
+</li>
+<li>Chunk Record<br>Heap blocks are C records (i.e. struct) that have a few fields along with the chunk of memory <ul>
+<li>fd: the pointer to the next block </li>
+<li>bk: the pointer to the previous block </li>
+<li>ps: the size of the previous chunk </li>
+<li>sz: the size of the current chunk </li>
+<li>Other fields such as free flag to indicate if the current chunk is in the freelis</li>
+</ul>
+</li>
+<li>Unlink a Chunk<br><code>free()</code> removes a chunk from allocated list</li>
+</ol>
+<p><img data-src="https://img.picui.cn/free/2024/10/28/671f8d584507c.png" alt="img"></p>
+<ul>
+<li>Unlink performs the following two writes on the list’s fields: <ul>
+<li>chunk2‐&gt;bk‐&gt;fd &#x3D; chunk2‐&gt;fd </li>
+<li>chunk2‐&gt;fd‐&gt;bk &#x3D; chunk2‐&gt;bk</li>
+</ul>
+</li>
+<li>By overflowing <code>chunk2</code>, attacker can take control of <code>chunk2‐&gt;fd</code> and <code>chunk2‐&gt;bk</code>   </li>
+<li>Suppose the attacker wants to write <code>value</code> to memory address <code>addr</code>  <ul>
+<li>Attacker sets <code>chunk2‐&gt;fd</code> to be <code>value</code> </li>
+<li>Attacker sets <code>chunk2‐&gt;bk</code> to be <code>(addr - offset_fd)</code>  <ul>
+<li><code>offset_fd</code> is the offset of the fd field in the record</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The attacker can write arbitrary value to arbitrary memory address in this way</li>
+<li>The first unlink write achieves the attacker’s goal: <code>chunk2‐&gt;bk‐&gt;fd = chunk2‐&gt;fd</code> </li>
+<li>The first write effectively becomes: <code>(addr - offset_fb)‐&gt;fd = value</code> </li>
+<li>This is the same as <code>*addr = value</code> <ul>
+<li>Fields are selected by offsets  </li>
+<li><code>offset_fd</code> cancels out <code>fd</code><br>Attackers can use hundreds of writes to copy the shellcode into memory</li>
+</ul>
+</li>
+</ul>
+<h2 id="Prevention" class="active"><a class="anchor"  href="#Prevention">#</a>Prevention</h2>
+
+<p>Very hard to detect and prevent due to the dynamic nature of the heap<br>Possible ways to protect against heap overflow</p>
+<ul>
+<li>Prevent execution of the payload by separating the code and data </li>
+<li>Introduce randomisation so the heap is not found at a fixed offset </li>
+<li>Introduce sanity checks into the heap allocator</li>
+</ul>
+<h1 id="Pointer-related heap errors " class="active"><a class="anchor"  href="#Pointer-related heap errors ">#</a>Pointer-related heap errors </h1>
+
+<h2 id="Use After Free" class="active"><a class="anchor"  href="#Use After Free">#</a>Use After Free</h2>
+
+<ol>
+<li>A memory is accessed after it is freed (and re-allocated) <ul>
+<li>Can cause a program to crash, use unexpected values, or execute code</li>
+</ul>
+</li>
+<li>Attackers may overwrite the re-allocated memory including metadata <ul>
+<li>May result in the same effect as some heap overflow vulnerabilities<figure class="highlight c"><figcaption><span>Use After Free Example</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span> &#123; </span><br><span class="line">    <span class="type">char</span> *buf1, *buf2; </span><br><span class="line">    buf1 = (<span class="type">char</span> *)<span class="built_in">malloc</span>(BUFSIZE1); <span class="comment">// 为 buf1 分配 BUFSIZE1 大小的内存</span></span><br><span class="line">    <span class="comment">// 释放 buf1，使其分配的内存可被重用</span></span><br><span class="line">    <span class="built_in">free</span>(buf1); </span><br><span class="line">    <span class="comment">// 可能在 buf1 释放的内存区域内分配 buf2</span></span><br><span class="line">    buf2 = (<span class="type">char</span> *)<span class="built_in">malloc</span>(BUFSIZE2); </span><br><span class="line">    <span class="comment">// 攻击者可能会通过覆盖 buf2 及其元数据来利用漏洞</span></span><br><span class="line">    <span class="built_in">strncpy</span>(buf1, argv[<span class="number">1</span>], BUFSIZE1<span class="number">-1</span>); </span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>Example Problems<ol>
+<li><code>free(buf1)</code> 的影响<ul>
+<li>当 <code>buf1</code> 被释放后，其对应的内存区域变得可供再次分配。</li>
+<li>因为 <code>free()</code> 并不会立即将内存清零或使指针失效，所以 <code>buf1</code> 仍然指向被释放的内存区域。</li>
+<li>在这段代码中，<code>buf2</code> 可能会被分配到 <code>buf1</code> 释放的内存区域（这取决于堆分配器的实现和内存布局）。</li>
+</ul>
+</li>
+<li><code>strncpy(buf1, argv[1], BUFSIZE1-1)</code> 的问题<ul>
+<li>即使 <code>buf1</code> 已被释放，程序仍然在此处试图使用 <code>buf1</code> 进行写操作。</li>
+<li>由于 <code>buf1</code> 被释放后可能被 <code>buf2</code> 重新使用，<code>buf1</code> 和 <code>buf2</code> 可能指向相同的内存区域。这意味着通过 <code>strncpy()</code> 对 <code>buf1</code> 的写入可能会影响 <code>buf2</code>，甚至覆盖 <code>buf2</code> 的元数据。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="Double Free" class="active"><a class="anchor"  href="#Double Free">#</a>Double Free</h2>
+
+<ol>
+<li>A memory address is freed (i.e. <code>free()</code>) twice <ul>
+<li>Can also cause a program to crash, use unexpected values, or execute code</li>
+</ul>
+</li>
+<li>Attackers may corrupt metadata of new memory allocated at the address <ul>
+<li>May also result in the same effect as some heap overflow vulnerabilities<figure class="highlight c"><figcaption><span>Double Free Example</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span> &#123; </span><br><span class="line">    <span class="type">char</span> *buf1, *buf2; </span><br><span class="line">    buf1 = (<span class="type">char</span> *)<span class="built_in">malloc</span>(BUFSIZE1);  <span class="comment">// 为 buf1 分配 BUFSIZE1 大小的内存</span></span><br><span class="line">    <span class="built_in">free</span>(buf1);  <span class="comment">// 释放 buf1，内存可供重用</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// buf2 可能被分配到 buf1 释放的内存区域</span></span><br><span class="line">    buf2 = (<span class="type">char</span> *)<span class="built_in">malloc</span>(BUFSIZE2);  </span><br><span class="line"></span><br><span class="line">    <span class="comment">// buf2 可能包含攻击者提供的数据</span></span><br><span class="line">    <span class="built_in">strncpy</span>(buf2, argv[<span class="number">1</span>], BUFSIZE2<span class="number">-1</span>);  </span><br><span class="line"></span><br><span class="line">    <span class="comment">// buf1 被再次释放（双重释放）</span></span><br><span class="line">    <span class="built_in">free</span>(buf1); </span><br><span class="line"></span><br><span class="line">    <span class="comment">// 释放 buf2（使用了可能被攻击者修改的元数据）</span></span><br><span class="line">    <span class="built_in">free</span>(buf2);  </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>Example Problems<ol>
+<li>第一次释放 <code>buf1</code><ul>
+<li>通过 <code>free(buf1)</code>，<code>buf1</code> 所占用的内存被释放，成为可供重用的内存区域。</li>
+<li><code>buf2</code> 可能分配到 <code>buf1</code> 的内存区域</li>
+<li>因为 <code>buf1</code> 已被释放，内存分配器可能会将 <code>buf2</code> 分配到之前 <code>buf1</code> 占用的内存区域。</li>
+<li>攻击者可能通过覆盖 <code>buf2</code> 中的内容来修改元数据</li>
+<li>使用 <code>strncpy()</code> 函数将用户输入复制到 <code>buf2</code> 中，这可能导致覆盖 <code>buf2</code> 的元数据（如堆链表指针或其他关键数据）。</li>
+</ul>
+</li>
+<li>第二次释放 <code>buf1</code><ul>
+<li><code>free(buf1)</code> 导致双重释放，因为 <code>buf1</code> 已经在第一次释放后被重用，现在与 <code>buf2</code> 指向相同的内存区域。</li>
+<li>此时，内存分配器可能会使用被攻击者修改的元数据，从而导致不安全的内存操作。</li>
+</ul>
+</li>
+<li>释放 <code>buf2</code><ul>
+<li>当 <code>buf2</code> 被释放时，内存分配器可能会再次处理被攻击者修改的元数据，进一步导致内存覆盖或异常。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="Prevention and Detection of Pointer Errors" class="active"><a class="anchor"  href="#Prevention and Detection of Pointer Errors">#</a>Prevention and Detection of Pointer Errors</h2>
+
+<ol>
+<li>Difficult to detect all of them by either dynamic or static analysis</li>
+</ol>
+<ul>
+<li>Complex runtime states </li>
+<li>E.g. memory may be allocated, freed and used in different functions via aliases (pointers) </li>
+<li>Fuzzing may detect some in executed paths when they crash the program</li>
+</ul>
+<ol start="2">
+<li>The simplest prevention is to set all freed pointers to NULL</li>
+</ol>
+<ul>
+<li>Trigger null pointer dereference errors when accessed </li>
+<li>Most operating systems provide built-in defence against null-pointer dereference</li>
+</ul>
+
+      <div class="tags">
+          <a href="/tags/C/" rel="tag"><i class="ic i-tag"></i> C</a>
+          <a href="/tags/software-security/" rel="tag"><i class="ic i-tag"></i> software security</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2024-10-29 00:01:38" itemprop="dateModified" datetime="2024-10-29T00:01:38+10:00">2024-10-29</time>
+  </span>
+  <span id="course/Heap-buffer-overflow/" class="item leancloud_visitors" data-flag-title="Heap buffer overflow" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Zz <i class="ic i-at"><em>@</em></i>
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/course/Heap-buffer-overflow/" title="Heap buffer overflow">http://example.com/course/Heap-buffer-overflow/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/course/AFL/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;26&#x2F;671cf60a21b5d.jpg" title="AFL">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> Principles of Software Security</span>
+  <h3>AFL</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Heap%20allocation"><span class="toc-number">1.</span> <span class="toc-text">Heap allocation</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Memory%20Allocation"><span class="toc-number">1.1.</span> <span class="toc-text">Memory Allocation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stack%20Allocation"><span class="toc-number">1.2.</span> <span class="toc-text">Stack Allocation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Heap%20Allocation"><span class="toc-number">1.3.</span> <span class="toc-text">Heap Allocation</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Heap%20buffer%20overflow"><span class="toc-number">2.</span> <span class="toc-text">Heap buffer overflow</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Dereference"><span class="toc-number">2.1.</span> <span class="toc-text">Dereference</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Heap%20Overflow"><span class="toc-number">2.2.</span> <span class="toc-text">Heap Overflow</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Heap%20Allocator"><span class="toc-number">2.3.</span> <span class="toc-text">Heap Allocator</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Prevention"><span class="toc-number">2.4.</span> <span class="toc-text">Prevention</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Pointer-related%20heap%20errors%20"><span class="toc-number">3.</span> <span class="toc-text">Pointer-related heap errors </span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Use%20After%20Free"><span class="toc-number">3.1.</span> <span class="toc-text">Use After Free</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Double%20Free"><span class="toc-number">3.2.</span> <span class="toc-text">Double Free</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Prevention%20and%20Detection%20of%20Pointer%20Errors"><span class="toc-number">3.3.</span> <span class="toc-text">Prevention and Detection of Pointer Errors</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/course/C-language-basics-and-Computer-memory/" rel="bookmark" title="C language basics and Computer memory">C language basics and Computer memory</a></li><li><a href="/course/x86-architecture-and-Assembly-basics/" rel="bookmark" title="x86 architecture and Assembly basics">x86 architecture and Assembly basics</a></li><li><a href="/course/Stack-buffer-overflow/" rel="bookmark" title="Stack buffer overflow">Stack buffer overflow</a></li><li><a href="/course/Integer-overflow/" rel="bookmark" title="Integer overflow">Integer overflow</a></li><li><a href="/course/Format-string-bugs/" rel="bookmark" title="Format string bugs">Format string bugs</a></li><li><a href="/course/Fuzz-testing/" rel="bookmark" title="Fuzz testing">Fuzz testing</a></li><li><a href="/course/AFL/" rel="bookmark" title="AFL">AFL</a></li><li class="active"><a href="/course/Heap-buffer-overflow/" rel="bookmark" title="Heap buffer overflow">Heap buffer overflow</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Zz"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Zz</p>
+  <div class="description" itemprop="description">🌸</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">12</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">5</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">10</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL1p3eTB2MA==" title="https:&#x2F;&#x2F;github.com&#x2F;Zwy0v0"><i class="ic i-github"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOnp3eTk5OTAuMEBtYWlsLmNvbQ==" title="mailto:zwy9990.0@mail.com"><i class="ic i-envelope"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>友链</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/links/" rel="section"><i class="ic i-magic"></i>links</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/study/" title="分类于 自学笔记">自学笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/study/JavaScript/" title="分类于 JavaScript">JavaScript</a>
+</div>
+
+    <span><a href="/study/js%E7%BB%A7%E6%89%BF/" title="js继承">js继承</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/study/" title="分类于 自学笔记">自学笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/study/JavaScript/" title="分类于 JavaScript">JavaScript</a>
+</div>
+
+    <span><a href="/study/JS%E4%B8%AD%E7%9A%84this%E4%B8%8E%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/" title="JS中的this与相关函数">JS中的this与相关函数</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/dailysharing/" title="分类于 日常碎碎念">日常碎碎念</a>
+</div>
+
+    <span><a href="/dailysharing/%E7%AC%AC%E4%B8%80%E7%AF%87ovo/" title="第一篇ovo">第一篇ovo</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/dailysharing/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/C-language-basics-and-Computer-memory/" title="C language basics and Computer memory">C language basics and Computer memory</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Fuzz-testing/" title="Fuzz testing">Fuzz testing</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/AFL/" title="AFL">AFL</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Stack-buffer-overflow/" title="Stack buffer overflow">Stack buffer overflow</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Format-string-bugs/" title="Format string bugs">Format string bugs</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Heap-buffer-overflow/" title="Heap buffer overflow">Heap buffer overflow</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Zz @ AtoposZz</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'course/Heap-buffer-overflow/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
