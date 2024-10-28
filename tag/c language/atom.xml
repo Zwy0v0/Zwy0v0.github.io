@@ -5,14 +5,15 @@
     <link href="http://example.com" />
     <updated>2024-10-25T07:43:11.000Z</updated>
     <category term="JavaScript" />
-    <category term="Blog" />
-    <category term="日常" />
-    <category term="C language" />
-    <category term="Linux" />
-    <category term="software security" />
     <category term="C" />
+    <category term="software security" />
+    <category term="AFL" />
+    <category term="Linux" />
+    <category term="C language" />
     <category term="vulnerability" />
     <category term="gdb" />
+    <category term="Blog" />
+    <category term="日常" />
     <entry>
         <id>http://example.com/course/x86-architecture-and-Assembly-basics/</id>
         <title>x86 architecture and Assembly basics</title>
@@ -363,9 +364,9 @@ EBP（基址指针）：跟踪局部变量和函数参数的位置。&lt;/li&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 </content>
-        <category term="C language" />
-        <category term="Linux" />
         <category term="software security" />
+        <category term="Linux" />
+        <category term="C language" />
         <category term="gdb" />
         <updated>2024-10-25T07:43:11.000Z</updated>
     </entry>
@@ -686,9 +687,9 @@ Use dereference to read the value inside the memory address pointed to by the po
 &lt;/ul&gt;
  &lt;figure class=&#34;highlight c&#34;&gt;&lt;figcaption&gt;&lt;span&gt;Putting the pieces of memory together&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; ind = &lt;span class=&#34;number&#34;&gt;5&lt;/span&gt;;                     &lt;span class=&#34;comment&#34;&gt;// integer stored in .data (initialized)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;type&#34;&gt;char&lt;/span&gt; *str;                       &lt;span class=&#34;comment&#34;&gt;// string pointer stored in .bss (uninitialized)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; nothing;                     &lt;span class=&#34;comment&#34;&gt;// integer stored in .bss (uninitialized)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;fun&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; c)&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;                                              &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; 	&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; i = c;                                  &lt;span class=&#34;comment&#34;&gt;// stored in stack section&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; 	str = (&lt;span class=&#34;type&#34;&gt;char&lt;/span&gt; *)&lt;span class=&#34;built_in&#34;&gt;malloc&lt;/span&gt;(&lt;span class=&#34;number&#34;&gt;10&lt;/span&gt; * &lt;span class=&#34;keyword&#34;&gt;sizeof&lt;/span&gt;(&lt;span class=&#34;type&#34;&gt;char&lt;/span&gt;));    &lt;span class=&#34;comment&#34;&gt;// reserves 10 characters in heap region &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; 	&lt;span class=&#34;built_in&#34;&gt;strncpy&lt;/span&gt;(str, &lt;span class=&#34;string&#34;&gt;&amp;quot;abcde&amp;quot;&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;5&lt;/span&gt;);                   &lt;span class=&#34;comment&#34;&gt;// copies &amp;quot;abcde&amp;quot; into str&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;()&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	fun(&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;); &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 </content>
-        <category term="C language" />
-        <category term="Linux" />
         <category term="software security" />
+        <category term="Linux" />
+        <category term="C language" />
         <updated>2024-10-24T11:00:05.000Z</updated>
     </entry>
 </feed>

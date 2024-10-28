@@ -5,14 +5,15 @@
     <link href="http://example.com" />
     <updated>2024-10-25T07:43:11.000Z</updated>
     <category term="JavaScript" />
-    <category term="Blog" />
-    <category term="日常" />
-    <category term="C language" />
-    <category term="Linux" />
-    <category term="software security" />
     <category term="C" />
+    <category term="software security" />
+    <category term="AFL" />
+    <category term="Linux" />
+    <category term="C language" />
     <category term="vulnerability" />
     <category term="gdb" />
+    <category term="Blog" />
+    <category term="日常" />
     <entry>
         <id>http://example.com/course/x86-architecture-and-Assembly-basics/</id>
         <title>x86 architecture and Assembly basics</title>
@@ -363,9 +364,9 @@ EBP（基址指针）：跟踪局部变量和函数参数的位置。&lt;/li&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 </content>
-        <category term="C language" />
-        <category term="Linux" />
         <category term="software security" />
+        <category term="Linux" />
+        <category term="C language" />
         <category term="gdb" />
         <updated>2024-10-25T07:43:11.000Z</updated>
     </entry>

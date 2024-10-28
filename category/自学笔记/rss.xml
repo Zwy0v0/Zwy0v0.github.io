@@ -8,14 +8,15 @@
         <pubDate>Wed, 23 Oct 2024 23:25:27 +1000</pubDate>
         <lastBuildDate>Wed, 23 Oct 2024 23:25:27 +1000</lastBuildDate>
         <category>JavaScript</category>
-        <category>Blog</category>
-        <category>日常</category>
-        <category>C language</category>
-        <category>Linux</category>
-        <category>software security</category>
         <category>C</category>
+        <category>software security</category>
+        <category>AFL</category>
+        <category>Linux</category>
+        <category>C language</category>
         <category>vulnerability</category>
         <category>gdb</category>
+        <category>Blog</category>
+        <category>日常</category>
         <item>
             <guid isPermalink="true">http://example.com/study/js%E7%BB%A7%E6%89%BF/</guid>
             <title>js继承</title>

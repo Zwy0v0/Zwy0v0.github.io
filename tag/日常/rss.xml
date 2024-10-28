@@ -8,14 +8,15 @@
         <pubDate>Fri, 18 Oct 2024 21:28:05 +1000</pubDate>
         <lastBuildDate>Fri, 18 Oct 2024 21:28:05 +1000</lastBuildDate>
         <category>JavaScript</category>
-        <category>Blog</category>
-        <category>日常</category>
-        <category>C language</category>
-        <category>Linux</category>
-        <category>software security</category>
         <category>C</category>
+        <category>software security</category>
+        <category>AFL</category>
+        <category>Linux</category>
+        <category>C language</category>
         <category>vulnerability</category>
         <category>gdb</category>
+        <category>Blog</category>
+        <category>日常</category>
         <item>
             <guid isPermalink="true">http://example.com/dailysharing/%E7%AC%AC%E4%B8%80%E7%AF%87ovo/</guid>
             <title>第一篇ovo</title>
