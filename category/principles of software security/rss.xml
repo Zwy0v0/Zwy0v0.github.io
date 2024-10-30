@@ -5,8 +5,8 @@
         <link>http://example.com</link>
         <description>🌸</description>
         <language>zh-CN</language>
-        <pubDate>Mon, 28 Oct 2024 21:57:22 +1000</pubDate>
-        <lastBuildDate>Mon, 28 Oct 2024 21:57:22 +1000</lastBuildDate>
+        <pubDate>Wed, 30 Oct 2024 10:32:09 +1000</pubDate>
+        <lastBuildDate>Wed, 30 Oct 2024 10:32:09 +1000</lastBuildDate>
         <category>C</category>
         <category>software security</category>
         <category>AFL</category>
@@ -17,6 +17,210 @@
         <category>JavaScript</category>
         <category>Blog</category>
         <category>日常</category>
+        <item>
+            <guid isPermalink="true">http://example.com/course/Security-Concepts/</guid>
+            <title>Security Concepts</title>
+            <link>http://example.com/course/Security-Concepts/</link>
+            <category>software security</category>
+            <pubDate>Wed, 30 Oct 2024 10:32:09 +1000</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34; Computer Security Concepts&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;# Computer Security Concepts&#34;&gt;#&lt;/a&gt; Computer Security Concepts &lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;A Definition of Computer Security&lt;br&gt;Computer Security is the protection afforded to an automated information system in order to attain the applicable objectives of preserving the &lt;strong&gt;integrity&lt;/strong&gt;, &lt;strong&gt;availability&lt;/strong&gt;, and &lt;strong&gt;confidentiality&lt;/strong&gt; of information system resources (includes hardware, software, firmware, information&amp;#x2F;data, and telecommunications) &lt;ul&gt;
+&lt;li&gt;Confidentiality&lt;br&gt;  &lt;strong&gt;Data confidentiality&lt;/strong&gt; assures that private or confidential information is not made available or disclosed to unauthorised individuals&lt;br&gt;  &lt;strong&gt;Privacy&lt;/strong&gt; assures that individuals control or influence what information related to them may be collected and stored and by whom and to whom that information may be disclosed&lt;/li&gt;
+&lt;li&gt;Integrity&lt;br&gt;  &lt;strong&gt;Data integrity&lt;/strong&gt; assures that information and programs are changed only in a specified and authorised manner&lt;br&gt;  &lt;strong&gt;System integrity&lt;/strong&gt; assures that a system performs its intended function in an unimpaired manner, free from deliberate or inadvertent unauthorised manipulation of the system&lt;/li&gt;
+&lt;li&gt;Availability&lt;br&gt;  &lt;strong&gt;Availability assures&lt;/strong&gt; that systems work promptly and service is not denied to authorised users&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;CIA Triad (NIST standard FIPS 199)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Confidentiality&lt;/strong&gt; preserves authorised restrictions on information access and disclosure, including means for protecting personal privacy and proprietary information &lt;ul&gt;
+&lt;li&gt;A loss of confidentiality is the unauthorised disclosure of information&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Integrity&lt;/strong&gt; guards against improper information modification or destruction, including ensuring information nonrepudiation and authenticity &lt;ul&gt;
+&lt;li&gt;A loss of integrity is the unauthorised modification or destruction of information&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Availability&lt;/strong&gt; ensures timely and reliable access to and use of information &lt;ul&gt;
+&lt;li&gt;A loss of availability is the disruption of access to or use of information or a system&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Additional Concepts&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Authenticity&lt;/strong&gt; is the property of being genuine and being able to be verified and trusted; confidence in the validity of a transmission, a message, or message originator(真实性） &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Accountability&lt;/strong&gt; is the security goal that generates the requirement for actions of an entity to be traced uniquely to that entity（可追溯性）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;NIST Levels of Security Impact&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Low&lt;/strong&gt; when the loss is expected to have a limited adverse effect. E.g. reduced effectiveness, minor damage, financial loss or harm &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Moderate&lt;/strong&gt; when the loss is expected to have a serious adverse effect. E.g. Significant reduced effectiveness, damage, financial loss or harm (but does not involve loss of life or serious injuries) &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;High&lt;/strong&gt; when the loss is expected to have a severe or catastrophic adverse effect. E.g. unable to perform primary functions, major damage, and financial loss, involve loss of life or serious injuries&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;CIA Triad Examples&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Confidentiality&lt;br&gt;            High: student grades&lt;br&gt;                            Moderate: enrolment information&lt;br&gt;                            Low: faculty directory information &lt;/li&gt;
+&lt;li&gt;Integrity&lt;br&gt;            High: patient allergy information&lt;br&gt;                            Moderate: web site like online forums&lt;br&gt;                            Low: anonymous online poll &lt;/li&gt;
+&lt;li&gt;Availability&lt;br&gt;            High: authentication services&lt;br&gt;                            Moderate: public web site for a university&lt;br&gt;                            Low: online telephone directory lookup application&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Computer Security Terminology&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Adversary&lt;/strong&gt; (threat agent) is an entity that attacks, or is a threat to, a system &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Attack&lt;/strong&gt; is an assault on system security that derives from an intelligent threat; that is, an intelligent act that is a deliberate attempt (especially in the sense of a method or technique) to evade security services and violate the security policy of a system &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Countermeasure&lt;/strong&gt; is an action, device, procedure, or technique that reduces a threat, a vulnerability, or an attack by eliminating or preventing it, by minimising the harm it can cause, or by discovering and reporting it so that corrective action can be taken &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Risk&lt;/strong&gt; is an expectation of loss expressed as the probability that a particular threat will exploit a particular vulnerability with a particular harmful result&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Security Policy&lt;/strong&gt; is the set of rules and practices that specify or regulate how a system or organisation provides security services to protect sensitive and critical system resources &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;System Resource (Asset)&lt;/strong&gt; is the data contained in an information system; or a service provided by a system; or a system capability, such as processing power or communication bandwidth; or an item of system equipment; or a facility that houses system operations and equipment &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Threat&lt;/strong&gt; is a potential for violation of security, which exists when there is a circumstance, capability, action, or event, that could breach security and cause harm &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Vulnerability&lt;/strong&gt; is a flaw or weakness in a system’s design, implementation, or operation and management that could be exploited to violate the system’s security policy&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;Threats and Attacks&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Threats and Attacks&#34;&gt;#&lt;/a&gt; Threats and Attacks&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Assets&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Hardware&lt;/strong&gt; includes computer systems and other data processing, data storage, and data communications devices &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Software&lt;/strong&gt; includes the operating system, system utilities, and applications &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Data&lt;/strong&gt; includes files and databases, as well as security-related data, such as password files &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Network&lt;/strong&gt; includes communication facilities such as local and wide area network communication links, bridges, routers, and so on&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Vulnerabilities&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;It can be corrupted, so that it does the wrong thing or gives wrong answers (Integrity)&lt;ul&gt;
+&lt;li&gt;E.g. stored data values may differ from what they should be because they have been improperly modified&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;It can become leaky (Confidentiality)&lt;ul&gt;
+&lt;li&gt;E.g. someone who should not have access to some or all of the information available through the network obtains such access&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;It can become unavailable or very slow (Availability)&lt;ul&gt;
+&lt;li&gt;E.g. using the system or network becomes impossible or impractical.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Threats&lt;br&gt;An attack is a threat that is carried out and leads to threat consequence&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Types of attacks &lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Active attack&lt;/strong&gt; attempts to alter system resources or affect their operation&lt;br&gt;示例：篡改数据、破坏系统功能、删除文件、拒绝服务攻击（DoS）等。&lt;br&gt;影响：直接对系统资源进行修改或破坏，导致系统功能受损。 &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Passive attack&lt;/strong&gt; attempts to learn or make use of information from the system that does not affect system resources. Passive attacks are very difficult to detect because they do not involve any alteration of the data&lt;br&gt;示例：流量分析、数据包嗅探、解密通信等。&lt;br&gt;影响：攻击者不会修改系统或数据，但可能会获得敏感信息或通信内容。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Origin of attacks &lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Inside attack&lt;/strong&gt; is initiated by an entity inside the security perimeter &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Outside attack&lt;/strong&gt; is initiated from outside the perimeter&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Threat Consequences&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Attacks that Cause Unauthorised Disclosure&lt;br&gt;&lt;strong&gt;Unauthorised disclosure&lt;/strong&gt; is a circumstance or event whereby an entity gains&lt;br&gt;access to data for which the entity is not authorised &lt;ol&gt;
+&lt;li&gt;信息暴露（Exposure）&lt;br&gt;定义：当内部人员故意或无意间将敏感信息（如信用卡号）泄露给外部人员时，就会发生信息暴露。&lt;br&gt;示例：社交网站意外将用户的保密信息发布在网页上。&lt;br&gt;解释：信息暴露可以是由于人为错误或系统配置不当导致的，常见于数据泄露事件。&lt;/li&gt;
+&lt;li&gt;拦截（Interception）&lt;br&gt;定义：这是基于网络的攻击，黑客通过网络监听获取电子邮件流量和其他数据传输内容。&lt;br&gt;示例：数据包嗅探、网络流量窃听等。&lt;br&gt;解释：拦截攻击通常通过网络中的中间人攻击（MITM）、不安全的无线连接或其他网络漏洞来实现。&lt;/li&gt;
+&lt;li&gt;推理（Inference）&lt;br&gt;定义：当攻击者通过观察网络流量模式或数据库访问模式而获得信息时，就会发生推理攻击。&lt;br&gt;示例：流量分析可以通过检测流量的模式、时间或数量来推断信息的类型或内容。&lt;br&gt;解释：推理攻击并不需要实际访问敏感信息，而是通过分析元数据或行为模式推测出信息。&lt;/li&gt;
+&lt;li&gt;入侵（Intrusion）&lt;br&gt;定义：当攻击者绕过系统的访问控制保护，获取对敏感数据的未经授权访问时，就会发生入侵。&lt;br&gt;示例：通过漏洞利用、暴力破解或获取凭证绕过身份验证。&lt;br&gt;解释：入侵攻击通常是通过直接破坏系统防线来访问或窃取敏感信息的。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Attacks that Cause Deception&lt;br&gt;Deception is circumstance or event that may result in an authorised entity receiving false data and believing it to be true &lt;ol&gt;
+&lt;li&gt;伪装（Masquerade）&lt;br&gt;定义：伪装是指未经授权的用户通过冒充授权用户来试图访问系统。&lt;br&gt;解释：伪装攻击破坏了系统的身份验证机制，使得攻击者能够以合法用户的身份进行操作。&lt;br&gt;示例：&lt;ul&gt;
+&lt;li&gt;未授权用户获取他人的 ID 和密码后冒充合法用户。&lt;/li&gt;
+&lt;li&gt;恶意软件伪装成授权应用程序，获得对系统的未经授权的访问。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;篡改（Falsification）&lt;br&gt;定义：篡改是指对有效数据进行更改或替换，或将虚假数据引入文件或数据库中。&lt;br&gt;解释：篡改攻击涉及数据的非法修改，破坏了系统的 完整性（Integrity），导致数据不准确或不可靠。&lt;br&gt;示例：&lt;ul&gt;
+&lt;li&gt;学生在学校数据库中修改自己的成绩。&lt;/li&gt;
+&lt;li&gt;黑客更改金融交易记录或替换数据库中的敏感信息。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;否认（Repudiation）&lt;br&gt;定义：否认是指用户否认发送或接收数据的行为。&lt;br&gt;解释：否认攻击涉及通信或交易的不可否认性，影响了系统的可靠性和信任性。这种攻击通常需要通过数字签名、日志记录和不可否认性协议进行防御。&lt;br&gt;示例：&lt;ul&gt;
+&lt;li&gt;用户声称没有发送某封电子邮件。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Attacks that Cause Disruption&lt;br&gt;Disruption is a circumstance or event that interrupts or prevents the correct operation of system services and functions &lt;ol&gt;
+&lt;li&gt;瘫痪（Incapacitation）&lt;br&gt;定义：瘫痪是一种针对系统可用性的攻击，其目的是通过物理破坏或恶意软件导致系统硬件或服务失效。&lt;br&gt;解释：攻击者通过直接损坏硬件或利用恶意代码使系统关键组件无法工作，导致系统无法为用户提供正常的服务。这类攻击破坏了系统的 可用性（Availability）。&lt;br&gt;示例：特洛伊木马、病毒或蠕虫导致关键服务失效，或使得系统硬件崩溃，阻止合法用户的正常访问。&lt;/li&gt;
+&lt;li&gt;破坏（Corruption）&lt;br&gt;定义：破坏是指通过恶意软件改变系统资源或服务的正常行为，从而使系统在非预期情况下运行。&lt;br&gt;解释：攻击者通过篡改系统的数据、配置或功能，使得系统的行为不再可靠或准确。这种攻击影响了系统的 完整性（Integrity），导致数据不可信或系统功能受损。&lt;br&gt;示例：黑客植入后门程序，使得系统提供了未授权的访问，或篡改了数据库中的关键数据，导致应用程序的行为异常。&lt;/li&gt;
+&lt;li&gt;阻塞（Obstruction）&lt;br&gt;定义：阻塞是一种干扰通信的攻击，通过禁用通信链路或篡改通信控制信息来影响系统的正常通信。&lt;br&gt;解释：攻击者通过发送大量垃圾数据或篡改通信协议，使系统的网络或处理能力过载，从而影响合法用户的通信。这种攻击破坏了系统的 可用性（Availability） 和通信的有效性。&lt;br&gt;示例：攻击者通过分布式拒绝服务攻击（DDoS）让网络流量超载，导致正常的通信被阻塞或延迟。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Attacks that Cause Usurpation&lt;br&gt;Usurpation is a circumstance or event that results in control of system services or functions by an unauthorised entity&lt;ol&gt;
+&lt;li&gt;挪用（Misappropriation）&lt;br&gt;定义：挪用是指攻击者未经授权使用或盗用系统资源或服务。&lt;br&gt;解释：攻击者通过获取未授权的访问权限，利用系统的资源或服务，可能包括网络带宽、计算能力等。这种攻击对系统的 可用性（Availability） 和资源的公平分配构成威胁。&lt;br&gt;示例：分布式拒绝服务（DDoS）攻击使得网络资源被耗尽，导致合法用户无法正常使用服务。&lt;/li&gt;
+&lt;li&gt;滥用（Misuse）&lt;br&gt;定义：滥用是指通过恶意逻辑或黑客手段，使系统被用于非授权的目的或偏离其正常用途。&lt;br&gt;解释：攻击者可能通过植入恶意软件或获得未授权的系统访问，禁用或绕过安全功能，使系统无法保护其资源和数据的安全。这种攻击影响系统的 完整性（Integrity） 和 可用性（Availability）。&lt;br&gt;示例：黑客绕过安全控制措施，使得防火墙规则被禁用，从而使系统易受进一步的攻击。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Threats and Assets&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Asset&lt;/th&gt;
+&lt;th&gt;Availability&lt;/th&gt;
+&lt;th&gt;Confidentiality&lt;/th&gt;
+&lt;th&gt;Integrity&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;Hardware&lt;/td&gt;
+&lt;td&gt;Equipment is stolen or disabled, thus denying service&lt;/td&gt;
+&lt;td&gt;An unencrypted HDD or CD&amp;#x2F;DVD is stolen&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Software&lt;/td&gt;
+&lt;td&gt;Programs are deleted, denying access to users&lt;/td&gt;
+&lt;td&gt;An unauthorised copy of software is made&lt;/td&gt;
+&lt;td&gt;A working program is modified, either to cause it to fail during execution or to cause it to do some unintended task&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Data&lt;/td&gt;
+&lt;td&gt;Files are deleted, denying access to users&lt;/td&gt;
+&lt;td&gt;An unauthorised read of data is performed. An analysis of statistical data reveals underlying data&lt;/td&gt;
+&lt;td&gt;Existing files are modified or new files are fabricated&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Network&lt;/td&gt;
+&lt;td&gt;Messages are destroyed or deleted. Communication lines or networks are rendered unavailable&lt;/td&gt;
+&lt;td&gt;Messages are read. The traffic pattern of messages is observed&lt;/td&gt;
+&lt;td&gt;Messages are modified, delayed, reordered, or duplicated. False messages are fabricated&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;Attack Surfaces&lt;ol&gt;
+&lt;li&gt;网络攻击面 (Network Attack Surface)&lt;br&gt;定义：网络攻击面是指企业网络、广域网或互联网中的各种漏洞，这些漏洞可能被攻击者利用。&lt;br&gt;解释：攻击者可能通过网络层的漏洞，如服务中断、通信链路破坏等，来发起攻击。&lt;br&gt;示例：&lt;ul&gt;
+&lt;li&gt;拒绝服务攻击 (DoS)：攻击者利用大量无效请求占用服务器资源，导致合法用户无法访问服务。&lt;/li&gt;
+&lt;li&gt;通信链路中断：通过物理或网络手段破坏通信链路，从而阻止或干扰数据传输。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;入侵攻击：未经授权的用户通过网络漏洞进入系统，获取或修改敏感信息。&lt;br&gt;    2. 软件攻击面 (Software Attack Surface)&lt;br&gt;定义：软件攻击面是指应用程序或操作系统代码中的漏洞。&lt;br&gt;解释：此类漏洞可能存在于程序代码中，被攻击者利用来执行未授权的操作或获取系统权限。&lt;br&gt;示例：&lt;br&gt;        - Web 服务器软件漏洞：攻击者通过注入恶意代码、SQL 注入或缓冲区溢出来获取服务器控制权或访问敏感信息。&lt;br&gt;    3. 人类攻击面 (Human Attack Surface)&lt;br&gt;定义：人类攻击面是指由于人员或外部人员的行为所造成的漏洞。&lt;br&gt;解释：攻击者可以通过社会工程、人为错误或信任的内部人员来攻击系统。&lt;br&gt;示例：&lt;br&gt;        - 社会工程：攻击者通过伪装身份或操纵用户情感来骗取敏感信息。&lt;br&gt;        - 人为错误：员工在处理信息时的失误可能会导致数据泄露或系统损坏。&lt;br&gt;        - 信任的内部人员：有访问权限的员工或合作伙伴可能会恶意使用他们的权限来获取未授权的数据。&lt;br&gt;7. Security Implementation&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Prevention: it is an ideal security scheme is one in which no attack is successful. Although not practical in all cases, there are threats in which prevention is a reasonable goal &lt;/li&gt;
+&lt;li&gt;Detection: if absolute protection is not feasible, it may be practical to detect security attacks &lt;/li&gt;
+&lt;li&gt;Response: if an ongoing attack is detected, the system can respond to halt the attack and prevent further damage &lt;/li&gt;
+&lt;li&gt;Recovery: if data integrity is compromised, a prior, correct copy of the data can be reloaded&lt;/li&gt;
+&lt;/ul&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/course/Heap-buffer-overflow/</guid>
             <title>Heap buffer overflow</title>

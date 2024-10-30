@@ -1,0 +1,738 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="" href="http://example.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="software security" />
+
+
+<link rel="canonical" href="http://example.com/course/Security-Concepts/">
+
+
+
+  <title>
+Security Concepts - Principles of Software Security - 课程笔记 |
+AtoposZz =  = 此处存放一些学习笔记</title>
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">Security Concepts
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2024-10-30 10:32:09">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2024-10-30T10:32:09+10:00">2024-10-30</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>9.3k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>8 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">AtoposZz</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a97b6ba9.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf60cc9be5.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf5fd1a28a.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf6029148a.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a94f1d92.png"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a94b2174.png"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/course/" itemprop="item" rel="index" title="分类于 课程笔记"><span itemprop="name">课程笔记</span></a>
+<meta itemprop="position" content="1" /></span>
+<i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/course/Principles-of-Software-Security/" itemprop="item" rel="index" title="分类于 Principles of Software Security"><span itemprop="name">Principles of Software Security</span></a>
+<meta itemprop="position" content="2" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://example.com/course/Security-Concepts/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Zz">
+    <meta itemprop="description" content="此处存放一些学习笔记, 🌸">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id=" Computer Security Concepts" class="active"><a class="anchor"  href="# Computer Security Concepts">#</a> Computer Security Concepts </h1>
+
+<ol>
+<li>A Definition of Computer Security<br>Computer Security is the protection afforded to an automated information system in order to attain the applicable objectives of preserving the <strong>integrity</strong>, <strong>availability</strong>, and <strong>confidentiality</strong> of information system resources (includes hardware, software, firmware, information&#x2F;data, and telecommunications) <ul>
+<li>Confidentiality<br>  <strong>Data confidentiality</strong> assures that private or confidential information is not made available or disclosed to unauthorised individuals<br>  <strong>Privacy</strong> assures that individuals control or influence what information related to them may be collected and stored and by whom and to whom that information may be disclosed</li>
+<li>Integrity<br>  <strong>Data integrity</strong> assures that information and programs are changed only in a specified and authorised manner<br>  <strong>System integrity</strong> assures that a system performs its intended function in an unimpaired manner, free from deliberate or inadvertent unauthorised manipulation of the system</li>
+<li>Availability<br>  <strong>Availability assures</strong> that systems work promptly and service is not denied to authorised users</li>
+</ul>
+</li>
+<li>CIA Triad (NIST standard FIPS 199)</li>
+</ol>
+<ul>
+<li><strong>Confidentiality</strong> preserves authorised restrictions on information access and disclosure, including means for protecting personal privacy and proprietary information <ul>
+<li>A loss of confidentiality is the unauthorised disclosure of information</li>
+</ul>
+</li>
+<li><strong>Integrity</strong> guards against improper information modification or destruction, including ensuring information nonrepudiation and authenticity <ul>
+<li>A loss of integrity is the unauthorised modification or destruction of information</li>
+</ul>
+</li>
+<li><strong>Availability</strong> ensures timely and reliable access to and use of information <ul>
+<li>A loss of availability is the disruption of access to or use of information or a system</li>
+</ul>
+</li>
+<li>Additional Concepts<ul>
+<li><strong>Authenticity</strong> is the property of being genuine and being able to be verified and trusted; confidence in the validity of a transmission, a message, or message originator(真实性） </li>
+<li><strong>Accountability</strong> is the security goal that generates the requirement for actions of an entity to be traced uniquely to that entity（可追溯性）</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>NIST Levels of Security Impact</li>
+</ol>
+<ul>
+<li><strong>Low</strong> when the loss is expected to have a limited adverse effect. E.g. reduced effectiveness, minor damage, financial loss or harm </li>
+<li><strong>Moderate</strong> when the loss is expected to have a serious adverse effect. E.g. Significant reduced effectiveness, damage, financial loss or harm (but does not involve loss of life or serious injuries) </li>
+<li><strong>High</strong> when the loss is expected to have a severe or catastrophic adverse effect. E.g. unable to perform primary functions, major damage, and financial loss, involve loss of life or serious injuries</li>
+</ul>
+<ol start="4">
+<li>CIA Triad Examples</li>
+</ol>
+<ul>
+<li>Confidentiality<br>            High: student grades<br>                            Moderate: enrolment information<br>                            Low: faculty directory information </li>
+<li>Integrity<br>            High: patient allergy information<br>                            Moderate: web site like online forums<br>                            Low: anonymous online poll </li>
+<li>Availability<br>            High: authentication services<br>                            Moderate: public web site for a university<br>                            Low: online telephone directory lookup application</li>
+</ul>
+<ol start="5">
+<li>Computer Security Terminology</li>
+</ol>
+<ul>
+<li><strong>Adversary</strong> (threat agent) is an entity that attacks, or is a threat to, a system </li>
+<li><strong>Attack</strong> is an assault on system security that derives from an intelligent threat; that is, an intelligent act that is a deliberate attempt (especially in the sense of a method or technique) to evade security services and violate the security policy of a system </li>
+<li><strong>Countermeasure</strong> is an action, device, procedure, or technique that reduces a threat, a vulnerability, or an attack by eliminating or preventing it, by minimising the harm it can cause, or by discovering and reporting it so that corrective action can be taken </li>
+<li><strong>Risk</strong> is an expectation of loss expressed as the probability that a particular threat will exploit a particular vulnerability with a particular harmful result</li>
+<li><strong>Security Policy</strong> is the set of rules and practices that specify or regulate how a system or organisation provides security services to protect sensitive and critical system resources </li>
+<li><strong>System Resource (Asset)</strong> is the data contained in an information system; or a service provided by a system; or a system capability, such as processing power or communication bandwidth; or an item of system equipment; or a facility that houses system operations and equipment </li>
+<li><strong>Threat</strong> is a potential for violation of security, which exists when there is a circumstance, capability, action, or event, that could breach security and cause harm </li>
+<li><strong>Vulnerability</strong> is a flaw or weakness in a system’s design, implementation, or operation and management that could be exploited to violate the system’s security policy</li>
+</ul>
+<h1 id="Threats and Attacks" class="active"><a class="anchor"  href="#Threats and Attacks">#</a> Threats and Attacks</h1>
+
+<ol>
+<li>Assets</li>
+</ol>
+<ul>
+<li><strong>Hardware</strong> includes computer systems and other data processing, data storage, and data communications devices </li>
+<li><strong>Software</strong> includes the operating system, system utilities, and applications </li>
+<li><strong>Data</strong> includes files and databases, as well as security-related data, such as password files </li>
+<li><strong>Network</strong> includes communication facilities such as local and wide area network communication links, bridges, routers, and so on</li>
+</ul>
+<ol start="2">
+<li>Vulnerabilities</li>
+</ol>
+<ul>
+<li>It can be corrupted, so that it does the wrong thing or gives wrong answers (Integrity)<ul>
+<li>E.g. stored data values may differ from what they should be because they have been improperly modified</li>
+</ul>
+</li>
+<li>It can become leaky (Confidentiality)<ul>
+<li>E.g. someone who should not have access to some or all of the information available through the network obtains such access</li>
+</ul>
+</li>
+<li>It can become unavailable or very slow (Availability)<ul>
+<li>E.g. using the system or network becomes impossible or impractical.</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>Threats<br>An attack is a threat that is carried out and leads to threat consequence</li>
+</ol>
+<ul>
+<li>Types of attacks <ul>
+<li><strong>Active attack</strong> attempts to alter system resources or affect their operation<br>示例：篡改数据、破坏系统功能、删除文件、拒绝服务攻击（DoS）等。<br>影响：直接对系统资源进行修改或破坏，导致系统功能受损。 </li>
+<li><strong>Passive attack</strong> attempts to learn or make use of information from the system that does not affect system resources. Passive attacks are very difficult to detect because they do not involve any alteration of the data<br>示例：流量分析、数据包嗅探、解密通信等。<br>影响：攻击者不会修改系统或数据，但可能会获得敏感信息或通信内容。</li>
+</ul>
+</li>
+<li>Origin of attacks <ul>
+<li><strong>Inside attack</strong> is initiated by an entity inside the security perimeter </li>
+<li><strong>Outside attack</strong> is initiated from outside the perimeter</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li>Threat Consequences</li>
+</ol>
+<ul>
+<li>Attacks that Cause Unauthorised Disclosure<br><strong>Unauthorised disclosure</strong> is a circumstance or event whereby an entity gains<br>access to data for which the entity is not authorised <ol>
+<li>信息暴露（Exposure）<br>定义：当内部人员故意或无意间将敏感信息（如信用卡号）泄露给外部人员时，就会发生信息暴露。<br>示例：社交网站意外将用户的保密信息发布在网页上。<br>解释：信息暴露可以是由于人为错误或系统配置不当导致的，常见于数据泄露事件。</li>
+<li>拦截（Interception）<br>定义：这是基于网络的攻击，黑客通过网络监听获取电子邮件流量和其他数据传输内容。<br>示例：数据包嗅探、网络流量窃听等。<br>解释：拦截攻击通常通过网络中的中间人攻击（MITM）、不安全的无线连接或其他网络漏洞来实现。</li>
+<li>推理（Inference）<br>定义：当攻击者通过观察网络流量模式或数据库访问模式而获得信息时，就会发生推理攻击。<br>示例：流量分析可以通过检测流量的模式、时间或数量来推断信息的类型或内容。<br>解释：推理攻击并不需要实际访问敏感信息，而是通过分析元数据或行为模式推测出信息。</li>
+<li>入侵（Intrusion）<br>定义：当攻击者绕过系统的访问控制保护，获取对敏感数据的未经授权访问时，就会发生入侵。<br>示例：通过漏洞利用、暴力破解或获取凭证绕过身份验证。<br>解释：入侵攻击通常是通过直接破坏系统防线来访问或窃取敏感信息的。</li>
+</ol>
+</li>
+<li>Attacks that Cause Deception<br>Deception is circumstance or event that may result in an authorised entity receiving false data and believing it to be true <ol>
+<li>伪装（Masquerade）<br>定义：伪装是指未经授权的用户通过冒充授权用户来试图访问系统。<br>解释：伪装攻击破坏了系统的身份验证机制，使得攻击者能够以合法用户的身份进行操作。<br>示例：<ul>
+<li>未授权用户获取他人的 ID 和密码后冒充合法用户。</li>
+<li>恶意软件伪装成授权应用程序，获得对系统的未经授权的访问。</li>
+</ul>
+</li>
+<li>篡改（Falsification）<br>定义：篡改是指对有效数据进行更改或替换，或将虚假数据引入文件或数据库中。<br>解释：篡改攻击涉及数据的非法修改，破坏了系统的 完整性（Integrity），导致数据不准确或不可靠。<br>示例：<ul>
+<li>学生在学校数据库中修改自己的成绩。</li>
+<li>黑客更改金融交易记录或替换数据库中的敏感信息。</li>
+</ul>
+</li>
+<li>否认（Repudiation）<br>定义：否认是指用户否认发送或接收数据的行为。<br>解释：否认攻击涉及通信或交易的不可否认性，影响了系统的可靠性和信任性。这种攻击通常需要通过数字签名、日志记录和不可否认性协议进行防御。<br>示例：<ul>
+<li>用户声称没有发送某封电子邮件。</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>Attacks that Cause Disruption<br>Disruption is a circumstance or event that interrupts or prevents the correct operation of system services and functions <ol>
+<li>瘫痪（Incapacitation）<br>定义：瘫痪是一种针对系统可用性的攻击，其目的是通过物理破坏或恶意软件导致系统硬件或服务失效。<br>解释：攻击者通过直接损坏硬件或利用恶意代码使系统关键组件无法工作，导致系统无法为用户提供正常的服务。这类攻击破坏了系统的 可用性（Availability）。<br>示例：特洛伊木马、病毒或蠕虫导致关键服务失效，或使得系统硬件崩溃，阻止合法用户的正常访问。</li>
+<li>破坏（Corruption）<br>定义：破坏是指通过恶意软件改变系统资源或服务的正常行为，从而使系统在非预期情况下运行。<br>解释：攻击者通过篡改系统的数据、配置或功能，使得系统的行为不再可靠或准确。这种攻击影响了系统的 完整性（Integrity），导致数据不可信或系统功能受损。<br>示例：黑客植入后门程序，使得系统提供了未授权的访问，或篡改了数据库中的关键数据，导致应用程序的行为异常。</li>
+<li>阻塞（Obstruction）<br>定义：阻塞是一种干扰通信的攻击，通过禁用通信链路或篡改通信控制信息来影响系统的正常通信。<br>解释：攻击者通过发送大量垃圾数据或篡改通信协议，使系统的网络或处理能力过载，从而影响合法用户的通信。这种攻击破坏了系统的 可用性（Availability） 和通信的有效性。<br>示例：攻击者通过分布式拒绝服务攻击（DDoS）让网络流量超载，导致正常的通信被阻塞或延迟。</li>
+</ol>
+</li>
+<li>Attacks that Cause Usurpation<br>Usurpation is a circumstance or event that results in control of system services or functions by an unauthorised entity<ol>
+<li>挪用（Misappropriation）<br>定义：挪用是指攻击者未经授权使用或盗用系统资源或服务。<br>解释：攻击者通过获取未授权的访问权限，利用系统的资源或服务，可能包括网络带宽、计算能力等。这种攻击对系统的 可用性（Availability） 和资源的公平分配构成威胁。<br>示例：分布式拒绝服务（DDoS）攻击使得网络资源被耗尽，导致合法用户无法正常使用服务。</li>
+<li>滥用（Misuse）<br>定义：滥用是指通过恶意逻辑或黑客手段，使系统被用于非授权的目的或偏离其正常用途。<br>解释：攻击者可能通过植入恶意软件或获得未授权的系统访问，禁用或绕过安全功能，使系统无法保护其资源和数据的安全。这种攻击影响系统的 完整性（Integrity） 和 可用性（Availability）。<br>示例：黑客绕过安全控制措施，使得防火墙规则被禁用，从而使系统易受进一步的攻击。</li>
+</ol>
+</li>
+</ul>
+<ol start="5">
+<li>Threats and Assets</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Asset</th>
+<th>Availability</th>
+<th>Confidentiality</th>
+<th>Integrity</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Hardware</td>
+<td>Equipment is stolen or disabled, thus denying service</td>
+<td>An unencrypted HDD or CD&#x2F;DVD is stolen</td>
+<td></td>
+</tr>
+<tr>
+<td>Software</td>
+<td>Programs are deleted, denying access to users</td>
+<td>An unauthorised copy of software is made</td>
+<td>A working program is modified, either to cause it to fail during execution or to cause it to do some unintended task</td>
+</tr>
+<tr>
+<td>Data</td>
+<td>Files are deleted, denying access to users</td>
+<td>An unauthorised read of data is performed. An analysis of statistical data reveals underlying data</td>
+<td>Existing files are modified or new files are fabricated</td>
+</tr>
+<tr>
+<td>Network</td>
+<td>Messages are destroyed or deleted. Communication lines or networks are rendered unavailable</td>
+<td>Messages are read. The traffic pattern of messages is observed</td>
+<td>Messages are modified, delayed, reordered, or duplicated. False messages are fabricated</td>
+</tr>
+</tbody></table>
+<ol start="6">
+<li>Attack Surfaces<ol>
+<li>网络攻击面 (Network Attack Surface)<br>定义：网络攻击面是指企业网络、广域网或互联网中的各种漏洞，这些漏洞可能被攻击者利用。<br>解释：攻击者可能通过网络层的漏洞，如服务中断、通信链路破坏等，来发起攻击。<br>示例：<ul>
+<li>拒绝服务攻击 (DoS)：攻击者利用大量无效请求占用服务器资源，导致合法用户无法访问服务。</li>
+<li>通信链路中断：通过物理或网络手段破坏通信链路，从而阻止或干扰数据传输。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<p>入侵攻击：未经授权的用户通过网络漏洞进入系统，获取或修改敏感信息。<br>    2. 软件攻击面 (Software Attack Surface)<br>定义：软件攻击面是指应用程序或操作系统代码中的漏洞。<br>解释：此类漏洞可能存在于程序代码中，被攻击者利用来执行未授权的操作或获取系统权限。<br>示例：<br>        - Web 服务器软件漏洞：攻击者通过注入恶意代码、SQL 注入或缓冲区溢出来获取服务器控制权或访问敏感信息。<br>    3. 人类攻击面 (Human Attack Surface)<br>定义：人类攻击面是指由于人员或外部人员的行为所造成的漏洞。<br>解释：攻击者可以通过社会工程、人为错误或信任的内部人员来攻击系统。<br>示例：<br>        - 社会工程：攻击者通过伪装身份或操纵用户情感来骗取敏感信息。<br>        - 人为错误：员工在处理信息时的失误可能会导致数据泄露或系统损坏。<br>        - 信任的内部人员：有访问权限的员工或合作伙伴可能会恶意使用他们的权限来获取未授权的数据。<br>7. Security Implementation</p>
+<ul>
+<li>Prevention: it is an ideal security scheme is one in which no attack is successful. Although not practical in all cases, there are threats in which prevention is a reasonable goal </li>
+<li>Detection: if absolute protection is not feasible, it may be practical to detect security attacks </li>
+<li>Response: if an ongoing attack is detected, the system can respond to halt the attack and prevent further damage </li>
+<li>Recovery: if data integrity is compromised, a prior, correct copy of the data can be reloaded</li>
+</ul>
+
+      <div class="tags">
+          <a href="/tags/software-security/" rel="tag"><i class="ic i-tag"></i> software security</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2024-10-30 12:14:01" itemprop="dateModified" datetime="2024-10-30T12:14:01+10:00">2024-10-30</time>
+  </span>
+  <span id="course/Security-Concepts/" class="item leancloud_visitors" data-flag-title="Security Concepts" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Zz <i class="ic i-at"><em>@</em></i>
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/course/Security-Concepts/" title="Security Concepts">http://example.com/course/Security-Concepts/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/course/Heap-buffer-overflow/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;18&#x2F;67123a9a63310.jpg" title="Heap buffer overflow">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> Principles of Software Security</span>
+  <h3>Heap buffer overflow</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%20Computer%20Security%20Concepts"><span class="toc-number">1.</span> <span class="toc-text"> Computer Security Concepts </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Threats%20and%20Attacks"><span class="toc-number">2.</span> <span class="toc-text"> Threats and Attacks</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/course/C-language-basics-and-Computer-memory/" rel="bookmark" title="C language basics and Computer memory">C language basics and Computer memory</a></li><li><a href="/course/x86-architecture-and-Assembly-basics/" rel="bookmark" title="x86 architecture and Assembly basics">x86 architecture and Assembly basics</a></li><li><a href="/course/Stack-buffer-overflow/" rel="bookmark" title="Stack buffer overflow">Stack buffer overflow</a></li><li><a href="/course/Integer-overflow/" rel="bookmark" title="Integer overflow">Integer overflow</a></li><li><a href="/course/Format-string-bugs/" rel="bookmark" title="Format string bugs">Format string bugs</a></li><li><a href="/course/Fuzz-testing/" rel="bookmark" title="Fuzz testing">Fuzz testing</a></li><li><a href="/course/AFL/" rel="bookmark" title="AFL">AFL</a></li><li><a href="/course/Heap-buffer-overflow/" rel="bookmark" title="Heap buffer overflow">Heap buffer overflow</a></li><li class="active"><a href="/course/Security-Concepts/" rel="bookmark" title="Security Concepts">Security Concepts</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Zz"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Zz</p>
+  <div class="description" itemprop="description">🌸</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">13</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">5</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">10</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL1p3eTB2MA==" title="https:&#x2F;&#x2F;github.com&#x2F;Zwy0v0"><i class="ic i-github"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOnp3eTk5OTAuMEBtYWlsLmNvbQ==" title="mailto:zwy9990.0@mail.com"><i class="ic i-envelope"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>友链</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/links/" rel="section"><i class="ic i-magic"></i>links</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/x86-architecture-and-Assembly-basics/" title="x86 architecture and Assembly basics">x86 architecture and Assembly basics</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/AFL/" title="AFL">AFL</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Stack-buffer-overflow/" title="Stack buffer overflow">Stack buffer overflow</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Fuzz-testing/" title="Fuzz testing">Fuzz testing</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Heap-buffer-overflow/" title="Heap buffer overflow">Heap buffer overflow</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Security-Concepts/" title="Security Concepts">Security Concepts</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/study/" title="分类于 自学笔记">自学笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/study/JavaScript/" title="分类于 JavaScript">JavaScript</a>
+</div>
+
+    <span><a href="/study/JS%E4%B8%AD%E7%9A%84this%E4%B8%8E%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/" title="JS中的this与相关函数">JS中的this与相关函数</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/dailysharing/" title="分类于 日常碎碎念">日常碎碎念</a>
+</div>
+
+    <span><a href="/dailysharing/%E7%AC%AC%E4%B8%80%E7%AF%87ovo/" title="第一篇ovo">第一篇ovo</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/dailysharing/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/C-language-basics-and-Computer-memory/" title="C language basics and Computer memory">C language basics and Computer memory</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Zz @ AtoposZz</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'course/Security-Concepts/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
