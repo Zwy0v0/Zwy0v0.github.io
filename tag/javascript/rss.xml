@@ -11,10 +11,12 @@
         <category>Linux</category>
         <category>software security</category>
         <category>C</category>
-        <category>vulnerability</category>
         <category>AFL</category>
-        <category>SQL</category>
+        <category>vulnerability</category>
         <category>HTTP</category>
+        <category>XSS</category>
+        <category>CSRF</category>
+        <category>SQL</category>
         <category>OSI</category>
         <category>gdb</category>
         <category>JavaScript</category>
