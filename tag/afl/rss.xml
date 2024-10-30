@@ -7,16 +7,17 @@
         <language>zh-CN</language>
         <pubDate>Mon, 28 Oct 2024 14:45:49 +1000</pubDate>
         <lastBuildDate>Mon, 28 Oct 2024 14:45:49 +1000</lastBuildDate>
+        <category>JavaScript</category>
         <category>C</category>
         <category>software security</category>
         <category>AFL</category>
         <category>Linux</category>
-        <category>C language</category>
-        <category>vulnerability</category>
-        <category>gdb</category>
-        <category>JavaScript</category>
         <category>Blog</category>
         <category>日常</category>
+        <category>vulnerability</category>
+        <category>C language</category>
+        <category>SQL</category>
+        <category>gdb</category>
         <item>
             <guid isPermalink="true">http://example.com/course/AFL/</guid>
             <title>AFL</title>
@@ -27,87 +28,101 @@
             <category>Linux</category>
             <pubDate>Mon, 28 Oct 2024 14:45:49 +1000</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;American Fuzzy Lop&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#American Fuzzy Lop&#34;&gt;#&lt;/a&gt; American Fuzzy Lop&lt;/h1&gt;
-
 &lt;h2 id=&#34;Definition&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Definition&#34;&gt;#&lt;/a&gt;Definition&lt;/h2&gt;
-
 &lt;ol&gt;
 &lt;li&gt;A security-oriented fuzzer that employs a novel type of compile-time instrumentation and genetic algorithms to automatically discover clean, interesting test cases that trigger new internal states in the targeted binary. Currently state-of-the-practice at fuzzing (together with forks)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;A type of coverage-based fuzzing: Instrument target programs to track test coverage &lt;/li&gt;
-&lt;li&gt;A type of evolutionary&amp;#x2F;genetic fuzzing: Attempt to generate inputs based on the response of the program&lt;/li&gt;
+&lt;li&gt;A type of coverage-based fuzzing: Instrument target programs to track test coverage&lt;/li&gt;
+&lt;li&gt;A type of evolutionary/genetic fuzzing: Attempt to generate inputs based on the response of the program&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;Why AFL&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;The best general purpose fuzzer &lt;ul&gt;
-&lt;li&gt;For C&amp;#x2F;C++&amp;#x2F;Objective C programs&lt;/li&gt;
+&lt;li&gt;The best general purpose fuzzer
+&lt;ul&gt;
+&lt;li&gt;For C/C++/Objective C programs&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Effective and well-engineered with lots of heuristics &lt;ul&gt;
-&lt;li&gt;Fast – lots of test cases per second &lt;/li&gt;
-&lt;li&gt;Clever – test cases are well chosen &lt;/li&gt;
+&lt;li&gt;Effective and well-engineered with lots of heuristics
+&lt;ul&gt;
+&lt;li&gt;Fast – lots of test cases per second&lt;/li&gt;
+&lt;li&gt;Clever – test cases are well chosen&lt;/li&gt;
 &lt;li&gt;Easy to use (Linux and other platforms)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Deliver out-of-the-box performance far superior to mutation fuzzing or coverage-only tools&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;AFL Approach&lt;ol&gt;
-&lt;li&gt;Load user-supplied initial test cases into the queue &lt;/li&gt;
-&lt;li&gt;Take next input file from the queue &lt;/li&gt;
-&lt;li&gt;Attempt to trim the test case to the smallest size &lt;/li&gt;
-&lt;li&gt;Repeatedly mutate the file using traditional fuzzing strategies &lt;/li&gt;
-&lt;li&gt;If any of the generated mutations resulted in a new state transition recorded by the instrumentation, add mutated output as a new entry in the queue &lt;/li&gt;
-&lt;li&gt;Go to 2&lt;br&gt;&lt;img data-src=&#34;https://img.picui.cn/free/2024/10/28/671f221b5c7ee.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
+&lt;li&gt;AFL Approach
+&lt;ol&gt;
+&lt;li&gt;Load user-supplied initial test cases into the queue&lt;/li&gt;
+&lt;li&gt;Take next input file from the queue&lt;/li&gt;
+&lt;li&gt;Attempt to trim the test case to the smallest size&lt;/li&gt;
+&lt;li&gt;Repeatedly mutate the file using traditional fuzzing strategies&lt;/li&gt;
+&lt;li&gt;If any of the generated mutations resulted in a new state transition recorded by the instrumentation, add mutated output as a new entry in the queue&lt;/li&gt;
+&lt;li&gt;Go to 2&lt;br&gt;
+&lt;img data-src=&#34;https://img.picui.cn/free/2024/10/28/671f221b5c7ee.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;Fuzzing Through AFL&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Fuzzing Through AFL&#34;&gt;#&lt;/a&gt;Fuzzing Through AFL&lt;/h2&gt;
-
 &lt;ol&gt;
-&lt;li&gt;Instrumenting Programs for AFL&lt;br&gt; Compile through AFL wrappers to generate an instrumented executable for fuzzing &lt;ul&gt;
-&lt;li&gt;Basically, replace &lt;code&gt;gcc&lt;/code&gt; with &lt;code&gt;afl‐gcc&lt;/code&gt; or &lt;code&gt;afl-clang&lt;/code&gt; &lt;/li&gt;
-&lt;li&gt;For simple compilation, &lt;code&gt;afl‐gcc test.c ‐o test&lt;/code&gt;&lt;br&gt;For larger projects that use the make build system, add to the Makefile: &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;CC=path-to/afl-gcc&lt;/code&gt; or &lt;code&gt;CC=path-to/afl-clang&lt;/code&gt; &lt;/li&gt;
-&lt;li&gt;This allows to build instrumented target program with the AFL wrappers&lt;br&gt;For C++ code, use the C++ wrappers &lt;code&gt;afl-g++&lt;/code&gt; or &lt;code&gt;afl-clang++&lt;/code&gt; &lt;/li&gt;
-&lt;li&gt;For example in the Makefile: &lt;code&gt;CXX=path-to/afl-g++&lt;/code&gt; or &lt;code&gt;CXX=path-to/afl-clang++&lt;/code&gt;&lt;br&gt;AFL 会在编译时插装目标程序的代码，以便在执行期间跟踪路径覆盖情况。插装后的二进制文件包含对&lt;code&gt; __afl_maybe_log&lt;/code&gt; 的调用，该函数记录程序的执行状态。&lt;/li&gt;
+&lt;li&gt;Instrumenting Programs for AFL&lt;br&gt;
+Compile through AFL wrappers to generate an instrumented executable for fuzzing
+&lt;ul&gt;
+&lt;li&gt;Basically, replace  &lt;code&gt;gcc&lt;/code&gt;  with  &lt;code&gt;afl‐gcc&lt;/code&gt;  or  &lt;code&gt;afl-clang&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;For simple compilation,  &lt;code&gt;afl‐gcc test.c ‐o test&lt;/code&gt; &lt;br&gt;
+For larger projects that use the make build system, add to the Makefile:&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CC=path-to/afl-gcc&lt;/code&gt;  or  &lt;code&gt;CC=path-to/afl-clang&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;This allows to build instrumented target program with the AFL wrappers&lt;br&gt;
+For C++ code, use the C++ wrappers  &lt;code&gt;afl-g++&lt;/code&gt;  or  &lt;code&gt;afl-clang++&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;For example in the Makefile:  &lt;code&gt;CXX=path-to/afl-g++&lt;/code&gt;  or  &lt;code&gt;CXX=path-to/afl-clang++&lt;/code&gt; &lt;br&gt;
+AFL 会在编译时插装目标程序的代码，以便在执行期间跟踪路径覆盖情况。插装后的二进制文件包含对 &lt;code&gt; __afl_maybe_log&lt;/code&gt;  的调用，该函数记录程序的执行状态。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Fuzzing Through AFL&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;Start fuzzing with AFL  &lt;code&gt;afl‐fuzz ‐i testcase ‐o output ./test @@&lt;/code&gt; &lt;/li&gt;
-&lt;li&gt;Test cases are under testcase &lt;/li&gt;
-&lt;li&gt;The output produced by  goes to the output directory &lt;/li&gt;
-&lt;li&gt;The special symbols &lt;code&gt;@@&lt;/code&gt; tell AFL to take the file names under test case and feed it to test. Not needed if the program takes input from stdin &lt;/li&gt;
-&lt;li&gt;Other common options: &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;-t&lt;/code&gt; sets timeout for the executed process &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-m&lt;/code&gt; sets memory limit for the executed process&lt;/li&gt;
+&lt;li&gt;Start fuzzing with AFL   &lt;code&gt;afl‐fuzz ‐i testcase ‐o output ./test @@&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Test cases are under testcase&lt;/li&gt;
+&lt;li&gt;The output produced by  goes to the output directory&lt;/li&gt;
+&lt;li&gt;The special symbols  &lt;code&gt;@@&lt;/code&gt;  tell AFL to take the file names under test case and feed it to test. Not needed if the program takes input from stdin&lt;/li&gt;
+&lt;li&gt;Other common options:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-t&lt;/code&gt;  sets timeout for the executed process&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-m&lt;/code&gt;  sets memory limit for the executed process&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;Initial Test Cases&lt;br&gt;Don’t waste too much time trying to synthesise your target’s input format&lt;br&gt;Find some real inputs that exercise as much of the target as possible&lt;br&gt;From the AFL user guide: &lt;ul&gt;
-&lt;li&gt;Keep the files small. Under 1 kB is ideal, although not strictly necessary &lt;/li&gt;
+&lt;li&gt;Initial Test Cases&lt;br&gt;
+Don’t waste too much time trying to synthesise your target’s input format&lt;br&gt;
+Find some real inputs that exercise as much of the target as possible&lt;br&gt;
+From the AFL user guide:
+&lt;ul&gt;
+&lt;li&gt;Keep the files small. Under 1 kB is ideal, although not strictly necessary&lt;/li&gt;
 &lt;li&gt;Use multiple test cases only if they are functionally different from each other&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;When To Stop&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;Never, as fuzzing is part of continuous integration &lt;/li&gt;
-&lt;li&gt;hen the &lt;code&gt;cycles counter&lt;/code&gt; is green &lt;ul&gt;
-&lt;li&gt;Last new path was found many cycles ago &lt;/li&gt;
+&lt;li&gt;Never, as fuzzing is part of continuous integration&lt;/li&gt;
+&lt;li&gt;hen the  &lt;code&gt;cycles counter&lt;/code&gt;  is green
+&lt;ul&gt;
+&lt;li&gt;Last new path was found many cycles ago&lt;/li&gt;
 &lt;li&gt;Pending paths is zero&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;When the cycles counter is blue &lt;ul&gt;
+&lt;li&gt;When the cycles counter is blue
+&lt;ul&gt;
 &lt;li&gt;Last new path was found over a cycle ago&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;If you want to stop earlier, press Ctrl-C &lt;ul&gt;
+&lt;li&gt;If you want to stop earlier, press Ctrl-C
+&lt;ul&gt;
 &lt;li&gt;E.g. it’s been running for a while (hours + millions of executions + at least 2 cycles&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -116,32 +131,36 @@
 &lt;li&gt;AFL Output&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;File &lt;code&gt;fuzzer_stats&lt;/code&gt; provides summary of stats UI &lt;/li&gt;
-&lt;li&gt;File &lt;code&gt;plot_data&lt;/code&gt; shows the progress of fuzzer &lt;/li&gt;
-&lt;li&gt;Directory &lt;code&gt;queue&lt;/code&gt; shows inputs that led to paths &lt;/li&gt;
-&lt;li&gt;Directory &lt;code&gt;crashes&lt;/code&gt; contains input that caused crash &lt;/li&gt;
-&lt;li&gt;Directory &lt;code&gt;hangs&lt;/code&gt; contains input that caused hang&lt;/li&gt;
+&lt;li&gt;File  &lt;code&gt;fuzzer_stats&lt;/code&gt;  provides summary of stats UI&lt;/li&gt;
+&lt;li&gt;File  &lt;code&gt;plot_data&lt;/code&gt;  shows the progress of fuzzer&lt;/li&gt;
+&lt;li&gt;Directory  &lt;code&gt;queue&lt;/code&gt;  shows inputs that led to paths&lt;/li&gt;
+&lt;li&gt;Directory  &lt;code&gt;crashes&lt;/code&gt;  contains input that caused crash&lt;/li&gt;
+&lt;li&gt;Directory  &lt;code&gt;hangs&lt;/code&gt;  contains input that caused hang&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;6&#34;&gt;
-&lt;li&gt;AFL Crashes&lt;br&gt;Unique if the associated execution paths involve any state transitions not seen previously. A single bug may be reached in multiple ways, but AFL can usually recognise&lt;br&gt;Crashes may be caused by failed assertions - as they abort&lt;/li&gt;
+&lt;li&gt;AFL Crashes&lt;br&gt;
+Unique if the associated execution paths involve any state transitions not seen previously. A single bug may be reached in multiple ways, but AFL can usually recognise&lt;br&gt;
+Crashes may be caused by failed assertions - as they abort&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h1 id=&#34;Compiler-supported sanitizers&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Compiler-supported sanitizers&#34;&gt;#&lt;/a&gt;Compiler-supported sanitizers&lt;/h1&gt;
-
 &lt;ol&gt;
 &lt;li&gt;Sanitisers 和加固措施&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;Sanitisers（内存清理器）：通过在二进制文件中插入额外的代码，检查不良的运行条件。提高模糊测试效果。&lt;/li&gt;
-&lt;li&gt;Common compiler-supported sanitisers: ASan, MSan, UBSan, TSan &lt;/li&gt;
-&lt;li&gt;加固选项：使内存错误的检测更容易。&lt;code&gt;AFL_HARDEN=1&lt;/code&gt;：AFL 的硬化选项，用于检测更多的内存错误。&lt;/li&gt;
-&lt;li&gt;注意：Sanitisers 通常不兼容，因此建议：&lt;ul&gt;
-&lt;li&gt;大多数模糊测试运行时启用 &lt;code&gt;AFL_HARDEN&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;Common compiler-supported sanitisers: ASan, MSan, UBSan, TSan&lt;/li&gt;
+&lt;li&gt;加固选项：使内存错误的检测更容易。 &lt;code&gt;AFL_HARDEN=1&lt;/code&gt; ：AFL 的硬化选项，用于检测更多的内存错误。&lt;/li&gt;
+&lt;li&gt;注意：Sanitisers 通常不兼容，因此建议：
+&lt;ul&gt;
+&lt;li&gt;大多数模糊测试运行时启用  &lt;code&gt;AFL_HARDEN&lt;/code&gt; 。&lt;/li&gt;
 &lt;li&gt;小部分测试运行时分别启用每个 Sanitisers，以覆盖不同类型的内存错误。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;ASan（Address Sanitizer）Compile with &lt;code&gt;-fsanitize=address&lt;/code&gt;&lt;br&gt;检测内容：&lt;ul&gt;
+&lt;li&gt;ASan（Address Sanitizer）Compile with  &lt;code&gt;-fsanitize=address&lt;/code&gt; &lt;br&gt;
+ 检测内容：
+&lt;ul&gt;
 &lt;li&gt;堆、栈和全局变量的越界访问。&lt;/li&gt;
 &lt;li&gt;Use-after-free、double-free、invalid free。&lt;/li&gt;
 &lt;li&gt;内存泄漏。&lt;/li&gt;
@@ -150,22 +169,27 @@
 &lt;/ol&gt;
 &lt;p&gt;性能影响：大约 2 倍的运行时间开销。&lt;/p&gt;
 &lt;figure class=&#34;highlight c&#34;&gt;&lt;figcaption&gt;&lt;span&gt;ASan Example1&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;#&lt;span class=&#34;keyword&#34;&gt;define&lt;/span&gt; N 10 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt;)&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;type&#34;&gt;char&lt;/span&gt; s[N] = &lt;span class=&#34;string&#34;&gt;&amp;quot;123456789&amp;quot;&lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt; (&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;; i &amp;lt;= N; i++) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;%c&amp;quot;&lt;/span&gt;, s[i]); &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;\n&amp;quot;&lt;/span&gt;); &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;Loop bound goes past the end of the array, cannot assess &lt;code&gt;s[10]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Loop bound goes past the end of the array, cannot assess  &lt;code&gt;s[10]&lt;/code&gt;&lt;/p&gt;
  &lt;figure class=&#34;highlight c&#34;&gt;&lt;figcaption&gt;&lt;span&gt;ASan Example2&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt;)&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; *a = &lt;span class=&#34;built_in&#34;&gt;malloc&lt;/span&gt;(&lt;span class=&#34;keyword&#34;&gt;sizeof&lt;/span&gt;(&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt;) * &lt;span class=&#34;number&#34;&gt;100&lt;/span&gt;); &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     &lt;span class=&#34;built_in&#34;&gt;free&lt;/span&gt;(a); &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; a[&lt;span class=&#34;number&#34;&gt;5&lt;/span&gt;]; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;The array is dereferenced after it is free&lt;/p&gt;
  &lt;figure class=&#34;highlight c&#34;&gt;&lt;figcaption&gt;&lt;span&gt;ASan Example3&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt;)&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     &lt;span class=&#34;type&#34;&gt;char&lt;/span&gt; *s = &lt;span class=&#34;built_in&#34;&gt;malloc&lt;/span&gt;(&lt;span class=&#34;keyword&#34;&gt;sizeof&lt;/span&gt;(&lt;span class=&#34;type&#34;&gt;char&lt;/span&gt;) * &lt;span class=&#34;number&#34;&gt;10&lt;/span&gt;); &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     &lt;span class=&#34;built_in&#34;&gt;free&lt;/span&gt;(s); &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     &lt;span class=&#34;built_in&#34;&gt;free&lt;/span&gt;(s);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     &lt;span class=&#34;built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;%s&amp;quot;&lt;/span&gt;, s);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;The array is double-freed&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;MSan（Memory Sanitizer） Compile with &lt;code&gt;-fsanitize=memory&lt;/code&gt;&lt;br&gt;检测未初始化的内存使用。&lt;br&gt;性能影响：大约 3 倍的运行时间开销。&lt;/li&gt;
+&lt;li&gt;MSan（Memory Sanitizer） Compile with  &lt;code&gt;-fsanitize=memory&lt;/code&gt; &lt;br&gt;
+ 检测未初始化的内存使用。&lt;br&gt;
+性能影响：大约 3 倍的运行时间开销。&lt;/li&gt;
 &lt;/ol&gt;
  &lt;figure class=&#34;highlight c&#34;&gt;&lt;figcaption&gt;&lt;span&gt;MSan Example1&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; argc, &lt;span class=&#34;type&#34;&gt;char&lt;/span&gt; **argv)&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; a[&lt;span class=&#34;number&#34;&gt;10&lt;/span&gt;]; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     a[&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;] = &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (a[argc]) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;         &lt;span class=&#34;built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;print something\n&amp;quot;&lt;/span&gt;); &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;The array is allocated on &lt;strong&gt;stack&lt;/strong&gt;, but only partially initialised&lt;/p&gt;
  &lt;figure class=&#34;highlight c&#34;&gt;&lt;figcaption&gt;&lt;span&gt;MSan Example2&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; argc, &lt;span class=&#34;type&#34;&gt;char&lt;/span&gt; **argv)&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; a = &lt;span class=&#34;built_in&#34;&gt;malloc&lt;/span&gt;(&lt;span class=&#34;keyword&#34;&gt;sizeof&lt;/span&gt;(&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt;) * &lt;span class=&#34;number&#34;&gt;10&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     a[&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;] = &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (a[argc]) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;         &lt;span class=&#34;built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;print something\n&amp;quot;&lt;/span&gt;); &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     &lt;span class=&#34;built_in&#34;&gt;free&lt;/span&gt;(a); &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;The array is allocated on &lt;strong&gt;heap&lt;/strong&gt;, but only partially initialised&lt;/p&gt;
 &lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;UBSan（Undefined Behavior Sanitizer） Compile with &lt;code&gt;-fsanitize=undefined&lt;/code&gt;&lt;br&gt;检测：&lt;ul&gt;
+&lt;li&gt;UBSan（Undefined Behavior Sanitizer） Compile with  &lt;code&gt;-fsanitize=undefined&lt;/code&gt; &lt;br&gt;
+ 检测：
+&lt;ul&gt;
 &lt;li&gt;解引用空指针。&lt;/li&gt;
-&lt;li&gt;有符号整数溢出。&lt;br&gt;性能影响：大约 20% 的运行时间开销。&lt;/li&gt;
+&lt;li&gt;有符号整数溢出。&lt;br&gt;
+性能影响：大约 20% 的运行时间开销。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -174,51 +198,66 @@
  &lt;figure class=&#34;highlight c&#34;&gt;&lt;figcaption&gt;&lt;span&gt;UBSan Example2&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;class&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;foo&lt;/span&gt; &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;class&#34;&gt; &amp;#123;&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; a, b; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;#125;; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt;)&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     &lt;span class=&#34;class&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;foo&lt;/span&gt; *&lt;span class=&#34;title&#34;&gt;x&lt;/span&gt; =&lt;/span&gt; &lt;span class=&#34;literal&#34;&gt;NULL&lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; m = x-&amp;gt;a;  &lt;span class=&#34;comment&#34;&gt;// 访问空指针&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;Accessing a null pointer is undefined&lt;/p&gt;
 &lt;ol start=&#34;5&#34;&gt;
-&lt;li&gt;TSan（Thread Sanitizer）&lt;br&gt;检测数据竞争（data races）。&lt;br&gt;性能影响：运行时间开销约为 5-15 倍，内存开销约为 5-10 倍。&lt;/li&gt;
+&lt;li&gt;TSan（Thread Sanitizer）&lt;br&gt;
+检测数据竞争（data races）。&lt;br&gt;
+性能影响：运行时间开销约为 5-15 倍，内存开销约为 5-10 倍。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h1 id=&#34;Others&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Others&#34;&gt;#&lt;/a&gt;Others&lt;/h1&gt;
-
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Parallel Fuzzing(High performance fuzzing)&lt;br&gt; Run concurrent fuzzing jobs on multicore systems &lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;Parallel Fuzzing(High performance fuzzing)&lt;br&gt;
+Run concurrent fuzzing jobs on multicore systems&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;One master instance, one slave per core &lt;/li&gt;
-&lt;li&gt;Use the afl-gotcpu tool to measure per-core pre-emption rate&lt;br&gt;Run the master (-M) like this: &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;./afl-fuzz -i testcase_dir -o sync_dir -M fuzzer01&lt;/code&gt;&lt;br&gt;Then, run the slaves (-S) instances like this: &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;./afl-fuzz -i testcase_dir -o sync_dir -S fuzzer02&lt;/code&gt; &lt;/li&gt;
+&lt;li&gt;One master instance, one slave per core&lt;/li&gt;
+&lt;li&gt;Use the afl-gotcpu tool to measure per-core pre-emption rate&lt;br&gt;
+Run the master (-M) like this:&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;./afl-fuzz -i testcase_dir -o sync_dir -M fuzzer01&lt;/code&gt; &lt;br&gt;
+Then, run the slaves (-S) instances like this:&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;./afl-fuzz -i testcase_dir -o sync_dir -S fuzzer02&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;./afl-fuzz -i testcase_dir -o sync_dir -S fuzzer03&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Fuzzer Dictionaries(Improve fuzzer mutations)&lt;br&gt;By default, AFL mutation engine is optimised for compact data formats&lt;br&gt;Custom dictionaries can help the fuzzer access paths it otherwise wouldn’t &lt;code&gt;afl-fuzz -x mydict&lt;/code&gt;&lt;br&gt;Get them from: &lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;Fuzzer Dictionaries(Improve fuzzer mutations)&lt;br&gt;
+By default, AFL mutation engine is optimised for compact data formats&lt;br&gt;
+Custom dictionaries can help the fuzzer access paths it otherwise wouldn’t  &lt;code&gt;afl-fuzz -x mydict&lt;/code&gt; &lt;br&gt;
+Get them from:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;dictionaries&lt;/code&gt; directory in AFL &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;libtokencap&lt;/code&gt; directory in AFL &lt;ul&gt;
-&lt;li&gt;Create a dictionary by intercepting calls like &lt;code&gt;strcmp&lt;/code&gt; and &lt;code&gt;memcmp&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dictionaries&lt;/code&gt;  directory in AFL&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;libtokencap&lt;/code&gt;  directory in AFL
+&lt;ul&gt;
+&lt;li&gt;Create a dictionary by intercepting calls like  &lt;code&gt;strcmp&lt;/code&gt;  and  &lt;code&gt;memcmp&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jaHJvbWl1bS5nb29nbGVzb3VyY2UuY29tL2Nocm9taXVtL3NyYy8rL21hc3Rlci90ZXN0aW5nL2xpYmZ1enplci9mdXp6ZXJzL2RpY3Rz&#34;&gt;Online resource&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Limitations of Fuzzing&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;Limitations of Fuzzing&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;Hard to tell when to stop &lt;/li&gt;
-&lt;li&gt;Test the target in the exact configuration you provided, on the input source you set up &lt;/li&gt;
-&lt;li&gt;Can get stuck (e.g. checksums) &lt;/li&gt;
+&lt;li&gt;Hard to tell when to stop&lt;/li&gt;
+&lt;li&gt;Test the target in the exact configuration you provided, on the input source you set up&lt;/li&gt;
+&lt;li&gt;Can get stuck (e.g. checksums)&lt;/li&gt;
 &lt;li&gt;Crashes only (typical of most fuzzers). Only notice problems that can be automatically detected&lt;/li&gt;
-&lt;li&gt;Need to build target from source &lt;/li&gt;
-&lt;li&gt;stdin or file input only &lt;/li&gt;
-&lt;li&gt;Coverage-based instrumentation won’t guide it towards all crashes&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;x = 1/(input – 1234)&lt;/code&gt; ：在这种情况下，AFL 可能难以找到输入 1234，从而导致无法检测到除零错误。&lt;/li&gt;
+&lt;li&gt;Need to build target from source&lt;/li&gt;
+&lt;li&gt;stdin or file input only&lt;/li&gt;
+&lt;li&gt;Coverage-based instrumentation won’t guide it towards all crashes
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;x = 1/(input – 1234)&lt;/code&gt;  ：在这种情况下，AFL 可能难以找到输入 1234，从而导致无法检测到除零错误。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;No automatic parallelisation &lt;/li&gt;
-&lt;li&gt;Linux&amp;#x2F;macOS only&lt;/li&gt;
+&lt;li&gt;No automatic parallelisation&lt;/li&gt;
+&lt;li&gt;Linux/macOS only&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;libFuzzer: Guided Fuzzing for APIs&lt;br&gt;The other top general purpose fuzzer &lt;ul&gt;
-&lt;li&gt;Use similar algorithms to AFL &lt;/li&gt;
-&lt;li&gt;Build it with special compiler instrumentation (LLVM)&lt;br&gt;Targets functions rather than programs &lt;/li&gt;
+&lt;li&gt;libFuzzer: Guided Fuzzing for APIs&lt;br&gt;
+The other top general purpose fuzzer
+&lt;ul&gt;
+&lt;li&gt;Use similar algorithms to AFL&lt;/li&gt;
+&lt;li&gt;Build it with special compiler instrumentation (LLVM)&lt;br&gt;
+Targets functions rather than programs&lt;/li&gt;
 &lt;li&gt;Testers have to write a harness&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;

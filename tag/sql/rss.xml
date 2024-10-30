@@ -1,0 +1,210 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title> • Posts by &#34;sql&#34; tag</title>
+        <link>http://example.com</link>
+        <description>🌸</description>
+        <language>zh-CN</language>
+        <pubDate>Wed, 30 Oct 2024 12:17:45 +1000</pubDate>
+        <lastBuildDate>Wed, 30 Oct 2024 12:17:45 +1000</lastBuildDate>
+        <category>JavaScript</category>
+        <category>C</category>
+        <category>software security</category>
+        <category>AFL</category>
+        <category>Linux</category>
+        <category>Blog</category>
+        <category>日常</category>
+        <category>vulnerability</category>
+        <category>C language</category>
+        <category>SQL</category>
+        <category>gdb</category>
+        <item>
+            <guid isPermalink="true">http://example.com/course/SQL-Injection/</guid>
+            <title>SQL Injection</title>
+            <link>http://example.com/course/SQL-Injection/</link>
+            <category>software security</category>
+            <category>SQL</category>
+            <pubDate>Wed, 30 Oct 2024 12:17:45 +1000</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;SQL Injection&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#SQL Injection&#34;&gt;#&lt;/a&gt;SQL Injection&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Exploit vulnerabilities in input validation to run arbitrary commands in the database
+&lt;ul&gt;
+&lt;li&gt;Using user input to construct dynamic SQL statements to access the database&lt;/li&gt;
+&lt;li&gt;Using stored procedures that are passed strings that contain unfiltered user input&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Attacker can execute arbitrary commands in the database
+&lt;ul&gt;
+&lt;li&gt;Worse if the application uses a privileged account to connect to the database&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight php&#34;&gt;&lt;figcaption&gt;&lt;span&gt;Example&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;variable&#34;&gt;$selecteduser&lt;/span&gt; = &lt;span class=&#34;variable&#34;&gt;$_GET&lt;/span&gt;[&lt;span class=&#34;string&#34;&gt;&amp;#x27;user&amp;#x27;&lt;/span&gt;];  &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;variable&#34;&gt;$sql&lt;/span&gt; = &lt;span class=&#34;string&#34;&gt;&amp;quot;SELECT Username, Key FROM Key &amp;quot;&lt;/span&gt; .  &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;string&#34;&gt;&amp;quot;WHERE Username=&amp;#x27;&lt;span class=&#34;subst&#34;&gt;$selecteduser&lt;/span&gt;&amp;#x27;&amp;quot;&lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;variable&#34;&gt;$rs&lt;/span&gt; = &lt;span class=&#34;variable&#34;&gt;$db&lt;/span&gt;-&amp;gt;&lt;span class=&#34;title function_ invoke__&#34;&gt;executeQuery&lt;/span&gt;(&lt;span class=&#34;variable&#34;&gt;$sql&lt;/span&gt;); &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;在上述代码中， &lt;code&gt;$selecteduser&lt;/code&gt;  是从用户输入中直接获取的，它被无过滤地插入到 SQL 查询中。由于没有对  &lt;code&gt;$selecteduser&lt;/code&gt;  进行任何过滤或转义，攻击者可以在输入中添加恶意的 SQL 语句，改变原始查询的含义。假设攻击者提供以下输入作为 user 参数：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption&gt;&lt;span&gt;Example&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;admin&lt;span class=&#34;string&#34;&gt;&amp;#x27; OR &amp;#x27;&lt;/span&gt;1&lt;span class=&#34;string&#34;&gt;&amp;#x27;=&amp;#x27;&lt;/span&gt;1 &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这将导致查询变成：&lt;/p&gt;
+&lt;figure class=&#34;highlight sql&#34;&gt;&lt;figcaption&gt;&lt;span&gt;Example&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;SELECT&lt;/span&gt; Username, Key &lt;span class=&#34;keyword&#34;&gt;FROM&lt;/span&gt; Key &lt;span class=&#34;keyword&#34;&gt;WHERE&lt;/span&gt; Username&lt;span class=&#34;operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;string&#34;&gt;&amp;#x27;admin&amp;#x27;&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;OR&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;#x27;1&amp;#x27;&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;string&#34;&gt;&amp;#x27;1&amp;#x27;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;在这种情况下， &lt;code&gt;OR &#39;1&#39;=&#39;1&#39;&lt;/code&gt;  永远为真，这意味着数据库将返回所有用户的信息，而不仅仅是  &lt;code&gt;admin&lt;/code&gt;  用户的信息&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://img.picui.cn/free/2024/10/30/6721ec7cbba70.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;Example&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Example&#34;&gt;#&lt;/a&gt;Example&lt;/h1&gt;
+&lt;p&gt;SQL Injections Can be Used to …&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Login&lt;br&gt;
+SQL 注入 是一种通过操控用户输入，使之直接嵌入 SQL 查询，从而改变查询逻辑的攻击方式。攻击者可以利用这种方式获取未经授权的数据库访问，甚至获取敏感数据&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight sql&#34;&gt;&lt;figcaption&gt;&lt;span&gt;Example&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; userFound&lt;span class=&#34;operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;keyword&#34;&gt;execute&lt;/span&gt;( &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   &amp;quot;SELECT * FROM USERS WHERE &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    username=&amp;#x27;$username&amp;#x27; AND password=&amp;#x27;$password&amp;#x27;;&amp;quot;); &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;To authenticate logins, server runs this SQL command against the user database&lt;/p&gt;
+&lt;figure class=&#34;highlight sql&#34;&gt;&lt;figcaption&gt;&lt;span&gt;Example&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;SELECT&lt;/span&gt; &lt;span class=&#34;operator&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;FROM&lt;/span&gt; USERS &lt;span class=&#34;keyword&#34;&gt;WHERE&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  username&lt;span class=&#34;operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;string&#34;&gt;&amp;#x27;$username&amp;#x27;&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;AND&lt;/span&gt; password&lt;span class=&#34;operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;string&#34;&gt;&amp;#x27;$password&amp;#x27;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;User enters the following as  &lt;code&gt;$username&lt;/code&gt;  and  &lt;code&gt;$password&lt;/code&gt;&lt;/p&gt;
+ &lt;figure class=&#34;highlight sql&#34;&gt;&lt;figcaption&gt;&lt;span&gt;Example&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;&amp;#x27; OR password LIKE &amp;#x27;&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;%&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Server then executes&lt;/p&gt;
+ &lt;figure class=&#34;highlight sql&#34;&gt;&lt;figcaption&gt;&lt;span&gt;Example&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;SELECT&lt;/span&gt; &lt;span class=&#34;operator&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;FROM&lt;/span&gt; USERS &lt;span class=&#34;keyword&#34;&gt;WHERE&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  username&lt;span class=&#34;operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;string&#34;&gt;&amp;#x27;&amp;#x27;&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;OR&lt;/span&gt; password &lt;span class=&#34;keyword&#34;&gt;LIKE&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;#x27;%&amp;#x27;&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;AND&lt;/span&gt;  &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  password&lt;span class=&#34;operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;string&#34;&gt;&amp;#x27;&amp;#x27;&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;OR&lt;/span&gt; password &lt;span class=&#34;keyword&#34;&gt;LIKE&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;#x27;%&amp;#x27;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code&gt;username=&#39;&#39; OR password LIKE &#39;%&#39;&lt;/code&gt;  的条件总是为真，因为  &lt;code&gt;password LIKE &#39;%&#39; &lt;/code&gt; 可以匹配任何密码。&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Steal Data&lt;br&gt;
+ 攻击者使用一种常见的技巧，通过构造特殊的输入，使查询条件总是返回 true，以便获取更多的数据。&lt;br&gt;
+When the result is returned to the user&lt;/li&gt;
+&lt;/ol&gt;
+ &lt;figure class=&#34;highlight sql&#34;&gt;&lt;figcaption&gt;&lt;span&gt;Example&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;SELECT&lt;/span&gt; email &lt;span class=&#34;keyword&#34;&gt;FROM&lt;/span&gt; USERS &lt;span class=&#34;keyword&#34;&gt;WHERE&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  username&lt;span class=&#34;operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;string&#34;&gt;&amp;#x27;$username&amp;#x27;&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;AND&lt;/span&gt; password&lt;span class=&#34;operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;string&#34;&gt;&amp;#x27;$password&amp;#x27;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;To get more data, attacker gives  &lt;code&gt;username&lt;/code&gt;&lt;/p&gt;
+  &lt;figure class=&#34;highlight sql&#34;&gt;&lt;figcaption&gt;&lt;span&gt;Example&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;&amp;#x27; OR 1=1 #&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code&gt;1=1&lt;/code&gt;  是一个始终为真的条件。&lt;br&gt;
+ &lt;code&gt;#&lt;/code&gt;  (在 MySQL 中) 或  &lt;code&gt;--&lt;/code&gt;  (在其他 RDBMS 中) 表示注释符号，后面的所有内容都被忽略。这样一来， &lt;code&gt;AND password=&#39;$password&#39; &lt;/code&gt; 就被注释掉了，不会影响查询的结果。&lt;br&gt;
+因此最终结果是：&lt;/p&gt;
+  &lt;figure class=&#34;highlight sql&#34;&gt;&lt;figcaption&gt;&lt;span&gt;Example&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;SELECT&lt;/span&gt; email &lt;span class=&#34;keyword&#34;&gt;FROM&lt;/span&gt; USERS &lt;span class=&#34;keyword&#34;&gt;WHERE&lt;/span&gt; username&lt;span class=&#34;operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;string&#34;&gt;&amp;#x27;&amp;#x27;&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;OR&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;由于  &lt;code&gt;WHERE&lt;/code&gt;  子句总为真，查询会返回  &lt;code&gt;USERS&lt;/code&gt;  表中所有用户的电子邮件地址，而不仅仅是匹配特定用户名和密码的记录。&lt;/p&gt;
+&lt;p&gt;也可以从其他数据库窃取数据 通过输入 &lt;code&gt;username&lt;/code&gt;&lt;/p&gt;
+  &lt;figure class=&#34;highlight sql&#34;&gt;&lt;figcaption&gt;&lt;span&gt;Example&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;&amp;#x27; AND 1=0 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt; UNION SELECT cardholder, number, exp_month, exp_year FROM &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt; creditcards #&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;由于第一部分的条件不成立，原查询不返回任何结果；但  &lt;code&gt;UNION&lt;/code&gt;  操作符使得查询的结果变成信用卡表中的数据，从而被攻击者获取。&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Run Shell Commands&lt;br&gt;
+ 通过在数据库服务器上 执行 shell 命令，来创建一个新的用户账户。通过这种方式，攻击者能够突破数据库的边界，直接对操作系统进行修改，从而使服务器更加容易受到进一步的攻击。&lt;br&gt;
+用户输入：攻击者在用户名字段中输入以下字符串：&lt;/li&gt;
+&lt;/ol&gt;
+  &lt;figure class=&#34;highlight sql&#34;&gt;&lt;figcaption&gt;&lt;span&gt;Example&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;&amp;#x27;; exec cmdshell &amp;#x27;&lt;/span&gt;net &lt;span class=&#34;keyword&#34;&gt;user&lt;/span&gt; badguy badpwd&lt;span class=&#34;string&#34;&gt;&amp;#x27; /ADD #&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code&gt;&#39;;&lt;/code&gt; ：结束了当前的 SQL 查询语句。&lt;br&gt;
+ &lt;code&gt;exec cmdshell &#39;net user badguy badpwd&#39; /ADD&#39;&lt;/code&gt; ：利用数据库服务器的  &lt;code&gt;cmdshell&lt;/code&gt;  功能来执行系统命令。在这个例子中，它会创建一个名为  &lt;code&gt;badguy&lt;/code&gt; ，密码为  &lt;code&gt;badpwd&lt;/code&gt;  的新用户账户。&lt;br&gt;
+ &lt;code&gt;#&lt;/code&gt; ：注释符号，用来忽略后续的 SQL 语句。&lt;/p&gt;
+&lt;p&gt;注入后的 SQL 查询变成了：&lt;/p&gt;
+  &lt;figure class=&#34;highlight sql&#34;&gt;&lt;figcaption&gt;&lt;span&gt;Example&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;SELECT&lt;/span&gt; &lt;span class=&#34;operator&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;FROM&lt;/span&gt; UserTable &lt;span class=&#34;keyword&#34;&gt;WHERE&lt;/span&gt; username&lt;span class=&#34;operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;string&#34;&gt;&amp;#x27;&amp;#x27;&lt;/span&gt;; &lt;span class=&#34;keyword&#34;&gt;exec&lt;/span&gt; cmdshell &lt;span class=&#34;string&#34;&gt;&amp;#x27;net user badguy badpwd&amp;#x27;&lt;/span&gt; &lt;span class=&#34;operator&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;keyword&#34;&gt;ADD&lt;/span&gt; #...&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Change、Destory Data&lt;br&gt;
+Create new users&lt;/li&gt;
+&lt;/ol&gt;
+  &lt;figure class=&#34;highlight sql&#34;&gt;&lt;figcaption&gt;&lt;span&gt;Example&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;&amp;#x27;; INSERT INTO USERS (&amp;#x27;&lt;/span&gt;uname&lt;span class=&#34;string&#34;&gt;&amp;#x27;,&amp;#x27;&lt;/span&gt;passwd&lt;span class=&#34;string&#34;&gt;&amp;#x27;) &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt; VALUES (&amp;#x27;&lt;/span&gt;hacker&lt;span class=&#34;string&#34;&gt;&amp;#x27;,&amp;#x27;&lt;/span&gt;&lt;span class=&#34;number&#34;&gt;38&lt;/span&gt;a74f&lt;span class=&#34;string&#34;&gt;&amp;#x27;); # &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Reset email (or password, etc.)&lt;/p&gt;
+  &lt;figure class=&#34;highlight sql&#34;&gt;&lt;figcaption&gt;&lt;span&gt;Example&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;&amp;#x27;; UPDATE USERS SET email=&amp;#x27;&lt;/span&gt;hacker&lt;span class=&#34;variable&#34;&gt;@root&lt;/span&gt;.org&lt;span class=&#34;string&#34;&gt;&amp;#x27;  &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt; WHERE email=&amp;#x27;&lt;/span&gt;victim&lt;span class=&#34;variable&#34;&gt;@yahoo&lt;/span&gt;.com&lt;span class=&#34;string&#34;&gt;&amp;#x27;; #&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Second-Order SQL Injections&lt;/li&gt;
+&lt;/ol&gt;
+  &lt;figure class=&#34;highlight php&#34;&gt;&lt;figcaption&gt;&lt;span&gt;Example&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;&amp;lt;?php&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;variable&#34;&gt;$db&lt;/span&gt; = &lt;span class=&#34;title function_ invoke__&#34;&gt;mysql_connect&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;localhost&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;root&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;password&amp;quot;&lt;/span&gt;); &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;title function_ invoke__&#34;&gt;mysql_select_db&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;Shipping&amp;quot;&lt;/span&gt;, &lt;span class=&#34;variable&#34;&gt;$db&lt;/span&gt;); &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;variable&#34;&gt;$id&lt;/span&gt; = &lt;span class=&#34;variable&#34;&gt;$HTTP_GET_VARS&lt;/span&gt;[&lt;span class=&#34;string&#34;&gt;&amp;quot;id&amp;quot;&lt;/span&gt;]; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;variable&#34;&gt;$qry&lt;/span&gt; = &lt;span class=&#34;string&#34;&gt;&amp;quot;SELECT ccnum FROM cust WHERE id = &lt;span class=&#34;subst&#34;&gt;$id&lt;/span&gt;&amp;quot;&lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;variable&#34;&gt;$result&lt;/span&gt; = &lt;span class=&#34;title function_ invoke__&#34;&gt;mysql_query&lt;/span&gt;(&lt;span class=&#34;variable&#34;&gt;$qry&lt;/span&gt;, &lt;span class=&#34;variable&#34;&gt;$db&lt;/span&gt;); &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (&lt;span class=&#34;variable&#34;&gt;$result&lt;/span&gt;) &amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;title function_ invoke__&#34;&gt;mysql_result&lt;/span&gt;(&lt;span class=&#34;variable&#34;&gt;$result&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;ccnum&amp;quot;&lt;/span&gt;); &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &amp;#125; &lt;span class=&#34;keyword&#34;&gt;else&lt;/span&gt; &amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;No result!&amp;quot;&lt;/span&gt; . &lt;span class=&#34;title function_ invoke__&#34;&gt;mysql_error&lt;/span&gt;(); &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &amp;#125; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;meta&#34;&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;初始注入：攻击者设法将  &lt;code&gt;uname&lt;/code&gt;  字段设置为： &lt;code&gt;admin&#39; #&lt;/code&gt; 。&lt;br&gt;
+在另一个活动中，例如密码更新操作，代码可能会使用之前存储的  &lt;code&gt;uname&lt;/code&gt;  值。因为  &lt;code&gt;uname&lt;/code&gt;  包含注释符号，实际执行的 SQL 语句将变成：&lt;/p&gt;
+  &lt;figure class=&#34;highlight sql&#34;&gt;&lt;figcaption&gt;&lt;span&gt;Example&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;UPDATE&lt;/span&gt; USERS &lt;span class=&#34;keyword&#34;&gt;SET&lt;/span&gt; passwd&lt;span class=&#34;operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;string&#34;&gt;&amp;#x27;cracked&amp;#x27;&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;WHERE&lt;/span&gt; uname&lt;span class=&#34;operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;string&#34;&gt;&amp;#x27;admin&amp;#x27;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Persistent storage (such as a table row) is deemed as a &lt;strong&gt;trusted source&lt;/strong&gt; thus may not be sanitised&lt;br&gt;
+Attacks may be subsequently executed by &lt;strong&gt;multiple&lt;/strong&gt; activities&lt;/p&gt;
+&lt;h1 id=&#34;Preventing SQL Injection&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Preventing SQL Injection&#34;&gt;#&lt;/a&gt;Preventing SQL Injection&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Finding SQL Injection Vulnerabilities&lt;br&gt;
+Any application that has the following pattern is at risk of SQL injection
+&lt;ol&gt;
+&lt;li&gt;Take user input&lt;/li&gt;
+&lt;li&gt;Do not check validity of user input&lt;/li&gt;
+&lt;li&gt;Use user input data to query a database&lt;/li&gt;
+&lt;li&gt;Use string manipulation to build the SQL query or the SQL exec command&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Manual Techniques&lt;br&gt;
+Try entering junk SQL commands into input fields you suspect may not be validated
+&lt;ul&gt;
+&lt;li&gt;Use as username:  &lt;code&gt;abc&#39; JFKDJ #&lt;/code&gt; &lt;br&gt;
+Look for errors or unexpected behaviour&lt;/li&gt;
+&lt;li&gt;Some web applications running in debug mode will show you the whole SQL statement to “help you debug”, but this also helps attackers attack&lt;/li&gt;
+&lt;li&gt;常见的手动测试字符串：&lt;br&gt;
+ &lt;code&gt;&#39; OR 1=1 --&lt;/code&gt; ：绕过身份验证。&lt;br&gt;
+ &lt;code&gt;&#39; UNION SELECT NULL, NULL, NULL --&lt;/code&gt; ：尝试访问其他表中的数据。&lt;br&gt;
+ &lt;code&gt;&#39; AND (SELECT COUNT(*) FROM users) &amp;gt; 0 --&lt;/code&gt; ：检测查询逻辑。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Automated Techniques
+&lt;ol&gt;
+&lt;li&gt;Sqlmap (&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3NxbG1hcC5vcmc=&#34;&gt;sqlmap.org&lt;/span&gt;) profiles the database on a given URL&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Identify vulnerable parameters&lt;/li&gt;
+&lt;li&gt;Identify which types of attacks work&lt;/li&gt;
+&lt;li&gt;Take over the database&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;SQL Inject Me was a Firefox add-on&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Try standard SQL injection techniques for a variety of database languages&lt;/li&gt;
+&lt;li&gt;In every form on a page&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Preventing SQL Injection
+&lt;ol&gt;
+&lt;li&gt;Input validation&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Filter any character with special meanings (apostrophes, semicolons, percent symbols, hyphens, etc.)&lt;/li&gt;
+&lt;li&gt;Check the data type (e.g. make sure it’s an integer)&lt;/li&gt;
+&lt;li&gt;Blacklisting “bad” characters doesn’t always work
+&lt;ol&gt;
+&lt;li&gt;Could prevent valid input (e.g. last name O’Brien)&lt;/li&gt;
+&lt;li&gt;Forget to filter out some characters&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Escaping quotes&lt;br&gt;
+Use escape characters to prevent the quote from becoming part of the query. Example: convert  &lt;code&gt;&#39; &lt;/code&gt;  into  &lt;code&gt; \&#39;&lt;/code&gt; . Different databases have different rules for escaping&lt;/li&gt;
+&lt;li&gt;Whitelisting&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Allow only well-defined set of safe values&lt;/li&gt;
+&lt;li&gt;Set implicitly defined through regular expressions 正则表达式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Best Solution: Prepared Statements( Separating code and data)&lt;br&gt;
+In most injection attacks, data is interpreted as control: this changes the semantics of a query or a command&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Typed bind variables:  &lt;code&gt;? &lt;/code&gt; placeholders guaranteed to be data (not control)&lt;/li&gt;
+&lt;li&gt;Prepared statements are &lt;strong&gt;pre-compiled&lt;/strong&gt; by the database management system waiting for input&lt;/li&gt;
+&lt;li&gt;Placeholders prevent that the users input gets attached to the SQL query resulting in a separation of code and data&lt;/li&gt;
+&lt;li&gt;For example, the database registers  &lt;code&gt;&#39;Robert&#39; ); DROP TABLE Students;--&#39;&lt;/code&gt;&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption&gt;&lt;span&gt;Prepared Statement: Java&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;PreparedStatement&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;ps&lt;/span&gt; &lt;span class=&#34;operator&#34;&gt;=&lt;/span&gt; db.prepareStatement(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;string&#34;&gt;&amp;quot;SELECT pizza, toppings, quantity, &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;  order_day FROM orders WHERE userid=? &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;  AND order_month=?&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; ps.setInt(&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;, session.getCurrentUserId());&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; ps.setInt(&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;, Integer.parseInt(request.getParameter(&lt;span class=&#34;string&#34;&gt;&amp;quot;month&amp;quot;&lt;/span&gt;)));&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;type&#34;&gt;ResultSet&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;res&lt;/span&gt; &lt;span class=&#34;operator&#34;&gt;=&lt;/span&gt; ps.executeQuery();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;使用预处理语句 (PreparedStatement)&lt;br&gt;
+ &lt;code&gt;PreparedStatement&lt;/code&gt;  是 Java 中用于执行预编译的 SQL 语句的对象，它确保 SQL 查询结构和输入数据的分离。在此代码中，使用  &lt;code&gt;?&lt;/code&gt;  占位符来标记用户输入的位置，确保输入的数据不被解释为 SQL 控制逻辑。&lt;/li&gt;
+&lt;li&gt;绑定变量&lt;br&gt;
+通过  &lt;code&gt;ps.setInt(1, ...)&lt;/code&gt;  和  &lt;code&gt;ps.setInt(2, ...)&lt;/code&gt;  方法，将 &lt;code&gt;用户 ID&lt;/code&gt;  和 &lt;code&gt;月份&lt;/code&gt; 参数绑定到相应的占位符上。&lt;br&gt;
+绑定的变量具有明确的类型（如 int、String 等），这确保了输入数据不会改变 SQL 查询的逻辑。&lt;/li&gt;
+&lt;/ul&gt;
+ &lt;figure class=&#34;highlight csharp&#34;&gt;&lt;figcaption&gt;&lt;span&gt;Prepared Statement: ASP.NET&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;SqlCommand cmd = &lt;span class=&#34;keyword&#34;&gt;new&lt;/span&gt; SqlCommand(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;string&#34;&gt;&amp;quot;SELECT * FROM UserTable &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;   WHERE username = @User AND password = @Pwd&amp;quot;&lt;/span&gt;, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   dbConnection&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; );&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; cmd.Parameters.Add(&lt;span class=&#34;string&#34;&gt;&amp;quot;@User&amp;quot;&lt;/span&gt;, Request[&lt;span class=&#34;string&#34;&gt;&amp;quot;user&amp;quot;&lt;/span&gt;]);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; cmd.Parameters.Add(&lt;span class=&#34;string&#34;&gt;&amp;quot;@Pwd&amp;quot;&lt;/span&gt;, Request[&lt;span class=&#34;string&#34;&gt;&amp;quot;pwd&amp;quot;&lt;/span&gt;]);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; cmd.ExecuteReader();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;查询语句中的  &lt;code&gt;@User&lt;/code&gt;  和  &lt;code&gt;@Pwd&lt;/code&gt;  是参数占位符，用于标记用户输入的位置。&lt;figure class=&#34;highlight php&#34;&gt;&lt;figcaption&gt;&lt;span&gt;Prepared Statement: PHP&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;&amp;lt;?php&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;variable&#34;&gt;$db&lt;/span&gt; = &lt;span class=&#34;title function_ invoke__&#34;&gt;mysqli_connect&lt;/span&gt;(&lt;span class=&#34;title function_ invoke__&#34;&gt;getServer&lt;/span&gt;(), &lt;span class=&#34;title function_ invoke__&#34;&gt;getUid&lt;/span&gt;(), &lt;span class=&#34;title function_ invoke__&#34;&gt;getPwd&lt;/span&gt;()); &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;variable&#34;&gt;$stmt&lt;/span&gt; = &lt;span class=&#34;title function_ invoke__&#34;&gt;mysqli_prepare&lt;/span&gt;(&lt;span class=&#34;variable&#34;&gt;$db&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;SELECT ccnum FROM cust WHERE id = ?&amp;quot;&lt;/span&gt;); &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;variable&#34;&gt;$id&lt;/span&gt; = &lt;span class=&#34;variable&#34;&gt;$HTTP_GET_VARS&lt;/span&gt;[&lt;span class=&#34;string&#34;&gt;&amp;quot;id&amp;quot;&lt;/span&gt;]; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;comment&#34;&gt;// 仅允许有效的ID（1-8位数字）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (&lt;span class=&#34;title function_ invoke__&#34;&gt;preg_match&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;#x27;/^\d&amp;#123;1,8&amp;#125;$/&amp;#x27;&lt;/span&gt;, &lt;span class=&#34;variable&#34;&gt;$id&lt;/span&gt;)) &amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     &lt;span class=&#34;title function_ invoke__&#34;&gt;mysqli_stmt_bind_param&lt;/span&gt;(&lt;span class=&#34;variable&#34;&gt;$stmt&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;s&amp;quot;&lt;/span&gt;, &lt;span class=&#34;variable&#34;&gt;$id&lt;/span&gt;); &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     &lt;span class=&#34;title function_ invoke__&#34;&gt;mysqli_stmt_execute&lt;/span&gt;(&lt;span class=&#34;variable&#34;&gt;$stmt&lt;/span&gt;); &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;#125; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;title function_ invoke__&#34;&gt;mysqli_stmt_bind_result&lt;/span&gt;(&lt;span class=&#34;variable&#34;&gt;$stmt&lt;/span&gt;, &lt;span class=&#34;variable&#34;&gt;$result&lt;/span&gt;); &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;title function_ invoke__&#34;&gt;mysqli_stmt_fetch&lt;/span&gt;(&lt;span class=&#34;variable&#34;&gt;$stmt&lt;/span&gt;); &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; ...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;meta&#34;&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;SQL 查询中使用  &lt;code&gt;?&lt;/code&gt;  作为占位符，表示参数的位置&lt;/li&gt;
+&lt;li&gt;使用正则表达式  &lt;code&gt;preg_match(&#39;/^\d&amp;#123;1,8&amp;#125;$/&#39;, $id)&lt;/code&gt;  来验证用户输入。这确保了输入是 1 到 8 位的数字，过滤掉了潜在的恶意输入&lt;/li&gt;
+&lt;li&gt;使用  &lt;code&gt;mysqli_stmt_bind_param($stmt, &amp;quot;s&amp;quot;, $id)&lt;/code&gt;  方法将用户输入的 ID 作为参数绑定到预处理语句中。参数类型  &lt;code&gt;s&lt;/code&gt;  指定绑定的变量是字符串类型（string）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Fixing SQL Injections&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Validate all input&lt;/li&gt;
+&lt;li&gt;Never use string concatenation to build SQL statements&lt;/li&gt;
+&lt;li&gt;Use parameterised stored procedures or other functions for database access&lt;/li&gt;
+&lt;li&gt;Use least privileged accounts to connect to the database&lt;/li&gt;
+&lt;li&gt;Remove access to all user defined tables and grant access only to stored procedures&lt;/li&gt;
+&lt;/ul&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>
