@@ -3,18 +3,233 @@
     <id>http://example.com</id>
     <title> • Posts by &#34;software security&#34; tag</title>
     <link href="http://example.com" />
-    <updated>2024-10-30T02:17:45.000Z</updated>
-    <category term="JavaScript" />
-    <category term="C" />
-    <category term="software security" />
-    <category term="AFL" />
+    <updated>2024-10-30T11:17:47.000Z</updated>
+    <category term="C language" />
     <category term="Linux" />
+    <category term="software security" />
+    <category term="C" />
+    <category term="vulnerability" />
+    <category term="AFL" />
+    <category term="SQL" />
+    <category term="HTTP" />
+    <category term="OSI" />
+    <category term="gdb" />
+    <category term="JavaScript" />
     <category term="Blog" />
     <category term="日常" />
-    <category term="vulnerability" />
-    <category term="C language" />
-    <category term="SQL" />
-    <category term="gdb" />
+    <entry>
+        <id>http://example.com/course/Web-Application-Security/</id>
+        <title>Web Application Security</title>
+        <link rel="alternate" href="http://example.com/course/Web-Application-Security/"/>
+        <content type="html">&lt;h1 id=&#34;Overall&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Overall&#34;&gt;#&lt;/a&gt;Overall&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Web Application Stack&lt;br&gt;
+&lt;img data-src=&#34;https://img.picui.cn/free/2024/10/30/672216036891d.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
+&lt;li&gt;OSI Network Protocol Stack&lt;br&gt;
+More in Network System&lt;br&gt;
+&lt;img data-src=&#34;https://img.picui.cn/free/2024/10/30/6722160374233.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Web Applications&lt;br&gt;
+Security problem is usually to do with dynamic creation of web contents&lt;br&gt;
+&lt;img data-src=&#34;https://img.picui.cn/free/2024/10/30/672216b529859.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;HTTP&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#HTTP&#34;&gt;#&lt;/a&gt;HTTP&lt;/h1&gt;
+&lt;h2 id=&#34;HTTP&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#HTTP&#34;&gt;#&lt;/a&gt;HTTP&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;HyperText Transport Protocol (HTTP)&lt;br&gt;
+HTTP is a request/response protocol for communicating between web clients and web servers.&lt;br&gt;
+A web client sends a request to a particular web server for a particular resource (identified by a URL) and the web server responds with some kind of data (often HTML data)&lt;/li&gt;
+&lt;li&gt;HTTP Request Messag&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Send TCP/IP message to &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5leGFtcGxlLmNvbQ==&#34;&gt;www.example.com&lt;/span&gt; on port 80 containing the following:&lt;br&gt;
+&lt;img data-src=&#34;https://img.picui.cn/free/2024/10/30/672217d602618.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;HTTP Request Methods&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Method&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;GET&lt;/td&gt;
+&lt;td&gt;Retrieve information&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;POST&lt;/td&gt;
+&lt;td&gt;Request some operation be performed&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PUT&lt;/td&gt;
+&lt;td&gt;Provide new information&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DELETE&lt;/td&gt;
+&lt;td&gt;Request something be removed from server&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;HEAD&lt;/td&gt;
+&lt;td&gt;Same as GET except that only header info is returned&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OPTIONS&lt;/td&gt;
+&lt;td&gt;Request information about communication options available&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TRACE&lt;/td&gt;
+&lt;td&gt;Used for testing and diagnosing problems&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CONNECT&lt;/td&gt;
+&lt;td&gt;Used for tunnelling using proxies&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;HTTP Response Message&lt;br&gt;
+&lt;img data-src=&#34;https://img.picui.cn/free/2024/10/30/672217d60533f.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
+&lt;li&gt;HTTP is a Stateless Protocol&lt;br&gt;
+HTTP is said to be a stateless protocol because each request is handled independently&lt;br&gt;
+Assumes no memory of requests that came before current request&lt;br&gt;
+If a web server receives a number of HTTP requests from the same client, they are each handled by the server in exactly the same way as they would, had they been sent from different clients.&lt;/li&gt;
+&lt;li&gt;HTML Forms: the GET Method&lt;br&gt;
+The GET method sends encoded data appended to the URL string&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;The data is separated from the URL by a ‘?’&lt;/li&gt;
+&lt;li&gt;The encoded data and any path information are placed in the CGI environment variables  &lt;code&gt;QUERY_STRING&lt;/code&gt;  and  &lt;code&gt;PATH_INFO&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;HTML Forms: the Post Method&lt;br&gt;
+The POST method sends encoded data in the body section of the request&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Data in the body is encoded in the same way as in the GET method&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Feature&lt;/th&gt;
+&lt;th&gt;GET&lt;/th&gt;
+&lt;th&gt;POST&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;用途&lt;/td&gt;
+&lt;td&gt;通常用于信息检索，不会改变服务器状态&lt;/td&gt;
+&lt;td&gt;提交数据进行处理，可能更新服务器或数据库状态&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;可见性&lt;/td&gt;
+&lt;td&gt;参数在 URL 中可见，易于调试&lt;/td&gt;
+&lt;td&gt;参数隐藏在请求主体中&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;安全性&lt;/td&gt;
+&lt;td&gt;不适合提交密码等敏感信息&lt;/td&gt;
+&lt;td&gt;不提供安全的隐私保护&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;长度限制&lt;/td&gt;
+&lt;td&gt;受 URL 最大字符长度限制&lt;/td&gt;
+&lt;td&gt;受服务器可接受的数据量限制&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;缓存性&lt;/td&gt;
+&lt;td&gt;可以被缓存&lt;/td&gt;
+&lt;td&gt;必须重新传输数据，且不会自动缓存&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;HTTP Sessions&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#HTTP Sessions&#34;&gt;#&lt;/a&gt;HTTP Sessions&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;HTTP Sessions&lt;br&gt;
+A sequence of requests and responses from one browser to one (or more) sites&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Session can be long or short
+&lt;ul&gt;
+&lt;li&gt;Google advertising tracking: 1+ years&lt;/li&gt;
+&lt;li&gt;Google Mail login: 2 weeks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Authorise user once, and all subsequent requests are tied to user
+&lt;ul&gt;
+&lt;li&gt;Without session management, users would have to constantly reauthenticate&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Web application environments (ASP, PHP, etc.) provide session tokens&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Session Tokens&lt;br&gt;
+Identifying the specific session instance&lt;br&gt;
+&lt;img data-src=&#34;https://img.picui.cn/free/2024/10/30/67221c58289ab.png&#34; alt=&#34;img&#34;&gt;
+&lt;ol&gt;
+&lt;li&gt;Session Tokens in URLs&lt;br&gt;
+The session token is part of the URL and will be sent to the web server through HTTP GET requests&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;E.g. &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5leGFtcGxlLmNvbS9idXkuYXNwP2FydGljbGU9Mjc3ODE7c2Vzc2lvbmlkPUlFNTU3OTkwMTU3OA==&#34;&gt;http://www.example.com/buy.asp?article=27781;sessionid=IE5579901578&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;This mechanism works even in case of client security restrictions (e.g., no cookies are allowed)&lt;br&gt;
+Problems:&lt;/li&gt;
+&lt;li&gt;All information contained in the URL might be stored in firewall or proxy log files
+&lt;ul&gt;
+&lt;li&gt;Could simply be printed out with the web page on a shared printer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;The URL, including sensitive data, can be sent in the HTTP referrer field to other web servers&lt;/li&gt;
+&lt;li&gt;Imply a high risk of sensitive session data being disclosed to unauthorised third parties&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;HTML Forms with Hidden Fields&lt;br&gt;
+Session token and information can be included in hidden fields in a form&lt;br&gt;
+Works even in case of user client security restrictions, e.g., no cookies or JavaScript&lt;br&gt;
+Does not provide protection mechanisms such as session expiration&lt;br&gt;
+Cannot last beyond a single interactive session&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption&gt;&lt;span&gt;OvO&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;FORM&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;METHOD&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;POST&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;ACTION&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;/cgi-bin/order_goods.pl&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;INPUT&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;TYPE&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;hidden&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;NAME&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;customerid&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;VALUE&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;0815&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;INPUT&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;TYPE&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;hidden&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;NAME&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;valid_order&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;VALUE&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;yes&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;INPUT&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;TYPE&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;hidden&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;NAME&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;productid&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;VALUE&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;4711&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;FORM&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;pre&gt;&lt;code&gt;3. HTTP Cookies
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Can be set either using HTTP headers or JavaScript&lt;br&gt;
+An extra response header is added as follows to save information to the client&lt;/p&gt;
+&lt;figure class=&#34;highlight http&#34;&gt;&lt;figcaption&gt;&lt;span&gt;OvO&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attribute&#34;&gt;Set-Cookie&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;: &lt;/span&gt;id=321328765; domain=.qut.edu.au; path=/cgi-bin&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;When a user sends an HTTP request for a URL for which the client machine&lt;br&gt;
+holds a cookie, an extra HTTP header is added to the client request every time&lt;/p&gt;
+&lt;figure class=&#34;highlight http&#34;&gt;&lt;figcaption&gt;&lt;span&gt;OvO&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;Cookie:id=321328765&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Other attributes: Expires, Domain, HttpOnly, Path, Port, Secure&lt;br&gt;
+&lt;img data-src=&#34;https://img.picui.cn/free/2024/10/30/672221a731746.png&#34; alt=&#34;img&#34;&gt;&lt;br&gt;
+3.  Session tokens Risk&lt;br&gt;
+1. Predictable Tokens&lt;br&gt;
+- Counter (Verizon Wireless)&lt;br&gt;
+- Weak MAC (WSJ)&lt;br&gt;
+- token = {userid,  MAC_k(userid) }&lt;br&gt;
+- Apache Tomcat&lt;br&gt;
+-  &lt;code&gt;generateSessionID()&lt;/code&gt;  uses MD5 but with a weak pseudorandom number generator &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cubWljcm9zb2Z0LmNvbS9lbi11cy9yZXNlYXJjaC93cC1jb250ZW50L3VwbG9hZHMvMjAxNi8wMi9nbTA1LnBkZg==&#34;&gt;CT-RSA 2005&lt;/span&gt;&lt;br&gt;
+- PHP&lt;br&gt;
+-  &lt;code&gt;create_session_id&lt;/code&gt;  uses weak pseudorandom number generator &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9zZWNsaXN0cy5vcmcvZnVsbGRpc2Nsb3N1cmUvMjAxMC9NYXIvNTE5&#34;&gt;seclists.org&lt;/span&gt;&lt;br&gt;
+2. Cookie Theft&lt;br&gt;
+ 一些网站仅加密登录过程，而不加密会话 Cookie，从而导致会话令牌容易被截获&lt;br&gt;
+ Example 1: login over HTTPS, but subsequently use HTTP&lt;br&gt;
+- 在不安全的网络环境（如无线咖啡馆）中，Cookie 可能被窃取。&lt;br&gt;
+- Other reasons why session token sent in the clear&lt;br&gt;
+- HTTPS/HTTP mixed content pages at site&lt;br&gt;
+- Man-in-the-middle attacks on SSL&lt;br&gt;
+- &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jb2RlYnV0bGVyLmNvbS8yMDEwLzEwLzI0L2ZpcmVzaGVlcC8=&#34;&gt;Firesheep&lt;/span&gt; Firefox extension performs this attack&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Example 2: Cross-Site Scripting (XSS) attacks
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+        <category term="software security" />
+        <category term="HTTP" />
+        <category term="OSI" />
+        <updated>2024-10-30T11:17:47.000Z</updated>
+    </entry>
     <entry>
         <id>http://example.com/course/SQL-Injection/</id>
         <title>SQL Injection</title>
@@ -845,8 +1060,8 @@ Possible ways to protect against heap overflow&lt;/p&gt;
 &lt;li&gt;Most operating systems provide built-in defence against null-pointer dereference&lt;/li&gt;
 &lt;/ul&gt;
 </content>
-        <category term="C" />
         <category term="software security" />
+        <category term="C" />
         <updated>2024-10-28T11:57:22.000Z</updated>
     </entry>
     <entry>
@@ -1089,10 +1304,10 @@ Targets functions rather than programs&lt;/li&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 </content>
-        <category term="C" />
-        <category term="software security" />
-        <category term="AFL" />
         <category term="Linux" />
+        <category term="software security" />
+        <category term="C" />
+        <category term="AFL" />
         <updated>2024-10-28T04:45:49.000Z</updated>
     </entry>
     <entry>
@@ -1628,8 +1843,8 @@ Format functions can be exploited when an attacker is given direct control over 
 &lt;li&gt;e.g. the  &lt;code&gt;gcc&lt;/code&gt;  compiler provides options to check format strings&lt;/li&gt;
 &lt;/ul&gt;
 </content>
-        <category term="C" />
         <category term="software security" />
+        <category term="C" />
         <category term="vulnerability" />
         <updated>2024-10-26T11:52:22.000Z</updated>
     </entry>
@@ -1742,8 +1957,8 @@ Integer overflow is very hard to discover and prevent
  在程序编译前对源代码进行分析，寻找潜在的整数溢出问题。这些工具可以检测代码中的常见整数运算错误，包括加减乘除溢出、类型转换溢出等&lt;/li&gt;
 &lt;/ol&gt;
 </content>
-        <category term="C" />
         <category term="software security" />
+        <category term="C" />
         <updated>2024-10-26T10:33:32.000Z</updated>
     </entry>
     <entry>
@@ -1995,8 +2210,8 @@ Many run-time checking techniques
 &lt;li&gt;Attacker cannot jump directly to exec function&lt;/li&gt;
 &lt;/ul&gt;
 </content>
-        <category term="C" />
         <category term="software security" />
+        <category term="C" />
         <category term="vulnerability" />
         <updated>2024-10-26T07:50:30.000Z</updated>
     </entry>
@@ -2350,9 +2565,9 @@ EBP（基址指针）：跟踪局部变量和函数参数的位置。&lt;/li&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 </content>
-        <category term="software security" />
-        <category term="Linux" />
         <category term="C language" />
+        <category term="Linux" />
+        <category term="software security" />
         <category term="gdb" />
         <updated>2024-10-25T07:43:11.000Z</updated>
     </entry>
@@ -2673,9 +2888,9 @@ Use dereference to read the value inside the memory address pointed to by the po
 &lt;/ul&gt;
  &lt;figure class=&#34;highlight c&#34;&gt;&lt;figcaption&gt;&lt;span&gt;Putting the pieces of memory together&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; ind = &lt;span class=&#34;number&#34;&gt;5&lt;/span&gt;;                     &lt;span class=&#34;comment&#34;&gt;// integer stored in .data (initialized)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;type&#34;&gt;char&lt;/span&gt; *str;                       &lt;span class=&#34;comment&#34;&gt;// string pointer stored in .bss (uninitialized)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; nothing;                     &lt;span class=&#34;comment&#34;&gt;// integer stored in .bss (uninitialized)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;fun&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; c)&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;                                              &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; 	&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; i = c;                                  &lt;span class=&#34;comment&#34;&gt;// stored in stack section&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; 	str = (&lt;span class=&#34;type&#34;&gt;char&lt;/span&gt; *)&lt;span class=&#34;built_in&#34;&gt;malloc&lt;/span&gt;(&lt;span class=&#34;number&#34;&gt;10&lt;/span&gt; * &lt;span class=&#34;keyword&#34;&gt;sizeof&lt;/span&gt;(&lt;span class=&#34;type&#34;&gt;char&lt;/span&gt;));    &lt;span class=&#34;comment&#34;&gt;// reserves 10 characters in heap region &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; 	&lt;span class=&#34;built_in&#34;&gt;strncpy&lt;/span&gt;(str, &lt;span class=&#34;string&#34;&gt;&amp;quot;abcde&amp;quot;&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;5&lt;/span&gt;);                   &lt;span class=&#34;comment&#34;&gt;// copies &amp;quot;abcde&amp;quot; into str&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;()&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	fun(&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;); &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 </content>
-        <category term="software security" />
-        <category term="Linux" />
         <category term="C language" />
+        <category term="Linux" />
+        <category term="software security" />
         <updated>2024-10-24T11:00:05.000Z</updated>
     </entry>
 </feed>

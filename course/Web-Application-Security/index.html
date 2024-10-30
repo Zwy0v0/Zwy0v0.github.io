@@ -1,0 +1,750 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="" href="http://example.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="software security,HTTP,OSI" />
+
+
+<link rel="canonical" href="http://example.com/course/Web-Application-Security/">
+
+
+
+  <title>
+Web Application Security - Principles of Software Security - 课程笔记 |
+AtoposZz =  = 此处存放一些学习笔记</title>
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">Web Application Security
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2024-10-30 21:17:47">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2024-10-30T21:17:47+10:00">2024-10-30</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>4.1k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>4 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">AtoposZz</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a94f1d92.png"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf60a21b5d.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf60cc9be5.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a94b2174.png"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf6bb9fdaf.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf696303c4.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/course/" itemprop="item" rel="index" title="分类于 课程笔记"><span itemprop="name">课程笔记</span></a>
+<meta itemprop="position" content="1" /></span>
+<i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/course/Principles-of-Software-Security/" itemprop="item" rel="index" title="分类于 Principles of Software Security"><span itemprop="name">Principles of Software Security</span></a>
+<meta itemprop="position" content="2" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://example.com/course/Web-Application-Security/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Zz">
+    <meta itemprop="description" content="此处存放一些学习笔记, 🌸">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="Overall" class="active"><a class="anchor"  href="#Overall">#</a>Overall</h1>
+<ol>
+<li>Web Application Stack<br>
+<img data-src="https://img.picui.cn/free/2024/10/30/672216036891d.png" alt="img"></li>
+<li>OSI Network Protocol Stack<br>
+More in Network System<br>
+<img data-src="https://img.picui.cn/free/2024/10/30/6722160374233.png" alt="img"></li>
+<li>Web Applications<br>
+Security problem is usually to do with dynamic creation of web contents<br>
+<img data-src="https://img.picui.cn/free/2024/10/30/672216b529859.png" alt="img"></li>
+</ol>
+<h1 id="HTTP" class="active"><a class="anchor"  href="#HTTP">#</a>HTTP</h1>
+<h2 id="HTTP" class="active"><a class="anchor"  href="#HTTP">#</a>HTTP</h2>
+<ol>
+<li>HyperText Transport Protocol (HTTP)<br>
+HTTP is a request/response protocol for communicating between web clients and web servers.<br>
+A web client sends a request to a particular web server for a particular resource (identified by a URL) and the web server responds with some kind of data (often HTML data)</li>
+<li>HTTP Request Messag</li>
+</ol>
+<ul>
+<li>Send TCP/IP message to <span class="exturl" data-url="aHR0cDovL3d3dy5leGFtcGxlLmNvbQ==">www.example.com</span> on port 80 containing the following:<br>
+<img data-src="https://img.picui.cn/free/2024/10/30/672217d602618.png" alt="img"></li>
+</ul>
+<ol start="3">
+<li>HTTP Request Methods</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Retrieve information</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Request some operation be performed</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Provide new information</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Request something be removed from server</td>
+</tr>
+<tr>
+<td>HEAD</td>
+<td>Same as GET except that only header info is returned</td>
+</tr>
+<tr>
+<td>OPTIONS</td>
+<td>Request information about communication options available</td>
+</tr>
+<tr>
+<td>TRACE</td>
+<td>Used for testing and diagnosing problems</td>
+</tr>
+<tr>
+<td>CONNECT</td>
+<td>Used for tunnelling using proxies</td>
+</tr>
+</tbody>
+</table>
+<ol start="4">
+<li>HTTP Response Message<br>
+<img data-src="https://img.picui.cn/free/2024/10/30/672217d60533f.png" alt="img"></li>
+<li>HTTP is a Stateless Protocol<br>
+HTTP is said to be a stateless protocol because each request is handled independently<br>
+Assumes no memory of requests that came before current request<br>
+If a web server receives a number of HTTP requests from the same client, they are each handled by the server in exactly the same way as they would, had they been sent from different clients.</li>
+<li>HTML Forms: the GET Method<br>
+The GET method sends encoded data appended to the URL string</li>
+</ol>
+<ul>
+<li>The data is separated from the URL by a ‘?’</li>
+<li>The encoded data and any path information are placed in the CGI environment variables  <code>QUERY_STRING</code>  and  <code>PATH_INFO</code></li>
+</ul>
+<ol start="7">
+<li>HTML Forms: the Post Method<br>
+The POST method sends encoded data in the body section of the request</li>
+</ol>
+<ul>
+<li>Data in the body is encoded in the same way as in the GET method</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>GET</th>
+<th>POST</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>用途</td>
+<td>通常用于信息检索，不会改变服务器状态</td>
+<td>提交数据进行处理，可能更新服务器或数据库状态</td>
+</tr>
+<tr>
+<td>可见性</td>
+<td>参数在 URL 中可见，易于调试</td>
+<td>参数隐藏在请求主体中</td>
+</tr>
+<tr>
+<td>安全性</td>
+<td>不适合提交密码等敏感信息</td>
+<td>不提供安全的隐私保护</td>
+</tr>
+<tr>
+<td>长度限制</td>
+<td>受 URL 最大字符长度限制</td>
+<td>受服务器可接受的数据量限制</td>
+</tr>
+<tr>
+<td>缓存性</td>
+<td>可以被缓存</td>
+<td>必须重新传输数据，且不会自动缓存</td>
+</tr>
+</tbody>
+</table>
+<h2 id="HTTP Sessions" class="active"><a class="anchor"  href="#HTTP Sessions">#</a>HTTP Sessions</h2>
+<ol>
+<li>HTTP Sessions<br>
+A sequence of requests and responses from one browser to one (or more) sites</li>
+</ol>
+<ul>
+<li>Session can be long or short
+<ul>
+<li>Google advertising tracking: 1+ years</li>
+<li>Google Mail login: 2 weeks</li>
+</ul>
+</li>
+<li>Authorise user once, and all subsequent requests are tied to user
+<ul>
+<li>Without session management, users would have to constantly reauthenticate</li>
+</ul>
+</li>
+<li>Web application environments (ASP, PHP, etc.) provide session tokens</li>
+</ul>
+<ol start="2">
+<li>Session Tokens<br>
+Identifying the specific session instance<br>
+<img data-src="https://img.picui.cn/free/2024/10/30/67221c58289ab.png" alt="img">
+<ol>
+<li>Session Tokens in URLs<br>
+The session token is part of the URL and will be sent to the web server through HTTP GET requests</li>
+</ol>
+<ul>
+<li>E.g. <span class="exturl" data-url="aHR0cDovL3d3dy5leGFtcGxlLmNvbS9idXkuYXNwP2FydGljbGU9Mjc3ODE7c2Vzc2lvbmlkPUlFNTU3OTkwMTU3OA==">http://www.example.com/buy.asp?article=27781;sessionid=IE5579901578</span></li>
+<li>This mechanism works even in case of client security restrictions (e.g., no cookies are allowed)<br>
+Problems:</li>
+<li>All information contained in the URL might be stored in firewall or proxy log files
+<ul>
+<li>Could simply be printed out with the web page on a shared printer</li>
+</ul>
+</li>
+<li>The URL, including sensitive data, can be sent in the HTTP referrer field to other web servers</li>
+<li>Imply a high risk of sensitive session data being disclosed to unauthorised third parties</li>
+</ul>
+<ol start="2">
+<li>HTML Forms with Hidden Fields<br>
+Session token and information can be included in hidden fields in a form<br>
+Works even in case of user client security restrictions, e.g., no cookies or JavaScript<br>
+Does not provide protection mechanisms such as session expiration<br>
+Cannot last beyond a single interactive session</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight html"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">FORM</span> <span class="attr">METHOD</span>=<span class="string">&quot;POST&quot;</span> <span class="attr">ACTION</span>=<span class="string">&quot;/cgi-bin/order_goods.pl&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">INPUT</span> <span class="attr">TYPE</span>=<span class="string">&quot;hidden&quot;</span> <span class="attr">NAME</span>=<span class="string">&quot;customerid&quot;</span> <span class="attr">VALUE</span>=<span class="string">&quot;0815&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">INPUT</span> <span class="attr">TYPE</span>=<span class="string">&quot;hidden&quot;</span> <span class="attr">NAME</span>=<span class="string">&quot;valid_order&quot;</span> <span class="attr">VALUE</span>=<span class="string">&quot;yes&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">INPUT</span> <span class="attr">TYPE</span>=<span class="string">&quot;hidden&quot;</span> <span class="attr">NAME</span>=<span class="string">&quot;productid&quot;</span> <span class="attr">VALUE</span>=<span class="string">&quot;4711&quot;</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">FORM</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code>3. HTTP Cookies
+</code></pre>
+<p>Can be set either using HTTP headers or JavaScript<br>
+An extra response header is added as follows to save information to the client</p>
+<figure class="highlight http"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Set-Cookie</span><span class="punctuation">: </span>id=321328765; domain=.qut.edu.au; path=/cgi-bin</span><br></pre></td></tr></table></figure>
+<p>When a user sends an HTTP request for a URL for which the client machine<br>
+holds a cookie, an extra HTTP header is added to the client request every time</p>
+<figure class="highlight http"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cookie:id=321328765</span><br></pre></td></tr></table></figure>
+<p>Other attributes: Expires, Domain, HttpOnly, Path, Port, Secure<br>
+<img data-src="https://img.picui.cn/free/2024/10/30/672221a731746.png" alt="img"><br>
+3.  Session tokens Risk<br>
+1. Predictable Tokens<br>
+- Counter (Verizon Wireless)<br>
+- Weak MAC (WSJ)<br>
+- token = {userid,  MAC_k(userid) }<br>
+- Apache Tomcat<br>
+-  <code>generateSessionID()</code>  uses MD5 but with a weak pseudorandom number generator <span class="exturl" data-url="aHR0cHM6Ly93d3cubWljcm9zb2Z0LmNvbS9lbi11cy9yZXNlYXJjaC93cC1jb250ZW50L3VwbG9hZHMvMjAxNi8wMi9nbTA1LnBkZg==">CT-RSA 2005</span><br>
+- PHP<br>
+-  <code>create_session_id</code>  uses weak pseudorandom number generator <span class="exturl" data-url="aHR0cHM6Ly9zZWNsaXN0cy5vcmcvZnVsbGRpc2Nsb3N1cmUvMjAxMC9NYXIvNTE5">seclists.org</span><br>
+2. Cookie Theft<br>
+ 一些网站仅加密登录过程，而不加密会话 Cookie，从而导致会话令牌容易被截获<br>
+ Example 1: login over HTTPS, but subsequently use HTTP<br>
+- 在不安全的网络环境（如无线咖啡馆）中，Cookie 可能被窃取。<br>
+- Other reasons why session token sent in the clear<br>
+- HTTPS/HTTP mixed content pages at site<br>
+- Man-in-the-middle attacks on SSL<br>
+- <span class="exturl" data-url="aHR0cHM6Ly9jb2RlYnV0bGVyLmNvbS8yMDEwLzEwLzI0L2ZpcmVzaGVlcC8=">Firesheep</span> Firefox extension performs this attack</p>
+<pre><code>Example 2: Cross-Site Scripting (XSS) attacks
+</code></pre>
+
+      <div class="tags">
+          <a href="/tags/software-security/" rel="tag"><i class="ic i-tag"></i> software security</a>
+          <a href="/tags/HTTP/" rel="tag"><i class="ic i-tag"></i> HTTP</a>
+          <a href="/tags/OSI/" rel="tag"><i class="ic i-tag"></i> OSI</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2024-10-30 22:26:20" itemprop="dateModified" datetime="2024-10-30T22:26:20+10:00">2024-10-30</time>
+  </span>
+  <span id="course/Web-Application-Security/" class="item leancloud_visitors" data-flag-title="Web Application Security" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Zz <i class="ic i-at"><em>@</em></i>
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/course/Web-Application-Security/" title="Web Application Security">http://example.com/course/Web-Application-Security/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/course/SQL-Injection/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;26&#x2F;671cf69b7c48b.jpg" title="SQL Injection">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> Principles of Software Security</span>
+  <h3>SQL Injection</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Overall"><span class="toc-number">1.</span> <span class="toc-text">Overall</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTTP"><span class="toc-number">2.</span> <span class="toc-text">HTTP</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP"><span class="toc-number">2.1.</span> <span class="toc-text">HTTP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP%20Sessions"><span class="toc-number">2.2.</span> <span class="toc-text">HTTP Sessions</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/course/C-language-basics-and-Computer-memory/" rel="bookmark" title="C language basics and Computer memory">C language basics and Computer memory</a></li><li><a href="/course/x86-architecture-and-Assembly-basics/" rel="bookmark" title="x86 architecture and Assembly basics">x86 architecture and Assembly basics</a></li><li><a href="/course/Stack-buffer-overflow/" rel="bookmark" title="Stack buffer overflow">Stack buffer overflow</a></li><li><a href="/course/Integer-overflow/" rel="bookmark" title="Integer overflow">Integer overflow</a></li><li><a href="/course/Format-string-bugs/" rel="bookmark" title="Format string bugs">Format string bugs</a></li><li><a href="/course/Fuzz-testing/" rel="bookmark" title="Fuzz testing">Fuzz testing</a></li><li><a href="/course/AFL/" rel="bookmark" title="AFL">AFL</a></li><li><a href="/course/Heap-buffer-overflow/" rel="bookmark" title="Heap buffer overflow">Heap buffer overflow</a></li><li><a href="/course/Security-Concepts/" rel="bookmark" title="Security Concepts">Security Concepts</a></li><li><a href="/course/SQL-Injection/" rel="bookmark" title="SQL Injection">SQL Injection</a></li><li class="active"><a href="/course/Web-Application-Security/" rel="bookmark" title="Web Application Security">Web Application Security</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Zz"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Zz</p>
+  <div class="description" itemprop="description">🌸</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">15</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">5</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">13</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL1p3eTB2MA==" title="https:&#x2F;&#x2F;github.com&#x2F;Zwy0v0"><i class="ic i-github"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOnp3eTk5OTAuMEBtYWlsLmNvbQ==" title="mailto:zwy9990.0@mail.com"><i class="ic i-envelope"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>友链</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/links/" rel="section"><i class="ic i-magic"></i>links</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/study/" title="分类于 自学笔记">自学笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/study/JavaScript/" title="分类于 JavaScript">JavaScript</a>
+</div>
+
+    <span><a href="/study/JS%E4%B8%AD%E7%9A%84this%E4%B8%8E%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/" title="JS中的this与相关函数">JS中的this与相关函数</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/C-language-basics-and-Computer-memory/" title="C language basics and Computer memory">C language basics and Computer memory</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Heap-buffer-overflow/" title="Heap buffer overflow">Heap buffer overflow</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Integer-overflow/" title="Integer overflow">Integer overflow</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Format-string-bugs/" title="Format string bugs">Format string bugs</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/study/" title="分类于 自学笔记">自学笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/study/JavaScript/" title="分类于 JavaScript">JavaScript</a>
+</div>
+
+    <span><a href="/study/js%E7%BB%A7%E6%89%BF/" title="js继承">js继承</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Stack-buffer-overflow/" title="Stack buffer overflow">Stack buffer overflow</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Web-Application-Security/" title="Web Application Security">Web Application Security</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Fuzz-testing/" title="Fuzz testing">Fuzz testing</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/dailysharing/" title="分类于 日常碎碎念">日常碎碎念</a>
+</div>
+
+    <span><a href="/dailysharing/%E7%AC%AC%E4%B8%80%E7%AF%87ovo/" title="第一篇ovo">第一篇ovo</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Zz @ AtoposZz</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'course/Web-Application-Security/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

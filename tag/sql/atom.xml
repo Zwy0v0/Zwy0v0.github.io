@@ -4,17 +4,19 @@
     <title> • Posts by &#34;sql&#34; tag</title>
     <link href="http://example.com" />
     <updated>2024-10-30T02:17:45.000Z</updated>
-    <category term="JavaScript" />
-    <category term="C" />
-    <category term="software security" />
-    <category term="AFL" />
+    <category term="C language" />
     <category term="Linux" />
+    <category term="software security" />
+    <category term="C" />
+    <category term="vulnerability" />
+    <category term="AFL" />
+    <category term="SQL" />
+    <category term="HTTP" />
+    <category term="OSI" />
+    <category term="gdb" />
+    <category term="JavaScript" />
     <category term="Blog" />
     <category term="日常" />
-    <category term="vulnerability" />
-    <category term="C language" />
-    <category term="SQL" />
-    <category term="gdb" />
     <entry>
         <id>http://example.com/course/SQL-Injection/</id>
         <title>SQL Injection</title>
