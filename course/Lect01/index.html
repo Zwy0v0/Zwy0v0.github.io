@@ -1,0 +1,1054 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="" href="http://example.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="OSI,TCP/IP,network system" />
+
+
+<link rel="canonical" href="http://example.com/course/Lect01/">
+
+
+
+  <title>
+Lect01 - Network Systems - 课程笔记 |
+AtoposZz =  = 此处存放一些学习笔记</title>
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">Lect01
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2024-10-31 16:06:30">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2024-10-31T16:06:30+10:00">2024-10-31</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>8.5k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>8 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">AtoposZz</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf70db78e1.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a94b2174.png"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf60a21b5d.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a9a63310.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf6bb9fdaf.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf7643bf1a.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/course/" itemprop="item" rel="index" title="分类于 课程笔记"><span itemprop="name">课程笔记</span></a>
+<meta itemprop="position" content="1" /></span>
+<i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/course/Network-Systems/" itemprop="item" rel="index" title="分类于 Network Systems"><span itemprop="name">Network Systems</span></a>
+<meta itemprop="position" content="2" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://example.com/course/Lect01/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Zz">
+    <meta itemprop="description" content="此处存放一些学习笔记, 🌸">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="Peer-to-peer and client-server networks" class="active"><a class="anchor"  href="#Peer-to-peer and client-server networks">#</a>Peer-to-peer and client-server networks</h1>
+<h2 id="P2P" class="active"><a class="anchor"  href="#P2P">#</a>P2P</h2>
+<ul>
+<li>Peer-to-peer (P2P) Network Model 在对等网络模型中，网络中的每个设备（节点或主机）都负责管理自己的资源，包括控制访问权限和安全性管理。这种设置允许计算机在没有集中控制的情况下共享或限制资源。</li>
+<li>P2P 网络的主要特征：
+<ul>
+<li>无集中控制：每台计算机独立运行，并管理自己的设置。</li>
+<li>节点组成的逻辑组：网络由多台计算机构成的组，特点是：
+<ul>
+<li>可以共享资源（如文件、打印机等）</li>
+<li>基于用户权限限制资源访问</li>
+<li>独立管理各自的设置、资源和安全性</li>
+</ul>
+</li>
+<li>本地用户账户：每个用户在各自的计算机上拥有本地账户，权限和设置仅适用于该设备。</li>
+<li>互联网示例：互联网中的一些对等共享平台（如文件共享应用）使用此模型。</li>
+</ul>
+</li>
+<li>Advantages and disadvantages:
+<ul>
+<li>easy, simple</li>
+<li>not scalable, not necessarily secure, not practical for larges-scale networks</li>
+</ul>
+</li>
+</ul>
+<h2 id="Client-Server Network Model" class="active"><a class="anchor"  href="#Client-Server Network Model">#</a>Client-Server Network Model</h2>
+<ul>
+<li>在客户端 - 服务器网络模型中，有一个中心服务器管理网络资源，并控制客户端的网络访问。这种结构允许多个客户端通过服务器来请求访问资源。</li>
+<li>模型主要特点：
+<ul>
+<li>服务器：管理共享资源，并控制网络访问。</li>
+<li>多个客户端：每个客户端通过服务器请求网络访问或资源。客户端不直接与其他客户端共享资源，而是通过服务器间接共享资源。</li>
+</ul>
+</li>
+<li>Advantages relative to P2P networks:
+<ul>
+<li>More scalable</li>
+<li>Centrally controlled network access and network resources</li>
+<li>Central monitoring and management</li>
+</ul>
+</li>
+</ul>
+<h2 id="Client-Server Applications" class="active"><a class="anchor"  href="#Client-Server Applications">#</a>Client-Server Applications</h2>
+<ul>
+<li>Network Services are the resources a network makes available to its users
+<ul>
+<li>They include applications and data provided by the applications</li>
+</ul>
+</li>
+<li>In a client-server application
+<ul>
+<li>A server provide network resources to clients</li>
+<li>Clients request network resources from the server</li>
+</ul>
+</li>
+<li>Protocols are methods and rules for communication between networked devices
+<ul>
+<li>Two primary protocols:
+<ul>
+<li>TCP (Transmission Control Protocol), and</li>
+<li>IP (Internet Protocol)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Network hardware devices and physical topologies" class="active"><a class="anchor"  href="#Network hardware devices and physical topologies">#</a>Network hardware devices and physical topologies</h1>
+<ol>
+<li>Local Area Networks (LANs) and Hardware</li>
+</ol>
+<ul>
+<li>A LAN is usually for a workspace or asmall physical area
+<ul>
+<li>Such as a lab or a building</li>
+</ul>
+</li>
+<li>A LAN interconnects nodes via a device called switch</li>
+<li>Each device needs a Network Interface Card (NIC) to connect to the switch</li>
+</ul>
+<ol start="2">
+<li>Start Topology or Bus Topology</li>
+</ol>
+<ul>
+<li>Physically, a LAN is interconnected with star topology
+<ul>
+<li>A switch in the central point to interconnect all other nodes</li>
+</ul>
+</li>
+<li>Logically, a LAN is interconnected with bus topology
+<ul>
+<li>All nodes access the network through the bus</li>
+</ul>
+</li>
+<li>Function of the switch
+<ul>
+<li>A switch receives incoming data from one of its ports and redirects the data to another port or multiple ports according to the intended destination of the data</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>Daisy-chained switches in a LAN</li>
+</ol>
+<ul>
+<li>A LAN can have multiple switches</li>
+<li>Three switches daisy-chained together in a single line served as a bus physically and logically
+<ul>
+<li>However, each of the switches is connected to its nodes via star topology physically, thus making the overall star-bus physical topology</li>
+<li>A topological model combining several topological models is known as a hybrid topological model</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li>Interconnection of LANs via Routers</li>
+</ol>
+<ul>
+<li>A router is a device that manages traffic between two or more LANs</li>
+<li>A router can be used in small home networks to connect home LAN to the internet
+<ul>
+<li>This is known as a SOHO (Small Office-Home Office) network</li>
+</ul>
+</li>
+<li>Difference between a router and a switch
+<ul>
+<li>A switch works on, and belongs to, its LAN</li>
+<li>A router is a gateway interconnecting and belonging to multiple LANs</li>
+</ul>
+</li>
+</ul>
+<ol start="5">
+<li>MANs and WANs</li>
+</ol>
+<ul>
+<li>Metropolitan area network (MAN)—A group of connected LANs in the same geographical area
+<ul>
+<li>Also known as Campus Area Network (CAN)</li>
+</ul>
+</li>
+<li>Wide Area Network (WAN) – A group of LANs spreading over a wide geographical area
+<ul>
+<li>The Internet is he largest and most varied WAN</li>
+</ul>
+</li>
+<li>PAN (personal area network)— The smallest network
+<ul>
+<li>A network of personal devices such as your smartphone and your laptop</li>
+</ul>
+</li>
+</ul>
+<h1 id="The ISO 7-layer Open-System-Interconnection (OSI) model" class="active"><a class="anchor"  href="#The ISO 7-layer Open-System-Interconnection (OSI) model">#</a>The ISO 7-layer Open-System-Interconnection (OSI) model</h1>
+<h2 id="Overall" class="active"><a class="anchor"  href="#Overall">#</a>Overall</h2>
+<ol>
+<li>The OSI model is a theoretical representation describing network communication between two nodes
+<ul>
+<li>Never implemented</li>
+<li>Hardware and software independent</li>
+<li>Each network communication process represented<br>
+<img data-src="https://img.picui.cn/free/2024/10/31/672332515b4e5.png" alt="img"></li>
+</ul>
+</li>
+<li>OSI and TCP/IP Models<br>
+TCP/IP 模型将应用层、表示层和会话层合并为一个单一的应用层，并将数据链路层和物理层合并为网络接入层</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>OSI Model</th>
+<th>TCP/IP Model</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Application</td>
+<td>Application</td>
+<td>Telnet, FTP, DHCP, DNS, HTTP, SMTP</td>
+</tr>
+<tr>
+<td>Presentation</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Session</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Transport</td>
+<td>Transport</td>
+<td>TCP, UDP</td>
+</tr>
+<tr>
+<td>Network</td>
+<td>Internetwork</td>
+<td>ICMP, IP</td>
+</tr>
+<tr>
+<td>Data Link</td>
+<td>Network Access</td>
+<td>Ethernet, Wi-Fi, ARP</td>
+</tr>
+<tr>
+<td>Physical</td>
+<td></td>
+<td>Cables, Hubs, Switches</td>
+</tr>
+</tbody>
+</table>
+<ol start="3">
+<li>Functions of the 7 layers</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>OSI Model Layer</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Application (Layer 7)</td>
+<td>Provides interface between software applications and a network for interpreting applications’ requests and requirements</td>
+</tr>
+<tr>
+<td>Presentation (Layer 6)</td>
+<td>Allows hosts and applications to use a common language; performs data formatting, encryption, and compression</td>
+</tr>
+<tr>
+<td>Session (Layer 5)</td>
+<td>Establishes, maintains, and terminates user connections</td>
+</tr>
+<tr>
+<td>Transport (Layer 4)</td>
+<td>Ensures accurate delivery of data through flow control, segmentation and reassembly, error correction, and acknowledgment</td>
+</tr>
+<tr>
+<td>Network (Layer 3)</td>
+<td>Establishes network connections; translates network addresses into their physical counterparts and determines routing</td>
+</tr>
+<tr>
+<td>Data Link (Layer 2)</td>
+<td>Packages data in frames appropriate to network transmission method</td>
+</tr>
+<tr>
+<td>Physical (Layer 1)</td>
+<td>Manages signaling to and from physical network connections</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Functions of the 7 layers" class="active"><a class="anchor"  href="#Functions of the 7 layers">#</a>Functions of the 7 layers</h2>
+<ol>
+<li>Layer 7: Application Layer 应用层</li>
+</ol>
+<ul>
+<li>Layer 7 describes the interface between two applications on separate computers</li>
+<li>Layer 7 protocols are used by application programs to
+<ul>
+<li>Provide services to users, such as a browser and email client</li>
+<li>Provide services to the system for, e.g., management of networks and resources</li>
+</ul>
+</li>
+<li>Payload – data that is passed between applications (or utility programs) and the OS<br>
+<img data-src="https://img.picui.cn/free/2024/10/31/672336b510c89.png" alt="img"></li>
+</ul>
+<ol start="2">
+<li>Layer 6 Presentation Layer 表示层</li>
+</ol>
+<ul>
+<li>Presentation layer—Responsible for reformatting, compressing, and/or encrypting data in a way that the receiving application can read</li>
+<li>Example:<br>
+⎻ An web browsing message can be encrypted at the Presentation layer by the browser or by the O S (Operating System)</li>
+</ul>
+<ol start="3">
+<li>Layer 5: Session Layer 会话层</li>
+</ol>
+<ul>
+<li>Layer 5 describes how data between applications is synched and recovered if messages do not arrive intact at the receiving application</li>
+<li>The Application, Presentation, and Session layers are intertwined
+<ul>
+<li>Often difficult to distinguish between them</li>
+</ul>
+</li>
+<li>Most tasks are performed by the OS when an application makes an API call to the OS
+<ul>
+<li>Application programming interface (API) call is the method that an application uses when it makes a request of the OS<br>
+<img data-src="https://img.picui.cn/free/2024/10/31/672336b537ba9.png" alt="img"></li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li>Layer 4: Transport Layer 传输层</li>
+</ol>
+<ul>
+<li>Layer 4 is responsible for transporting Application layer payloads from one application to another</li>
+<li>Control information is put into a header, which is added to the payload
+<ul>
+<li>Known as encapsulation</li>
+</ul>
+</li>
+<li>The layer 4 header addresses the receiving application by a number called a port number</li>
+<li>Two main Transport layer protocols at Layer 4
+<ol>
+<li>TCP (Transmission Control Protocol)</li>
+</ol>
+<ul>
+<li>It makes a connection with the end host, checks whether data was received; called a connection-oriented protocol</li>
+<li>If a message is too long, TCP divides it into smaller ones called <strong>segments</strong></li>
+</ul>
+<ol start="2">
+<li>UDP (User Datagram Protocol)</li>
+</ol>
+<ul>
+<li>It does not guarantee delivery by first connecting and checking whether data is received; called a connectionless protocol</li>
+<li>A message is called a <strong>datagram</strong><br>
+<img data-src="https://img.picui.cn/free/2024/10/31/672336b4c7bf0.png" alt="img"></li>
+</ul>
+</li>
+</ul>
+<ol start="5">
+<li>Layer 3: Network Layer 网络层</li>
+</ol>
+<ul>
+<li>Layer 3 is responsible for moving messages from one node to another until they reach the destination host</li>
+<li>IP adds its own Network layer header to the segment or datagram
+<ul>
+<li>The entire Network layer message is called a packet</li>
+</ul>
+</li>
+<li>IP address—Assigned to each node on a network
+<ul>
+<li>Network layer uses it to uniquely identify each host</li>
+</ul>
+</li>
+<li>IP relies on several routing protocols to find the best route for a packet to take to reach destination
+<ul>
+<li>ICMP and ARP are examples
+<ul>
+<li>Note: ARP is not strictly a Layer 3 protocol. It works at Layer 2 but uses Layer 3 IP address information</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Network layer protocol will divide large packets into smaller <strong>packets</strong>
+<ul>
+<li>The process is known as fragmentation</li>
+</ul>
+</li>
+</ul>
+<ol start="6">
+<li>Layer 2: Data Link Layer 数据链路层</li>
+</ol>
+<ul>
+<li>Layers 2 and 1 are responsible for interfacing with physical hardware on the local network
+<ul>
+<li>Protocols at these layers are programmed into firmware of a computer’s NIC and other hardware</li>
+</ul>
+</li>
+<li>The type of networking hardware or technology used on a network determines the Link Layer protocol used
+<ul>
+<li>Ethernet and Wi-Fi are examples</li>
+</ul>
+</li>
+<li>Layer2 puts control information in a Link layer header and at the end of the packet in a trailer
+<ul>
+<li>The data transmitted at the entire Link layer is called a <strong>frame</strong></li>
+</ul>
+</li>
+<li>MAC (Media Access Control) address—Hardware address of the source and destination NICs
+<ul>
+<li>Also called a physical address, hardware address, or Data Link layer address</li>
+<li>Embedded on every network adapter</li>
+<li>In a LAN, a node can be found through MAC address</li>
+</ul>
+</li>
+<li>Two Data Link Layer Sublayers
+<ol>
+<li>LLC (Logical Link Control) sublayer</li>
+</ol>
+<ul>
+<li>It provides common interface, reliability and flow control</li>
+</ul>
+<ol start="2">
+<li>MAC (Media Access Control) sublayer</li>
+</ol>
+<ul>
+<li>It manages access to the physical medium</li>
+<li>It appends physical address of destination computer onto data frame</li>
+</ul>
+</li>
+</ul>
+<ol start="7">
+<li>Layer 1: Physical Layer 物理层</li>
+</ol>
+<ul>
+<li>Layer 1 is the simplest layer and is responsible for sending bits via a wired or wireless transmission</li>
+<li><strong>Bits</strong> can be transmitted as:
+<ul>
+<li>Wavelengths in the air</li>
+<li>Voltage on a copper wire</li>
+<li>Light (via fiber-optic cabling)</li>
+</ul>
+</li>
+</ul>
+<h2 id="PDU" class="active"><a class="anchor"  href="#PDU">#</a>PDU</h2>
+<ol>
+<li>PDU: the name for a group of data bits as it moves from one layer to the next, and from one LAN to the next</li>
+</ol>
+<ul>
+<li>It is sometimes called a message or a transmission</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>OSI 层级</th>
+<th>常用名称</th>
+<th>技术性名称 (PDU)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>应用层 (Layer 7)</td>
+<td>数据或有效载荷（Payload）</td>
+<td>L7PDU</td>
+</tr>
+<tr>
+<td>表示层 (Layer 6)</td>
+<td>数据或有效载荷（Payload）</td>
+<td>L6PDU</td>
+</tr>
+<tr>
+<td>会话层 (Layer 5)</td>
+<td>数据或有效载荷（Payload）</td>
+<td>L5PDU</td>
+</tr>
+<tr>
+<td>传输层 (Layer 4)</td>
+<td>段（Segment, TCP）或数据报（Datagram, UDP）</td>
+<td>L4PDU</td>
+</tr>
+<tr>
+<td>网络层 (Layer 3)</td>
+<td>包（Packet）</td>
+<td>L3PDU</td>
+</tr>
+<tr>
+<td>数据链路层 (Layer 2)</td>
+<td>帧（Frame）</td>
+<td>L2PDU</td>
+</tr>
+<tr>
+<td>物理层 (Layer 1)</td>
+<td>比特（Bit）或传输单元</td>
+<td>L1PDU</td>
+</tr>
+</tbody>
+</table>
+<ol start="2">
+<li>Demonstration of PDU Names
+<ol>
+<li>Data transformation</li>
+</ol>
+<ul>
+<li>Original software application data differs from application layer NIC data
+<ul>
+<li>Information added at each layer</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>Segments/datagrams</li>
+</ol>
+<ul>
+<li>Generated in Transport layer</li>
+<li>Unit of data resulting from subdividing larger Protocol Data Unit (PDU)</li>
+</ul>
+<ol start="3">
+<li>Packets/datagrams</li>
+</ol>
+<ul>
+<li>Generated in Network layer</li>
+<li>Added logical addressing information added to segments</li>
+</ul>
+<ol start="4">
+<li>Frames</li>
+</ol>
+<ul>
+<li>Generated in Data Link layer</li>
+<li>Added physical addressing and error-checking information to segments<br>
+<img data-src="https://img.picui.cn/free/2024/10/31/672336ba87f7d.png" alt="img"></li>
+</ul>
+</li>
+<li>Communication between two systems</li>
+</ol>
+<ul>
+<li>On data’s way down the protocol stack (model):
+<ul>
+<li>Data is divided into data units called protocol data units (PDU)</li>
+<li>Some layers add their own formatting to the PDU, which is called a header (encapsulation)</li>
+</ul>
+</li>
+<li>When data arrives at the receiving end, it is passed up the protocol stack:
+<ul>
+<li>At each layer, software reads its PDU data and strips its header information (called decapsulation) and passes the PDU to the next higher layer</li>
+<li>Packet leaves the Application layer in a format the receiving application can read<br>
+<img data-src="https://img.picui.cn/free/2024/10/31/672336b4d1ba7.png" alt="img"></li>
+</ul>
+</li>
+</ul>
+
+      <div class="tags">
+          <a href="/tags/OSI/" rel="tag"><i class="ic i-tag"></i> OSI</a>
+          <a href="/tags/TCP-IP/" rel="tag"><i class="ic i-tag"></i> TCP/IP</a>
+          <a href="/tags/network-system/" rel="tag"><i class="ic i-tag"></i> network system</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2024-10-31 18:36:29" itemprop="dateModified" datetime="2024-10-31T18:36:29+10:00">2024-10-31</time>
+  </span>
+  <span id="course/Lect01/" class="item leancloud_visitors" data-flag-title="Lect01" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Zz <i class="ic i-at"><em>@</em></i>
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/course/Lect01/" title="Lect01">http://example.com/course/Lect01/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/course/Cross-Site-attack/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;26&#x2F;671cf7643bf1a.jpg" title="Cross-Site attack">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> Principles of Software Security</span>
+  <h3>Cross-Site attack</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Peer-to-peer%20and%20client-server%20networks"><span class="toc-number">1.</span> <span class="toc-text">Peer-to-peer and client-server networks</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#P2P"><span class="toc-number">1.1.</span> <span class="toc-text">P2P</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Client-Server%20Network%20Model"><span class="toc-number">1.2.</span> <span class="toc-text">Client-Server Network Model</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Client-Server%20Applications"><span class="toc-number">1.3.</span> <span class="toc-text">Client-Server Applications</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Network%20hardware%20devices%20and%20physical%20topologies"><span class="toc-number">2.</span> <span class="toc-text">Network hardware devices and physical topologies</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#The%20ISO%207-layer%20Open-System-Interconnection%20(OSI)%20model"><span class="toc-number">3.</span> <span class="toc-text">The ISO 7-layer Open-System-Interconnection (OSI) model</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Overall"><span class="toc-number">3.1.</span> <span class="toc-text">Overall</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Functions%20of%20the%207%20layers"><span class="toc-number">3.2.</span> <span class="toc-text">Functions of the 7 layers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PDU"><span class="toc-number">3.3.</span> <span class="toc-text">PDU</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li class="active"><a href="/course/Lect01/" rel="bookmark" title="Lect01">Lect01</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Zz"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Zz</p>
+  <div class="description" itemprop="description">🌸</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">17</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">6</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">17</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL1p3eTB2MA==" title="https:&#x2F;&#x2F;github.com&#x2F;Zwy0v0"><i class="ic i-github"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOnp3eTk5OTAuMEBtYWlsLmNvbQ==" title="mailto:zwy9990.0@mail.com"><i class="ic i-envelope"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>友链</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/links/" rel="section"><i class="ic i-magic"></i>links</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Heap-buffer-overflow/" title="Heap buffer overflow">Heap buffer overflow</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Format-string-bugs/" title="Format string bugs">Format string bugs</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Security-Concepts/" title="Security Concepts">Security Concepts</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/AFL/" title="AFL">AFL</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/dailysharing/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/x86-architecture-and-Assembly-basics/" title="x86 architecture and Assembly basics">x86 architecture and Assembly basics</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Cross-Site-attack/" title="Cross-Site attack">Cross-Site attack</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/SQL-Injection/" title="SQL Injection">SQL Injection</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Integer-overflow/" title="Integer overflow">Integer overflow</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Web-Application-Security/" title="Web Application Security">Web Application Security</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Zz @ AtoposZz</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'course/Lect01/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

@@ -7,29 +7,31 @@
         <language>zh-CN</language>
         <pubDate>Mon, 28 Oct 2024 14:45:49 +1000</pubDate>
         <lastBuildDate>Mon, 28 Oct 2024 14:45:49 +1000</lastBuildDate>
-        <category>Blog</category>
-        <category>日常</category>
-        <category>C language</category>
-        <category>Linux</category>
+        <category>C</category>
         <category>software security</category>
+        <category>AFL</category>
+        <category>Linux</category>
+        <category>C language</category>
         <category>HTTP</category>
         <category>XSS</category>
         <category>CSRF</category>
-        <category>C</category>
-        <category>AFL</category>
         <category>vulnerability</category>
-        <category>SQL</category>
         <category>OSI</category>
-        <category>JavaScript</category>
+        <category>TCP/IP</category>
+        <category>network system</category>
+        <category>SQL</category>
         <category>gdb</category>
+        <category>JavaScript</category>
+        <category>Blog</category>
+        <category>日常</category>
         <item>
             <guid isPermalink="true">http://example.com/course/AFL/</guid>
             <title>AFL</title>
             <link>http://example.com/course/AFL/</link>
-            <category>Linux</category>
-            <category>software security</category>
             <category>C</category>
+            <category>software security</category>
             <category>AFL</category>
+            <category>Linux</category>
             <pubDate>Mon, 28 Oct 2024 14:45:49 +1000</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;American Fuzzy Lop&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#American Fuzzy Lop&#34;&gt;#&lt;/a&gt; American Fuzzy Lop&lt;/h1&gt;
 &lt;h2 id=&#34;Definition&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Definition&#34;&gt;#&lt;/a&gt;Definition&lt;/h2&gt;

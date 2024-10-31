@@ -7,21 +7,23 @@
         <language>zh-CN</language>
         <pubDate>Fri, 18 Oct 2024 21:28:05 +1000</pubDate>
         <lastBuildDate>Fri, 18 Oct 2024 21:28:05 +1000</lastBuildDate>
-        <category>Blog</category>
-        <category>日常</category>
-        <category>C language</category>
-        <category>Linux</category>
+        <category>C</category>
         <category>software security</category>
+        <category>AFL</category>
+        <category>Linux</category>
+        <category>C language</category>
         <category>HTTP</category>
         <category>XSS</category>
         <category>CSRF</category>
-        <category>C</category>
-        <category>AFL</category>
         <category>vulnerability</category>
-        <category>SQL</category>
         <category>OSI</category>
-        <category>JavaScript</category>
+        <category>TCP/IP</category>
+        <category>network system</category>
+        <category>SQL</category>
         <category>gdb</category>
+        <category>JavaScript</category>
+        <category>Blog</category>
+        <category>日常</category>
         <item>
             <guid isPermalink="true">http://example.com/dailysharing/%E7%AC%AC%E4%B8%80%E7%AF%87ovo/</guid>
             <title>第一篇ovo</title>

@@ -7,21 +7,23 @@
         <language>zh-CN</language>
         <pubDate>Wed, 30 Oct 2024 22:31:43 +1000</pubDate>
         <lastBuildDate>Wed, 30 Oct 2024 22:31:43 +1000</lastBuildDate>
-        <category>Blog</category>
-        <category>日常</category>
-        <category>C language</category>
-        <category>Linux</category>
+        <category>C</category>
         <category>software security</category>
+        <category>AFL</category>
+        <category>Linux</category>
+        <category>C language</category>
         <category>HTTP</category>
         <category>XSS</category>
         <category>CSRF</category>
-        <category>C</category>
-        <category>AFL</category>
         <category>vulnerability</category>
-        <category>SQL</category>
         <category>OSI</category>
-        <category>JavaScript</category>
+        <category>TCP/IP</category>
+        <category>network system</category>
+        <category>SQL</category>
         <category>gdb</category>
+        <category>JavaScript</category>
+        <category>Blog</category>
+        <category>日常</category>
         <item>
             <guid isPermalink="true">http://example.com/course/Cross-Site-attack/</guid>
             <title>Cross-Site attack</title>

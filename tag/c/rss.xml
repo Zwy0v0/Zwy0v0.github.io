@@ -7,27 +7,29 @@
         <language>zh-CN</language>
         <pubDate>Mon, 28 Oct 2024 21:57:22 +1000</pubDate>
         <lastBuildDate>Mon, 28 Oct 2024 21:57:22 +1000</lastBuildDate>
-        <category>Blog</category>
-        <category>日常</category>
-        <category>C language</category>
-        <category>Linux</category>
+        <category>C</category>
         <category>software security</category>
+        <category>AFL</category>
+        <category>Linux</category>
+        <category>C language</category>
         <category>HTTP</category>
         <category>XSS</category>
         <category>CSRF</category>
-        <category>C</category>
-        <category>AFL</category>
         <category>vulnerability</category>
-        <category>SQL</category>
         <category>OSI</category>
-        <category>JavaScript</category>
+        <category>TCP/IP</category>
+        <category>network system</category>
+        <category>SQL</category>
         <category>gdb</category>
+        <category>JavaScript</category>
+        <category>Blog</category>
+        <category>日常</category>
         <item>
             <guid isPermalink="true">http://example.com/course/Heap-buffer-overflow/</guid>
             <title>Heap buffer overflow</title>
             <link>http://example.com/course/Heap-buffer-overflow/</link>
-            <category>software security</category>
             <category>C</category>
+            <category>software security</category>
             <pubDate>Mon, 28 Oct 2024 21:57:22 +1000</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;Heap allocation&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Heap allocation&#34;&gt;#&lt;/a&gt;Heap allocation&lt;/h1&gt;
 &lt;h2 id=&#34;Memory Allocation&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Memory Allocation&#34;&gt;#&lt;/a&gt;Memory Allocation&lt;/h2&gt;
@@ -366,10 +368,10 @@ Possible ways to protect against heap overflow&lt;/p&gt;
             <guid isPermalink="true">http://example.com/course/AFL/</guid>
             <title>AFL</title>
             <link>http://example.com/course/AFL/</link>
-            <category>Linux</category>
-            <category>software security</category>
             <category>C</category>
+            <category>software security</category>
             <category>AFL</category>
+            <category>Linux</category>
             <pubDate>Mon, 28 Oct 2024 14:45:49 +1000</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;American Fuzzy Lop&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#American Fuzzy Lop&#34;&gt;#&lt;/a&gt; American Fuzzy Lop&lt;/h1&gt;
 &lt;h2 id=&#34;Definition&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Definition&#34;&gt;#&lt;/a&gt;Definition&lt;/h2&gt;
@@ -612,8 +614,8 @@ Targets functions rather than programs&lt;/li&gt;
             <guid isPermalink="true">http://example.com/course/Format-string-bugs/</guid>
             <title>Format string bugs</title>
             <link>http://example.com/course/Format-string-bugs/</link>
-            <category>software security</category>
             <category>C</category>
+            <category>software security</category>
             <category>vulnerability</category>
             <pubDate>Sat, 26 Oct 2024 21:52:22 +1000</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;Format Functions&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Format Functions&#34;&gt;#&lt;/a&gt;Format Functions&lt;/h1&gt;
@@ -822,8 +824,8 @@ Format functions can be exploited when an attacker is given direct control over 
             <guid isPermalink="true">http://example.com/course/Integer-overflow/</guid>
             <title>Integer overflow</title>
             <link>http://example.com/course/Integer-overflow/</link>
-            <category>software security</category>
             <category>C</category>
+            <category>software security</category>
             <pubDate>Sat, 26 Oct 2024 20:33:32 +1000</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;Integer overflow&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Integer overflow&#34;&gt;#&lt;/a&gt;Integer overflow&lt;/h1&gt;
  When the result of an integer operation does not fit within the allocated memory space. All common languages are affected 
@@ -935,8 +937,8 @@ Integer overflow is very hard to discover and prevent
             <guid isPermalink="true">http://example.com/course/Stack-buffer-overflow/</guid>
             <title>Stack buffer overflow</title>
             <link>http://example.com/course/Stack-buffer-overflow/</link>
-            <category>software security</category>
             <category>C</category>
+            <category>software security</category>
             <category>vulnerability</category>
             <pubDate>Sat, 26 Oct 2024 17:50:30 +1000</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;Stack buffer overflow&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Stack buffer overflow&#34;&gt;#&lt;/a&gt;Stack buffer overflow&lt;/h1&gt;
