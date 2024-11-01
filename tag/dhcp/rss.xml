@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title> • Posts by &#34;dhcp&#34; tag</title>
+        <link>http://example.com</link>
+        <description>🌸</description>
+        <language>zh-CN</language>
+        <pubDate>Fri, 01 Nov 2024 22:02:19 +1000</pubDate>
+        <lastBuildDate>Fri, 01 Nov 2024 22:02:19 +1000</lastBuildDate>
+        <category>network system</category>
+        <category>C</category>
+        <category>software security</category>
+        <category>AFL</category>
+        <category>Linux</category>
+        <category>C language</category>
+        <category>HTTP</category>
+        <category>XSS</category>
+        <category>CSRF</category>
+        <category>vulnerability</category>
+        <category>IP</category>
+        <category>DHCP</category>
+        <category>ICMP</category>
+        <category>ARP</category>
+        <category>OSI</category>
+        <category>TCP/IP</category>
+        <category>SQL</category>
+        <category>JavaScript</category>
+        <category>Blog</category>
+        <category>日常</category>
+        <category>gdb</category>
+        <item>
+            <guid isPermalink="true">http://example.com/course/Layer-3-IP-Addressing-and-IP-related-Protocols/</guid>
+            <title>(Layer 3) IP Addressing and IP-related Protocols</title>
+            <link>http://example.com/course/Layer-3-IP-Addressing-and-IP-related-Protocols/</link>
+            <category>network system</category>
+            <category>IP</category>
+            <category>DHCP</category>
+            <category>ICMP</category>
+            <category>ARP</category>
+            <pubDate>Fri, 01 Nov 2024 22:02:19 +1000</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;IP (Internet Protocol) Addressing&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#IP (Internet Protocol) Addressing&#34;&gt;#&lt;/a&gt;IP (Internet Protocol) Addressing&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Four addressing methods innetworking&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;层级&lt;/th&gt;
+&lt;th&gt;地址类型&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;应用层 (Layer 7)&lt;/td&gt;
+&lt;td&gt;Domain names, computer names, host names&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;传输层 (Layer 4)&lt;/td&gt;
+&lt;td&gt;Port numbers&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;网络层 (Layer 3)&lt;/td&gt;
+&lt;td&gt;IP 地址（IPv4、IPv6）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;数据链路层 (Layer 2)&lt;/td&gt;
+&lt;td&gt;MAC 地址&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Static IP addresses are assigned manually by the network administrator&lt;br&gt;
+Dynamic IP addresses are assigned automatically by a DHCP server&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;The Internet Assigned Numbers Authority (IANA)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;IANA delegates 5 regional Internet registries (RIRs)
+&lt;ul&gt;
+&lt;li&gt;RIRs allocate address blocks to Local Internet Registries / National Internet registry&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Internet Registry&lt;/th&gt;
+&lt;th&gt;Region&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;African Network Information Centre (AfriNIC)&lt;/td&gt;
+&lt;td&gt;Africa&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;American Registry for Internet Numbers (ARIN)&lt;/td&gt;
+&lt;td&gt;US, Canada, several parts of the Caribbean region, and Antarctica&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Asia-Pacific Network Information Centre (APNIC)&lt;/td&gt;
+&lt;td&gt;Asia, Australia, New Zealand, and neighboring countries&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Latin America and Caribbean Network Information Centre (LACNIC)&lt;/td&gt;
+&lt;td&gt;Latin America and parts of the Caribbean region&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Réseaux IP Européens Network Coordination Centre (RIPE NCC)&lt;/td&gt;
+&lt;td&gt;Europe, Russia, the Middle East, and Central Asia&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;Hierarchy of addressing Scheme&lt;br&gt;
+&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/01/6724cb8ea345d.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Roles of the Network Layer&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;The Network layer is where administrators usually do the most network configuration&lt;/li&gt;
+&lt;li&gt;This layer is where the IP protocol operates and is the heart of the TCP/IP protocol suite&lt;/li&gt;
+&lt;li&gt;The Network layer is responsible for four main tasks:
+&lt;ul&gt;
+&lt;li&gt;It defines and verifies IP addresses&lt;/li&gt;
+&lt;li&gt;It routes packets through an internetwork&lt;/li&gt;
+&lt;li&gt;It resolves MAC addresses from IP addresses&lt;/li&gt;
+&lt;li&gt;It delivers packets efficiently&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Define and Verify IP Addresses&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;An IP address is assigned to every computer and network device using TCP/IP for communications&lt;/li&gt;
+&lt;li&gt;IP addresses are used for two main purposes:
+&lt;ul&gt;
+&lt;li&gt;To identify a network device at the Internetwork layer&lt;/li&gt;
+&lt;li&gt;To identify the network on which a device resides&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;When a device receives an IP packet, it compares the destination IP address with its own:
+&lt;ul&gt;
+&lt;li&gt;If it matches or is a broadcast, the packet is processed&lt;/li&gt;
+&lt;li&gt;It is does not match then the packet is discarded&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Every IP address contains two parts:
+&lt;ul&gt;
+&lt;li&gt;A network ID&lt;/li&gt;
+&lt;li&gt;A host ID&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Route Packets through an Internetwork&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;The Network layer determines the best way to get a packet from network to network until it reaches its destination&lt;/li&gt;
+&lt;li&gt;Most large internetworks (the Internet) have multiple paths for getting from one network to another&lt;/li&gt;
+&lt;li&gt;Routers work at the Network layer
+&lt;ul&gt;
+&lt;li&gt;It is routers’ job to select the best path to the destination&lt;/li&gt;
+&lt;li&gt;Routers use the network ID portion of IP addresses along with their routing tables to determine the best path&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;Resolve MAC Addresses from IP Addresses&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Every frame contains both physical (MAC) and logical (IP) source and destination addresses&lt;/li&gt;
+&lt;li&gt;When a packet is ready to be sent to the Network access layer, the destination device’s MAC address must be retrieved before the frame header can be constructed&lt;/li&gt;
+&lt;li&gt;TCP/IP uses Address Resolution Protocol (ARP) to find MAC addresses&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;Deliver Packets Efficiently&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Network-layer protocols primarily focus on efficient delivery of packets
+&lt;ul&gt;
+&lt;li&gt;Features such as flow control, delivery confirmation or message assembly are &lt;strong&gt;not&lt;/strong&gt; included in Network-layer protocols
+&lt;ul&gt;
+&lt;li&gt;These features require overhead to ensure reliable delivery&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Network-layer protocols rely on the protocols in the Transport and Application layers to provide reliability features
+&lt;ul&gt;
+&lt;li&gt;They are considered connectionless protocols, which rely on upper-layer protocols to ensure the safe journey of packets&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;IP (Internet Protocol)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#IP (Internet Protocol)&#34;&gt;#&lt;/a&gt;IP (Internet Protocol)&lt;/h1&gt;
+&lt;h1 id=&#34;DHCP (Dynamic Host Configuration Protocol)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#DHCP (Dynamic Host Configuration Protocol)&#34;&gt;#&lt;/a&gt;DHCP (Dynamic Host Configuration Protocol)&lt;/h1&gt;
+DHCP is not a pure layer-3 protocol. It is an IP address management protocol, and this generally works at layer 7
+&lt;h1 id=&#34;CMP (Internet Control Message Protocol)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#CMP (Internet Control Message Protocol)&#34;&gt;#&lt;/a&gt;CMP (Internet Control Message Protocol)&lt;/h1&gt;
+&lt;h1 id=&#34;ARP (Address Resolution Protocol)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#ARP (Address Resolution Protocol)&#34;&gt;#&lt;/a&gt;ARP (Address Resolution Protocol)&lt;/h1&gt;
+ARP is not a pure layer-3 protocol, nor a pure layer-2 protocol. It generally works at layer 2 by using layer 3 IP address information ]]></description>
+        </item>
+    </channel>
+</rss>

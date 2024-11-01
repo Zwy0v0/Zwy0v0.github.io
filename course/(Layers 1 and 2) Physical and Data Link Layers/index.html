@@ -76,7 +76,7 @@ AtoposZz =  = final在后面追我T T</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">本文字数</span>
-    <span>89</span>
+    <span>6.6k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -84,7 +84,7 @@ AtoposZz =  = final在后面追我T T</title>
       <i class="ic i-clock"></i>
     </span>
     <span class="text">阅读时长</span>
-    <span>1 分钟</span>
+    <span>6 分钟</span>
   </span>
 </div>
 
@@ -117,12 +117,12 @@ AtoposZz =  = final在后面追我T T</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf69b7c48b.jpg"></li>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf70db78e1.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a9a63310.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf696303c4.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf60cc9be5.jpg"></li>
           <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a94f1d92.png"></li>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf75f16bed.jpg"></li>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf7643bf1a.jpg"></li>
           <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a9382651.png"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf7643bf1a.jpg"></li>
         </ul>
       </div>
     </header>
@@ -172,27 +172,444 @@ AtoposZz =  = final在后面追我T T</title>
     
 
     <h1 id="NIC and MAC address" class="active"><a class="anchor"  href="#NIC and MAC address">#</a>NIC and MAC address</h1>
-明天再写
-
-
-
+<h2 id="Network Interface card (NIC)" class="active"><a class="anchor"  href="#Network Interface card (NIC)">#</a>Network Interface card (NIC)</h2>
+<ul>
+<li>A NIC attaches a network device to a network</li>
+<li>A NIC can be
+<ul>
+<li>a separate adapter card that slides into one of the motherboard extension slots</li>
+<li>built into the motherboard</li>
+</ul>
+</li>
+<li>NIC Functions
+<ul>
+<li>For incoming messages:
+<ul>
+<li>a NIC receives <strong>bit</strong> signals and assemble them into <strong>frames</strong>,</li>
+<li>verifies the destination address (to make sure the messages are for its own), and</li>
+<li>then removes <strong>frame header</strong> and sends the resulting <strong>packet</strong> to the network layer</li>
+</ul>
+</li>
+<li>For outgoing messages:
+<ul>
+<li>A NIC card receives <strong>packets</strong> from <strong>network layer</strong>,</li>
+<li>creates <strong>frames</strong> by adding MAC address/error check, and</li>
+<li>converts <strong>frame</strong> into <strong>bit</strong> signals and transmits them</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Physical (MAC) Address" class="active"><a class="anchor"  href="#Physical (MAC) Address">#</a>Physical (MAC) Address</h2>
+<p>Each network device, e.g., NIC, has a unique physical address as its ID</p>
+<ul>
+<li>A MAC address is used to identify machines within the same broadcast network on layer 2 of the OSI model</li>
+<li>A MAC address is composed of two parts:
+<ul>
+<li>The first 24 bits are manufacture-ID assigned by IEEE, and the last 24 bits make up the device ID</li>
+</ul>
+</li>
+<li>Examples of MAC address
+<ul>
+<li>78:4f:43:4d:47:c2</li>
+<li>64-00-6A-95-9B-4</li>
+</ul>
+</li>
+<li>Find Computer’s MAC Addres
+<ul>
+<li>Windows ipconfig /all</li>
+<li>In MacOS, or Ubuntu  ifconfig -a<br>
+Laptop has several network adapters, e.g., Ethernet and Wi-Fi. Thus, it will have several MAC addresses</li>
+</ul>
+</li>
+</ul>
 <h1 id="Switches" class="active"><a class="anchor"  href="#Switches">#</a>Switches</h1>
-
-
-
-<h1 id="Two sub-layers in data-link layer" class="active"><a class="anchor"  href="#Two sub-layers in data-link layer">#</a>Two sub-layers in data-link layer</h1>
-
-
-
+<h2 id="Switches" class="active"><a class="anchor"  href="#Switches">#</a>Switches</h2>
+<ul>
+<li>A network switch is a <strong>layer 2</strong> device</li>
+<li>It is a multiport network bridge that uses hardware addresses, i.e., MAC addresses, to process and forward data at the data link layer</li>
+<li>Some switches can also process data at the network layer, i.e., layer 3, by additionally incorporating routing functionality using IP addressing to perform routing
+<ul>
+<li>Such switches are also called layer-3 switches or multilayer switches, here only discuss layer-2 switches.</li>
+</ul>
+</li>
+<li>Steps of switch operation
+<ol>
+<li>The switch receives a <strong>frame</strong>.</li>
+<li>The switch reads the source and destination <strong>MAC addresses</strong>.</li>
+<li>The switch looks up the destination MAC address in its <strong>switching table</strong>.</li>
+<li>The switch forwards the frame to the <strong>port</strong> where the computer owning the MAC address is found.</li>
+<li>The switching table is updated with the source MAC address and port information</li>
+</ol>
+</li>
+<li>A large LAN connected by switches
+<ul>
+<li>Switches are daisy-chained together in a single line</li>
+<li>This is a hybrid physical topology
+<ul>
+<li>Switch to switch: Bus</li>
+<li>Switch to computers: Star</li>
+</ul>
+</li>
+<li>All switches in this example work at Layer 2
+<ul>
+<li>They receive and forward data via MAC addresses</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Switching" class="active"><a class="anchor"  href="#Switching">#</a>Switching</h2>
+<p>Switching is a network topology component<br>
+It determines connection creation between nodes</p>
+<ol>
+<li>Circuit Switching<br>
+Circuit switching requires a dedicated <strong>physical connection</strong> between the sending and receiving devices.</li>
+</ol>
+<ul>
+<li>Connection established between two network nodes
+<ul>
+<li>Before transmitting data</li>
+</ul>
+</li>
+<li>Dedicated bandwidth 带宽</li>
+<li>Data follows the same path</li>
+<li>Monopolizes bandwidth while connected
+<ul>
+<li>Resource wasted</li>
+</ul>
+</li>
+<li>Uses
+<ul>
+<li>Live audio, videoconferencing</li>
+<li>Traditional telephone calls</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>Packet switching</li>
+</ol>
+<ul>
+<li>Packet switching breaks data into packets before transporting</li>
+<li>Packets
+<ul>
+<li>Contain addressing and control information for data transmission</li>
+<li>Travel any network path to destination</li>
+<li>Find fastest path available at any instant</li>
+<li>Need not follow each other</li>
+<li>Need not arrive in sequence</li>
+<li>Reassembled at destination</li>
+</ul>
+</li>
+<li>If used in live audio and video transmission, packet switching will require speedy connections</li>
+</ul>
+<ol start="3">
+<li>Circuit Switching vs Packet Switching</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>电路交换</th>
+<th>分组交换</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>关键特征</strong></td>
+<td>连接在数据传输前建立，频道在断开前保持预留状态</td>
+<td>数据报分组独立发送，可能通过不同路径传输</td>
+</tr>
+<tr>
+<td></td>
+<td>数据沿着同一路径传输</td>
+<td>分组可以选择不同路径，绕过网络拥塞</td>
+</tr>
+<tr>
+<td><strong>优点</strong></td>
+<td>专用带宽，稳定传输</td>
+<td>高效利用网络带宽</td>
+</tr>
+<tr>
+<td></td>
+<td>数据沿同一路径传输，开销较小</td>
+<td>可选择不同路径绕过网络拥塞</td>
+</tr>
+<tr>
+<td></td>
+<td>连接建立延迟较低，保持 “常连接” 状态</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>缺点</strong></td>
+<td>带宽垄断，资源浪费</td>
+<td>分组可能在不同路径中丢失</td>
+</tr>
+<tr>
+<td></td>
+<td>成本较高</td>
+<td>分组需包含源和目的地信息，增加开销</td>
+</tr>
+</tbody>
+</table>
+<ol start="4">
+<li>Two sublayers of the data-link layer</li>
+</ol>
+<ul>
+<li>LLC (Logical Link Control) sublayer
+<ul>
+<li>Provides common interface, reliability and flow control</li>
+</ul>
+</li>
+<li>MAC (Media Access Control) sublayer
+<ul>
+<li>Manages access to the physical medium</li>
+<li>Appends physical address of destination computer onto data frame</li>
+</ul>
+</li>
+</ul>
 <h1 id="Ethernet protocol" class="active"><a class="anchor"  href="#Ethernet protocol">#</a>Ethernet protocol</h1>
-
-
-
-<h1 id="MAC" class="active"><a class="anchor"  href="#MAC">#</a>MAC</h1>
-
-
-
+<ol>
+<li>Ethernet</li>
+</ol>
+<ul>
+<li>The most popular layer 2 standard</li>
+<li>The most popular network technology used on modern LANs</li>
+<li>Benefits
+<ul>
+<li>Flexible</li>
+<li>Can run on various network media</li>
+<li>Excellent throughput</li>
+<li>Reasonable cost</li>
+</ul>
+</li>
+<li>All variations of Ethernet share common access method
+<ul>
+<li>CSMA/CD (for wired networks)</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>Attenuation, Latency, Jitter, and RTT</li>
+</ol>
+<ul>
+<li>Attenuation (衰减） is the loss of a signal’s strength as it travels away from source
+<ul>
+<li>Signals can be boosted using a <strong>repeater</strong>, which regenerates a digital signal in its original form without noise previously accumulated</li>
+</ul>
+</li>
+<li>Latency（延迟） is the delay between signal transmission and receipt
+<ul>
+<li>Latency may cause network transmission errors</li>
+<li>The length of the cable affects latency, as does the existence of any intervening device</li>
+</ul>
+</li>
+<li>Jitter (抖动) is the variation in latency
+<ul>
+<li>Example: delay changes from 30 ms to 32 ms, the jitter is 2 ms</li>
+</ul>
+</li>
+<li>RTT (round trip time) is the time for packet to go from sender to receiver, then back from receiver to sender</li>
+</ul>
+<ol start="3">
+<li>Bandwidth and Throughput<br>
+They are measurements of the capacity or efficiency of network transmissions</li>
+</ol>
+<ul>
+<li>Bandwidth: The amount of data that could be theoretically transmitted during a given period of time</li>
+<li>Throughput: How much data is actually transmitted during a given period of time</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>量级</th>
+<th>前缀</th>
+<th>缩写</th>
+<th>转换</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 bit per second</td>
+<td>n/a</td>
+<td>bps</td>
+<td>1 bps = 1 bit per second</td>
+</tr>
+<tr>
+<td>1000 bits per second</td>
+<td>kilo</td>
+<td>Kbps</td>
+<td>1 Kbps = 1 kilobit per second</td>
+</tr>
+<tr>
+<td>1,000,000 bits per second</td>
+<td>mega</td>
+<td>Mbps</td>
+<td>1 Mbps = 1 megabit per second</td>
+</tr>
+<tr>
+<td>1,000,000,000 bits per second</td>
+<td>giga</td>
+<td>Gbps</td>
+<td>1 Gbps = 1 gigabit per second</td>
+</tr>
+<tr>
+<td>1,000,000,000,000 bits per second</td>
+<td>tera</td>
+<td>Tbps</td>
+<td>1 Tbps = 1 terabit per second</td>
+</tr>
+</tbody>
+</table>
+<ol start="4">
+<li>Data Transmission vs Data Storage</li>
+</ol>
+<ul>
+<li>数据传输：以 ** 每秒比特数（bits per second）** 的倍数来测量。
+<ul>
+<li>示例：100 kbps, 30 Mbps, 10 Gbps 等。</li>
+<li>小写 “b” 表示比特（bit）。</li>
+</ul>
+</li>
+<li>数据存储：以 ** 字节（bytes）** 的倍数来测量。
+<ul>
+<li>示例：100 kB, 11 MB, 10 GB 等。</li>
+<li>大写 “B” 表示字节（Byte）。</li>
+</ul>
+</li>
+<li>“kilo” 的不同含义：
+<ul>
+<li>数据传输：1 kbps = 1000 比特每秒。</li>
+<li>数据存储：1 kB = 1024 字节。</li>
+<li>1 字节（Byte）= 8 比特（bits）</li>
+</ul>
+</li>
+</ul>
+<ol start="5">
+<li>Full-duplex, half-duplex, and simplex</li>
+</ol>
+<ul>
+<li>全双工、半双工和单工模式
+<ul>
+<li>全双工（Full-duplex）：信号可以同时在介质的两个方向上传输。</li>
+<li>半双工（Half-duplex）：信号可以在两个方向上传输，但一次只能一个方向。</li>
+<li>单工（Simplex）：信号只能单向传输。</li>
+</ul>
+</li>
+<li>在 Windows 中设置网络接口卡（NIC）的传输模式和速度
+<ul>
+<li>通过设备管理器（Device Manager）可以设置 NIC 的传输模式和速度。</li>
+<li>默认设置为自动协商（Auto Negotiation），这是最优设置，通常不建议更改</li>
+</ul>
+</li>
+</ul>
 <h1 id="Cabling" class="active"><a class="anchor"  href="#Cabling">#</a>Cabling</h1>
+<ol>
+<li>Copper cables</li>
+</ol>
+<ul>
+<li>同轴电缆（Coaxial Cable）和双轴电缆（Twinaxial Cable）：适用于特定网络环境和连接需求。</li>
+<li>双绞线电缆（Twisted-Pair Cable）：
+<ul>
+<li>两种类型：
+<ul>
+<li>屏蔽双绞线（STP）：具有额外的屏蔽层，用于减少电磁干扰。</li>
+<li>非屏蔽双绞线（UTP）：没有屏蔽层，成本较低，广泛应用于局域网。</li>
+</ul>
+</li>
+<li>常见双绞线类型：
+<ul>
+<li>类别（Category，cat）：包括 Cat 3、Cat 5、Cat 5e、Cat 6、Cat 6a、Cat 7、Cat 7a 和 Cat 8。</li>
+<li>现代局域网通常使用 Cat 5e 或更高版本的双绞线以获得更高的传输速率和稳定性。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>Fiber-Optic Cables</li>
+</ol>
+<ul>
+<li>光纤电缆（Fiber-Optic Cable），简称光纤，在其中心（核心）包含一个或多个玻璃或塑料纤维。</li>
+<li>优点（相较于铜缆）
+<ul>
+<li>极高的传输速度：适用于需要高速数据传输的应用。</li>
+<li>很高的抗干扰能力：对电磁干扰不敏感，适合噪声环境。</li>
+<li>出色的安全性：窃听难度更高，数据更安全。</li>
+<li>长距离传输能力：能够在更远距离上传输信号。</li>
+</ul>
+</li>
+<li>缺点
+<ul>
+<li>价格更高：比双绞线电缆成本更高。</li>
+<li>需要特殊设备：连接和接续光纤需要专用设备和技术</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>Structured Cabling</li>
+</ol>
+<ul>
+<li>There is an international standard that describe how to install network media
+<ul>
+<li>ANSI/TIA-568 Commercial Building Wiring Standard</li>
+<li>It is also known as structured cabling</li>
+</ul>
+</li>
+<li>The principles of structured cabling apply no matter what type of media, transmission technology, or networking speeds are involved</li>
+<li>Structured cabling is based on a hierarchical design and assumes a network is based on the star topology</li>
+<li>Multiple types of Ethernet on a WAN<br>
+<img data-src="https://img.picui.cn/free/2024/11/01/6724bd73815b1.png" alt="img"></li>
+</ul>
+<h1 id="MAC" class="active"><a class="anchor"  href="#MAC">#</a>MAC</h1>
+<ol>
+<li>CSMA/CD (Carrier Sense Multiple Access with Collision Detection)</li>
+</ol>
+<ul>
+<li>标准：用于以太网网络（IEEE 802.3）。</li>
+<li>工作原理：
+<ul>
+<li>载波侦听：以太网网络接口卡（NIC）监听网络，以检查通信信道是否空闲，如果空闲则开始传输。</li>
+<li>碰撞：当两个节点同时传输时，会发生碰撞。</li>
+<li>碰撞检测例程：如果节点检测到碰撞，会触发碰撞检测程序。</li>
+<li>阻塞信号：NIC 发出 32 位阻塞序列，表示先前的消息出现错误。</li>
+</ul>
+</li>
+<li>碰撞域：碰撞发生的网络部分称为碰撞域。</li>
+<li>中继器：重复器会将碰撞信号传播，导致更大的碰撞域。</li>
+<li>交换机和路由器：它们会将网络分隔为多个碰撞域，减少碰撞的发生。</li>
+</ul>
+<ol start="2">
+<li>CSMA/CA (Carrier Sensing Multiple Access/Collision Avoidance)<br>
+ CSMA/CA 是一种用于无线网络的媒体访问控制方法，通过避免碰撞来减少冲突的可能性。以下是其关键点：</li>
+</ol>
+<ul>
+<li>碰撞避免（Collision Avoidance，CA）：CSMA/CA 通过检查信道空闲来减少碰撞的发生。</li>
+<li>使用 ACK 确认每次传输：
+<ul>
+<li>传输完成后，接收端会发送一个确认包（ACK）来验证传输的成功性。</li>
+<li>比以太网的 CSMA/CD 有更高的开销，实际吞吐量低于理论最大值。</li>
+</ul>
+</li>
+<li>RTS/CTS 协议（请求发送 / 清除发送）：
+<ul>
+<li>RTS/CTS 协议确保数据包不会因其他传输而受到干扰。</li>
+<li>在大数据包传输中更为高效，但增加了 802.11（无线网络）的开销。</li>
+</ul>
+</li>
+<li>CSMA/CA 传输流程图
+<ol>
+<li>检查传输：节点首先检查信道是否空闲。</li>
+<li>检测活动：如果信道忙碌，则稍作暂停后再检测。</li>
+<li>发送 RTS（请求发送）：如果信道空闲，节点发送 RTS 信号请求传输权限。</li>
+<li>确认 CTS（清除发送）：如果收到 CTS 信号，表示可以传输，否则稍作暂停再尝试。</li>
+<li>发送数据：在确认 CTS 后，节点开始数据传输。</li>
+<li>完成传输：传输完成后，过程结束<br>
+<img data-src="https://img.picui.cn/free/2024/11/01/6724c0f48b35c.png" alt="img"></li>
+</ol>
+</li>
+</ul>
+
       <div class="tags">
           <a href="/tags/network-system/" rel="tag"><i class="ic i-tag"></i> network system</a>
       </div>
@@ -206,7 +623,7 @@ AtoposZz =  = final在后面追我T T</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2024-10-31 22:00:54" itemprop="dateModified" datetime="2024-10-31T22:00:54+10:00">2024-10-31</time>
+    <time title="修改时间：2024-11-01 21:58:31" itemprop="dateModified" datetime="2024-11-01T21:58:31+10:00">2024-11-01</time>
   </span>
   <span id="course/(Layers 1 and 2) Physical and Data Link Layers/" class="item leancloud_visitors" data-flag-title="(Layers 1 and 2) Physical and Data Link Layers" title="阅读次数">
       <span class="icon">
@@ -246,7 +663,7 @@ AtoposZz =  = final在后面追我T T</title>
     <div class="item left">
       
 
-  <a href="/course/Network%20System%20Overall/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;18&#x2F;67123a94f1d92.png" title="Network Systems Overall">
+  <a href="/course/Network%20System%20Overall/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;26&#x2F;671cf70db78e1.jpg" title="Network Systems Overall">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> Network Systems</span>
   <h3>Network Systems Overall</h3>
@@ -254,6 +671,14 @@ AtoposZz =  = final在后面追我T T</title>
 
     </div>
     <div class="item right">
+      
+
+  <a href="/course/Layer-3-IP-Addressing-and-IP-related-Protocols/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;18&#x2F;67123a97b6ba9.jpg" title="(Layer 3) IP Addressing and IP-related Protocols">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> Network Systems</span>
+  <h3>(Layer 3) IP Addressing and IP-related Protocols</h3>
+  </a>
+
     </div>
 </div>
 
@@ -270,11 +695,11 @@ AtoposZz =  = final在后面追我T T</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#NIC%20and%20MAC%20address"><span class="toc-number">1.</span> <span class="toc-text">NIC and MAC address</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Switches"><span class="toc-number">2.</span> <span class="toc-text">Switches</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Two%20sub-layers%20in%20data-link%20layer"><span class="toc-number">3.</span> <span class="toc-text">Two sub-layers in data-link layer</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Ethernet%20protocol"><span class="toc-number">4.</span> <span class="toc-text">Ethernet protocol</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MAC"><span class="toc-number">5.</span> <span class="toc-text">MAC</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Cabling"><span class="toc-number">6.</span> <span class="toc-text">Cabling</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#NIC%20and%20MAC%20address"><span class="toc-number">1.</span> <span class="toc-text">NIC and MAC address</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Network%20Interface%20card%20(NIC)"><span class="toc-number">1.1.</span> <span class="toc-text">Network Interface card (NIC)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Physical%20(MAC)%20Address"><span class="toc-number">1.2.</span> <span class="toc-text">Physical (MAC) Address</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Switches"><span class="toc-number">2.</span> <span class="toc-text">Switches</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Switches"><span class="toc-number">2.1.</span> <span class="toc-text">Switches</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Switching"><span class="toc-number">2.2.</span> <span class="toc-text">Switching</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Ethernet%20protocol"><span class="toc-number">3.</span> <span class="toc-text">Ethernet protocol</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Cabling"><span class="toc-number">4.</span> <span class="toc-text">Cabling</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MAC"><span class="toc-number">5.</span> <span class="toc-text">MAC</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="/course/Network%20System%20Overall/" rel="bookmark" title="Network Systems Overall">Network Systems Overall</a></li><li class="active"><a href="/course/(Layers%201%20and%202)%20Physical%20and%20Data%20Link%20Layers/" rel="bookmark" title="(Layers 1 and 2) Physical and Data Link Layers">(Layers 1 and 2) Physical and Data Link Layers</a></li>
+          <li><a href="/course/Network%20System%20Overall/" rel="bookmark" title="Network Systems Overall">Network Systems Overall</a></li><li class="active"><a href="/course/(Layers%201%20and%202)%20Physical%20and%20Data%20Link%20Layers/" rel="bookmark" title="(Layers 1 and 2) Physical and Data Link Layers">(Layers 1 and 2) Physical and Data Link Layers</a></li><li><a href="/course/Layer-3-IP-Addressing-and-IP-related-Protocols/" rel="bookmark" title="(Layer 3) IP Addressing and IP-related Protocols">(Layer 3) IP Addressing and IP-related Protocols</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -288,7 +713,7 @@ AtoposZz =  = final在后面追我T T</title>
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">18</span>
+        <span class="count">19</span>
         <span class="name">文章</span>
       </a>
     </div>
@@ -300,7 +725,7 @@ AtoposZz =  = final在后面追我T T</title>
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">17</span>
+        <span class="count">21</span>
         <span class="name">标签</span>
       </a>
     </div>
@@ -363,10 +788,12 @@ AtoposZz =  = final在后面追我T T</title>
 
   <ul id="quick">
     <li class="prev pjax">
+        <a href="/course/Network%20System%20Overall/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
+        <a href="/course/Layer-3-IP-Addressing-and-IP-related-Protocols/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -393,42 +820,6 @@ AtoposZz =  = final在后面追我T T</title>
 <a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
 </div>
 
-    <span><a href="/course/AFL/" title="AFL">AFL</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
-</div>
-
-    <span><a href="/course/Stack-buffer-overflow/" title="Stack buffer overflow">Stack buffer overflow</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
-</div>
-
-    <span><a href="/course/Web-Application-Security/" title="Web Application Security">Web Application Security</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
-</div>
-
     <span><a href="/course/Integer-overflow/" title="Integer overflow">Integer overflow</a></span>
   </li>
 
@@ -441,31 +832,7 @@ AtoposZz =  = final在后面追我T T</title>
 <a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
 </div>
 
-    <span><a href="/course/SQL-Injection/" title="SQL Injection">SQL Injection</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/study/" title="分类于 自学笔记">自学笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/study/JavaScript/" title="分类于 JavaScript">JavaScript</a>
-</div>
-
-    <span><a href="/study/JS%E4%B8%AD%E7%9A%84this%E4%B8%8E%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/" title="JS中的this与相关函数">JS中的this与相关函数</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
-</div>
-
-    <span><a href="/course/Heap-buffer-overflow/" title="Heap buffer overflow">Heap buffer overflow</a></span>
+    <span><a href="/course/Fuzz-testing/" title="Fuzz testing">Fuzz testing</a></span>
   </li>
 
       
@@ -496,12 +863,67 @@ AtoposZz =  = final在后面追我T T</title>
   <li class="item">
     
 <div class="breadcrumb">
+</div>
+
+    <span><a href="/dailysharing/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
 <i class="ic i-angle-right"></i>
 <a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
 </div>
 
-    <span><a href="/course/Fuzz-testing/" title="Fuzz testing">Fuzz testing</a></span>
+    <span><a href="/course/Format-string-bugs/" title="Format string bugs">Format string bugs</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/study/" title="分类于 自学笔记">自学笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/study/JavaScript/" title="分类于 JavaScript">JavaScript</a>
+</div>
+
+    <span><a href="/study/js%E7%BB%A7%E6%89%BF/" title="js继承">js继承</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/C-language-basics-and-Computer-memory/" title="C language basics and Computer memory">C language basics and Computer memory</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/SQL-Injection/" title="SQL Injection">SQL Injection</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/dailysharing/" title="分类于 日常碎碎念">日常碎碎念</a>
+</div>
+
+    <span><a href="/dailysharing/%E7%AC%AC%E4%B8%80%E7%AF%87ovo/" title="第一篇ovo">第一篇ovo</a></span>
   </li>
 
   </ul>
