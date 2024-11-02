@@ -7,16 +7,17 @@
         <language>zh-CN</language>
         <pubDate>Mon, 28 Oct 2024 14:45:49 +1000</pubDate>
         <lastBuildDate>Mon, 28 Oct 2024 14:45:49 +1000</lastBuildDate>
+        <category>JavaScript</category>
         <category>network system</category>
         <category>C</category>
         <category>software security</category>
         <category>AFL</category>
         <category>Linux</category>
+        <category>vulnerability</category>
         <category>C language</category>
         <category>HTTP</category>
         <category>XSS</category>
         <category>CSRF</category>
-        <category>vulnerability</category>
         <category>IP</category>
         <category>DHCP</category>
         <category>ICMP</category>
@@ -24,10 +25,9 @@
         <category>OSI</category>
         <category>TCP/IP</category>
         <category>SQL</category>
-        <category>JavaScript</category>
+        <category>gdb</category>
         <category>Blog</category>
         <category>日常</category>
-        <category>gdb</category>
         <item>
             <guid isPermalink="true">http://example.com/course/AFL/</guid>
             <title>AFL</title>

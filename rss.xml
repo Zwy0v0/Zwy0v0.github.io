@@ -7,16 +7,17 @@
         <language>zh-CN</language>
         <pubDate>Fri, 01 Nov 2024 22:02:19 +1000</pubDate>
         <lastBuildDate>Fri, 01 Nov 2024 22:02:19 +1000</lastBuildDate>
+        <category>JavaScript</category>
         <category>network system</category>
         <category>C</category>
         <category>software security</category>
         <category>AFL</category>
         <category>Linux</category>
+        <category>vulnerability</category>
         <category>C language</category>
         <category>HTTP</category>
         <category>XSS</category>
         <category>CSRF</category>
-        <category>vulnerability</category>
         <category>IP</category>
         <category>DHCP</category>
         <category>ICMP</category>
@@ -24,10 +25,9 @@
         <category>OSI</category>
         <category>TCP/IP</category>
         <category>SQL</category>
-        <category>JavaScript</category>
+        <category>gdb</category>
         <category>Blog</category>
         <category>日常</category>
-        <category>gdb</category>
         <item>
             <guid isPermalink="true">http://example.com/course/Layer-3-IP-Addressing-and-IP-related-Protocols/</guid>
             <title>(Layer 3) IP Addressing and IP-related Protocols</title>
@@ -194,11 +194,522 @@ Dynamic IP addresses are assigned automatically by a DHCP server&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;IP (Internet Protocol)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#IP (Internet Protocol)&#34;&gt;#&lt;/a&gt;IP (Internet Protocol)&lt;/h1&gt;
+&lt;h2 id=&#34;IPv4&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#IPv4&#34;&gt;#&lt;/a&gt;IPv4&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;IPv4 Addresses&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;An IPv4 address is represented by 32 bits (=4 bytes)
+&lt;ul&gt;
+&lt;li&gt;IPv4 地址分为 4 个字节块（每个块 8 位），每个块用点分隔。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;For example
+&lt;ol&gt;
+&lt;li&gt;Binary:  &lt;code&gt;00000001.00000010.10010101.11111111&lt;/code&gt; &lt;br&gt;
+Decimal:  &lt;code&gt;1.2.149.255&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;11000000 . 10101000 . 00000001 . 00000001&lt;br&gt;
+192.168.1.1&lt;br&gt;
+&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/67258b5520113.png&#34; alt=&#34;img&#34;&gt;&lt;br&gt;
+Classes A, B and C licensed IP addresses are available for use on the Internet. Called public IP address&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;A 类地址
+&lt;ul&gt;
+&lt;li&gt;网络 ID：8 位（第 2 到第 8 位），主机 ID：24 位。&lt;/li&gt;
+&lt;li&gt;地址范围：1.x.y.z – 126.x.y.z。&lt;/li&gt;
+&lt;li&gt;可用网络数：126 个。&lt;/li&gt;
+&lt;li&gt;适用场景：大型网络（如互联网服务提供商和政府机构）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;B 类地址
+&lt;ul&gt;
+&lt;li&gt;网络 ID：16 位（第 3 到第 16 位），主机 ID：16 位。&lt;/li&gt;
+&lt;li&gt;地址范围：128.0.y.z – 191.255.y.z。&lt;/li&gt;
+&lt;li&gt;可用网络数：16,000 个。&lt;/li&gt;
+&lt;li&gt;适用场景：中型网络（如中型企业和大学）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;C 类地址
+&lt;ul&gt;
+&lt;li&gt;网络 ID：24 位（第 4 到第 24 位），主机 ID：8 位。&lt;/li&gt;
+&lt;li&gt;地址范围：192.0.0.z – 223.255.255.z。&lt;/li&gt;
+&lt;li&gt;可用网络数：约 2 百万个。&lt;/li&gt;
+&lt;li&gt;适用场景：小型网络（如小型企业和家庭网络）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;D 类地址
+&lt;ul&gt;
+&lt;li&gt;用途：多播地址。&lt;/li&gt;
+&lt;li&gt;地址范围：224.0.0.0 – 239.255.255.255。&lt;/li&gt;
+&lt;li&gt;网络结构：没有网络 ID 和主机 ID，专用于多播。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;E 类地址
+&lt;ul&gt;
+&lt;li&gt;用途：实验用途。&lt;/li&gt;
+&lt;li&gt;地址范围：240.0.0.0 – 255.255.255.255。&lt;/li&gt;
+&lt;li&gt;说明：保留用于研究和实验，未用于常规互联网流量。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;在 IPv4 地址中，127.x.y.z 地址范围（通常是 127.0.0.0 到 127.255.255.255）是保留用于本地主机环回（loopback）测试的特殊地址段。这些地址不会在网络上发送数据包，而是用于本地主机的自我通信，主要目的是测试本地网络堆栈和网络接口卡的功能。
+&lt;ul&gt;
+&lt;li&gt;127.x.y.z 的特点
+&lt;ul&gt;
+&lt;li&gt;环回地址：127.0.0.1 是最常用的环回地址，用于指向本地主机。&lt;/li&gt;
+&lt;li&gt;网络测试：使用 127.x.y.z 范围内的地址，系统可以在不通过实际网络的情况下测试网络配置。&lt;/li&gt;
+&lt;li&gt;不可路由：127.x.y.z 地址段不会在互联网上路由，数据包始终保持在本地。&lt;/li&gt;
+&lt;li&gt;因此，127.x.y.z 地址不属于 A、B、C、D 或 E 类中的网络分配，而是专门保留给环回功能。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;IP 地址范围&lt;/th&gt;
+&lt;th&gt;功能描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;255.255.255.255&lt;/td&gt;
+&lt;td&gt;用于广播消息，TCP/IP 后台进程会使用该地址发送广播消息，网络中的每个节点都会接收该消息。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;0.0.0.0&lt;/td&gt;
+&lt;td&gt;表示当前未分配的地址，一般用于指代 “所有 IPv4 地址” 或 “未知地址”。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;127.0.0.1 至 127.255.255.254&lt;/td&gt;
+&lt;td&gt;用于环回测试，表示本地主机的地址，常用于测试网络堆栈（如 127.0.0.1 被称为环回地址）。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;169.254.0.1 至 169.254.255.254&lt;/td&gt;
+&lt;td&gt;当设备配置为动态主机配置协议（DHCP）且无法从 DHCP 服务器获取地址时，会自动分配此范围内的地址（APIPA）。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;Private IP addresses&lt;br&gt;
+ 在私有网络中，公司可以使用私有 IP 地址。这些地址在互联网上不进行路由，仅限于局域网内使用。&lt;br&gt;
+IEEE 推荐的私有 IP 地址范围：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;私有 IP 地址范围&lt;/th&gt;
+&lt;th&gt;用途&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;10.0.0.0 至 10.255.255.255&lt;/td&gt;
+&lt;td&gt;用于大型私有网络&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;172.16.0.0 至 172.31.255.255&lt;/td&gt;
+&lt;td&gt;用于中型私有网络&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;192.168.0.0 至 192.168.255.255&lt;/td&gt;
+&lt;td&gt;用于小型私有网络（如家庭网络）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;Network Address Translation (NAT)&lt;br&gt;
+ 网络地址转换 (NAT) 允许具有私有 IP 地址的主机访问互联网。私有 IP 地址在互联网上不可见，NAT 充当连接私有网络和公共网络的桥梁&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAT 类型&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;SNAT (静态 NAT)&lt;/td&gt;
+&lt;td&gt;每次主机请求访问互联网时，分配相同的公共 IP 地址。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DNAT (动态 NAT)&lt;/td&gt;
+&lt;td&gt;使用一个公共 IP 地址池，动态地为本地主机分配公共 IP 地址。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/67258fc64dac0.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Classless Addressing and Subnet Mask&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Using classful addresses is a waste of IP address resource&lt;/li&gt;
+&lt;li&gt;Today, IP addresses are used as classless addresses
+&lt;ul&gt;
+&lt;li&gt;Clients do not apply for particular class of addresses. Instead, getting IP addresses from an ISP&lt;/li&gt;
+&lt;li&gt;Most ISPs have already applied for a pool of IP addresses that can be leased to clients&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;For classless address, use a network mask to determine which part of address denoted the network portion
+&lt;ul&gt;
+&lt;li&gt;32-bit number&lt;/li&gt;
+&lt;li&gt;1 signifies the networking bit in the address&lt;/li&gt;
+&lt;li&gt;0 signifies the host bits in the address&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Masking is a process to extract the address of the physical network from an IP address&lt;/li&gt;
+&lt;li&gt;Usually when a router forwards packets from one network to another, it uses this masking to identify if the packets belong to its network or not&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;类别&lt;/th&gt;
+&lt;th&gt;点分十进制表示&lt;/th&gt;
+&lt;th&gt;二进制模式&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;A&lt;/td&gt;
+&lt;td&gt;255.0.0.0&lt;/td&gt;
+&lt;td&gt;11111111 00000000 00000000 00000000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;B&lt;/td&gt;
+&lt;td&gt;255.255.0.0&lt;/td&gt;
+&lt;td&gt;11111111 11111111 00000000 00000000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;C&lt;/td&gt;
+&lt;td&gt;255.255.255.0&lt;/td&gt;
+&lt;td&gt;11111111 11111111 11111111 00000000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;Example
+&lt;ul&gt;
+&lt;li&gt;掩码的工作原理：路由器可以通过掩码判断数据包是否属于其网络。某网络地址是 131.181.x.x，这是一个 B 类地址，其默认网络掩码为 255.255.0.0。&lt;/li&gt;
+&lt;li&gt;IP 地址：131.181.112.6（十进制）或 10000011 10110101 01110000 00000110（二进制）&lt;/li&gt;
+&lt;li&gt;网络掩码：255.255.0.0（十进制）或 11111111 11111111 00000000 00000000（二进制）&lt;/li&gt;
+&lt;li&gt;通过 逻辑与（AND）操作 提取网络地址：&lt;br&gt;
+将 IP 地址和掩码逐位进行 AND 运算：&lt;br&gt;
+10000011 10110101 01110000 00000110（IP 地址）&lt;br&gt;
+11111111 11111111 00000000 00000000（掩码）&lt;br&gt;
+结果：10000011 10110101 00000000 00000000（网络地址）&lt;br&gt;
+网络地址：131.181.0.0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;A&lt;/th&gt;
+&lt;th&gt;B&lt;/th&gt;
+&lt;th&gt;A AND B&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;Representation of classless addresses
+&lt;ol&gt;
+&lt;li&gt;Address with a subnet mask&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;131.181.12.1 subnet mask 255.255.0.0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Address with a / (slash) representation&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;131.181.12.1/16&lt;/li&gt;
+&lt;li&gt;/16 means that the first 16 bits are representing the network portion&lt;br&gt;
+&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/6725988122218.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;Hosts A 和 B 是否在同一网络中？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;是的。Host A 的 IP 地址是 192.168.1.10，子网掩码是 255.255.255.0。Host B 的 IP 地址是 192.168.1.11，子网掩码也是 255.255.255.0。使用该子网掩码，网络 ID 是 192.168.1.0，因此 Host A 和 Host B 在同一网络中。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Hosts A 和 C 是否在同一网络中？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;否。Host A 的网络 ID 是 192.168.1.0，而 Host C 的 IP 地址是 192.168.2.10，子网掩码是 255.255.255.0，其网络 ID 是 192.168.2.0。因此，Host A 和 Host C 不在同一网络中。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;如何让 Host A 能够 ping Host C？需要使用路由器来连接两个网络。由于 Host A 和 Host C 位于不同的网络段（192.168.1.0 和 192.168.2.0），需要通过路由器来转发数据包，从而实现跨网络的通信&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;IPv6&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#IPv6&#34;&gt;#&lt;/a&gt;IPv6&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;An IPv6 address is represented by 128 bits (=16 bytes)
+&lt;ul&gt;
+&lt;li&gt;Organized in 8 blocks&lt;/li&gt;
+&lt;li&gt;Each block consists of 2 bytes (=16 bits) represented by a hexadecimal number
+&lt;ul&gt;
+&lt;li&gt;2001:0000:0B80:0000:0000:00D3:9C5A:00CC&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;If blocks contain all zeroes, they can be written as double colons (:😃, only one set of double colons is used in an I P address
+&lt;ul&gt;
+&lt;li&gt;2001::B80:0000:0000:D3:9C5A:CC&lt;/li&gt;
+&lt;li&gt;2001:0000:B80::D3:9C5A:CC (preferred method because it contains fewest zeroes)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Co-existence of IPv4 and IPv6
+&lt;ol&gt;
+&lt;li&gt;Dual stack: A network is configured to use both I Pv4 and IPv6&lt;br&gt;
+&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/67259c726bfc0.png&#34; alt=&#34;image&#34;&gt;&lt;br&gt;
+ 适用于需要与 IPv4 和 IPv6 网络都兼容的网络环境&lt;/li&gt;
+&lt;li&gt;Tunnelling: A method used by IPv6 to transport IPv6 packets through or over an IPv4 network&lt;br&gt;
+&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/67259c7288d2e.png&#34; alt=&#34;image&#34;&gt;&lt;br&gt;
+ 适用于尚未完全升级到 IPv6 的网络，以便在 IPv4 网络上实现 IPv6 通信&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;Internet Protocol&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Internet Protocol&#34;&gt;#&lt;/a&gt;Internet Protocol&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;IP (Internet Protocol)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;IP operates at the Network layer of the OSI model:
+&lt;ul&gt;
+&lt;li&gt;It specifies where data should be delivered to&lt;/li&gt;
+&lt;li&gt;It identifies the data’s source and destination IP addresses&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;IP implements two basic functions:
+&lt;ul&gt;
+&lt;li&gt;Addressing: Each network device is given an IP address&lt;/li&gt;
+&lt;li&gt;Fragmentation: A large-size datagram is broken down to small ones for forwarding&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Features of IP&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;IP enables TCP/IP to internetwork
+&lt;ul&gt;
+&lt;li&gt;The Internet is largely based on the IP protocol&lt;/li&gt;
+&lt;li&gt;It enables to traverse
+&lt;ul&gt;
+&lt;li&gt;more than one LAN segment, and&lt;/li&gt;
+&lt;li&gt;more than one type of network through a router&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;IP addresses are not really needed for communication within a LAN
+&lt;ul&gt;
+&lt;li&gt;MAC addresses are sufficient in this case&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;IP is an unreliable, connectionless protocol
+&lt;ul&gt;
+&lt;li&gt;This means that IP does not guarantee delivery of data and no session is established before data is transmitted&lt;/li&gt;
+&lt;li&gt;IP depends on TCP to ensure messages are put back together in the right order and to ensure each message reaches the correct application on the receiving host&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;IP Header&lt;br&gt;
+&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/6725a2a0e124d.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;IHL (Internet Header Length)&lt;/strong&gt;: 表示 IP 头部的长度。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Total Length Field&lt;/strong&gt;: 指数据包的总长度，包括头部和数据部分。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Identification&lt;/strong&gt;: 每个数据包被赋予一个唯一的 ID。若数据包被分片，每个分片都拥有相同的 ID 以便重组。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Time to Live (TTL)&lt;/strong&gt;: 数据包的生命周期（生存时间），每经过一个路由器，该值减少 1，TTL 为 0 时数据包将被丢弃，防止数据包在网络中无限循环。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Protocol Field&lt;/strong&gt;: 指定传输层协议类型（如 TCP 或 UDP），以便路由器知道数据包应该由哪个传输层协议处理。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Maximum Transmission Unit (MTU)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;MTU is the size of the largest protocol data unit (PDU) that can be communicated in a single network-layer transaction
+&lt;ul&gt;
+&lt;li&gt;Similar to the maximum Parcel Size in the postal system&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;MTU relates to, but is different from, the maximum frame size that can be transported on the data link layer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;IP Fragmentation&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;If a datagram is being sent that is larger than the receiving server’s MTU, it has to be fragmented in order to be transmitted completely.&lt;/li&gt;
+&lt;li&gt;Fragmentation is necessary for data transmission, as every network has a unique limit, i.e. the maximum transmission unit (MTU), for the size of datagrams that it can process.&lt;/li&gt;
+&lt;li&gt;The 3-bit flags field in the IP header specifies fragmentation is allowed or not
+&lt;ul&gt;
+&lt;li&gt;U 位：未使用。&lt;/li&gt;
+&lt;li&gt;D 位（Do Not Fragment bit）：如果设置该位，表示不允许分片；如果数据报大于 MTU，则会被丢弃。&lt;/li&gt;
+&lt;li&gt;M 位（More Fragments bit）：如果设置该位，表示后续还有更多分片；如果该位未设置，表示这是最后一个分片。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;Fragment Offset (13 bits)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Fragment offset shows where to place packet’s data when fragments are reassembled into a single packet&lt;/li&gt;
+&lt;li&gt;The offset of the data in the original datagram measured in units of 8 bytes
+&lt;ul&gt;
+&lt;li&gt;The first fragment has a zero offset&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;The offset only records the 1st byte number of that fragmented packet&lt;br&gt;
+&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/6725a637a3adf.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Issues with IPv4 Fragmentation
+&lt;ul&gt;
+&lt;li&gt;Fragmentation causes more overhead (time and resources) for the receiver when reassembling the fragments, because the receiver must allocate memory for the arriving fragments and coalesce them back into one datagram after all of the fragments are received.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;If one fragment of an IPv4 datagram is dropped, then the entire original IPv4 datagram must be resent&lt;/li&gt;
+&lt;li&gt;IPv6 packets:
+&lt;ul&gt;
+&lt;li&gt;IPv6 uses a different packet format than IPv4&lt;/li&gt;
+&lt;li&gt;Accommodate the much longer IPv6 addresses&lt;/li&gt;
+&lt;li&gt;There is no Fragment offset field&lt;br&gt;
+• IPv6 hosts adjust their packet sizes to fit the requirements of the network before sending IPv6 messages&lt;br&gt;
+&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/6725ab470399d.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h1 id=&#34;DHCP (Dynamic Host Configuration Protocol)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#DHCP (Dynamic Host Configuration Protocol)&#34;&gt;#&lt;/a&gt;DHCP (Dynamic Host Configuration Protocol)&lt;/h1&gt;
-DHCP is not a pure layer-3 protocol. It is an IP address management protocol, and this generally works at layer 7
+&lt;ul&gt;
+&lt;li&gt;DHCP is not a pure layer-3 protocol. It is an IP address management protocol, and this generally works at layer 7&lt;/li&gt;
+&lt;li&gt;DHCP is a network management protocol. So, strictly speaking, it works at Layer 7&lt;/li&gt;
+&lt;li&gt;A DHCP server dynamically assigns an IP address to a network device. It enables computers to request IP addresses and networking parameters automatically from the Internet Service Provider (ISP)&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h1 id=&#34;CMP (Internet Control Message Protocol)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#CMP (Internet Control Message Protocol)&#34;&gt;#&lt;/a&gt;CMP (Internet Control Message Protocol)&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;ICMP is a Network layer, core protocol that reports on the success or failure of data delivery&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ICMP can indicate:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;When part of a network is congested&lt;/li&gt;
+&lt;li&gt;When data fails to reach its destination&lt;/li&gt;
+&lt;li&gt;When data has been discarded because the allotted TTL (Time to Live) has expired&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ICMP announces transmission failures to the sender. But does not correct errors it detects&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Provides critical information for troubleshooting network problems&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ICMPv6 on IPV6 networks performs the functions of both ICMP and ARP on IPv4 networks&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ICMP 数据包包含以下字段，用于提供不同的控制和错误信息：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;字段&lt;/th&gt;
+&lt;th&gt;长度&lt;/th&gt;
+&lt;th&gt;功能&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Type&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;8 位&lt;/td&gt;
+&lt;td&gt;指示 ICMP 消息的类型，例如 “目的不可达”。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Code&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;8 位&lt;/td&gt;
+&lt;td&gt;指示消息的子类型，例如 “目标主机未知”。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Checksum&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;16 位&lt;/td&gt;
+&lt;td&gt;用于检测 ICMP 数据包在传输过程中是否损坏。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Rest of header&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;32 位&lt;/td&gt;
+&lt;td&gt;根据消息类型和子类型的不同而变化。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Data&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;可变长度&lt;/td&gt;
+&lt;td&gt;通常包含触发 ICMP 消息的 IP 数据包的 IP 头和前 8 字节的数据部分。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;h1 id=&#34;ARP (Address Resolution Protocol)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#ARP (Address Resolution Protocol)&#34;&gt;#&lt;/a&gt;ARP (Address Resolution Protocol)&lt;/h1&gt;
-ARP is not a pure layer-3 protocol, nor a pure layer-2 protocol. It generally works at layer 2 by using layer 3 IP address information ]]></description>
+&lt;ol&gt;
+&lt;li&gt;ARP (Address Resolution Protocol)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;ARP is not a pure layer-3 protocol, nor a pure layer-2 protocol. It generally works at layer 2 by using layer 3 IP address information&lt;/li&gt;
+&lt;li&gt;ARP works in conjunction with IPv4 to discover the MAC address of a host or node on the local network
+&lt;ul&gt;
+&lt;li&gt;And to maintain a database that maps IP addresses to MAC addresses on the local network&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ARP is a Layer 2 protocol that uses Layer 3’s IP address information
+&lt;ul&gt;
+&lt;li&gt;It operates only within its local network&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ARP relies on broadcasting&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;ARP Table&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;ARP table—The database of IP-to-MAC address mappings&lt;/li&gt;
+&lt;li&gt;An ARP table can contain two types of entries:
+&lt;ul&gt;
+&lt;li&gt;Dynamic—Created when a client makes an ARP request that could not be satisfied by data already in the ARP table&lt;/li&gt;
+&lt;li&gt;Static—Those someone entered manually using the ARP utility (arp command)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Check ARP table
+&lt;ul&gt;
+&lt;li&gt;arp -a&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/ac317e8c48a595ab.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+ ]]></description>
         </item>
         <item>
             <guid isPermalink="true">http://example.com/course/(Layers%201%20and%202)%20Physical%20and%20Data%20Link%20Layers/</guid>
