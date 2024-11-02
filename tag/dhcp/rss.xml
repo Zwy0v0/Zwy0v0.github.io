@@ -7,27 +7,29 @@
         <language>zh-CN</language>
         <pubDate>Fri, 01 Nov 2024 22:02:19 +1000</pubDate>
         <lastBuildDate>Fri, 01 Nov 2024 22:02:19 +1000</lastBuildDate>
+        <category>Blog</category>
+        <category>日常</category>
         <category>JavaScript</category>
         <category>network system</category>
         <category>C</category>
         <category>software security</category>
         <category>AFL</category>
         <category>Linux</category>
-        <category>vulnerability</category>
-        <category>C language</category>
         <category>HTTP</category>
         <category>XSS</category>
         <category>CSRF</category>
+        <category>C language</category>
+        <category>vulnerability</category>
+        <category>OSI</category>
+        <category>TCP/IP</category>
         <category>IP</category>
         <category>DHCP</category>
         <category>ICMP</category>
         <category>ARP</category>
-        <category>OSI</category>
-        <category>TCP/IP</category>
+        <category>IPv4</category>
+        <category>VLANs</category>
         <category>SQL</category>
         <category>gdb</category>
-        <category>Blog</category>
-        <category>日常</category>
         <item>
             <guid isPermalink="true">http://example.com/course/Layer-3-IP-Addressing-and-IP-related-Protocols/</guid>
             <title>(Layer 3) IP Addressing and IP-related Protocols</title>
