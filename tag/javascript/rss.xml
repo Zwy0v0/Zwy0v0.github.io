@@ -7,11 +7,11 @@
         <language>zh-CN</language>
         <pubDate>Wed, 23 Oct 2024 23:25:27 +1000</pubDate>
         <lastBuildDate>Wed, 23 Oct 2024 23:25:27 +1000</lastBuildDate>
-        <category>network system</category>
         <category>C</category>
         <category>software security</category>
         <category>AFL</category>
         <category>Linux</category>
+        <category>network system</category>
         <category>C language</category>
         <category>vulnerability</category>
         <category>HTTP</category>
@@ -25,6 +25,8 @@
         <category>Supernet</category>
         <category>IPv4</category>
         <category>Subnet</category>
+        <category>TCP</category>
+        <category>UDP</category>
         <category>OSI</category>
         <category>TCP/IP</category>
         <category>SQL</category>

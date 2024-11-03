@@ -1,0 +1,517 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title> • Posts by &#34;udp&#34; tag</title>
+        <link>http://example.com</link>
+        <description>🌸</description>
+        <language>zh-CN</language>
+        <pubDate>Sun, 03 Nov 2024 18:55:45 +1000</pubDate>
+        <lastBuildDate>Sun, 03 Nov 2024 18:55:45 +1000</lastBuildDate>
+        <category>C</category>
+        <category>software security</category>
+        <category>AFL</category>
+        <category>Linux</category>
+        <category>network system</category>
+        <category>C language</category>
+        <category>vulnerability</category>
+        <category>HTTP</category>
+        <category>XSS</category>
+        <category>CSRF</category>
+        <category>IP</category>
+        <category>DHCP</category>
+        <category>ICMP</category>
+        <category>ARP</category>
+        <category>router</category>
+        <category>Supernet</category>
+        <category>IPv4</category>
+        <category>Subnet</category>
+        <category>TCP</category>
+        <category>UDP</category>
+        <category>OSI</category>
+        <category>TCP/IP</category>
+        <category>SQL</category>
+        <category>gdb</category>
+        <category>JavaScript</category>
+        <category>Blog</category>
+        <category>日常</category>
+        <item>
+            <guid isPermalink="true">http://example.com/course/Layer-4-Transport-Protocols-TCP-and-UDP/</guid>
+            <title>(Layer 4) Transport Protocols TCP and UDP</title>
+            <link>http://example.com/course/Layer-4-Transport-Protocols-TCP-and-UDP/</link>
+            <category>network system</category>
+            <category>TCP</category>
+            <category>UDP</category>
+            <pubDate>Sun, 03 Nov 2024 18:55:45 +1000</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;Layer 4&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Layer 4&#34;&gt;#&lt;/a&gt;Layer 4&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;接收主机的解封装过程与连接设备&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/2e9e1d69eabb58ba.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Role of Transport Layer&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Role: to transport application-layer payloads from one application to another
+&lt;ul&gt;
+&lt;li&gt;Layer 4 establishes end-to-end connectivity&lt;/li&gt;
+&lt;li&gt;Recall: Layer 3 performs end-to-end delivery of packets&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Two main protocols:
+&lt;ul&gt;
+&lt;li&gt;Transmission Control Protocol (TCP): A connection-oriented protocol designed for reliable transfer of information&lt;/li&gt;
+&lt;li&gt;User Datagram Protocol (UDP): A connectionless protocol designed for efficient communication of generally small smounts of data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Segments and Datagrams&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Transport-layer protocols work with units of data called segments (TCP) or datagrams (UDP)&lt;/li&gt;
+&lt;li&gt;Both TCP and UDP add a header to payload. This is known as encapsulation&lt;/li&gt;
+&lt;li&gt;The Transport-layer protocol then passes the segment or datagram to the Internetwork protocol (IP)&lt;/li&gt;
+&lt;li&gt;With incoming data, the Transport-layer receives the segment or datagram from the Internetwork protocol, processes it, decapsulates it and sends the resulting data up to the Application layer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Identify Source/Destination Processes/Applications&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;A &lt;strong&gt;port number&lt;/strong&gt; is a way to identify a specific process/application to which an Internet or other network message is to be forwarded when it arrives at a server.&lt;/li&gt;
+&lt;li&gt;For TCP and UDP, a port number is a 16-bit integer that is put in the header appended to a message unit.
+&lt;ul&gt;
+&lt;li&gt;TCP and UDP use port numbers to specify the source and destination Application-layer protocols&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;Detect Data integrity with a Checksum mechanism&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;To protect data integrity, TCP and UDP provide a checksum similar to a cyclic redundancy check (CRC). CRC is an error-detecting code&lt;/li&gt;
+&lt;li&gt;Intermediate nodes do NOT recalculate the checksum in the Transport layer. So if data corruption occurs during transmission, the final receiving host detects the checksum error and discards the data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;TCP (Transmission Control Protocol)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#TCP (Transmission Control Protocol)&#34;&gt;#&lt;/a&gt;TCP (Transmission Control Protocol)&lt;/h1&gt;
+&lt;h2 id=&#34;TCP&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#TCP&#34;&gt;#&lt;/a&gt;TCP&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Characteristics of TCP&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Connection-oriented
+&lt;ol&gt;
+&lt;li&gt;TCP’s handshaking processes&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Before data transmission: It establishes a &lt;strong&gt;three-way handshake&lt;/strong&gt; process with the destination, then data is transferred&lt;/li&gt;
+&lt;li&gt;After data transmission:  The connection is terminated by a &lt;strong&gt;four-way handshake&lt;/strong&gt; process&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;TCP offers full-duplex service&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Data can be carried in both directions at the same time&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;TCP segment format&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Encapsulated by IP packet in Network layer  becomes IP packet’s “data”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Sequencing and checksums—TCP sends a character string called a checksum that is checked by the destination host along with a sequence number for each segment&lt;/li&gt;
+&lt;li&gt;Flow control—Gauges rate of transmission based on how quickly recipient can accept data&lt;/li&gt;
+&lt;li&gt;重传机制 Retry mechanism
+&lt;ol&gt;
+&lt;li&gt;确认机制：TCP 在数据传输过程中会使用 确认（ACK） 来通知发送方哪些数据包已成功到达接收方。每当接收方收到一个数据段时，它会向发送方发送一个确认消息，表示该数据段已成功接收。&lt;/li&gt;
+&lt;li&gt;重传丢失的段：如果某个数据段在传输过程中丢失或损坏，接收方不会发送确认消息。TCP 会使用重传超时（retransmission timeout RTO）机制 来确保丢失的段得到重传。&lt;/li&gt;
+&lt;li&gt;重传超时（RTO）机制：当 TCP 发送一个数据段时，会启动一个定时器。如果在设定的超时时间内没有收到该段的确认（ACK），则认为该数据段可能丢失，TCP 将会重传该数据段。定时器在接收到确认消息后停止，以防止不必要的重传。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Fields of a TCP Segment&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/9f400dd05957f1a3.png&#34; alt=&#34;img&#34;&gt;&lt;br&gt;
+An Example&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/fa75fbe787ff410b.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;16-bit SOURCE field
+&lt;ul&gt;
+&lt;li&gt;Identifies the sending port&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;16-bit DESTINATION PORT field
+&lt;ul&gt;
+&lt;li&gt;Identifies the receiving port&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;32-bit SEQUENCE NUMBER field
+&lt;ul&gt;
+&lt;li&gt;Defines the  1st byte number of this datagram&lt;/li&gt;
+&lt;li&gt;The numbering does not necessarily start from 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;32-bit ACKNOWLEDGEMENT NUMBER field
+&lt;ul&gt;
+&lt;li&gt;Indicates explicitly that a specific set of data received successfully&lt;/li&gt;
+&lt;li&gt;Indicates the next byte expected sequence number from the other side of the communication&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;16-bit WINDOW field
+&lt;ul&gt;
+&lt;li&gt;Indicates the size of the TCP receiver buffer in bytes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;CHECKSUM 16-bit checksum field:
+&lt;ul&gt;
+&lt;li&gt;For the integrity of the header and data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;URGENT POINTER 16-bit field
+&lt;ul&gt;
+&lt;li&gt;It is used with the URGENT flag to point to the end of urgent data sent in a segment&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;标志位&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;th&gt;功能&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;URG (U)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;紧急指针&lt;/td&gt;
+&lt;td&gt;通知接收方报文中某些数据是紧急的，需要优先处理，接收方会评估紧急指针&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;ACK (A)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;确认&lt;/td&gt;
+&lt;td&gt;表示发送该报文的设备请求确认接收，用于确认数据的接收&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;PSH §&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;推送&lt;/td&gt;
+&lt;td&gt;请求立即发送数据，将缓冲区中的数据推送到接收端&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;RST ®&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;复位&lt;/td&gt;
+&lt;td&gt;重置连接，用于立即终止连接&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;SYN (S)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;同步&lt;/td&gt;
+&lt;td&gt;用于初始化连接，表明正在建立新的连接&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;FIN (F)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;结束&lt;/td&gt;
+&lt;td&gt;表示发送方已经没有更多的数据要发送，表示连接的结束&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;TCP Connection and Disconnection&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#TCP Connection and Disconnection&#34;&gt;#&lt;/a&gt;TCP Connection and Disconnection&lt;/h2&gt;
+Three stages of a TCP connection:
+&lt;ol&gt;
+&lt;li&gt;Connection establishment with a 3-way handshake&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Three transmissions sent before data transmission:
+&lt;ul&gt;
+&lt;li&gt;Step 1 — (A → B) Request for a connection (SYN)&lt;/li&gt;
+&lt;li&gt;Step 2 — (B → A) Response to the request (SYN/ACK)&lt;/li&gt;
+&lt;li&gt;Step 3 — (A → B) Connection established (ACK)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;After the three initial messages, the payload or data is sent&lt;/li&gt;
+&lt;li&gt;Sequence numbers will be increased by the number of bits included in each received segment&lt;br&gt;
+This confirms that the correct length of message was received&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/5e6910628ec58039.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Data transfer&lt;br&gt;
+Receipt of data must be acknowledged with an ACK that specifies the byte number that the receiver is expecting to receive from the sender&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/5bcef8a1b7ac03dc.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Connection termination with a 4-way handshake&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Four segments may need to be exchanged to terminate a TCP connection
+&lt;ol&gt;
+&lt;li&gt;Since a TCP connection is full-duplex, data may flow independently in each direction&lt;/li&gt;
+&lt;li&gt;Each direction must be shut down independently&lt;/li&gt;
+&lt;li&gt;Each half-close will require a FIN and ACK segments to be sent.&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/793afec4c1014846.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;summary&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;TCP provides a connection mechanism for the application program
+&lt;ul&gt;
+&lt;li&gt;The client makes a connection with the server, i.e.,
+&lt;ul&gt;
+&lt;li&gt;a virtual circuit connection is established before data is transferred&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;The client and server exchange data in both directions
+&lt;ul&gt;
+&lt;li&gt;Data is then streamed through this connection&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Terminate the connection when the data transmission is done&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;TCP offers full-duplex service
+&lt;ul&gt;
+&lt;li&gt;Each TCP has a sending and receiving buffer and segments are sent in both direction&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;TCP provides reliable transmission via
+&lt;ul&gt;
+&lt;li&gt;Error control (checksum), flow control (sliding window protocol), and ACK/Retry mechanism (Ack to sender for received packets, timeout, retransmission)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Process-to-Process Communications&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;IP is for host-to-host communications&lt;/li&gt;
+&lt;li&gt;TCP is for delivery of the message to the appropriate application program, i.e.,&lt;br&gt;
+process-to-process communications&lt;/li&gt;
+&lt;li&gt;A computer may be running several programs at the same time
+&lt;ul&gt;
+&lt;li&gt;To make every connection unique, we need to use IP address and port number to establish a  unique identifier on a machine&lt;/li&gt;
+&lt;li&gt;This is achieved through &lt;strong&gt;socket&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;Socket Addresses – Unique Connections&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Every connection has 2 sockets or endpoints:
+&lt;ul&gt;
+&lt;li&gt;Source IP: Source port, 	e.g., 131.181.143.129:2525&lt;/li&gt;
+&lt;li&gt;Destination IP: Destination port, 	e.g., 131.181.118.220: 80&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;The connection creates a unique virtual channel.&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/300ed231c5e2e1de.png&#34; alt=&#34;socket&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;Sockets and Ports&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Port number range: 0 to 65535&lt;/li&gt;
+&lt;li&gt;Three types
+&lt;ol&gt;
+&lt;li&gt;Well Known Ports&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Range: 0 to 1023&lt;/li&gt;
+&lt;li&gt;Operating system or administrator use&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Registered Ports&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Range: 1024 to 49151&lt;/li&gt;
+&lt;li&gt;Network users, processes with no special privileges&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Dynamic and/or Private Ports&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Range: 49152 to 65535&lt;/li&gt;
+&lt;li&gt;Normally for a client use&lt;/li&gt;
+&lt;li&gt;No restrictions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Port number&lt;/th&gt;
+&lt;th&gt;Process name&lt;/th&gt;
+&lt;th&gt;Protocol used&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;FTP-DATA&lt;/td&gt;
+&lt;td&gt;TCP&lt;/td&gt;
+&lt;td&gt;File transfer—data&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;21&lt;/td&gt;
+&lt;td&gt;FTP&lt;/td&gt;
+&lt;td&gt;TCP&lt;/td&gt;
+&lt;td&gt;File transfer—control&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;22&lt;/td&gt;
+&lt;td&gt;SSH&lt;/td&gt;
+&lt;td&gt;TCP&lt;/td&gt;
+&lt;td&gt;Secure Shell&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;23&lt;/td&gt;
+&lt;td&gt;TELNET&lt;/td&gt;
+&lt;td&gt;TCP&lt;/td&gt;
+&lt;td&gt;Telnet&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;25&lt;/td&gt;
+&lt;td&gt;SMTP&lt;/td&gt;
+&lt;td&gt;TCP&lt;/td&gt;
+&lt;td&gt;Simple Mail Transfer Protocol&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;53&lt;/td&gt;
+&lt;td&gt;DNS&lt;/td&gt;
+&lt;td&gt;TCP and UDP&lt;/td&gt;
+&lt;td&gt;Domain Name System&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;67 (client to server) and 68 (server to client)&lt;/td&gt;
+&lt;td&gt;DHCPv4&lt;/td&gt;
+&lt;td&gt;UDP&lt;/td&gt;
+&lt;td&gt;Dynamic Host Configuration Protocol version 4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;69&lt;/td&gt;
+&lt;td&gt;TFTP&lt;/td&gt;
+&lt;td&gt;UDP&lt;/td&gt;
+&lt;td&gt;Trivial File Transfer Protocol&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;80&lt;/td&gt;
+&lt;td&gt;HTTP&lt;/td&gt;
+&lt;td&gt;TCP and UDP&lt;/td&gt;
+&lt;td&gt;Hypertext Transfer Protocol&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;110&lt;/td&gt;
+&lt;td&gt;POP3&lt;/td&gt;
+&lt;td&gt;TCP&lt;/td&gt;
+&lt;td&gt;Post Office Protocol 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;123&lt;/td&gt;
+&lt;td&gt;NTP&lt;/td&gt;
+&lt;td&gt;TCP&lt;/td&gt;
+&lt;td&gt;Network Time Protocol&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;143&lt;/td&gt;
+&lt;td&gt;IMAP&lt;/td&gt;
+&lt;td&gt;TCP&lt;/td&gt;
+&lt;td&gt;Internet Message Access Protocol&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;443&lt;/td&gt;
+&lt;td&gt;HTTPS&lt;/td&gt;
+&lt;td&gt;TCP&lt;/td&gt;
+&lt;td&gt;Secure implementation of HTTP&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;546 (client to server) and 547 (server to client)&lt;/td&gt;
+&lt;td&gt;DHCPv6&lt;/td&gt;
+&lt;td&gt;UDP&lt;/td&gt;
+&lt;td&gt;Dynamic Host Configuration Protocol version 6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3389&lt;/td&gt;
+&lt;td&gt;RDP&lt;/td&gt;
+&lt;td&gt;TCP&lt;/td&gt;
+&lt;td&gt;Remote Desktop Protocol&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id=&#34;UDP (User Datagram Protocol)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#UDP (User Datagram Protocol)&#34;&gt;#&lt;/a&gt;UDP (User Datagram Protocol)&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;UDP and its Features&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;UDP is a Transport layer protocol&lt;/li&gt;
+&lt;li&gt;It provides unreliable data delivery services
+&lt;ul&gt;
+&lt;li&gt;Connectionless transport service
+&lt;ul&gt;
+&lt;li&gt;No guarantee packets received at all&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;No error checking, no sequencing, no flow control
+&lt;ul&gt;
+&lt;li&gt;No assurance packets received correctly and in correct sequence&lt;/li&gt;
+&lt;li&gt;Lower overhead than TCP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Lacks sophistication = simple
+&lt;ul&gt;
+&lt;li&gt;More efficient than TCP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Useful situations
+&lt;ul&gt;
+&lt;li&gt;Great volume of data transferred quickly, e.g., video streaming&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Format of UDP Messages&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Each UDP message is called a &lt;strong&gt;user datagram&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Has a fixed size header of 8 bytes&lt;/li&gt;
+&lt;li&gt;16 bit SOURCE / DESTINATION PORT fields
+&lt;ul&gt;
+&lt;li&gt;Port number (between 0 and 65535)
+&lt;ul&gt;
+&lt;li&gt;Well-known ports 0 ~1023&lt;/li&gt;
+&lt;li&gt;Client host’s operating system may randomly choose a port  to communicate with a server&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Checksum is optional for IPv4, but mandatory for IPv6&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/eaa62641752a90e7.png&#34; alt=&#34;UDPheader&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Use&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;UDP is used while error checking and correction are performed by the application, such as
+&lt;ul&gt;
+&lt;li&gt;Domain Name System (DNS)&lt;/li&gt;
+&lt;li&gt;Dynamic Host Configuration Protocol (DHCP)&lt;/li&gt;
+&lt;li&gt;Trivial File Transfer Protocol (TFTP)&lt;/li&gt;
+&lt;li&gt;IPTV&lt;/li&gt;
+&lt;li&gt;Voice over IP (VoIP)&lt;/li&gt;
+&lt;li&gt;Real Time Streaming Protocol&lt;/li&gt;
+&lt;li&gt;Routing Information Protocol (RIP)&lt;/li&gt;
+&lt;li&gt;Simple Network Management Protocol (SNMP)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>
