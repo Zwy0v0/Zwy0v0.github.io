@@ -7,36 +7,38 @@
         <language>zh-CN</language>
         <pubDate>Sat, 02 Nov 2024 17:06:24 +1000</pubDate>
         <lastBuildDate>Sat, 02 Nov 2024 17:06:24 +1000</lastBuildDate>
-        <category>Blog</category>
-        <category>日常</category>
-        <category>JavaScript</category>
         <category>network system</category>
         <category>C</category>
         <category>software security</category>
         <category>AFL</category>
         <category>Linux</category>
+        <category>C language</category>
+        <category>vulnerability</category>
         <category>HTTP</category>
         <category>XSS</category>
         <category>CSRF</category>
-        <category>C language</category>
-        <category>vulnerability</category>
-        <category>OSI</category>
-        <category>TCP/IP</category>
         <category>IP</category>
         <category>DHCP</category>
         <category>ICMP</category>
         <category>ARP</category>
+        <category>router</category>
+        <category>Supernet</category>
         <category>IPv4</category>
-        <category>VLANs</category>
+        <category>Subnet</category>
+        <category>OSI</category>
+        <category>TCP/IP</category>
         <category>SQL</category>
         <category>gdb</category>
+        <category>JavaScript</category>
+        <category>Blog</category>
+        <category>日常</category>
         <item>
             <guid isPermalink="true">http://example.com/course/Layer-3-Subnetting-and-VLANs/</guid>
             <title>Layer 3 - Subnetting and VLANs</title>
             <link>http://example.com/course/Layer-3-Subnetting-and-VLANs/</link>
             <category>network system</category>
             <category>IPv4</category>
-            <category>VLANs</category>
+            <category>Subnet</category>
             <pubDate>Sat, 02 Nov 2024 17:06:24 +1000</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;IPv4 Subnetting&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#IPv4 Subnetting&#34;&gt;#&lt;/a&gt;IPv4 Subnetting&lt;/h1&gt;
 &lt;ol&gt;

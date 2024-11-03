@@ -1,0 +1,291 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://example.com</id>
+    <title> • Posts by &#34;supernet&#34; tag</title>
+    <link href="http://example.com" />
+    <updated>2024-11-02T12:14:43.000Z</updated>
+    <category term="network system" />
+    <category term="C" />
+    <category term="software security" />
+    <category term="AFL" />
+    <category term="Linux" />
+    <category term="C language" />
+    <category term="vulnerability" />
+    <category term="HTTP" />
+    <category term="XSS" />
+    <category term="CSRF" />
+    <category term="IP" />
+    <category term="DHCP" />
+    <category term="ICMP" />
+    <category term="ARP" />
+    <category term="router" />
+    <category term="Supernet" />
+    <category term="IPv4" />
+    <category term="Subnet" />
+    <category term="OSI" />
+    <category term="TCP/IP" />
+    <category term="SQL" />
+    <category term="gdb" />
+    <category term="JavaScript" />
+    <category term="Blog" />
+    <category term="日常" />
+    <entry>
+        <id>http://example.com/course/Layer-3-Routing-and-Superheating/</id>
+        <title>Layer 3 - Routing and Superheating</title>
+        <link rel="alternate" href="http://example.com/course/Layer-3-Routing-and-Superheating/"/>
+        <content type="html">&lt;h1 id=&#34;Routers and routing&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Routers and routing&#34;&gt;#&lt;/a&gt;Routers and routing&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Routers&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;A router joins two or more networks and passes packets from one network to another&lt;/li&gt;
+&lt;li&gt;Routers can do the following:
+&lt;ul&gt;
+&lt;li&gt;Connect dissimilar networks (LANs and WANs)&lt;/li&gt;
+&lt;li&gt;Interpret Layer 3 and often Layer 4 addressing&lt;/li&gt;
+&lt;li&gt;Determine the best path for data to follow from point A to point B&lt;/li&gt;
+&lt;li&gt;Re-route traffic if the path of first choice is down but another path is available&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Routers may perform any of the following optional functions:
+&lt;ul&gt;
+&lt;li&gt;Filter broadcast transmissions&lt;/li&gt;
+&lt;li&gt;Prevent certain types of traffic from getting to a network&lt;/li&gt;
+&lt;li&gt;Support simultaneous local and remote connectivity&lt;/li&gt;
+&lt;li&gt;Provide high network fault tolerance through redundant components such as power supplies&lt;/li&gt;
+&lt;li&gt;Monitor network traffic and report statistics&lt;/li&gt;
+&lt;li&gt;Diagnose internal or other connectivity problems and trigger alarms&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Categories of routers
+&lt;ul&gt;
+&lt;li&gt;Core (interior) routers
+&lt;ul&gt;
+&lt;li&gt;Direct data between networks&lt;/li&gt;
+&lt;li&gt;within the same autonomous system (AS)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Edge routers, or border routers
+&lt;ul&gt;
+&lt;li&gt;They connect an autonomous system with an outside network&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Exterior routers: any routers outside the organization’s AS
+&lt;ul&gt;
+&lt;li&gt;Direct data between autonomous systems&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Routing tables&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Routing table—A database that maintains information about where hosts are located and the most efficient route to reach them
+&lt;ul&gt;
+&lt;li&gt;Routers rely on them to identify which router is the next hop to reach a particular destination host&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Routing tables contain IP addresses and network masks
+&lt;ul&gt;
+&lt;li&gt;A network mask identifies a network that a host or another router belongs to&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Static Routing vs Dynamic Routing&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Static routing—Network administrators configure a routing table to direct messages along specific paths
+&lt;ul&gt;
+&lt;li&gt;Example—A static route between a small business and its ISP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Dynamic routing—Automatically calculates the best path between two networks and maintains this information in a routing table
+&lt;ul&gt;
+&lt;li&gt;A router can detect problems with failed or congested routes and reroute messages through a different path&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Routing metrics&lt;br&gt;
+Routing metrics—Properties of a route used by routers to determine the best path to a destination:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Hop count&lt;/li&gt;
+&lt;li&gt;Theoretical bandwidth and actual throughput&lt;/li&gt;
+&lt;li&gt;Delay, or latency, on a potential path&lt;/li&gt;
+&lt;li&gt;Load, or the traffic or processing burden&lt;/li&gt;
+&lt;li&gt;MTU (maximum transmission unit) or the largest I P packet size in bytes allowable without fragmentation&lt;/li&gt;
+&lt;li&gt;Routing cost, or a value assigned to a particular route&lt;/li&gt;
+&lt;li&gt;Reliability of a potential path&lt;/li&gt;
+&lt;li&gt;Topology of a network&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Determining the Best Routing Paths&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Routing protocols—Used by routers to communicate with each other to determine the best path&lt;/li&gt;
+&lt;li&gt;Routers rate the reliability and priority of a routing protocol’s data based on these criteria:
+&lt;ul&gt;
+&lt;li&gt;Administrative distance (AD)—A number indicating the protocol’s reliability&lt;/li&gt;
+&lt;li&gt;Convergence time—Time it takes to recognize a best path in the event of a change or network outage&lt;/li&gt;
+&lt;li&gt;Overhead—The burden placed on the underlying network to support the protocol&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;Routing protocols&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Routing protocols&#34;&gt;#&lt;/a&gt;Routing protocols&lt;/h1&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Routing Protocol&lt;/th&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;Algorithm Used&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;RIP (Routing Information Protocol)&lt;/td&gt;
+&lt;td&gt;IGP&lt;/td&gt;
+&lt;td&gt;Distance-vector&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RIPv2 (Routing Information Protocol, version 2)&lt;/td&gt;
+&lt;td&gt;IGP&lt;/td&gt;
+&lt;td&gt;Distance-vector&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OSPF (Open Shortest Path First)&lt;/td&gt;
+&lt;td&gt;IGP&lt;/td&gt;
+&lt;td&gt;Link-state&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;IS-IS (Intermediate System to Intermediate System)&lt;/td&gt;
+&lt;td&gt;IGP&lt;/td&gt;
+&lt;td&gt;Link-state&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;EIGRP (Enhanced Interior Gateway Routing Protocol)&lt;/td&gt;
+&lt;td&gt;IGP&lt;/td&gt;
+&lt;td&gt;Advanced distance-vector&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;BGP (Border Gateway Protocol)&lt;/td&gt;
+&lt;td&gt;EGP&lt;/td&gt;
+&lt;td&gt;Advanced distance-vector or path vector&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/12b43b341ed2ece0.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;IGP and EGP&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;IGP (interior gateway protocols)— in core routers and edge routers within autonomous systems, often grouped according to the algorithms they use to calculate best paths:
+&lt;ul&gt;
+&lt;li&gt;Distance-vector routing protocols—Calculate path on the basis of the distance to that destination&lt;/li&gt;
+&lt;li&gt;Link-state routing protocols—Enables routers to communicate beyond neighboring routers in order to independently map the network and determine the best path&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;EGP (exterior gateway protocols)— in edge routers and exterior routers to distribute data outside of autonomous systems
+&lt;ul&gt;
+&lt;li&gt;The only EGP currently in use is BGP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;BGP (Border Gateway Protocol) – Protocol of the Internet&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;BGP is the only EGP in use at the moment. It can span multiple autonomous systems&lt;/li&gt;
+&lt;li&gt;A path-vector routing protocol that communicates via BGP-specific messages that travel between routers&lt;/li&gt;
+&lt;li&gt;Determines the best paths based on many different factors&lt;/li&gt;
+&lt;li&gt;Can be configured to follow policies that might avoid a certain router or instruct a group of routers to prefer a particular route&lt;/li&gt;
+&lt;li&gt;The most complex of the routing protocols&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;OSPF（开放最短路径优先协议）&lt;br&gt;
+OSPF（Open Shortest Path First） 是一种内部网关协议（IGP）和链路状态路由协议，通常用于内部和边缘路由器。它被设计为对早期的 RIP（路由信息协议） 的改进。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;支持大型网络：OSPF 没有跳数限制，因此可以支持更大的网络规模，而不像 RIP 那样限制为 15 跳。&lt;/li&gt;
+&lt;li&gt;复杂的路径计算算法：OSPF 使用更复杂的算法（Dijkstra 算法）来计算最佳路径，基于链路状态和网络拓扑实现高效路由选择。&lt;/li&gt;
+&lt;li&gt;共享数据：OSPF 维护一个链路状态数据库，包含其他路由器的链路信息，使每个路由器可以掌握网络的全局视图，从而选择最佳路径。&lt;/li&gt;
+&lt;li&gt;低开销，快速收敛：OSPF 要求更高的内存和 CPU 来执行计算，但它占用的网络带宽较少，并且在网络发生变化时可以快速收敛，提供稳定的路由信息。&lt;/li&gt;
+&lt;li&gt;稳定性：OSPF 使用防止路由环路的算法，确保路由信息的稳定性和可靠性。OSPF 使用触发更新机制，仅在网络拓扑发生变化时更新，而不是定期更新，减少了不必要的路由信息传输&lt;/li&gt;
+&lt;li&gt;多供应商支持：OSPF 是一种标准协议，所有现代路由器都支持，因此可以在不同品牌和供应商的路由器之间实现互操作。&lt;/li&gt;
+&lt;li&gt;创建链路状态表的正确步骤顺序：
+&lt;ul&gt;
+&lt;li&gt;Send a “Hello” packet to directly connected neighbouring routers&lt;br&gt;
+OSPF 首先通过发送 “Hello” 数据包来发现直接相连的邻居路由器，确认哪些路由器是直接连接的邻居。&lt;/li&gt;
+&lt;li&gt;Build Link State Packets out of a list of the router’s neighbours&lt;br&gt;
+ 收集到邻居信息后，路由器构建包含所有邻居列表的链路状态数据包（Link State Packet，LSP）。&lt;/li&gt;
+&lt;li&gt;Send a Link State Packet to every one of its neighbours&lt;br&gt;
+ 路由器将构建好的链路状态数据包发送给所有邻居，以便邻居可以更新其链路状态表。&lt;/li&gt;
+&lt;li&gt;Build a network topology based on the information it has received from its neighbours&lt;br&gt;
+ 最后，路由器基于从邻居接收到的链路状态信息，构建出整个网络的拓扑图，选择最佳路径。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;I S-IS (Intermediate System to Intermediate System)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;IS-IS is an IGP and link-state routing protocol:&lt;/li&gt;
+&lt;li&gt;Uses a best-path algorithm similar to OSPF&lt;/li&gt;
+&lt;li&gt;Is designed for use &lt;strong&gt;on core&lt;/strong&gt; routers only (unlike OSPF)&lt;/li&gt;
+&lt;li&gt;Not handcuffed to IPv4 (like OSPF) so it’s easy to adapt to &lt;strong&gt;IPv6&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Service providers generally prefer IS-IS because it is more &lt;strong&gt;scalable&lt;/strong&gt; than OSPF&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;EIGRP (Enhanced Interior Gateway Routing Protocol)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;EIGRP is an advanced distance-vector protocol that combines some of the features of a link-state protocol&lt;/li&gt;
+&lt;li&gt;Often referred to as a hybrid protocol&lt;/li&gt;
+&lt;li&gt;Fast convergence time and low network overhead&lt;/li&gt;
+&lt;li&gt;Easier to configure and less CPU-intensive than OSPF&lt;/li&gt;
+&lt;li&gt;Supports multiple protocols and limits unnecessary network traffic between routers&lt;/li&gt;
+&lt;li&gt;Originally proprietary to Cisco routers&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/4ab0d24b662cde26.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;Supernetting&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Supernetting&#34;&gt;#&lt;/a&gt;IPv4 Supernetting&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Supernetting&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;It is also called Network Summarisation
+&lt;ul&gt;
+&lt;li&gt;To combine a group of continuous subnets to form a single network&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;It is used for route aggregation to reduce the size of routing tables
+&lt;ul&gt;
+&lt;li&gt;A way of reducing the number of routes in the routing table&lt;/li&gt;
+&lt;li&gt;To consolidate continuous routes into a single route for route advertisement&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Benefits of Superneting
+&lt;ul&gt;
+&lt;li&gt;To minimize the latency in a complex network structure&lt;/li&gt;
+&lt;li&gt;To reduce the overhead for routing process, since the reduced number of route entries in the routing table&lt;/li&gt;
+&lt;li&gt;To improve network stability by reducing or eliminating unnecessary routing updates after part of the network undergoes a change in topology&lt;/li&gt;
+&lt;li&gt;To reduce processor workloads, memory requirements and bandwidth demand&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;示例：一个中型组织需要 1,000 个地址。需要多少个 Class C 地址？子网掩码是多少？
+&lt;ul&gt;
+&lt;li&gt;计算需要的 Class C 地址数量：每个 Class C 地址可以提供 254 个主机地址（即每个子网最多支持 254 个主机）。因此，1,000 个地址需要至少 4 个 Class C 网络地址来满足（4 个 Class C 网络共提供 4 × 254 = 1,016 个地址）。&lt;/li&gt;
+&lt;li&gt;超网分配和地址汇总：通常情况下，1,000 个地址会需要一个 Class B 网络，但通过使用 4 个连续的 Class C 地址并将其超网，可以合并为一个网络地址来访问整个组织。通过将 4 个连续的 Class C 网络地址汇总为一个超网，这个组织可以通过一个单一的网络地址进行访问。&lt;/li&gt;
+&lt;li&gt;子网掩码计算：4 个 Class C 网络 = 2**2，因此在第三个八位组（即第三个字节）中借用了 2 位作为网络部分。超网掩码为：11111111.11111111.11111100.00000000，即 255.255.252.0 或 /22。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="network system" />
+        <category term="router" />
+        <category term="Supernet" />
+        <updated>2024-11-02T12:14:43.000Z</updated>
+    </entry>
+</feed>

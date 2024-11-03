@@ -7,29 +7,31 @@
         <language>zh-CN</language>
         <pubDate>Thu, 31 Oct 2024 16:06:30 +1000</pubDate>
         <lastBuildDate>Thu, 31 Oct 2024 16:06:30 +1000</lastBuildDate>
-        <category>Blog</category>
-        <category>日常</category>
-        <category>JavaScript</category>
         <category>network system</category>
         <category>C</category>
         <category>software security</category>
         <category>AFL</category>
         <category>Linux</category>
+        <category>C language</category>
+        <category>vulnerability</category>
         <category>HTTP</category>
         <category>XSS</category>
         <category>CSRF</category>
-        <category>C language</category>
-        <category>vulnerability</category>
-        <category>OSI</category>
-        <category>TCP/IP</category>
         <category>IP</category>
         <category>DHCP</category>
         <category>ICMP</category>
         <category>ARP</category>
+        <category>router</category>
+        <category>Supernet</category>
         <category>IPv4</category>
-        <category>VLANs</category>
+        <category>Subnet</category>
+        <category>OSI</category>
+        <category>TCP/IP</category>
         <category>SQL</category>
         <category>gdb</category>
+        <category>JavaScript</category>
+        <category>Blog</category>
+        <category>日常</category>
         <item>
             <guid isPermalink="true">http://example.com/course/Network%20System%20Overall/</guid>
             <title>Network Systems Overall</title>
