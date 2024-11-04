@@ -117,12 +117,12 @@ AtoposZz =  = final在后面追我T T</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf5fd1a28a.jpg"></li>
           <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a94b2174.png"></li>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a9382651.png"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf5fd1a28a.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a94f1d92.png"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf7643bf1a.jpg"></li>
           <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf70db78e1.jpg"></li>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a97b6ba9.jpg"></li>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf6bb9fdaf.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a9382651.png"></li>
         </ul>
       </div>
     </header>
@@ -172,21 +172,20 @@ AtoposZz =  = final在后面追我T T</title>
     
 
     <h1 id="Routers and routing" class="active"><a class="anchor"  href="#Routers and routing">#</a>Routers and routing</h1>
+
 <ol>
 <li>Routers</li>
 </ol>
 <ul>
 <li>A router joins two or more networks and passes packets from one network to another</li>
-<li>Routers can do the following:
-<ul>
+<li>Routers can do the following:<ul>
 <li>Connect dissimilar networks (LANs and WANs)</li>
 <li>Interpret Layer 3 and often Layer 4 addressing</li>
 <li>Determine the best path for data to follow from point A to point B</li>
 <li>Re-route traffic if the path of first choice is down but another path is available</li>
 </ul>
 </li>
-<li>Routers may perform any of the following optional functions:
-<ul>
+<li>Routers may perform any of the following optional functions:<ul>
 <li>Filter broadcast transmissions</li>
 <li>Prevent certain types of traffic from getting to a network</li>
 <li>Support simultaneous local and remote connectivity</li>
@@ -195,21 +194,17 @@ AtoposZz =  = final在后面追我T T</title>
 <li>Diagnose internal or other connectivity problems and trigger alarms</li>
 </ul>
 </li>
-<li>Categories of routers
-<ul>
-<li>Core (interior) routers
-<ul>
+<li>Categories of routers<ul>
+<li>Core (interior) routers<ul>
 <li>Direct data between networks</li>
 <li>within the same autonomous system (AS)</li>
 </ul>
 </li>
-<li>Edge routers, or border routers
-<ul>
+<li>Edge routers, or border routers<ul>
 <li>They connect an autonomous system with an outside network</li>
 </ul>
 </li>
-<li>Exterior routers: any routers outside the organization’s AS
-<ul>
+<li>Exterior routers: any routers outside the organization’s AS<ul>
 <li>Direct data between autonomous systems</li>
 </ul>
 </li>
@@ -220,13 +215,11 @@ AtoposZz =  = final在后面追我T T</title>
 <li>Routing tables</li>
 </ol>
 <ul>
-<li>Routing table—A database that maintains information about where hosts are located and the most efficient route to reach them
-<ul>
+<li>Routing table—A database that maintains information about where hosts are located and the most efficient route to reach them<ul>
 <li>Routers rely on them to identify which router is the next hop to reach a particular destination host</li>
 </ul>
 </li>
-<li>Routing tables contain IP addresses and network masks
-<ul>
+<li>Routing tables contain IP addresses and network masks<ul>
 <li>A network mask identifies a network that a host or another router belongs to</li>
 </ul>
 </li>
@@ -235,20 +228,17 @@ AtoposZz =  = final在后面追我T T</title>
 <li>Static Routing vs Dynamic Routing</li>
 </ol>
 <ul>
-<li>Static routing—Network administrators configure a routing table to direct messages along specific paths
-<ul>
+<li>Static routing—Network administrators configure a routing table to direct messages along specific paths<ul>
 <li>Example—A static route between a small business and its ISP</li>
 </ul>
 </li>
-<li>Dynamic routing—Automatically calculates the best path between two networks and maintains this information in a routing table
-<ul>
+<li>Dynamic routing—Automatically calculates the best path between two networks and maintains this information in a routing table<ul>
 <li>A router can detect problems with failed or congested routes and reroute messages through a different path</li>
 </ul>
 </li>
 </ul>
 <ol start="4">
-<li>Routing metrics<br>
-Routing metrics—Properties of a route used by routers to determine the best path to a destination:</li>
+<li>Routing metrics<br>Routing metrics—Properties of a route used by routers to determine the best path to a destination:</li>
 </ol>
 <ul>
 <li>Hop count</li>
@@ -265,8 +255,7 @@ Routing metrics—Properties of a route used by routers to determine the best pa
 </ol>
 <ul>
 <li>Routing protocols—Used by routers to communicate with each other to determine the best path</li>
-<li>Routers rate the reliability and priority of a routing protocol’s data based on these criteria:
-<ul>
+<li>Routers rate the reliability and priority of a routing protocol’s data based on these criteria:<ul>
 <li>Administrative distance (AD)—A number indicating the protocol’s reliability</li>
 <li>Convergence time—Time it takes to recognize a best path in the event of a change or network outage</li>
 <li>Overhead—The burden placed on the underlying network to support the protocol</li>
@@ -274,6 +263,7 @@ Routing metrics—Properties of a route used by routers to determine the best pa
 </li>
 </ul>
 <h1 id="Routing protocols" class="active"><a class="anchor"  href="#Routing protocols">#</a>Routing protocols</h1>
+
 <table>
 <thead>
 <tr>
@@ -282,8 +272,7 @@ Routing metrics—Properties of a route used by routers to determine the best pa
 <th>Algorithm Used</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>RIP (Routing Information Protocol)</td>
 <td>IGP</td>
 <td>Distance-vector</td>
@@ -313,21 +302,18 @@ Routing metrics—Properties of a route used by routers to determine the best pa
 <td>EGP</td>
 <td>Advanced distance-vector or path vector</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p><img data-src="https://cdn-fusion.imgcdn.store/i/2024/12b43b341ed2ece0.png" alt="img"></p>
 <ol>
 <li>IGP and EGP</li>
 </ol>
 <ul>
-<li>IGP (interior gateway protocols)— in core routers and edge routers within autonomous systems, often grouped according to the algorithms they use to calculate best paths:
-<ul>
+<li>IGP (interior gateway protocols)— in core routers and edge routers within autonomous systems, often grouped according to the algorithms they use to calculate best paths:<ul>
 <li>Distance-vector routing protocols—Calculate path on the basis of the distance to that destination</li>
 <li>Link-state routing protocols—Enables routers to communicate beyond neighboring routers in order to independently map the network and determine the best path</li>
 </ul>
 </li>
-<li>EGP (exterior gateway protocols)— in edge routers and exterior routers to distribute data outside of autonomous systems
-<ul>
+<li>EGP (exterior gateway protocols)— in edge routers and exterior routers to distribute data outside of autonomous systems<ul>
 <li>The only EGP currently in use is BGP</li>
 </ul>
 </li>
@@ -343,8 +329,7 @@ Routing metrics—Properties of a route used by routers to determine the best pa
 <li>The most complex of the routing protocols</li>
 </ul>
 <ol start="3">
-<li>OSPF（开放最短路径优先协议）<br>
-OSPF（Open Shortest Path First） 是一种内部网关协议（IGP）和链路状态路由协议，通常用于内部和边缘路由器。它被设计为对早期的 RIP（路由信息协议） 的改进。</li>
+<li>OSPF（开放最短路径优先协议）<br>OSPF（Open Shortest Path First） 是一种内部网关协议（IGP）和链路状态路由协议，通常用于内部和边缘路由器。它被设计为对早期的 RIP（路由信息协议） 的改进。</li>
 </ol>
 <ul>
 <li>支持大型网络：OSPF 没有跳数限制，因此可以支持更大的网络规模，而不像 RIP 那样限制为 15 跳。</li>
@@ -353,16 +338,11 @@ OSPF（Open Shortest Path First） 是一种内部网关协议（IGP）和链路
 <li>低开销，快速收敛：OSPF 要求更高的内存和 CPU 来执行计算，但它占用的网络带宽较少，并且在网络发生变化时可以快速收敛，提供稳定的路由信息。</li>
 <li>稳定性：OSPF 使用防止路由环路的算法，确保路由信息的稳定性和可靠性。OSPF 使用触发更新机制，仅在网络拓扑发生变化时更新，而不是定期更新，减少了不必要的路由信息传输</li>
 <li>多供应商支持：OSPF 是一种标准协议，所有现代路由器都支持，因此可以在不同品牌和供应商的路由器之间实现互操作。</li>
-<li>创建链路状态表的正确步骤顺序：
-<ul>
-<li>Send a “Hello” packet to directly connected neighbouring routers<br>
-OSPF 首先通过发送 “Hello” 数据包来发现直接相连的邻居路由器，确认哪些路由器是直接连接的邻居。</li>
-<li>Build Link State Packets out of a list of the router’s neighbours<br>
- 收集到邻居信息后，路由器构建包含所有邻居列表的链路状态数据包（Link State Packet，LSP）。</li>
-<li>Send a Link State Packet to every one of its neighbours<br>
- 路由器将构建好的链路状态数据包发送给所有邻居，以便邻居可以更新其链路状态表。</li>
-<li>Build a network topology based on the information it has received from its neighbours<br>
- 最后，路由器基于从邻居接收到的链路状态信息，构建出整个网络的拓扑图，选择最佳路径。</li>
+<li>创建链路状态表的正确步骤顺序：<ul>
+<li>Send a “Hello” packet to directly connected neighbouring routers<br>  OSPF 首先通过发送 “Hello” 数据包来发现直接相连的邻居路由器，确认哪些路由器是直接连接的邻居。</li>
+<li>Build Link State Packets out of a list of the router’s neighbours<br>  收集到邻居信息后，路由器构建包含所有邻居列表的链路状态数据包（Link State Packet，LSP）。</li>
+<li>Send a Link State Packet to every one of its neighbours<br>  路由器将构建好的链路状态数据包发送给所有邻居，以便邻居可以更新其链路状态表。</li>
+<li>Build a network topology based on the information it has received from its neighbours<br>  最后，路由器基于从邻居接收到的链路状态信息，构建出整个网络的拓扑图，选择最佳路径。</li>
 </ul>
 </li>
 </ul>
@@ -385,38 +365,34 @@ OSPF 首先通过发送 “Hello” 数据包来发现直接相连的邻居路�
 <li>Fast convergence time and low network overhead</li>
 <li>Easier to configure and less CPU-intensive than OSPF</li>
 <li>Supports multiple protocols and limits unnecessary network traffic between routers</li>
-<li>Originally proprietary to Cisco routers<br>
-<img data-src="https://cdn-fusion.imgcdn.store/i/2024/4ab0d24b662cde26.png" alt="img"></li>
+<li>Originally proprietary to Cisco routers<br><img data-src="https://cdn-fusion.imgcdn.store/i/2024/4ab0d24b662cde26.png" alt="img"></li>
 </ul>
 <h1 id="Supernetting" class="active"><a class="anchor"  href="#Supernetting">#</a>IPv4 Supernetting</h1>
+
 <ol>
 <li>Supernetting</li>
 </ol>
 <ul>
-<li>It is also called Network Summarisation
-<ul>
+<li>It is also called Network Summarisation<ul>
 <li>To combine a group of continuous subnets to form a single network</li>
 </ul>
 </li>
-<li>It is used for route aggregation to reduce the size of routing tables
-<ul>
+<li>It is used for route aggregation to reduce the size of routing tables<ul>
 <li>A way of reducing the number of routes in the routing table</li>
 <li>To consolidate continuous routes into a single route for route advertisement</li>
 </ul>
 </li>
-<li>Benefits of Superneting
-<ul>
+<li>Benefits of Superneting<ul>
 <li>To minimize the latency in a complex network structure</li>
 <li>To reduce the overhead for routing process, since the reduced number of route entries in the routing table</li>
 <li>To improve network stability by reducing or eliminating unnecessary routing updates after part of the network undergoes a change in topology</li>
 <li>To reduce processor workloads, memory requirements and bandwidth demand</li>
 </ul>
 </li>
-<li>示例：一个中型组织需要 1,000 个地址。需要多少个 Class C 地址？子网掩码是多少？
-<ul>
-<li>计算需要的 Class C 地址数量：每个 Class C 地址可以提供 254 个主机地址（即每个子网最多支持 254 个主机）。因此，1,000 个地址需要至少 4 个 Class C 网络地址来满足（4 个 Class C 网络共提供 4 × 254 = 1,016 个地址）。</li>
+<li>示例：一个中型组织需要 1,000 个地址。需要多少个 Class C 地址？子网掩码是多少？<ul>
+<li>计算需要的 Class C 地址数量：每个 Class C 地址可以提供 254 个主机地址（即每个子网最多支持 254 个主机）。因此，1,000 个地址需要至少 4 个 Class C 网络地址来满足（4 个 Class C 网络共提供 4 × 254 &#x3D; 1,016 个地址）。</li>
 <li>超网分配和地址汇总：通常情况下，1,000 个地址会需要一个 Class B 网络，但通过使用 4 个连续的 Class C 地址并将其超网，可以合并为一个网络地址来访问整个组织。通过将 4 个连续的 Class C 网络地址汇总为一个超网，这个组织可以通过一个单一的网络地址进行访问。</li>
-<li>子网掩码计算：4 个 Class C 网络 = 2**2，因此在第三个八位组（即第三个字节）中借用了 2 位作为网络部分。超网掩码为：11111111.11111111.11111100.00000000，即 255.255.252.0 或 /22。</li>
+<li>子网掩码计算：4 个 Class C 网络 &#x3D; 2**2，因此在第三个八位组（即第三个字节）中借用了 2 位作为网络部分。超网掩码为：11111111.11111111.11111100.00000000，即 255.255.252.0 或 &#x2F;22。</li>
 </ul>
 </li>
 </ul>
@@ -476,7 +452,7 @@ OSPF 首先通过发送 “Hello” 数据包来发现直接相连的邻居路�
     <div class="item left">
       
 
-  <a href="/course/Layer-3-Subnetting-and-VLANs/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;26&#x2F;671cf70db78e1.jpg" title="Layer 3 - Subnetting and VLANs">
+  <a href="/course/Layer-3-Subnetting-and-VLANs/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;18&#x2F;67123a9382651.png" title="Layer 3 - Subnetting and VLANs">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> Network Systems</span>
   <h3>Layer 3 - Subnetting and VLANs</h3>
@@ -486,7 +462,7 @@ OSPF 首先通过发送 “Hello” 数据包来发现直接相连的邻居路�
     <div class="item right">
       
 
-  <a href="/course/Layer-4-Transport-Protocols-TCP-and-UDP/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;26&#x2F;671cf6bb9fdaf.jpg" title="(Layer 4) Transport Protocols TCP and UDP">
+  <a href="/course/Layer-4-Transport-Protocols-TCP-and-UDP/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;26&#x2F;671cf60a21b5d.jpg" title="(Layer 4) Transport Protocols TCP and UDP">
   <span class="type">下一篇</span>
   <span class="category"><i class="ic i-flag"></i> Network Systems</span>
   <h3>(Layer 4) Transport Protocols TCP and UDP</h3>
@@ -512,7 +488,7 @@ OSPF 首先通过发送 “Hello” 数据包来发现直接相连的邻居路�
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="/course/Network%20System%20Overall/" rel="bookmark" title="Network Systems Overall">Network Systems Overall</a></li><li><a href="/course/(Layers%201%20and%202)%20Physical%20and%20Data%20Link%20Layers/" rel="bookmark" title="(Layers 1 and 2) Physical and Data Link Layers">(Layers 1 and 2) Physical and Data Link Layers</a></li><li><a href="/course/Layer-3-IP-Addressing-and-IP-related-Protocols/" rel="bookmark" title="(Layer 3) IP Addressing and IP-related Protocols">(Layer 3) IP Addressing and IP-related Protocols</a></li><li><a href="/course/Layer-3-Subnetting-and-VLANs/" rel="bookmark" title="Layer 3 - Subnetting and VLANs">Layer 3 - Subnetting and VLANs</a></li><li class="active"><a href="/course/Layer-3-Routing-and-Superheating/" rel="bookmark" title="Layer 3 - Routing and Superheating">Layer 3 - Routing and Superheating</a></li><li><a href="/course/Layer-4-Transport-Protocols-TCP-and-UDP/" rel="bookmark" title="(Layer 4) Transport Protocols TCP and UDP">(Layer 4) Transport Protocols TCP and UDP</a></li>
+          <li><a href="/course/Network%20System%20Overall/" rel="bookmark" title="Network Systems Overall">Network Systems Overall</a></li><li><a href="/course/(Layers%201%20and%202)%20Physical%20and%20Data%20Link%20Layers/" rel="bookmark" title="(Layers 1 and 2) Physical and Data Link Layers">(Layers 1 and 2) Physical and Data Link Layers</a></li><li><a href="/course/Layer-3-IP-Addressing-and-IP-related-Protocols/" rel="bookmark" title="(Layer 3) IP Addressing and IP-related Protocols">(Layer 3) IP Addressing and IP-related Protocols</a></li><li><a href="/course/Layer-3-Subnetting-and-VLANs/" rel="bookmark" title="Layer 3 - Subnetting and VLANs">Layer 3 - Subnetting and VLANs</a></li><li class="active"><a href="/course/Layer-3-Routing-and-Superheating/" rel="bookmark" title="Layer 3 - Routing and Superheating">Layer 3 - Routing and Superheating</a></li><li><a href="/course/Layer-4-Transport-Protocols-TCP-and-UDP/" rel="bookmark" title="(Layer 4) Transport Protocols TCP and UDP">(Layer 4) Transport Protocols TCP and UDP</a></li><li><a href="/course/Layer-7-Application-layer-Protocols-and-Services/" rel="bookmark" title="(Layer 7) Application-layer Protocols and Services">(Layer 7) Application-layer Protocols and Services</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -526,7 +502,7 @@ OSPF 首先通过发送 “Hello” 数据包来发现直接相连的邻居路�
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">22</span>
+        <span class="count">23</span>
         <span class="name">文章</span>
       </a>
     </div>
@@ -538,7 +514,7 @@ OSPF 首先通过发送 “Hello” 数据包来发现直接相连的邻居路�
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">27</span>
+        <span class="count">31</span>
         <span class="name">标签</span>
       </a>
     </div>
@@ -628,55 +604,12 @@ OSPF 首先通过发送 “Hello” 数据包来发现直接相连的邻居路�
   <li class="item">
     
 <div class="breadcrumb">
-</div>
-
-    <span><a href="/dailysharing/hello-world/" title="Hello World">Hello World</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/dailysharing/" title="分类于 日常碎碎念">日常碎碎念</a>
-</div>
-
-    <span><a href="/dailysharing/%E7%AC%AC%E4%B8%80%E7%AF%87ovo/" title="第一篇ovo">第一篇ovo</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
-</div>
-
-    <span><a href="/course/Layer-4-Transport-Protocols-TCP-and-UDP/" title="(Layer 4) Transport Protocols TCP and UDP">(Layer 4) Transport Protocols TCP and UDP</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
-</div>
-
-    <span><a href="/course/Network%20System%20Overall/" title="Network Systems Overall">Network Systems Overall</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
 <i class="ic i-angle-right"></i>
 <a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
 </div>
 
-    <span><a href="/course/Integer-overflow/" title="Integer overflow">Integer overflow</a></span>
+    <span><a href="/course/Security-Concepts/" title="Security Concepts">Security Concepts</a></span>
   </li>
 
       
@@ -695,12 +628,12 @@ OSPF 首先通过发送 “Hello” 数据包来发现直接相连的邻居路�
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/study/" title="分类于 自学笔记">自学笔记</a>
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/study/JavaScript/" title="分类于 JavaScript">JavaScript</a>
+<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
 </div>
 
-    <span><a href="/study/JS%E4%B8%AD%E7%9A%84this%E4%B8%8E%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/" title="JS中的this与相关函数">JS中的this与相关函数</a></span>
+    <span><a href="/course/(Layers%201%20and%202)%20Physical%20and%20Data%20Link%20Layers/" title="(Layers 1 and 2) Physical and Data Link Layers">(Layers 1 and 2) Physical and Data Link Layers</a></span>
   </li>
 
       
@@ -712,19 +645,19 @@ OSPF 首先通过发送 “Hello” 数据包来发现直接相连的邻居路�
 <a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
 </div>
 
-    <span><a href="/course/Security-Concepts/" title="Security Concepts">Security Concepts</a></span>
+    <span><a href="/course/Format-string-bugs/" title="Format string bugs">Format string bugs</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/study/" title="分类于 自学笔记">自学笔记</a>
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/study/JavaScript/" title="分类于 JavaScript">JavaScript</a>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
 </div>
 
-    <span><a href="/study/js%E7%BB%A7%E6%89%BF/" title="js继承">js继承</a></span>
+    <span><a href="/course/Heap-buffer-overflow/" title="Heap buffer overflow">Heap buffer overflow</a></span>
   </li>
 
       
@@ -737,6 +670,51 @@ OSPF 首先通过发送 “Hello” 数据包来发现直接相连的邻居路�
 </div>
 
     <span><a href="/course/Web-Application-Security/" title="Web Application Security">Web Application Security</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
+</div>
+
+    <span><a href="/course/Layer-3-IP-Addressing-and-IP-related-Protocols/" title="(Layer 3) IP Addressing and IP-related Protocols">(Layer 3) IP Addressing and IP-related Protocols</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
+</div>
+
+    <span><a href="/course/Network%20System%20Overall/" title="Network Systems Overall">Network Systems Overall</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/dailysharing/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/AFL/" title="AFL">AFL</a></span>
   </li>
 
   </ul>

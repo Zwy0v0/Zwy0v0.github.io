@@ -76,7 +76,7 @@ AtoposZz =  = final在后面追我T T</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">本文字数</span>
-    <span>7k</span>
+    <span>7.1k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -117,12 +117,12 @@ AtoposZz =  = final在后面追我T T</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf69b7c48b.jpg"></li>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf6029148a.jpg"></li>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf5fd1a28a.jpg"></li>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a97b6ba9.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a9a63310.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf696303c4.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf60a21b5d.jpg"></li>
           <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a94b2174.png"></li>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf60cc9be5.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf75f16bed.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf6bb9fdaf.jpg"></li>
         </ul>
       </div>
     </header>
@@ -172,24 +172,20 @@ AtoposZz =  = final在后面追我T T</title>
     
 
     <h1 id="Layer 4" class="active"><a class="anchor"  href="#Layer 4">#</a>Layer 4</h1>
+
 <ol>
-<li>
-<p>接收主机的解封装过程与连接设备<br>
-<img data-src="https://cdn-fusion.imgcdn.store/i/2024/2e9e1d69eabb58ba.png" alt="img"></p>
+<li><p>接收主机的解封装过程与连接设备<br><img data-src="https://cdn-fusion.imgcdn.store/i/2024/2e9e1d69eabb58ba.png" alt="img"></p>
 </li>
-<li>
-<p>Role of Transport Layer</p>
+<li><p>Role of Transport Layer</p>
 </li>
 </ol>
 <ul>
-<li>Role: to transport application-layer payloads from one application to another
-<ul>
+<li>Role: to transport application-layer payloads from one application to another<ul>
 <li>Layer 4 establishes end-to-end connectivity</li>
 <li>Recall: Layer 3 performs end-to-end delivery of packets</li>
 </ul>
 </li>
-<li>Two main protocols:
-<ul>
+<li>Two main protocols:<ul>
 <li>Transmission Control Protocol (TCP): A connection-oriented protocol designed for reliable transfer of information</li>
 <li>User Datagram Protocol (UDP): A connectionless protocol designed for efficient communication of generally small smounts of data</li>
 </ul>
@@ -205,12 +201,11 @@ AtoposZz =  = final在后面追我T T</title>
 <li>With incoming data, the Transport-layer receives the segment or datagram from the Internetwork protocol, processes it, decapsulates it and sends the resulting data up to the Application layer</li>
 </ul>
 <ol start="5">
-<li>Identify Source/Destination Processes/Applications</li>
+<li>Identify Source&#x2F;Destination Processes&#x2F;Applications</li>
 </ol>
 <ul>
-<li>A <strong>port number</strong> is a way to identify a specific process/application to which an Internet or other network message is to be forwarded when it arrives at a server.</li>
-<li>For TCP and UDP, a port number is a 16-bit integer that is put in the header appended to a message unit.
-<ul>
+<li>A <strong>port number</strong> is a way to identify a specific process&#x2F;application to which an Internet or other network message is to be forwarded when it arrives at a server. </li>
+<li>For TCP and UDP, a port number is a 16-bit integer that is put in the header appended to a message unit. <ul>
 <li>TCP and UDP use port numbers to specify the source and destination Application-layer protocols</li>
 </ul>
 </li>
@@ -219,17 +214,18 @@ AtoposZz =  = final在后面追我T T</title>
 <li>Detect Data integrity with a Checksum mechanism</li>
 </ol>
 <ul>
-<li>To protect data integrity, TCP and UDP provide a checksum similar to a cyclic redundancy check (CRC). CRC is an error-detecting code</li>
+<li>To protect data integrity, TCP and UDP provide a checksum similar to a cyclic redundancy check (CRC). CRC is an error-detecting code  </li>
 <li>Intermediate nodes do NOT recalculate the checksum in the Transport layer. So if data corruption occurs during transmission, the final receiving host detects the checksum error and discards the data</li>
 </ul>
 <h1 id="TCP (Transmission Control Protocol)" class="active"><a class="anchor"  href="#TCP (Transmission Control Protocol)">#</a>TCP (Transmission Control Protocol)</h1>
+
 <h2 id="TCP" class="active"><a class="anchor"  href="#TCP">#</a>TCP</h2>
+
 <ol>
 <li>Characteristics of TCP</li>
 </ol>
 <ul>
-<li>Connection-oriented
-<ol>
+<li>Connection-oriented<ol>
 <li>TCP’s handshaking processes</li>
 </ol>
 <ul>
@@ -251,8 +247,7 @@ AtoposZz =  = final在后面追我T T</title>
 </li>
 <li>Sequencing and checksums—TCP sends a character string called a checksum that is checked by the destination host along with a sequence number for each segment</li>
 <li>Flow control—Gauges rate of transmission based on how quickly recipient can accept data</li>
-<li>重传机制 Retry mechanism
-<ol>
+<li>重传机制Retry mechanism<ol>
 <li>确认机制：TCP 在数据传输过程中会使用 确认（ACK） 来通知发送方哪些数据包已成功到达接收方。每当接收方收到一个数据段时，它会向发送方发送一个确认消息，表示该数据段已成功接收。</li>
 <li>重传丢失的段：如果某个数据段在传输过程中丢失或损坏，接收方不会发送确认消息。TCP 会使用重传超时（retransmission timeout RTO）机制 来确保丢失的段得到重传。</li>
 <li>重传超时（RTO）机制：当 TCP 发送一个数据段时，会启动一个定时器。如果在设定的超时时间内没有收到该段的确认（ACK），则认为该数据段可能丢失，TCP 将会重传该数据段。定时器在接收到确认消息后停止，以防止不必要的重传。</li>
@@ -260,51 +255,37 @@ AtoposZz =  = final在后面追我T T</title>
 </li>
 </ul>
 <ol start="2">
-<li>Fields of a TCP Segment<br>
-<img data-src="https://cdn-fusion.imgcdn.store/i/2024/9f400dd05957f1a3.png" alt="img"><br>
-An Example<br>
-<img data-src="https://cdn-fusion.imgcdn.store/i/2024/fa75fbe787ff410b.png" alt="img"></li>
+<li>Fields of a TCP Segment<br><img data-src="https://cdn-fusion.imgcdn.store/i/2024/9f400dd05957f1a3.png" alt="img"><br>An Example<br><img data-src="https://cdn-fusion.imgcdn.store/i/2024/fa75fbe787ff410b.png" alt="img"></li>
 </ol>
 <ul>
-<li>16-bit SOURCE field
-<ul>
+<li>16-bit SOURCE field<ul>
 <li>Identifies the sending port</li>
 </ul>
 </li>
-<li>16-bit DESTINATION PORT field
-<ul>
+<li>16-bit DESTINATION PORT field<ul>
 <li>Identifies the receiving port</li>
 </ul>
 </li>
-<li>32-bit SEQUENCE NUMBER field
-<ul>
-<li>Defines the  1st byte number of this datagram</li>
+<li>32-bit SEQUENCE NUMBER field<ul>
+<li>Defines the  1st byte number of this datagram </li>
 <li>The numbering does not necessarily start from 0</li>
 </ul>
 </li>
-<li>32-bit ACKNOWLEDGEMENT NUMBER field
-<ul>
-<li>Indicates explicitly that a specific set of data received successfully</li>
+<li>32-bit ACKNOWLEDGEMENT NUMBER field<ul>
+<li>Indicates explicitly that a specific set of data received successfully </li>
 <li>Indicates the next byte expected sequence number from the other side of the communication</li>
 </ul>
 </li>
-<li>16-bit WINDOW field
-<ul>
+<li>16-bit WINDOW field<ul>
 <li>Indicates the size of the TCP receiver buffer in bytes</li>
 </ul>
 </li>
-<li>CHECKSUM 16-bit checksum field:
-<ul>
+<li>CHECKSUM 16-bit checksum field: <ul>
 <li>For the integrity of the header and data</li>
 </ul>
 </li>
-<li>URGENT POINTER 16-bit field
-<ul>
-<li>It is used with the URGENT flag to point to the end of urgent data sent in a segment</li>
-</ul>
-</li>
-</ul>
-<table>
+<li>URGENT POINTER 16-bit field <ul>
+<li>It is used with the URGENT flag to point to the end of urgent data sent in a segment <table>
 <thead>
 <tr>
 <th>标志位</th>
@@ -312,8 +293,7 @@ An Example<br>
 <th>功能</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td><strong>URG (U)</strong></td>
 <td>紧急指针</td>
 <td>通知接收方报文中某些数据是紧急的，需要优先处理，接收方会评估紧急指针</td>
@@ -324,12 +304,12 @@ An Example<br>
 <td>表示发送该报文的设备请求确认接收，用于确认数据的接收</td>
 </tr>
 <tr>
-<td><strong>PSH §</strong></td>
+<td><strong>PSH (P)</strong></td>
 <td>推送</td>
 <td>请求立即发送数据，将缓冲区中的数据推送到接收端</td>
 </tr>
 <tr>
-<td><strong>RST ®</strong></td>
+<td><strong>RST (R)</strong></td>
 <td>复位</td>
 <td>重置连接，用于立即终止连接</td>
 </tr>
@@ -343,43 +323,38 @@ An Example<br>
 <td>结束</td>
 <td>表示发送方已经没有更多的数据要发送，表示连接的结束</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="TCP Connection and Disconnection" class="active"><a class="anchor"  href="#TCP Connection and Disconnection">#</a>TCP Connection and Disconnection</h2>
 Three stages of a TCP connection:
+
 <ol>
 <li>Connection establishment with a 3-way handshake</li>
 </ol>
 <ul>
-<li>Three transmissions sent before data transmission:
-<ul>
+<li>Three transmissions sent before data transmission:<ul>
 <li>Step 1 — (A → B) Request for a connection (SYN)</li>
-<li>Step 2 — (B → A) Response to the request (SYN/ACK)</li>
+<li>Step 2 — (B → A) Response to the request (SYN&#x2F;ACK)</li>
 <li>Step 3 — (A → B) Connection established (ACK)</li>
 </ul>
 </li>
 <li>After the three initial messages, the payload or data is sent</li>
-<li>Sequence numbers will be increased by the number of bits included in each received segment<br>
-This confirms that the correct length of message was received<br>
-<img data-src="https://cdn-fusion.imgcdn.store/i/2024/5e6910628ec58039.png" alt="img"></li>
+<li>Sequence numbers will be increased by the number of bits included in each received segment<br>This confirms that the correct length of message was received<br><img data-src="https://cdn-fusion.imgcdn.store/i/2024/5e6910628ec58039.png" alt="img"></li>
 </ul>
 <ol start="2">
-<li>
-<p>Data transfer<br>
-Receipt of data must be acknowledged with an ACK that specifies the byte number that the receiver is expecting to receive from the sender<br>
-<img data-src="https://cdn-fusion.imgcdn.store/i/2024/5bcef8a1b7ac03dc.png" alt="img"></p>
+<li><p>Data transfer<br>Receipt of data must be acknowledged with an ACK that specifies the byte number that the receiver is expecting to receive from the sender<br><img data-src="https://cdn-fusion.imgcdn.store/i/2024/5bcef8a1b7ac03dc.png" alt="img"></p>
 </li>
-<li>
-<p>Connection termination with a 4-way handshake</p>
+<li><p>Connection termination with a 4-way handshake</p>
 </li>
 </ol>
 <ul>
-<li>Four segments may need to be exchanged to terminate a TCP connection
-<ol>
+<li>Four segments may need to be exchanged to terminate a TCP connection<ol>
 <li>Since a TCP connection is full-duplex, data may flow independently in each direction</li>
-<li>Each direction must be shut down independently</li>
-<li>Each half-close will require a FIN and ACK segments to be sent.<br>
-<img data-src="https://cdn-fusion.imgcdn.store/i/2024/793afec4c1014846.png" alt="img"></li>
+<li>Each direction must be shut down independently </li>
+<li>Each half-close will require a FIN and ACK segments to be sent.<br><img data-src="https://cdn-fusion.imgcdn.store/i/2024/793afec4c1014846.png" alt="img"></li>
 </ol>
 </li>
 </ul>
@@ -387,29 +362,24 @@ Receipt of data must be acknowledged with an ACK that specifies the byte number 
 <li>summary</li>
 </ol>
 <ul>
-<li>TCP provides a connection mechanism for the application program
-<ul>
-<li>The client makes a connection with the server, i.e.,
-<ul>
+<li>TCP provides a connection mechanism for the application program<ul>
+<li>The client makes a connection with the server, i.e., <ul>
 <li>a virtual circuit connection is established before data is transferred</li>
 </ul>
 </li>
-<li>The client and server exchange data in both directions
-<ul>
+<li>The client and server exchange data in both directions<ul>
 <li>Data is then streamed through this connection</li>
 </ul>
 </li>
 <li>Terminate the connection when the data transmission is done</li>
 </ul>
 </li>
-<li>TCP offers full-duplex service
-<ul>
+<li>TCP offers full-duplex service <ul>
 <li>Each TCP has a sending and receiving buffer and segments are sent in both direction</li>
 </ul>
 </li>
-<li>TCP provides reliable transmission via
-<ul>
-<li>Error control (checksum), flow control (sliding window protocol), and ACK/Retry mechanism (Ack to sender for received packets, timeout, retransmission)</li>
+<li>TCP provides reliable transmission via<ul>
+<li>Error control (checksum), flow control (sliding window protocol), and ACK&#x2F;Retry mechanism (Ack to sender for received packets, timeout, retransmission)</li>
 </ul>
 </li>
 </ul>
@@ -418,11 +388,9 @@ Receipt of data must be acknowledged with an ACK that specifies the byte number 
 </ol>
 <ul>
 <li>IP is for host-to-host communications</li>
-<li>TCP is for delivery of the message to the appropriate application program, i.e.,<br>
-process-to-process communications</li>
-<li>A computer may be running several programs at the same time
-<ul>
-<li>To make every connection unique, we need to use IP address and port number to establish a  unique identifier on a machine</li>
+<li>TCP is for delivery of the message to the appropriate application program, i.e.,<br>process-to-process communications</li>
+<li>A computer may be running several programs at the same time <ul>
+<li>To make every connection unique, we need to use IP address and port number to establish a  unique identifier on a machine </li>
 <li>This is achieved through <strong>socket</strong></li>
 </ul>
 </li>
@@ -431,22 +399,19 @@ process-to-process communications</li>
 <li>Socket Addresses – Unique Connections</li>
 </ol>
 <ul>
-<li>Every connection has 2 sockets or endpoints:
-<ul>
+<li>Every connection has 2 sockets or endpoints: <ul>
 <li>Source IP: Source port, 	e.g., 131.181.143.129:2525</li>
 <li>Destination IP: Destination port, 	e.g., 131.181.118.220: 80</li>
 </ul>
 </li>
-<li>The connection creates a unique virtual channel.<br>
-<img data-src="https://cdn-fusion.imgcdn.store/i/2024/300ed231c5e2e1de.png" alt="socket"></li>
+<li>The connection creates a unique virtual channel.<br><img data-src="https://cdn-fusion.imgcdn.store/i/2024/300ed231c5e2e1de.png" alt="socket"></li>
 </ul>
 <ol start="7">
 <li>Sockets and Ports</li>
 </ol>
 <ul>
 <li>Port number range: 0 to 65535</li>
-<li>Three types
-<ol>
+<li>Three types<ol>
 <li>Well Known Ports</li>
 </ol>
 <ul>
@@ -461,7 +426,7 @@ process-to-process communications</li>
 <li>Network users, processes with no special privileges</li>
 </ul>
 <ol start="3">
-<li>Dynamic and/or Private Ports</li>
+<li>Dynamic and&#x2F;or Private Ports</li>
 </ol>
 <ul>
 <li>Range: 49152 to 65535</li>
@@ -479,8 +444,7 @@ process-to-process communications</li>
 <th>Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>20</td>
 <td>FTP-DATA</td>
 <td>TCP</td>
@@ -570,36 +534,31 @@ process-to-process communications</li>
 <td>TCP</td>
 <td>Remote Desktop Protocol</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h1 id="UDP (User Datagram Protocol)" class="active"><a class="anchor"  href="#UDP (User Datagram Protocol)">#</a>UDP (User Datagram Protocol)</h1>
+
 <ol>
 <li>UDP and its Features</li>
 </ol>
 <ul>
 <li>UDP is a Transport layer protocol</li>
-<li>It provides unreliable data delivery services
-<ul>
-<li>Connectionless transport service
-<ul>
+<li>It provides unreliable data delivery services<ul>
+<li>Connectionless transport service<ul>
 <li>No guarantee packets received at all</li>
 </ul>
 </li>
-<li>No error checking, no sequencing, no flow control
-<ul>
+<li>No error checking, no sequencing, no flow control<ul>
 <li>No assurance packets received correctly and in correct sequence</li>
 <li>Lower overhead than TCP</li>
 </ul>
 </li>
-<li>Lacks sophistication = simple
-<ul>
+<li>Lacks sophistication &#x3D; simple<ul>
 <li>More efficient than TCP</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>Useful situations
-<ul>
+<li>Useful situations<ul>
 <li>Great volume of data transferred quickly, e.g., video streaming</li>
 </ul>
 </li>
@@ -610,16 +569,13 @@ process-to-process communications</li>
 <ul>
 <li>Each UDP message is called a <strong>user datagram</strong></li>
 <li>Has a fixed size header of 8 bytes</li>
-<li>16 bit SOURCE / DESTINATION PORT fields
-<ul>
-<li>Port number (between 0 and 65535)
-<ul>
-<li>Well-known ports 0 ~1023</li>
+<li>16 bit SOURCE &#x2F; DESTINATION PORT fields<ul>
+<li>Port number (between 0 and 65535)<ul>
+<li>Well-known ports 0 ~1023  </li>
 <li>Client host’s operating system may randomly choose a port  to communicate with a server</li>
 </ul>
 </li>
-<li>Checksum is optional for IPv4, but mandatory for IPv6<br>
-<img data-src="https://cdn-fusion.imgcdn.store/i/2024/eaa62641752a90e7.png" alt="UDPheader"></li>
+<li>Checksum is optional for IPv4, but mandatory for IPv6<br><img data-src="https://cdn-fusion.imgcdn.store/i/2024/eaa62641752a90e7.png" alt="UDPheader"></li>
 </ul>
 </li>
 </ul>
@@ -627,14 +583,13 @@ process-to-process communications</li>
 <li>Use</li>
 </ol>
 <ul>
-<li>UDP is used while error checking and correction are performed by the application, such as
-<ul>
+<li>UDP is used while error checking and correction are performed by the application, such as <ul>
 <li>Domain Name System (DNS)</li>
 <li>Dynamic Host Configuration Protocol (DHCP)</li>
 <li>Trivial File Transfer Protocol (TFTP)</li>
 <li>IPTV</li>
 <li>Voice over IP (VoIP)</li>
-<li>Real Time Streaming Protocol</li>
+<li>Real Time Streaming Protocol </li>
 <li>Routing Information Protocol (RIP)</li>
 <li>Simple Network Management Protocol (SNMP)</li>
 </ul>
@@ -696,7 +651,7 @@ process-to-process communications</li>
     <div class="item left">
       
 
-  <a href="/course/Layer-3-Routing-and-Superheating/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;26&#x2F;671cf75f16bed.jpg" title="Layer 3 - Routing and Superheating">
+  <a href="/course/Layer-3-Routing-and-Superheating/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;26&#x2F;671cf696303c4.jpg" title="Layer 3 - Routing and Superheating">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> Network Systems</span>
   <h3>Layer 3 - Routing and Superheating</h3>
@@ -704,6 +659,14 @@ process-to-process communications</li>
 
     </div>
     <div class="item right">
+      
+
+  <a href="/course/Layer-7-Application-layer-Protocols-and-Services/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;26&#x2F;671cf6029148a.jpg" title="(Layer 7) Application-layer Protocols and Services">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> Network Systems</span>
+  <h3>(Layer 7) Application-layer Protocols and Services</h3>
+  </a>
+
     </div>
 </div>
 
@@ -724,7 +687,7 @@ process-to-process communications</li>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="/course/Network%20System%20Overall/" rel="bookmark" title="Network Systems Overall">Network Systems Overall</a></li><li><a href="/course/(Layers%201%20and%202)%20Physical%20and%20Data%20Link%20Layers/" rel="bookmark" title="(Layers 1 and 2) Physical and Data Link Layers">(Layers 1 and 2) Physical and Data Link Layers</a></li><li><a href="/course/Layer-3-IP-Addressing-and-IP-related-Protocols/" rel="bookmark" title="(Layer 3) IP Addressing and IP-related Protocols">(Layer 3) IP Addressing and IP-related Protocols</a></li><li><a href="/course/Layer-3-Subnetting-and-VLANs/" rel="bookmark" title="Layer 3 - Subnetting and VLANs">Layer 3 - Subnetting and VLANs</a></li><li><a href="/course/Layer-3-Routing-and-Superheating/" rel="bookmark" title="Layer 3 - Routing and Superheating">Layer 3 - Routing and Superheating</a></li><li class="active"><a href="/course/Layer-4-Transport-Protocols-TCP-and-UDP/" rel="bookmark" title="(Layer 4) Transport Protocols TCP and UDP">(Layer 4) Transport Protocols TCP and UDP</a></li>
+          <li><a href="/course/Network%20System%20Overall/" rel="bookmark" title="Network Systems Overall">Network Systems Overall</a></li><li><a href="/course/(Layers%201%20and%202)%20Physical%20and%20Data%20Link%20Layers/" rel="bookmark" title="(Layers 1 and 2) Physical and Data Link Layers">(Layers 1 and 2) Physical and Data Link Layers</a></li><li><a href="/course/Layer-3-IP-Addressing-and-IP-related-Protocols/" rel="bookmark" title="(Layer 3) IP Addressing and IP-related Protocols">(Layer 3) IP Addressing and IP-related Protocols</a></li><li><a href="/course/Layer-3-Subnetting-and-VLANs/" rel="bookmark" title="Layer 3 - Subnetting and VLANs">Layer 3 - Subnetting and VLANs</a></li><li><a href="/course/Layer-3-Routing-and-Superheating/" rel="bookmark" title="Layer 3 - Routing and Superheating">Layer 3 - Routing and Superheating</a></li><li class="active"><a href="/course/Layer-4-Transport-Protocols-TCP-and-UDP/" rel="bookmark" title="(Layer 4) Transport Protocols TCP and UDP">(Layer 4) Transport Protocols TCP and UDP</a></li><li><a href="/course/Layer-7-Application-layer-Protocols-and-Services/" rel="bookmark" title="(Layer 7) Application-layer Protocols and Services">(Layer 7) Application-layer Protocols and Services</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -738,7 +701,7 @@ process-to-process communications</li>
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">22</span>
+        <span class="count">23</span>
         <span class="name">文章</span>
       </a>
     </div>
@@ -750,7 +713,7 @@ process-to-process communications</li>
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">27</span>
+        <span class="count">31</span>
         <span class="name">标签</span>
       </a>
     </div>
@@ -813,10 +776,12 @@ process-to-process communications</li>
 
   <ul id="quick">
     <li class="prev pjax">
+        <a href="/course/Layer-3-Routing-and-Superheating/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
+        <a href="/course/Layer-7-Application-layer-Protocols-and-Services/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -840,6 +805,18 @@ process-to-process communications</li>
 <div class="breadcrumb">
 <a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
 <i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/x86-architecture-and-Assembly-basics/" title="x86 architecture and Assembly basics">x86 architecture and Assembly basics</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
 <a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
 </div>
 
@@ -852,10 +829,70 @@ process-to-process communications</li>
 <div class="breadcrumb">
 <a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
 <i class="ic i-angle-right"></i>
+<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
+</div>
+
+    <span><a href="/course/Layer-3-IP-Addressing-and-IP-related-Protocols/" title="(Layer 3) IP Addressing and IP-related Protocols">(Layer 3) IP Addressing and IP-related Protocols</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
+</div>
+
+    <span><a href="/course/(Layers%201%20and%202)%20Physical%20and%20Data%20Link%20Layers/" title="(Layers 1 and 2) Physical and Data Link Layers">(Layers 1 and 2) Physical and Data Link Layers</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
+</div>
+
+    <span><a href="/course/Layer-4-Transport-Protocols-TCP-and-UDP/" title="(Layer 4) Transport Protocols TCP and UDP">(Layer 4) Transport Protocols TCP and UDP</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
 <a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
 </div>
 
-    <span><a href="/course/Security-Concepts/" title="Security Concepts">Security Concepts</a></span>
+    <span><a href="/course/SQL-Injection/" title="SQL Injection">SQL Injection</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Integer-overflow/" title="Integer overflow">Integer overflow</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
+</div>
+
+    <span><a href="/course/Layer-7-Application-layer-Protocols-and-Services/" title="(Layer 7) Application-layer Protocols and Services">(Layer 7) Application-layer Protocols and Services</a></span>
   </li>
 
       
@@ -876,77 +913,10 @@ process-to-process communications</li>
 <div class="breadcrumb">
 <a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
-</div>
-
-    <span><a href="/course/SQL-Injection/" title="SQL Injection">SQL Injection</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/dailysharing/hello-world/" title="Hello World">Hello World</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
-</div>
-
-    <span><a href="/course/x86-architecture-and-Assembly-basics/" title="x86 architecture and Assembly basics">x86 architecture and Assembly basics</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
-<i class="ic i-angle-right"></i>
 <a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
 </div>
 
-    <span><a href="/course/Layer-3-Routing-and-Superheating/" title="Layer 3 - Routing and Superheating">Layer 3 - Routing and Superheating</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/study/" title="分类于 自学笔记">自学笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/study/JavaScript/" title="分类于 JavaScript">JavaScript</a>
-</div>
-
-    <span><a href="/study/js%E7%BB%A7%E6%89%BF/" title="js继承">js继承</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
-</div>
-
-    <span><a href="/course/Stack-buffer-overflow/" title="Stack buffer overflow">Stack buffer overflow</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/dailysharing/" title="分类于 日常碎碎念">日常碎碎念</a>
-</div>
-
-    <span><a href="/dailysharing/%E7%AC%AC%E4%B8%80%E7%AF%87ovo/" title="第一篇ovo">第一篇ovo</a></span>
+    <span><a href="/course/Network%20System%20Overall/" title="Network Systems Overall">Network Systems Overall</a></span>
   </li>
 
   </ul>

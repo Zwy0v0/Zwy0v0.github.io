@@ -5,35 +5,604 @@
         <link>http://example.com</link>
         <description>🌸</description>
         <language>zh-CN</language>
-        <pubDate>Fri, 01 Nov 2024 22:02:19 +1000</pubDate>
-        <lastBuildDate>Fri, 01 Nov 2024 22:02:19 +1000</lastBuildDate>
+        <pubDate>Mon, 04 Nov 2024 13:27:37 +1000</pubDate>
+        <lastBuildDate>Mon, 04 Nov 2024 13:27:37 +1000</lastBuildDate>
+        <category>Blog</category>
+        <category>日常</category>
+        <category>network system</category>
         <category>C</category>
         <category>software security</category>
         <category>AFL</category>
         <category>Linux</category>
-        <category>network system</category>
         <category>C language</category>
-        <category>vulnerability</category>
         <category>HTTP</category>
         <category>XSS</category>
         <category>CSRF</category>
-        <category>IP</category>
-        <category>DHCP</category>
-        <category>ICMP</category>
-        <category>ARP</category>
+        <category>vulnerability</category>
         <category>router</category>
         <category>Supernet</category>
         <category>IPv4</category>
         <category>Subnet</category>
         <category>TCP</category>
         <category>UDP</category>
+        <category>IP</category>
+        <category>DHCP</category>
+        <category>ICMP</category>
+        <category>ARP</category>
+        <category>DNS</category>
+        <category>SSH</category>
+        <category>FTP</category>
+        <category>SMTP</category>
+        <category>SQL</category>
         <category>OSI</category>
         <category>TCP/IP</category>
-        <category>SQL</category>
-        <category>gdb</category>
         <category>JavaScript</category>
-        <category>Blog</category>
-        <category>日常</category>
+        <category>gdb</category>
+        <item>
+            <guid isPermalink="true">http://example.com/course/Layer-7-Application-layer-Protocols-and-Services/</guid>
+            <title>(Layer 7) Application-layer Protocols and Services</title>
+            <link>http://example.com/course/Layer-7-Application-layer-Protocols-and-Services/</link>
+            <category>network system</category>
+            <category>HTTP</category>
+            <category>DHCP</category>
+            <category>DNS</category>
+            <category>SSH</category>
+            <category>FTP</category>
+            <category>SMTP</category>
+            <pubDate>Mon, 04 Nov 2024 13:27:37 +1000</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;Hypertext Transfer Protocol (HTTP)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Hypertext Transfer Protocol (HTTP)&#34;&gt;#&lt;/a&gt;Hypertext Transfer Protocol (HTTP)&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;World Wide Web (WWW)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;The most popular service on the Internet&lt;/li&gt;
+&lt;li&gt;Immense collection of Web pages and other resources that can be downloaded across the Internet and displayed on a workstation via a web browser&lt;/li&gt;
+&lt;li&gt;The main concept is &lt;code&gt;hypertext&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;A system that allows related documents to be linked together&lt;ul&gt;
+&lt;li&gt;A “web” of electronically-linked documents&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Major functional components of the WWW&lt;ul&gt;
+&lt;li&gt;HyperText Markup Language (HTML)&lt;/li&gt;
+&lt;li&gt;Hypertext Transfer Protocol (HTTP)&lt;/li&gt;
+&lt;li&gt;Uniform Resource Identifiers (URIs)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;HTTP&lt;br&gt;Originally, its main purpose was to transfer static web pages written in HTML&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Now, it is also used for general file transfer and downloading&amp;#x2F;displaying multimedia files&lt;/li&gt;
+&lt;li&gt;Default TCP port number is 80&lt;/li&gt;
+&lt;li&gt;HTTP is an application-layer protocol&lt;ul&gt;
+&lt;li&gt;HTTP&amp;#x2F;2 is based on TCP as its Transport-layer protocol&lt;/li&gt;
+&lt;li&gt;HTTP&amp;#x2F;3 is based on QUIC as its Transport-layer protocol (RFC 9114, released on 6 June 2022)&lt;ul&gt;
+&lt;li&gt;QUIC (RFC 9000, released in May 2021)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Functions as a request-response protocol in the client-server computing model&lt;/li&gt;
+&lt;li&gt;Identify and locate network resources by Uniform Resource Identifiers (URIs)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;HTTP Encapsulation&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Example of how the layers work together:&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;start your Web browser and your home page is &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5leGFtcGxlLmNvbS8=&#34;&gt;http://www.example.com&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The web browser formats a request for your home page by using the Application layer protocol HTTP&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The request looks something like: &lt;code&gt;get the example.com home page&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The unit of information the Application layer works with is simply called &lt;code&gt;data&lt;/code&gt;&lt;br&gt;The Application-layer protocol HTTP passes the request down to the Transport-layer protocol (TCP)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;TCP adds a header to the request&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The unit of information the Transport layer works with is called a &lt;code&gt;segment&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;TCP passes the segment to the Internetwork layer protocol (IP)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;IP places its header on the segment&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The unit of information is now called a &lt;code&gt;packet&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The packet is passed down to the Network access layer, where the NIC operates&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;A &lt;code&gt;frame&lt;/code&gt; header and trailer are added&lt;br&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/6b810b6747c82aec.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The frame is delivered to the network medium as bits&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;on its way to the &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5leGFtcGxlLmNvbS8=&#34;&gt;www.example.com&lt;/span&gt; server&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;13&#34;&gt;
+&lt;li&gt;The web server processes it and returns a Web page&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Uniform Resource Identifiers (URIs)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;A method of defining labels that the users of the Web could locate hypertext documents so they could be located and referenced&lt;/li&gt;
+&lt;li&gt;Not specific to the Web, though they are most often associated with the Web and HTTP&lt;/li&gt;
+&lt;li&gt;Uniform Resource Locators (URLs) are a subset of URIs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Locating a Document on the Internet&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Every document on the Internet has a unique Uniform Resource Locator (URL)&lt;/li&gt;
+&lt;li&gt;All URLs consist of four parts:&lt;ul&gt;
+&lt;li&gt;Service type, e.g., http:&amp;#x2F;&amp;#x2F;&lt;/li&gt;
+&lt;li&gt;Host or domain name, e.g., example.com&lt;/li&gt;
+&lt;li&gt;Directory or subdirectory information&lt;/li&gt;
+&lt;li&gt;Filename&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;Web Client&amp;#x2F;Server&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Web client&lt;ul&gt;
+&lt;li&gt;To communicate with a web server, using Hypertext Transfer Protocol (HTTP)&lt;ul&gt;
+&lt;li&gt;Firefox, Edge, Chrome&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;To submit an HTTP request to the server&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Web server&lt;ul&gt;
+&lt;li&gt;To provide web content that can be accessed through the Internet&lt;ul&gt;
+&lt;li&gt;Microsoft’s Internet Information Services (IIS)&lt;/li&gt;
+&lt;li&gt;Apache&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;To provide response message to the client&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;Domain Name System (DNS)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Domain Name System (DNS)&#34;&gt;#&lt;/a&gt;Domain Name System (DNS)&lt;/h1&gt;
+
+&lt;h2 id=&#34;DNS&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#DNS&#34;&gt;#&lt;/a&gt;DNS&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Domain Names&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Domain&lt;ul&gt;
+&lt;li&gt;Group of computers belonging to same organization&lt;/li&gt;
+&lt;li&gt;Share common part of IP address&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Domain name&lt;ul&gt;
+&lt;li&gt;Identifies domain (loc.gov)&lt;/li&gt;
+&lt;li&gt;Associated with company, university, government organization&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Fully qualified host name (blogs.loc.gov)&lt;ul&gt;
+&lt;li&gt;Local host name plus domain name&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Domain Name System (DNS)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Commonly used analogy a “phone book” for the Internet&lt;/li&gt;
+&lt;li&gt;To keep the system manageable, the DNS is a hierarchical distributed naming service for computers&amp;#x2F;services&amp;#x2F;resources connected to the Internet&lt;/li&gt;
+&lt;li&gt;Translate human-friendly computer hostnames into IP addresses to locate computer resources&lt;ul&gt;
+&lt;li&gt;Computers do not use domain names, but binary addressing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;DNS Database Structure&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#DNS Database Structure&#34;&gt;#&lt;/a&gt;DNS Database Structure&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;DNS Database Structure&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Can be best understood as a tree structure&lt;ul&gt;
+&lt;li&gt;In the domain namespace, all domains meet at the root, identified by a single period (.)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Second-level domain (SLD) are usually the name of a company or institution&lt;/li&gt;
+&lt;li&gt;Subdomain is optional&lt;/li&gt;
+&lt;li&gt;Host level represents individual device&lt;/li&gt;
+&lt;li&gt;Some Well-known Top-level Domains&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Domain suffix&lt;/th&gt;
+&lt;th&gt;Type of organization&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;ARPA&lt;/td&gt;
+&lt;td&gt;Reverse lookup domain (special Internet function)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;COM&lt;/td&gt;
+&lt;td&gt;Commercial&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;EDU&lt;/td&gt;
+&lt;td&gt;Educational&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GOV&lt;/td&gt;
+&lt;td&gt;Government&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ORG&lt;/td&gt;
+&lt;td&gt;Noncommercial organization (such as a nonprofit agency)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;NET&lt;/td&gt;
+&lt;td&gt;Network (such as an ISP)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;INT&lt;/td&gt;
+&lt;td&gt;International Treaty Organization&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MIL&lt;/td&gt;
+&lt;td&gt;United States military organization&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;BIZ&lt;/td&gt;
+&lt;td&gt;Businesses&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;INFO&lt;/td&gt;
+&lt;td&gt;Unrestricted use&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AERO&lt;/td&gt;
+&lt;td&gt;Air-transport industry&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;COOP&lt;/td&gt;
+&lt;td&gt;Cooperatives&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Root Servers&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Root servers are the authoritative name servers that serve the DNS root zone&lt;/li&gt;
+&lt;li&gt;Root servers are a network of hundreds of servers for redundancy in many countries around the world.&lt;/li&gt;
+&lt;li&gt;They are specified in the DNS root zone as 13 logical named authorities.&lt;ul&gt;
+&lt;li&gt;This does not mean that there are only 13 physical servers; each operator uses redundant computer equipment to provide reliable&lt;br&gt;service&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;DNS Client (Resolver)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;DNS clients in most operating systems maintain a DNS cache, called a resolver cache&lt;ul&gt;
+&lt;li&gt;Stores name and IP address pairs and other data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;The DNS client is responsible for communicating with a DNS server to resolve computer and domain names to IP addresses&lt;/li&gt;
+&lt;li&gt;An OS must be configured to use DNS and needs at least one address of a DNS server that it can query&lt;/li&gt;
+&lt;li&gt;In Windows, the first DNS server configured is called the preferred DNS server and the second one is the alternate DNS server&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;DNS server&lt;br&gt;DNS servers are composed of the following:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;DNS zones – a database of primarily hostname and IP address pairs&lt;/li&gt;
+&lt;li&gt;Resource records – the data contained in a zone&lt;/li&gt;
+&lt;li&gt;Cache – results of queries are cached so that if the same query occurs again, the local DNS server can respond without having to contact another server&lt;/li&gt;
+&lt;li&gt;Root hints – file containing a list of all IP addresses of Internet root servers&lt;/li&gt;
+&lt;li&gt;DNS Server service – runs in the background and listens for DNS queries on UDP port 53&lt;/li&gt;
+&lt;li&gt;DNS Query Making its Way Through the DNS Hierarchy&lt;br&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/95ccdad58249c863.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;DNS Database Records&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#DNS Database Records&#34;&gt;#&lt;/a&gt;DNS Database Records&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Resource records (RR)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Stores data associated with domain names, address records, and other specific data&lt;/li&gt;
+&lt;li&gt;Divided into four classes, of which Internet class is of most interest to the users&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Most Commonly Used Record Types&lt;ol&gt;
+&lt;li&gt;Start of Authority (SOA) record&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Identifies the name server that is authoritative for a specific DNS database segment;&lt;/li&gt;
+&lt;li&gt;Identifies the master DNS server for a specific domain or sub-domain&lt;/li&gt;
+&lt;li&gt;First entry in the DNS file - both &lt;code&gt;domain.dns&lt;/code&gt; and &lt;code&gt;addr.in-addr.arpa.dns&lt;/code&gt; files - must be an SOA record&lt;/li&gt;
+&lt;li&gt;Identifies the current name server as the best source of information for data in its zone&lt;/li&gt;
+&lt;li&gt;Both secondary and primary name servers can&lt;ul&gt;
+&lt;li&gt;Designate themselves as authoritative in their own SOA records&lt;/li&gt;
+&lt;li&gt;This allows load-balancing across a primary and one or more secondary DNS servers in a domain&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Name Server (NS) record&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Used to identify all DNS servers in a domain&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Address (A) record&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Stores domain name-to-IP address translation data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Canonical name (CNAME) record&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Used to create aliases&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Mail Exchange (MX) record&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Used to route SMTP-based e-mail on the Internet and identify the IP address for a domain’s master e-mail server&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;Pointer (PTR) record&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Stores IP address-to-domain name translation data and supports the operation known as a reverse DNS lookup&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Mapping Addresses to Names&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Records in the &lt;code&gt;db.addr&lt;/code&gt; file are provided to support reverse DNS lookups&lt;/li&gt;
+&lt;li&gt;Reverse address lookups are used primarily to determine if IP address that a user presents matches the domain name from which the user claims to originate&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Resolving process&lt;ol&gt;
+&lt;li&gt;The DNS query is sent by the resolver to the local DNS server for resolution&lt;/li&gt;
+&lt;li&gt;If local DNS server does not recognise the address, then it queries the root server&lt;/li&gt;
+&lt;li&gt;If root server doesn’t recognize the domain name, the root will provide relevant information to the the resolver to contact the name server, which is the next level down&lt;/li&gt;
+&lt;li&gt;Repetition of the step to process each domain name in a top-down manner until the query is resolved, then&lt;ul&gt;
+&lt;li&gt;The resolver returns the resolved IP address to the requester&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;Remote Login (Telnet) and Secure Shell (SSH)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Remote Login (Telnet) and Secure Shell (SSH)&#34;&gt;#&lt;/a&gt;Remote Login (Telnet) and Secure Shell (SSH)&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Remote Login (Telnet and SSH)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;A terminal emulation program for TCP&amp;#x2F;IP networks&lt;ul&gt;
+&lt;li&gt;Allows a user to remotely log in to a distant computer site&lt;/li&gt;
+&lt;li&gt;User usually needs a login ID and password to access a remote computer site&lt;/li&gt;
+&lt;li&gt;To provide access to a command-line interface on a remote host&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Telnet and SSH: network protocols for remote login&lt;ul&gt;
+&lt;li&gt;Telnet (Port 23) is not secure&lt;/li&gt;
+&lt;li&gt;SSH (Port 22) provides an encrypted channel between the client and server&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;SSH Clients&lt;ul&gt;
+&lt;li&gt;PuTTY&lt;/li&gt;
+&lt;li&gt;use SSH from Windows Command window and MacOS terminal window&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Remote Desktop Software&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Remote desktop software&lt;ul&gt;
+&lt;li&gt;Remote Desktop Protocol (RDP)&lt;ul&gt;
+&lt;li&gt;Uses Graphic User Interface (GUI) to manage&amp;#x2F;access Windows computers remotely&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Independent Computing Architecture (ICA)&lt;/li&gt;
+&lt;li&gt;Virtual network computing (VNC)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Some remote desktop clients&lt;ul&gt;
+&lt;li&gt;Google’s Chrome Remote Desktop&lt;/li&gt;
+&lt;li&gt;Microsoft Remote Desktop&lt;/li&gt;
+&lt;li&gt;TeamViewer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;Simple Mail Transfer Protocol (SMTP)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Simple Mail Transfer Protocol (SMTP)&#34;&gt;#&lt;/a&gt;Simple Mail Transfer Protocol (SMTP)&lt;/h1&gt;
+
+&lt;h2 id=&#34;E-mail Protocol&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#E-mail Protocol&#34;&gt;#&lt;/a&gt;E-mail Protocol&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;E-mail Protocols&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Post Office Protocol version 3 (POP3) is used to download incoming messages from e-mail servers to local desktops (uses TCP port 110)&lt;/li&gt;
+&lt;li&gt;Internet Message Access Protocol v.4 (IMAP4) used to manage email messages locally and yet stores email folders on a server (uses TCP port 143)&lt;/li&gt;
+&lt;li&gt;Simple Mail Transfer Protocol (SMTP) is the standard protocol for sending email over the Internet (uses TCP port 25)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;邮件系统的组成&lt;ol&gt;
+&lt;li&gt;Mail User Agent (MUA) - 邮件用户代理&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;功能：MUA是电子邮件应用程序，用于创建、发送、接收、存储、回复和转发电子邮件。它还支持附件功能。&lt;/li&gt;
+&lt;li&gt;示例：如Outlook、Thunderbird等。&lt;/li&gt;
+&lt;li&gt;用途：通过SMTP协议发送邮件，通过POP或IMAP协议下载和接收邮件。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Message Transfer Agent (MTA) - 消息传输代理&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;功能：MTA负责准备和传输电子邮件消息，确保邮件能够在不同服务器之间传输。&lt;/li&gt;
+&lt;li&gt;用途：MTA在不同的邮件服务器之间传递邮件。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Multipurpose Internet Mail Extension (MIME) - 多用途互联网邮件扩展&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;功能：MIME用于将非文本格式的文件（如图像、音频、视频等）附加到电子邮件中，使得电子邮件可以包含多种格式的内容。&lt;/li&gt;
+&lt;li&gt;用途：通过MIME标准，电子邮件不仅能传输文本，还能传输附件，如图片、PDF等文件。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;邮件系统的工作流程&lt;ul&gt;
+&lt;li&gt;发送邮件：MUA创建邮件并通过SMTP协议将其发送到MTA；MTA将邮件传递到收件人的SMTP服务器。&lt;/li&gt;
+&lt;li&gt;接收邮件：收件人的MUA通过POP或IMAP协议从SMTP服务器下载邮件&lt;br&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/b496d50c4b936cc4.png&#34; alt=&#34;email&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;SMTP&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#SMTP&#34;&gt;#&lt;/a&gt;SMTP&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;SMTP Communications&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;SMTP commands and reply codes immediately follow the TCP header&lt;/li&gt;
+&lt;li&gt;SMTP commands occur behind the scenes in some e-mail clients and some server-to-server mail transfers on the Internet&lt;/li&gt;
+&lt;li&gt;The majority of e-mail clients today use SMTP to send outgoing mail through some nearby SMTP server which assumes the task of storing or forwarding such messages, depending on addressee’s domain&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Command&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;helo&lt;/td&gt;
+&lt;td&gt;Used by the client to identify itself&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;mail from&lt;/td&gt;
+&lt;td&gt;Used by the client to identify the sender&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;rcpt to&lt;/td&gt;
+&lt;td&gt;Used by the client to identify the recipient&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;data&lt;/td&gt;
+&lt;td&gt;Used to send the message&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;quit&lt;/td&gt;
+&lt;td&gt;To terminate the message&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;vrfy&lt;/td&gt;
+&lt;td&gt;Used to verify the address of recipient&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/e4681fbfda7303a9.png&#34; alt=&#34;email&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;File Transfer Protocol (FTP)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#File Transfer Protocol (FTP)&#34;&gt;#&lt;/a&gt;File Transfer Protocol (FTP)&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;FTP&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;FTP is a client&amp;#x2F;server protocol used for file transfer across the Internet&lt;ul&gt;
+&lt;li&gt;Uses two channels: TCP ports 20 and 21&lt;ul&gt;
+&lt;li&gt;Port 21 for control commands, Port 20 for transferring data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Not a secure protocol&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Uses URL for an FTP site begins with &lt;code&gt;ftp://...&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;The 3 most common ways to access an FTP site:&lt;ul&gt;
+&lt;li&gt;Through a browser&lt;/li&gt;
+&lt;li&gt;Using an FTP client program&lt;/li&gt;
+&lt;li&gt;Issuing FTP commands at a text-based command prompt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;FTP connections&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;TCP-based Command Connection (control connection)&lt;ul&gt;
+&lt;li&gt;The command connection runs over TCP&lt;/li&gt;
+&lt;li&gt;Created automatically when FTP connection is established in response to open command from FTP client, using server FTP port number 21&lt;/li&gt;
+&lt;li&gt;The client uses a dynamic, or ephemeral, port number to handle the other end of a command connection&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;TCP-based Data Transfer Connection (data connection)&lt;ul&gt;
+&lt;li&gt;The data transfer connection also runs over TCP&lt;/li&gt;
+&lt;li&gt;Created by the server by default&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;Dynamic Host Configuration Protocol (DHCP)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;Dynamic Host Configuration Protocol (DHCP)&#34;&gt;#&lt;/a&gt;Dynamic Host Configuration Protocol (DHCP)&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;DHCP&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;DHCP is used to automatically assign IP addresses as needed&lt;ul&gt;
+&lt;li&gt;When a computer is turned on, it requests an address from a server that is configured as a DHCP server&lt;/li&gt;
+&lt;li&gt;The server assigns an address for a specific amount of time (called&lt;br&gt;a lease)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;DHCP Server service – runs in the background and listens on UDP port 67 for IP address requests&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;DHCP Server&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;A DHCP server is composed of the following:&lt;ul&gt;
+&lt;li&gt;IP address scope – a range of IP addresses the server leases to clients&lt;ul&gt;
+&lt;li&gt;Scope options – IP settings: default gateway, DNS servers, and other options&lt;/li&gt;
+&lt;li&gt;Reservations – an IP address tied to a particular MAC address&lt;/li&gt;
+&lt;li&gt;Exclusions – one or more IP addresses excluded from the IP address scope&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;After an address is leased&lt;ul&gt;
+&lt;li&gt;A record of the lease is stored in a database, including a lease expiration time&lt;/li&gt;
+&lt;li&gt;When 50% of the lease time has elapsed, the computer attempts to renew the lease from the same DHCP server that originally responded&lt;/li&gt;
+&lt;li&gt;If no response, the computer waits until lease is 87.5% expired, a broadcast DHCP renewal request is sent&lt;ul&gt;
+&lt;li&gt;If no response when lease expires, computer broadcasts a DCHP request for a new IP address&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Benefit of using DHCP&lt;ul&gt;
+&lt;li&gt;Computers can easily be moved and requested new IP configuration from a DHCP server on the new segment&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;DHCP uses UDP&lt;ul&gt;
+&lt;li&gt;DHCP servers are usually located on the same network and DHCP messages are short&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;&lt;p&gt;DHCP Process&lt;br&gt;Broadcast packets used by the DHCP process:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;DHCPDISCOVER – the client announces to the network that it’s looking for a DHCP server&lt;/li&gt;
+&lt;li&gt;DHCPOFFER – the server replies and offers the client an IP address for lease&lt;/li&gt;
+&lt;li&gt;DHCPREQUEST – the client wants the offered IP address&lt;/li&gt;
+&lt;li&gt;DHCPACK – the server acknowledges the transaction and the client can now use the IP address&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/065a09e3ea0c2cfe.png&#34; alt=&#34;DHCP&#34;&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/course/Layer-3-IP-Addressing-and-IP-related-Protocols/</guid>
             <title>(Layer 3) IP Addressing and IP-related Protocols</title>
@@ -45,9 +614,9 @@
             <category>ARP</category>
             <pubDate>Fri, 01 Nov 2024 22:02:19 +1000</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;IP (Internet Protocol) Addressing&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#IP (Internet Protocol) Addressing&#34;&gt;#&lt;/a&gt;IP (Internet Protocol) Addressing&lt;/h1&gt;
+
 &lt;ol&gt;
-&lt;li&gt;Four addressing methods innetworking&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;&lt;p&gt;Four addressing methods innetworking&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -55,8 +624,7 @@
 &lt;th&gt;地址类型&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
+&lt;tbody&gt;&lt;tr&gt;
 &lt;td&gt;应用层 (Layer 7)&lt;/td&gt;
 &lt;td&gt;Domain names, computer names, host names&lt;/td&gt;
 &lt;/tr&gt;
@@ -72,29 +640,29 @@
 &lt;td&gt;数据链路层 (Layer 2)&lt;/td&gt;
 &lt;td&gt;MAC 地址&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;Static IP addresses are assigned manually by the network administrator&lt;br&gt;
-Dynamic IP addresses are assigned automatically by a DHCP server&lt;/p&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;The Internet Assigned Numbers Authority (IANA)&lt;/li&gt;
+&lt;tr&gt;
+&lt;td&gt;Static IP addresses are assigned manually by the network administrator&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Dynamic IP addresses are assigned automatically by a DHCP server&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The Internet Assigned Numbers Authority (IANA)&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;IANA delegates 5 regional Internet registries (RIRs)
-&lt;ul&gt;
-&lt;li&gt;RIRs allocate address blocks to Local Internet Registries / National Internet registry&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;table&gt;
+&lt;li&gt;IANA delegates 5 regional Internet registries (RIRs)&lt;ul&gt;
+&lt;li&gt;RIRs allocate address blocks to Local Internet Registries &amp;#x2F; National Internet registry&lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Internet Registry&lt;/th&gt;
 &lt;th&gt;Region&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
+&lt;tbody&gt;&lt;tr&gt;
 &lt;td&gt;African Network Information Centre (AfriNIC)&lt;/td&gt;
 &lt;td&gt;Africa&lt;/td&gt;
 &lt;/tr&gt;
@@ -114,20 +682,19 @@ Dynamic IP addresses are assigned automatically by a DHCP server&lt;/p&gt;
 &lt;td&gt;Réseaux IP Européens Network Coordination Centre (RIPE NCC)&lt;/td&gt;
 &lt;td&gt;Europe, Russia, the Middle East, and Central Asia&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;ul&gt;
-&lt;li&gt;Hierarchy of addressing Scheme&lt;br&gt;
-&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/01/6724cb8ea345d.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Hierarchy of addressing Scheme&lt;br&gt;&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/01/6724cb8ea345d.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;Roles of the Network Layer&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;The Network layer is where administrators usually do the most network configuration&lt;/li&gt;
-&lt;li&gt;This layer is where the IP protocol operates and is the heart of the TCP/IP protocol suite&lt;/li&gt;
-&lt;li&gt;The Network layer is responsible for four main tasks:
-&lt;ul&gt;
+&lt;li&gt;This layer is where the IP protocol operates and is the heart of the TCP&amp;#x2F;IP protocol suite&lt;/li&gt;
+&lt;li&gt;The Network layer is responsible for four main tasks:&lt;ul&gt;
 &lt;li&gt;It defines and verifies IP addresses&lt;/li&gt;
 &lt;li&gt;It routes packets through an internetwork&lt;/li&gt;
 &lt;li&gt;It resolves MAC addresses from IP addresses&lt;/li&gt;
@@ -139,21 +706,18 @@ Dynamic IP addresses are assigned automatically by a DHCP server&lt;/p&gt;
 &lt;li&gt;Define and Verify IP Addresses&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;An IP address is assigned to every computer and network device using TCP/IP for communications&lt;/li&gt;
-&lt;li&gt;IP addresses are used for two main purposes:
-&lt;ul&gt;
+&lt;li&gt;An IP address is assigned to every computer and network device using TCP&amp;#x2F;IP for communications&lt;/li&gt;
+&lt;li&gt;IP addresses are used for two main purposes:&lt;ul&gt;
 &lt;li&gt;To identify a network device at the Internetwork layer&lt;/li&gt;
 &lt;li&gt;To identify the network on which a device resides&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;When a device receives an IP packet, it compares the destination IP address with its own:
-&lt;ul&gt;
+&lt;li&gt;When a device receives an IP packet, it compares the destination IP address with its own:&lt;ul&gt;
 &lt;li&gt;If it matches or is a broadcast, the packet is processed&lt;/li&gt;
 &lt;li&gt;It is does not match then the packet is discarded&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Every IP address contains two parts:
-&lt;ul&gt;
+&lt;li&gt;Every IP address contains two parts:&lt;ul&gt;
 &lt;li&gt;A network ID&lt;/li&gt;
 &lt;li&gt;A host ID&lt;/li&gt;
 &lt;/ul&gt;
@@ -165,8 +729,7 @@ Dynamic IP addresses are assigned automatically by a DHCP server&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The Network layer determines the best way to get a packet from network to network until it reaches its destination&lt;/li&gt;
 &lt;li&gt;Most large internetworks (the Internet) have multiple paths for getting from one network to another&lt;/li&gt;
-&lt;li&gt;Routers work at the Network layer
-&lt;ul&gt;
+&lt;li&gt;Routers work at the Network layer&lt;ul&gt;
 &lt;li&gt;It is routers’ job to select the best path to the destination&lt;/li&gt;
 &lt;li&gt;Routers use the network ID portion of IP addresses along with their routing tables to determine the best path&lt;/li&gt;
 &lt;/ul&gt;
@@ -178,92 +741,81 @@ Dynamic IP addresses are assigned automatically by a DHCP server&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Every frame contains both physical (MAC) and logical (IP) source and destination addresses&lt;/li&gt;
 &lt;li&gt;When a packet is ready to be sent to the Network access layer, the destination device’s MAC address must be retrieved before the frame header can be constructed&lt;/li&gt;
-&lt;li&gt;TCP/IP uses Address Resolution Protocol (ARP) to find MAC addresses&lt;/li&gt;
+&lt;li&gt;TCP&amp;#x2F;IP uses Address Resolution Protocol (ARP) to find MAC addresses&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;7&#34;&gt;
 &lt;li&gt;Deliver Packets Efficiently&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;Network-layer protocols primarily focus on efficient delivery of packets
-&lt;ul&gt;
-&lt;li&gt;Features such as flow control, delivery confirmation or message assembly are &lt;strong&gt;not&lt;/strong&gt; included in Network-layer protocols
-&lt;ul&gt;
+&lt;li&gt;Network-layer protocols primarily focus on efficient delivery of packets&lt;ul&gt;
+&lt;li&gt;Features such as flow control, delivery confirmation or message assembly are &lt;strong&gt;not&lt;/strong&gt; included in Network-layer protocols&lt;ul&gt;
 &lt;li&gt;These features require overhead to ensure reliable delivery&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Network-layer protocols rely on the protocols in the Transport and Application layers to provide reliability features
-&lt;ul&gt;
+&lt;li&gt;Network-layer protocols rely on the protocols in the Transport and Application layers to provide reliability features&lt;ul&gt;
 &lt;li&gt;They are considered connectionless protocols, which rely on upper-layer protocols to ensure the safe journey of packets&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;IP (Internet Protocol)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#IP (Internet Protocol)&#34;&gt;#&lt;/a&gt;IP (Internet Protocol)&lt;/h1&gt;
+
 &lt;h2 id=&#34;IPv4&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#IPv4&#34;&gt;#&lt;/a&gt;IPv4&lt;/h2&gt;
+
 &lt;ol&gt;
 &lt;li&gt;IPv4 Addresses&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;An IPv4 address is represented by 32 bits (=4 bytes)
-&lt;ul&gt;
-&lt;li&gt;IPv4 地址分为 4 个字节块（每个块 8 位），每个块用点分隔。&lt;/li&gt;
+&lt;li&gt;An IPv4 address is represented by 32 bits (&amp;#x3D;4 bytes)&lt;ul&gt;
+&lt;li&gt;IPv4地址分为4个字节块（每个块8位），每个块用点分隔。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;For example
-&lt;ol&gt;
-&lt;li&gt;Binary:  &lt;code&gt;00000001.00000010.10010101.11111111&lt;/code&gt; &lt;br&gt;
-Decimal:  &lt;code&gt;1.2.149.255&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;11000000 . 10101000 . 00000001 . 00000001&lt;br&gt;
-192.168.1.1&lt;br&gt;
-&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/67258b5520113.png&#34; alt=&#34;img&#34;&gt;&lt;br&gt;
-Classes A, B and C licensed IP addresses are available for use on the Internet. Called public IP address&lt;/li&gt;
+&lt;li&gt;For example&lt;ol&gt;
+&lt;li&gt;Binary: &lt;code&gt;00000001.00000010.10010101.11111111&lt;/code&gt;&lt;br&gt; Decimal: &lt;code&gt;1.2.149.255&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;11000000 . 10101000 . 00000001 . 00000001&lt;br&gt; 192.168.1.1&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
-&lt;li&gt;A 类地址
+&lt;/ul&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/67258b5520113.png&#34; alt=&#34;img&#34;&gt;&lt;br&gt;Classes A, B and C licensed IP addresses are available for use on the Internet. Called public IP address&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;网络 ID：8 位（第 2 到第 8 位），主机 ID：24 位。&lt;/li&gt;
+&lt;li&gt;A类地址&lt;ul&gt;
+&lt;li&gt;网络ID：8位（第2到第8位），主机ID：24位。&lt;/li&gt;
 &lt;li&gt;地址范围：1.x.y.z – 126.x.y.z。&lt;/li&gt;
-&lt;li&gt;可用网络数：126 个。&lt;/li&gt;
+&lt;li&gt;可用网络数：126个。&lt;/li&gt;
 &lt;li&gt;适用场景：大型网络（如互联网服务提供商和政府机构）。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;B 类地址
-&lt;ul&gt;
-&lt;li&gt;网络 ID：16 位（第 3 到第 16 位），主机 ID：16 位。&lt;/li&gt;
+&lt;li&gt;B类地址&lt;ul&gt;
+&lt;li&gt;网络ID：16位（第3到第16位），主机ID：16位。&lt;/li&gt;
 &lt;li&gt;地址范围：128.0.y.z – 191.255.y.z。&lt;/li&gt;
-&lt;li&gt;可用网络数：16,000 个。&lt;/li&gt;
+&lt;li&gt;可用网络数：16,000个。&lt;/li&gt;
 &lt;li&gt;适用场景：中型网络（如中型企业和大学）。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;C 类地址
-&lt;ul&gt;
-&lt;li&gt;网络 ID：24 位（第 4 到第 24 位），主机 ID：8 位。&lt;/li&gt;
+&lt;li&gt;C类地址&lt;ul&gt;
+&lt;li&gt;网络ID：24位（第4到第24位），主机ID：8位。&lt;/li&gt;
 &lt;li&gt;地址范围：192.0.0.z – 223.255.255.z。&lt;/li&gt;
-&lt;li&gt;可用网络数：约 2 百万个。&lt;/li&gt;
+&lt;li&gt;可用网络数：约2百万个。&lt;/li&gt;
 &lt;li&gt;适用场景：小型网络（如小型企业和家庭网络）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;D 类地址
-&lt;ul&gt;
+&lt;li&gt;D类地址&lt;ul&gt;
 &lt;li&gt;用途：多播地址。&lt;/li&gt;
 &lt;li&gt;地址范围：224.0.0.0 – 239.255.255.255。&lt;/li&gt;
-&lt;li&gt;网络结构：没有网络 ID 和主机 ID，专用于多播。&lt;/li&gt;
+&lt;li&gt;网络结构：没有网络ID和主机ID，专用于多播。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;E 类地址
-&lt;ul&gt;
+&lt;li&gt;E类地址&lt;ul&gt;
 &lt;li&gt;用途：实验用途。&lt;/li&gt;
 &lt;li&gt;地址范围：240.0.0.0 – 255.255.255.255。&lt;/li&gt;
 &lt;li&gt;说明：保留用于研究和实验，未用于常规互联网流量。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;在 IPv4 地址中，127.x.y.z 地址范围（通常是 127.0.0.0 到 127.255.255.255）是保留用于本地主机环回（loopback）测试的特殊地址段。这些地址不会在网络上发送数据包，而是用于本地主机的自我通信，主要目的是测试本地网络堆栈和网络接口卡的功能。
-&lt;ul&gt;
-&lt;li&gt;127.x.y.z 的特点
-&lt;ul&gt;
+&lt;li&gt;在 IPv4 地址中，127.x.y.z 地址范围（通常是 127.0.0.0 到 127.255.255.255）是保留用于本地主机环回（loopback）测试的特殊地址段。这些地址不会在网络上发送数据包，而是用于本地主机的自我通信，主要目的是测试本地网络堆栈和网络接口卡的功能。&lt;ul&gt;
+&lt;li&gt;127.x.y.z 的特点&lt;ul&gt;
 &lt;li&gt;环回地址：127.0.0.1 是最常用的环回地址，用于指向本地主机。&lt;/li&gt;
-&lt;li&gt;网络测试：使用 127.x.y.z 范围内的地址，系统可以在不通过实际网络的情况下测试网络配置。&lt;/li&gt;
+&lt;li&gt;网络测试：使用127.x.y.z范围内的地址，系统可以在不通过实际网络的情况下测试网络配置。&lt;/li&gt;
 &lt;li&gt;不可路由：127.x.y.z 地址段不会在互联网上路由，数据包始终保持在本地。&lt;/li&gt;
 &lt;li&gt;因此，127.x.y.z 地址不属于 A、B、C、D 或 E 类中的网络分配，而是专门保留给环回功能。&lt;/li&gt;
 &lt;/ul&gt;
@@ -278,14 +830,13 @@ Classes A, B and C licensed IP addresses are available for use on the Internet. 
 &lt;th&gt;功能描述&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
+&lt;tbody&gt;&lt;tr&gt;
 &lt;td&gt;255.255.255.255&lt;/td&gt;
-&lt;td&gt;用于广播消息，TCP/IP 后台进程会使用该地址发送广播消息，网络中的每个节点都会接收该消息。&lt;/td&gt;
+&lt;td&gt;用于广播消息，TCP&amp;#x2F;IP 后台进程会使用该地址发送广播消息，网络中的每个节点都会接收该消息。&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;0.0.0.0&lt;/td&gt;
-&lt;td&gt;表示当前未分配的地址，一般用于指代 “所有 IPv4 地址” 或 “未知地址”。&lt;/td&gt;
+&lt;td&gt;表示当前未分配的地址，一般用于指代“所有 IPv4 地址”或“未知地址”。&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;127.0.0.1 至 127.255.255.254&lt;/td&gt;
@@ -295,13 +846,9 @@ Classes A, B and C licensed IP addresses are available for use on the Internet. 
 &lt;td&gt;169.254.0.1 至 169.254.255.254&lt;/td&gt;
 &lt;td&gt;当设备配置为动态主机配置协议（DHCP）且无法从 DHCP 服务器获取地址时，会自动分配此范围内的地址（APIPA）。&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
+&lt;/tbody&gt;&lt;/table&gt;
 &lt;ul&gt;
-&lt;li&gt;Private IP addresses&lt;br&gt;
- 在私有网络中，公司可以使用私有 IP 地址。这些地址在互联网上不进行路由，仅限于局域网内使用。&lt;br&gt;
-IEEE 推荐的私有 IP 地址范围：&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;Private IP addresses&lt;br&gt;在私有网络中，公司可以使用私有 IP 地址。这些地址在互联网上不进行路由，仅限于局域网内使用。&lt;br&gt;IEEE 推荐的私有 IP 地址范围：&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -309,8 +856,7 @@ IEEE 推荐的私有 IP 地址范围：&lt;/li&gt;
 &lt;th&gt;用途&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
+&lt;tbody&gt;&lt;tr&gt;
 &lt;td&gt;10.0.0.0 至 10.255.255.255&lt;/td&gt;
 &lt;td&gt;用于大型私有网络&lt;/td&gt;
 &lt;/tr&gt;
@@ -322,12 +868,9 @@ IEEE 推荐的私有 IP 地址范围：&lt;/li&gt;
 &lt;td&gt;192.168.0.0 至 192.168.255.255&lt;/td&gt;
 &lt;td&gt;用于小型私有网络（如家庭网络）&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;ul&gt;
-&lt;li&gt;Network Address Translation (NAT)&lt;br&gt;
- 网络地址转换 (NAT) 允许具有私有 IP 地址的主机访问互联网。私有 IP 地址在互联网上不可见，NAT 充当连接私有网络和公共网络的桥梁&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Network Address Translation (NAT)&lt;br&gt;网络地址转换 (NAT) 允许具有私有 IP 地址的主机访问互联网。私有 IP 地址在互联网上不可见，NAT充当连接私有网络和公共网络的桥梁&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -335,8 +878,7 @@ IEEE 推荐的私有 IP 地址范围：&lt;/li&gt;
 &lt;th&gt;描述&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
+&lt;tbody&gt;&lt;tr&gt;
 &lt;td&gt;SNAT (静态 NAT)&lt;/td&gt;
 &lt;td&gt;每次主机请求访问互联网时，分配相同的公共 IP 地址。&lt;/td&gt;
 &lt;/tr&gt;
@@ -344,31 +886,28 @@ IEEE 推荐的私有 IP 地址范围：&lt;/li&gt;
 &lt;td&gt;DNAT (动态 NAT)&lt;/td&gt;
 &lt;td&gt;使用一个公共 IP 地址池，动态地为本地主机分配公共 IP 地址。&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/67258fc64dac0.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;Classless Addressing and Subnet Mask&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;Using classful addresses is a waste of IP address resource&lt;/li&gt;
-&lt;li&gt;Today, IP addresses are used as classless addresses
-&lt;ul&gt;
+&lt;li&gt;Today, IP addresses are used as classless addresses&lt;ul&gt;
 &lt;li&gt;Clients do not apply for particular class of addresses. Instead, getting IP addresses from an ISP&lt;/li&gt;
 &lt;li&gt;Most ISPs have already applied for a pool of IP addresses that can be leased to clients&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;For classless address, use a network mask to determine which part of address denoted the network portion
-&lt;ul&gt;
+&lt;li&gt;For classless address, use a network mask to determine which part of address denoted the network portion&lt;ul&gt;
 &lt;li&gt;32-bit number&lt;/li&gt;
 &lt;li&gt;1 signifies the networking bit in the address&lt;/li&gt;
 &lt;li&gt;0 signifies the host bits in the address&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Masking is a process to extract the address of the physical network from an IP address&lt;/li&gt;
-&lt;li&gt;Usually when a router forwards packets from one network to another, it uses this masking to identify if the packets belong to its network or not&lt;/li&gt;
-&lt;/ul&gt;
-&lt;table&gt;
+&lt;li&gt;Usually when a router forwards packets from one network to another, it uses this masking to identify if the packets belong to its network or not&lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;类别&lt;/th&gt;
@@ -376,8 +915,7 @@ IEEE 推荐的私有 IP 地址范围：&lt;/li&gt;
 &lt;th&gt;二进制模式&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
+&lt;tbody&gt;&lt;tr&gt;
 &lt;td&gt;A&lt;/td&gt;
 &lt;td&gt;255.0.0.0&lt;/td&gt;
 &lt;td&gt;11111111 00000000 00000000 00000000&lt;/td&gt;
@@ -392,24 +930,13 @@ IEEE 推荐的私有 IP 地址范围：&lt;/li&gt;
 &lt;td&gt;255.255.255.0&lt;/td&gt;
 &lt;td&gt;11111111 11111111 11111111 00000000&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;ul&gt;
-&lt;li&gt;Example
-&lt;ul&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/li&gt;
+&lt;li&gt;Example&lt;ul&gt;
 &lt;li&gt;掩码的工作原理：路由器可以通过掩码判断数据包是否属于其网络。某网络地址是 131.181.x.x，这是一个 B 类地址，其默认网络掩码为 255.255.0.0。&lt;/li&gt;
 &lt;li&gt;IP 地址：131.181.112.6（十进制）或 10000011 10110101 01110000 00000110（二进制）&lt;/li&gt;
 &lt;li&gt;网络掩码：255.255.0.0（十进制）或 11111111 11111111 00000000 00000000（二进制）&lt;/li&gt;
-&lt;li&gt;通过 逻辑与（AND）操作 提取网络地址：&lt;br&gt;
-将 IP 地址和掩码逐位进行 AND 运算：&lt;br&gt;
-10000011 10110101 01110000 00000110（IP 地址）&lt;br&gt;
-11111111 11111111 00000000 00000000（掩码）&lt;br&gt;
-结果：10000011 10110101 00000000 00000000（网络地址）&lt;br&gt;
-网络地址：131.181.0.0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;table&gt;
+&lt;li&gt;通过 逻辑与（AND）操作 提取网络地址：&lt;br&gt;将 IP 地址和掩码逐位进行 AND 运算：&lt;br&gt;10000011 10110101 01110000 00000110（IP 地址）&lt;br&gt;11111111 11111111 00000000 00000000（掩码）&lt;br&gt;结果：10000011 10110101 00000000 00000000（网络地址）&lt;br&gt;网络地址：131.181.0.0&lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;A&lt;/th&gt;
@@ -417,8 +944,7 @@ IEEE 推荐的私有 IP 地址范围：&lt;/li&gt;
 &lt;th&gt;A AND B&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
+&lt;tbody&gt;&lt;tr&gt;
 &lt;td&gt;0&lt;/td&gt;
 &lt;td&gt;0&lt;/td&gt;
 &lt;td&gt;0&lt;/td&gt;
@@ -438,23 +964,22 @@ IEEE 推荐的私有 IP 地址范围：&lt;/li&gt;
 &lt;td&gt;1&lt;/td&gt;
 &lt;td&gt;1&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;ul&gt;
-&lt;li&gt;Representation of classless addresses
-&lt;ol&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Representation of classless addresses&lt;ol&gt;
 &lt;li&gt;Address with a subnet mask&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;131.181.12.1 subnet mask 255.255.0.0&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Address with a / (slash) representation&lt;/li&gt;
+&lt;li&gt;Address with a &amp;#x2F; (slash) representation&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;131.181.12.1/16&lt;/li&gt;
-&lt;li&gt;/16 means that the first 16 bits are representing the network portion&lt;br&gt;
-&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/6725988122218.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;li&gt;131.181.12.1&amp;#x2F;16&lt;/li&gt;
+&lt;li&gt;&amp;#x2F;16 means that the first 16 bits are representing the network portion&lt;br&gt;&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/6725988122218.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol&gt;
 &lt;li&gt;Hosts A 和 B 是否在同一网络中？&lt;/li&gt;
@@ -474,47 +999,40 @@ IEEE 推荐的私有 IP 地址范围：&lt;/li&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;IPv6&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#IPv6&#34;&gt;#&lt;/a&gt;IPv6&lt;/h2&gt;
+
 &lt;ul&gt;
-&lt;li&gt;An IPv6 address is represented by 128 bits (=16 bytes)
-&lt;ul&gt;
+&lt;li&gt;An IPv6 address is represented by 128 bits (&amp;#x3D;16 bytes)&lt;ul&gt;
 &lt;li&gt;Organized in 8 blocks&lt;/li&gt;
-&lt;li&gt;Each block consists of 2 bytes (=16 bits) represented by a hexadecimal number
-&lt;ul&gt;
+&lt;li&gt;Each block consists of 2 bytes (&amp;#x3D;16 bits) represented by a hexadecimal number&lt;ul&gt;
 &lt;li&gt;2001:0000:0B80:0000:0000:00D3:9C5A:00CC&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;If blocks contain all zeroes, they can be written as double colons (:😃, only one set of double colons is used in an I P address
-&lt;ul&gt;
+&lt;li&gt;If blocks contain all zeroes, they can be written as double colons (::), only one set of double colons is used in an I P address&lt;ul&gt;
 &lt;li&gt;2001::B80:0000:0000:D3:9C5A:CC&lt;/li&gt;
 &lt;li&gt;2001:0000:B80::D3:9C5A:CC (preferred method because it contains fewest zeroes)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Co-existence of IPv4 and IPv6
-&lt;ol&gt;
-&lt;li&gt;Dual stack: A network is configured to use both I Pv4 and IPv6&lt;br&gt;
-&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/67259c726bfc0.png&#34; alt=&#34;image&#34;&gt;&lt;br&gt;
- 适用于需要与 IPv4 和 IPv6 网络都兼容的网络环境&lt;/li&gt;
-&lt;li&gt;Tunnelling: A method used by IPv6 to transport IPv6 packets through or over an IPv4 network&lt;br&gt;
-&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/67259c7288d2e.png&#34; alt=&#34;image&#34;&gt;&lt;br&gt;
- 适用于尚未完全升级到 IPv6 的网络，以便在 IPv4 网络上实现 IPv6 通信&lt;/li&gt;
+&lt;li&gt;Co-existence of IPv4 and IPv6&lt;ol&gt;
+&lt;li&gt;Dual stack: A network is configured to use both I Pv4 and IPv6&lt;br&gt;&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/67259c726bfc0.png&#34; alt=&#34;image&#34;&gt;&lt;br&gt;适用于需要与 IPv4 和 IPv6 网络都兼容的网络环境&lt;/li&gt;
+&lt;li&gt;Tunnelling: A method used by IPv6 to transport IPv6 packets through or over an IPv4 network&lt;br&gt;&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/67259c7288d2e.png&#34; alt=&#34;image&#34;&gt;&lt;br&gt;适用于尚未完全升级到 IPv6 的网络，以便在 IPv4 网络上实现 IPv6 通信&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;Internet Protocol&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Internet Protocol&#34;&gt;#&lt;/a&gt;Internet Protocol&lt;/h2&gt;
+
+
 &lt;ol&gt;
 &lt;li&gt;IP (Internet Protocol)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;IP operates at the Network layer of the OSI model:
-&lt;ul&gt;
+&lt;li&gt;IP operates at the Network layer of the OSI model:&lt;ul&gt;
 &lt;li&gt;It specifies where data should be delivered to&lt;/li&gt;
 &lt;li&gt;It identifies the data’s source and destination IP addresses&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;IP implements two basic functions:
-&lt;ul&gt;
+&lt;li&gt;IP implements two basic functions:&lt;ul&gt;
 &lt;li&gt;Addressing: Each network device is given an IP address&lt;/li&gt;
 &lt;li&gt;Fragmentation: A large-size datagram is broken down to small ones for forwarding&lt;/li&gt;
 &lt;/ul&gt;
@@ -524,46 +1042,40 @@ IEEE 推荐的私有 IP 地址范围：&lt;/li&gt;
 &lt;li&gt;Features of IP&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;IP enables TCP/IP to internetwork
-&lt;ul&gt;
+&lt;li&gt;IP enables TCP&amp;#x2F;IP to internetwork&lt;ul&gt;
 &lt;li&gt;The Internet is largely based on the IP protocol&lt;/li&gt;
-&lt;li&gt;It enables to traverse
-&lt;ul&gt;
+&lt;li&gt;It enables to traverse&lt;ul&gt;
 &lt;li&gt;more than one LAN segment, and&lt;/li&gt;
 &lt;li&gt;more than one type of network through a router&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;IP addresses are not really needed for communication within a LAN
-&lt;ul&gt;
+&lt;li&gt;IP addresses are not really needed for communication within a LAN&lt;ul&gt;
 &lt;li&gt;MAC addresses are sufficient in this case&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;IP is an unreliable, connectionless protocol
-&lt;ul&gt;
+&lt;li&gt;IP is an unreliable, connectionless protocol&lt;ul&gt;
 &lt;li&gt;This means that IP does not guarantee delivery of data and no session is established before data is transmitted&lt;/li&gt;
 &lt;li&gt;IP depends on TCP to ensure messages are put back together in the right order and to ensure each message reaches the correct application on the receiving host&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;IP Header&lt;br&gt;
-&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/6725a2a0e124d.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;li&gt;IP Header&lt;br&gt;&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/6725a2a0e124d.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;IHL (Internet Header Length)&lt;/strong&gt;: 表示 IP 头部的长度。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Total Length Field&lt;/strong&gt;: 指数据包的总长度，包括头部和数据部分。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Identification&lt;/strong&gt;: 每个数据包被赋予一个唯一的 ID。若数据包被分片，每个分片都拥有相同的 ID 以便重组。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Time to Live (TTL)&lt;/strong&gt;: 数据包的生命周期（生存时间），每经过一个路由器，该值减少 1，TTL 为 0 时数据包将被丢弃，防止数据包在网络中无限循环。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Time to Live (TTL)&lt;/strong&gt;: 数据包的生命周期（生存时间），每经过一个路由器，该值减少1，TTL为0时数据包将被丢弃，防止数据包在网络中无限循环。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Protocol Field&lt;/strong&gt;: 指定传输层协议类型（如 TCP 或 UDP），以便路由器知道数据包应该由哪个传输层协议处理。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;Maximum Transmission Unit (MTU)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;MTU is the size of the largest protocol data unit (PDU) that can be communicated in a single network-layer transaction
-&lt;ul&gt;
+&lt;li&gt;MTU is the size of the largest protocol data unit (PDU) that can be communicated in a single network-layer transaction&lt;ul&gt;
 &lt;li&gt;Similar to the maximum Parcel Size in the postal system&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -575,8 +1087,7 @@ IEEE 推荐的私有 IP 地址范围：&lt;/li&gt;
 &lt;ul&gt;
 &lt;li&gt;If a datagram is being sent that is larger than the receiving server’s MTU, it has to be fragmented in order to be transmitted completely.&lt;/li&gt;
 &lt;li&gt;Fragmentation is necessary for data transmission, as every network has a unique limit, i.e. the maximum transmission unit (MTU), for the size of datagrams that it can process.&lt;/li&gt;
-&lt;li&gt;The 3-bit flags field in the IP header specifies fragmentation is allowed or not
-&lt;ul&gt;
+&lt;li&gt;The 3-bit flags field in the IP header specifies fragmentation is allowed or not&lt;ul&gt;
 &lt;li&gt;U 位：未使用。&lt;/li&gt;
 &lt;li&gt;D 位（Do Not Fragment bit）：如果设置该位，表示不允许分片；如果数据报大于 MTU，则会被丢弃。&lt;/li&gt;
 &lt;li&gt;M 位（More Fragments bit）：如果设置该位，表示后续还有更多分片；如果该位未设置，表示这是最后一个分片。&lt;/li&gt;
@@ -588,59 +1099,49 @@ IEEE 推荐的私有 IP 地址范围：&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;Fragment offset shows where to place packet’s data when fragments are reassembled into a single packet&lt;/li&gt;
-&lt;li&gt;The offset of the data in the original datagram measured in units of 8 bytes
-&lt;ul&gt;
+&lt;li&gt;The offset of the data in the original datagram measured in units of 8 bytes&lt;ul&gt;
 &lt;li&gt;The first fragment has a zero offset&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;The offset only records the 1st byte number of that fragmented packet&lt;br&gt;
-&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/6725a637a3adf.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
-&lt;li&gt;Issues with IPv4 Fragmentation
-&lt;ul&gt;
+&lt;li&gt;The offset only records the 1st byte number of that fragmented packet&lt;br&gt;&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/6725a637a3adf.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Issues with IPv4 Fragmentation&lt;ul&gt;
 &lt;li&gt;Fragmentation causes more overhead (time and resources) for the receiver when reassembling the fragments, because the receiver must allocate memory for the arriving fragments and coalesce them back into one datagram after all of the fragments are received.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;If one fragment of an IPv4 datagram is dropped, then the entire original IPv4 datagram must be resent&lt;/li&gt;
-&lt;li&gt;IPv6 packets:
-&lt;ul&gt;
+&lt;li&gt;IPv6 packets:&lt;ul&gt;
 &lt;li&gt;IPv6 uses a different packet format than IPv4&lt;/li&gt;
 &lt;li&gt;Accommodate the much longer IPv6 addresses&lt;/li&gt;
-&lt;li&gt;There is no Fragment offset field&lt;br&gt;
-• IPv6 hosts adjust their packet sizes to fit the requirements of the network before sending IPv6 messages&lt;br&gt;
-&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/6725ab470399d.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;li&gt;There is no Fragment offset field&lt;br&gt;• IPv6 hosts adjust their packet sizes to fit the requirements of the network before sending IPv6 messages&lt;br&gt;&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/6725ab470399d.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;DHCP (Dynamic Host Configuration Protocol)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#DHCP (Dynamic Host Configuration Protocol)&#34;&gt;#&lt;/a&gt;DHCP (Dynamic Host Configuration Protocol)&lt;/h1&gt;
+
 &lt;ul&gt;
 &lt;li&gt;DHCP is not a pure layer-3 protocol. It is an IP address management protocol, and this generally works at layer 7&lt;/li&gt;
 &lt;li&gt;DHCP is a network management protocol. So, strictly speaking, it works at Layer 7&lt;/li&gt;
 &lt;li&gt;A DHCP server dynamically assigns an IP address to a network device. It enables computers to request IP addresses and networking parameters automatically from the Internet Service Provider (ISP)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;CMP (Internet Control Message Protocol)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#CMP (Internet Control Message Protocol)&#34;&gt;#&lt;/a&gt;CMP (Internet Control Message Protocol)&lt;/h1&gt;
+&lt;h1 id=&#34;ICMP (Internet Control Message Protocol)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#ICMP (Internet Control Message Protocol)&#34;&gt;#&lt;/a&gt;ICMP (Internet Control Message Protocol)&lt;/h1&gt;
+
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;ICMP is a Network layer, core protocol that reports on the success or failure of data delivery&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;ICMP is a Network layer, core protocol that reports on the success or failure of data delivery&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;ICMP can indicate:&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;ICMP can indicate:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;When part of a network is congested&lt;/li&gt;
 &lt;li&gt;When data fails to reach its destination&lt;/li&gt;
 &lt;li&gt;When data has been discarded because the allotted TTL (Time to Live) has expired&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;ICMP announces transmission failures to the sender. But does not correct errors it detects&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;ICMP announces transmission failures to the sender. But does not correct errors it detects&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Provides critical information for troubleshooting network problems&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Provides critical information for troubleshooting network problems&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;ICMPv6 on IPV6 networks performs the functions of both ICMP and ARP on IPv4 networks&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;ICMPv6 on IPV6 networks performs the functions of both ICMP and ARP on IPv4 networks&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;ICMP 数据包包含以下字段，用于提供不同的控制和错误信息：&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;ICMP 数据包包含以下字段，用于提供不同的控制和错误信息：&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;table&gt;
@@ -651,16 +1152,15 @@ IEEE 推荐的私有 IP 地址范围：&lt;/li&gt;
 &lt;th&gt;功能&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
+&lt;tbody&gt;&lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;Type&lt;/strong&gt;&lt;/td&gt;
 &lt;td&gt;8 位&lt;/td&gt;
-&lt;td&gt;指示 ICMP 消息的类型，例如 “目的不可达”。&lt;/td&gt;
+&lt;td&gt;指示 ICMP 消息的类型，例如“目的不可达”。&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;Code&lt;/strong&gt;&lt;/td&gt;
 &lt;td&gt;8 位&lt;/td&gt;
-&lt;td&gt;指示消息的子类型，例如 “目标主机未知”。&lt;/td&gt;
+&lt;td&gt;指示消息的子类型，例如“目标主机未知”。&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;Checksum&lt;/strong&gt;&lt;/td&gt;
@@ -677,21 +1177,19 @@ IEEE 推荐的私有 IP 地址范围：&lt;/li&gt;
 &lt;td&gt;可变长度&lt;/td&gt;
 &lt;td&gt;通常包含触发 ICMP 消息的 IP 数据包的 IP 头和前 8 字节的数据部分。&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
+&lt;/tbody&gt;&lt;/table&gt;
 &lt;h1 id=&#34;ARP (Address Resolution Protocol)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#ARP (Address Resolution Protocol)&#34;&gt;#&lt;/a&gt;ARP (Address Resolution Protocol)&lt;/h1&gt;
+
 &lt;ol&gt;
 &lt;li&gt;ARP (Address Resolution Protocol)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;ARP is not a pure layer-3 protocol, nor a pure layer-2 protocol. It generally works at layer 2 by using layer 3 IP address information&lt;/li&gt;
-&lt;li&gt;ARP works in conjunction with IPv4 to discover the MAC address of a host or node on the local network
-&lt;ul&gt;
+&lt;li&gt;ARP works in conjunction with IPv4 to discover the MAC address of a host or node on the local network&lt;ul&gt;
 &lt;li&gt;And to maintain a database that maps IP addresses to MAC addresses on the local network&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;ARP is a Layer 2 protocol that uses Layer 3’s IP address information
-&lt;ul&gt;
+&lt;li&gt;ARP is a Layer 2 protocol that uses Layer 3’s IP address information&lt;ul&gt;
 &lt;li&gt;It operates only within its local network&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -702,16 +1200,13 @@ IEEE 推荐的私有 IP 地址范围：&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;ARP table—The database of IP-to-MAC address mappings&lt;/li&gt;
-&lt;li&gt;An ARP table can contain two types of entries:
-&lt;ul&gt;
+&lt;li&gt;An ARP table can contain two types of entries:&lt;ul&gt;
 &lt;li&gt;Dynamic—Created when a client makes an ARP request that could not be satisfied by data already in the ARP table&lt;/li&gt;
 &lt;li&gt;Static—Those someone entered manually using the ARP utility (arp command)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Check ARP table
-&lt;ul&gt;
-&lt;li&gt;arp -a&lt;br&gt;
-&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/ac317e8c48a595ab.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Check ARP table&lt;ul&gt;
+&lt;li&gt;arp -a&lt;br&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/ac317e8c48a595ab.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;

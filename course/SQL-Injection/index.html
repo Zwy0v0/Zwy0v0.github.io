@@ -76,7 +76,7 @@ AtoposZz =  = final在后面追我T T</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">本文字数</span>
-    <span>7.2k</span>
+    <span>7.3k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -117,12 +117,12 @@ AtoposZz =  = final在后面追我T T</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf69b7c48b.jpg"></li>
           <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf60cc9be5.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf69b7c48b.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf6bb9fdaf.jpg"></li>
           <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a9382651.png"></li>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a94f1d92.png"></li>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf7643bf1a.jpg"></li>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a9a63310.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf70db78e1.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf60a21b5d.jpg"></li>
         </ul>
       </div>
     </header>
@@ -172,182 +172,143 @@ AtoposZz =  = final在后面追我T T</title>
     
 
     <h1 id="SQL Injection" class="active"><a class="anchor"  href="#SQL Injection">#</a>SQL Injection</h1>
+
 <ul>
-<li>Exploit vulnerabilities in input validation to run arbitrary commands in the database
-<ul>
-<li>Using user input to construct dynamic SQL statements to access the database</li>
+<li>Exploit vulnerabilities in input validation to run arbitrary commands in the database <ul>
+<li>Using user input to construct dynamic SQL statements to access the database </li>
 <li>Using stored procedures that are passed strings that contain unfiltered user input</li>
 </ul>
 </li>
-<li>Attacker can execute arbitrary commands in the database
-<ul>
-<li>Worse if the application uses a privileged account to connect to the database</li>
+<li>Attacker can execute arbitrary commands in the database <ul>
+<li>Worse if the application uses a privileged account to connect to the database<figure class="highlight php"><figcaption><span>Example</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$selecteduser</span> = <span class="variable">$_GET</span>[<span class="string">&#x27;user&#x27;</span>];  </span><br><span class="line"> <span class="variable">$sql</span> = <span class="string">&quot;SELECT Username, Key FROM Key &quot;</span> .  </span><br><span class="line">        <span class="string">&quot;WHERE Username=&#x27;<span class="subst">$selecteduser</span>&#x27;&quot;</span>; </span><br><span class="line"> <span class="variable">$rs</span> = <span class="variable">$db</span>-&gt;<span class="title function_ invoke__">executeQuery</span>(<span class="variable">$sql</span>); </span><br></pre></td></tr></table></figure>
+在上述代码中，<code>$selecteduser</code> 是从用户输入中直接获取的，它被无过滤地插入到 SQL 查询中。由于没有对 <code>$selecteduser</code> 进行任何过滤或转义，攻击者可以在输入中添加恶意的 SQL 语句，改变原始查询的含义。假设攻击者提供以下输入作为 user 参数：<figure class="highlight bash"><figcaption><span>Example</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">admin<span class="string">&#x27; OR &#x27;</span>1<span class="string">&#x27;=&#x27;</span>1 </span><br></pre></td></tr></table></figure>
+这将导致查询变成：<figure class="highlight sql"><figcaption><span>Example</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Username, Key <span class="keyword">FROM</span> Key <span class="keyword">WHERE</span> Username<span class="operator">=</span><span class="string">&#x27;admin&#x27;</span> <span class="keyword">OR</span> <span class="string">&#x27;1&#x27;</span><span class="operator">=</span><span class="string">&#x27;1&#x27;</span>;</span><br></pre></td></tr></table></figure>
+在这种情况下，<code>OR &#39;1&#39;=&#39;1&#39;</code> 永远为真，这意味着数据库将返回所有用户的信息，而不仅仅是 <code>admin</code> 用户的信息</li>
 </ul>
 </li>
 </ul>
-<figure class="highlight php"><figcaption><span>Example</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$selecteduser</span> = <span class="variable">$_GET</span>[<span class="string">&#x27;user&#x27;</span>];  </span><br><span class="line"> <span class="variable">$sql</span> = <span class="string">&quot;SELECT Username, Key FROM Key &quot;</span> .  </span><br><span class="line">        <span class="string">&quot;WHERE Username=&#x27;<span class="subst">$selecteduser</span>&#x27;&quot;</span>; </span><br><span class="line"> <span class="variable">$rs</span> = <span class="variable">$db</span>-&gt;<span class="title function_ invoke__">executeQuery</span>(<span class="variable">$sql</span>); </span><br></pre></td></tr></table></figure>
-<p>在上述代码中， <code>$selecteduser</code>  是从用户输入中直接获取的，它被无过滤地插入到 SQL 查询中。由于没有对  <code>$selecteduser</code>  进行任何过滤或转义，攻击者可以在输入中添加恶意的 SQL 语句，改变原始查询的含义。假设攻击者提供以下输入作为 user 参数：</p>
-<figure class="highlight bash"><figcaption><span>Example</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">admin<span class="string">&#x27; OR &#x27;</span>1<span class="string">&#x27;=&#x27;</span>1 </span><br></pre></td></tr></table></figure>
-<p>这将导致查询变成：</p>
-<figure class="highlight sql"><figcaption><span>Example</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Username, Key <span class="keyword">FROM</span> Key <span class="keyword">WHERE</span> Username<span class="operator">=</span><span class="string">&#x27;admin&#x27;</span> <span class="keyword">OR</span> <span class="string">&#x27;1&#x27;</span><span class="operator">=</span><span class="string">&#x27;1&#x27;</span>;</span><br></pre></td></tr></table></figure>
-<p>在这种情况下， <code>OR '1'='1'</code>  永远为真，这意味着数据库将返回所有用户的信息，而不仅仅是  <code>admin</code>  用户的信息</p>
 <p><img data-src="https://img.picui.cn/free/2024/10/30/6721ec7cbba70.png" alt="img"></p>
 <h1 id="Example" class="active"><a class="anchor"  href="#Example">#</a>Example</h1>
+
 <p>SQL Injections Can be Used to …</p>
 <ol>
-<li>Login<br>
-SQL 注入 是一种通过操控用户输入，使之直接嵌入 SQL 查询，从而改变查询逻辑的攻击方式。攻击者可以利用这种方式获取未经授权的数据库访问，甚至获取敏感数据</li>
-</ol>
+<li><p>Login<br>SQL 注入 是一种通过操控用户输入，使之直接嵌入 SQL 查询，从而改变查询逻辑的攻击方式。攻击者可以利用这种方式获取未经授权的数据库访问，甚至获取敏感数据</p>
 <figure class="highlight sql"><figcaption><span>Example</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> userFound<span class="operator">=</span><span class="keyword">execute</span>( </span><br><span class="line">   &quot;SELECT * FROM USERS WHERE </span><br><span class="line">    username=&#x27;$username&#x27; AND password=&#x27;$password&#x27;;&quot;); </span><br></pre></td></tr></table></figure>
-<p>To authenticate logins, server runs this SQL command against the user database</p>
+<p> To authenticate logins, server runs this SQL command against the user database</p>
 <figure class="highlight sql"><figcaption><span>Example</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> USERS <span class="keyword">WHERE</span> </span><br><span class="line">  username<span class="operator">=</span><span class="string">&#x27;$username&#x27;</span> <span class="keyword">AND</span> password<span class="operator">=</span><span class="string">&#x27;$password&#x27;</span>;</span><br></pre></td></tr></table></figure>
-<p>User enters the following as  <code>$username</code>  and  <code>$password</code></p>
+<p>User enters the following as <code>$username</code> and <code>$password</code></p>
  <figure class="highlight sql"><figcaption><span>Example</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27; OR password LIKE &#x27;</span><span class="operator">%</span> </span><br></pre></td></tr></table></figure>
-<p>Server then executes</p>
+<p>Server then executes </p>
  <figure class="highlight sql"><figcaption><span>Example</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> USERS <span class="keyword">WHERE</span> </span><br><span class="line">  username<span class="operator">=</span><span class="string">&#x27;&#x27;</span> <span class="keyword">OR</span> password <span class="keyword">LIKE</span> <span class="string">&#x27;%&#x27;</span> <span class="keyword">AND</span>  </span><br><span class="line">  password<span class="operator">=</span><span class="string">&#x27;&#x27;</span> <span class="keyword">OR</span> password <span class="keyword">LIKE</span> <span class="string">&#x27;%&#x27;</span></span><br></pre></td></tr></table></figure>
-<p><code>username='' OR password LIKE '%'</code>  的条件总是为真，因为  <code>password LIKE '%' </code> 可以匹配任何密码。</p>
-<ol start="2">
-<li>Steal Data<br>
- 攻击者使用一种常见的技巧，通过构造特殊的输入，使查询条件总是返回 true，以便获取更多的数据。<br>
-When the result is returned to the user</li>
-</ol>
+<p><code>username=&#39;&#39; OR password LIKE &#39;%&#39;</code> 的条件总是为真，因为 <code>password LIKE &#39;%&#39; </code>可以匹配任何密码。</p>
+</li>
+<li><p>Steal Data<br>攻击者使用一种常见的技巧，通过构造特殊的输入，使查询条件总是返回 true，以便获取更多的数据。<br>When the result is returned to the user</p>
  <figure class="highlight sql"><figcaption><span>Example</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> email <span class="keyword">FROM</span> USERS <span class="keyword">WHERE</span> </span><br><span class="line">  username<span class="operator">=</span><span class="string">&#x27;$username&#x27;</span> <span class="keyword">AND</span> password<span class="operator">=</span><span class="string">&#x27;$password&#x27;</span>;</span><br></pre></td></tr></table></figure>
-<p>To get more data, attacker gives  <code>username</code></p>
+<p>To get more data, attacker gives <code>username</code></p>
   <figure class="highlight sql"><figcaption><span>Example</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27; OR 1=1 #</span></span><br></pre></td></tr></table></figure>
-<p><code>1=1</code>  是一个始终为真的条件。<br>
- <code>#</code>  (在 MySQL 中) 或  <code>--</code>  (在其他 RDBMS 中) 表示注释符号，后面的所有内容都被忽略。这样一来， <code>AND password='$password' </code> 就被注释掉了，不会影响查询的结果。<br>
-因此最终结果是：</p>
+<p><code>1=1</code> 是一个始终为真的条件。<br><code>#</code> (在 MySQL 中) 或 <code>--</code> (在其他 RDBMS 中) 表示注释符号，后面的所有内容都被忽略。这样一来，<code>AND password=&#39;$password&#39; </code>就被注释掉了，不会影响查询的结果。<br>因此最终结果是：</p>
   <figure class="highlight sql"><figcaption><span>Example</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> email <span class="keyword">FROM</span> USERS <span class="keyword">WHERE</span> username<span class="operator">=</span><span class="string">&#x27;&#x27;</span> <span class="keyword">OR</span> <span class="number">1</span><span class="operator">=</span><span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-<p>由于  <code>WHERE</code>  子句总为真，查询会返回  <code>USERS</code>  表中所有用户的电子邮件地址，而不仅仅是匹配特定用户名和密码的记录。</p>
-<p>也可以从其他数据库窃取数据 通过输入 <code>username</code></p>
-  <figure class="highlight sql"><figcaption><span>Example</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27; AND 1=0 </span></span><br><span class="line"><span class="string"> UNION SELECT cardholder, number, exp_month, exp_year FROM </span></span><br><span class="line"><span class="string"> creditcards #</span></span><br></pre></td></tr></table></figure>
-<p>由于第一部分的条件不成立，原查询不返回任何结果；但  <code>UNION</code>  操作符使得查询的结果变成信用卡表中的数据，从而被攻击者获取。</p>
+<p>由于 <code>WHERE</code> 子句总为真，查询会返回 <code>USERS</code> 表中所有用户的电子邮件地址，而不仅仅是匹配特定用户名和密码的记录。</p>
+</li>
+</ol>
+<p>也可以从其他数据库窃取数据 通过输入<code>username</code><br>  <figure class="highlight sql"><figcaption><span>Example</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27; AND 1=0 </span></span><br><span class="line"><span class="string"> UNION SELECT cardholder, number, exp_month, exp_year FROM </span></span><br><span class="line"><span class="string"> creditcards #</span></span><br></pre></td></tr></table></figure><br>由于第一部分的条件不成立，原查询不返回任何结果；但 <code>UNION</code> 操作符使得查询的结果变成信用卡表中的数据，从而被攻击者获取。</p>
 <ol start="3">
-<li>Run Shell Commands<br>
- 通过在数据库服务器上 执行 shell 命令，来创建一个新的用户账户。通过这种方式，攻击者能够突破数据库的边界，直接对操作系统进行修改，从而使服务器更加容易受到进一步的攻击。<br>
-用户输入：攻击者在用户名字段中输入以下字符串：</li>
+<li>Run Shell Commands<br>通过在数据库服务器上 执行 shell 命令，来创建一个新的用户账户。通过这种方式，攻击者能够突破数据库的边界，直接对操作系统进行修改，从而使服务器更加容易受到进一步的攻击。<br>用户输入：攻击者在用户名字段中输入以下字符串：  <figure class="highlight sql"><figcaption><span>Example</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;; exec cmdshell &#x27;</span>net <span class="keyword">user</span> badguy badpwd<span class="string">&#x27; /ADD #</span></span><br></pre></td></tr></table></figure>
+<code>&#39;;</code>：结束了当前的 SQL 查询语句。<br><code>exec cmdshell &#39;net user badguy badpwd&#39; /ADD&#39;</code>：利用数据库服务器的 <code>cmdshell</code> 功能来执行系统命令。在这个例子中，它会创建一个名为 <code>badguy</code>，密码为 <code>badpwd</code> 的新用户账户。<br><code>#</code>：注释符号，用来忽略后续的 SQL 语句。</li>
 </ol>
-  <figure class="highlight sql"><figcaption><span>Example</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;; exec cmdshell &#x27;</span>net <span class="keyword">user</span> badguy badpwd<span class="string">&#x27; /ADD #</span></span><br></pre></td></tr></table></figure>
-<p><code>';</code> ：结束了当前的 SQL 查询语句。<br>
- <code>exec cmdshell 'net user badguy badpwd' /ADD'</code> ：利用数据库服务器的  <code>cmdshell</code>  功能来执行系统命令。在这个例子中，它会创建一个名为  <code>badguy</code> ，密码为  <code>badpwd</code>  的新用户账户。<br>
- <code>#</code> ：注释符号，用来忽略后续的 SQL 语句。</p>
-<p>注入后的 SQL 查询变成了：</p>
-  <figure class="highlight sql"><figcaption><span>Example</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> UserTable <span class="keyword">WHERE</span> username<span class="operator">=</span><span class="string">&#x27;&#x27;</span>; <span class="keyword">exec</span> cmdshell <span class="string">&#x27;net user badguy badpwd&#x27;</span> <span class="operator">/</span><span class="keyword">ADD</span> #...</span><br></pre></td></tr></table></figure>
+<p>注入后的 SQL 查询变成了：<br>  <figure class="highlight sql"><figcaption><span>Example</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> UserTable <span class="keyword">WHERE</span> username<span class="operator">=</span><span class="string">&#x27;&#x27;</span>; <span class="keyword">exec</span> cmdshell <span class="string">&#x27;net user badguy badpwd&#x27;</span> <span class="operator">/</span><span class="keyword">ADD</span> #...</span><br></pre></td></tr></table></figure></p>
 <ol start="4">
-<li>Change、Destory Data<br>
-Create new users</li>
-</ol>
+<li><p>Change、Destory Data<br> Create new users</p>
   <figure class="highlight sql"><figcaption><span>Example</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;; INSERT INTO USERS (&#x27;</span>uname<span class="string">&#x27;,&#x27;</span>passwd<span class="string">&#x27;) </span></span><br><span class="line"><span class="string"> VALUES (&#x27;</span>hacker<span class="string">&#x27;,&#x27;</span><span class="number">38</span>a74f<span class="string">&#x27;); # </span></span><br></pre></td></tr></table></figure>
-<p>Reset email (or password, etc.)</p>
+<p>Reset email (or password, etc.) </p>
   <figure class="highlight sql"><figcaption><span>Example</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;; UPDATE USERS SET email=&#x27;</span>hacker<span class="variable">@root</span>.org<span class="string">&#x27;  </span></span><br><span class="line"><span class="string"> WHERE email=&#x27;</span>victim<span class="variable">@yahoo</span>.com<span class="string">&#x27;; #</span></span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li>Second-Order SQL Injections</li>
-</ol>
+</li>
+<li><p>Second-Order SQL Injections</p>
   <figure class="highlight php"><figcaption><span>Example</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line">  <span class="variable">$db</span> = <span class="title function_ invoke__">mysql_connect</span>(<span class="string">&quot;localhost&quot;</span>, <span class="string">&quot;root&quot;</span>, <span class="string">&quot;password&quot;</span>); </span><br><span class="line">  <span class="title function_ invoke__">mysql_select_db</span>(<span class="string">&quot;Shipping&quot;</span>, <span class="variable">$db</span>); </span><br><span class="line">  </span><br><span class="line">  <span class="variable">$id</span> = <span class="variable">$HTTP_GET_VARS</span>[<span class="string">&quot;id&quot;</span>]; </span><br><span class="line">  <span class="variable">$qry</span> = <span class="string">&quot;SELECT ccnum FROM cust WHERE id = <span class="subst">$id</span>&quot;</span>; </span><br><span class="line">  </span><br><span class="line">  <span class="variable">$result</span> = <span class="title function_ invoke__">mysql_query</span>(<span class="variable">$qry</span>, <span class="variable">$db</span>); </span><br><span class="line">  <span class="keyword">if</span> (<span class="variable">$result</span>) &#123; </span><br><span class="line">    <span class="keyword">echo</span> <span class="title function_ invoke__">mysql_result</span>(<span class="variable">$result</span>, <span class="number">0</span>, <span class="string">&quot;ccnum&quot;</span>); </span><br><span class="line">  &#125; <span class="keyword">else</span> &#123; </span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;No result!&quot;</span> . <span class="title function_ invoke__">mysql_error</span>(); </span><br><span class="line">  &#125; </span><br><span class="line"> <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-<p>初始注入：攻击者设法将  <code>uname</code>  字段设置为： <code>admin' #</code> 。<br>
-在另一个活动中，例如密码更新操作，代码可能会使用之前存储的  <code>uname</code>  值。因为  <code>uname</code>  包含注释符号，实际执行的 SQL 语句将变成：</p>
+<p>初始注入：攻击者设法将 <code>uname</code> 字段设置为：<code>admin&#39; #</code>。<br>在另一个活动中，例如密码更新操作，代码可能会使用之前存储的 <code>uname</code> 值。因为 <code>uname</code> 包含注释符号，实际执行的 SQL 语句将变成：</p>
   <figure class="highlight sql"><figcaption><span>Example</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> USERS <span class="keyword">SET</span> passwd<span class="operator">=</span><span class="string">&#x27;cracked&#x27;</span> <span class="keyword">WHERE</span> uname<span class="operator">=</span><span class="string">&#x27;admin&#x27;</span>;</span><br></pre></td></tr></table></figure>
-<p>Persistent storage (such as a table row) is deemed as a <strong>trusted source</strong> thus may not be sanitised<br>
-Attacks may be subsequently executed by <strong>multiple</strong> activities</p>
+<p>Persistent storage (such as a table row) is deemed as a <strong>trusted source</strong> thus may not be sanitised<br>Attacks may be subsequently executed by <strong>multiple</strong> activities</p>
+</li>
+</ol>
 <h1 id="Preventing SQL Injection" class="active"><a class="anchor"  href="#Preventing SQL Injection">#</a>Preventing SQL Injection</h1>
+
 <ol>
-<li>Finding SQL Injection Vulnerabilities<br>
-Any application that has the following pattern is at risk of SQL injection
-<ol>
-<li>Take user input</li>
-<li>Do not check validity of user input</li>
-<li>Use user input data to query a database</li>
+<li>Finding SQL Injection Vulnerabilities<br>Any application that has the following pattern is at risk of SQL injection <ol>
+<li>Take user input </li>
+<li>Do not check validity of user input </li>
+<li>Use user input data to query a database </li>
 <li>Use string manipulation to build the SQL query or the SQL exec command</li>
 </ol>
 </li>
 </ol>
 <ul>
-<li>Manual Techniques<br>
-Try entering junk SQL commands into input fields you suspect may not be validated
-<ul>
-<li>Use as username:  <code>abc' JFKDJ #</code> <br>
-Look for errors or unexpected behaviour</li>
+<li>Manual Techniques<br>Try entering junk SQL commands into input fields you suspect may not be validated <ul>
+<li>Use as username: <code>abc&#39; JFKDJ #</code><br>Look for errors or unexpected behaviour </li>
 <li>Some web applications running in debug mode will show you the whole SQL statement to “help you debug”, but this also helps attackers attack</li>
-<li>常见的手动测试字符串：<br>
- <code>' OR 1=1 --</code> ：绕过身份验证。<br>
- <code>' UNION SELECT NULL, NULL, NULL --</code> ：尝试访问其他表中的数据。<br>
- <code>' AND (SELECT COUNT(*) FROM users) &gt; 0 --</code> ：检测查询逻辑。</li>
+<li>常见的手动测试字符串：<br><code>&#39; OR 1=1 --</code>：绕过身份验证。<br><code>&#39; UNION SELECT NULL, NULL, NULL --</code>：尝试访问其他表中的数据。<br><code>&#39; AND (SELECT COUNT(*) FROM users) &gt; 0 --</code>：检测查询逻辑。</li>
 </ul>
 </li>
-<li>Automated Techniques
-<ol>
-<li>Sqlmap (<span class="exturl" data-url="aHR0cDovL3NxbG1hcC5vcmc=">sqlmap.org</span>) profiles the database on a given URL</li>
+<li>Automated Techniques<ol>
+<li>Sqlmap (sqlmap.org) profiles the database on a given URL</li>
 </ol>
 <ul>
-<li>Identify vulnerable parameters</li>
-<li>Identify which types of attacks work</li>
+<li>Identify vulnerable parameters </li>
+<li>Identify which types of attacks work </li>
 <li>Take over the database</li>
 </ul>
 <ol start="2">
 <li>SQL Inject Me was a Firefox add-on</li>
 </ol>
 <ul>
-<li>Try standard SQL injection techniques for a variety of database languages</li>
+<li>Try standard SQL injection techniques for a variety of database languages </li>
 <li>In every form on a page</li>
 </ul>
 </li>
 </ul>
 <ol start="2">
-<li>Preventing SQL Injection
-<ol>
+<li>Preventing SQL Injection<ol>
 <li>Input validation</li>
 </ol>
 <ul>
-<li>Filter any character with special meanings (apostrophes, semicolons, percent symbols, hyphens, etc.)</li>
-<li>Check the data type (e.g. make sure it’s an integer)</li>
-<li>Blacklisting “bad” characters doesn’t always work
-<ol>
-<li>Could prevent valid input (e.g. last name O’Brien)</li>
+<li>Filter any character with special meanings (apostrophes, semicolons, percent symbols, hyphens, etc.) </li>
+<li>Check the data type (e.g. make sure it’s an integer) </li>
+<li>Blacklisting “bad” characters doesn’t always work <ol>
+<li>Could prevent valid input (e.g. last name O’Brien) </li>
 <li>Forget to filter out some characters</li>
 </ol>
 </li>
 </ul>
 <ol start="2">
-<li>Escaping quotes<br>
-Use escape characters to prevent the quote from becoming part of the query. Example: convert  <code>' </code>  into  <code> \'</code> . Different databases have different rules for escaping</li>
+<li>Escaping quotes<br> Use escape characters to prevent the quote from becoming part of the query. Example: convert <code>&#39; </code> into <code> \&#39;</code>. Different databases have different rules for escaping </li>
 <li>Whitelisting</li>
 </ol>
 <ul>
-<li>Allow only well-defined set of safe values</li>
-<li>Set implicitly defined through regular expressions 正则表达式</li>
+<li>Allow only well-defined set of safe values </li>
+<li>Set implicitly defined through regular expressions正则表达式</li>
 </ul>
 </li>
-<li>Best Solution: Prepared Statements( Separating code and data)<br>
-In most injection attacks, data is interpreted as control: this changes the semantics of a query or a command</li>
+<li>Best Solution: Prepared Statements( Separating code and data)<br>In most injection attacks, data is interpreted as control: this changes the semantics of a query or a command</li>
 </ol>
 <ul>
-<li>Typed bind variables:  <code>? </code> placeholders guaranteed to be data (not control)</li>
-<li>Prepared statements are <strong>pre-compiled</strong> by the database management system waiting for input</li>
-<li>Placeholders prevent that the users input gets attached to the SQL query resulting in a separation of code and data</li>
-<li>For example, the database registers  <code>'Robert' ); DROP TABLE Students;--'</code><figure class="highlight java"><figcaption><span>Prepared Statement: Java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">PreparedStatement</span> <span class="variable">ps</span> <span class="operator">=</span> db.prepareStatement(</span><br><span class="line">  <span class="string">&quot;SELECT pizza, toppings, quantity, </span></span><br><span class="line"><span class="string">  order_day FROM orders WHERE userid=? </span></span><br><span class="line"><span class="string">  AND order_month=?&quot;</span></span><br><span class="line">);</span><br><span class="line"> ps.setInt(<span class="number">1</span>, session.getCurrentUserId());</span><br><span class="line"> ps.setInt(<span class="number">2</span>, Integer.parseInt(request.getParameter(<span class="string">&quot;month&quot;</span>)));</span><br><span class="line"> <span class="type">ResultSet</span> <span class="variable">res</span> <span class="operator">=</span> ps.executeQuery();</span><br></pre></td></tr></table></figure>
-</li>
-<li>使用预处理语句 (PreparedStatement)<br>
- <code>PreparedStatement</code>  是 Java 中用于执行预编译的 SQL 语句的对象，它确保 SQL 查询结构和输入数据的分离。在此代码中，使用  <code>?</code>  占位符来标记用户输入的位置，确保输入的数据不被解释为 SQL 控制逻辑。</li>
-<li>绑定变量<br>
-通过  <code>ps.setInt(1, ...)</code>  和  <code>ps.setInt(2, ...)</code>  方法，将 <code>用户 ID</code>  和 <code>月份</code> 参数绑定到相应的占位符上。<br>
-绑定的变量具有明确的类型（如 int、String 等），这确保了输入数据不会改变 SQL 查询的逻辑。</li>
-</ul>
- <figure class="highlight csharp"><figcaption><span>Prepared Statement: ASP.NET</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SqlCommand cmd = <span class="keyword">new</span> SqlCommand(</span><br><span class="line">  <span class="string">&quot;SELECT * FROM UserTable </span></span><br><span class="line"><span class="string">   WHERE username = @User AND password = @Pwd&quot;</span>, </span><br><span class="line">   dbConnection</span><br><span class="line"> );</span><br><span class="line"> cmd.Parameters.Add(<span class="string">&quot;@User&quot;</span>, Request[<span class="string">&quot;user&quot;</span>]);</span><br><span class="line"> cmd.Parameters.Add(<span class="string">&quot;@Pwd&quot;</span>, Request[<span class="string">&quot;pwd&quot;</span>]);</span><br><span class="line"> cmd.ExecuteReader();</span><br></pre></td></tr></table></figure>
-<ul>
-<li>查询语句中的  <code>@User</code>  和  <code>@Pwd</code>  是参数占位符，用于标记用户输入的位置。<figure class="highlight php"><figcaption><span>Prepared Statement: PHP</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line"> <span class="variable">$db</span> = <span class="title function_ invoke__">mysqli_connect</span>(<span class="title function_ invoke__">getServer</span>(), <span class="title function_ invoke__">getUid</span>(), <span class="title function_ invoke__">getPwd</span>()); </span><br><span class="line"> <span class="variable">$stmt</span> = <span class="title function_ invoke__">mysqli_prepare</span>(<span class="variable">$db</span>, <span class="string">&quot;SELECT ccnum FROM cust WHERE id = ?&quot;</span>); </span><br><span class="line"> <span class="variable">$id</span> = <span class="variable">$HTTP_GET_VARS</span>[<span class="string">&quot;id&quot;</span>]; </span><br><span class="line"> <span class="comment">// 仅允许有效的ID（1-8位数字）</span></span><br><span class="line"> <span class="keyword">if</span> (<span class="title function_ invoke__">preg_match</span>(<span class="string">&#x27;/^\d&#123;1,8&#125;$/&#x27;</span>, <span class="variable">$id</span>)) &#123; </span><br><span class="line">     <span class="title function_ invoke__">mysqli_stmt_bind_param</span>(<span class="variable">$stmt</span>, <span class="string">&quot;s&quot;</span>, <span class="variable">$id</span>); </span><br><span class="line">     <span class="title function_ invoke__">mysqli_stmt_execute</span>(<span class="variable">$stmt</span>); </span><br><span class="line"> &#125; </span><br><span class="line"> <span class="title function_ invoke__">mysqli_stmt_bind_result</span>(<span class="variable">$stmt</span>, <span class="variable">$result</span>); </span><br><span class="line"> <span class="title function_ invoke__">mysqli_stmt_fetch</span>(<span class="variable">$stmt</span>); </span><br><span class="line"> ...</span><br><span class="line"> <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li>SQL 查询中使用  <code>?</code>  作为占位符，表示参数的位置</li>
-<li>使用正则表达式  <code>preg_match('/^\d&#123;1,8&#125;$/', $id)</code>  来验证用户输入。这确保了输入是 1 到 8 位的数字，过滤掉了潜在的恶意输入</li>
-<li>使用  <code>mysqli_stmt_bind_param($stmt, &quot;s&quot;, $id)</code>  方法将用户输入的 ID 作为参数绑定到预处理语句中。参数类型  <code>s</code>  指定绑定的变量是字符串类型（string）。</li>
+<li>Typed bind variables: <code>? </code>placeholders guaranteed to be data (not control) </li>
+<li>Prepared statements are <strong>pre-compiled</strong> by the database management system waiting for input </li>
+<li>Placeholders prevent that the users input gets attached to the SQL query resulting in a separation of code and data </li>
+<li>For example, the database registers <code>&#39;Robert&#39; ); DROP TABLE Students;--&#39;</code><figure class="highlight java"><figcaption><span>Prepared Statement: Java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">PreparedStatement</span> <span class="variable">ps</span> <span class="operator">=</span> db.prepareStatement(</span><br><span class="line">  <span class="string">&quot;SELECT pizza, toppings, quantity, </span></span><br><span class="line"><span class="string">  order_day FROM orders WHERE userid=? </span></span><br><span class="line"><span class="string">  AND order_month=?&quot;</span></span><br><span class="line">);</span><br><span class="line"> ps.setInt(<span class="number">1</span>, session.getCurrentUserId());</span><br><span class="line"> ps.setInt(<span class="number">2</span>, Integer.parseInt(request.getParameter(<span class="string">&quot;month&quot;</span>)));</span><br><span class="line"> <span class="type">ResultSet</span> <span class="variable">res</span> <span class="operator">=</span> ps.executeQuery();</span><br></pre></td></tr></table></figure></li>
+<li>使用预处理语句 (PreparedStatement)<br><code>PreparedStatement</code> 是 Java 中用于执行预编译的 SQL 语句的对象，它确保 SQL 查询结构和输入数据的分离。在此代码中，使用 <code>?</code> 占位符来标记用户输入的位置，确保输入的数据不被解释为 SQL 控制逻辑。</li>
+<li>绑定变量<br>通过 <code>ps.setInt(1, ...)</code> 和 <code>ps.setInt(2, ...)</code> 方法，将<code>用户 ID</code> 和<code>月份</code>参数绑定到相应的占位符上。<br>绑定的变量具有明确的类型（如 int、String 等），这确保了输入数据不会改变 SQL 查询的逻辑。 <figure class="highlight csharp"><figcaption><span>Prepared Statement: ASP.NET</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SqlCommand cmd = <span class="keyword">new</span> SqlCommand(</span><br><span class="line">  <span class="string">&quot;SELECT * FROM UserTable </span></span><br><span class="line"><span class="string">   WHERE username = @User AND password = @Pwd&quot;</span>, </span><br><span class="line">   dbConnection</span><br><span class="line"> );</span><br><span class="line"> cmd.Parameters.Add(<span class="string">&quot;@User&quot;</span>, Request[<span class="string">&quot;user&quot;</span>]);</span><br><span class="line"> cmd.Parameters.Add(<span class="string">&quot;@Pwd&quot;</span>, Request[<span class="string">&quot;pwd&quot;</span>]);</span><br><span class="line"> cmd.ExecuteReader();</span><br></pre></td></tr></table></figure></li>
+<li>查询语句中的 <code>@User</code> 和 <code>@Pwd</code> 是参数占位符，用于标记用户输入的位置。<figure class="highlight php"><figcaption><span>Prepared Statement: PHP</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line"> <span class="variable">$db</span> = <span class="title function_ invoke__">mysqli_connect</span>(<span class="title function_ invoke__">getServer</span>(), <span class="title function_ invoke__">getUid</span>(), <span class="title function_ invoke__">getPwd</span>()); </span><br><span class="line"> <span class="variable">$stmt</span> = <span class="title function_ invoke__">mysqli_prepare</span>(<span class="variable">$db</span>, <span class="string">&quot;SELECT ccnum FROM cust WHERE id = ?&quot;</span>); </span><br><span class="line"> <span class="variable">$id</span> = <span class="variable">$HTTP_GET_VARS</span>[<span class="string">&quot;id&quot;</span>]; </span><br><span class="line"> <span class="comment">// 仅允许有效的ID（1-8位数字）</span></span><br><span class="line"> <span class="keyword">if</span> (<span class="title function_ invoke__">preg_match</span>(<span class="string">&#x27;/^\d&#123;1,8&#125;$/&#x27;</span>, <span class="variable">$id</span>)) &#123; </span><br><span class="line">     <span class="title function_ invoke__">mysqli_stmt_bind_param</span>(<span class="variable">$stmt</span>, <span class="string">&quot;s&quot;</span>, <span class="variable">$id</span>); </span><br><span class="line">     <span class="title function_ invoke__">mysqli_stmt_execute</span>(<span class="variable">$stmt</span>); </span><br><span class="line"> &#125; </span><br><span class="line"> <span class="title function_ invoke__">mysqli_stmt_bind_result</span>(<span class="variable">$stmt</span>, <span class="variable">$result</span>); </span><br><span class="line"> <span class="title function_ invoke__">mysqli_stmt_fetch</span>(<span class="variable">$stmt</span>); </span><br><span class="line"> ...</span><br><span class="line"> <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>SQL 查询中使用 <code>?</code> 作为占位符，表示参数的位置</li>
+<li>使用正则表达式 <code>preg_match(&#39;/^\d&#123;1,8&#125;$/&#39;, $id)</code> 来验证用户输入。这确保了输入是 1 到 8 位的数字，过滤掉了潜在的恶意输入</li>
+<li>使用 <code>mysqli_stmt_bind_param($stmt, &quot;s&quot;, $id)</code> 方法将用户输入的 ID 作为参数绑定到预处理语句中。参数类型 <code>s</code> 指定绑定的变量是字符串类型（string）。</li>
 </ul>
 <ol start="4">
 <li>Fixing SQL Injections</li>
 </ol>
 <ul>
-<li>Validate all input</li>
-<li>Never use string concatenation to build SQL statements</li>
-<li>Use parameterised stored procedures or other functions for database access</li>
-<li>Use least privileged accounts to connect to the database</li>
+<li>Validate all input </li>
+<li>Never use string concatenation to build SQL statements </li>
+<li>Use parameterised stored procedures or other functions for database access </li>
+<li>Use least privileged accounts to connect to the database </li>
 <li>Remove access to all user defined tables and grant access only to stored procedures</li>
 </ul>
 
@@ -405,7 +366,7 @@ In most injection attacks, data is interpreted as control: this changes the sema
     <div class="item left">
       
 
-  <a href="/course/Security-Concepts/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;26&#x2F;671cf6bb9fdaf.jpg" title="Security Concepts">
+  <a href="/course/Security-Concepts/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;18&#x2F;67123a94f1d92.png" title="Security Concepts">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> Principles of Software Security</span>
   <h3>Security Concepts</h3>
@@ -415,7 +376,7 @@ In most injection attacks, data is interpreted as control: this changes the sema
     <div class="item right">
       
 
-  <a href="/course/Web-Application-Security/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;26&#x2F;671cf6029148a.jpg" title="Web Application Security">
+  <a href="/course/Web-Application-Security/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;18&#x2F;67123a9a63310.jpg" title="Web Application Security">
   <span class="type">下一篇</span>
   <span class="category"><i class="ic i-flag"></i> Principles of Software Security</span>
   <h3>Web Application Security</h3>
@@ -455,7 +416,7 @@ In most injection attacks, data is interpreted as control: this changes the sema
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">22</span>
+        <span class="count">23</span>
         <span class="name">文章</span>
       </a>
     </div>
@@ -467,7 +428,7 @@ In most injection attacks, data is interpreted as control: this changes the sema
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">27</span>
+        <span class="count">31</span>
         <span class="name">标签</span>
       </a>
     </div>
@@ -557,10 +518,12 @@ In most injection attacks, data is interpreted as control: this changes the sema
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/dailysharing/" title="分类于 日常碎碎念">日常碎碎念</a>
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
 </div>
 
-    <span><a href="/dailysharing/%E7%AC%AC%E4%B8%80%E7%AF%87ovo/" title="第一篇ovo">第一篇ovo</a></span>
+    <span><a href="/course/Cross-Site-attack/" title="Cross-Site attack">Cross-Site attack</a></span>
   </li>
 
       
@@ -572,7 +535,7 @@ In most injection attacks, data is interpreted as control: this changes the sema
 <a href="/categories/study/JavaScript/" title="分类于 JavaScript">JavaScript</a>
 </div>
 
-    <span><a href="/study/js%E7%BB%A7%E6%89%BF/" title="js继承">js继承</a></span>
+    <span><a href="/study/JS%E4%B8%AD%E7%9A%84this%E4%B8%8E%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/" title="JS中的this与相关函数">JS中的this与相关函数</a></span>
   </li>
 
       
@@ -584,7 +547,7 @@ In most injection attacks, data is interpreted as control: this changes the sema
 <a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
 </div>
 
-    <span><a href="/course/SQL-Injection/" title="SQL Injection">SQL Injection</a></span>
+    <span><a href="/course/Integer-overflow/" title="Integer overflow">Integer overflow</a></span>
   </li>
 
       
@@ -596,31 +559,7 @@ In most injection attacks, data is interpreted as control: this changes the sema
 <a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
 </div>
 
-    <span><a href="/course/Heap-buffer-overflow/" title="Heap buffer overflow">Heap buffer overflow</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
-</div>
-
-    <span><a href="/course/Layer-3-Routing-and-Superheating/" title="Layer 3 - Routing and Superheating">Layer 3 - Routing and Superheating</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
-</div>
-
-    <span><a href="/course/Layer-4-Transport-Protocols-TCP-and-UDP/" title="(Layer 4) Transport Protocols TCP and UDP">(Layer 4) Transport Protocols TCP and UDP</a></span>
+    <span><a href="/course/Fuzz-testing/" title="Fuzz testing">Fuzz testing</a></span>
   </li>
 
       
@@ -639,24 +578,10 @@ In most injection attacks, data is interpreted as control: this changes the sema
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
+<a href="/categories/dailysharing/" title="分类于 日常碎碎念">日常碎碎念</a>
 </div>
 
-    <span><a href="/course/Layer-3-Subnetting-and-VLANs/" title="Layer 3 - Subnetting and VLANs">Layer 3 - Subnetting and VLANs</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
-</div>
-
-    <span><a href="/course/Network%20System%20Overall/" title="Network Systems Overall">Network Systems Overall</a></span>
+    <span><a href="/dailysharing/%E7%AC%AC%E4%B8%80%E7%AF%87ovo/" title="第一篇ovo">第一篇ovo</a></span>
   </li>
 
       
@@ -668,7 +593,40 @@ In most injection attacks, data is interpreted as control: this changes the sema
 <a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
 </div>
 
-    <span><a href="/course/Stack-buffer-overflow/" title="Stack buffer overflow">Stack buffer overflow</a></span>
+    <span><a href="/course/Format-string-bugs/" title="Format string bugs">Format string bugs</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/dailysharing/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
+</div>
+
+    <span><a href="/course/Layer-7-Application-layer-Protocols-and-Services/" title="(Layer 7) Application-layer Protocols and Services">(Layer 7) Application-layer Protocols and Services</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/SQL-Injection/" title="SQL Injection">SQL Injection</a></span>
   </li>
 
   </ul>
