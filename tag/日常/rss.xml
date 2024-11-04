@@ -7,37 +7,38 @@
         <language>zh-CN</language>
         <pubDate>Fri, 18 Oct 2024 21:28:05 +1000</pubDate>
         <lastBuildDate>Fri, 18 Oct 2024 21:28:05 +1000</lastBuildDate>
-        <category>Blog</category>
-        <category>日常</category>
+        <category>JavaScript</category>
         <category>network system</category>
         <category>C</category>
         <category>software security</category>
         <category>AFL</category>
         <category>Linux</category>
+        <category>vulnerability</category>
         <category>C language</category>
         <category>HTTP</category>
         <category>XSS</category>
         <category>CSRF</category>
-        <category>vulnerability</category>
-        <category>router</category>
-        <category>Supernet</category>
-        <category>IPv4</category>
-        <category>Subnet</category>
-        <category>TCP</category>
-        <category>UDP</category>
         <category>IP</category>
         <category>DHCP</category>
         <category>ICMP</category>
         <category>ARP</category>
+        <category>router</category>
+        <category>Supernet</category>
+        <category>IPv4</category>
+        <category>Subnet</category>
         <category>DNS</category>
         <category>SSH</category>
         <category>FTP</category>
         <category>SMTP</category>
-        <category>SQL</category>
+        <category>TCP</category>
+        <category>UDP</category>
         <category>OSI</category>
         <category>TCP/IP</category>
-        <category>JavaScript</category>
+        <category>Network Security</category>
+        <category>SQL</category>
         <category>gdb</category>
+        <category>Blog</category>
+        <category>日常</category>
         <item>
             <guid isPermalink="true">http://example.com/dailysharing/%E7%AC%AC%E4%B8%80%E7%AF%87ovo/</guid>
             <title>第一篇ovo</title>
@@ -45,7 +46,7 @@
             <category>Blog</category>
             <category>日常</category>
             <pubDate>Fri, 18 Oct 2024 21:28:05 +1000</pubDate>
-            <description><![CDATA[ &lt;p&gt;这是第一篇~&lt;/p&gt;
+            <description><![CDATA[ &lt;p&gt;这是第一篇～&lt;/p&gt;
 &lt;p style=&#34;color: plum&#34;&gt;置顶占位 fufu宝宝镇楼o(=•ェ•=)m~&lt;/p&gt;
  ]]></description>
         </item>

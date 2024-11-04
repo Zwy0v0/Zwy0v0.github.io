@@ -4,50 +4,51 @@
     <title> • Posts by &#34;tcp/ip&#34; tag</title>
     <link href="http://example.com" />
     <updated>2024-10-31T06:06:30.000Z</updated>
-    <category term="Blog" />
-    <category term="日常" />
+    <category term="JavaScript" />
     <category term="network system" />
     <category term="C" />
     <category term="software security" />
     <category term="AFL" />
     <category term="Linux" />
+    <category term="vulnerability" />
     <category term="C language" />
     <category term="HTTP" />
     <category term="XSS" />
     <category term="CSRF" />
-    <category term="vulnerability" />
-    <category term="router" />
-    <category term="Supernet" />
-    <category term="IPv4" />
-    <category term="Subnet" />
-    <category term="TCP" />
-    <category term="UDP" />
     <category term="IP" />
     <category term="DHCP" />
     <category term="ICMP" />
     <category term="ARP" />
+    <category term="router" />
+    <category term="Supernet" />
+    <category term="IPv4" />
+    <category term="Subnet" />
     <category term="DNS" />
     <category term="SSH" />
     <category term="FTP" />
     <category term="SMTP" />
-    <category term="SQL" />
+    <category term="TCP" />
+    <category term="UDP" />
     <category term="OSI" />
     <category term="TCP/IP" />
-    <category term="JavaScript" />
+    <category term="Network Security" />
+    <category term="SQL" />
     <category term="gdb" />
+    <category term="Blog" />
+    <category term="日常" />
     <entry>
         <id>http://example.com/course/Network%20System%20Overall/</id>
         <title>Network Systems Overall</title>
         <link rel="alternate" href="http://example.com/course/Network%20System%20Overall/"/>
         <content type="html">&lt;h1 id=&#34;Peer-to-peer and client-server networks&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Peer-to-peer and client-server networks&#34;&gt;#&lt;/a&gt;Peer-to-peer and client-server networks&lt;/h1&gt;
-
 &lt;h2 id=&#34;P2P&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#P2P&#34;&gt;#&lt;/a&gt;P2P&lt;/h2&gt;
-
 &lt;ul&gt;
-&lt;li&gt;Peer-to-peer (P2P) Network Model在对等网络模型中，网络中的每个设备（节点或主机）都负责管理自己的资源，包括控制访问权限和安全性管理。这种设置允许计算机在没有集中控制的情况下共享或限制资源。&lt;/li&gt;
-&lt;li&gt;P2P网络的主要特征：&lt;ul&gt;
+&lt;li&gt;Peer-to-peer (P2P) Network Model 在对等网络模型中，网络中的每个设备（节点或主机）都负责管理自己的资源，包括控制访问权限和安全性管理。这种设置允许计算机在没有集中控制的情况下共享或限制资源。&lt;/li&gt;
+&lt;li&gt;P2P 网络的主要特征：
+&lt;ul&gt;
 &lt;li&gt;无集中控制：每台计算机独立运行，并管理自己的设置。&lt;/li&gt;
-&lt;li&gt;节点组成的逻辑组：网络由多台计算机构成的组，特点是：&lt;ul&gt;
+&lt;li&gt;节点组成的逻辑组：网络由多台计算机构成的组，特点是：
+&lt;ul&gt;
 &lt;li&gt;可以共享资源（如文件、打印机等）&lt;/li&gt;
 &lt;li&gt;基于用户权限限制资源访问&lt;/li&gt;
 &lt;li&gt;独立管理各自的设置、资源和安全性&lt;/li&gt;
@@ -57,22 +58,24 @@
 &lt;li&gt;互联网示例：互联网中的一些对等共享平台（如文件共享应用）使用此模型。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Advantages and disadvantages:&lt;ul&gt;
+&lt;li&gt;Advantages and disadvantages:
+&lt;ul&gt;
 &lt;li&gt;easy, simple&lt;/li&gt;
 &lt;li&gt;not scalable, not necessarily secure, not practical for larges-scale networks&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;Client-Server Network Model&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Client-Server Network Model&#34;&gt;#&lt;/a&gt;Client-Server Network Model&lt;/h2&gt;
-
 &lt;ul&gt;
-&lt;li&gt;在客户端-服务器网络模型中，有一个中心服务器管理网络资源，并控制客户端的网络访问。这种结构允许多个客户端通过服务器来请求访问资源。&lt;/li&gt;
-&lt;li&gt;模型主要特点：&lt;ul&gt;
+&lt;li&gt;在客户端 - 服务器网络模型中，有一个中心服务器管理网络资源，并控制客户端的网络访问。这种结构允许多个客户端通过服务器来请求访问资源。&lt;/li&gt;
+&lt;li&gt;模型主要特点：
+&lt;ul&gt;
 &lt;li&gt;服务器：管理共享资源，并控制网络访问。&lt;/li&gt;
 &lt;li&gt;多个客户端：每个客户端通过服务器请求网络访问或资源。客户端不直接与其他客户端共享资源，而是通过服务器间接共享资源。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Advantages relative to P2P networks:&lt;ul&gt;
+&lt;li&gt;Advantages relative to P2P networks:
+&lt;ul&gt;
 &lt;li&gt;More scalable&lt;/li&gt;
 &lt;li&gt;Centrally controlled network access and network resources&lt;/li&gt;
 &lt;li&gt;Central monitoring and management&lt;/li&gt;
@@ -80,19 +83,22 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;Client-Server Applications&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Client-Server Applications&#34;&gt;#&lt;/a&gt;Client-Server Applications&lt;/h2&gt;
-
 &lt;ul&gt;
-&lt;li&gt;Network Services are the resources a network makes available to its users&lt;ul&gt;
+&lt;li&gt;Network Services are the resources a network makes available to its users
+&lt;ul&gt;
 &lt;li&gt;They include applications and data provided by the applications&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;In a client-server application&lt;ul&gt;
+&lt;li&gt;In a client-server application
+&lt;ul&gt;
 &lt;li&gt;A server provide network resources to clients&lt;/li&gt;
 &lt;li&gt;Clients request network resources from the server&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Protocols are methods and rules for communication between networked devices&lt;ul&gt;
-&lt;li&gt;Two primary protocols:&lt;ul&gt;
+&lt;li&gt;Protocols are methods and rules for communication between networked devices
+&lt;ul&gt;
+&lt;li&gt;Two primary protocols:
+&lt;ul&gt;
 &lt;li&gt;TCP (Transmission Control Protocol), and&lt;/li&gt;
 &lt;li&gt;IP (Internet Protocol)&lt;/li&gt;
 &lt;/ul&gt;
@@ -101,12 +107,12 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;Network hardware devices and physical topologies&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Network hardware devices and physical topologies&#34;&gt;#&lt;/a&gt;Network hardware devices and physical topologies&lt;/h1&gt;
-
 &lt;ol&gt;
 &lt;li&gt;Local Area Networks (LANs) and Hardware&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;A LAN is usually for a workspace or asmall physical area&lt;ul&gt;
+&lt;li&gt;A LAN is usually for a workspace or asmall physical area
+&lt;ul&gt;
 &lt;li&gt;Such as a lab or a building&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -117,15 +123,18 @@
 &lt;li&gt;Start Topology or Bus Topology&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;Physically, a LAN is interconnected with star topology&lt;ul&gt;
+&lt;li&gt;Physically, a LAN is interconnected with star topology
+&lt;ul&gt;
 &lt;li&gt;A switch in the central point to interconnect all other nodes&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Logically, a LAN is interconnected with bus topology&lt;ul&gt;
+&lt;li&gt;Logically, a LAN is interconnected with bus topology
+&lt;ul&gt;
 &lt;li&gt;All nodes access the network through the bus&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Function of the switch&lt;ul&gt;
+&lt;li&gt;Function of the switch
+&lt;ul&gt;
 &lt;li&gt;A switch receives incoming data from one of its ports and redirects the data to another port or multiple ports according to the intended destination of the data&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -135,7 +144,8 @@
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;A LAN can have multiple switches&lt;/li&gt;
-&lt;li&gt;Three switches daisy-chained together in a single line served as a bus physically and logically&lt;ul&gt;
+&lt;li&gt;Three switches daisy-chained together in a single line served as a bus physically and logically
+&lt;ul&gt;
 &lt;li&gt;However, each of the switches is connected to its nodes via star topology physically, thus making the overall star-bus physical topology&lt;/li&gt;
 &lt;li&gt;A topological model combining several topological models is known as a hybrid topological model&lt;/li&gt;
 &lt;/ul&gt;
@@ -146,11 +156,13 @@
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;A router is a device that manages traffic between two or more LANs&lt;/li&gt;
-&lt;li&gt;A router can be used in small home networks to connect home LAN to the internet&lt;ul&gt;
+&lt;li&gt;A router can be used in small home networks to connect home LAN to the internet
+&lt;ul&gt;
 &lt;li&gt;This is known as a SOHO (Small Office-Home Office) network&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Difference between a router and a switch&lt;ul&gt;
+&lt;li&gt;Difference between a router and a switch
+&lt;ul&gt;
 &lt;li&gt;A switch works on, and belongs to, its LAN&lt;/li&gt;
 &lt;li&gt;A router is a gateway interconnecting and belonging to multiple LANs&lt;/li&gt;
 &lt;/ul&gt;
@@ -160,41 +172,46 @@
 &lt;li&gt;MANs and WANs&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;Metropolitan area network (MAN)—A group of connected LANs in the same geographical area&lt;ul&gt;
+&lt;li&gt;Metropolitan area network (MAN)—A group of connected LANs in the same geographical area
+&lt;ul&gt;
 &lt;li&gt;Also known as Campus Area Network (CAN)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Wide Area Network (WAN) – A group of LANs spreading over a wide geographical area&lt;ul&gt;
+&lt;li&gt;Wide Area Network (WAN) – A group of LANs spreading over a wide geographical area
+&lt;ul&gt;
 &lt;li&gt;The Internet is he largest and most varied WAN&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;PAN (personal area network)— The smallest network&lt;ul&gt;
+&lt;li&gt;PAN (personal area network)— The smallest network
+&lt;ul&gt;
 &lt;li&gt;A network of personal devices such as your smartphone and your laptop&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;The ISO 7-layer Open-System-Interconnection (OSI) model&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#The ISO 7-layer Open-System-Interconnection (OSI) model&#34;&gt;#&lt;/a&gt;The ISO 7-layer Open-System-Interconnection (OSI) model&lt;/h1&gt;
-
 &lt;h2 id=&#34;Overall&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Overall&#34;&gt;#&lt;/a&gt;Overall&lt;/h2&gt;
-
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;The OSI model is a theoretical representation describing network communication between two nodes&lt;/p&gt;
+&lt;li&gt;The OSI model is a theoretical representation describing network communication between two nodes
 &lt;ul&gt;
 &lt;li&gt;Never implemented&lt;/li&gt;
 &lt;li&gt;Hardware and software independent&lt;/li&gt;
-&lt;li&gt;Each network communication process represented&lt;br&gt;&lt;img data-src=&#34;https://img.picui.cn/free/2024/10/31/672332515b4e5.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Each network communication process represented&lt;br&gt;
+&lt;img data-src=&#34;https://img.picui.cn/free/2024/10/31/672332515b4e5.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;OSI and TCP&amp;#x2F;IP Models&lt;br&gt;TCP&amp;#x2F;IP模型将应用层、表示层和会话层合并为一个单一的应用层，并将数据链路层和物理层合并为网络接入层&lt;/p&gt;
+&lt;li&gt;OSI and TCP/IP Models&lt;br&gt;
+TCP/IP 模型将应用层、表示层和会话层合并为一个单一的应用层，并将数据链路层和物理层合并为网络接入层&lt;/li&gt;
+&lt;/ol&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;OSI Model&lt;/th&gt;
-&lt;th&gt;TCP&amp;#x2F;IP Model&lt;/th&gt;
+&lt;th&gt;TCP/IP Model&lt;/th&gt;
 &lt;th&gt;Examples&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
 &lt;td&gt;Application&lt;/td&gt;
 &lt;td&gt;Application&lt;/td&gt;
 &lt;td&gt;Telnet, FTP, DHCP, DNS, HTTP, SMTP&lt;/td&gt;
@@ -229,9 +246,11 @@
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;Cables, Hubs, Switches&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Functions of the 7 layers&lt;/p&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Functions of the 7 layers&lt;/li&gt;
+&lt;/ol&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -239,7 +258,8 @@
 &lt;th&gt;Function&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
 &lt;td&gt;Application (Layer 7)&lt;/td&gt;
 &lt;td&gt;Provides interface between software applications and a network for interpreting applications’ requests and requirements&lt;/td&gt;
 &lt;/tr&gt;
@@ -267,55 +287,61 @@
 &lt;td&gt;Physical (Layer 1)&lt;/td&gt;
 &lt;td&gt;Manages signaling to and from physical network connections&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;h2 id=&#34;Functions of the 7 layers&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Functions of the 7 layers&#34;&gt;#&lt;/a&gt;Functions of the 7 layers&lt;/h2&gt;
-
 &lt;ol&gt;
-&lt;li&gt;Layer 7: Application Layer应用层&lt;/li&gt;
+&lt;li&gt;Layer 7: Application Layer 应用层&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;Layer 7 describes the interface between two applications on separate computers&lt;/li&gt;
-&lt;li&gt;Layer 7 protocols are used by application programs to&lt;ul&gt;
+&lt;li&gt;Layer 7 protocols are used by application programs to
+&lt;ul&gt;
 &lt;li&gt;Provide services to users, such as a browser and email client&lt;/li&gt;
 &lt;li&gt;Provide services to the system for, e.g., management of networks and resources&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Payload – data that is passed between applications (or utility programs) and the OS&lt;br&gt;&lt;img data-src=&#34;https://img.picui.cn/free/2024/10/31/672336b510c89.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Payload – data that is passed between applications (or utility programs) and the OS&lt;br&gt;
+&lt;img data-src=&#34;https://img.picui.cn/free/2024/10/31/672336b510c89.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Layer 6 Presentation Layer表示层&lt;/li&gt;
+&lt;li&gt;Layer 6 Presentation Layer 表示层&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;Presentation layer—Responsible for reformatting, compressing, and&amp;#x2F;or encrypting data in a way that the receiving application can read&lt;/li&gt;
-&lt;li&gt;Example:&lt;br&gt;⎻ An web browsing message can be encrypted at the Presentation layer by the browser or by the O S (Operating System)&lt;/li&gt;
+&lt;li&gt;Presentation layer—Responsible for reformatting, compressing, and/or encrypting data in a way that the receiving application can read&lt;/li&gt;
+&lt;li&gt;Example:&lt;br&gt;
+⎻ An web browsing message can be encrypted at the Presentation layer by the browser or by the O S (Operating System)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;Layer 5: Session Layer会话层&lt;/li&gt;
+&lt;li&gt;Layer 5: Session Layer 会话层&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;Layer 5 describes how data between applications is synched and recovered if messages do not arrive intact at the receiving application&lt;/li&gt;
-&lt;li&gt;The Application, Presentation, and Session layers are intertwined&lt;ul&gt;
+&lt;li&gt;The Application, Presentation, and Session layers are intertwined
+&lt;ul&gt;
 &lt;li&gt;Often difficult to distinguish between them&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Most tasks are performed by the OS when an application makes an API call to the OS&lt;ul&gt;
-&lt;li&gt;Application programming interface (API) call is the method that an application uses when it makes a request of the OS&lt;br&gt;&lt;img data-src=&#34;https://img.picui.cn/free/2024/10/31/672336b537ba9.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Most tasks are performed by the OS when an application makes an API call to the OS
+&lt;ul&gt;
+&lt;li&gt;Application programming interface (API) call is the method that an application uses when it makes a request of the OS&lt;br&gt;
+&lt;img data-src=&#34;https://img.picui.cn/free/2024/10/31/672336b537ba9.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;Layer 4: Transport Layer传输层&lt;/li&gt;
+&lt;li&gt;Layer 4: Transport Layer 传输层&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;Layer 4 is responsible for transporting Application layer payloads from one application to another&lt;/li&gt;
-&lt;li&gt;Control information is put into a header, which is added to the payload&lt;ul&gt;
+&lt;li&gt;Control information is put into a header, which is added to the payload
+&lt;ul&gt;
 &lt;li&gt;Known as encapsulation&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;The layer 4 header addresses the receiving application by a number called a port number&lt;/li&gt;
-&lt;li&gt;Two main Transport layer protocols at Layer 4&lt;ol&gt;
+&lt;li&gt;Two main Transport layer protocols at Layer 4
+&lt;ol&gt;
 &lt;li&gt;TCP (Transmission Control Protocol)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
@@ -327,58 +353,69 @@
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;It does not guarantee delivery by first connecting and checking whether data is received; called a connectionless protocol&lt;/li&gt;
-&lt;li&gt;A message is called a &lt;strong&gt;datagram&lt;/strong&gt;&lt;br&gt;&lt;img data-src=&#34;https://img.picui.cn/free/2024/10/31/672336b4c7bf0.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
+&lt;li&gt;A message is called a &lt;strong&gt;datagram&lt;/strong&gt;&lt;br&gt;
+&lt;img data-src=&#34;https://img.picui.cn/free/2024/10/31/672336b4c7bf0.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;5&#34;&gt;
-&lt;li&gt;Layer 3: Network Layer网络层&lt;/li&gt;
+&lt;li&gt;Layer 3: Network Layer 网络层&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;Layer 3 is responsible for moving messages from one node to another until they reach the destination host&lt;/li&gt;
-&lt;li&gt;IP adds its own Network layer header to the segment or datagram&lt;ul&gt;
+&lt;li&gt;IP adds its own Network layer header to the segment or datagram
+&lt;ul&gt;
 &lt;li&gt;The entire Network layer message is called a packet&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;IP address—Assigned to each node on a network&lt;ul&gt;
+&lt;li&gt;IP address—Assigned to each node on a network
+&lt;ul&gt;
 &lt;li&gt;Network layer uses it to uniquely identify each host&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;IP relies on several routing protocols to find the best route for a packet to take to reach destination&lt;ul&gt;
-&lt;li&gt;ICMP and ARP are examples&lt;ul&gt;
+&lt;li&gt;IP relies on several routing protocols to find the best route for a packet to take to reach destination
+&lt;ul&gt;
+&lt;li&gt;ICMP and ARP are examples
+&lt;ul&gt;
 &lt;li&gt;Note: ARP is not strictly a Layer 3 protocol. It works at Layer 2 but uses Layer 3 IP address information&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Network layer protocol will divide large packets into smaller &lt;strong&gt;packets&lt;/strong&gt;&lt;ul&gt;
+&lt;li&gt;Network layer protocol will divide large packets into smaller &lt;strong&gt;packets&lt;/strong&gt;
+&lt;ul&gt;
 &lt;li&gt;The process is known as fragmentation&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;6&#34;&gt;
-&lt;li&gt;Layer 2: Data Link Layer数据链路层&lt;/li&gt;
+&lt;li&gt;Layer 2: Data Link Layer 数据链路层&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;Layers 2 and 1 are responsible for interfacing with physical hardware on the local network&lt;ul&gt;
+&lt;li&gt;Layers 2 and 1 are responsible for interfacing with physical hardware on the local network
+&lt;ul&gt;
 &lt;li&gt;Protocols at these layers are programmed into firmware of a computer’s NIC and other hardware&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;The type of networking hardware or technology used on a network determines the Link Layer protocol used&lt;ul&gt;
+&lt;li&gt;The type of networking hardware or technology used on a network determines the Link Layer protocol used
+&lt;ul&gt;
 &lt;li&gt;Ethernet and Wi-Fi are examples&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Layer2 puts control information in a Link layer header and at the end of the packet in a trailer&lt;ul&gt;
+&lt;li&gt;Layer2 puts control information in a Link layer header and at the end of the packet in a trailer
+&lt;ul&gt;
 &lt;li&gt;The data transmitted at the entire Link layer is called a &lt;strong&gt;frame&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;MAC (Media Access Control) address—Hardware address of the source and destination NICs&lt;ul&gt;
+&lt;li&gt;MAC (Media Access Control) address—Hardware address of the source and destination NICs
+&lt;ul&gt;
 &lt;li&gt;Also called a physical address, hardware address, or Data Link layer address&lt;/li&gt;
 &lt;li&gt;Embedded on every network adapter&lt;/li&gt;
 &lt;li&gt;In a LAN, a node can be found through MAC address&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Two Data Link Layer Sublayers&lt;ol&gt;
+&lt;li&gt;Two Data Link Layer Sublayers
+&lt;ol&gt;
 &lt;li&gt;LLC (Logical Link Control) sublayer&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
@@ -394,11 +431,12 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;7&#34;&gt;
-&lt;li&gt;Layer 1: Physical Layer物理层&lt;/li&gt;
+&lt;li&gt;Layer 1: Physical Layer 物理层&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;Layer 1 is the simplest layer and is responsible for sending bits via a wired or wireless transmission&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Bits&lt;/strong&gt; can be transmitted as:&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Bits&lt;/strong&gt; can be transmitted as:
+&lt;ul&gt;
 &lt;li&gt;Wavelengths in the air&lt;/li&gt;
 &lt;li&gt;Voltage on a copper wire&lt;/li&gt;
 &lt;li&gt;Light (via fiber-optic cabling)&lt;/li&gt;
@@ -406,12 +444,13 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;PDU&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#PDU&#34;&gt;#&lt;/a&gt;PDU&lt;/h2&gt;
-
 &lt;ol&gt;
 &lt;li&gt;PDU: the name for a group of data bits as it moves from one layer to the next, and from one LAN to the next&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;It is sometimes called a message or a transmission&lt;table&gt;
+&lt;li&gt;It is sometimes called a message or a transmission&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;OSI 层级&lt;/th&gt;
@@ -419,7 +458,8 @@
 &lt;th&gt;技术性名称 (PDU)&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
 &lt;td&gt;应用层 (Layer 7)&lt;/td&gt;
 &lt;td&gt;数据或有效载荷（Payload）&lt;/td&gt;
 &lt;td&gt;L7PDU&lt;/td&gt;
@@ -454,28 +494,29 @@
 &lt;td&gt;比特（Bit）或传输单元&lt;/td&gt;
 &lt;td&gt;L1PDU&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Demonstration of PDU Names&lt;ol&gt;
+&lt;li&gt;Demonstration of PDU Names
+&lt;ol&gt;
 &lt;li&gt;Data transformation&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;Original software application data differs from application layer NIC data&lt;ul&gt;
+&lt;li&gt;Original software application data differs from application layer NIC data
+&lt;ul&gt;
 &lt;li&gt;Information added at each layer&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Segments&amp;#x2F;datagrams&lt;/li&gt;
+&lt;li&gt;Segments/datagrams&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;Generated in Transport layer&lt;/li&gt;
 &lt;li&gt;Unit of data resulting from subdividing larger Protocol Data Unit (PDU)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;Packets&amp;#x2F;datagrams&lt;/li&gt;
+&lt;li&gt;Packets/datagrams&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;Generated in Network layer&lt;/li&gt;
@@ -486,20 +527,24 @@
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;Generated in Data Link layer&lt;/li&gt;
-&lt;li&gt;Added physical addressing and error-checking information to segments&lt;br&gt;&lt;img data-src=&#34;https://img.picui.cn/free/2024/10/31/672336ba87f7d.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Added physical addressing and error-checking information to segments&lt;br&gt;
+&lt;img data-src=&#34;https://img.picui.cn/free/2024/10/31/672336ba87f7d.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Communication between two systems&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;On data’s way down the protocol stack (model):&lt;ul&gt;
+&lt;li&gt;On data’s way down the protocol stack (model):
+&lt;ul&gt;
 &lt;li&gt;Data is divided into data units called protocol data units (PDU)&lt;/li&gt;
 &lt;li&gt;Some layers add their own formatting to the PDU, which is called a header (encapsulation)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;When data arrives at the receiving end, it is passed up the protocol stack:&lt;ul&gt;
+&lt;li&gt;When data arrives at the receiving end, it is passed up the protocol stack:
+&lt;ul&gt;
 &lt;li&gt;At each layer, software reads its PDU data and strips its header information (called decapsulation) and passes the PDU to the next higher layer&lt;/li&gt;
-&lt;li&gt;Packet leaves the Application layer in a format the receiving application can read&lt;br&gt;&lt;img data-src=&#34;https://img.picui.cn/free/2024/10/31/672336b4d1ba7.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Packet leaves the Application layer in a format the receiving application can read&lt;br&gt;
+&lt;img data-src=&#34;https://img.picui.cn/free/2024/10/31/672336b4d1ba7.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;

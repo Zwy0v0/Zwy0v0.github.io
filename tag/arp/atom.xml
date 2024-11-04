@@ -3,46 +3,505 @@
     <id>http://example.com</id>
     <title> • Posts by &#34;arp&#34; tag</title>
     <link href="http://example.com" />
-    <updated>2024-11-01T12:02:19.000Z</updated>
-    <category term="Blog" />
-    <category term="日常" />
+    <updated>2024-11-04T12:02:06.000Z</updated>
+    <category term="JavaScript" />
     <category term="network system" />
     <category term="C" />
     <category term="software security" />
     <category term="AFL" />
     <category term="Linux" />
+    <category term="vulnerability" />
     <category term="C language" />
     <category term="HTTP" />
     <category term="XSS" />
     <category term="CSRF" />
-    <category term="vulnerability" />
-    <category term="router" />
-    <category term="Supernet" />
-    <category term="IPv4" />
-    <category term="Subnet" />
-    <category term="TCP" />
-    <category term="UDP" />
     <category term="IP" />
     <category term="DHCP" />
     <category term="ICMP" />
     <category term="ARP" />
+    <category term="router" />
+    <category term="Supernet" />
+    <category term="IPv4" />
+    <category term="Subnet" />
     <category term="DNS" />
     <category term="SSH" />
     <category term="FTP" />
     <category term="SMTP" />
-    <category term="SQL" />
+    <category term="TCP" />
+    <category term="UDP" />
     <category term="OSI" />
     <category term="TCP/IP" />
-    <category term="JavaScript" />
+    <category term="Network Security" />
+    <category term="SQL" />
     <category term="gdb" />
+    <category term="Blog" />
+    <category term="日常" />
+    <entry>
+        <id>http://example.com/course/Network-Security-Analysis/</id>
+        <title>Network Security Analysis</title>
+        <link rel="alternate" href="http://example.com/course/Network-Security-Analysis/"/>
+        <content type="html">&lt;h1 id=&#34;Layer 3: Network&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Layer 3: Network&#34;&gt;#&lt;/a&gt;Layer 3: Network&lt;/h1&gt;
+&lt;h2 id=&#34;IP&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#IP&#34;&gt;#&lt;/a&gt;IP&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;IP Protocol Features&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Best-effort delivery
+&lt;ul&gt;
+&lt;li&gt;IP routes and sends a packet to the destination. IP provides no guaranteed delivery of packets&lt;/li&gt;
+&lt;li&gt;Packet loss is left to the higher layer protocols&lt;/li&gt;
+&lt;li&gt;The network has variable delays, it is not guaranteed that the packets will be received in sequence.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Connection-less service
+&lt;ul&gt;
+&lt;li&gt;Each packet is individually addressed and routed, rather than in the setup a prearranged connection channel for data transmission&lt;/li&gt;
+&lt;li&gt;It is possible that two packets from the same source take different paths to reach the destination.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Routing
+&lt;ul&gt;
+&lt;li&gt;Packets go through a series of routers before they reach the destination.&lt;/li&gt;
+&lt;li&gt;At each node that the packet passes through, the node determines the next hop for the packet and routes it to the next hop.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Quality of Service (QoS) control
+&lt;ul&gt;
+&lt;li&gt;QoS optimizes the network by setting packet priorities (classification marking)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;IP Fragmentation
+&lt;ol&gt;
+&lt;li&gt;What is IP fragmentation?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Fragmentation is necessary for data transmission, as every network has its maximum transmission unit (MTU), the largest number of bytes an individual packet can have on a particular network&lt;/li&gt;
+&lt;li&gt;If a packet larger than the network’s MTU is being sent, it must be fragmented before transmission.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Who assembles the fragmented packets?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;When the destination host receives IP fragments, it allocates memory in preparation for fragment reassembly.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;IP Spoofing/DoS&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;An attacker can send packets/datagrams from a false source address to disguise itself.&lt;/li&gt;
+&lt;li&gt;Denial-of-service (DoS) attacks often use IP spoofing to overload networks and devices with packets that appear to be from legitimate source IP addresses.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Issues with IPv4 Fragmentation&lt;br&gt;
+Fragmentation causes increase overhead in CPU and memory and slow down network performance.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Intermediate router
+&lt;ul&gt;
+&lt;li&gt;Creates fragment headers&lt;/li&gt;
+&lt;li&gt;Computes checksums&lt;/li&gt;
+&lt;li&gt;Copies the original packet into the fragments&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Receiving host
+&lt;ul&gt;
+&lt;li&gt;When reassembling the fragments the receiver must allocate memory for the arriving fragments and joint together fragments into one packet after all of the fragments are received&lt;/li&gt;
+&lt;li&gt;If one fragment is dropped, the entire original packet must be resent.
+&lt;ul&gt;
+&lt;li&gt;The TTL time exceeded ICMP message (with Fragment reassembly timeout) is sent to the sender.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ARP&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#ARP&#34;&gt;#&lt;/a&gt;ARP&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;ARP&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;IP addresses are used for identifying destination devices across the Internet.&lt;/li&gt;
+&lt;li&gt;MAC addresses are used for direct delivery within the same network.&lt;/li&gt;
+&lt;li&gt;ARP is used to resolve a logical (IP) address of a target host to its physical (MAC) address in a local area network.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;ARP in Direct Delivery&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The sender A and receiver B are located at the same network.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;A requests for B’s MAC address.&lt;/li&gt;
+&lt;li&gt;Once B’s MAC address is resolved, then the data can be delivered from A to B.&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/7638f7e29bc26dab.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;The sender A and receiver B are not located at the same network.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;A requests for gateway’s MAC address. Once G’s MAC address is resolved, then A sends the data to G for data forwarding&lt;/li&gt;
+&lt;li&gt;G requests B’s MAC address. Once B’s MAC address is resolved, then G forwards the data to B&lt;/li&gt;
+&lt;li&gt;Two ARP processes involved&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/a066a6ee19686120.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;More ARP processes&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;A - G1     G1 - G2      G2 - G3      G3 - B&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/94a4b433ddf61059.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ARP Process- Request&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;ARP is a two-step process: a request and a reply.&lt;/li&gt;
+&lt;li&gt;Within a network, when a host (requester) – A, begins a conversation with a target host - B
+&lt;ul&gt;
+&lt;li&gt;A is aware of B’s IP address, but does not have the B’s MAC address. Thus A is unable to send a unicast frame to B.&lt;/li&gt;
+&lt;li&gt;A sends an ARP broadcast frame to request B’s MAC address. Since it is a broadcast, all hosts on the network receives the ARP request.&lt;/li&gt;
+&lt;li&gt;All hosts scan the content of the ARP request to determine if they are the intended target. The hosts which are not the intended target discard the broadcast frame.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;ARP Process - Reply&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;B is the target of the ARP Request. It sends an ARP Reply back to A.&lt;/li&gt;
+&lt;li&gt;Since B knows who sent the initial ARP Request, it is able to send the ARP Response unicast, directly back to A&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;ARP Poisoning&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;ARP Poisoning is also known as ARP Spoofing.&lt;/li&gt;
+&lt;li&gt;A type of attack carried out over a local area network (LAN).&lt;/li&gt;
+&lt;li&gt;It involves sending malicious ARP packets on a LAN to change the mapping of the attacker’s&lt;br&gt;
+MAC address with the IP address of another host&lt;/li&gt;
+&lt;li&gt;攻击过程
+&lt;ul&gt;
+&lt;li&gt;攻击者在局域网中发送伪造的 ARP 数据包，将目标 IP 地址映射到攻击者的 MAC 地址。&lt;/li&gt;
+&lt;li&gt;这样，局域网中的其他主机在访问该 IP 地址时，流量会被引导到攻击者的设备上。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;攻击目的
+&lt;ol&gt;
+&lt;li&gt;中间人攻击（Man-in-the-Middle, MITM）：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;攻击者可以截获、篡改或记录在受害者和目标主机之间传递的数据。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;拒绝服务攻击（DoS）：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;攻击者可以通过阻止合法主机的流量访问目标主机，实现拒绝服务。&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/1e55b1b5b0938dda.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ICMP&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#ICMP&#34;&gt;#&lt;/a&gt;ICMP&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;ICMP Features&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;ICMP is a supporting protocol to support IP.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ICMP messages are encapsulated inside of IP datagrams before going down to the data link layer&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/bd2c3965e1886840.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Assists the diagnosis of some network problems, particularly related to the network layer of the OSI model&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Assists in obtaining specific information from routers and the destination host&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Is used by routers and hosts&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Returns the message to the originator&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Types of ICMP&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;ICMP messages can be broadly classified into 2 types:
+&lt;ul&gt;
+&lt;li&gt;Error reporting&lt;/li&gt;
+&lt;li&gt;Query/Reply&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Time-Exceeded(Error reporting)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;The ICMP Time Exceeded message is issued:
+&lt;ul&gt;
+&lt;li&gt;When a packet is sent, its TTL is decremented by 1 at each hop. If the TTL reaches 0, the packet is dropped and a Time-Exceeded message is sent to the originator.&lt;/li&gt;
+&lt;li&gt;If destination does not receive all fragments in a set time, it drops any received fragments and sends a Time-Exceeded message to the originator&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;ICMP 重定向（ICMP Redirect）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;场景设置
+&lt;ul&gt;
+&lt;li&gt;发送主机 A：IP 地址为 10.0.0.100/24。&lt;/li&gt;
+&lt;li&gt;默认路由：A 的路由表中有一个默认路由条目，指向路由器 G1 的 IP 地址 10.0.0.1/24 作为默认网关。&lt;/li&gt;
+&lt;li&gt;路由器 G1：当需要转发到目标网络 X 时，G1 使用路由器 G2 的 IP 地址 10.0.0.2/24 作为下一跳。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ICMP 重定向过程
+&lt;ul&gt;
+&lt;li&gt;包到达路由器 G1：G1 收到来自主机 A（10.0.0.100）发送的一个数据包，目标是网络 X。&lt;/li&gt;
+&lt;li&gt;路由表检查：G1 检查其路由表，发现下一跳是 G2（IP 地址 10.0.0.2），可以到达目标网络 X。&lt;/li&gt;
+&lt;li&gt;ICMP 重定向消息：如果 G2 和发送主机 A（10.0.0.100）在同一个网络（10.0.0.0/24），G1 会向发送主机 A 发送一个 ICMP 重定向消息，建议 A 将去往网络 X 的流量直接发送到 G2，这样可以减少一个跳数，使流量更直接地到达目标网络。&lt;/li&gt;
+&lt;li&gt;数据包转发：在发送重定向消息的同时，G1 仍会将接收到的数据包转发到 G2，确保当前数据包的传输不中断。&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/bbbcd5f2b66d5d73.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Echo Request/Reply&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;A host or router that receives an echo-request message creates an echo-reply message and returns it to the originator&lt;/li&gt;
+&lt;li&gt;echo-request and echo-reply messages can be used to help diagnose some network problems
+&lt;ul&gt;
+&lt;li&gt;e.g. communication status between two devices&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Testing destination availability and providing status is achieved by invoking a ping command
+&lt;ul&gt;
+&lt;li&gt;Creates a series of echo-request and echo-reply messages providing statistical information&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;Ping（ICMP）泛洪 DDoS 攻击&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;ICMP 操作的类型：熟悉 ICMP 的各种操作类型（例如 Echo 请求 / 回复）有助于识别网络通信中的正常行为和异常行为。&lt;/li&gt;
+&lt;li&gt;正常的 ICMP 交互：了解 ICMP 在发起端与目标主机之间的正常交互方式，例如 ping 操作，能帮助区分合法通信和潜在的恶意流量。&lt;/li&gt;
+&lt;li&gt;异常网络行为识别：当 ICMP 流量异常时（例如，持续的 ping 请求），可能意味着存在攻击行为，如 DDoS 攻击。&lt;/li&gt;
+&lt;li&gt;Ping（ICMP）泛洪 DDoS 攻击&lt;br&gt;
+ Ping 泛洪是一种典型的 DDoS（分布式拒绝服务）攻击，攻击者通过发送大量 ICMP Echo 请求，使目标主机过载，耗尽其资源，导致网络性能下降甚至服务中断。这种攻击利用了 ICMP 的易用性和资源开销低的特性，通过大量的无用流量使目标服务器无法响应正常请求。&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/7150028ff5a5d75b.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;Layer 4: Transport&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Layer 4: Transport&#34;&gt;#&lt;/a&gt;Layer 4: Transport&lt;/h1&gt;
+&lt;h2 id=&#34;TCP&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#TCP&#34;&gt;#&lt;/a&gt;TCP&lt;/h2&gt;
+TCP详细特征在 Layer-4-Transport-Protocols
+&lt;p&gt;对 TCP 的威胁：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;TCP 序列号预测：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;攻击者可能能够猜测 TCP 分配给数据包流的序列号。&lt;/li&gt;
+&lt;li&gt;如果攻击者成功预测了正在进行的通信会话的序列号，可以进行&lt;strong&gt;注入&lt;/strong&gt;攻击，将篡改或伪造的数据插入数据流中，从而影响数据的完整性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;SYN Flooding DoS 攻击：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;SYN 泛洪是一种拒绝服务（DoS）攻击，通过向服务器发送大量伪造的 TCP SYN 请求，占用服务器的资源。&lt;/li&gt;
+&lt;li&gt;在 SYN Flooding 攻击中，攻击者连续发送 SYN 请求，服务器响应 SYN-ACK，但攻击者不回复 ACK 确认，导致连接未完成并占用资源。&lt;/li&gt;
+&lt;li&gt;这种攻击会使服务器资源耗尽，导致其无法响应合法用户的请求&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/66fe7ac2f80b1dd1.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;Layer 7: Application&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Layer 7: Application&#34;&gt;#&lt;/a&gt;Layer 7: Application&lt;/h1&gt;
+&lt;h2 id=&#34;DHCP&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#DHCP&#34;&gt;#&lt;/a&gt;DHCP&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;DHCP Message Format&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/d8ed49e7d0fc10b8.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Threats to
+&lt;ol&gt;
+&lt;li&gt;DHCP - DHCP 欺骗（DHCP Spoofing）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;DHCP 欺骗是一种网络攻击，攻击者通过在网络中插入一个伪造的 DHCP 服务器来控制或截获网络流量。以下是攻击过程：
+&lt;ol&gt;
+&lt;li&gt;伪造的 DHCP 服务器：攻击者在网络中设置一个伪造的 DHCP 服务器，伪装成合法的 DHCP 服务器。&lt;/li&gt;
+&lt;li&gt;响应 DHCP 请求：当客户端发送 DHCP 请求时，伪造的 DHCP 服务器会快速响应，试图将自己设为客户端的默认网关或 DNS 服务器。&lt;/li&gt;
+&lt;li&gt;中间人攻击：通过设置默认网关或 DNS，攻击者可以截获并控制客户端的网络流量，作为中间人，拦截用户与实际网关之间的数据。这样，攻击者可以监视、篡改或阻断用户的网络流量。&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/3e9cd9116e8ed666.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;DHCP 耗尽攻击（DHCP Starvation Attack）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;DHCP 耗尽攻击是一种拒绝服务攻击，攻击者利用多个 “从属主机” 向 DHCP 服务器发送大量 IP 地址请求，直到耗尽服务器的地址池。以下是攻击的具体过程：
+&lt;ol&gt;
+&lt;li&gt;大量请求：攻击者通过从属主机或伪造的 MAC 地址向 DHCP 服务器不断请求新的 IP 地址。&lt;/li&gt;
+&lt;li&gt;地址池耗尽：随着大量虚假请求的积累，DHCP 服务器的 IP 地址池逐渐被占满。&lt;/li&gt;
+&lt;li&gt;合法用户无法连接：由于服务器没有可分配的 IP 地址，合法客户端无法从 DHCP 服务器获得 IP 地址，从而无法连接到网络。&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/298943f7c02b1624.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;DNS&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#DNS&#34;&gt;#&lt;/a&gt;DNS&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;名称解析响应类型&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;权威响应（Authoritative Response）：
+&lt;ul&gt;
+&lt;li&gt;这种响应来自于被查询域名的权威 DNS 服务器。&lt;/li&gt;
+&lt;li&gt;权威响应表明该 DNS 服务器对该域的 DNS 记录拥有直接管理权限，因此返回的数据是准确和最新的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;非权威响应（Non-authoritative Response）：
+&lt;ul&gt;
+&lt;li&gt;这种响应并非来自被查询域名的权威 DNS 服务器，而是来自缓存服务器或中间服务器。&lt;/li&gt;
+&lt;li&gt;非权威响应通常是其他 DNS 服务器缓存的数据，可能并非实时更新，但可以加速查询过程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;非权威响应示例&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;首次查询
+&lt;ol&gt;
+&lt;li&gt;查询请求：客户端请求 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5pYm0uY29t&#34;&gt;www.ibm.com&lt;/span&gt; 的 IP 地址。&lt;/li&gt;
+&lt;li&gt;查询根服务器：本地 DNS 服务器向根服务器查询 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5pYm0uY29t&#34;&gt;www.ibm.com&lt;/span&gt; 的地址。&lt;/li&gt;
+&lt;li&gt;指向顶级域（TLD）服务器：根服务器返回可查询的 com 顶级域服务器列表。&lt;/li&gt;
+&lt;li&gt;查询 com 顶级域服务器：本地 DNS 服务器向 com TLD 服务器查询 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5pYm0uY29t&#34;&gt;www.ibm.com&lt;/span&gt;。&lt;/li&gt;
+&lt;li&gt;指向 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2libS5jb20=&#34;&gt;ibm.com&lt;/span&gt; 的权威 DNS 服务器：com TLD 服务器提供 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2libS5jb20=&#34;&gt;ibm.com&lt;/span&gt; 权威 DNS 服务器地址。&lt;/li&gt;
+&lt;li&gt;查询 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2libS5jb20=&#34;&gt;ibm.com&lt;/span&gt; 的 DNS 服务器：本地 DNS 服务器向 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2libS5jb20=&#34;&gt;ibm.com&lt;/span&gt; 的 DNS 服务器请求 IP 地址。&lt;/li&gt;
+&lt;li&gt;解析完成：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2libS5jb20=&#34;&gt;ibm.com&lt;/span&gt; 的权威 DNS 服务器返回 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5pYm0uY29t&#34;&gt;www.ibm.com&lt;/span&gt; 的 IP 地址 129.42.38.10。&lt;/li&gt;
+&lt;li&gt;返回 IP 地址：本地 DNS 服务器将该 IP 地址返回给客户端。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;缓存和非权威响应
+&lt;ul&gt;
+&lt;li&gt;本地 DNS 服务器会将查询结果缓存一段时间。&lt;/li&gt;
+&lt;li&gt;如果在缓存有效期内再次请求 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5pYm0uY29t&#34;&gt;www.ibm.com&lt;/span&gt;，本地 DNS 服务器直接从缓存中返回 IP 地址，此时的响应即为非权威响应。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Vulnerabilities/Threats in DNS&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;DNS 方案的基本漏洞：
+&lt;ul&gt;
+&lt;li&gt;缺乏身份验证：DNS 没有内置的身份验证机制，使得攻击者更容易伪装。&lt;/li&gt;
+&lt;li&gt;缺乏响应的真实性和完整性检查：DNS 响应数据没有经过加密或验证，容易被篡改。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;DNS 缓存污染攻击（DNS Cache Poisoning）：
+&lt;ul&gt;
+&lt;li&gt;原理：攻击者更改 DNS 服务器或 DNS 缓存服务器上的记录，使网络流量从合法的服务器重定向到恶意网站。&lt;/li&gt;
+&lt;li&gt;效果：用户无意间访问到钓鱼网站，可能泄露敏感信息。&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/2e4f0ec78949c3fe.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;DNS 泛洪攻击（DNS Flood Attack）：
+&lt;ul&gt;
+&lt;li&gt;原理：利用 DoS/DDoS 攻击，通过大量请求过载网络，耗尽网络容量和服务器资源。&lt;/li&gt;
+&lt;li&gt;效果：合法用户无法访问 DNS 服务，导致网络中断。&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/6ed8673589f212d0.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;DNS 欺骗（DNS Spoofing）：
+&lt;ul&gt;
+&lt;li&gt;原理：攻击者伪装成合法的 DNS 服务器，向客户端提供虚假的 DNS 响应。&lt;/li&gt;
+&lt;li&gt;效果：用户可能被引导到虚假网站，面临数据泄露和安全威胁。&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/fc1bec998cfbdd83.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;Summary&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Summary&#34;&gt;#&lt;/a&gt;Summary&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Summary - Protocol Threats&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Protocol&lt;/th&gt;
+&lt;th&gt;Threats&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;IP&lt;/td&gt;
+&lt;td&gt;IP Spoofing attack 、 Fragmentation attack&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ARP&lt;/td&gt;
+&lt;td&gt;ARP Cache-poisoning attack  、 MITM (Man-in-the-Middle) attack&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ICMP&lt;/td&gt;
+&lt;td&gt;Redirect attack  、 Ping of death attack&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TCP&lt;/td&gt;
+&lt;td&gt;Predicting TCP Sequences  、 TCP SYN Flood attack&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DHCP&lt;/td&gt;
+&lt;td&gt;DHCP Spoofing  、 Starvation attack&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DNS&lt;/td&gt;
+&lt;td&gt;DNS Cache Poisoning  、 DNS Flood attack  、 DNS Spoofing&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Summary- Security attacks&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Active attack
+&lt;ul&gt;
+&lt;li&gt;involves data modification or the creation of a false stream, e.g.
+&lt;ul&gt;
+&lt;li&gt;masquerade, replay, modification of messages, man-in-the-middle (MITM) and DoS/DDoS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Passive attack
+&lt;ul&gt;
+&lt;li&gt;attempts to learn or make use of information from the system but does not affect system resources, e.g. traffic analysis, release of information contents&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="network system" />
+        <category term="IP" />
+        <category term="DHCP" />
+        <category term="ICMP" />
+        <category term="ARP" />
+        <category term="DNS" />
+        <category term="TCP" />
+        <category term="Network Security" />
+        <updated>2024-11-04T12:02:06.000Z</updated>
+    </entry>
     <entry>
         <id>http://example.com/course/Layer-3-IP-Addressing-and-IP-related-Protocols/</id>
-        <title>(Layer 3) IP Addressing and IP-related Protocols</title>
+        <title>Layer 3 - IP Addressing and IP-related Protocols</title>
         <link rel="alternate" href="http://example.com/course/Layer-3-IP-Addressing-and-IP-related-Protocols/"/>
         <content type="html">&lt;h1 id=&#34;IP (Internet Protocol) Addressing&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#IP (Internet Protocol) Addressing&#34;&gt;#&lt;/a&gt;IP (Internet Protocol) Addressing&lt;/h1&gt;
-
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Four addressing methods innetworking&lt;/p&gt;
+&lt;li&gt;Four addressing methods innetworking&lt;/li&gt;
+&lt;/ol&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -50,7 +509,8 @@
 &lt;th&gt;地址类型&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
 &lt;td&gt;应用层 (Layer 7)&lt;/td&gt;
 &lt;td&gt;Domain names, computer names, host names&lt;/td&gt;
 &lt;/tr&gt;
@@ -66,29 +526,29 @@
 &lt;td&gt;数据链路层 (Layer 2)&lt;/td&gt;
 &lt;td&gt;MAC 地址&lt;/td&gt;
 &lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Static IP addresses are assigned manually by the network administrator&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Dynamic IP addresses are assigned automatically by a DHCP server&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The Internet Assigned Numbers Authority (IANA)&lt;/p&gt;
-&lt;/li&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Static IP addresses are assigned manually by the network administrator&lt;br&gt;
+Dynamic IP addresses are assigned automatically by a DHCP server&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;The Internet Assigned Numbers Authority (IANA)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;IANA delegates 5 regional Internet registries (RIRs)&lt;ul&gt;
-&lt;li&gt;RIRs allocate address blocks to Local Internet Registries &amp;#x2F; National Internet registry&lt;table&gt;
+&lt;li&gt;IANA delegates 5 regional Internet registries (RIRs)
+&lt;ul&gt;
+&lt;li&gt;RIRs allocate address blocks to Local Internet Registries / National Internet registry&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Internet Registry&lt;/th&gt;
 &lt;th&gt;Region&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
 &lt;td&gt;African Network Information Centre (AfriNIC)&lt;/td&gt;
 &lt;td&gt;Africa&lt;/td&gt;
 &lt;/tr&gt;
@@ -108,19 +568,20 @@
 &lt;td&gt;Réseaux IP Européens Network Coordination Centre (RIPE NCC)&lt;/td&gt;
 &lt;td&gt;Europe, Russia, the Middle East, and Central Asia&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Hierarchy of addressing Scheme&lt;br&gt;&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/01/6724cb8ea345d.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;Hierarchy of addressing Scheme&lt;br&gt;
+&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/01/6724cb8ea345d.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;Roles of the Network Layer&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;The Network layer is where administrators usually do the most network configuration&lt;/li&gt;
-&lt;li&gt;This layer is where the IP protocol operates and is the heart of the TCP&amp;#x2F;IP protocol suite&lt;/li&gt;
-&lt;li&gt;The Network layer is responsible for four main tasks:&lt;ul&gt;
+&lt;li&gt;This layer is where the IP protocol operates and is the heart of the TCP/IP protocol suite&lt;/li&gt;
+&lt;li&gt;The Network layer is responsible for four main tasks:
+&lt;ul&gt;
 &lt;li&gt;It defines and verifies IP addresses&lt;/li&gt;
 &lt;li&gt;It routes packets through an internetwork&lt;/li&gt;
 &lt;li&gt;It resolves MAC addresses from IP addresses&lt;/li&gt;
@@ -132,18 +593,21 @@
 &lt;li&gt;Define and Verify IP Addresses&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;An IP address is assigned to every computer and network device using TCP&amp;#x2F;IP for communications&lt;/li&gt;
-&lt;li&gt;IP addresses are used for two main purposes:&lt;ul&gt;
+&lt;li&gt;An IP address is assigned to every computer and network device using TCP/IP for communications&lt;/li&gt;
+&lt;li&gt;IP addresses are used for two main purposes:
+&lt;ul&gt;
 &lt;li&gt;To identify a network device at the Internetwork layer&lt;/li&gt;
 &lt;li&gt;To identify the network on which a device resides&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;When a device receives an IP packet, it compares the destination IP address with its own:&lt;ul&gt;
+&lt;li&gt;When a device receives an IP packet, it compares the destination IP address with its own:
+&lt;ul&gt;
 &lt;li&gt;If it matches or is a broadcast, the packet is processed&lt;/li&gt;
 &lt;li&gt;It is does not match then the packet is discarded&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Every IP address contains two parts:&lt;ul&gt;
+&lt;li&gt;Every IP address contains two parts:
+&lt;ul&gt;
 &lt;li&gt;A network ID&lt;/li&gt;
 &lt;li&gt;A host ID&lt;/li&gt;
 &lt;/ul&gt;
@@ -155,7 +619,8 @@
 &lt;ul&gt;
 &lt;li&gt;The Network layer determines the best way to get a packet from network to network until it reaches its destination&lt;/li&gt;
 &lt;li&gt;Most large internetworks (the Internet) have multiple paths for getting from one network to another&lt;/li&gt;
-&lt;li&gt;Routers work at the Network layer&lt;ul&gt;
+&lt;li&gt;Routers work at the Network layer
+&lt;ul&gt;
 &lt;li&gt;It is routers’ job to select the best path to the destination&lt;/li&gt;
 &lt;li&gt;Routers use the network ID portion of IP addresses along with their routing tables to determine the best path&lt;/li&gt;
 &lt;/ul&gt;
@@ -167,81 +632,92 @@
 &lt;ul&gt;
 &lt;li&gt;Every frame contains both physical (MAC) and logical (IP) source and destination addresses&lt;/li&gt;
 &lt;li&gt;When a packet is ready to be sent to the Network access layer, the destination device’s MAC address must be retrieved before the frame header can be constructed&lt;/li&gt;
-&lt;li&gt;TCP&amp;#x2F;IP uses Address Resolution Protocol (ARP) to find MAC addresses&lt;/li&gt;
+&lt;li&gt;TCP/IP uses Address Resolution Protocol (ARP) to find MAC addresses&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;7&#34;&gt;
 &lt;li&gt;Deliver Packets Efficiently&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;Network-layer protocols primarily focus on efficient delivery of packets&lt;ul&gt;
-&lt;li&gt;Features such as flow control, delivery confirmation or message assembly are &lt;strong&gt;not&lt;/strong&gt; included in Network-layer protocols&lt;ul&gt;
+&lt;li&gt;Network-layer protocols primarily focus on efficient delivery of packets
+&lt;ul&gt;
+&lt;li&gt;Features such as flow control, delivery confirmation or message assembly are &lt;strong&gt;not&lt;/strong&gt; included in Network-layer protocols
+&lt;ul&gt;
 &lt;li&gt;These features require overhead to ensure reliable delivery&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Network-layer protocols rely on the protocols in the Transport and Application layers to provide reliability features&lt;ul&gt;
+&lt;li&gt;Network-layer protocols rely on the protocols in the Transport and Application layers to provide reliability features
+&lt;ul&gt;
 &lt;li&gt;They are considered connectionless protocols, which rely on upper-layer protocols to ensure the safe journey of packets&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;IP (Internet Protocol)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#IP (Internet Protocol)&#34;&gt;#&lt;/a&gt;IP (Internet Protocol)&lt;/h1&gt;
-
 &lt;h2 id=&#34;IPv4&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#IPv4&#34;&gt;#&lt;/a&gt;IPv4&lt;/h2&gt;
-
 &lt;ol&gt;
 &lt;li&gt;IPv4 Addresses&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;An IPv4 address is represented by 32 bits (&amp;#x3D;4 bytes)&lt;ul&gt;
-&lt;li&gt;IPv4地址分为4个字节块（每个块8位），每个块用点分隔。&lt;/li&gt;
+&lt;li&gt;An IPv4 address is represented by 32 bits (=4 bytes)
+&lt;ul&gt;
+&lt;li&gt;IPv4 地址分为 4 个字节块（每个块 8 位），每个块用点分隔。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;For example&lt;ol&gt;
-&lt;li&gt;Binary: &lt;code&gt;00000001.00000010.10010101.11111111&lt;/code&gt;&lt;br&gt; Decimal: &lt;code&gt;1.2.149.255&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;11000000 . 10101000 . 00000001 . 00000001&lt;br&gt; 192.168.1.1&lt;/li&gt;
+&lt;li&gt;For example
+&lt;ol&gt;
+&lt;li&gt;Binary:  &lt;code&gt;00000001.00000010.10010101.11111111&lt;/code&gt; &lt;br&gt;
+Decimal:  &lt;code&gt;1.2.149.255&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;11000000 . 10101000 . 00000001 . 00000001&lt;br&gt;
+192.168.1.1&lt;br&gt;
+&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/67258b5520113.png&#34; alt=&#34;img&#34;&gt;&lt;br&gt;
+Classes A, B and C licensed IP addresses are available for use on the Internet. Called public IP address&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/67258b5520113.png&#34; alt=&#34;img&#34;&gt;&lt;br&gt;Classes A, B and C licensed IP addresses are available for use on the Internet. Called public IP address&lt;/p&gt;
+&lt;li&gt;A 类地址
 &lt;ul&gt;
-&lt;li&gt;A类地址&lt;ul&gt;
-&lt;li&gt;网络ID：8位（第2到第8位），主机ID：24位。&lt;/li&gt;
+&lt;li&gt;网络 ID：8 位（第 2 到第 8 位），主机 ID：24 位。&lt;/li&gt;
 &lt;li&gt;地址范围：1.x.y.z – 126.x.y.z。&lt;/li&gt;
-&lt;li&gt;可用网络数：126个。&lt;/li&gt;
+&lt;li&gt;可用网络数：126 个。&lt;/li&gt;
 &lt;li&gt;适用场景：大型网络（如互联网服务提供商和政府机构）。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;B类地址&lt;ul&gt;
-&lt;li&gt;网络ID：16位（第3到第16位），主机ID：16位。&lt;/li&gt;
+&lt;li&gt;B 类地址
+&lt;ul&gt;
+&lt;li&gt;网络 ID：16 位（第 3 到第 16 位），主机 ID：16 位。&lt;/li&gt;
 &lt;li&gt;地址范围：128.0.y.z – 191.255.y.z。&lt;/li&gt;
-&lt;li&gt;可用网络数：16,000个。&lt;/li&gt;
+&lt;li&gt;可用网络数：16,000 个。&lt;/li&gt;
 &lt;li&gt;适用场景：中型网络（如中型企业和大学）。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;C类地址&lt;ul&gt;
-&lt;li&gt;网络ID：24位（第4到第24位），主机ID：8位。&lt;/li&gt;
+&lt;li&gt;C 类地址
+&lt;ul&gt;
+&lt;li&gt;网络 ID：24 位（第 4 到第 24 位），主机 ID：8 位。&lt;/li&gt;
 &lt;li&gt;地址范围：192.0.0.z – 223.255.255.z。&lt;/li&gt;
-&lt;li&gt;可用网络数：约2百万个。&lt;/li&gt;
+&lt;li&gt;可用网络数：约 2 百万个。&lt;/li&gt;
 &lt;li&gt;适用场景：小型网络（如小型企业和家庭网络）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;D类地址&lt;ul&gt;
+&lt;li&gt;D 类地址
+&lt;ul&gt;
 &lt;li&gt;用途：多播地址。&lt;/li&gt;
 &lt;li&gt;地址范围：224.0.0.0 – 239.255.255.255。&lt;/li&gt;
-&lt;li&gt;网络结构：没有网络ID和主机ID，专用于多播。&lt;/li&gt;
+&lt;li&gt;网络结构：没有网络 ID 和主机 ID，专用于多播。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;E类地址&lt;ul&gt;
+&lt;li&gt;E 类地址
+&lt;ul&gt;
 &lt;li&gt;用途：实验用途。&lt;/li&gt;
 &lt;li&gt;地址范围：240.0.0.0 – 255.255.255.255。&lt;/li&gt;
 &lt;li&gt;说明：保留用于研究和实验，未用于常规互联网流量。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;在 IPv4 地址中，127.x.y.z 地址范围（通常是 127.0.0.0 到 127.255.255.255）是保留用于本地主机环回（loopback）测试的特殊地址段。这些地址不会在网络上发送数据包，而是用于本地主机的自我通信，主要目的是测试本地网络堆栈和网络接口卡的功能。&lt;ul&gt;
-&lt;li&gt;127.x.y.z 的特点&lt;ul&gt;
+&lt;li&gt;在 IPv4 地址中，127.x.y.z 地址范围（通常是 127.0.0.0 到 127.255.255.255）是保留用于本地主机环回（loopback）测试的特殊地址段。这些地址不会在网络上发送数据包，而是用于本地主机的自我通信，主要目的是测试本地网络堆栈和网络接口卡的功能。
+&lt;ul&gt;
+&lt;li&gt;127.x.y.z 的特点
+&lt;ul&gt;
 &lt;li&gt;环回地址：127.0.0.1 是最常用的环回地址，用于指向本地主机。&lt;/li&gt;
-&lt;li&gt;网络测试：使用127.x.y.z范围内的地址，系统可以在不通过实际网络的情况下测试网络配置。&lt;/li&gt;
+&lt;li&gt;网络测试：使用 127.x.y.z 范围内的地址，系统可以在不通过实际网络的情况下测试网络配置。&lt;/li&gt;
 &lt;li&gt;不可路由：127.x.y.z 地址段不会在互联网上路由，数据包始终保持在本地。&lt;/li&gt;
 &lt;li&gt;因此，127.x.y.z 地址不属于 A、B、C、D 或 E 类中的网络分配，而是专门保留给环回功能。&lt;/li&gt;
 &lt;/ul&gt;
@@ -256,13 +732,14 @@
 &lt;th&gt;功能描述&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
 &lt;td&gt;255.255.255.255&lt;/td&gt;
-&lt;td&gt;用于广播消息，TCP&amp;#x2F;IP 后台进程会使用该地址发送广播消息，网络中的每个节点都会接收该消息。&lt;/td&gt;
+&lt;td&gt;用于广播消息，TCP/IP 后台进程会使用该地址发送广播消息，网络中的每个节点都会接收该消息。&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;0.0.0.0&lt;/td&gt;
-&lt;td&gt;表示当前未分配的地址，一般用于指代“所有 IPv4 地址”或“未知地址”。&lt;/td&gt;
+&lt;td&gt;表示当前未分配的地址，一般用于指代 “所有 IPv4 地址” 或 “未知地址”。&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;127.0.0.1 至 127.255.255.254&lt;/td&gt;
@@ -272,9 +749,13 @@
 &lt;td&gt;169.254.0.1 至 169.254.255.254&lt;/td&gt;
 &lt;td&gt;当设备配置为动态主机配置协议（DHCP）且无法从 DHCP 服务器获取地址时，会自动分配此范围内的地址（APIPA）。&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Private IP addresses&lt;br&gt;在私有网络中，公司可以使用私有 IP 地址。这些地址在互联网上不进行路由，仅限于局域网内使用。&lt;br&gt;IEEE 推荐的私有 IP 地址范围：&lt;/p&gt;
+&lt;li&gt;Private IP addresses&lt;br&gt;
+ 在私有网络中，公司可以使用私有 IP 地址。这些地址在互联网上不进行路由，仅限于局域网内使用。&lt;br&gt;
+IEEE 推荐的私有 IP 地址范围：&lt;/li&gt;
+&lt;/ul&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -282,7 +763,8 @@
 &lt;th&gt;用途&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
 &lt;td&gt;10.0.0.0 至 10.255.255.255&lt;/td&gt;
 &lt;td&gt;用于大型私有网络&lt;/td&gt;
 &lt;/tr&gt;
@@ -294,9 +776,12 @@
 &lt;td&gt;192.168.0.0 至 192.168.255.255&lt;/td&gt;
 &lt;td&gt;用于小型私有网络（如家庭网络）&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Network Address Translation (NAT)&lt;br&gt;网络地址转换 (NAT) 允许具有私有 IP 地址的主机访问互联网。私有 IP 地址在互联网上不可见，NAT充当连接私有网络和公共网络的桥梁&lt;/p&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;Network Address Translation (NAT)&lt;br&gt;
+ 网络地址转换 (NAT) 允许具有私有 IP 地址的主机访问互联网。私有 IP 地址在互联网上不可见，NAT 充当连接私有网络和公共网络的桥梁&lt;/li&gt;
+&lt;/ul&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -304,7 +789,8 @@
 &lt;th&gt;描述&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
 &lt;td&gt;SNAT (静态 NAT)&lt;/td&gt;
 &lt;td&gt;每次主机请求访问互联网时，分配相同的公共 IP 地址。&lt;/td&gt;
 &lt;/tr&gt;
@@ -312,28 +798,31 @@
 &lt;td&gt;DNAT (动态 NAT)&lt;/td&gt;
 &lt;td&gt;使用一个公共 IP 地址池，动态地为本地主机分配公共 IP 地址。&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/67258fc64dac0.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;Classless Addressing and Subnet Mask&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;Using classful addresses is a waste of IP address resource&lt;/li&gt;
-&lt;li&gt;Today, IP addresses are used as classless addresses&lt;ul&gt;
+&lt;li&gt;Today, IP addresses are used as classless addresses
+&lt;ul&gt;
 &lt;li&gt;Clients do not apply for particular class of addresses. Instead, getting IP addresses from an ISP&lt;/li&gt;
 &lt;li&gt;Most ISPs have already applied for a pool of IP addresses that can be leased to clients&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;For classless address, use a network mask to determine which part of address denoted the network portion&lt;ul&gt;
+&lt;li&gt;For classless address, use a network mask to determine which part of address denoted the network portion
+&lt;ul&gt;
 &lt;li&gt;32-bit number&lt;/li&gt;
 &lt;li&gt;1 signifies the networking bit in the address&lt;/li&gt;
 &lt;li&gt;0 signifies the host bits in the address&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Masking is a process to extract the address of the physical network from an IP address&lt;/li&gt;
-&lt;li&gt;Usually when a router forwards packets from one network to another, it uses this masking to identify if the packets belong to its network or not&lt;table&gt;
+&lt;li&gt;Usually when a router forwards packets from one network to another, it uses this masking to identify if the packets belong to its network or not&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;类别&lt;/th&gt;
@@ -341,7 +830,8 @@
 &lt;th&gt;二进制模式&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
 &lt;td&gt;A&lt;/td&gt;
 &lt;td&gt;255.0.0.0&lt;/td&gt;
 &lt;td&gt;11111111 00000000 00000000 00000000&lt;/td&gt;
@@ -356,13 +846,24 @@
 &lt;td&gt;255.255.255.0&lt;/td&gt;
 &lt;td&gt;11111111 11111111 11111111 00000000&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/li&gt;
-&lt;li&gt;Example&lt;ul&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;Example
+&lt;ul&gt;
 &lt;li&gt;掩码的工作原理：路由器可以通过掩码判断数据包是否属于其网络。某网络地址是 131.181.x.x，这是一个 B 类地址，其默认网络掩码为 255.255.0.0。&lt;/li&gt;
 &lt;li&gt;IP 地址：131.181.112.6（十进制）或 10000011 10110101 01110000 00000110（二进制）&lt;/li&gt;
 &lt;li&gt;网络掩码：255.255.0.0（十进制）或 11111111 11111111 00000000 00000000（二进制）&lt;/li&gt;
-&lt;li&gt;通过 逻辑与（AND）操作 提取网络地址：&lt;br&gt;将 IP 地址和掩码逐位进行 AND 运算：&lt;br&gt;10000011 10110101 01110000 00000110（IP 地址）&lt;br&gt;11111111 11111111 00000000 00000000（掩码）&lt;br&gt;结果：10000011 10110101 00000000 00000000（网络地址）&lt;br&gt;网络地址：131.181.0.0&lt;table&gt;
+&lt;li&gt;通过 逻辑与（AND）操作 提取网络地址：&lt;br&gt;
+将 IP 地址和掩码逐位进行 AND 运算：&lt;br&gt;
+10000011 10110101 01110000 00000110（IP 地址）&lt;br&gt;
+11111111 11111111 00000000 00000000（掩码）&lt;br&gt;
+结果：10000011 10110101 00000000 00000000（网络地址）&lt;br&gt;
+网络地址：131.181.0.0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;A&lt;/th&gt;
@@ -370,7 +871,8 @@
 &lt;th&gt;A AND B&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
 &lt;td&gt;0&lt;/td&gt;
 &lt;td&gt;0&lt;/td&gt;
 &lt;td&gt;0&lt;/td&gt;
@@ -390,22 +892,23 @@
 &lt;td&gt;1&lt;/td&gt;
 &lt;td&gt;1&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Representation of classless addresses&lt;ol&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;Representation of classless addresses
+&lt;ol&gt;
 &lt;li&gt;Address with a subnet mask&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;131.181.12.1 subnet mask 255.255.0.0&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Address with a &amp;#x2F; (slash) representation&lt;/li&gt;
+&lt;li&gt;Address with a / (slash) representation&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;131.181.12.1&amp;#x2F;16&lt;/li&gt;
-&lt;li&gt;&amp;#x2F;16 means that the first 16 bits are representing the network portion&lt;br&gt;&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/6725988122218.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;li&gt;131.181.12.1/16&lt;/li&gt;
+&lt;li&gt;/16 means that the first 16 bits are representing the network portion&lt;br&gt;
+&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/6725988122218.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol&gt;
 &lt;li&gt;Hosts A 和 B 是否在同一网络中？&lt;/li&gt;
@@ -425,40 +928,47 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;IPv6&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#IPv6&#34;&gt;#&lt;/a&gt;IPv6&lt;/h2&gt;
-
 &lt;ul&gt;
-&lt;li&gt;An IPv6 address is represented by 128 bits (&amp;#x3D;16 bytes)&lt;ul&gt;
+&lt;li&gt;An IPv6 address is represented by 128 bits (=16 bytes)
+&lt;ul&gt;
 &lt;li&gt;Organized in 8 blocks&lt;/li&gt;
-&lt;li&gt;Each block consists of 2 bytes (&amp;#x3D;16 bits) represented by a hexadecimal number&lt;ul&gt;
+&lt;li&gt;Each block consists of 2 bytes (=16 bits) represented by a hexadecimal number
+&lt;ul&gt;
 &lt;li&gt;2001:0000:0B80:0000:0000:00D3:9C5A:00CC&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;If blocks contain all zeroes, they can be written as double colons (::), only one set of double colons is used in an I P address&lt;ul&gt;
+&lt;li&gt;If blocks contain all zeroes, they can be written as double colons (:😃, only one set of double colons is used in an I P address
+&lt;ul&gt;
 &lt;li&gt;2001::B80:0000:0000:D3:9C5A:CC&lt;/li&gt;
 &lt;li&gt;2001:0000:B80::D3:9C5A:CC (preferred method because it contains fewest zeroes)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Co-existence of IPv4 and IPv6&lt;ol&gt;
-&lt;li&gt;Dual stack: A network is configured to use both I Pv4 and IPv6&lt;br&gt;&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/67259c726bfc0.png&#34; alt=&#34;image&#34;&gt;&lt;br&gt;适用于需要与 IPv4 和 IPv6 网络都兼容的网络环境&lt;/li&gt;
-&lt;li&gt;Tunnelling: A method used by IPv6 to transport IPv6 packets through or over an IPv4 network&lt;br&gt;&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/67259c7288d2e.png&#34; alt=&#34;image&#34;&gt;&lt;br&gt;适用于尚未完全升级到 IPv6 的网络，以便在 IPv4 网络上实现 IPv6 通信&lt;/li&gt;
+&lt;li&gt;Co-existence of IPv4 and IPv6
+&lt;ol&gt;
+&lt;li&gt;Dual stack: A network is configured to use both I Pv4 and IPv6&lt;br&gt;
+&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/67259c726bfc0.png&#34; alt=&#34;image&#34;&gt;&lt;br&gt;
+ 适用于需要与 IPv4 和 IPv6 网络都兼容的网络环境&lt;/li&gt;
+&lt;li&gt;Tunnelling: A method used by IPv6 to transport IPv6 packets through or over an IPv4 network&lt;br&gt;
+&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/67259c7288d2e.png&#34; alt=&#34;image&#34;&gt;&lt;br&gt;
+ 适用于尚未完全升级到 IPv6 的网络，以便在 IPv4 网络上实现 IPv6 通信&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;Internet Protocol&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Internet Protocol&#34;&gt;#&lt;/a&gt;Internet Protocol&lt;/h2&gt;
-
-
 &lt;ol&gt;
 &lt;li&gt;IP (Internet Protocol)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;IP operates at the Network layer of the OSI model:&lt;ul&gt;
+&lt;li&gt;IP operates at the Network layer of the OSI model:
+&lt;ul&gt;
 &lt;li&gt;It specifies where data should be delivered to&lt;/li&gt;
 &lt;li&gt;It identifies the data’s source and destination IP addresses&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;IP implements two basic functions:&lt;ul&gt;
+&lt;li&gt;IP implements two basic functions:
+&lt;ul&gt;
 &lt;li&gt;Addressing: Each network device is given an IP address&lt;/li&gt;
 &lt;li&gt;Fragmentation: A large-size datagram is broken down to small ones for forwarding&lt;/li&gt;
 &lt;/ul&gt;
@@ -468,40 +978,46 @@
 &lt;li&gt;Features of IP&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;IP enables TCP&amp;#x2F;IP to internetwork&lt;ul&gt;
+&lt;li&gt;IP enables TCP/IP to internetwork
+&lt;ul&gt;
 &lt;li&gt;The Internet is largely based on the IP protocol&lt;/li&gt;
-&lt;li&gt;It enables to traverse&lt;ul&gt;
+&lt;li&gt;It enables to traverse
+&lt;ul&gt;
 &lt;li&gt;more than one LAN segment, and&lt;/li&gt;
 &lt;li&gt;more than one type of network through a router&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;IP addresses are not really needed for communication within a LAN&lt;ul&gt;
+&lt;li&gt;IP addresses are not really needed for communication within a LAN
+&lt;ul&gt;
 &lt;li&gt;MAC addresses are sufficient in this case&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;IP is an unreliable, connectionless protocol&lt;ul&gt;
+&lt;li&gt;IP is an unreliable, connectionless protocol
+&lt;ul&gt;
 &lt;li&gt;This means that IP does not guarantee delivery of data and no session is established before data is transmitted&lt;/li&gt;
 &lt;li&gt;IP depends on TCP to ensure messages are put back together in the right order and to ensure each message reaches the correct application on the receiving host&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;IP Header&lt;br&gt;&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/6725a2a0e124d.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;li&gt;IP Header&lt;br&gt;
+&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/6725a2a0e124d.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;IHL (Internet Header Length)&lt;/strong&gt;: 表示 IP 头部的长度。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Total Length Field&lt;/strong&gt;: 指数据包的总长度，包括头部和数据部分。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Identification&lt;/strong&gt;: 每个数据包被赋予一个唯一的 ID。若数据包被分片，每个分片都拥有相同的 ID 以便重组。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Time to Live (TTL)&lt;/strong&gt;: 数据包的生命周期（生存时间），每经过一个路由器，该值减少1，TTL为0时数据包将被丢弃，防止数据包在网络中无限循环。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Time to Live (TTL)&lt;/strong&gt;: 数据包的生命周期（生存时间），每经过一个路由器，该值减少 1，TTL 为 0 时数据包将被丢弃，防止数据包在网络中无限循环。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Protocol Field&lt;/strong&gt;: 指定传输层协议类型（如 TCP 或 UDP），以便路由器知道数据包应该由哪个传输层协议处理。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;Maximum Transmission Unit (MTU)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;MTU is the size of the largest protocol data unit (PDU) that can be communicated in a single network-layer transaction&lt;ul&gt;
+&lt;li&gt;MTU is the size of the largest protocol data unit (PDU) that can be communicated in a single network-layer transaction
+&lt;ul&gt;
 &lt;li&gt;Similar to the maximum Parcel Size in the postal system&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -513,7 +1029,8 @@
 &lt;ul&gt;
 &lt;li&gt;If a datagram is being sent that is larger than the receiving server’s MTU, it has to be fragmented in order to be transmitted completely.&lt;/li&gt;
 &lt;li&gt;Fragmentation is necessary for data transmission, as every network has a unique limit, i.e. the maximum transmission unit (MTU), for the size of datagrams that it can process.&lt;/li&gt;
-&lt;li&gt;The 3-bit flags field in the IP header specifies fragmentation is allowed or not&lt;ul&gt;
+&lt;li&gt;The 3-bit flags field in the IP header specifies fragmentation is allowed or not
+&lt;ul&gt;
 &lt;li&gt;U 位：未使用。&lt;/li&gt;
 &lt;li&gt;D 位（Do Not Fragment bit）：如果设置该位，表示不允许分片；如果数据报大于 MTU，则会被丢弃。&lt;/li&gt;
 &lt;li&gt;M 位（More Fragments bit）：如果设置该位，表示后续还有更多分片；如果该位未设置，表示这是最后一个分片。&lt;/li&gt;
@@ -525,49 +1042,59 @@
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;Fragment offset shows where to place packet’s data when fragments are reassembled into a single packet&lt;/li&gt;
-&lt;li&gt;The offset of the data in the original datagram measured in units of 8 bytes&lt;ul&gt;
+&lt;li&gt;The offset of the data in the original datagram measured in units of 8 bytes
+&lt;ul&gt;
 &lt;li&gt;The first fragment has a zero offset&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;The offset only records the 1st byte number of that fragmented packet&lt;br&gt;&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/6725a637a3adf.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
-&lt;li&gt;Issues with IPv4 Fragmentation&lt;ul&gt;
+&lt;li&gt;The offset only records the 1st byte number of that fragmented packet&lt;br&gt;
+&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/6725a637a3adf.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Issues with IPv4 Fragmentation
+&lt;ul&gt;
 &lt;li&gt;Fragmentation causes more overhead (time and resources) for the receiver when reassembling the fragments, because the receiver must allocate memory for the arriving fragments and coalesce them back into one datagram after all of the fragments are received.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;If one fragment of an IPv4 datagram is dropped, then the entire original IPv4 datagram must be resent&lt;/li&gt;
-&lt;li&gt;IPv6 packets:&lt;ul&gt;
+&lt;li&gt;IPv6 packets:
+&lt;ul&gt;
 &lt;li&gt;IPv6 uses a different packet format than IPv4&lt;/li&gt;
 &lt;li&gt;Accommodate the much longer IPv6 addresses&lt;/li&gt;
-&lt;li&gt;There is no Fragment offset field&lt;br&gt;• IPv6 hosts adjust their packet sizes to fit the requirements of the network before sending IPv6 messages&lt;br&gt;&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/6725ab470399d.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;li&gt;There is no Fragment offset field&lt;br&gt;
+• IPv6 hosts adjust their packet sizes to fit the requirements of the network before sending IPv6 messages&lt;br&gt;
+&lt;img data-src=&#34;https://img.picui.cn/free/2024/11/02/6725ab470399d.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;DHCP (Dynamic Host Configuration Protocol)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#DHCP (Dynamic Host Configuration Protocol)&#34;&gt;#&lt;/a&gt;DHCP (Dynamic Host Configuration Protocol)&lt;/h1&gt;
-
 &lt;ul&gt;
 &lt;li&gt;DHCP is not a pure layer-3 protocol. It is an IP address management protocol, and this generally works at layer 7&lt;/li&gt;
 &lt;li&gt;DHCP is a network management protocol. So, strictly speaking, it works at Layer 7&lt;/li&gt;
 &lt;li&gt;A DHCP server dynamically assigns an IP address to a network device. It enables computers to request IP addresses and networking parameters automatically from the Internet Service Provider (ISP)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;ICMP (Internet Control Message Protocol)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#ICMP (Internet Control Message Protocol)&#34;&gt;#&lt;/a&gt;ICMP (Internet Control Message Protocol)&lt;/h1&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;ICMP is a Network layer, core protocol that reports on the success or failure of data delivery&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;ICMP is a Network layer, core protocol that reports on the success or failure of data delivery&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;ICMP can indicate:&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;ICMP can indicate:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;When part of a network is congested&lt;/li&gt;
 &lt;li&gt;When data fails to reach its destination&lt;/li&gt;
 &lt;li&gt;When data has been discarded because the allotted TTL (Time to Live) has expired&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;ICMP announces transmission failures to the sender. But does not correct errors it detects&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;ICMP announces transmission failures to the sender. But does not correct errors it detects&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Provides critical information for troubleshooting network problems&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;Provides critical information for troubleshooting network problems&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;ICMPv6 on IPV6 networks performs the functions of both ICMP and ARP on IPv4 networks&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;ICMPv6 on IPV6 networks performs the functions of both ICMP and ARP on IPv4 networks&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;ICMP 数据包包含以下字段，用于提供不同的控制和错误信息：&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;ICMP 数据包包含以下字段，用于提供不同的控制和错误信息：&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;table&gt;
@@ -578,15 +1105,16 @@
 &lt;th&gt;功能&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;Type&lt;/strong&gt;&lt;/td&gt;
 &lt;td&gt;8 位&lt;/td&gt;
-&lt;td&gt;指示 ICMP 消息的类型，例如“目的不可达”。&lt;/td&gt;
+&lt;td&gt;指示 ICMP 消息的类型，例如 “目的不可达”。&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;Code&lt;/strong&gt;&lt;/td&gt;
 &lt;td&gt;8 位&lt;/td&gt;
-&lt;td&gt;指示消息的子类型，例如“目标主机未知”。&lt;/td&gt;
+&lt;td&gt;指示消息的子类型，例如 “目标主机未知”。&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;Checksum&lt;/strong&gt;&lt;/td&gt;
@@ -603,19 +1131,21 @@
 &lt;td&gt;可变长度&lt;/td&gt;
 &lt;td&gt;通常包含触发 ICMP 消息的 IP 数据包的 IP 头和前 8 字节的数据部分。&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;h1 id=&#34;ARP (Address Resolution Protocol)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#ARP (Address Resolution Protocol)&#34;&gt;#&lt;/a&gt;ARP (Address Resolution Protocol)&lt;/h1&gt;
-
 &lt;ol&gt;
 &lt;li&gt;ARP (Address Resolution Protocol)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;ARP is not a pure layer-3 protocol, nor a pure layer-2 protocol. It generally works at layer 2 by using layer 3 IP address information&lt;/li&gt;
-&lt;li&gt;ARP works in conjunction with IPv4 to discover the MAC address of a host or node on the local network&lt;ul&gt;
+&lt;li&gt;ARP works in conjunction with IPv4 to discover the MAC address of a host or node on the local network
+&lt;ul&gt;
 &lt;li&gt;And to maintain a database that maps IP addresses to MAC addresses on the local network&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;ARP is a Layer 2 protocol that uses Layer 3’s IP address information&lt;ul&gt;
+&lt;li&gt;ARP is a Layer 2 protocol that uses Layer 3’s IP address information
+&lt;ul&gt;
 &lt;li&gt;It operates only within its local network&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -626,13 +1156,16 @@
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;ARP table—The database of IP-to-MAC address mappings&lt;/li&gt;
-&lt;li&gt;An ARP table can contain two types of entries:&lt;ul&gt;
+&lt;li&gt;An ARP table can contain two types of entries:
+&lt;ul&gt;
 &lt;li&gt;Dynamic—Created when a client makes an ARP request that could not be satisfied by data already in the ARP table&lt;/li&gt;
 &lt;li&gt;Static—Those someone entered manually using the ARP utility (arp command)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Check ARP table&lt;ul&gt;
-&lt;li&gt;arp -a&lt;br&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/ac317e8c48a595ab.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Check ARP table
+&lt;ul&gt;
+&lt;li&gt;arp -a&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/ac317e8c48a595ab.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;

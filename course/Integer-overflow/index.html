@@ -117,12 +117,12 @@ AtoposZz =  = final在后面追我T T</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a97b6ba9.jpg"></li>
           <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf60cc9be5.jpg"></li>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a9a63310.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a97b6ba9.jpg"></li>
           <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf696303c4.jpg"></li>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf6029148a.jpg"></li>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a94b2174.png"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf69b7c48b.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a9382651.png"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf75f16bed.jpg"></li>
         </ul>
       </div>
     </header>
@@ -173,71 +173,96 @@ AtoposZz =  = final在后面追我T T</title>
 
     <h1 id="Integer overflow" class="active"><a class="anchor"  href="#Integer overflow">#</a>Integer overflow</h1>
  When the result of an integer operation does not fit within the allocated memory space. All common languages are affected 
-
 <ol>
-<li>How Does an Integer Overflow Happen?<ol>
-<li>无符号整数溢出：例如，一个 32 位无符号整数的范围是 0 到 4,294,967,295（即 2**32 − 1或 0xffffffff）。如果我们执行计算 4,294,967,295 + 1，则会导致溢出，因为结果超出了无符号整数的范围</li>
+<li>How Does an Integer Overflow Happen?
+<ol>
+<li>无符号整数溢出：例如，一个 32 位无符号整数的范围是 0 到 4,294,967,295（即 2**32 − 1 或 0xffffffff）。如果我们执行计算 4,294,967,295 + 1，则会导致溢出，因为结果超出了无符号整数的范围</li>
 <li>有符号整数溢出</li>
 </ol>
 <ul>
-<li>符号位的溢出<br>当一个整数运算的结果超过有符号整数的范围时，符号位（最高位）可能会被覆盖，从而引发溢出。<br>有符号整数的符号位：在有符号整数中，最高位用来表示数值的正负。例如，32 位有符号整数的最高位是第 31 位（第 0 位到第 30 位是数值位）。溢出导致符号变化：如果运算结果超出正数范围，符号位会被设置为 1，这会导致数值被解释为负数。例如，在 32 位有符号整数中，+2,147,483,647 + 1 会导致数值变成 -2,147,483,648，因为符号位被改变。</li>
-<li>向下类型转换（Downcasting）和数值截断（Truncation）<ul>
+<li>符号位的溢出<br>
+当一个整数运算的结果超过有符号整数的范围时，符号位（最高位）可能会被覆盖，从而引发溢出。<br>
+有符号整数的符号位：在有符号整数中，最高位用来表示数值的正负。例如，32 位有符号整数的最高位是第 31 位（第 0 位到第 30 位是数值位）。溢出导致符号变化：如果运算结果超出正数范围，符号位会被设置为 1，这会导致数值被解释为负数。例如，在 32 位有符号整数中，+2,147,483,647 + 1 会导致数值变成 -2,147,483,648，因为符号位被改变。</li>
+<li>向下类型转换（Downcasting）和数值截断（Truncation）
+<ul>
 <li>向下类型转换：指将一个高精度的数据类型转换为低精度的数据类型。例如，将 long 类型转换为 int 时，如果原始值超过 int 的范围，可能会导致数值截断。</li>
 <li>数值截断可能导致溢出：截断发生时，较高位的数值会被忽略，只保留低位部分。这可能导致数值错误，甚至触发整数溢出。例如，如果一个 64 位的 long 类型被转换为 32 位的 int 类型，而其数值超过了 32 位整数的最大值，那么高位将被截断，只保留低 32 位，可能导致溢出或错误的计算结果。</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>Risks of Integer Overflow<br>Mostly lead to program errors, but can have severe consequences</li>
+<li>Risks of Integer Overflow<br>
+Mostly lead to program errors, but can have severe consequences</li>
 </ol>
 <ul>
-<li>Buffer overflow occurs when an integer overflow happens in calculating the length of the buffer </li>
+<li>Buffer overflow occurs when an integer overflow happens in calculating the length of the buffer</li>
 <li>Erroneous program behaviours in mission critical software Incorrect financial calculations</li>
 </ul>
 <h1 id="Real-World Examples" class="active"><a class="anchor"  href="#Real-World Examples">#</a>Real-World Examples</h1>
-
 <ol>
-<li>Integer Overflow Leads to Buffer Overflow in OpenSSH 3.3 <figure class="highlight c"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">nresp = packet_get_int(); </span><br><span class="line"> <span class="keyword">if</span> (nresp &gt; <span class="number">0</span>) </span><br><span class="line"> &#123; </span><br><span class="line"> 	response = xmalloc(nresp * <span class="keyword">sizeof</span>(<span class="type">char</span> *)); </span><br><span class="line"> 	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; nresp; i++) </span><br><span class="line"> 		response[i] = packet_get_string(<span class="literal">NULL</span>); </span><br><span class="line"> &#125; </span><br></pre></td></tr></table></figure>
-When <code>nresp</code> is 1073741824 (1073741824*4&#x3D;4294967296&#x3D;2**32), results in an overflow</li>
+<li>Integer Overflow Leads to Buffer Overflow in OpenSSH 3.3</li>
 </ol>
+ <figure class="highlight c"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">nresp = packet_get_int(); </span><br><span class="line"> <span class="keyword">if</span> (nresp &gt; <span class="number">0</span>) </span><br><span class="line"> &#123; </span><br><span class="line"> 	response = xmalloc(nresp * <span class="keyword">sizeof</span>(<span class="type">char</span> *)); </span><br><span class="line"> 	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; nresp; i++) </span><br><span class="line"> 		response[i] = packet_get_string(<span class="literal">NULL</span>); </span><br><span class="line"> &#125; </span><br></pre></td></tr></table></figure>
+<p>When  <code>nresp</code>  is 1073741824 (1073741824*4=4294967296=2**32), results in an overflow</p>
 <ul>
-<li><code>xmalloc()</code> receives and allocates a 0-byte buffer </li>
-<li>The subsequent loop causes a heap buffer overflow(当循环试图将数据写入到 <code>response</code> 时，由于 <code>response</code> 并未真正分配内存，写入操作会覆盖其他内存区域，导致程序崩溃或被攻击者利用。)</li>
-<li>fixed: <code>if (nresp &gt; 0 &amp;&amp; nresp &lt;= SIZE_MAX / sizeof(char *))</code></li>
+<li><code>xmalloc()</code>  receives and allocates a 0-byte buffer</li>
+<li>The subsequent loop causes a heap buffer overflow (当循环试图将数据写入到  <code>response</code>  时，由于  <code>response</code>  并未真正分配内存，写入操作会覆盖其他内存区域，导致程序崩溃或被攻击者利用。)</li>
+<li>fixed:  <code>if (nresp &gt; 0 &amp;&amp; nresp &lt;= SIZE_MAX / sizeof(char *))</code></li>
 </ul>
 <ol start="2">
-<li>A Real-World Vulnerability in the Handling JPEG Files <figure class="highlight c"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">getComment</span><span class="params">(<span class="type">unsigned</span> <span class="type">int</span> len, <span class="type">char</span> *src)</span> </span><br><span class="line"> &#123; </span><br><span class="line"> 	<span class="type">unsigned</span> <span class="type">int</span> size; </span><br><span class="line"> 	size = len ‐ <span class="number">2</span>; </span><br><span class="line"> 	<span class="type">char</span> *comment = (<span class="type">char</span> *)<span class="built_in">malloc</span>(size + <span class="number">1</span>); </span><br><span class="line"> 	<span class="built_in">memcpy</span>(comment, src, size); </span><br><span class="line"> 	<span class="keyword">return</span>; </span><br><span class="line"> &#125; </span><br></pre></td></tr></table></figure></li>
+<li>A Real-World Vulnerability in the Handling JPEG Files</li>
 </ol>
+ <figure class="highlight c"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">getComment</span><span class="params">(<span class="type">unsigned</span> <span class="type">int</span> len, <span class="type">char</span> *src)</span> </span><br><span class="line"> &#123; </span><br><span class="line"> 	<span class="type">unsigned</span> <span class="type">int</span> size; </span><br><span class="line"> 	size = len ‐ <span class="number">2</span>; </span><br><span class="line"> 	<span class="type">char</span> *comment = (<span class="type">char</span> *)<span class="built_in">malloc</span>(size + <span class="number">1</span>); </span><br><span class="line"> 	<span class="built_in">memcpy</span>(comment, src, size); </span><br><span class="line"> 	<span class="keyword">return</span>; </span><br><span class="line"> &#125; </span><br></pre></td></tr></table></figure>
 <ul>
-<li>整数下溢<br>在这段代码中，变量 <code>len</code> 和 <code>size</code> 被声明为无符号整数（unsigned int），这意味着它们的值不能是负数。<br>当 <code>len</code> 小于 2 时，计算 <code>size = len - 2</code> 会导致 整数下溢：<br>例如，<code>len</code> 为 1 时，<code>size</code> 将变为 0xffffffff（4294967295），即无符号整数的最大值。<br>下溢的原因在于无符号整数的运算特性，当减法结果为负时，会回绕（wrap around）到最大值。</li>
-<li>0字节内存分配<br>在下溢的情况下，当 <code>size</code> 被设置为 0xffffffff 时，表达式 <code>size + 1</code> 变为 0。<br>这会导致 <code>malloc(0)</code>，即分配一个 0 字节的缓冲区。<br>在许多系统中，0 字节的 <code>malloc()</code> 是合法的，它会返回一个指针，但该指针不能被写入任何数据。</li>
-<li>堆缓冲区溢出<br><code>memcpy(comment, src, size)</code> 将从 <code>src</code> 复制 <code>size</code> 个字节到 <code>comment</code>，其中 <code>size</code> 的值为 0xffffffff。<br>由于 <code>comment</code> 是一个 0 字节的缓冲区，这将导致 堆缓冲区溢出，可能覆盖其他堆内存区域，从而导致程序崩溃或被攻击者利用。</li>
-<li>修复 <figure class="highlight c"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (len &lt;= <span class="number">2</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="type">unsigned</span> <span class="type">int</span> size = len - <span class="number">2</span>;</span><br><span class="line"> ...</span><br></pre></td></tr></table></figure></li>
+<li>整数下溢<br>
+在这段代码中，变量  <code>len</code>  和  <code>size</code>  被声明为无符号整数（unsigned int），这意味着它们的值不能是负数。<br>
+当  <code>len</code>  小于 2 时，计算  <code>size = len - 2</code>  会导致 整数下溢：<br>
+例如， <code>len</code>  为 1 时， <code>size</code>  将变为 0xffffffff（4294967295），即无符号整数的最大值。<br>
+下溢的原因在于无符号整数的运算特性，当减法结果为负时，会回绕（wrap around）到最大值。</li>
+<li>0 字节内存分配<br>
+在下溢的情况下，当  <code>size</code>  被设置为 0xffffffff 时，表达式  <code>size + 1</code>  变为 0。<br>
+这会导致  <code>malloc(0)</code> ，即分配一个 0 字节的缓冲区。<br>
+在许多系统中，0 字节的  <code>malloc()</code>  是合法的，它会返回一个指针，但该指针不能被写入任何数据。</li>
+<li>堆缓冲区溢出<br>
+ <code>memcpy(comment, src, size)</code>  将从  <code>src</code>  复制  <code>size</code>  个字节到  <code>comment</code> ，其中  <code>size</code>  的值为 0xffffffff。<br>
+由于  <code>comment</code>  是一个 0 字节的缓冲区，这将导致 堆缓冲区溢出，可能覆盖其他堆内存区域，从而导致程序崩溃或被攻击者利用。</li>
+<li>修复</li>
 </ul>
+ <figure class="highlight c"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (len &lt;= <span class="number">2</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="type">unsigned</span> <span class="type">int</span> size = len - <span class="number">2</span>;</span><br><span class="line"> ...</span><br></pre></td></tr></table></figure>
 <ol start="3">
-<li>Example 3 <figure class="highlight c"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">CopyStructs</span><span class="params">(InputFile* pInFile, <span class="type">unsigned</span> <span class="type">long</span> count)</span> &#123;</span><br><span class="line">     <span class="type">unsigned</span> <span class="type">long</span> i;</span><br><span class="line">     m_pStructs = new Structs[count]; </span><br><span class="line">     <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; count; i++) &#123; </span><br><span class="line">         <span class="keyword">if</span> (!ReadFromFile(pInFile, &amp;(m_pStructs[i]))) </span><br><span class="line">             <span class="keyword">break</span>; </span><br><span class="line">     &#125; </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-The C++’s <code>new[]</code> operator, it is similar to <code>malloc(count*sizeof(Structs))</code><br>Allocate a buffer smaller than we need, the attacker is able to write over the buffer</li>
+<li>Example 3</li>
 </ol>
+ <figure class="highlight c"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">CopyStructs</span><span class="params">(InputFile* pInFile, <span class="type">unsigned</span> <span class="type">long</span> count)</span> &#123;</span><br><span class="line">     <span class="type">unsigned</span> <span class="type">long</span> i;</span><br><span class="line">     m_pStructs = new Structs[count]; </span><br><span class="line">     <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; count; i++) &#123; </span><br><span class="line">         <span class="keyword">if</span> (!ReadFromFile(pInFile, &amp;(m_pStructs[i]))) </span><br><span class="line">             <span class="keyword">break</span>; </span><br><span class="line">     &#125; </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>The C++’s  <code>new[]</code>  operator, it is similar to  <code>malloc(count*sizeof(Structs))</code> <br>
+Allocate a buffer smaller than we need, the attacker is able to write over the buffer</p>
 <ul>
 <li>By <strong>overflowing the multiplication operation</strong> internally</li>
 </ul>
 <ol start="4">
-<li>Example 4 <figure class="highlight c"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> MAX_BUF 256</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">BadCode</span><span class="params">(<span class="type">char</span> *input)</span> </span><br><span class="line"> &#123; </span><br><span class="line">     <span class="type">short</span> len; </span><br><span class="line">     <span class="type">char</span> buf[MAX_BUF]; </span><br><span class="line">     len = <span class="built_in">strlen</span>(input); </span><br><span class="line">     <span class="keyword">if</span> (len &lt; MAX_BUF) </span><br><span class="line">         <span class="built_in">strcpy</span>(buf, input); </span><br><span class="line"> &#125; </span><br></pre></td></tr></table></figure></li>
+<li>Example 4</li>
 </ol>
+ <figure class="highlight c"><figcaption><span>OvO</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> MAX_BUF 256</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">BadCode</span><span class="params">(<span class="type">char</span> *input)</span> </span><br><span class="line"> &#123; </span><br><span class="line">     <span class="type">short</span> len; </span><br><span class="line">     <span class="type">char</span> buf[MAX_BUF]; </span><br><span class="line">     len = <span class="built_in">strlen</span>(input); </span><br><span class="line">     <span class="keyword">if</span> (len &lt; MAX_BUF) </span><br><span class="line">         <span class="built_in">strcpy</span>(buf, input); </span><br><span class="line"> &#125; </span><br></pre></td></tr></table></figure>
 <ul>
-<li><code>strlen()</code> 返回无符号整数<br><code>strlen()</code> 返回的是无符号整数类型<code>size_t</code>，通常是一个 32 位或 64 位无符号整数。<br><code>len</code> 被定义为一个 16 位有符号短整型<code>short</code>，其范围是 -32,768 到 32,767。</li>
-<li>类型截断和符号翻转<br>当 <code>strlen(input)</code> 返回的长度超过 <code>32,767</code> 时，赋值给 <code>short len</code> 时会发生 类型截断，导致溢出。<br>例如，如果 <code>strlen(input)</code> 返回 40,000，那么赋值后，<code>len</code> 的值将会变成 -25,536（溢出后的值），因为 <code>short</code> 类型的最大正值只能到 32,767。<br>这会将一个本应是大于 256 的值变成一个负数。</li>
-<li>缓冲区溢出风险<br>在类型截断后，<code>len</code> 可能是负数。条件 <code>if (len &lt; MAX_BUF)</code> 将会成立，因为负数小于 256。<br>这意味着，即使输入字符串的实际长度超过了 256 字节，<code>strcpy(buf, input)</code> 仍会被执行，导致缓冲区溢出。</li>
-<li>修复<br><code>len = strnlen(input, MAX_BUF);</code>: The <code>strnlen()</code> function returns an integer value capped by <code>MAX_BUF</code></li>
+<li><code>strlen()</code>  返回无符号整数<br>
+ <code>strlen()</code>  返回的是无符号整数类型 <code>size_t</code> ，通常是一个 32 位或 64 位无符号整数。<br>
+ <code>len</code>  被定义为一个 16 位有符号短整型 <code>short</code> ，其范围是 -32,768 到 32,767。</li>
+<li>类型截断和符号翻转<br>
+当  <code>strlen(input)</code>  返回的长度超过  <code>32,767</code>  时，赋值给  <code>short len</code>  时会发生 类型截断，导致溢出。<br>
+例如，如果  <code>strlen(input)</code>  返回 40,000，那么赋值后， <code>len</code>  的值将会变成 -25,536（溢出后的值），因为  <code>short</code>  类型的最大正值只能到 32,767。<br>
+这会将一个本应是大于 256 的值变成一个负数。</li>
+<li>缓冲区溢出风险<br>
+在类型截断后， <code>len</code>  可能是负数。条件  <code>if (len &lt; MAX_BUF)</code>  将会成立，因为负数小于 256。<br>
+这意味着，即使输入字符串的实际长度超过了 256 字节， <code>strcpy(buf, input)</code>  仍会被执行，导致缓冲区溢出。</li>
+<li>修复<br>
+ <code>len = strnlen(input, MAX_BUF);</code> : The  <code>strnlen()</code>  function returns an integer value capped by  <code>MAX_BUF</code></li>
 </ul>
 <h1 id="Integer Overflow Prevention" class="active"><a class="anchor"  href="#Integer Overflow Prevention">#</a>Integer Overflow Prevention</h1>
 Integer overflow is very hard to discover and prevent
-
 <ol>
 <li>Runtime checks</li>
 </ol>
 <ul>
-<li>ubsan instruments binaries to be executed and checks the results of arithmetic operations </li>
+<li>ubsan instruments binaries to be executed and checks the results of arithmetic operations</li>
 <li>Microsoft Visual C++ 2005 and later automatically catch calls to operator new that overflow</li>
 </ul>
 <ol start="2">
@@ -247,7 +272,8 @@ Integer overflow is very hard to discover and prevent
 <li>SafeInt class performs safe operations</li>
 </ul>
 <ol start="3">
-<li>Static analysis tools and formal verification techniques<br>在程序编译前对源代码进行分析，寻找潜在的整数溢出问题。这些工具可以检测代码中的常见整数运算错误，包括加减乘除溢出、类型转换溢出等</li>
+<li>Static analysis tools and formal verification techniques<br>
+ 在程序编译前对源代码进行分析，寻找潜在的整数溢出问题。这些工具可以检测代码中的常见整数运算错误，包括加减乘除溢出、类型转换溢出等</li>
 </ol>
 
       <div class="tags">
@@ -304,7 +330,7 @@ Integer overflow is very hard to discover and prevent
     <div class="item left">
       
 
-  <a href="/course/Stack-buffer-overflow/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;26&#x2F;671cf6bb9fdaf.jpg" title="Stack buffer overflow">
+  <a href="/course/Stack-buffer-overflow/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;26&#x2F;671cf6029148a.jpg" title="Stack buffer overflow">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> Principles of Software Security</span>
   <h3>Stack buffer overflow</h3>
@@ -314,7 +340,7 @@ Integer overflow is very hard to discover and prevent
     <div class="item right">
       
 
-  <a href="/course/Format-string-bugs/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;26&#x2F;671cf60a21b5d.jpg" title="Format string bugs">
+  <a href="/course/Format-string-bugs/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;26&#x2F;671cf696303c4.jpg" title="Format string bugs">
   <span class="type">下一篇</span>
   <span class="category"><i class="ic i-flag"></i> Principles of Software Security</span>
   <h3>Format string bugs</h3>
@@ -354,7 +380,7 @@ Integer overflow is very hard to discover and prevent
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">23</span>
+        <span class="count">24</span>
         <span class="name">文章</span>
       </a>
     </div>
@@ -366,7 +392,7 @@ Integer overflow is very hard to discover and prevent
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">31</span>
+        <span class="count">32</span>
         <span class="name">标签</span>
       </a>
     </div>
@@ -458,43 +484,10 @@ Integer overflow is very hard to discover and prevent
 <div class="breadcrumb">
 <a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
-</div>
-
-    <span><a href="/course/Layer-3-Routing-and-Superheating/" title="Layer 3 - Routing and Superheating">Layer 3 - Routing and Superheating</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
-<i class="ic i-angle-right"></i>
 <a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
 </div>
 
-    <span><a href="/course/Integer-overflow/" title="Integer overflow">Integer overflow</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
-</div>
-
-    <span><a href="/course/SQL-Injection/" title="SQL Injection">SQL Injection</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/dailysharing/hello-world/" title="Hello World">Hello World</a></span>
+    <span><a href="/course/x86-architecture-and-Assembly-basics/" title="x86 architecture and Assembly basics">x86 architecture and Assembly basics</a></span>
   </li>
 
       
@@ -515,10 +508,22 @@ Integer overflow is very hard to discover and prevent
 <div class="breadcrumb">
 <a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
 <i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Fuzz-testing/" title="Fuzz testing">Fuzz testing</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
 <a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
 </div>
 
-    <span><a href="/course/(Layers%201%20and%202)%20Physical%20and%20Data%20Link%20Layers/" title="(Layers 1 and 2) Physical and Data Link Layers">(Layers 1 and 2) Physical and Data Link Layers</a></span>
+    <span><a href="/course/Layer-4-Transport-Protocols-TCP-and-UDP/" title="Layer 4 - Transport Protocols TCP and UDP">Layer 4 - Transport Protocols TCP and UDP</a></span>
   </li>
 
       
@@ -530,19 +535,7 @@ Integer overflow is very hard to discover and prevent
 <a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
 </div>
 
-    <span><a href="/course/Cross-Site-attack/" title="Cross-Site attack">Cross-Site attack</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
-</div>
-
-    <span><a href="/course/C-language-basics-and-Computer-memory/" title="C language basics and Computer memory">C language basics and Computer memory</a></span>
+    <span><a href="/course/Web-Application-Security/" title="Web Application Security">Web Application Security</a></span>
   </li>
 
       
@@ -566,7 +559,43 @@ Integer overflow is very hard to discover and prevent
 <a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
 </div>
 
-    <span><a href="/course/Layer-4-Transport-Protocols-TCP-and-UDP/" title="(Layer 4) Transport Protocols TCP and UDP">(Layer 4) Transport Protocols TCP and UDP</a></span>
+    <span><a href="/course/Network-Security-Analysis/" title="Network Security Analysis">Network Security Analysis</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
+</div>
+
+    <span><a href="/course/Network%20System%20Overall/" title="Network Systems Overall">Network Systems Overall</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Integer-overflow/" title="Integer overflow">Integer overflow</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Format-string-bugs/" title="Format string bugs">Format string bugs</a></span>
   </li>
 
   </ul>

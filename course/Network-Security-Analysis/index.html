@@ -1,0 +1,992 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="" href="http://example.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="network system,IP,DHCP,ICMP,ARP,DNS,TCP,Network Security" />
+
+
+<link rel="canonical" href="http://example.com/course/Network-Security-Analysis/">
+
+
+
+  <title>
+Network Security Analysis - Network Systems - 课程笔记 |
+AtoposZz =  = final在后面追我T T</title>
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">Network Security Analysis
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2024-11-04 22:02:06">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2024-11-04T22:02:06+10:00">2024-11-04</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>8k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>7 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">AtoposZz</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf69b7c48b.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf6029148a.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf60a21b5d.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf7643bf1a.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a9a63310.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf5fd1a28a.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/course/" itemprop="item" rel="index" title="分类于 课程笔记"><span itemprop="name">课程笔记</span></a>
+<meta itemprop="position" content="1" /></span>
+<i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/course/Network-Systems/" itemprop="item" rel="index" title="分类于 Network Systems"><span itemprop="name">Network Systems</span></a>
+<meta itemprop="position" content="2" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://example.com/course/Network-Security-Analysis/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Zz">
+    <meta itemprop="description" content="final在后面追我T T, 🌸">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="Layer 3: Network" class="active"><a class="anchor"  href="#Layer 3: Network">#</a>Layer 3: Network</h1>
+<h2 id="IP" class="active"><a class="anchor"  href="#IP">#</a>IP</h2>
+<ol>
+<li>IP Protocol Features</li>
+</ol>
+<ul>
+<li>Best-effort delivery
+<ul>
+<li>IP routes and sends a packet to the destination. IP provides no guaranteed delivery of packets</li>
+<li>Packet loss is left to the higher layer protocols</li>
+<li>The network has variable delays, it is not guaranteed that the packets will be received in sequence.</li>
+</ul>
+</li>
+<li>Connection-less service
+<ul>
+<li>Each packet is individually addressed and routed, rather than in the setup a prearranged connection channel for data transmission</li>
+<li>It is possible that two packets from the same source take different paths to reach the destination.</li>
+</ul>
+</li>
+<li>Routing
+<ul>
+<li>Packets go through a series of routers before they reach the destination.</li>
+<li>At each node that the packet passes through, the node determines the next hop for the packet and routes it to the next hop.</li>
+</ul>
+</li>
+<li>Quality of Service (QoS) control
+<ul>
+<li>QoS optimizes the network by setting packet priorities (classification marking)</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>IP Fragmentation
+<ol>
+<li>What is IP fragmentation?</li>
+</ol>
+<ul>
+<li>Fragmentation is necessary for data transmission, as every network has its maximum transmission unit (MTU), the largest number of bytes an individual packet can have on a particular network</li>
+<li>If a packet larger than the network’s MTU is being sent, it must be fragmented before transmission.</li>
+</ul>
+<ol start="2">
+<li>Who assembles the fragmented packets?</li>
+</ol>
+<ul>
+<li>When the destination host receives IP fragments, it allocates memory in preparation for fragment reassembly.</li>
+</ul>
+</li>
+<li>IP Spoofing/DoS</li>
+</ol>
+<ul>
+<li>An attacker can send packets/datagrams from a false source address to disguise itself.</li>
+<li>Denial-of-service (DoS) attacks often use IP spoofing to overload networks and devices with packets that appear to be from legitimate source IP addresses.</li>
+</ul>
+<ol start="3">
+<li>Issues with IPv4 Fragmentation<br>
+Fragmentation causes increase overhead in CPU and memory and slow down network performance.</li>
+</ol>
+<ul>
+<li>Intermediate router
+<ul>
+<li>Creates fragment headers</li>
+<li>Computes checksums</li>
+<li>Copies the original packet into the fragments</li>
+</ul>
+</li>
+<li>Receiving host
+<ul>
+<li>When reassembling the fragments the receiver must allocate memory for the arriving fragments and joint together fragments into one packet after all of the fragments are received</li>
+<li>If one fragment is dropped, the entire original packet must be resent.
+<ul>
+<li>The TTL time exceeded ICMP message (with Fragment reassembly timeout) is sent to the sender.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="ARP" class="active"><a class="anchor"  href="#ARP">#</a>ARP</h2>
+<ol>
+<li>ARP</li>
+</ol>
+<ul>
+<li>IP addresses are used for identifying destination devices across the Internet.</li>
+<li>MAC addresses are used for direct delivery within the same network.</li>
+<li>ARP is used to resolve a logical (IP) address of a target host to its physical (MAC) address in a local area network.</li>
+</ul>
+<ol start="2">
+<li>
+<p>ARP in Direct Delivery</p>
+<ol>
+<li>The sender A and receiver B are located at the same network.</li>
+</ol>
+<ul>
+<li>A requests for B’s MAC address.</li>
+<li>Once B’s MAC address is resolved, then the data can be delivered from A to B.<br>
+<img data-src="https://cdn-fusion.imgcdn.store/i/2024/7638f7e29bc26dab.png" alt="image"></li>
+</ul>
+<ol start="2">
+<li>The sender A and receiver B are not located at the same network.</li>
+</ol>
+<ul>
+<li>A requests for gateway’s MAC address. Once G’s MAC address is resolved, then A sends the data to G for data forwarding</li>
+<li>G requests B’s MAC address. Once B’s MAC address is resolved, then G forwards the data to B</li>
+<li>Two ARP processes involved<br>
+<img data-src="https://cdn-fusion.imgcdn.store/i/2024/a066a6ee19686120.png" alt="image"></li>
+</ul>
+<ol start="3">
+<li>More ARP processes</li>
+</ol>
+<ul>
+<li>A - G1     G1 - G2      G2 - G3      G3 - B<br>
+<img data-src="https://cdn-fusion.imgcdn.store/i/2024/94a4b433ddf61059.png" alt="image"></li>
+</ul>
+</li>
+<li>
+<p>ARP Process- Request</p>
+</li>
+</ol>
+<ul>
+<li>ARP is a two-step process: a request and a reply.</li>
+<li>Within a network, when a host (requester) – A, begins a conversation with a target host - B
+<ul>
+<li>A is aware of B’s IP address, but does not have the B’s MAC address. Thus A is unable to send a unicast frame to B.</li>
+<li>A sends an ARP broadcast frame to request B’s MAC address. Since it is a broadcast, all hosts on the network receives the ARP request.</li>
+<li>All hosts scan the content of the ARP request to determine if they are the intended target. The hosts which are not the intended target discard the broadcast frame.</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li>ARP Process - Reply</li>
+</ol>
+<ul>
+<li>B is the target of the ARP Request. It sends an ARP Reply back to A.</li>
+<li>Since B knows who sent the initial ARP Request, it is able to send the ARP Response unicast, directly back to A</li>
+</ul>
+<ol start="5">
+<li>ARP Poisoning</li>
+</ol>
+<ul>
+<li>ARP Poisoning is also known as ARP Spoofing.</li>
+<li>A type of attack carried out over a local area network (LAN).</li>
+<li>It involves sending malicious ARP packets on a LAN to change the mapping of the attacker’s<br>
+MAC address with the IP address of another host</li>
+<li>攻击过程
+<ul>
+<li>攻击者在局域网中发送伪造的 ARP 数据包，将目标 IP 地址映射到攻击者的 MAC 地址。</li>
+<li>这样，局域网中的其他主机在访问该 IP 地址时，流量会被引导到攻击者的设备上。</li>
+</ul>
+</li>
+<li>攻击目的
+<ol>
+<li>中间人攻击（Man-in-the-Middle, MITM）：</li>
+</ol>
+<ul>
+<li>攻击者可以截获、篡改或记录在受害者和目标主机之间传递的数据。</li>
+</ul>
+<ol start="2">
+<li>拒绝服务攻击（DoS）：</li>
+</ol>
+<ul>
+<li>攻击者可以通过阻止合法主机的流量访问目标主机，实现拒绝服务。<br>
+<img data-src="https://cdn-fusion.imgcdn.store/i/2024/1e55b1b5b0938dda.png" alt="image"></li>
+</ul>
+</li>
+</ul>
+<h2 id="ICMP" class="active"><a class="anchor"  href="#ICMP">#</a>ICMP</h2>
+<ol>
+<li>ICMP Features</li>
+</ol>
+<ul>
+<li>
+<p>ICMP is a supporting protocol to support IP.</p>
+</li>
+<li>
+<p>ICMP messages are encapsulated inside of IP datagrams before going down to the data link layer<br>
+<img data-src="https://cdn-fusion.imgcdn.store/i/2024/bd2c3965e1886840.png" alt="image"></p>
+</li>
+<li>
+<p>Assists the diagnosis of some network problems, particularly related to the network layer of the OSI model</p>
+</li>
+<li>
+<p>Assists in obtaining specific information from routers and the destination host</p>
+</li>
+<li>
+<p>Is used by routers and hosts</p>
+</li>
+<li>
+<p>Returns the message to the originator</p>
+</li>
+</ul>
+<ol start="2">
+<li>Types of ICMP</li>
+</ol>
+<ul>
+<li>ICMP messages can be broadly classified into 2 types:
+<ul>
+<li>Error reporting</li>
+<li>Query/Reply</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>Time-Exceeded(Error reporting)</li>
+</ol>
+<ul>
+<li>The ICMP Time Exceeded message is issued:
+<ul>
+<li>When a packet is sent, its TTL is decremented by 1 at each hop. If the TTL reaches 0, the packet is dropped and a Time-Exceeded message is sent to the originator.</li>
+<li>If destination does not receive all fragments in a set time, it drops any received fragments and sends a Time-Exceeded message to the originator</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li>ICMP 重定向（ICMP Redirect）</li>
+</ol>
+<ul>
+<li>场景设置
+<ul>
+<li>发送主机 A：IP 地址为 10.0.0.100/24。</li>
+<li>默认路由：A 的路由表中有一个默认路由条目，指向路由器 G1 的 IP 地址 10.0.0.1/24 作为默认网关。</li>
+<li>路由器 G1：当需要转发到目标网络 X 时，G1 使用路由器 G2 的 IP 地址 10.0.0.2/24 作为下一跳。</li>
+</ul>
+</li>
+<li>ICMP 重定向过程
+<ul>
+<li>包到达路由器 G1：G1 收到来自主机 A（10.0.0.100）发送的一个数据包，目标是网络 X。</li>
+<li>路由表检查：G1 检查其路由表，发现下一跳是 G2（IP 地址 10.0.0.2），可以到达目标网络 X。</li>
+<li>ICMP 重定向消息：如果 G2 和发送主机 A（10.0.0.100）在同一个网络（10.0.0.0/24），G1 会向发送主机 A 发送一个 ICMP 重定向消息，建议 A 将去往网络 X 的流量直接发送到 G2，这样可以减少一个跳数，使流量更直接地到达目标网络。</li>
+<li>数据包转发：在发送重定向消息的同时，G1 仍会将接收到的数据包转发到 G2，确保当前数据包的传输不中断。<br>
+<img data-src="https://cdn-fusion.imgcdn.store/i/2024/bbbcd5f2b66d5d73.png" alt="image"></li>
+</ul>
+</li>
+</ul>
+<ol start="5">
+<li>Echo Request/Reply</li>
+</ol>
+<ul>
+<li>A host or router that receives an echo-request message creates an echo-reply message and returns it to the originator</li>
+<li>echo-request and echo-reply messages can be used to help diagnose some network problems
+<ul>
+<li>e.g. communication status between two devices</li>
+</ul>
+</li>
+<li>Testing destination availability and providing status is achieved by invoking a ping command
+<ul>
+<li>Creates a series of echo-request and echo-reply messages providing statistical information</li>
+</ul>
+</li>
+</ul>
+<ol start="6">
+<li>Ping（ICMP）泛洪 DDoS 攻击</li>
+</ol>
+<ul>
+<li>ICMP 操作的类型：熟悉 ICMP 的各种操作类型（例如 Echo 请求 / 回复）有助于识别网络通信中的正常行为和异常行为。</li>
+<li>正常的 ICMP 交互：了解 ICMP 在发起端与目标主机之间的正常交互方式，例如 ping 操作，能帮助区分合法通信和潜在的恶意流量。</li>
+<li>异常网络行为识别：当 ICMP 流量异常时（例如，持续的 ping 请求），可能意味着存在攻击行为，如 DDoS 攻击。</li>
+<li>Ping（ICMP）泛洪 DDoS 攻击<br>
+ Ping 泛洪是一种典型的 DDoS（分布式拒绝服务）攻击，攻击者通过发送大量 ICMP Echo 请求，使目标主机过载，耗尽其资源，导致网络性能下降甚至服务中断。这种攻击利用了 ICMP 的易用性和资源开销低的特性，通过大量的无用流量使目标服务器无法响应正常请求。<br>
+<img data-src="https://cdn-fusion.imgcdn.store/i/2024/7150028ff5a5d75b.png" alt="image"></li>
+</ul>
+<h1 id="Layer 4: Transport" class="active"><a class="anchor"  href="#Layer 4: Transport">#</a>Layer 4: Transport</h1>
+<h2 id="TCP" class="active"><a class="anchor"  href="#TCP">#</a>TCP</h2>
+TCP详细特征在 Layer-4-Transport-Protocols
+<p>对 TCP 的威胁：</p>
+<ol>
+<li>TCP 序列号预测：</li>
+</ol>
+<ul>
+<li>攻击者可能能够猜测 TCP 分配给数据包流的序列号。</li>
+<li>如果攻击者成功预测了正在进行的通信会话的序列号，可以进行<strong>注入</strong>攻击，将篡改或伪造的数据插入数据流中，从而影响数据的完整性。</li>
+</ul>
+<ol start="2">
+<li>SYN Flooding DoS 攻击：</li>
+</ol>
+<ul>
+<li>SYN 泛洪是一种拒绝服务（DoS）攻击，通过向服务器发送大量伪造的 TCP SYN 请求，占用服务器的资源。</li>
+<li>在 SYN Flooding 攻击中，攻击者连续发送 SYN 请求，服务器响应 SYN-ACK，但攻击者不回复 ACK 确认，导致连接未完成并占用资源。</li>
+<li>这种攻击会使服务器资源耗尽，导致其无法响应合法用户的请求<br>
+<img data-src="https://cdn-fusion.imgcdn.store/i/2024/66fe7ac2f80b1dd1.png" alt="image"></li>
+</ul>
+<h1 id="Layer 7: Application" class="active"><a class="anchor"  href="#Layer 7: Application">#</a>Layer 7: Application</h1>
+<h2 id="DHCP" class="active"><a class="anchor"  href="#DHCP">#</a>DHCP</h2>
+<ol>
+<li>DHCP Message Format<br>
+<img data-src="https://cdn-fusion.imgcdn.store/i/2024/d8ed49e7d0fc10b8.png" alt="image"></li>
+<li>Threats to
+<ol>
+<li>DHCP - DHCP 欺骗（DHCP Spoofing）</li>
+</ol>
+<ul>
+<li>DHCP 欺骗是一种网络攻击，攻击者通过在网络中插入一个伪造的 DHCP 服务器来控制或截获网络流量。以下是攻击过程：
+<ol>
+<li>伪造的 DHCP 服务器：攻击者在网络中设置一个伪造的 DHCP 服务器，伪装成合法的 DHCP 服务器。</li>
+<li>响应 DHCP 请求：当客户端发送 DHCP 请求时，伪造的 DHCP 服务器会快速响应，试图将自己设为客户端的默认网关或 DNS 服务器。</li>
+<li>中间人攻击：通过设置默认网关或 DNS，攻击者可以截获并控制客户端的网络流量，作为中间人，拦截用户与实际网关之间的数据。这样，攻击者可以监视、篡改或阻断用户的网络流量。<br>
+<img data-src="https://cdn-fusion.imgcdn.store/i/2024/3e9cd9116e8ed666.png" alt="image"></li>
+</ol>
+</li>
+</ul>
+<ol start="2">
+<li>DHCP 耗尽攻击（DHCP Starvation Attack）</li>
+</ol>
+<ul>
+<li>DHCP 耗尽攻击是一种拒绝服务攻击，攻击者利用多个 “从属主机” 向 DHCP 服务器发送大量 IP 地址请求，直到耗尽服务器的地址池。以下是攻击的具体过程：
+<ol>
+<li>大量请求：攻击者通过从属主机或伪造的 MAC 地址向 DHCP 服务器不断请求新的 IP 地址。</li>
+<li>地址池耗尽：随着大量虚假请求的积累，DHCP 服务器的 IP 地址池逐渐被占满。</li>
+<li>合法用户无法连接：由于服务器没有可分配的 IP 地址，合法客户端无法从 DHCP 服务器获得 IP 地址，从而无法连接到网络。<br>
+<img data-src="https://cdn-fusion.imgcdn.store/i/2024/298943f7c02b1624.png" alt="image"></li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="DNS" class="active"><a class="anchor"  href="#DNS">#</a>DNS</h2>
+<ol>
+<li>名称解析响应类型</li>
+</ol>
+<ul>
+<li>权威响应（Authoritative Response）：
+<ul>
+<li>这种响应来自于被查询域名的权威 DNS 服务器。</li>
+<li>权威响应表明该 DNS 服务器对该域的 DNS 记录拥有直接管理权限，因此返回的数据是准确和最新的。</li>
+</ul>
+</li>
+<li>非权威响应（Non-authoritative Response）：
+<ul>
+<li>这种响应并非来自被查询域名的权威 DNS 服务器，而是来自缓存服务器或中间服务器。</li>
+<li>非权威响应通常是其他 DNS 服务器缓存的数据，可能并非实时更新，但可以加速查询过程</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>非权威响应示例</li>
+</ol>
+<ul>
+<li>首次查询
+<ol>
+<li>查询请求：客户端请求 <span class="exturl" data-url="aHR0cDovL3d3dy5pYm0uY29t">www.ibm.com</span> 的 IP 地址。</li>
+<li>查询根服务器：本地 DNS 服务器向根服务器查询 <span class="exturl" data-url="aHR0cDovL3d3dy5pYm0uY29t">www.ibm.com</span> 的地址。</li>
+<li>指向顶级域（TLD）服务器：根服务器返回可查询的 com 顶级域服务器列表。</li>
+<li>查询 com 顶级域服务器：本地 DNS 服务器向 com TLD 服务器查询 <span class="exturl" data-url="aHR0cDovL3d3dy5pYm0uY29t">www.ibm.com</span>。</li>
+<li>指向 <span class="exturl" data-url="aHR0cDovL2libS5jb20=">ibm.com</span> 的权威 DNS 服务器：com TLD 服务器提供 <span class="exturl" data-url="aHR0cDovL2libS5jb20=">ibm.com</span> 权威 DNS 服务器地址。</li>
+<li>查询 <span class="exturl" data-url="aHR0cDovL2libS5jb20=">ibm.com</span> 的 DNS 服务器：本地 DNS 服务器向 <span class="exturl" data-url="aHR0cDovL2libS5jb20=">ibm.com</span> 的 DNS 服务器请求 IP 地址。</li>
+<li>解析完成：<span class="exturl" data-url="aHR0cDovL2libS5jb20=">ibm.com</span> 的权威 DNS 服务器返回 <span class="exturl" data-url="aHR0cDovL3d3dy5pYm0uY29t">www.ibm.com</span> 的 IP 地址 129.42.38.10。</li>
+<li>返回 IP 地址：本地 DNS 服务器将该 IP 地址返回给客户端。</li>
+</ol>
+</li>
+<li>缓存和非权威响应
+<ul>
+<li>本地 DNS 服务器会将查询结果缓存一段时间。</li>
+<li>如果在缓存有效期内再次请求 <span class="exturl" data-url="aHR0cDovL3d3dy5pYm0uY29t">www.ibm.com</span>，本地 DNS 服务器直接从缓存中返回 IP 地址，此时的响应即为非权威响应。</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>Vulnerabilities/Threats in DNS</li>
+</ol>
+<ul>
+<li>DNS 方案的基本漏洞：
+<ul>
+<li>缺乏身份验证：DNS 没有内置的身份验证机制，使得攻击者更容易伪装。</li>
+<li>缺乏响应的真实性和完整性检查：DNS 响应数据没有经过加密或验证，容易被篡改。</li>
+</ul>
+</li>
+<li>DNS 缓存污染攻击（DNS Cache Poisoning）：
+<ul>
+<li>原理：攻击者更改 DNS 服务器或 DNS 缓存服务器上的记录，使网络流量从合法的服务器重定向到恶意网站。</li>
+<li>效果：用户无意间访问到钓鱼网站，可能泄露敏感信息。<br>
+<img data-src="https://cdn-fusion.imgcdn.store/i/2024/2e4f0ec78949c3fe.png" alt="image"></li>
+</ul>
+</li>
+<li>DNS 泛洪攻击（DNS Flood Attack）：
+<ul>
+<li>原理：利用 DoS/DDoS 攻击，通过大量请求过载网络，耗尽网络容量和服务器资源。</li>
+<li>效果：合法用户无法访问 DNS 服务，导致网络中断。<br>
+<img data-src="https://cdn-fusion.imgcdn.store/i/2024/6ed8673589f212d0.png" alt="image"></li>
+</ul>
+</li>
+<li>DNS 欺骗（DNS Spoofing）：
+<ul>
+<li>原理：攻击者伪装成合法的 DNS 服务器，向客户端提供虚假的 DNS 响应。</li>
+<li>效果：用户可能被引导到虚假网站，面临数据泄露和安全威胁。<br>
+<img data-src="https://cdn-fusion.imgcdn.store/i/2024/fc1bec998cfbdd83.png" alt="image"></li>
+</ul>
+</li>
+</ul>
+<h1 id="Summary" class="active"><a class="anchor"  href="#Summary">#</a>Summary</h1>
+<ol>
+<li>Summary - Protocol Threats</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Threats</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IP</td>
+<td>IP Spoofing attack 、 Fragmentation attack</td>
+</tr>
+<tr>
+<td>ARP</td>
+<td>ARP Cache-poisoning attack  、 MITM (Man-in-the-Middle) attack</td>
+</tr>
+<tr>
+<td>ICMP</td>
+<td>Redirect attack  、 Ping of death attack</td>
+</tr>
+<tr>
+<td>TCP</td>
+<td>Predicting TCP Sequences  、 TCP SYN Flood attack</td>
+</tr>
+<tr>
+<td>DHCP</td>
+<td>DHCP Spoofing  、 Starvation attack</td>
+</tr>
+<tr>
+<td>DNS</td>
+<td>DNS Cache Poisoning  、 DNS Flood attack  、 DNS Spoofing</td>
+</tr>
+</tbody>
+</table>
+<ol start="2">
+<li>Summary- Security attacks</li>
+</ol>
+<ul>
+<li>Active attack
+<ul>
+<li>involves data modification or the creation of a false stream, e.g.
+<ul>
+<li>masquerade, replay, modification of messages, man-in-the-middle (MITM) and DoS/DDoS</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Passive attack
+<ul>
+<li>attempts to learn or make use of information from the system but does not affect system resources, e.g. traffic analysis, release of information contents</li>
+</ul>
+</li>
+</ul>
+
+      <div class="tags">
+          <a href="/tags/network-system/" rel="tag"><i class="ic i-tag"></i> network system</a>
+          <a href="/tags/IP/" rel="tag"><i class="ic i-tag"></i> IP</a>
+          <a href="/tags/DHCP/" rel="tag"><i class="ic i-tag"></i> DHCP</a>
+          <a href="/tags/ICMP/" rel="tag"><i class="ic i-tag"></i> ICMP</a>
+          <a href="/tags/ARP/" rel="tag"><i class="ic i-tag"></i> ARP</a>
+          <a href="/tags/DNS/" rel="tag"><i class="ic i-tag"></i> DNS</a>
+          <a href="/tags/TCP/" rel="tag"><i class="ic i-tag"></i> TCP</a>
+          <a href="/tags/Network-Security/" rel="tag"><i class="ic i-tag"></i> Network Security</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2024-11-05 00:21:13" itemprop="dateModified" datetime="2024-11-05T00:21:13+10:00">2024-11-05</time>
+  </span>
+  <span id="course/Network-Security-Analysis/" class="item leancloud_visitors" data-flag-title="Network Security Analysis" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Zz <i class="ic i-at"><em>@</em></i>
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/course/Network-Security-Analysis/" title="Network Security Analysis">http://example.com/course/Network-Security-Analysis/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/course/Layer-7-Application-layer-Protocols-and-Services/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;26&#x2F;671cf60a21b5d.jpg" title="Layer 7 - Application-layer Protocols and Services">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> Network Systems</span>
+  <h3>Layer 7 - Application-layer Protocols and Services</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Layer%203:%20Network"><span class="toc-number">1.</span> <span class="toc-text">Layer 3: Network</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#IP"><span class="toc-number">1.1.</span> <span class="toc-text">IP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ARP"><span class="toc-number">1.2.</span> <span class="toc-text">ARP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ICMP"><span class="toc-number">1.3.</span> <span class="toc-text">ICMP</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Layer%204:%20Transport"><span class="toc-number">2.</span> <span class="toc-text">Layer 4: Transport</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP"><span class="toc-number">2.1.</span> <span class="toc-text">TCP</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Layer%207:%20Application"><span class="toc-number">3.</span> <span class="toc-text">Layer 7: Application</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#DHCP"><span class="toc-number">3.1.</span> <span class="toc-text">DHCP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DNS"><span class="toc-number">3.2.</span> <span class="toc-text">DNS</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Summary"><span class="toc-number">4.</span> <span class="toc-text">Summary</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/course/Network%20System%20Overall/" rel="bookmark" title="Network Systems Overall">Network Systems Overall</a></li><li><a href="/course/(Layers%201%20and%202)%20Physical%20and%20Data%20Link%20Layers/" rel="bookmark" title="Layers 1 and 2 - Physical and Data Link Layers">Layers 1 and 2 - Physical and Data Link Layers</a></li><li><a href="/course/Layer-3-IP-Addressing-and-IP-related-Protocols/" rel="bookmark" title="Layer 3 - IP Addressing and IP-related Protocols">Layer 3 - IP Addressing and IP-related Protocols</a></li><li><a href="/course/Layer-3-Subnetting-and-VLANs/" rel="bookmark" title="Layer 3 - Subnetting and VLANs">Layer 3 - Subnetting and VLANs</a></li><li><a href="/course/Layer-3-Routing-and-Superheating/" rel="bookmark" title="Layer 3 - Routing and Superheating">Layer 3 - Routing and Superheating</a></li><li><a href="/course/Layer-4-Transport-Protocols-TCP-and-UDP/" rel="bookmark" title="Layer 4 - Transport Protocols TCP and UDP">Layer 4 - Transport Protocols TCP and UDP</a></li><li><a href="/course/Layer-7-Application-layer-Protocols-and-Services/" rel="bookmark" title="Layer 7 - Application-layer Protocols and Services">Layer 7 - Application-layer Protocols and Services</a></li><li class="active"><a href="/course/Network-Security-Analysis/" rel="bookmark" title="Network Security Analysis">Network Security Analysis</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Zz"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Zz</p>
+  <div class="description" itemprop="description">🌸</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">24</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">6</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">32</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL1p3eTB2MA==" title="https:&#x2F;&#x2F;github.com&#x2F;Zwy0v0"><i class="ic i-github"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOnp3eTk5OTAuMEBtYWlsLmNvbQ==" title="mailto:zwy9990.0@mail.com"><i class="ic i-envelope"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>友链</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/links/" rel="section"><i class="ic i-magic"></i>links</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/dailysharing/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/AFL/" title="AFL">AFL</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
+</div>
+
+    <span><a href="/course/Layer-3-Routing-and-Superheating/" title="Layer 3 - Routing and Superheating">Layer 3 - Routing and Superheating</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
+</div>
+
+    <span><a href="/course/Layer-4-Transport-Protocols-TCP-and-UDP/" title="Layer 4 - Transport Protocols TCP and UDP">Layer 4 - Transport Protocols TCP and UDP</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
+</div>
+
+    <span><a href="/course/Layer-3-Subnetting-and-VLANs/" title="Layer 3 - Subnetting and VLANs">Layer 3 - Subnetting and VLANs</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Format-string-bugs/" title="Format string bugs">Format string bugs</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Integer-overflow/" title="Integer overflow">Integer overflow</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/x86-architecture-and-Assembly-basics/" title="x86 architecture and Assembly basics">x86 architecture and Assembly basics</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Stack-buffer-overflow/" title="Stack buffer overflow">Stack buffer overflow</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/dailysharing/" title="分类于 日常碎碎念">日常碎碎念</a>
+</div>
+
+    <span><a href="/dailysharing/%E7%AC%AC%E4%B8%80%E7%AF%87ovo/" title="第一篇ovo">第一篇ovo</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Zz @ AtoposZz</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'course/Network-Security-Analysis/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

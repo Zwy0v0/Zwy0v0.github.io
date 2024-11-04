@@ -5,42 +5,501 @@
         <link>http://example.com</link>
         <description>🌸</description>
         <language>zh-CN</language>
-        <pubDate>Mon, 04 Nov 2024 13:27:37 +1000</pubDate>
-        <lastBuildDate>Mon, 04 Nov 2024 13:27:37 +1000</lastBuildDate>
-        <category>Blog</category>
-        <category>日常</category>
+        <pubDate>Mon, 04 Nov 2024 22:02:06 +1000</pubDate>
+        <lastBuildDate>Mon, 04 Nov 2024 22:02:06 +1000</lastBuildDate>
+        <category>JavaScript</category>
         <category>network system</category>
         <category>C</category>
         <category>software security</category>
         <category>AFL</category>
         <category>Linux</category>
+        <category>vulnerability</category>
         <category>C language</category>
         <category>HTTP</category>
         <category>XSS</category>
         <category>CSRF</category>
-        <category>vulnerability</category>
-        <category>router</category>
-        <category>Supernet</category>
-        <category>IPv4</category>
-        <category>Subnet</category>
-        <category>TCP</category>
-        <category>UDP</category>
         <category>IP</category>
         <category>DHCP</category>
         <category>ICMP</category>
         <category>ARP</category>
+        <category>router</category>
+        <category>Supernet</category>
+        <category>IPv4</category>
+        <category>Subnet</category>
         <category>DNS</category>
         <category>SSH</category>
         <category>FTP</category>
         <category>SMTP</category>
-        <category>SQL</category>
+        <category>TCP</category>
+        <category>UDP</category>
         <category>OSI</category>
         <category>TCP/IP</category>
-        <category>JavaScript</category>
+        <category>Network Security</category>
+        <category>SQL</category>
         <category>gdb</category>
+        <category>Blog</category>
+        <category>日常</category>
+        <item>
+            <guid isPermalink="true">http://example.com/course/Network-Security-Analysis/</guid>
+            <title>Network Security Analysis</title>
+            <link>http://example.com/course/Network-Security-Analysis/</link>
+            <category>network system</category>
+            <category>IP</category>
+            <category>DHCP</category>
+            <category>ICMP</category>
+            <category>ARP</category>
+            <category>DNS</category>
+            <category>TCP</category>
+            <category>Network Security</category>
+            <pubDate>Mon, 04 Nov 2024 22:02:06 +1000</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;Layer 3: Network&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Layer 3: Network&#34;&gt;#&lt;/a&gt;Layer 3: Network&lt;/h1&gt;
+&lt;h2 id=&#34;IP&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#IP&#34;&gt;#&lt;/a&gt;IP&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;IP Protocol Features&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Best-effort delivery
+&lt;ul&gt;
+&lt;li&gt;IP routes and sends a packet to the destination. IP provides no guaranteed delivery of packets&lt;/li&gt;
+&lt;li&gt;Packet loss is left to the higher layer protocols&lt;/li&gt;
+&lt;li&gt;The network has variable delays, it is not guaranteed that the packets will be received in sequence.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Connection-less service
+&lt;ul&gt;
+&lt;li&gt;Each packet is individually addressed and routed, rather than in the setup a prearranged connection channel for data transmission&lt;/li&gt;
+&lt;li&gt;It is possible that two packets from the same source take different paths to reach the destination.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Routing
+&lt;ul&gt;
+&lt;li&gt;Packets go through a series of routers before they reach the destination.&lt;/li&gt;
+&lt;li&gt;At each node that the packet passes through, the node determines the next hop for the packet and routes it to the next hop.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Quality of Service (QoS) control
+&lt;ul&gt;
+&lt;li&gt;QoS optimizes the network by setting packet priorities (classification marking)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;IP Fragmentation
+&lt;ol&gt;
+&lt;li&gt;What is IP fragmentation?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Fragmentation is necessary for data transmission, as every network has its maximum transmission unit (MTU), the largest number of bytes an individual packet can have on a particular network&lt;/li&gt;
+&lt;li&gt;If a packet larger than the network’s MTU is being sent, it must be fragmented before transmission.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Who assembles the fragmented packets?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;When the destination host receives IP fragments, it allocates memory in preparation for fragment reassembly.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;IP Spoofing/DoS&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;An attacker can send packets/datagrams from a false source address to disguise itself.&lt;/li&gt;
+&lt;li&gt;Denial-of-service (DoS) attacks often use IP spoofing to overload networks and devices with packets that appear to be from legitimate source IP addresses.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Issues with IPv4 Fragmentation&lt;br&gt;
+Fragmentation causes increase overhead in CPU and memory and slow down network performance.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Intermediate router
+&lt;ul&gt;
+&lt;li&gt;Creates fragment headers&lt;/li&gt;
+&lt;li&gt;Computes checksums&lt;/li&gt;
+&lt;li&gt;Copies the original packet into the fragments&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Receiving host
+&lt;ul&gt;
+&lt;li&gt;When reassembling the fragments the receiver must allocate memory for the arriving fragments and joint together fragments into one packet after all of the fragments are received&lt;/li&gt;
+&lt;li&gt;If one fragment is dropped, the entire original packet must be resent.
+&lt;ul&gt;
+&lt;li&gt;The TTL time exceeded ICMP message (with Fragment reassembly timeout) is sent to the sender.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ARP&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#ARP&#34;&gt;#&lt;/a&gt;ARP&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;ARP&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;IP addresses are used for identifying destination devices across the Internet.&lt;/li&gt;
+&lt;li&gt;MAC addresses are used for direct delivery within the same network.&lt;/li&gt;
+&lt;li&gt;ARP is used to resolve a logical (IP) address of a target host to its physical (MAC) address in a local area network.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;ARP in Direct Delivery&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The sender A and receiver B are located at the same network.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;A requests for B’s MAC address.&lt;/li&gt;
+&lt;li&gt;Once B’s MAC address is resolved, then the data can be delivered from A to B.&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/7638f7e29bc26dab.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;The sender A and receiver B are not located at the same network.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;A requests for gateway’s MAC address. Once G’s MAC address is resolved, then A sends the data to G for data forwarding&lt;/li&gt;
+&lt;li&gt;G requests B’s MAC address. Once B’s MAC address is resolved, then G forwards the data to B&lt;/li&gt;
+&lt;li&gt;Two ARP processes involved&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/a066a6ee19686120.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;More ARP processes&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;A - G1     G1 - G2      G2 - G3      G3 - B&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/94a4b433ddf61059.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ARP Process- Request&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;ARP is a two-step process: a request and a reply.&lt;/li&gt;
+&lt;li&gt;Within a network, when a host (requester) – A, begins a conversation with a target host - B
+&lt;ul&gt;
+&lt;li&gt;A is aware of B’s IP address, but does not have the B’s MAC address. Thus A is unable to send a unicast frame to B.&lt;/li&gt;
+&lt;li&gt;A sends an ARP broadcast frame to request B’s MAC address. Since it is a broadcast, all hosts on the network receives the ARP request.&lt;/li&gt;
+&lt;li&gt;All hosts scan the content of the ARP request to determine if they are the intended target. The hosts which are not the intended target discard the broadcast frame.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;ARP Process - Reply&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;B is the target of the ARP Request. It sends an ARP Reply back to A.&lt;/li&gt;
+&lt;li&gt;Since B knows who sent the initial ARP Request, it is able to send the ARP Response unicast, directly back to A&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;ARP Poisoning&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;ARP Poisoning is also known as ARP Spoofing.&lt;/li&gt;
+&lt;li&gt;A type of attack carried out over a local area network (LAN).&lt;/li&gt;
+&lt;li&gt;It involves sending malicious ARP packets on a LAN to change the mapping of the attacker’s&lt;br&gt;
+MAC address with the IP address of another host&lt;/li&gt;
+&lt;li&gt;攻击过程
+&lt;ul&gt;
+&lt;li&gt;攻击者在局域网中发送伪造的 ARP 数据包，将目标 IP 地址映射到攻击者的 MAC 地址。&lt;/li&gt;
+&lt;li&gt;这样，局域网中的其他主机在访问该 IP 地址时，流量会被引导到攻击者的设备上。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;攻击目的
+&lt;ol&gt;
+&lt;li&gt;中间人攻击（Man-in-the-Middle, MITM）：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;攻击者可以截获、篡改或记录在受害者和目标主机之间传递的数据。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;拒绝服务攻击（DoS）：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;攻击者可以通过阻止合法主机的流量访问目标主机，实现拒绝服务。&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/1e55b1b5b0938dda.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ICMP&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#ICMP&#34;&gt;#&lt;/a&gt;ICMP&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;ICMP Features&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;ICMP is a supporting protocol to support IP.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ICMP messages are encapsulated inside of IP datagrams before going down to the data link layer&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/bd2c3965e1886840.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Assists the diagnosis of some network problems, particularly related to the network layer of the OSI model&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Assists in obtaining specific information from routers and the destination host&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Is used by routers and hosts&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Returns the message to the originator&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Types of ICMP&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;ICMP messages can be broadly classified into 2 types:
+&lt;ul&gt;
+&lt;li&gt;Error reporting&lt;/li&gt;
+&lt;li&gt;Query/Reply&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Time-Exceeded(Error reporting)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;The ICMP Time Exceeded message is issued:
+&lt;ul&gt;
+&lt;li&gt;When a packet is sent, its TTL is decremented by 1 at each hop. If the TTL reaches 0, the packet is dropped and a Time-Exceeded message is sent to the originator.&lt;/li&gt;
+&lt;li&gt;If destination does not receive all fragments in a set time, it drops any received fragments and sends a Time-Exceeded message to the originator&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;ICMP 重定向（ICMP Redirect）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;场景设置
+&lt;ul&gt;
+&lt;li&gt;发送主机 A：IP 地址为 10.0.0.100/24。&lt;/li&gt;
+&lt;li&gt;默认路由：A 的路由表中有一个默认路由条目，指向路由器 G1 的 IP 地址 10.0.0.1/24 作为默认网关。&lt;/li&gt;
+&lt;li&gt;路由器 G1：当需要转发到目标网络 X 时，G1 使用路由器 G2 的 IP 地址 10.0.0.2/24 作为下一跳。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ICMP 重定向过程
+&lt;ul&gt;
+&lt;li&gt;包到达路由器 G1：G1 收到来自主机 A（10.0.0.100）发送的一个数据包，目标是网络 X。&lt;/li&gt;
+&lt;li&gt;路由表检查：G1 检查其路由表，发现下一跳是 G2（IP 地址 10.0.0.2），可以到达目标网络 X。&lt;/li&gt;
+&lt;li&gt;ICMP 重定向消息：如果 G2 和发送主机 A（10.0.0.100）在同一个网络（10.0.0.0/24），G1 会向发送主机 A 发送一个 ICMP 重定向消息，建议 A 将去往网络 X 的流量直接发送到 G2，这样可以减少一个跳数，使流量更直接地到达目标网络。&lt;/li&gt;
+&lt;li&gt;数据包转发：在发送重定向消息的同时，G1 仍会将接收到的数据包转发到 G2，确保当前数据包的传输不中断。&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/bbbcd5f2b66d5d73.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Echo Request/Reply&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;A host or router that receives an echo-request message creates an echo-reply message and returns it to the originator&lt;/li&gt;
+&lt;li&gt;echo-request and echo-reply messages can be used to help diagnose some network problems
+&lt;ul&gt;
+&lt;li&gt;e.g. communication status between two devices&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Testing destination availability and providing status is achieved by invoking a ping command
+&lt;ul&gt;
+&lt;li&gt;Creates a series of echo-request and echo-reply messages providing statistical information&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;Ping（ICMP）泛洪 DDoS 攻击&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;ICMP 操作的类型：熟悉 ICMP 的各种操作类型（例如 Echo 请求 / 回复）有助于识别网络通信中的正常行为和异常行为。&lt;/li&gt;
+&lt;li&gt;正常的 ICMP 交互：了解 ICMP 在发起端与目标主机之间的正常交互方式，例如 ping 操作，能帮助区分合法通信和潜在的恶意流量。&lt;/li&gt;
+&lt;li&gt;异常网络行为识别：当 ICMP 流量异常时（例如，持续的 ping 请求），可能意味着存在攻击行为，如 DDoS 攻击。&lt;/li&gt;
+&lt;li&gt;Ping（ICMP）泛洪 DDoS 攻击&lt;br&gt;
+ Ping 泛洪是一种典型的 DDoS（分布式拒绝服务）攻击，攻击者通过发送大量 ICMP Echo 请求，使目标主机过载，耗尽其资源，导致网络性能下降甚至服务中断。这种攻击利用了 ICMP 的易用性和资源开销低的特性，通过大量的无用流量使目标服务器无法响应正常请求。&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/7150028ff5a5d75b.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;Layer 4: Transport&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Layer 4: Transport&#34;&gt;#&lt;/a&gt;Layer 4: Transport&lt;/h1&gt;
+&lt;h2 id=&#34;TCP&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#TCP&#34;&gt;#&lt;/a&gt;TCP&lt;/h2&gt;
+TCP详细特征在 Layer-4-Transport-Protocols
+&lt;p&gt;对 TCP 的威胁：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;TCP 序列号预测：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;攻击者可能能够猜测 TCP 分配给数据包流的序列号。&lt;/li&gt;
+&lt;li&gt;如果攻击者成功预测了正在进行的通信会话的序列号，可以进行&lt;strong&gt;注入&lt;/strong&gt;攻击，将篡改或伪造的数据插入数据流中，从而影响数据的完整性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;SYN Flooding DoS 攻击：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;SYN 泛洪是一种拒绝服务（DoS）攻击，通过向服务器发送大量伪造的 TCP SYN 请求，占用服务器的资源。&lt;/li&gt;
+&lt;li&gt;在 SYN Flooding 攻击中，攻击者连续发送 SYN 请求，服务器响应 SYN-ACK，但攻击者不回复 ACK 确认，导致连接未完成并占用资源。&lt;/li&gt;
+&lt;li&gt;这种攻击会使服务器资源耗尽，导致其无法响应合法用户的请求&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/66fe7ac2f80b1dd1.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;Layer 7: Application&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Layer 7: Application&#34;&gt;#&lt;/a&gt;Layer 7: Application&lt;/h1&gt;
+&lt;h2 id=&#34;DHCP&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#DHCP&#34;&gt;#&lt;/a&gt;DHCP&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;DHCP Message Format&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/d8ed49e7d0fc10b8.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Threats to
+&lt;ol&gt;
+&lt;li&gt;DHCP - DHCP 欺骗（DHCP Spoofing）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;DHCP 欺骗是一种网络攻击，攻击者通过在网络中插入一个伪造的 DHCP 服务器来控制或截获网络流量。以下是攻击过程：
+&lt;ol&gt;
+&lt;li&gt;伪造的 DHCP 服务器：攻击者在网络中设置一个伪造的 DHCP 服务器，伪装成合法的 DHCP 服务器。&lt;/li&gt;
+&lt;li&gt;响应 DHCP 请求：当客户端发送 DHCP 请求时，伪造的 DHCP 服务器会快速响应，试图将自己设为客户端的默认网关或 DNS 服务器。&lt;/li&gt;
+&lt;li&gt;中间人攻击：通过设置默认网关或 DNS，攻击者可以截获并控制客户端的网络流量，作为中间人，拦截用户与实际网关之间的数据。这样，攻击者可以监视、篡改或阻断用户的网络流量。&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/3e9cd9116e8ed666.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;DHCP 耗尽攻击（DHCP Starvation Attack）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;DHCP 耗尽攻击是一种拒绝服务攻击，攻击者利用多个 “从属主机” 向 DHCP 服务器发送大量 IP 地址请求，直到耗尽服务器的地址池。以下是攻击的具体过程：
+&lt;ol&gt;
+&lt;li&gt;大量请求：攻击者通过从属主机或伪造的 MAC 地址向 DHCP 服务器不断请求新的 IP 地址。&lt;/li&gt;
+&lt;li&gt;地址池耗尽：随着大量虚假请求的积累，DHCP 服务器的 IP 地址池逐渐被占满。&lt;/li&gt;
+&lt;li&gt;合法用户无法连接：由于服务器没有可分配的 IP 地址，合法客户端无法从 DHCP 服务器获得 IP 地址，从而无法连接到网络。&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/298943f7c02b1624.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;DNS&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#DNS&#34;&gt;#&lt;/a&gt;DNS&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;名称解析响应类型&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;权威响应（Authoritative Response）：
+&lt;ul&gt;
+&lt;li&gt;这种响应来自于被查询域名的权威 DNS 服务器。&lt;/li&gt;
+&lt;li&gt;权威响应表明该 DNS 服务器对该域的 DNS 记录拥有直接管理权限，因此返回的数据是准确和最新的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;非权威响应（Non-authoritative Response）：
+&lt;ul&gt;
+&lt;li&gt;这种响应并非来自被查询域名的权威 DNS 服务器，而是来自缓存服务器或中间服务器。&lt;/li&gt;
+&lt;li&gt;非权威响应通常是其他 DNS 服务器缓存的数据，可能并非实时更新，但可以加速查询过程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;非权威响应示例&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;首次查询
+&lt;ol&gt;
+&lt;li&gt;查询请求：客户端请求 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5pYm0uY29t&#34;&gt;www.ibm.com&lt;/span&gt; 的 IP 地址。&lt;/li&gt;
+&lt;li&gt;查询根服务器：本地 DNS 服务器向根服务器查询 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5pYm0uY29t&#34;&gt;www.ibm.com&lt;/span&gt; 的地址。&lt;/li&gt;
+&lt;li&gt;指向顶级域（TLD）服务器：根服务器返回可查询的 com 顶级域服务器列表。&lt;/li&gt;
+&lt;li&gt;查询 com 顶级域服务器：本地 DNS 服务器向 com TLD 服务器查询 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5pYm0uY29t&#34;&gt;www.ibm.com&lt;/span&gt;。&lt;/li&gt;
+&lt;li&gt;指向 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2libS5jb20=&#34;&gt;ibm.com&lt;/span&gt; 的权威 DNS 服务器：com TLD 服务器提供 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2libS5jb20=&#34;&gt;ibm.com&lt;/span&gt; 权威 DNS 服务器地址。&lt;/li&gt;
+&lt;li&gt;查询 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2libS5jb20=&#34;&gt;ibm.com&lt;/span&gt; 的 DNS 服务器：本地 DNS 服务器向 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2libS5jb20=&#34;&gt;ibm.com&lt;/span&gt; 的 DNS 服务器请求 IP 地址。&lt;/li&gt;
+&lt;li&gt;解析完成：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2libS5jb20=&#34;&gt;ibm.com&lt;/span&gt; 的权威 DNS 服务器返回 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5pYm0uY29t&#34;&gt;www.ibm.com&lt;/span&gt; 的 IP 地址 129.42.38.10。&lt;/li&gt;
+&lt;li&gt;返回 IP 地址：本地 DNS 服务器将该 IP 地址返回给客户端。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;缓存和非权威响应
+&lt;ul&gt;
+&lt;li&gt;本地 DNS 服务器会将查询结果缓存一段时间。&lt;/li&gt;
+&lt;li&gt;如果在缓存有效期内再次请求 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5pYm0uY29t&#34;&gt;www.ibm.com&lt;/span&gt;，本地 DNS 服务器直接从缓存中返回 IP 地址，此时的响应即为非权威响应。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Vulnerabilities/Threats in DNS&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;DNS 方案的基本漏洞：
+&lt;ul&gt;
+&lt;li&gt;缺乏身份验证：DNS 没有内置的身份验证机制，使得攻击者更容易伪装。&lt;/li&gt;
+&lt;li&gt;缺乏响应的真实性和完整性检查：DNS 响应数据没有经过加密或验证，容易被篡改。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;DNS 缓存污染攻击（DNS Cache Poisoning）：
+&lt;ul&gt;
+&lt;li&gt;原理：攻击者更改 DNS 服务器或 DNS 缓存服务器上的记录，使网络流量从合法的服务器重定向到恶意网站。&lt;/li&gt;
+&lt;li&gt;效果：用户无意间访问到钓鱼网站，可能泄露敏感信息。&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/2e4f0ec78949c3fe.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;DNS 泛洪攻击（DNS Flood Attack）：
+&lt;ul&gt;
+&lt;li&gt;原理：利用 DoS/DDoS 攻击，通过大量请求过载网络，耗尽网络容量和服务器资源。&lt;/li&gt;
+&lt;li&gt;效果：合法用户无法访问 DNS 服务，导致网络中断。&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/6ed8673589f212d0.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;DNS 欺骗（DNS Spoofing）：
+&lt;ul&gt;
+&lt;li&gt;原理：攻击者伪装成合法的 DNS 服务器，向客户端提供虚假的 DNS 响应。&lt;/li&gt;
+&lt;li&gt;效果：用户可能被引导到虚假网站，面临数据泄露和安全威胁。&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/fc1bec998cfbdd83.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;Summary&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Summary&#34;&gt;#&lt;/a&gt;Summary&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Summary - Protocol Threats&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Protocol&lt;/th&gt;
+&lt;th&gt;Threats&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;IP&lt;/td&gt;
+&lt;td&gt;IP Spoofing attack 、 Fragmentation attack&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ARP&lt;/td&gt;
+&lt;td&gt;ARP Cache-poisoning attack  、 MITM (Man-in-the-Middle) attack&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ICMP&lt;/td&gt;
+&lt;td&gt;Redirect attack  、 Ping of death attack&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TCP&lt;/td&gt;
+&lt;td&gt;Predicting TCP Sequences  、 TCP SYN Flood attack&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DHCP&lt;/td&gt;
+&lt;td&gt;DHCP Spoofing  、 Starvation attack&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DNS&lt;/td&gt;
+&lt;td&gt;DNS Cache Poisoning  、 DNS Flood attack  、 DNS Spoofing&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Summary- Security attacks&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Active attack
+&lt;ul&gt;
+&lt;li&gt;involves data modification or the creation of a false stream, e.g.
+&lt;ul&gt;
+&lt;li&gt;masquerade, replay, modification of messages, man-in-the-middle (MITM) and DoS/DDoS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Passive attack
+&lt;ul&gt;
+&lt;li&gt;attempts to learn or make use of information from the system but does not affect system resources, e.g. traffic analysis, release of information contents&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/course/Layer-7-Application-layer-Protocols-and-Services/</guid>
-            <title>(Layer 7) Application-layer Protocols and Services</title>
+            <title>Layer 7 - Application-layer Protocols and Services</title>
             <link>http://example.com/course/Layer-7-Application-layer-Protocols-and-Services/</link>
             <category>network system</category>
             <category>HTTP</category>
@@ -51,19 +510,20 @@
             <category>SMTP</category>
             <pubDate>Mon, 04 Nov 2024 13:27:37 +1000</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;Hypertext Transfer Protocol (HTTP)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Hypertext Transfer Protocol (HTTP)&#34;&gt;#&lt;/a&gt;Hypertext Transfer Protocol (HTTP)&lt;/h1&gt;
-
 &lt;ol&gt;
 &lt;li&gt;World Wide Web (WWW)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;The most popular service on the Internet&lt;/li&gt;
 &lt;li&gt;Immense collection of Web pages and other resources that can be downloaded across the Internet and displayed on a workstation via a web browser&lt;/li&gt;
-&lt;li&gt;The main concept is &lt;code&gt;hypertext&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;A system that allows related documents to be linked together&lt;ul&gt;
+&lt;li&gt;The main concept is  &lt;code&gt;hypertext&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;A system that allows related documents to be linked together
+&lt;ul&gt;
 &lt;li&gt;A “web” of electronically-linked documents&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Major functional components of the WWW&lt;ul&gt;
+&lt;li&gt;Major functional components of the WWW
+&lt;ul&gt;
 &lt;li&gt;HyperText Markup Language (HTML)&lt;/li&gt;
 &lt;li&gt;Hypertext Transfer Protocol (HTTP)&lt;/li&gt;
 &lt;li&gt;Uniform Resource Identifiers (URIs)&lt;/li&gt;
@@ -71,14 +531,17 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;HTTP&lt;br&gt;Originally, its main purpose was to transfer static web pages written in HTML&lt;/li&gt;
+&lt;li&gt;HTTP&lt;br&gt;
+Originally, its main purpose was to transfer static web pages written in HTML&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;Now, it is also used for general file transfer and downloading&amp;#x2F;displaying multimedia files&lt;/li&gt;
+&lt;li&gt;Now, it is also used for general file transfer and downloading/displaying multimedia files&lt;/li&gt;
 &lt;li&gt;Default TCP port number is 80&lt;/li&gt;
-&lt;li&gt;HTTP is an application-layer protocol&lt;ul&gt;
-&lt;li&gt;HTTP&amp;#x2F;2 is based on TCP as its Transport-layer protocol&lt;/li&gt;
-&lt;li&gt;HTTP&amp;#x2F;3 is based on QUIC as its Transport-layer protocol (RFC 9114, released on 6 June 2022)&lt;ul&gt;
+&lt;li&gt;HTTP is an application-layer protocol
+&lt;ul&gt;
+&lt;li&gt;HTTP/2 is based on TCP as its Transport-layer protocol&lt;/li&gt;
+&lt;li&gt;HTTP/3 is based on QUIC as its Transport-layer protocol (RFC 9114, released on 6 June 2022)
+&lt;ul&gt;
 &lt;li&gt;QUIC (RFC 9000, released in May 2021)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -91,34 +554,49 @@
 &lt;li&gt;HTTP Encapsulation&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;Example of how the layers work together:&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;start your Web browser and your home page is &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5leGFtcGxlLmNvbS8=&#34;&gt;http://www.example.com&lt;/span&gt;&lt;/p&gt;
+&lt;li&gt;Example of how the layers work together:
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;start your Web browser and your home page is &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5leGFtcGxlLmNvbQ==&#34;&gt;http://www.example.com&lt;/span&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The web browser formats a request for your home page by using the Application layer protocol HTTP&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;The web browser formats a request for your home page by using the Application layer protocol HTTP&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The request looks something like: &lt;code&gt;get the example.com home page&lt;/code&gt;&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;The request looks something like:  &lt;code&gt;get the example.com home page&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The unit of information the Application layer works with is simply called &lt;code&gt;data&lt;/code&gt;&lt;br&gt;The Application-layer protocol HTTP passes the request down to the Transport-layer protocol (TCP)&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;The unit of information the Application layer works with is simply called  &lt;code&gt;data&lt;/code&gt; &lt;br&gt;
+The Application-layer protocol HTTP passes the request down to the Transport-layer protocol (TCP)&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;TCP adds a header to the request&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;TCP adds a header to the request&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The unit of information the Transport layer works with is called a &lt;code&gt;segment&lt;/code&gt;&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;The unit of information the Transport layer works with is called a  &lt;code&gt;segment&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;TCP passes the segment to the Internetwork layer protocol (IP)&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;TCP passes the segment to the Internetwork layer protocol (IP)&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;IP places its header on the segment&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;IP places its header on the segment&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The unit of information is now called a &lt;code&gt;packet&lt;/code&gt;&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;The unit of information is now called a  &lt;code&gt;packet&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The packet is passed down to the Network access layer, where the NIC operates&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;The packet is passed down to the Network access layer, where the NIC operates&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;A &lt;code&gt;frame&lt;/code&gt; header and trailer are added&lt;br&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/6b810b6747c82aec.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;A  &lt;code&gt;frame&lt;/code&gt;  header and trailer are added&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/6b810b6747c82aec.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The frame is delivered to the network medium as bits&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;The frame is delivered to the network medium as bits&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;on its way to the &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5leGFtcGxlLmNvbS8=&#34;&gt;www.example.com&lt;/span&gt; server&lt;/li&gt;
+&lt;li&gt;on its way to the &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5leGFtcGxlLmNvbQ==&#34;&gt;www.example.com&lt;/span&gt; server&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;13&#34;&gt;
 &lt;li&gt;The web server processes it and returns a Web page&lt;/li&gt;
@@ -138,28 +616,33 @@
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;Every document on the Internet has a unique Uniform Resource Locator (URL)&lt;/li&gt;
-&lt;li&gt;All URLs consist of four parts:&lt;ul&gt;
-&lt;li&gt;Service type, e.g., http:&amp;#x2F;&amp;#x2F;&lt;/li&gt;
-&lt;li&gt;Host or domain name, e.g., example.com&lt;/li&gt;
+&lt;li&gt;All URLs consist of four parts:
+&lt;ul&gt;
+&lt;li&gt;Service type, e.g., http://&lt;/li&gt;
+&lt;li&gt;Host or domain name, e.g., &lt;a href=&#34;http://example.com&#34;&gt;example.com&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Directory or subdirectory information&lt;/li&gt;
 &lt;li&gt;Filename&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;6&#34;&gt;
-&lt;li&gt;Web Client&amp;#x2F;Server&lt;/li&gt;
+&lt;li&gt;Web Client/Server&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;Web client&lt;ul&gt;
-&lt;li&gt;To communicate with a web server, using Hypertext Transfer Protocol (HTTP)&lt;ul&gt;
+&lt;li&gt;Web client
+&lt;ul&gt;
+&lt;li&gt;To communicate with a web server, using Hypertext Transfer Protocol (HTTP)
+&lt;ul&gt;
 &lt;li&gt;Firefox, Edge, Chrome&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;To submit an HTTP request to the server&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Web server&lt;ul&gt;
-&lt;li&gt;To provide web content that can be accessed through the Internet&lt;ul&gt;
+&lt;li&gt;Web server
+&lt;ul&gt;
+&lt;li&gt;To provide web content that can be accessed through the Internet
+&lt;ul&gt;
 &lt;li&gt;Microsoft’s Internet Information Services (IIS)&lt;/li&gt;
 &lt;li&gt;Apache&lt;/li&gt;
 &lt;/ul&gt;
@@ -169,24 +652,25 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;Domain Name System (DNS)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Domain Name System (DNS)&#34;&gt;#&lt;/a&gt;Domain Name System (DNS)&lt;/h1&gt;
-
 &lt;h2 id=&#34;DNS&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#DNS&#34;&gt;#&lt;/a&gt;DNS&lt;/h2&gt;
-
 &lt;ol&gt;
 &lt;li&gt;Domain Names&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;Domain&lt;ul&gt;
+&lt;li&gt;Domain
+&lt;ul&gt;
 &lt;li&gt;Group of computers belonging to same organization&lt;/li&gt;
 &lt;li&gt;Share common part of IP address&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Domain name&lt;ul&gt;
-&lt;li&gt;Identifies domain (loc.gov)&lt;/li&gt;
+&lt;li&gt;Domain name
+&lt;ul&gt;
+&lt;li&gt;Identifies domain (&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2xvYy5nb3Y=&#34;&gt;loc.gov&lt;/span&gt;)&lt;/li&gt;
 &lt;li&gt;Associated with company, university, government organization&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Fully qualified host name (blogs.loc.gov)&lt;ul&gt;
+&lt;li&gt;Fully qualified host name (&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2Jsb2dzLmxvYy5nb3Y=&#34;&gt;blogs.loc.gov&lt;/span&gt;)
+&lt;ul&gt;
 &lt;li&gt;Local host name plus domain name&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -196,33 +680,37 @@
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;Commonly used analogy a “phone book” for the Internet&lt;/li&gt;
-&lt;li&gt;To keep the system manageable, the DNS is a hierarchical distributed naming service for computers&amp;#x2F;services&amp;#x2F;resources connected to the Internet&lt;/li&gt;
-&lt;li&gt;Translate human-friendly computer hostnames into IP addresses to locate computer resources&lt;ul&gt;
+&lt;li&gt;To keep the system manageable, the DNS is a hierarchical distributed naming service for computers/services/resources connected to the Internet&lt;/li&gt;
+&lt;li&gt;Translate human-friendly computer hostnames into IP addresses to locate computer resources
+&lt;ul&gt;
 &lt;li&gt;Computers do not use domain names, but binary addressing&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;DNS Database Structure&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#DNS Database Structure&#34;&gt;#&lt;/a&gt;DNS Database Structure&lt;/h2&gt;
-
 &lt;ol&gt;
 &lt;li&gt;DNS Database Structure&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;Can be best understood as a tree structure&lt;ul&gt;
+&lt;li&gt;Can be best understood as a tree structure
+&lt;ul&gt;
 &lt;li&gt;In the domain namespace, all domains meet at the root, identified by a single period (.)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Second-level domain (SLD) are usually the name of a company or institution&lt;/li&gt;
 &lt;li&gt;Subdomain is optional&lt;/li&gt;
 &lt;li&gt;Host level represents individual device&lt;/li&gt;
-&lt;li&gt;Some Well-known Top-level Domains&lt;table&gt;
+&lt;li&gt;Some Well-known Top-level Domains&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Domain suffix&lt;/th&gt;
 &lt;th&gt;Type of organization&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
 &lt;td&gt;ARPA&lt;/td&gt;
 &lt;td&gt;Reverse lookup domain (special Internet function)&lt;/td&gt;
 &lt;/tr&gt;
@@ -270,17 +758,18 @@
 &lt;td&gt;COOP&lt;/td&gt;
 &lt;td&gt;Cooperatives&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;Root Servers&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;Root servers are the authoritative name servers that serve the DNS root zone&lt;/li&gt;
 &lt;li&gt;Root servers are a network of hundreds of servers for redundancy in many countries around the world.&lt;/li&gt;
-&lt;li&gt;They are specified in the DNS root zone as 13 logical named authorities.&lt;ul&gt;
-&lt;li&gt;This does not mean that there are only 13 physical servers; each operator uses redundant computer equipment to provide reliable&lt;br&gt;service&lt;/li&gt;
+&lt;li&gt;They are specified in the DNS root zone as 13 logical named authorities.
+&lt;ul&gt;
+&lt;li&gt;This does not mean that there are only 13 physical servers; each operator uses redundant computer equipment to provide reliable&lt;br&gt;
+service&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -288,7 +777,8 @@
 &lt;li&gt;DNS Client (Resolver)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;DNS clients in most operating systems maintain a DNS cache, called a resolver cache&lt;ul&gt;
+&lt;li&gt;DNS clients in most operating systems maintain a DNS cache, called a resolver cache
+&lt;ul&gt;
 &lt;li&gt;Stores name and IP address pairs and other data&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -297,7 +787,8 @@
 &lt;li&gt;In Windows, the first DNS server configured is called the preferred DNS server and the second one is the alternate DNS server&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;DNS server&lt;br&gt;DNS servers are composed of the following:&lt;/li&gt;
+&lt;li&gt;DNS server&lt;br&gt;
+DNS servers are composed of the following:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;DNS zones – a database of primarily hostname and IP address pairs&lt;/li&gt;
@@ -305,10 +796,10 @@
 &lt;li&gt;Cache – results of queries are cached so that if the same query occurs again, the local DNS server can respond without having to contact another server&lt;/li&gt;
 &lt;li&gt;Root hints – file containing a list of all IP addresses of Internet root servers&lt;/li&gt;
 &lt;li&gt;DNS Server service – runs in the background and listens for DNS queries on UDP port 53&lt;/li&gt;
-&lt;li&gt;DNS Query Making its Way Through the DNS Hierarchy&lt;br&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/95ccdad58249c863.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
+&lt;li&gt;DNS Query Making its Way Through the DNS Hierarchy&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/95ccdad58249c863.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;DNS Database Records&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#DNS Database Records&#34;&gt;#&lt;/a&gt;DNS Database Records&lt;/h2&gt;
-
 &lt;ol&gt;
 &lt;li&gt;Resource records (RR)&lt;/li&gt;
 &lt;/ol&gt;
@@ -317,15 +808,17 @@
 &lt;li&gt;Divided into four classes, of which Internet class is of most interest to the users&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Most Commonly Used Record Types&lt;ol&gt;
+&lt;li&gt;Most Commonly Used Record Types
+&lt;ol&gt;
 &lt;li&gt;Start of Authority (SOA) record&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;Identifies the name server that is authoritative for a specific DNS database segment;&lt;/li&gt;
 &lt;li&gt;Identifies the master DNS server for a specific domain or sub-domain&lt;/li&gt;
-&lt;li&gt;First entry in the DNS file - both &lt;code&gt;domain.dns&lt;/code&gt; and &lt;code&gt;addr.in-addr.arpa.dns&lt;/code&gt; files - must be an SOA record&lt;/li&gt;
+&lt;li&gt;First entry in the DNS file - both  &lt;code&gt;domain.dns&lt;/code&gt;  and  &lt;code&gt;addr.in-addr.arpa.dns&lt;/code&gt;  files - must be an SOA record&lt;/li&gt;
 &lt;li&gt;Identifies the current name server as the best source of information for data in its zone&lt;/li&gt;
-&lt;li&gt;Both secondary and primary name servers can&lt;ul&gt;
+&lt;li&gt;Both secondary and primary name servers can
+&lt;ul&gt;
 &lt;li&gt;Designate themselves as authoritative in their own SOA records&lt;/li&gt;
 &lt;li&gt;This allows load-balancing across a primary and one or more secondary DNS servers in a domain&lt;/li&gt;
 &lt;/ul&gt;
@@ -365,15 +858,17 @@
 &lt;li&gt;Mapping Addresses to Names&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;Records in the &lt;code&gt;db.addr&lt;/code&gt; file are provided to support reverse DNS lookups&lt;/li&gt;
+&lt;li&gt;Records in the  &lt;code&gt;db.addr&lt;/code&gt;  file are provided to support reverse DNS lookups&lt;/li&gt;
 &lt;li&gt;Reverse address lookups are used primarily to determine if IP address that a user presents matches the domain name from which the user claims to originate&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;Resolving process&lt;ol&gt;
+&lt;li&gt;Resolving process
+&lt;ol&gt;
 &lt;li&gt;The DNS query is sent by the resolver to the local DNS server for resolution&lt;/li&gt;
 &lt;li&gt;If local DNS server does not recognise the address, then it queries the root server&lt;/li&gt;
 &lt;li&gt;If root server doesn’t recognize the domain name, the root will provide relevant information to the the resolver to contact the name server, which is the next level down&lt;/li&gt;
-&lt;li&gt;Repetition of the step to process each domain name in a top-down manner until the query is resolved, then&lt;ul&gt;
+&lt;li&gt;Repetition of the step to process each domain name in a top-down manner until the query is resolved, then
+&lt;ul&gt;
 &lt;li&gt;The resolver returns the resolved IP address to the requester&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -381,23 +876,25 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h1 id=&#34;Remote Login (Telnet) and Secure Shell (SSH)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Remote Login (Telnet) and Secure Shell (SSH)&#34;&gt;#&lt;/a&gt;Remote Login (Telnet) and Secure Shell (SSH)&lt;/h1&gt;
-
 &lt;ol&gt;
 &lt;li&gt;Remote Login (Telnet and SSH)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;A terminal emulation program for TCP&amp;#x2F;IP networks&lt;ul&gt;
+&lt;li&gt;A terminal emulation program for TCP/IP networks
+&lt;ul&gt;
 &lt;li&gt;Allows a user to remotely log in to a distant computer site&lt;/li&gt;
 &lt;li&gt;User usually needs a login ID and password to access a remote computer site&lt;/li&gt;
 &lt;li&gt;To provide access to a command-line interface on a remote host&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Telnet and SSH: network protocols for remote login&lt;ul&gt;
+&lt;li&gt;Telnet and SSH: network protocols for remote login
+&lt;ul&gt;
 &lt;li&gt;Telnet (Port 23) is not secure&lt;/li&gt;
 &lt;li&gt;SSH (Port 22) provides an encrypted channel between the client and server&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;SSH Clients&lt;ul&gt;
+&lt;li&gt;SSH Clients
+&lt;ul&gt;
 &lt;li&gt;PuTTY&lt;/li&gt;
 &lt;li&gt;use SSH from Windows Command window and MacOS terminal window&lt;/li&gt;
 &lt;/ul&gt;
@@ -407,16 +904,19 @@
 &lt;li&gt;Remote Desktop Software&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;Remote desktop software&lt;ul&gt;
-&lt;li&gt;Remote Desktop Protocol (RDP)&lt;ul&gt;
-&lt;li&gt;Uses Graphic User Interface (GUI) to manage&amp;#x2F;access Windows computers remotely&lt;/li&gt;
+&lt;li&gt;Remote desktop software
+&lt;ul&gt;
+&lt;li&gt;Remote Desktop Protocol (RDP)
+&lt;ul&gt;
+&lt;li&gt;Uses Graphic User Interface (GUI) to manage/access Windows computers remotely&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Independent Computing Architecture (ICA)&lt;/li&gt;
 &lt;li&gt;Virtual network computing (VNC)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Some remote desktop clients&lt;ul&gt;
+&lt;li&gt;Some remote desktop clients
+&lt;ul&gt;
 &lt;li&gt;Google’s Chrome Remote Desktop&lt;/li&gt;
 &lt;li&gt;Microsoft Remote Desktop&lt;/li&gt;
 &lt;li&gt;TeamViewer&lt;/li&gt;
@@ -424,9 +924,7 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;Simple Mail Transfer Protocol (SMTP)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Simple Mail Transfer Protocol (SMTP)&#34;&gt;#&lt;/a&gt;Simple Mail Transfer Protocol (SMTP)&lt;/h1&gt;
-
 &lt;h2 id=&#34;E-mail Protocol&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#E-mail Protocol&#34;&gt;#&lt;/a&gt;E-mail Protocol&lt;/h2&gt;
-
 &lt;ol&gt;
 &lt;li&gt;E-mail Protocols&lt;/li&gt;
 &lt;/ol&gt;
@@ -436,51 +934,56 @@
 &lt;li&gt;Simple Mail Transfer Protocol (SMTP) is the standard protocol for sending email over the Internet (uses TCP port 25)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;邮件系统的组成&lt;ol&gt;
+&lt;li&gt;邮件系统的组成
+&lt;ol&gt;
 &lt;li&gt;Mail User Agent (MUA) - 邮件用户代理&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;功能：MUA是电子邮件应用程序，用于创建、发送、接收、存储、回复和转发电子邮件。它还支持附件功能。&lt;/li&gt;
-&lt;li&gt;示例：如Outlook、Thunderbird等。&lt;/li&gt;
-&lt;li&gt;用途：通过SMTP协议发送邮件，通过POP或IMAP协议下载和接收邮件。&lt;/li&gt;
+&lt;li&gt;功能：MUA 是电子邮件应用程序，用于创建、发送、接收、存储、回复和转发电子邮件。它还支持附件功能。&lt;/li&gt;
+&lt;li&gt;示例：如 Outlook、Thunderbird 等。&lt;/li&gt;
+&lt;li&gt;用途：通过 SMTP 协议发送邮件，通过 POP 或 IMAP 协议下载和接收邮件。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;Message Transfer Agent (MTA) - 消息传输代理&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;功能：MTA负责准备和传输电子邮件消息，确保邮件能够在不同服务器之间传输。&lt;/li&gt;
-&lt;li&gt;用途：MTA在不同的邮件服务器之间传递邮件。&lt;/li&gt;
+&lt;li&gt;功能：MTA 负责准备和传输电子邮件消息，确保邮件能够在不同服务器之间传输。&lt;/li&gt;
+&lt;li&gt;用途：MTA 在不同的邮件服务器之间传递邮件。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;Multipurpose Internet Mail Extension (MIME) - 多用途互联网邮件扩展&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;功能：MIME用于将非文本格式的文件（如图像、音频、视频等）附加到电子邮件中，使得电子邮件可以包含多种格式的内容。&lt;/li&gt;
-&lt;li&gt;用途：通过MIME标准，电子邮件不仅能传输文本，还能传输附件，如图片、PDF等文件。&lt;/li&gt;
+&lt;li&gt;功能：MIME 用于将非文本格式的文件（如图像、音频、视频等）附加到电子邮件中，使得电子邮件可以包含多种格式的内容。&lt;/li&gt;
+&lt;li&gt;用途：通过 MIME 标准，电子邮件不仅能传输文本，还能传输附件，如图片、PDF 等文件。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;邮件系统的工作流程&lt;ul&gt;
-&lt;li&gt;发送邮件：MUA创建邮件并通过SMTP协议将其发送到MTA；MTA将邮件传递到收件人的SMTP服务器。&lt;/li&gt;
-&lt;li&gt;接收邮件：收件人的MUA通过POP或IMAP协议从SMTP服务器下载邮件&lt;br&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/b496d50c4b936cc4.png&#34; alt=&#34;email&#34;&gt;&lt;/li&gt;
+&lt;li&gt;邮件系统的工作流程
+&lt;ul&gt;
+&lt;li&gt;发送邮件：MUA 创建邮件并通过 SMTP 协议将其发送到 MTA；MTA 将邮件传递到收件人的 SMTP 服务器。&lt;/li&gt;
+&lt;li&gt;接收邮件：收件人的 MUA 通过 POP 或 IMAP 协议从 SMTP 服务器下载邮件&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/b496d50c4b936cc4.png&#34; alt=&#34;email&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;SMTP&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#SMTP&#34;&gt;#&lt;/a&gt;SMTP&lt;/h2&gt;
-
 &lt;ol&gt;
 &lt;li&gt;SMTP Communications&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;SMTP commands and reply codes immediately follow the TCP header&lt;/li&gt;
 &lt;li&gt;SMTP commands occur behind the scenes in some e-mail clients and some server-to-server mail transfers on the Internet&lt;/li&gt;
-&lt;li&gt;The majority of e-mail clients today use SMTP to send outgoing mail through some nearby SMTP server which assumes the task of storing or forwarding such messages, depending on addressee’s domain&lt;table&gt;
+&lt;li&gt;The majority of e-mail clients today use SMTP to send outgoing mail through some nearby SMTP server which assumes the task of storing or forwarding such messages, depending on addressee’s domain&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Command&lt;/th&gt;
 &lt;th&gt;Description&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
 &lt;td&gt;helo&lt;/td&gt;
 &lt;td&gt;Used by the client to identify itself&lt;/td&gt;
 &lt;/tr&gt;
@@ -504,26 +1007,27 @@
 &lt;td&gt;vrfy&lt;/td&gt;
 &lt;td&gt;Used to verify the address of recipient&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/e4681fbfda7303a9.png&#34; alt=&#34;email&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;File Transfer Protocol (FTP)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#File Transfer Protocol (FTP)&#34;&gt;#&lt;/a&gt;File Transfer Protocol (FTP)&lt;/h1&gt;
-
 &lt;ol&gt;
 &lt;li&gt;FTP&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;FTP is a client&amp;#x2F;server protocol used for file transfer across the Internet&lt;ul&gt;
-&lt;li&gt;Uses two channels: TCP ports 20 and 21&lt;ul&gt;
+&lt;li&gt;FTP is a client/server protocol used for file transfer across the Internet
+&lt;ul&gt;
+&lt;li&gt;Uses two channels: TCP ports 20 and 21
+&lt;ul&gt;
 &lt;li&gt;Port 21 for control commands, Port 20 for transferring data&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Not a secure protocol&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Uses URL for an FTP site begins with &lt;code&gt;ftp://...&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;The 3 most common ways to access an FTP site:&lt;ul&gt;
+&lt;li&gt;Uses URL for an FTP site begins with  &lt;code&gt;ftp://...&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;The 3 most common ways to access an FTP site:
+&lt;ul&gt;
 &lt;li&gt;Through a browser&lt;/li&gt;
 &lt;li&gt;Using an FTP client program&lt;/li&gt;
 &lt;li&gt;Issuing FTP commands at a text-based command prompt&lt;/li&gt;
@@ -534,27 +1038,30 @@
 &lt;li&gt;FTP connections&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;TCP-based Command Connection (control connection)&lt;ul&gt;
+&lt;li&gt;TCP-based Command Connection (control connection)
+&lt;ul&gt;
 &lt;li&gt;The command connection runs over TCP&lt;/li&gt;
 &lt;li&gt;Created automatically when FTP connection is established in response to open command from FTP client, using server FTP port number 21&lt;/li&gt;
 &lt;li&gt;The client uses a dynamic, or ephemeral, port number to handle the other end of a command connection&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;TCP-based Data Transfer Connection (data connection)&lt;ul&gt;
+&lt;li&gt;TCP-based Data Transfer Connection (data connection)
+&lt;ul&gt;
 &lt;li&gt;The data transfer connection also runs over TCP&lt;/li&gt;
 &lt;li&gt;Created by the server by default&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;Dynamic Host Configuration Protocol (DHCP)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;Dynamic Host Configuration Protocol (DHCP)&#34;&gt;#&lt;/a&gt;Dynamic Host Configuration Protocol (DHCP)&lt;/h1&gt;
-
 &lt;ol&gt;
 &lt;li&gt;DHCP&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;DHCP is used to automatically assign IP addresses as needed&lt;ul&gt;
+&lt;li&gt;DHCP is used to automatically assign IP addresses as needed
+&lt;ul&gt;
 &lt;li&gt;When a computer is turned on, it requests an address from a server that is configured as a DHCP server&lt;/li&gt;
-&lt;li&gt;The server assigns an address for a specific amount of time (called&lt;br&gt;a lease)&lt;/li&gt;
+&lt;li&gt;The server assigns an address for a specific amount of time (called&lt;br&gt;
+a lease)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;DHCP Server service – runs in the background and listens on UDP port 67 for IP address requests&lt;/li&gt;
@@ -563,8 +1070,10 @@
 &lt;li&gt;DHCP Server&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;A DHCP server is composed of the following:&lt;ul&gt;
-&lt;li&gt;IP address scope – a range of IP addresses the server leases to clients&lt;ul&gt;
+&lt;li&gt;A DHCP server is composed of the following:
+&lt;ul&gt;
+&lt;li&gt;IP address scope – a range of IP addresses the server leases to clients
+&lt;ul&gt;
 &lt;li&gt;Scope options – IP settings: default gateway, DNS servers, and other options&lt;/li&gt;
 &lt;li&gt;Reservations – an IP address tied to a particular MAC address&lt;/li&gt;
 &lt;li&gt;Exclusions – one or more IP addresses excluded from the IP address scope&lt;/li&gt;
@@ -572,35 +1081,41 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;After an address is leased&lt;ul&gt;
+&lt;li&gt;After an address is leased
+&lt;ul&gt;
 &lt;li&gt;A record of the lease is stored in a database, including a lease expiration time&lt;/li&gt;
 &lt;li&gt;When 50% of the lease time has elapsed, the computer attempts to renew the lease from the same DHCP server that originally responded&lt;/li&gt;
-&lt;li&gt;If no response, the computer waits until lease is 87.5% expired, a broadcast DHCP renewal request is sent&lt;ul&gt;
+&lt;li&gt;If no response, the computer waits until lease is 87.5% expired, a broadcast DHCP renewal request is sent
+&lt;ul&gt;
 &lt;li&gt;If no response when lease expires, computer broadcasts a DCHP request for a new IP address&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Benefit of using DHCP&lt;ul&gt;
+&lt;li&gt;Benefit of using DHCP
+&lt;ul&gt;
 &lt;li&gt;Computers can easily be moved and requested new IP configuration from a DHCP server on the new segment&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;DHCP uses UDP&lt;ul&gt;
+&lt;li&gt;DHCP uses UDP
+&lt;ul&gt;
 &lt;li&gt;DHCP servers are usually located on the same network and DHCP messages are short&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;&lt;p&gt;DHCP Process&lt;br&gt;Broadcast packets used by the DHCP process:&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;DHCP Process&lt;br&gt;
+Broadcast packets used by the DHCP process:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;DHCPDISCOVER – the client announces to the network that it’s looking for a DHCP server&lt;/li&gt;
 &lt;li&gt;DHCPOFFER – the server replies and offers the client an IP address for lease&lt;/li&gt;
 &lt;li&gt;DHCPREQUEST – the client wants the offered IP address&lt;/li&gt;
-&lt;li&gt;DHCPACK – the server acknowledges the transaction and the client can now use the IP address&lt;/li&gt;
+&lt;li&gt;DHCPACK – the server acknowledges the transaction and the client can now use the IP address&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/065a09e3ea0c2cfe.png&#34; alt=&#34;DHCP&#34;&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/065a09e3ea0c2cfe.png&#34; alt=&#34;DHCP&#34;&gt;&lt;/p&gt;
  ]]></description>
         </item>
     </channel>

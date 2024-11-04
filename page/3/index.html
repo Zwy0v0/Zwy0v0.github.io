@@ -91,12 +91,12 @@
       </div>
       <div id="imgs" class="pjax">
         <ul>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a94b2174.png"></li>
           <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf69b7c48b.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf70db78e1.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a9a63310.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a97b6ba9.jpg"></li>
           <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf7643bf1a.jpg"></li>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a9382651.png"></li>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a94f1d92.png"></li>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf5fd1a28a.jpg"></li>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf75f16bed.jpg"></li>
         </ul>
       </div>
     </header>
@@ -122,7 +122,62 @@
         
 <article class="item">
   <div class="cover">
-    <a href="/study/JS%E4%B8%AD%E7%9A%84this%E4%B8%8E%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/" itemprop="url" title="JS中的this与相关函数"><img data-src="https://img.picui.cn/free/2024/10/26/671cf60cc9be5.jpg"></a>
+    <a href="/study/js%E7%BB%A7%E6%89%BF/" itemprop="url" title="js继承"><img data-src="https://img.picui.cn/free/2024/10/26/671cf70db78e1.jpg"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="创建时间：2024-10-23 23:25:27">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2024-10-23T23:25:27+10:00">2024-10-23</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span>3.2k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span>3 分钟</span>
+  </span>
+</div>
+
+    <h3><a href="/study/js%E7%BB%A7%E6%89%BF/" itemprop="url" title="js继承">js继承</a></h3>
+    <div class="excerpt">
+        # ES5
+# ES5 原型链继承
+
+将父类的实例作为子类的原型实现继承
+这种继承方法的缺点是父类中的引用类型数据会被所有子类共享
+
+(●ˇ∀ˇ●)1Son.prototype = new Parent(&amp;#x27;name&amp;#x27;)
+# ES5 构造函数继承
+
+在子类的构造函数中通过 call 或者 apply 调用父类的构造函数
+这种继承方法的缺点是：子类没法使用父类原型上的属性 / 方法
+
+(●ˇ∀ˇ●)123function Son(name) &amp;#123; Parent.call(this, name)&amp;#125;
+# ES5...
+    </div>
+    <div class="meta footer">
+      <span>
+        <a href="/categories/study/JavaScript/" itemprop="url" title="JavaScript"><i class="ic i-flag"></i>JavaScript</a>
+      </span>
+    </div>
+    <a href="/study/js%E7%BB%A7%E6%89%BF/" itemprop="url" title="js继承" class="btn">more...</a>
+  </div>
+</article>
+
+        
+<article class="item">
+  <div class="cover">
+    <a href="/study/JS%E4%B8%AD%E7%9A%84this%E4%B8%8E%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/" itemprop="url" title="JS中的this与相关函数"><img data-src="https://img.picui.cn/free/2024/10/26/671cf69b7c48b.jpg"></a>
   </div>
   <div class="info">
     
@@ -152,7 +207,16 @@
     <div class="excerpt">
         # this指向
 在非严格模式下，总是指向一个对象，在严格模式下可以是任意值，开启严格模式可以使用如下两种方式:
-(●ˇ∀ˇ●)123456// 为整个脚本开启严格模式&amp;#x27;use strict&amp;#x27;unction func() &amp;#123;  // 为函数开启严格模式  &amp;#x27;use...
+(●ˇ∀ˇ●)123456// 为整个脚本开启严格模式&amp;#x27;use strict&amp;#x27;unction func() &amp;#123;  // 为函数开启严格模式  &amp;#x27;use strict&amp;#x27;&amp;#125;
+然后就可以根据不同的模式来确认this指向啦，
+
+全局执行环境中，指向全局对象 (非严格模式、严格模式)
+
+函数内部，取决于函数被调用的方式
+
+直接调用的 this 值:
+
+非严格模式：全局对象...
     </div>
     <div class="meta footer">
       <span>
@@ -166,7 +230,7 @@
         
 <article class="item">
   <div class="cover">
-    <a href="/dailysharing/hello-world/" itemprop="url" title="Hello World"><img data-src="https://img.picui.cn/free/2024/10/26/671cf6029148a.jpg"></a>
+    <a href="/dailysharing/hello-world/" itemprop="url" title="Hello World"><img data-src="https://img.picui.cn/free/2024/10/26/671cf60cc9be5.jpg"></a>
   </div>
   <div class="info">
     
@@ -181,7 +245,7 @@
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>367</span>
+    <span>372</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -195,10 +259,11 @@
     <h3><a href="/dailysharing/hello-world/" itemprop="url" title="Hello World">Hello World</a></h3>
     <div class="excerpt">
         Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new &amp;quot;My New Post&amp;quot;
-
+# Quick Start
+# Create a new post
+1$ hexo new &amp;quot;My New Post&amp;quot;
 More info: Writing
-Run server1$...
+# Run...
     </div>
     <a href="/dailysharing/hello-world/" itemprop="url" title="Hello World" class="btn">more...</a>
   </div>
@@ -239,7 +304,7 @@ Run server1$...
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">23</span>
+        <span class="count">24</span>
         <span class="name">文章</span>
       </a>
     </div>
@@ -251,7 +316,7 @@ Run server1$...
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">31</span>
+        <span class="count">32</span>
         <span class="name">标签</span>
       </a>
     </div>
@@ -341,70 +406,10 @@ Run server1$...
 <div class="breadcrumb">
 <a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
-</div>
-
-    <span><a href="/course/Layer-4-Transport-Protocols-TCP-and-UDP/" title="(Layer 4) Transport Protocols TCP and UDP">(Layer 4) Transport Protocols TCP and UDP</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
-<i class="ic i-angle-right"></i>
 <a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
 </div>
 
     <span><a href="/course/Format-string-bugs/" title="Format string bugs">Format string bugs</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
-</div>
-
-    <span><a href="/course/Web-Application-Security/" title="Web Application Security">Web Application Security</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
-</div>
-
-    <span><a href="/course/Layer-7-Application-layer-Protocols-and-Services/" title="(Layer 7) Application-layer Protocols and Services">(Layer 7) Application-layer Protocols and Services</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
-</div>
-
-    <span><a href="/course/Integer-overflow/" title="Integer overflow">Integer overflow</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/study/" title="分类于 自学笔记">自学笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/study/JavaScript/" title="分类于 JavaScript">JavaScript</a>
-</div>
-
-    <span><a href="/study/JS%E4%B8%AD%E7%9A%84this%E4%B8%8E%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/" title="JS中的this与相关函数">JS中的this与相关函数</a></span>
   </li>
 
       
@@ -428,18 +433,6 @@ Run server1$...
 <a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
 </div>
 
-    <span><a href="/course/Layer-3-IP-Addressing-and-IP-related-Protocols/" title="(Layer 3) IP Addressing and IP-related Protocols">(Layer 3) IP Addressing and IP-related Protocols</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
-</div>
-
     <span><a href="/course/Layer-3-Subnetting-and-VLANs/" title="Layer 3 - Subnetting and VLANs">Layer 3 - Subnetting and VLANs</a></span>
   </li>
 
@@ -449,10 +442,79 @@ Run server1$...
 <div class="breadcrumb">
 <a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
 <i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/x86-architecture-and-Assembly-basics/" title="x86 architecture and Assembly basics">x86 architecture and Assembly basics</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/dailysharing/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
 <a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
 </div>
 
-    <span><a href="/course/Network%20System%20Overall/" title="Network Systems Overall">Network Systems Overall</a></span>
+    <span><a href="/course/Layer-7-Application-layer-Protocols-and-Services/" title="Layer 7 - Application-layer Protocols and Services">Layer 7 - Application-layer Protocols and Services</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Web-Application-Security/" title="Web Application Security">Web Application Security</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Security-Concepts/" title="Security Concepts">Security Concepts</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/SQL-Injection/" title="SQL Injection">SQL Injection</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
+</div>
+
+    <span><a href="/course/Layer-3-Routing-and-Superheating/" title="Layer 3 - Routing and Superheating">Layer 3 - Routing and Superheating</a></span>
   </li>
 
   </ul>
