@@ -1,0 +1,998 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="" href="http://example.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="network system,Wi-Fi,WLANs" />
+
+
+<link rel="canonical" href="http://example.com/course/Wireless-Networking/">
+
+
+
+  <title>
+Wireless Networking - Network Systems - 课程笔记 |
+AtoposZz =  = final在后面追我T T</title>
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">Wireless Networking
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2024-11-05 20:16:33">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2024-11-05T20:16:33+10:00">2024-11-05</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>8k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>7 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">AtoposZz</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf6029148a.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf60cc9be5.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf69b7c48b.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a94f1d92.png"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf696303c4.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a9a63310.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/course/" itemprop="item" rel="index" title="分类于 课程笔记"><span itemprop="name">课程笔记</span></a>
+<meta itemprop="position" content="1" /></span>
+<i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/course/Network-Systems/" itemprop="item" rel="index" title="分类于 Network Systems"><span itemprop="name">Network Systems</span></a>
+<meta itemprop="position" content="2" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://example.com/course/Wireless-Networking/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Zz">
+    <meta itemprop="description" content="final在后面追我T T, 🌸">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="Concepts" class="active"><a class="anchor"  href="#Concepts">#</a>Concepts</h1>
+
+<h2 id="Characteristics of Wireless Transmissions" class="active"><a class="anchor"  href="#Characteristics of Wireless Transmissions">#</a>Characteristics of Wireless Transmissions</h2>
+
+<ul>
+<li>Wireless networks (WLANs) are networks that transmit signals through the air via RF(radio frequency) waves</li>
+<li>Wired and wireless signals share many similarities including the use of the same Layer 3 and higher protocols</li>
+<li>The nature of the atmosphere makes wireless transmission different from wired transmission</li>
+</ul>
+<h2 id="The Wireless Spectrum" class="active"><a class="anchor"  href="#The Wireless Spectrum">#</a>The Wireless Spectrum</h2>
+
+<ol>
+<li>无线频谱：</li>
+</ol>
+<ul>
+<li>无线频谱是用于数据和语音通信的电磁波频率范围，覆盖9 kHz到300 GHz的频率范围。</li>
+<li>某些频段使用固定频率，即频段内仅包含一个频率。</li>
+</ul>
+<ol start="2">
+<li>RFID（无线射频识别Radio Frequency Identification）：</li>
+</ol>
+<ul>
+<li>利用电磁场在小芯片（RFID标签）中存储数据，通常带有天线，可以接收和发送信号，某些标签还内置电池。<br>RFID常用于库存管理。</li>
+<li>近场通信near-field communication（NFC）是RFID的一种形式，在非常近的距离内无线传输数据，标签通过磁感应从设备获取能量。</li>
+</ul>
+<ol start="3">
+<li>Z-Wave和ZigBee：</li>
+</ol>
+<ul>
+<li>Z-Wave是一种智能家居协议，提供连接管理和数据传输，使用一个集线器从智能设备接收命令并将其传递给网络中的设备。</li>
+<li>ZigBee是一种低功耗无线技术，设计用于处理小数据量，适用于物联网（IoT）设备，如楼宇自动化、暖通空调（HVAC）控制和自动抄表（AMR）。</li>
+</ul>
+<ol start="4">
+<li>蓝牙和ANT+：</li>
+</ol>
+<ul>
+<li>蓝牙：通过频率跳变扩频技术减少干扰，通常适用于10-100米的范围。</li>
+<li>ANT+：基于ANT协议的无线协议，适合心率监测器、GPS设备等活动监控设备，能同步多个设备的数据。</li>
+</ul>
+<ol start="5">
+<li>红外infrared（IR）技术：</li>
+</ol>
+<ul>
+<li>红外主要用于传感器数据收集，位于人眼可见光谱下方。</li>
+<li>主动红外传感器：发射红外信号，通过反射检测物体。</li>
+<li>被动红外传感器：测量环境红外波的变化，通常用于检测物体移动或变化<table>
+<thead>
+<tr>
+<th>技术</th>
+<th>频段</th>
+<th>授权状态</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>RFID</td>
+<td>低频（LF）、高频（HF）、超高频（UHF）等</td>
+<td>通常为非授权频段，视不同国家的规定</td>
+</tr>
+<tr>
+<td>NFC</td>
+<td>13.56 MHz</td>
+<td>非授权频段，全球通用的ISM频段</td>
+</tr>
+<tr>
+<td>Z-Wave</td>
+<td>908 MHz（北美）、868 MHz（欧洲）</td>
+<td>授权频段，需遵守地区频段分配</td>
+</tr>
+<tr>
+<td>ZigBee</td>
+<td>2.4 GHz（全球）、868 MHz（欧洲）、915 MHz（美国）</td>
+<td>大多在2.4 GHz的非授权频段下使用，属于ISM频段</td>
+</tr>
+<tr>
+<td>蓝牙</td>
+<td>2.4 GHz</td>
+<td>非授权频段，全球通用的ISM频段</td>
+</tr>
+<tr>
+<td>ANT+</td>
+<td>2.4 GHz</td>
+<td>非授权频段，使用ISM频段</td>
+</tr>
+<tr>
+<td>红外(IR)</td>
+<td>700 nm到1 mm（位于可见光以下）</td>
+<td>非授权频段，通常用于短距离设备</td>
+</tr>
+<tr>
+<td><img data-src="https://cdn-fusion.imgcdn.store/i/2024/c452aa1219633e9a.png" alt="image"></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h2 id="Channel Management" class="active"><a class="anchor"  href="#Channel Management">#</a>Channel Management</h2>
+
+<ol>
+<li>通道管理<br>无线设备通常采用以下两种技术之一来管理频率通道：</li>
+</ol>
+<ul>
+<li>频率跳变扩频frequency hopping spread spectrum（FHSS）：<ul>
+<li>Bluetooth使用FHSS，通过在频率之间跳变来减少干扰。</li>
+</ul>
+</li>
+<li>直接序列扩频direct sequence spread spectrum（DSSS）：<ul>
+<li>Wi-Fi和ZigBee使用DSSS，通过将信号分散在更宽的频带上来增强信号的抗干扰能力。</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>天线</li>
+</ol>
+<ul>
+<li>无线信号的传输：<ul>
+<li>无线信号源自导体上传递的电流，信号从发射器到达天线，天线将其转换为电磁波。</li>
+<li>接收端的天线接收信号后，接收器将其转换回电流。</li>
+<li>两个天线要使用相同的通道，必须调谐至相同的频率，以确保通信的一致性。</li>
+</ul>
+</li>
+<li>辐射模式radiation pattern ：<ul>
+<li>天线的辐射模式描述了其在三维空间中发送或接收电磁能量的相对强度。</li>
+</ul>
+</li>
+<li>天线类型：<ul>
+<li>定向天线（Directional&#x2F;Unidirectional antenna）：沿单一方向发出无线信号，适用于定向传输。</li>
+<li>全向天线（Omnidirectional antenna）：以相同强度发出和接收信号，适用于全方位覆盖。</li>
+</ul>
+</li>
+<li>天线范围：<ul>
+<li>天线的地理覆盖范围称为其射程，射程受天线的设计和周围环境的影响。</li>
+</ul>
+</li>
+</ul>
+<h2 id="Signal Propagation" class="active"><a class="anchor"  href="#Signal Propagation">#</a>Signal Propagation</h2>
+
+<ol>
+<li>信号传播概述</li>
+</ol>
+<ul>
+<li>传播（Propagation）：传播指的是波从一个点到另一个点的移动方式。</li>
+<li>视距（LOS, Line-of-Sight）：信号直接沿直线从发射器到接收器。然而无线信号通常不沿直线传播。</li>
+<li>当信号遇到障碍物时，可能会：<ul>
+<li>穿过物体</li>
+<li>被物体吸收</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>信号衰减和干扰</li>
+</ol>
+<ul>
+<li>衰减（Attenuation）：<ul>
+<li>随着信号远离传输源，信号强度逐渐减弱。</li>
+<li>可以通过增加传输功率或使用信号扩展器（Wireless Range Extender）来增强或延长信号。</li>
+</ul>
+</li>
+<li>褪色（Fading）：<ul>
+<li>信号遇到障碍物时，其能量会逐渐减弱，过度褪色会导致连接中断或数据传输缓慢。</li>
+</ul>
+</li>
+<li>干扰（Interference）：<ul>
+<li>电磁波可能干扰无线通信，无线信号对噪声更加敏感。</li>
+<li>信噪比Signal-to-noise ratio（SNR）：表示信号强度与噪声的比例，较高的SNR通常意味着更好的通信质量。</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>反射、折射和其他影响</li>
+</ol>
+<ul>
+<li>折射（Refraction）：当波通过物体时，其方向、速度和波长会改变。</li>
+<li>反射（Reflection）：波遇到障碍物时，可能反射回源头。</li>
+<li>散射（Scattering）：当信号遇到比波长小的物体时，信号会向多个方向散射。</li>
+<li>衍射（Diffraction）：信号遇到障碍物时会被分成次级波，从而改变传播路径。这种多路径传播方式称为多路径信号（Multipath Signals）。</li>
+</ul>
+<h1 id="802.11 WLAN Standards" class="active"><a class="anchor"  href="#802.11 WLAN Standards">#</a>802.11 WLAN Standards</h1>
+
+<h2 id="WLAN Standards" class="active"><a class="anchor"  href="#WLAN Standards">#</a>WLAN Standards</h2>
+
+<ol>
+<li>工作层级：</li>
+</ol>
+<ul>
+<li>WLAN在OSI模型的第1层（物理层）和第2层（数据链路层）上工作。</li>
+</ul>
+<ol start="2">
+<li>协议支持：</li>
+</ol>
+<ul>
+<li>WLAN支持更高层的OSI协议和操作系统，包括TCP&#x2F;IP等网络协议栈。</li>
+</ul>
+<ol start="3">
+<li>Wi-Fi 标准：</li>
+</ol>
+<ul>
+<li>WLAN最常用的标准通常称为Wi-Fi（wireless fidelity无线保真）。</li>
+</ul>
+<ol start="4">
+<li>主要Wi-Fi标准：</li>
+</ol>
+<ul>
+<li>包括802.11b、802.11a、802.11g、802.11n、802.11ac 和 802.11ax。</li>
+<li>从802.11n开始，标准在MAC子层（数据链路层的低层部分）对帧的使用方式进行了改进，以增强网络效率和吞吐量。</li>
+</ul>
+<ol start="5">
+<li>LLC子层：</li>
+</ol>
+<ul>
+<li>LLC（逻辑链路控制）子层主要负责多路复用、流量和错误控制以及可靠性，确保数据的有序和可靠传输。</li>
+</ul>
+<h2 id="Innovations" class="active"><a class="anchor"  href="#Innovations">#</a>Innovations</h2>
+随着802.11标准的发展，一些关键创新使得后期标准更快且更可靠：
+
+<ol>
+<li>通道绑定（Channel Bonding）：<ul>
+<li>将两个相邻的20 MHz通道绑定成一个40 MHz通道，这种方式可使单个通道的带宽提升一倍以上。</li>
+</ul>
+</li>
+<li>MIMO（多输入多输出）：<ul>
+<li>多个接入点和客户端设备天线可以同时向一个或多个接收器发送信号。</li>
+<li>MIMO提升了网络范围和吞吐量，提高了数据传输效率。</li>
+</ul>
+</li>
+<li>MU-MIMO（多用户MIMO）：<ul>
+<li>一种更新的技术，允许多个天线同时为多个客户端服务。</li>
+<li>MU-MIMO减少了网络拥堵，加速了数据传输，适用于WAVE 2 802.11ac产品。</li>
+</ul>
+</li>
+<li>OFDMA（正交频分多址）：<ul>
+<li>支持802.11ax设备的多用户高效功能，提升了多用户访问的效率。</li>
+</ul>
+</li>
+<li>帧聚合（Frame Aggregation）：<ul>
+<li>合并多个帧形成一个较大的帧，从而提高数据传输效率。</li>
+<li>网络可以使用以下两种方法来聚合数据帧：<ul>
+<li>A-MSDU（聚合的MAC服务数据单元Aggregated Mac Service Data Unit）</li>
+<li>A-MPDU（聚合的MAC协议数据单元Aggregated Mac Protocol Data Unit）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="Access Method" class="active"><a class="anchor"  href="#Access Method">#</a>Access Method</h2>
+
+<ul>
+<li>物理地址标识：<ul>
+<li>802.11 MAC服务在帧中添加48位的物理地址，用于识别数据的源和目标。</li>
+<li>采用与以太网相同的物理地址方案，使其能够轻松地与其他IEEE网络整合。</li>
+</ul>
+</li>
+<li>CSMA&#x2F;CA 访问控制：<ul>
+<li>无线设备设计上不支持同时传输和接收信号。</li>
+<li>802.11标准规定使用CSMA&#x2F;CA（Carrier Sense Multiple Access with Collision Avoidance载波侦听多路访问，避免碰撞）来管理共享介质的访问。</li>
+<li>通过发送ACK确认包来验证每次传输，虽然这种方法需要比802.3更多的开销，但可提高数据传输的可靠性。</li>
+</ul>
+</li>
+<li>RTS&#x2F;CTS 协议：<ul>
+<li>RTS&#x2F;CTS（equest to Send&#x2F;Clear to Send) 请求发送&#x2F;清除发送）协议用于防止其他传输干扰数据包的传输。</li>
+<li>虽然RTS&#x2F;CTS会降低网络的整体效率，但在处理较大数据包的传输时，这一协议能有效提高传输稳定性。<br><img data-src="https://cdn-fusion.imgcdn.store/i/2024/91de5cb0eb9ecd6e.png" alt="image"></li>
+</ul>
+</li>
+</ul>
+<h2 id="Association and Wireless Topologies" class="active"><a class="anchor"  href="#Association and Wireless Topologies">#</a>Association and Wireless Topologies</h2>
+
+<ol>
+<li>在无线网络中，关联（Association） 是指计算机与接入点（AP）之间交换数据包的过程，以便连接到互联网。扫描（Scanning）是无线设备寻找接入点的过程。扫描分为主动扫描（Active Scanning） 和被动扫描（Passive Scanning）：<ul>
+<li>主动扫描：无线客户端主动发送一个探测帧（Probe）寻找AP。</li>
+<li>被动扫描：AP主动发送信号（Beacon帧），客户端监听此信号。</li>
+<li>SSID（服务集标识符） 是识别接入点的唯一字符字符串，包含在信标帧中。建议用户更改默认SSID以增强安全性。</li>
+</ul>
+</li>
+<li>无线拓扑类型</li>
+</ol>
+<ul>
+<li>IEEE定义了几种常见的无线拓扑结构：<ol>
+<li>IBSS（独立基本服务集Independent basic service set）：使用临时（ad hoc topology）拓扑结构，少量节点直接传输数据，不通过中间连接设备。</li>
+<li>BSS（基本服务集basic service set）：使用基础设施（infrastructure topology）拓扑结构，一组站点共享一个AP，组内节点的标识符称为BSSID。</li>
+<li>ESS（扩展服务集extended service set）：使用网状（mesh topology）拓扑结构，多个AP连接到同一个局域网（LAN），由无线局域网控制器管理。属于同一ESS的客户端共享一个特殊的标识符ESSID，这使得用户可以在不同AP之间漫游。</li>
+</ol>
+</li>
+</ul>
+<h2 id="IEEE 802.11 Frames" class="active"><a class="anchor"  href="#IEEE 802.11 Frames">#</a>IEEE 802.11 Frames</h2>
+
+<ul>
+<li>在IEEE 802.11标准中，MAC子层的帧类型被分为三大类：<ol>
+<li>管理帧（Management frames）：用于关联和重新关联的操作，帮助无线设备连接到接入点。</li>
+<li>控制帧（Control frames）：控制信道访问和数据传输。这些帧用于确保无线信道的有效使用，常见的控制帧有ACK（确认）和RTS&#x2F;CTS（请求发送&#x2F;清除发送）帧。</li>
+<li>数据帧（Data frames）：承载无线设备之间传输的实际数据内容。<br><img data-src="https://cdn-fusion.imgcdn.store/i/2024/60ecf525d49f32c3.png" alt="image"><br>如图所示，802.11和802.3（以太网II）帧的结构不同，802.11帧包括更多的地址字段和用于无线传输的其他控制信息。</li>
+</ol>
+</li>
+</ul>
+<h1 id="Wi-Fi Network" class="active"><a class="anchor"  href="#Wi-Fi Network">#</a>Wi-Fi Network</h1>
+
+<h2 id="Implementing a Wi-Fi Network" class="active"><a class="anchor"  href="#Implementing a Wi-Fi Network">#</a>Implementing a Wi-Fi Network</h2>
+
+
+<ol>
+<li>Determine the Design</li>
+</ol>
+<ul>
+<li>设计小型办公室或家庭网络（SOHO网络）时，通常只需要一个接入点（AP）。该AP设备通常整合了交换、路由等网络功能，可以将无线客户端连接到局域网（LAN），并作为互联网网关。此外，许多家庭或办公室网络包括物联网（IoT）设备，例如健康监测器、智能音箱、智能恒温器、智能门铃、安全摄像头和智能冰箱等。<br>在决定安装AP的位置时，需要考虑以下因素：<ul>
+<li>距离：确保AP的信号能够覆盖预期的范围。</li>
+<li>障碍物的类型和数量：建筑物的结构和材料可能会影响信号传输。</li>
+<li>覆盖范围：要保证整个空间内都有足够的信号强度。</li>
+<li>干扰：其他无线网络或设备可能会干扰信号。</li>
+</ul>
+</li>
+<li>对于较大的无线局域网（WLAN），需要更系统地布置AP，可以进行现场调查，以评估客户端需求、设施特点和覆盖区域，确保在给定区域内提供可靠的无线连接。<br>详细的现场调查可能包括：<ul>
+<li>研究建筑图纸：识别潜在的障碍物。</li>
+<li>Wi-Fi无线桥接需求：确定是否需要使用Wi-Fi接入点作为无线桥接，以便为远程有线网络提供接入。</li>
+<li>多楼层AP需求：确定是否需要为特定楼层安装多个AP。</li>
+<li>测量其他WLAN的信号覆盖和强度：避免信号冲突和干扰。</li>
+<li>测试建议的AP位置：确保信号覆盖整个预期区域。</li>
+<li>远距离测试：从空间的最远角落测试无线接入。</li>
+<li>考虑环境中的材料：某些材料会影响无线信号传播。</li>
+<li>无线和有线网络的整合：考虑如何将LAN的无线部分与有线部分集成。</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>Configure<br>在配置Wi-Fi连接设备和客户端时，可以选择不同的无线标准、天线强度和其他功能。以下是关键的配置要点：</li>
+</ol>
+<ul>
+<li>配置Wi-Fi连接设备<br>APs vary in which wireless standards they support, their antenna strength, and other features<ul>
+<li>管理员密码：为AP设置一个强密码，以防止未经授权的访问。</li>
+<li>SSID及其广播：配置服务集标识符（SSID）并决定是否广播SSID。</li>
+<li>安全选项：选择适当的加密协议（例如WPA2）以确保网络安全。</li>
+<li>DHCP设置：决定是否启用动态主机配置协议（DHCP）来自动分配IP地址。</li>
+<li>故障恢复：如果配置出错，可以强制重置AP，将所有更改恢复为默认值。</li>
+</ul>
+</li>
+<li>配置Wi-Fi客户端<br>Configuration varies from one client type to another<ul>
+<li>自动检测SSID：如果AP正在广播SSID，附近的客户端设备会检测到，并提示用户选择连接。</li>
+<li>设备上架（On-boarding）：安装特定应用或程序以允许设备访问网络的特定部分。</li>
+<li>设备下架（Off-boarding）：移除设备上的特殊权限应用，并且在设备丢失或被盗的情况下，管理员可以通过远程擦除(remote wipe)功能保护网络安全。</li>
+</ul>
+</li>
+</ul>
+<h2 id="Wi-Fi Network Security" class="active"><a class="anchor"  href="#Wi-Fi Network Security">#</a>Wi-Fi Network Security</h2>
+
+<ol>
+<li>Wi-Fi网络安全</li>
+</ol>
+<ul>
+<li>认证(Authentication)：客户端可以通过SSID密码或用户凭据登录网络。<ul>
+<li>MAC过滤(MAC filtering)：限制未授权设备的接入。</li>
+</ul>
+</li>
+<li>加密算法(Encryption algorithms)：使用加密算法将数据转换为不可轻易读取的格式，以防信号被拦截。</li>
+</ul>
+<ol start="2">
+<li>WPA（Wi-Fi Protected Access）<br>一种无线网络安全协议，主要特点如下：</li>
+</ol>
+<ul>
+<li>动态密钥分配：WPA会为每次传输动态分配一个独立的密钥，以提高数据传输的安全性。</li>
+<li>TKIP（临时密钥完整性协议Temporal Key Integrity Protocol）：在802.11i标准中，WPA引入了TKIP作为加密密钥生成和管理方案，以增强基于旧WEP设备的安全性。TKIP带来了以下改进：<ul>
+<li>消息完整性：确保数据在传输过程中未被篡改。</li>
+<li>密钥分发：为每个数据包生成一个唯一的加密密钥，防止密钥重用。</li>
+<li>加密：提升数据的加密安全性，相比于WEP更加难以破解。</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>WPA2（Wi-Fi Protected Access, Version 2）<br>WPA的增强版本，采用更强的数据保密方法来保护无线网络安全。其主要特点包括：</li>
+</ol>
+<ul>
+<li>CCMP协议：WPA2使用CCMP（计数器模式结合CBC(Cipher Block Chaining) MAC(Message Authentication Code)协议）来确保数据的保密性。CCMP提供了以下安全功能：<ul>
+<li>消息完整性：通过验证传入数据包的来源，确保数据来自声明的源，从而防止数据被篡改。</li>
+<li>加密：使用AES（Advanced Encryption Standard高级加密标准）进行加密。AES相比TKIP提供了更快且更安全的加密方式，提高了数据的安全性。</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li>Other Security Configurations</li>
+</ol>
+<ul>
+<li>Additional security options include the following:<ul>
+<li>AP and antenna placement</li>
+<li>Geofencing</li>
+<li>Guest network</li>
+<li>Wireless client isolation</li>
+<li>Captive portal</li>
+<li>IoT access considerations</li>
+</ul>
+</li>
+</ul>
+<ol start="5">
+<li>Security Threats to Wi-Fi Networks</li>
+</ol>
+<ul>
+<li>War Driving：黑客通过驾驶装有无线数据接收设备的笔记本电脑在各地巡查，以发现未保护的无线网络，并尝试截获无线数据传输。</li>
+<li>War Chalking：黑客在易受攻击的AP（接入点）附近的墙上或人行道上用粉笔画符号，告知其他黑客该位置的漏洞。</li>
+<li>Evil Twin：在网络的地理区域内设置一个伪装的AP，以假装是授权的AP，从而诱骗用户连接到该恶意AP。</li>
+<li>WPA Attack：通过拦截AP与设备之间传输的网络密钥来破解WPA安全协议的攻击，也被称为WPA破解。</li>
+<li>WPS Attack：利用暴力破解的方式来破解WPS的PIN码，从而访问AP的设置。WPS PIN容易被暴力破解，使其成为一个较为脆弱的安全点。</li>
+</ul>
+<ol start="6">
+<li>Wi-Fi Network Tools</li>
+</ol>
+<ul>
+<li>Two types of software tools you should have:<ul>
+<li>Spectrum analyzer – a device that can assess the quality of the wireless signal</li>
+<li>Wireless analyzer (Wi-Fi analyzer) – software that can evaluate Wi-Fi network availability, optimize Wi-Fi signal settings, and help identify Wi-Fi security threats</li>
+</ul>
+</li>
+<li>List of capabilities common to wireless testing tools:<ul>
+<li>Identify transmitting access points, stations, and channels</li>
+<li>Measure signal strength from an AP</li>
+<li>Indicate the effects of attenuation, signal loss, and noise</li>
+<li>Interpret signal strength information</li>
+<li>Ensure proper association and reassociation between APs</li>
+<li>Capture and interpret traffic</li>
+<li>Measure throughput and assess data transmission errors</li>
+<li>Analyze characteristics of each channel</li>
+</ul>
+</li>
+</ul>
+<ol start="7">
+<li>Avoid Pitfalls</li>
+</ol>
+<ul>
+<li>The following lists some wireless configuration pitfalls to avoid</li>
+<li>No connection – when you cant get the Wi-Fi client to connect to the AP:<ul>
+<li>Wrong SSID</li>
+<li>Encryption protocol mismatch</li>
+<li>Incorrect passphrase</li>
+<li>Static channel utilization</li>
+<li>Mismatched RF band</li>
+<li>Mismatched standards</li>
+<li>Long AP association time</li>
+</ul>
+</li>
+<li>Slow connections – when dealing with slow Wi-Fi connections:<ul>
+<li>Insufficient wireless coverage</li>
+<li>RF attenuation&#x2F;signal loss</li>
+<li>Interference</li>
+<li>Channel overlap</li>
+<li>Wireless standard specifications</li>
+<li>Simultaneous wired and wireless connections</li>
+<li>Problems with firmware updates</li>
+<li>Incorrect antenna type</li>
+<li>Mismatched antenna polarization</li>
+<li>Client saturation or overcapacity</li>
+<li>Client disassociation issues</li>
+</ul>
+</li>
+</ul>
+
+      <div class="tags">
+          <a href="/tags/network-system/" rel="tag"><i class="ic i-tag"></i> network system</a>
+          <a href="/tags/Wi-Fi/" rel="tag"><i class="ic i-tag"></i> Wi-Fi</a>
+          <a href="/tags/WLANs/" rel="tag"><i class="ic i-tag"></i> WLANs</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2024-11-05 22:48:17" itemprop="dateModified" datetime="2024-11-05T22:48:17+10:00">2024-11-05</time>
+  </span>
+  <span id="course/Wireless-Networking/" class="item leancloud_visitors" data-flag-title="Wireless Networking" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Zz <i class="ic i-at"><em>@</em></i>
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/course/Wireless-Networking/" title="Wireless Networking">http://example.com/course/Wireless-Networking/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/course/Network-Security-Methods/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;26&#x2F;671cf5fd1a28a.jpg" title="Network Security Methods">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> Network Systems</span>
+  <h3>Network Security Methods</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Concepts"><span class="toc-number">1.</span> <span class="toc-text">Concepts</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Characteristics%20of%20Wireless%20Transmissions"><span class="toc-number">1.1.</span> <span class="toc-text">Characteristics of Wireless Transmissions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The%20Wireless%20Spectrum"><span class="toc-number">1.2.</span> <span class="toc-text">The Wireless Spectrum</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Channel%20Management"><span class="toc-number">1.3.</span> <span class="toc-text">Channel Management</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Signal%20Propagation"><span class="toc-number">1.4.</span> <span class="toc-text">Signal Propagation</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#802.11%20WLAN%20Standards"><span class="toc-number">2.</span> <span class="toc-text">802.11 WLAN Standards</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#WLAN%20Standards"><span class="toc-number">2.1.</span> <span class="toc-text">WLAN Standards</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Innovations"><span class="toc-number">2.2.</span> <span class="toc-text">Innovations</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Access%20Method"><span class="toc-number">2.3.</span> <span class="toc-text">Access Method</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Association%20and%20Wireless%20Topologies"><span class="toc-number">2.4.</span> <span class="toc-text">Association and Wireless Topologies</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IEEE%20802.11%20Frames"><span class="toc-number">2.5.</span> <span class="toc-text">IEEE 802.11 Frames</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Wi-Fi%20Network"><span class="toc-number">3.</span> <span class="toc-text">Wi-Fi Network</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Implementing%20a%20Wi-Fi%20Network"><span class="toc-number">3.1.</span> <span class="toc-text">Implementing a Wi-Fi Network</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Wi-Fi%20Network%20Security"><span class="toc-number">3.2.</span> <span class="toc-text">Wi-Fi Network Security</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/course/Network%20System%20Overall/" rel="bookmark" title="Network Systems Overall">Network Systems Overall</a></li><li><a href="/course/(Layers%201%20and%202)%20Physical%20and%20Data%20Link%20Layers/" rel="bookmark" title="Layers 1 and 2 - Physical and Data Link Layers">Layers 1 and 2 - Physical and Data Link Layers</a></li><li><a href="/course/Layer-3-IP-Addressing-and-IP-related-Protocols/" rel="bookmark" title="Layer 3 - IP Addressing and IP-related Protocols">Layer 3 - IP Addressing and IP-related Protocols</a></li><li><a href="/course/Layer-3-Subnetting-and-VLANs/" rel="bookmark" title="Layer 3 - Subnetting and VLANs">Layer 3 - Subnetting and VLANs</a></li><li><a href="/course/Layer-3-Routing-and-Superheating/" rel="bookmark" title="Layer 3 - Routing and Superheating">Layer 3 - Routing and Superheating</a></li><li><a href="/course/Layer-4-Transport-Protocols-TCP-and-UDP/" rel="bookmark" title="Layer 4 - Transport Protocols TCP and UDP">Layer 4 - Transport Protocols TCP and UDP</a></li><li><a href="/course/Layer-7-Application-layer-Protocols-and-Services/" rel="bookmark" title="Layer 7 - Application-layer Protocols and Services">Layer 7 - Application-layer Protocols and Services</a></li><li><a href="/course/Network-Security-Analysis/" rel="bookmark" title="Network Security Analysis">Network Security Analysis</a></li><li><a href="/course/Network-Security-Methods/" rel="bookmark" title="Network Security Methods">Network Security Methods</a></li><li class="active"><a href="/course/Wireless-Networking/" rel="bookmark" title="Wireless Networking">Wireless Networking</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Zz"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Zz</p>
+  <div class="description" itemprop="description">🌸</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">26</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">6</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">34</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL1p3eTB2MA==" title="https:&#x2F;&#x2F;github.com&#x2F;Zwy0v0"><i class="ic i-github"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOnp3eTk5OTAuMEBtYWlsLmNvbQ==" title="mailto:zwy9990.0@mail.com"><i class="ic i-envelope"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>友链</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/links/" rel="section"><i class="ic i-magic"></i>links</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
+</div>
+
+    <span><a href="/course/Network-Security-Analysis/" title="Network Security Analysis">Network Security Analysis</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
+</div>
+
+    <span><a href="/course/Layer-7-Application-layer-Protocols-and-Services/" title="Layer 7 - Application-layer Protocols and Services">Layer 7 - Application-layer Protocols and Services</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
+</div>
+
+    <span><a href="/course/Network-Security-Methods/" title="Network Security Methods">Network Security Methods</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Cross-Site-attack/" title="Cross-Site attack">Cross-Site attack</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
+</div>
+
+    <span><a href="/course/Layer-3-Routing-and-Superheating/" title="Layer 3 - Routing and Superheating">Layer 3 - Routing and Superheating</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/study/" title="分类于 自学笔记">自学笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/study/JavaScript/" title="分类于 JavaScript">JavaScript</a>
+</div>
+
+    <span><a href="/study/JS%E4%B8%AD%E7%9A%84this%E4%B8%8E%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/" title="JS中的this与相关函数">JS中的this与相关函数</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Security-Concepts/" title="Security Concepts">Security Concepts</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
+</div>
+
+    <span><a href="/course/Layer-3-Subnetting-and-VLANs/" title="Layer 3 - Subnetting and VLANs">Layer 3 - Subnetting and VLANs</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/AFL/" title="AFL">AFL</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Fuzz-testing/" title="Fuzz testing">Fuzz testing</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Zz @ AtoposZz</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'course/Wireless-Networking/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

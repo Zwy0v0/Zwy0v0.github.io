@@ -7,35 +7,37 @@
         <language>zh-CN</language>
         <pubDate>Fri, 18 Oct 2024 21:28:05 +1000</pubDate>
         <lastBuildDate>Fri, 18 Oct 2024 21:28:05 +1000</lastBuildDate>
-        <category>JavaScript</category>
         <category>network system</category>
         <category>C</category>
         <category>software security</category>
         <category>AFL</category>
         <category>Linux</category>
-        <category>vulnerability</category>
-        <category>C language</category>
         <category>HTTP</category>
         <category>XSS</category>
         <category>CSRF</category>
+        <category>C language</category>
+        <category>vulnerability</category>
         <category>IP</category>
         <category>DHCP</category>
         <category>ICMP</category>
         <category>ARP</category>
         <category>router</category>
         <category>Supernet</category>
+        <category>TCP</category>
+        <category>UDP</category>
         <category>IPv4</category>
         <category>Subnet</category>
         <category>DNS</category>
         <category>SSH</category>
         <category>FTP</category>
         <category>SMTP</category>
-        <category>TCP</category>
-        <category>UDP</category>
         <category>OSI</category>
         <category>TCP/IP</category>
         <category>Network Security</category>
         <category>SQL</category>
+        <category>Wi-Fi</category>
+        <category>WLANs</category>
+        <category>JavaScript</category>
         <category>gdb</category>
         <category>Blog</category>
         <category>日常</category>
@@ -46,7 +48,7 @@
             <category>Blog</category>
             <category>日常</category>
             <pubDate>Fri, 18 Oct 2024 21:28:05 +1000</pubDate>
-            <description><![CDATA[ &lt;p&gt;这是第一篇～&lt;/p&gt;
+            <description><![CDATA[ &lt;p&gt;这是第一篇~&lt;/p&gt;
 &lt;p style=&#34;color: plum&#34;&gt;置顶占位 fufu宝宝镇楼o(=•ェ•=)m~&lt;/p&gt;
  ]]></description>
         </item>

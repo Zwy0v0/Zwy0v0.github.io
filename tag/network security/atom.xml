@@ -3,77 +3,515 @@
     <id>http://example.com</id>
     <title> • Posts by &#34;network security&#34; tag</title>
     <link href="http://example.com" />
-    <updated>2024-11-04T12:02:06.000Z</updated>
-    <category term="JavaScript" />
+    <updated>2024-11-05T04:11:24.000Z</updated>
     <category term="network system" />
     <category term="C" />
     <category term="software security" />
     <category term="AFL" />
     <category term="Linux" />
-    <category term="vulnerability" />
-    <category term="C language" />
     <category term="HTTP" />
     <category term="XSS" />
     <category term="CSRF" />
+    <category term="C language" />
+    <category term="vulnerability" />
     <category term="IP" />
     <category term="DHCP" />
     <category term="ICMP" />
     <category term="ARP" />
     <category term="router" />
     <category term="Supernet" />
+    <category term="TCP" />
+    <category term="UDP" />
     <category term="IPv4" />
     <category term="Subnet" />
     <category term="DNS" />
     <category term="SSH" />
     <category term="FTP" />
     <category term="SMTP" />
-    <category term="TCP" />
-    <category term="UDP" />
     <category term="OSI" />
     <category term="TCP/IP" />
     <category term="Network Security" />
     <category term="SQL" />
+    <category term="Wi-Fi" />
+    <category term="WLANs" />
+    <category term="JavaScript" />
     <category term="gdb" />
     <category term="Blog" />
     <category term="日常" />
+    <entry>
+        <id>http://example.com/course/Network-Security-Methods/</id>
+        <title>Network Security Methods</title>
+        <link rel="alternate" href="http://example.com/course/Network-Security-Methods/"/>
+        <content type="html">&lt;h1 id=&#34;Network Security Overview and Policies&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Network Security Overview and Policies&#34;&gt;#&lt;/a&gt;Network Security Overview and Policies&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Three objectives of Security Policies&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;CIA (Confidentiality, Integrity, Availability)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Elements of a Network Security Policy&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Privacy policy&lt;ul&gt;
+&lt;li&gt;Describes what staff, customers, and business partners can expect for monitoring and reporting&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Acceptable use policy&lt;ul&gt;
+&lt;li&gt;Explains for what purposes network resources can be used&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Authentication policy&lt;ul&gt;
+&lt;li&gt;Describes how users identify themselves to gain access to network resources&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Internet use policy&lt;ul&gt;
+&lt;li&gt;Explains what constitutes proper or improper use of Internet resources&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Access policy&lt;ul&gt;
+&lt;li&gt;Specifies how and when users are allowed to access network resources&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Auditing policy&lt;ul&gt;
+&lt;li&gt;Explains the manner in which security compliance or violations can be verified and the consequences for violations&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Data protection&lt;ul&gt;
+&lt;li&gt;Outlines the policies for backup procedures, virus protection, and disaster recovery&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuc2Fucy5vcmcvaW5mb3JtYXRpb24tc2VjdXJpdHktcG9saWN5Lw==&#34;&gt;More about security policies&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Types of Security Control&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Administrative control&lt;ul&gt;
+&lt;li&gt;It refers to policies&amp;#x2F;procedures&amp;#x2F;guidelines that define personnel or business practices based on the organization’s security goals.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Physical control&lt;ul&gt;
+&lt;li&gt;It relates to any tangible that is used to prevent&amp;#x2F;detect unauthorised access to physical areas&amp;#x2F;systems&amp;#x2F;assets&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Technical control&lt;ul&gt;
+&lt;li&gt;It includes Hardware&amp;#x2F;Software mechanisms used to protect assets&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;Security controls&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Security controls&#34;&gt;#&lt;/a&gt;Security controls&lt;/h1&gt;
+
+&lt;h2 id=&#34;Authentication/authorization/auditing (AAA)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Authentication/authorization/auditing (AAA)&#34;&gt;#&lt;/a&gt;Authentication/authorization/auditing (AAA)&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;身份验证（Authentication）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;身份验证是确认用户是否为其所声称的身份的过程，确保只有授权用户能够访问系统或资源。&lt;/li&gt;
+&lt;li&gt;多因素认证（Multifactor Authentication, MFA要求用户提供两种或更多种不同类型的认证信息，通常从以下三类凭据中选择：&lt;ul&gt;
+&lt;li&gt;知识（Knowledge）：用户所知道的内容。示例：用户名&amp;#x2F;密码或安全问题的答案。&lt;/li&gt;
+&lt;li&gt;持有物（Possession）：用户所拥有的物品。示例：智能卡、钥匙、手机中的认证码或硬件令牌。&lt;/li&gt;
+&lt;li&gt;生物特征（Inherence）：用户所具备的生理特征。示例：指纹、视网膜扫描、声音模式或面部识别。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;授权（Authorization）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;授权是指在用户登录系统后，系统决定该用户可以执行的操作和可以访问的资源。&lt;/li&gt;
+&lt;li&gt;访问控制 &amp;#x3D; 身份验证 + 授权：访问控制是一个规则集，规定哪些用户可以访问哪些资源，以及适用的访问限制。&lt;/li&gt;
+&lt;li&gt;访问控制机制：操作系统、网络控制系统和数据库管理系统（DBMS）都可以使用不同的访问控制机制，以便允许用户或进程访问受保护的资源。&lt;/li&gt;
+&lt;li&gt;访问控制的实现：访问控制通过身份验证（Authentication）确认用户身份，并通过授权（Authorization）授予用户在系统中的操作权限，确保资源安全使用。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;审计（Auditing）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;审计是指记录与安全相关的事件，以便跟踪和分析系统的安全状况。&lt;ul&gt;
+&lt;li&gt;记录安全事件：审计通过日志记录尝试绕过或破坏安全控制的行为，提供对系统活动的追溯性证据。&lt;/li&gt;
+&lt;li&gt;异常行为检测：通过分析审计日志，可以发现异常行为，有助于识别潜在的系统或网络入侵攻击。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;Encryption&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Encryption&#34;&gt;#&lt;/a&gt;Encryption&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Encryption&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Encryption is commonly used to protect data in transit and data at rest.&lt;/li&gt;
+&lt;li&gt;Encryption is the process of encoding and decoding data&lt;/li&gt;
+&lt;li&gt;Encryption mechanisms can be used to achieve data &lt;strong&gt;confidentiality&lt;/strong&gt; and &lt;strong&gt;integrity&lt;/strong&gt; against&lt;ul&gt;
+&lt;li&gt;伪造（Forgery）：防止恶意篡改数据。&lt;/li&gt;
+&lt;li&gt;否认（Repudiation）：确保发送方和接收方不能否认数据传输的发生。&lt;/li&gt;
+&lt;li&gt;窃听（Eavesdropping）：防止未经授权的第三方拦截和读取数据。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;基本加密&amp;#x2F;解密技术&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;密码学（Cryptography）：研究和使用加密与解密技术的学科，确保数据的安全传输和存储。&lt;/li&gt;
+&lt;li&gt;明文（Plaintext）：加密前的数据，未经任何加密处理的原始信息。&lt;/li&gt;
+&lt;li&gt;密文（Ciphertext）：加密后的数据，通过加密技术将明文转换为密文，确保信息不易被未授权方读取。&lt;/li&gt;
+&lt;li&gt;密钥（Key）：用于生成密文的独特信息，也用于将密文解密回明文。密钥是加密和解密过程中的核心组件，其安全性直接影响数据的保密性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;使用加密技术保护数据&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;加密（Encryption）：&lt;ul&gt;
+&lt;li&gt;作用：加密通过将数据转换为密文，防止第三方窃听，确保数据在传输中的安全性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;数字签名（Digital Signature）：&lt;ul&gt;
+&lt;li&gt;作用：数字签名基于公钥加密技术，确保数据的真实性和完整性。&lt;/li&gt;
+&lt;li&gt;原理：使用私钥对数据生成签名，接收方使用发送方的公钥验证签名，从而确认数据来源可靠且未被篡改。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;密码学（Cryptography）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;对称加密（Symmetric Cryptography）：&lt;ul&gt;
+&lt;li&gt;加解密密钥相同：使用相同的密钥进行消息的加密和解密。&lt;/li&gt;
+&lt;li&gt;用途：主要用于保障数据的机密性。&lt;/li&gt;
+&lt;li&gt;优势：加密和解密速度快，适合大数据量的加密。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;非对称加密（Asymmetric&amp;#x2F;Public Key Cryptography）：&lt;ul&gt;
+&lt;li&gt;密钥对：包括私钥和公钥。私钥保密，公钥则公开发布在公共目录中。&lt;/li&gt;
+&lt;li&gt;单向性：通过一个密钥推导出另一个密钥是不可行的，确保安全性。&lt;/li&gt;
+&lt;li&gt;用途：提供数据的机密性、身份认证、完整性和不可否认性。&lt;ul&gt;
+&lt;li&gt;机密性：信息加密后只能由持有私钥的接收方解密。&lt;/li&gt;
+&lt;li&gt;身份认证：可以验证发送方的身份。&lt;/li&gt;
+&lt;li&gt;完整性：确保数据在传输过程中未被篡改。&lt;/li&gt;
+&lt;li&gt;不可否认性：发送方不能否认已发送的数据。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/325d2f70707ff709.png&#34; alt=&#34;Public Key Encryption/Decryption&#34;&gt;&lt;br&gt;5. 数字签名（Digital Signatures）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;数字签名用于验证消息的真实性和完整性，确保消息未被篡改，并证明发送方的身份。&lt;/li&gt;
+&lt;li&gt;工作原理：&lt;ul&gt;
+&lt;li&gt;数字签名利用公钥加密技术与加密哈希函数生成签名。&lt;/li&gt;
+&lt;li&gt;发送方首先通过哈希函数生成消息的消息摘要（也称为数字指纹或消息验证码，MAC），这是一段固定长度的位串，独特地表示原始消息。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;数字签名生成&lt;br&gt;  生成消息摘要：对文档（Doc）使用哈希函数，生成消息摘要（MAC），表示为 &lt;code&gt;M&lt;/code&gt;。&lt;br&gt;  加密摘要：将摘要 &lt;code&gt;M&lt;/code&gt; 用签名者的私钥加密，形成数字签名。&lt;br&gt;  发送签名和证书：将文档、数字签名以及签名者的公钥证书一起发送给接收方（验证者）。&lt;br&gt;  生成的数字签名形式为：&lt;code&gt;&amp;#123;Hash(Doc)&amp;#125;_sign_signer’s_pri_key&lt;/code&gt;，其中 &lt;code&gt;signer’s_pri_key&lt;/code&gt; 是签名者的私钥。&lt;/li&gt;
+&lt;li&gt;数字签名验证&lt;br&gt;  接收文档和签名：验证者接收文档、数字签名以及签名者的公钥证书。&lt;br&gt;  生成新的消息摘要：验证者对接收到的文档使用相同的哈希函数，生成新的消息摘要 &lt;code&gt;M&amp;#39;&lt;/code&gt;。&lt;br&gt;  解密数字签名：验证者用签名者的公钥解密数字签名，从而得到原始摘要 &lt;code&gt;M&lt;/code&gt;。&lt;br&gt;  比较摘要：将解密得到的摘要 &lt;code&gt;M&lt;/code&gt; 与重新生成的摘要 &lt;code&gt;M&amp;#39;&lt;/code&gt; 进行比较。&lt;br&gt;  如果 &lt;code&gt;M = M&amp;#39;&lt;/code&gt;，说明文档在传输过程中未被篡改，验证通过。&lt;/li&gt;
+&lt;li&gt;数字签名提供了不可否认性，即发送方不能否认已发送的消息，同时确保消息未被篡改&lt;br&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/dd2ae4db052ae019.png&#34; alt=&#34;Digital Signatures&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;Public Key Infrastructure (PKI)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;公钥基础设施（PKI是确保公钥安全和高效发现的总体系，包括组织、系统（硬件和软件）、人员、流程、政策和协议。&lt;/li&gt;
+&lt;li&gt;认证机构（Certification Authority, CA）：&lt;ul&gt;
+&lt;li&gt;作用：CA签发数字证书，证明特定实体与其公钥的绑定关系。&lt;/li&gt;
+&lt;li&gt;签名：CA使用其私钥对证书进行数字签名，以确保证书的真实性和完整性。&lt;/li&gt;
+&lt;li&gt;CA的重要性：CA作为独立可信的第三方，证明每个公钥确实属于相应的持有者，确保验证过程的安全性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;PKI的必要性：在没有CA的情况下，攻击者可能替换公钥来进行身份冒充，例如：&lt;ul&gt;
+&lt;li&gt;场景：Alice将签名的文档发送给Bob。&lt;/li&gt;
+&lt;li&gt;攻击：攻击者Carol拦截传输，替换Alice的公钥为自己的公钥，并使用自己的私钥签署篡改后的文档。&lt;/li&gt;
+&lt;li&gt;验证问题：Bob接收文档后，用他认为的Alice的公钥验证文档，导致对签名来源的误判。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;数字证书：数字证书由CA签发，将公钥与密钥持有者的身份绑定。包含内容：&lt;ul&gt;
+&lt;li&gt;密钥持有者的身份和公钥&lt;/li&gt;
+&lt;li&gt;CA签署的信息：如颁发者、有效期、序列号&lt;/li&gt;
+&lt;li&gt;CA的数字签名&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;Virtual private network (VPN)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Virtual private network (VPN)&#34;&gt;#&lt;/a&gt;Virtual private network (VPN)&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;VPNs&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;虚拟专用网络（VPN）通过互联网为用户或分支机构提供安全的网络访问，确保公司资源的机密性和完整性。&lt;/li&gt;
+&lt;li&gt;VPN的功能：&lt;ul&gt;
+&lt;li&gt;加密通信：VPN利用加密技术在互联网上提供数据的机密性和完整性。&lt;/li&gt;
+&lt;li&gt;隧道机制：VPN客户端和服务器之间创建一个“隧道”，保护传输的数据，通常实现为IP-in-IP封装。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;VPN配置：&lt;ul&gt;
+&lt;li&gt;VPN可以配置在专用设备上，以专门处理VPN连接，从而提高连接的稳定性和安全性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;常见VPN类型：&lt;ul&gt;
+&lt;li&gt;IPSec：工作在网络层，常用于保护数据包的完整性和机密性。&lt;/li&gt;
+&lt;li&gt;TLS&amp;#x2F;SSL：工作在传输层，常用于加密应用程序层的流量，特别是网页流量和远程访问。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;VPN通信模式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;站点到站点模式（Site-to-Site Mode）：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;描述：在不同站点之间建立VPN连接，通常用于企业不同分支机构之间的通信。&lt;/li&gt;
+&lt;li&gt;特点：VPN设备在各个站点部署，实现安全的数据传输。&lt;br&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/9639f76563dfb59a.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;客户端到站点模式（Client-to-Site Mode）：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;描述：在客户端计算机和VPN设备之间建立VPN连接，使单个用户能够安全访问公司网络。&lt;/li&gt;
+&lt;li&gt;特点：适用于远程员工访问公司资源。&lt;br&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/8c28ed770303489c.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;客户端到客户端模式（Client-to-Client Mode）：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;描述：为两个客户端之间的通信提供端到端的网络安全，保护两台主机之间的敏感信息。&lt;/li&gt;
+&lt;li&gt;特点：适用于需要直接通过互联网安全交换数据的用户。&lt;br&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/d996e3d27e5ebe04.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;IPSec VPN 模式&lt;br&gt;IPSec可以在以下两种模式下实现，以保护IP数据包的安全性：&lt;ol&gt;
+&lt;li&gt;传输模式（Transport Mode）：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;应用场景：适用于主机到主机的通信。&lt;/li&gt;
+&lt;li&gt;特点：仅对IP数据包的有效负载（payload）进行认证和保护，IP头部保持不变。&lt;/li&gt;
+&lt;li&gt;用途：适合局域网内的点对点安全通信。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;隧道模式（Tunnel Mode）：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;应用场景：保护整个IP数据包的内容，适用于站点到站点的VPN连接。&lt;/li&gt;
+&lt;li&gt;特点：实现IP-in-IP封装，生成一个新的IP头部，保护整个原始IP数据包。&lt;/li&gt;
+&lt;li&gt;用途：适用于在互联网上进行远程站点之间的安全通信。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;VPN的优势&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;为移动用户提供安全连接：&lt;ul&gt;
+&lt;li&gt;VPN使得移动用户可以通过互联网随时安全地访问公司网络，无论其地理位置如何。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;跨站点的永久安全连接：&lt;ul&gt;
+&lt;li&gt;各个站点可以通过VPN使用互联网建立长期的安全连接，无需昂贵的租用专线。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;降低成本：&lt;ul&gt;
+&lt;li&gt;通过使用ISP的支持服务，企业可以避免为昂贵的专线支持支付额外费用，从而显著降低网络成本。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;Firewall&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Firewall&#34;&gt;#&lt;/a&gt;Firewall&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;防火墙（Firewalls）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;防火墙是一种硬件设备、软件或二者的组合，用于检查通过网络的流量，并根据一组规则决定是否允许或拒绝流量的通过。&lt;/li&gt;
+&lt;li&gt;硬件防火墙：&lt;ul&gt;
+&lt;li&gt;配置：通常配置有两个或多个网络接口，放置在企业局域网（LAN）与广域网（WAN）连接之间。&lt;/li&gt;
+&lt;li&gt;作用：在网络边界保护内部网络，过滤不必要的或不安全的流量。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;软件防火墙：&lt;ul&gt;
+&lt;li&gt;安装位置：安装在操作系统中，检查所有进出计算机的数据包。&lt;/li&gt;
+&lt;li&gt;处理方式：根据预定义的规则，对数据包进行丢弃或允许进一步处理。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Types of Firewall&lt;ol&gt;
+&lt;li&gt;无状态数据包过滤（Stateless Packet Filtering）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;无状态数据包过滤，也称为数据包过滤，是一种防火墙机制，用于检查每个通过的数据包并根据预定义的规则决定是否放行或丢弃。&lt;/li&gt;
+&lt;li&gt;过滤标准：&lt;ul&gt;
+&lt;li&gt;源和目标地址：根据数据包的源IP和目标IP地址进行过滤。&lt;/li&gt;
+&lt;li&gt;协议类型：按协议类型（例如TCP、UDP）进行过滤。&lt;/li&gt;
+&lt;li&gt;源和目标端口号：按端口号限制特定服务或应用的数据包通过。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;无状态特性：&lt;ul&gt;
+&lt;li&gt;独立检查：每个数据包都被独立检查，与同一会话中的其他数据包无关。&lt;/li&gt;
+&lt;li&gt;优缺点：这种方法简单快速，但无法识别会话状态，易受攻击手法如伪造的数据包或会话劫持的影响。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;有状态数据包过滤（Stateful Packet Filtering）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;有状态数据包过滤是一种防火墙技术，可以监控跨网络的特定协议会话消息，并根据会话状态决定是否允许数据包通过。&lt;/li&gt;
+&lt;li&gt;会话跟踪：&lt;ul&gt;
+&lt;li&gt;防火墙会跟踪会话状态，例如TCP连接，记录源和目标信息。&lt;/li&gt;
+&lt;li&gt;一旦TCP会话建立，防火墙保持端口打开，允许属于该会话的其他数据包通过，并在会话结束时关闭端口。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;操作层级：&lt;ul&gt;
+&lt;li&gt;工作在OSI模型的传输层，利用TCP&amp;#x2F;UDP连接的状态信息。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;内部请求规则：&lt;ul&gt;
+&lt;li&gt;仅允许内部网络计算机主动请求的信息返回，防止外部未授权的数据包进入网络。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;基于应用的防火墙（Application-based Firewall）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;基于应用的防火墙，也称为应用层网关或应用代理，在应用层操作，通过识别应用程序的特征来控制流量。&lt;/li&gt;
+&lt;li&gt;操作层级：&lt;ul&gt;
+&lt;li&gt;工作在OSI模型的应用层，通过分析应用程序的特定签名、头信息或有效负载，识别并控制数据包。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;行为基线：&lt;ul&gt;
+&lt;li&gt;通过观察应用程序的正常行为，创建基线；如果检测到应用程序行为偏离基线，将发出警报。&lt;/li&gt;
+&lt;li&gt;这种方式允许防火墙在识别异常行为时更具动态适应性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;应用代理防火墙（Application Proxy Firewall）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;应用代理防火墙是一种防火墙类型，代理位于受保护的网络和外部网络之间，充当中间人角色。&lt;/li&gt;
+&lt;li&gt;代理机制：&lt;ul&gt;
+&lt;li&gt;出站请求：每个出站数据包由代理拦截，代理会发起自己的请求并处理响应。&lt;/li&gt;
+&lt;li&gt;安全检查：代理对响应内容进行检查，如果响应被判定为安全，则将其转发给用户。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;间接交互：&lt;ul&gt;
+&lt;li&gt;客户端和服务器从不直接通信，所有数据传输都经过代理，确保了流量的安全性。&lt;/li&gt;
+&lt;li&gt;代理可以在必要时检查数据包的全部内容，从而更有效地防止恶意数据包的进入&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;下一代防火墙（Next Generation Firewall, NGFW）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;下一代防火墙是具备深度数据包检查（DPI）功能的高级防火墙，相比传统防火墙提供更全面的安全保护。&lt;/li&gt;
+&lt;li&gt;定义：&lt;ul&gt;
+&lt;li&gt;根据Gartner的定义，下一代防火墙不仅执行端口和协议的检查与阻止，还增加了应用层检查、入侵防御以及外部情报的集成。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;深度数据包检查（DPI）：&lt;ul&gt;
+&lt;li&gt;NGFW进行比有状态数据包过滤更深入的检查，分析数据包的有效负载内容，识别恶意活动的签名，确保数据传输的安全。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;Intrusion Detection system (IDS) and Intrusion Prevention system (IPS)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Intrusion Detection system (IDS) and Intrusion Prevention system (IPS)&#34;&gt;#&lt;/a&gt;Intrusion Detection system (IDS) and Intrusion Prevention system (IPS)&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;入侵检测系统（Intrusion Detection Systems, IDS）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;入侵检测系统(IDS)用于监视网络流量，识别和报告潜在的安全漏洞或恶意行为。&lt;/li&gt;
+&lt;li&gt;类型：&lt;ul&gt;
+&lt;li&gt;基于网络的IDS（Network-based IDS, NIDS）：&lt;ul&gt;
+&lt;li&gt;保护整个网络，通常部署在网络边界，用于检测和监视进入网络的所有流量。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;基于主机的IDS（Host-based IDS, HIDS）：&lt;ul&gt;
+&lt;li&gt;保护单一计算机上的安全，是一种软件应用，适用于特定设备的安全监控。&lt;/li&gt;
+&lt;li&gt;可以安装在蜜罐设备上（honeypot），蜜罐是一种诱饵设备，用于吸引和监视潜在攻击者的行为。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;功能：&lt;ul&gt;
+&lt;li&gt;IDS监控网络流量中的恶意数据包或异常流量模式。&lt;/li&gt;
+&lt;li&gt;当检测到安全漏洞时，将其报告给管理站以便采取进一步措施。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;入侵防御系统（Intrusion Prevention Systems, IPS）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;入侵防御系统（IPS）在检测到攻击时，能够立即采取主动的防御措施来阻止或减缓攻击的影响。&lt;/li&gt;
+&lt;li&gt;主动防御：IPS在攻击发生时实时响应，通过自动化方式采取反制措施。&lt;/li&gt;
+&lt;li&gt;反制措施：&lt;ul&gt;
+&lt;li&gt;重新配置防火墙：调整防火墙设置，阻止可疑数据包进入网络。&lt;/li&gt;
+&lt;li&gt;重置连接：断开攻击源和目标设备之间的连接，以中断攻击过程。&lt;/li&gt;
+&lt;li&gt;禁用网络链接：暂时关闭内网和外网之间的连接，防止攻击扩散。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;安全解决方案类型&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;预防性措施（Preventative）：&lt;ul&gt;
+&lt;li&gt;定义：用于阻止未经授权的网络活动的发生。&lt;/li&gt;
+&lt;li&gt;示例：杀毒软件、防火墙、入侵防御系统（IPS）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;纠正性措施（Corrective）：&lt;ul&gt;
+&lt;li&gt;定义：在未经授权的活动发生后，用于修复损害或恢复资源与功能至先前状态。&lt;/li&gt;
+&lt;li&gt;示例：修补漏洞系统、隔离病毒、终止进程或重新启动系统。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;检测性措施（Detective）：&lt;ul&gt;
+&lt;li&gt;定义：用于检测正在进行或已发生的未经授权的活动，并发出警报。&lt;/li&gt;
+&lt;li&gt;示例：Honeypots、入侵检测系统（IDS）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="network system" />
+        <category term="Network Security" />
+        <updated>2024-11-05T04:11:24.000Z</updated>
+    </entry>
     <entry>
         <id>http://example.com/course/Network-Security-Analysis/</id>
         <title>Network Security Analysis</title>
         <link rel="alternate" href="http://example.com/course/Network-Security-Analysis/"/>
         <content type="html">&lt;h1 id=&#34;Layer 3: Network&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Layer 3: Network&#34;&gt;#&lt;/a&gt;Layer 3: Network&lt;/h1&gt;
+
 &lt;h2 id=&#34;IP&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#IP&#34;&gt;#&lt;/a&gt;IP&lt;/h2&gt;
+
 &lt;ol&gt;
 &lt;li&gt;IP Protocol Features&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;Best-effort delivery
-&lt;ul&gt;
+&lt;li&gt;Best-effort delivery&lt;ul&gt;
 &lt;li&gt;IP routes and sends a packet to the destination. IP provides no guaranteed delivery of packets&lt;/li&gt;
 &lt;li&gt;Packet loss is left to the higher layer protocols&lt;/li&gt;
 &lt;li&gt;The network has variable delays, it is not guaranteed that the packets will be received in sequence.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Connection-less service
-&lt;ul&gt;
+&lt;li&gt;Connection-less service&lt;ul&gt;
 &lt;li&gt;Each packet is individually addressed and routed, rather than in the setup a prearranged connection channel for data transmission&lt;/li&gt;
 &lt;li&gt;It is possible that two packets from the same source take different paths to reach the destination.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Routing
-&lt;ul&gt;
+&lt;li&gt;Routing&lt;ul&gt;
 &lt;li&gt;Packets go through a series of routers before they reach the destination.&lt;/li&gt;
 &lt;li&gt;At each node that the packet passes through, the node determines the next hop for the packet and routes it to the next hop.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Quality of Service (QoS) control
-&lt;ul&gt;
+&lt;li&gt;Quality of Service (QoS) control&lt;ul&gt;
 &lt;li&gt;QoS optimizes the network by setting packet priorities (classification marking)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;IP Fragmentation
-&lt;ol&gt;
+&lt;li&gt;IP Fragmentation&lt;ol&gt;
 &lt;li&gt;What is IP fragmentation?&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
@@ -87,29 +525,25 @@
 &lt;li&gt;When the destination host receives IP fragments, it allocates memory in preparation for fragment reassembly.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;IP Spoofing/DoS&lt;/li&gt;
+&lt;li&gt;IP Spoofing&amp;#x2F;DoS&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;An attacker can send packets/datagrams from a false source address to disguise itself.&lt;/li&gt;
+&lt;li&gt;An attacker can send packets&amp;#x2F;datagrams from a false source address to disguise itself.&lt;/li&gt;
 &lt;li&gt;Denial-of-service (DoS) attacks often use IP spoofing to overload networks and devices with packets that appear to be from legitimate source IP addresses.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;Issues with IPv4 Fragmentation&lt;br&gt;
-Fragmentation causes increase overhead in CPU and memory and slow down network performance.&lt;/li&gt;
+&lt;li&gt;Issues with IPv4 Fragmentation&lt;br&gt;Fragmentation causes increase overhead in CPU and memory and slow down network performance.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;Intermediate router
-&lt;ul&gt;
+&lt;li&gt;Intermediate router&lt;ul&gt;
 &lt;li&gt;Creates fragment headers&lt;/li&gt;
 &lt;li&gt;Computes checksums&lt;/li&gt;
 &lt;li&gt;Copies the original packet into the fragments&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Receiving host
-&lt;ul&gt;
+&lt;li&gt;Receiving host&lt;ul&gt;
 &lt;li&gt;When reassembling the fragments the receiver must allocate memory for the arriving fragments and joint together fragments into one packet after all of the fragments are received&lt;/li&gt;
-&lt;li&gt;If one fragment is dropped, the entire original packet must be resent.
-&lt;ul&gt;
+&lt;li&gt;If one fragment is dropped, the entire original packet must be resent.&lt;ul&gt;
 &lt;li&gt;The TTL time exceeded ICMP message (with Fragment reassembly timeout) is sent to the sender.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -117,6 +551,7 @@ Fragmentation causes increase overhead in CPU and memory and slow down network p
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;ARP&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#ARP&#34;&gt;#&lt;/a&gt;ARP&lt;/h2&gt;
+
 &lt;ol&gt;
 &lt;li&gt;ARP&lt;/li&gt;
 &lt;/ol&gt;
@@ -126,15 +561,13 @@ Fragmentation causes increase overhead in CPU and memory and slow down network p
 &lt;li&gt;ARP is used to resolve a logical (IP) address of a target host to its physical (MAC) address in a local area network.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;ARP in Direct Delivery&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;ARP in Direct Delivery&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;The sender A and receiver B are located at the same network.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;A requests for B’s MAC address.&lt;/li&gt;
-&lt;li&gt;Once B’s MAC address is resolved, then the data can be delivered from A to B.&lt;br&gt;
-&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/7638f7e29bc26dab.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Once B’s MAC address is resolved, then the data can be delivered from A to B.&lt;br&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/7638f7e29bc26dab.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;The sender A and receiver B are not located at the same network.&lt;/li&gt;
@@ -142,25 +575,21 @@ Fragmentation causes increase overhead in CPU and memory and slow down network p
 &lt;ul&gt;
 &lt;li&gt;A requests for gateway’s MAC address. Once G’s MAC address is resolved, then A sends the data to G for data forwarding&lt;/li&gt;
 &lt;li&gt;G requests B’s MAC address. Once B’s MAC address is resolved, then G forwards the data to B&lt;/li&gt;
-&lt;li&gt;Two ARP processes involved&lt;br&gt;
-&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/a066a6ee19686120.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Two ARP processes involved&lt;/li&gt;
 &lt;/ul&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;More ARP processes&lt;/li&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;A - G1     G1 - G2      G2 - G3      G3 - B&lt;br&gt;
-&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/94a4b433ddf61059.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;ARP Process- Request&lt;/p&gt;
-&lt;/li&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/a066a6ee19686120.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;3. More ARP processes
+- A - G1     G1 - G2      G2 - G3      G3 - B
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/94a4b433ddf61059.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;ARP Process- Request&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;ARP is a two-step process: a request and a reply.&lt;/li&gt;
-&lt;li&gt;Within a network, when a host (requester) – A, begins a conversation with a target host - B
-&lt;ul&gt;
+&lt;li&gt;Within a network, when a host (requester) – A, begins a conversation with a target host - B&lt;ul&gt;
 &lt;li&gt;A is aware of B’s IP address, but does not have the B’s MAC address. Thus A is unable to send a unicast frame to B.&lt;/li&gt;
 &lt;li&gt;A sends an ARP broadcast frame to request B’s MAC address. Since it is a broadcast, all hosts on the network receives the ARP request.&lt;/li&gt;
 &lt;li&gt;All hosts scan the content of the ARP request to determine if they are the intended target. The hosts which are not the intended target discard the broadcast frame.&lt;/li&gt;
@@ -180,16 +609,13 @@ Fragmentation causes increase overhead in CPU and memory and slow down network p
 &lt;ul&gt;
 &lt;li&gt;ARP Poisoning is also known as ARP Spoofing.&lt;/li&gt;
 &lt;li&gt;A type of attack carried out over a local area network (LAN).&lt;/li&gt;
-&lt;li&gt;It involves sending malicious ARP packets on a LAN to change the mapping of the attacker’s&lt;br&gt;
-MAC address with the IP address of another host&lt;/li&gt;
-&lt;li&gt;攻击过程
-&lt;ul&gt;
-&lt;li&gt;攻击者在局域网中发送伪造的 ARP 数据包，将目标 IP 地址映射到攻击者的 MAC 地址。&lt;/li&gt;
-&lt;li&gt;这样，局域网中的其他主机在访问该 IP 地址时，流量会被引导到攻击者的设备上。&lt;/li&gt;
+&lt;li&gt;It involves sending malicious ARP packets on a LAN to change the mapping of the attacker’s&lt;br&gt;MAC address with the IP address of another host&lt;/li&gt;
+&lt;li&gt;攻击过程&lt;ul&gt;
+&lt;li&gt;攻击者在局域网中发送伪造的ARP数据包，将目标IP地址映射到攻击者的MAC地址。&lt;/li&gt;
+&lt;li&gt;这样，局域网中的其他主机在访问该IP地址时，流量会被引导到攻击者的设备上。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;攻击目的
-&lt;ol&gt;
+&lt;li&gt;攻击目的&lt;ol&gt;
 &lt;li&gt;中间人攻击（Man-in-the-Middle, MITM）：&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
@@ -199,44 +625,36 @@ MAC address with the IP address of another host&lt;/li&gt;
 &lt;li&gt;拒绝服务攻击（DoS）：&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;攻击者可以通过阻止合法主机的流量访问目标主机，实现拒绝服务。&lt;br&gt;
-&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/1e55b1b5b0938dda.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;li&gt;攻击者可以通过阻止合法主机的流量访问目标主机，实现拒绝服务。&lt;br&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/1e55b1b5b0938dda.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;ICMP&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#ICMP&#34;&gt;#&lt;/a&gt;ICMP&lt;/h2&gt;
+
 &lt;ol&gt;
 &lt;li&gt;ICMP Features&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;ICMP is a supporting protocol to support IP.&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;ICMP is a supporting protocol to support IP.&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;ICMP messages are encapsulated inside of IP datagrams before going down to the data link layer&lt;br&gt;
-&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/bd2c3965e1886840.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;ICMP messages are encapsulated inside of IP datagrams before going down to the data link layer&lt;br&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/bd2c3965e1886840.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Assists the diagnosis of some network problems, particularly related to the network layer of the OSI model&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Assists the diagnosis of some network problems, particularly related to the network layer of the OSI model&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Assists in obtaining specific information from routers and the destination host&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Assists in obtaining specific information from routers and the destination host&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Is used by routers and hosts&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Is used by routers and hosts&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Returns the message to the originator&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Returns the message to the originator&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;Types of ICMP&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;ICMP messages can be broadly classified into 2 types:
-&lt;ul&gt;
+&lt;li&gt;ICMP messages can be broadly classified into 2 types:&lt;ul&gt;
 &lt;li&gt;Error reporting&lt;/li&gt;
-&lt;li&gt;Query/Reply&lt;/li&gt;
+&lt;li&gt;Query&amp;#x2F;Reply&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -244,130 +662,108 @@ MAC address with the IP address of another host&lt;/li&gt;
 &lt;li&gt;Time-Exceeded(Error reporting)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;The ICMP Time Exceeded message is issued:
-&lt;ul&gt;
+&lt;li&gt;The ICMP Time Exceeded message is issued:&lt;ul&gt;
 &lt;li&gt;When a packet is sent, its TTL is decremented by 1 at each hop. If the TTL reaches 0, the packet is dropped and a Time-Exceeded message is sent to the originator.&lt;/li&gt;
 &lt;li&gt;If destination does not receive all fragments in a set time, it drops any received fragments and sends a Time-Exceeded message to the originator&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;ICMP 重定向（ICMP Redirect）&lt;/li&gt;
+&lt;li&gt;ICMP重定向（ICMP Redirect）&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;场景设置
-&lt;ul&gt;
-&lt;li&gt;发送主机 A：IP 地址为 10.0.0.100/24。&lt;/li&gt;
-&lt;li&gt;默认路由：A 的路由表中有一个默认路由条目，指向路由器 G1 的 IP 地址 10.0.0.1/24 作为默认网关。&lt;/li&gt;
-&lt;li&gt;路由器 G1：当需要转发到目标网络 X 时，G1 使用路由器 G2 的 IP 地址 10.0.0.2/24 作为下一跳。&lt;/li&gt;
+&lt;li&gt;场景设置&lt;ul&gt;
+&lt;li&gt;发送主机 A：IP地址为 10.0.0.100&amp;#x2F;24。&lt;/li&gt;
+&lt;li&gt;默认路由：A 的路由表中有一个默认路由条目，指向路由器 G1 的 IP 地址 10.0.0.1&amp;#x2F;24 作为默认网关。&lt;/li&gt;
+&lt;li&gt;路由器 G1：当需要转发到目标网络 X 时，G1 使用路由器 G2 的 IP 地址 10.0.0.2&amp;#x2F;24 作为下一跳。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;ICMP 重定向过程
-&lt;ul&gt;
+&lt;li&gt;ICMP重定向过程&lt;ul&gt;
 &lt;li&gt;包到达路由器 G1：G1 收到来自主机 A（10.0.0.100）发送的一个数据包，目标是网络 X。&lt;/li&gt;
 &lt;li&gt;路由表检查：G1 检查其路由表，发现下一跳是 G2（IP 地址 10.0.0.2），可以到达目标网络 X。&lt;/li&gt;
-&lt;li&gt;ICMP 重定向消息：如果 G2 和发送主机 A（10.0.0.100）在同一个网络（10.0.0.0/24），G1 会向发送主机 A 发送一个 ICMP 重定向消息，建议 A 将去往网络 X 的流量直接发送到 G2，这样可以减少一个跳数，使流量更直接地到达目标网络。&lt;/li&gt;
-&lt;li&gt;数据包转发：在发送重定向消息的同时，G1 仍会将接收到的数据包转发到 G2，确保当前数据包的传输不中断。&lt;br&gt;
-&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/bbbcd5f2b66d5d73.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;li&gt;ICMP重定向消息：如果 G2 和发送主机 A（10.0.0.100）在同一个网络（10.0.0.0&amp;#x2F;24），G1 会向发送主机 A 发送一个 ICMP 重定向消息，建议 A 将去往网络 X 的流量直接发送到 G2，这样可以减少一个跳数，使流量更直接地到达目标网络。&lt;/li&gt;
+&lt;li&gt;数据包转发：在发送重定向消息的同时，G1 仍会将接收到的数据包转发到 G2，确保当前数据包的传输不中断。&lt;br&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/bbbcd5f2b66d5d73.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;5&#34;&gt;
-&lt;li&gt;Echo Request/Reply&lt;/li&gt;
+&lt;li&gt;Echo Request&amp;#x2F;Reply&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;A host or router that receives an echo-request message creates an echo-reply message and returns it to the originator&lt;/li&gt;
-&lt;li&gt;echo-request and echo-reply messages can be used to help diagnose some network problems
-&lt;ul&gt;
+&lt;li&gt;echo-request and echo-reply messages can be used to help diagnose some network problems&lt;ul&gt;
 &lt;li&gt;e.g. communication status between two devices&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Testing destination availability and providing status is achieved by invoking a ping command
-&lt;ul&gt;
+&lt;li&gt;Testing destination availability and providing status is achieved by invoking a ping command&lt;ul&gt;
 &lt;li&gt;Creates a series of echo-request and echo-reply messages providing statistical information&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;6&#34;&gt;
-&lt;li&gt;Ping（ICMP）泛洪 DDoS 攻击&lt;/li&gt;
+&lt;li&gt;Ping（ICMP）泛洪DDoS攻击&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;ICMP 操作的类型：熟悉 ICMP 的各种操作类型（例如 Echo 请求 / 回复）有助于识别网络通信中的正常行为和异常行为。&lt;/li&gt;
-&lt;li&gt;正常的 ICMP 交互：了解 ICMP 在发起端与目标主机之间的正常交互方式，例如 ping 操作，能帮助区分合法通信和潜在的恶意流量。&lt;/li&gt;
-&lt;li&gt;异常网络行为识别：当 ICMP 流量异常时（例如，持续的 ping 请求），可能意味着存在攻击行为，如 DDoS 攻击。&lt;/li&gt;
-&lt;li&gt;Ping（ICMP）泛洪 DDoS 攻击&lt;br&gt;
- Ping 泛洪是一种典型的 DDoS（分布式拒绝服务）攻击，攻击者通过发送大量 ICMP Echo 请求，使目标主机过载，耗尽其资源，导致网络性能下降甚至服务中断。这种攻击利用了 ICMP 的易用性和资源开销低的特性，通过大量的无用流量使目标服务器无法响应正常请求。&lt;br&gt;
-&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/7150028ff5a5d75b.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;li&gt;ICMP操作的类型：熟悉ICMP的各种操作类型（例如Echo请求&amp;#x2F;回复）有助于识别网络通信中的正常行为和异常行为。&lt;/li&gt;
+&lt;li&gt;正常的ICMP交互：了解ICMP在发起端与目标主机之间的正常交互方式，例如ping操作，能帮助区分合法通信和潜在的恶意流量。&lt;/li&gt;
+&lt;li&gt;异常网络行为识别：当ICMP流量异常时（例如，持续的ping请求），可能意味着存在攻击行为，如DDoS攻击。&lt;/li&gt;
+&lt;li&gt;Ping（ICMP）泛洪DDoS攻击&lt;br&gt;Ping泛洪是一种典型的DDoS（分布式拒绝服务）攻击，攻击者通过发送大量ICMP Echo请求，使目标主机过载，耗尽其资源，导致网络性能下降甚至服务中断。这种攻击利用了ICMP的易用性和资源开销低的特性，通过大量的无用流量使目标服务器无法响应正常请求。&lt;br&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/7150028ff5a5d75b.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;Layer 4: Transport&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Layer 4: Transport&#34;&gt;#&lt;/a&gt;Layer 4: Transport&lt;/h1&gt;
+
 &lt;h2 id=&#34;TCP&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#TCP&#34;&gt;#&lt;/a&gt;TCP&lt;/h2&gt;
 TCP详细特征在 Layer-4-Transport-Protocols
-&lt;p&gt;对 TCP 的威胁：&lt;/p&gt;
+
+&lt;p&gt;对TCP的威胁：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;TCP 序列号预测：&lt;/li&gt;
+&lt;li&gt;TCP序列号预测：&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;攻击者可能能够猜测 TCP 分配给数据包流的序列号。&lt;/li&gt;
+&lt;li&gt;攻击者可能能够猜测TCP分配给数据包流的序列号。&lt;/li&gt;
 &lt;li&gt;如果攻击者成功预测了正在进行的通信会话的序列号，可以进行&lt;strong&gt;注入&lt;/strong&gt;攻击，将篡改或伪造的数据插入数据流中，从而影响数据的完整性。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;SYN Flooding DoS 攻击：&lt;/li&gt;
+&lt;li&gt;SYN Flooding DoS攻击：&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;SYN 泛洪是一种拒绝服务（DoS）攻击，通过向服务器发送大量伪造的 TCP SYN 请求，占用服务器的资源。&lt;/li&gt;
-&lt;li&gt;在 SYN Flooding 攻击中，攻击者连续发送 SYN 请求，服务器响应 SYN-ACK，但攻击者不回复 ACK 确认，导致连接未完成并占用资源。&lt;/li&gt;
-&lt;li&gt;这种攻击会使服务器资源耗尽，导致其无法响应合法用户的请求&lt;br&gt;
-&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/66fe7ac2f80b1dd1.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;li&gt;SYN泛洪是一种拒绝服务（DoS）攻击，通过向服务器发送大量伪造的TCP SYN请求，占用服务器的资源。&lt;/li&gt;
+&lt;li&gt;在SYN Flooding攻击中，攻击者连续发送SYN请求，服务器响应SYN-ACK，但攻击者不回复ACK确认，导致连接未完成并占用资源。&lt;/li&gt;
+&lt;li&gt;这种攻击会使服务器资源耗尽，导致其无法响应合法用户的请求&lt;br&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/66fe7ac2f80b1dd1.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;Layer 7: Application&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Layer 7: Application&#34;&gt;#&lt;/a&gt;Layer 7: Application&lt;/h1&gt;
+
 &lt;h2 id=&#34;DHCP&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#DHCP&#34;&gt;#&lt;/a&gt;DHCP&lt;/h2&gt;
+
 &lt;ol&gt;
-&lt;li&gt;DHCP Message Format&lt;br&gt;
-&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/d8ed49e7d0fc10b8.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
-&lt;li&gt;Threats to
-&lt;ol&gt;
-&lt;li&gt;DHCP - DHCP 欺骗（DHCP Spoofing）&lt;/li&gt;
+&lt;li&gt;DHCP Message Format&lt;br&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/d8ed49e7d0fc10b8.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Threats to &lt;ol&gt;
+&lt;li&gt;DHCP - DHCP欺骗（DHCP Spoofing）&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;DHCP 欺骗是一种网络攻击，攻击者通过在网络中插入一个伪造的 DHCP 服务器来控制或截获网络流量。以下是攻击过程：
-&lt;ol&gt;
-&lt;li&gt;伪造的 DHCP 服务器：攻击者在网络中设置一个伪造的 DHCP 服务器，伪装成合法的 DHCP 服务器。&lt;/li&gt;
-&lt;li&gt;响应 DHCP 请求：当客户端发送 DHCP 请求时，伪造的 DHCP 服务器会快速响应，试图将自己设为客户端的默认网关或 DNS 服务器。&lt;/li&gt;
-&lt;li&gt;中间人攻击：通过设置默认网关或 DNS，攻击者可以截获并控制客户端的网络流量，作为中间人，拦截用户与实际网关之间的数据。这样，攻击者可以监视、篡改或阻断用户的网络流量。&lt;br&gt;
-&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/3e9cd9116e8ed666.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;DHCP 耗尽攻击（DHCP Starvation Attack）&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;DHCP 耗尽攻击是一种拒绝服务攻击，攻击者利用多个 “从属主机” 向 DHCP 服务器发送大量 IP 地址请求，直到耗尽服务器的地址池。以下是攻击的具体过程：
-&lt;ol&gt;
-&lt;li&gt;大量请求：攻击者通过从属主机或伪造的 MAC 地址向 DHCP 服务器不断请求新的 IP 地址。&lt;/li&gt;
-&lt;li&gt;地址池耗尽：随着大量虚假请求的积累，DHCP 服务器的 IP 地址池逐渐被占满。&lt;/li&gt;
-&lt;li&gt;合法用户无法连接：由于服务器没有可分配的 IP 地址，合法客户端无法从 DHCP 服务器获得 IP 地址，从而无法连接到网络。&lt;br&gt;
-&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/298943f7c02b1624.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;li&gt;DHCP欺骗是一种网络攻击，攻击者通过在网络中插入一个伪造的DHCP服务器来控制或截获网络流量。以下是攻击过程：&lt;ol&gt;
+&lt;li&gt;伪造的DHCP服务器：攻击者在网络中设置一个伪造的DHCP服务器，伪装成合法的DHCP服务器。&lt;/li&gt;
+&lt;li&gt;响应DHCP请求：当客户端发送DHCP请求时，伪造的DHCP服务器会快速响应，试图将自己设为客户端的默认网关或DNS服务器。&lt;/li&gt;
+&lt;li&gt;中间人攻击：通过设置默认网关或DNS，攻击者可以截获并控制客户端的网络流量，作为中间人，拦截用户与实际网关之间的数据。这样，攻击者可以监视、篡改或阻断用户的网络流量。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/3e9cd9116e8ed666.png&#34; alt=&#34;image&#34;&gt;&lt;br&gt;    2. DHCP耗尽攻击（DHCP Starvation Attack）&lt;br&gt;    - DHCP耗尽攻击是一种拒绝服务攻击，攻击者利用多个“从属主机”向DHCP服务器发送大量IP地址请求，直到耗尽服务器的地址池。以下是攻击的具体过程：&lt;br&gt;        1. 大量请求：攻击者通过从属主机或伪造的MAC地址向DHCP服务器不断请求新的IP地址。&lt;br&gt;        2. 地址池耗尽：随着大量虚假请求的积累，DHCP服务器的IP地址池逐渐被占满。&lt;br&gt;        3. 合法用户无法连接：由于服务器没有可分配的IP地址，合法客户端无法从DHCP服务器获得IP地址，从而无法连接到网络。&lt;br&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/298943f7c02b1624.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;DNS&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#DNS&#34;&gt;#&lt;/a&gt;DNS&lt;/h2&gt;
+
 &lt;ol&gt;
 &lt;li&gt;名称解析响应类型&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;权威响应（Authoritative Response）：
-&lt;ul&gt;
-&lt;li&gt;这种响应来自于被查询域名的权威 DNS 服务器。&lt;/li&gt;
-&lt;li&gt;权威响应表明该 DNS 服务器对该域的 DNS 记录拥有直接管理权限，因此返回的数据是准确和最新的。&lt;/li&gt;
+&lt;li&gt;权威响应（Authoritative Response）：&lt;ul&gt;
+&lt;li&gt;这种响应来自于被查询域名的权威DNS服务器。&lt;/li&gt;
+&lt;li&gt;权威响应表明该DNS服务器对该域的DNS记录拥有直接管理权限，因此返回的数据是准确和最新的。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;非权威响应（Non-authoritative Response）：
-&lt;ul&gt;
-&lt;li&gt;这种响应并非来自被查询域名的权威 DNS 服务器，而是来自缓存服务器或中间服务器。&lt;/li&gt;
-&lt;li&gt;非权威响应通常是其他 DNS 服务器缓存的数据，可能并非实时更新，但可以加速查询过程&lt;/li&gt;
+&lt;li&gt;非权威响应（Non-authoritative Response）：&lt;ul&gt;
+&lt;li&gt;这种响应并非来自被查询域名的权威DNS服务器，而是来自缓存服务器或中间服务器。&lt;/li&gt;
+&lt;li&gt;非权威响应通常是其他DNS服务器缓存的数据，可能并非实时更新，但可以加速查询过程&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -375,61 +771,52 @@ TCP详细特征在 Layer-4-Transport-Protocols
 &lt;li&gt;非权威响应示例&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;首次查询
-&lt;ol&gt;
-&lt;li&gt;查询请求：客户端请求 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5pYm0uY29t&#34;&gt;www.ibm.com&lt;/span&gt; 的 IP 地址。&lt;/li&gt;
-&lt;li&gt;查询根服务器：本地 DNS 服务器向根服务器查询 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5pYm0uY29t&#34;&gt;www.ibm.com&lt;/span&gt; 的地址。&lt;/li&gt;
+&lt;li&gt;首次查询&lt;ol&gt;
+&lt;li&gt;查询请求：客户端请求 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5pYm0uY29tLw==&#34;&gt;www.ibm.com&lt;/span&gt; 的IP地址。&lt;/li&gt;
+&lt;li&gt;查询根服务器：本地DNS服务器向根服务器查询 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5pYm0uY29tLw==&#34;&gt;www.ibm.com&lt;/span&gt; 的地址。&lt;/li&gt;
 &lt;li&gt;指向顶级域（TLD）服务器：根服务器返回可查询的 com 顶级域服务器列表。&lt;/li&gt;
-&lt;li&gt;查询 com 顶级域服务器：本地 DNS 服务器向 com TLD 服务器查询 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5pYm0uY29t&#34;&gt;www.ibm.com&lt;/span&gt;。&lt;/li&gt;
-&lt;li&gt;指向 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2libS5jb20=&#34;&gt;ibm.com&lt;/span&gt; 的权威 DNS 服务器：com TLD 服务器提供 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2libS5jb20=&#34;&gt;ibm.com&lt;/span&gt; 权威 DNS 服务器地址。&lt;/li&gt;
-&lt;li&gt;查询 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2libS5jb20=&#34;&gt;ibm.com&lt;/span&gt; 的 DNS 服务器：本地 DNS 服务器向 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2libS5jb20=&#34;&gt;ibm.com&lt;/span&gt; 的 DNS 服务器请求 IP 地址。&lt;/li&gt;
-&lt;li&gt;解析完成：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2libS5jb20=&#34;&gt;ibm.com&lt;/span&gt; 的权威 DNS 服务器返回 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5pYm0uY29t&#34;&gt;www.ibm.com&lt;/span&gt; 的 IP 地址 129.42.38.10。&lt;/li&gt;
-&lt;li&gt;返回 IP 地址：本地 DNS 服务器将该 IP 地址返回给客户端。&lt;/li&gt;
+&lt;li&gt;查询 com 顶级域服务器：本地DNS服务器向 com TLD服务器查询 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5pYm0uY29tLi8=&#34;&gt;www.ibm.com。&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;指向 ibm.com 的权威DNS服务器：com TLD 服务器提供 ibm.com 权威DNS服务器地址。&lt;/li&gt;
+&lt;li&gt;查询 ibm.com 的DNS服务器：本地DNS服务器向 ibm.com 的DNS服务器请求IP地址。&lt;/li&gt;
+&lt;li&gt;解析完成：ibm.com 的权威DNS服务器返回 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5pYm0uY29tLw==&#34;&gt;www.ibm.com&lt;/span&gt; 的IP地址 129.42.38.10。&lt;/li&gt;
+&lt;li&gt;返回IP地址：本地DNS服务器将该IP地址返回给客户端。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
-&lt;li&gt;缓存和非权威响应
-&lt;ul&gt;
-&lt;li&gt;本地 DNS 服务器会将查询结果缓存一段时间。&lt;/li&gt;
-&lt;li&gt;如果在缓存有效期内再次请求 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5pYm0uY29t&#34;&gt;www.ibm.com&lt;/span&gt;，本地 DNS 服务器直接从缓存中返回 IP 地址，此时的响应即为非权威响应。&lt;/li&gt;
+&lt;li&gt;缓存和非权威响应&lt;ul&gt;
+&lt;li&gt;本地DNS服务器会将查询结果缓存一段时间。&lt;/li&gt;
+&lt;li&gt;如果在缓存有效期内再次请求 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5pYm0uY29tLOacrOWcsGRuc+acjeWKoeWZqOebtOaOpeS7jue8k+WtmOS4rei/lOWbnmlw5Zyw5Z2ALOatpOaXtueahOWTjeW6lOWNs+S4uumdnuadg+WogeWTjeW6lC4v&#34;&gt;www.ibm.com，本地DNS服务器直接从缓存中返回IP地址，此时的响应即为非权威响应。&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;Vulnerabilities/Threats in DNS&lt;/li&gt;
+&lt;li&gt;Vulnerabilities&amp;#x2F;Threats in DNS&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;DNS 方案的基本漏洞：
-&lt;ul&gt;
-&lt;li&gt;缺乏身份验证：DNS 没有内置的身份验证机制，使得攻击者更容易伪装。&lt;/li&gt;
-&lt;li&gt;缺乏响应的真实性和完整性检查：DNS 响应数据没有经过加密或验证，容易被篡改。&lt;/li&gt;
+&lt;li&gt;DNS方案的基本漏洞：&lt;ul&gt;
+&lt;li&gt;缺乏身份验证：DNS没有内置的身份验证机制，使得攻击者更容易伪装。&lt;/li&gt;
+&lt;li&gt;缺乏响应的真实性和完整性检查：DNS响应数据没有经过加密或验证，容易被篡改。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;DNS 缓存污染攻击（DNS Cache Poisoning）：
-&lt;ul&gt;
-&lt;li&gt;原理：攻击者更改 DNS 服务器或 DNS 缓存服务器上的记录，使网络流量从合法的服务器重定向到恶意网站。&lt;/li&gt;
-&lt;li&gt;效果：用户无意间访问到钓鱼网站，可能泄露敏感信息。&lt;br&gt;
-&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/2e4f0ec78949c3fe.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;li&gt;DNS缓存污染攻击（DNS Cache Poisoning）：&lt;ul&gt;
+&lt;li&gt;原理：攻击者更改DNS服务器或DNS缓存服务器上的记录，使网络流量从合法的服务器重定向到恶意网站。&lt;/li&gt;
+&lt;li&gt;效果：用户无意间访问到钓鱼网站，可能泄露敏感信息。&lt;br&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/2e4f0ec78949c3fe.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;DNS 泛洪攻击（DNS Flood Attack）：
-&lt;ul&gt;
-&lt;li&gt;原理：利用 DoS/DDoS 攻击，通过大量请求过载网络，耗尽网络容量和服务器资源。&lt;/li&gt;
-&lt;li&gt;效果：合法用户无法访问 DNS 服务，导致网络中断。&lt;br&gt;
-&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/6ed8673589f212d0.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;li&gt;DNS泛洪攻击（DNS Flood Attack）：&lt;ul&gt;
+&lt;li&gt;原理：利用DoS&amp;#x2F;DDoS攻击，通过大量请求过载网络，耗尽网络容量和服务器资源。&lt;/li&gt;
+&lt;li&gt;效果：合法用户无法访问DNS服务，导致网络中断。&lt;br&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/6ed8673589f212d0.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;DNS 欺骗（DNS Spoofing）：
-&lt;ul&gt;
-&lt;li&gt;原理：攻击者伪装成合法的 DNS 服务器，向客户端提供虚假的 DNS 响应。&lt;/li&gt;
-&lt;li&gt;效果：用户可能被引导到虚假网站，面临数据泄露和安全威胁。&lt;br&gt;
-&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/fc1bec998cfbdd83.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;li&gt;DNS欺骗（DNS Spoofing）：&lt;ul&gt;
+&lt;li&gt;原理：攻击者伪装成合法的DNS服务器，向客户端提供虚假的DNS响应。&lt;/li&gt;
+&lt;li&gt;效果：用户可能被引导到虚假网站，面临数据泄露和安全威胁。&lt;br&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/fc1bec998cfbdd83.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;Summary&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Summary&#34;&gt;#&lt;/a&gt;Summary&lt;/h1&gt;
+
 &lt;ol&gt;
-&lt;li&gt;Summary - Protocol Threats&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;&lt;p&gt;Summary - Protocol Threats&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -437,8 +824,7 @@ TCP详细特征在 Layer-4-Transport-Protocols
 &lt;th&gt;Threats&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
+&lt;tbody&gt;&lt;tr&gt;
 &lt;td&gt;IP&lt;/td&gt;
 &lt;td&gt;IP Spoofing attack 、 Fragmentation attack&lt;/td&gt;
 &lt;/tr&gt;
@@ -462,23 +848,20 @@ TCP详细特征在 Layer-4-Transport-Protocols
 &lt;td&gt;DNS&lt;/td&gt;
 &lt;td&gt;DNS Cache Poisoning  、 DNS Flood attack  、 DNS Spoofing&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Summary- Security attacks&lt;/li&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Summary- Security attacks&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;Active attack
-&lt;ul&gt;
-&lt;li&gt;involves data modification or the creation of a false stream, e.g.
-&lt;ul&gt;
-&lt;li&gt;masquerade, replay, modification of messages, man-in-the-middle (MITM) and DoS/DDoS&lt;/li&gt;
+&lt;li&gt;Active attack&lt;ul&gt;
+&lt;li&gt;involves data modification or the creation of a false stream, e.g.&lt;ul&gt;
+&lt;li&gt;masquerade, replay, modification of messages, man-in-the-middle (MITM) and DoS&amp;#x2F;DDoS&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Passive attack
-&lt;ul&gt;
+&lt;li&gt;Passive attack&lt;ul&gt;
 &lt;li&gt;attempts to learn or make use of information from the system but does not affect system resources, e.g. traffic analysis, release of information contents&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -489,8 +872,8 @@ TCP详细特征在 Layer-4-Transport-Protocols
         <category term="DHCP" />
         <category term="ICMP" />
         <category term="ARP" />
-        <category term="DNS" />
         <category term="TCP" />
+        <category term="DNS" />
         <category term="Network Security" />
         <updated>2024-11-04T12:02:06.000Z</updated>
     </entry>

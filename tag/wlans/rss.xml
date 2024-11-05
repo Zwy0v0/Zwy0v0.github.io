@@ -1,0 +1,504 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title> • Posts by &#34;wlans&#34; tag</title>
+        <link>http://example.com</link>
+        <description>🌸</description>
+        <language>zh-CN</language>
+        <pubDate>Tue, 05 Nov 2024 20:16:33 +1000</pubDate>
+        <lastBuildDate>Tue, 05 Nov 2024 20:16:33 +1000</lastBuildDate>
+        <category>network system</category>
+        <category>C</category>
+        <category>software security</category>
+        <category>AFL</category>
+        <category>Linux</category>
+        <category>HTTP</category>
+        <category>XSS</category>
+        <category>CSRF</category>
+        <category>C language</category>
+        <category>vulnerability</category>
+        <category>IP</category>
+        <category>DHCP</category>
+        <category>ICMP</category>
+        <category>ARP</category>
+        <category>router</category>
+        <category>Supernet</category>
+        <category>TCP</category>
+        <category>UDP</category>
+        <category>IPv4</category>
+        <category>Subnet</category>
+        <category>DNS</category>
+        <category>SSH</category>
+        <category>FTP</category>
+        <category>SMTP</category>
+        <category>OSI</category>
+        <category>TCP/IP</category>
+        <category>Network Security</category>
+        <category>SQL</category>
+        <category>Wi-Fi</category>
+        <category>WLANs</category>
+        <category>JavaScript</category>
+        <category>gdb</category>
+        <category>Blog</category>
+        <category>日常</category>
+        <item>
+            <guid isPermalink="true">http://example.com/course/Wireless-Networking/</guid>
+            <title>Wireless Networking</title>
+            <link>http://example.com/course/Wireless-Networking/</link>
+            <category>network system</category>
+            <category>Wi-Fi</category>
+            <category>WLANs</category>
+            <pubDate>Tue, 05 Nov 2024 20:16:33 +1000</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;Concepts&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Concepts&#34;&gt;#&lt;/a&gt;Concepts&lt;/h1&gt;
+
+&lt;h2 id=&#34;Characteristics of Wireless Transmissions&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Characteristics of Wireless Transmissions&#34;&gt;#&lt;/a&gt;Characteristics of Wireless Transmissions&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Wireless networks (WLANs) are networks that transmit signals through the air via RF(radio frequency) waves&lt;/li&gt;
+&lt;li&gt;Wired and wireless signals share many similarities including the use of the same Layer 3 and higher protocols&lt;/li&gt;
+&lt;li&gt;The nature of the atmosphere makes wireless transmission different from wired transmission&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;The Wireless Spectrum&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#The Wireless Spectrum&#34;&gt;#&lt;/a&gt;The Wireless Spectrum&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;无线频谱：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;无线频谱是用于数据和语音通信的电磁波频率范围，覆盖9 kHz到300 GHz的频率范围。&lt;/li&gt;
+&lt;li&gt;某些频段使用固定频率，即频段内仅包含一个频率。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;RFID（无线射频识别Radio Frequency Identification）：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;利用电磁场在小芯片（RFID标签）中存储数据，通常带有天线，可以接收和发送信号，某些标签还内置电池。&lt;br&gt;RFID常用于库存管理。&lt;/li&gt;
+&lt;li&gt;近场通信near-field communication（NFC）是RFID的一种形式，在非常近的距离内无线传输数据，标签通过磁感应从设备获取能量。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Z-Wave和ZigBee：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Z-Wave是一种智能家居协议，提供连接管理和数据传输，使用一个集线器从智能设备接收命令并将其传递给网络中的设备。&lt;/li&gt;
+&lt;li&gt;ZigBee是一种低功耗无线技术，设计用于处理小数据量，适用于物联网（IoT）设备，如楼宇自动化、暖通空调（HVAC）控制和自动抄表（AMR）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;蓝牙和ANT+：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;蓝牙：通过频率跳变扩频技术减少干扰，通常适用于10-100米的范围。&lt;/li&gt;
+&lt;li&gt;ANT+：基于ANT协议的无线协议，适合心率监测器、GPS设备等活动监控设备，能同步多个设备的数据。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;红外infrared（IR）技术：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;红外主要用于传感器数据收集，位于人眼可见光谱下方。&lt;/li&gt;
+&lt;li&gt;主动红外传感器：发射红外信号，通过反射检测物体。&lt;/li&gt;
+&lt;li&gt;被动红外传感器：测量环境红外波的变化，通常用于检测物体移动或变化&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;技术&lt;/th&gt;
+&lt;th&gt;频段&lt;/th&gt;
+&lt;th&gt;授权状态&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;RFID&lt;/td&gt;
+&lt;td&gt;低频（LF）、高频（HF）、超高频（UHF）等&lt;/td&gt;
+&lt;td&gt;通常为非授权频段，视不同国家的规定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;NFC&lt;/td&gt;
+&lt;td&gt;13.56 MHz&lt;/td&gt;
+&lt;td&gt;非授权频段，全球通用的ISM频段&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Z-Wave&lt;/td&gt;
+&lt;td&gt;908 MHz（北美）、868 MHz（欧洲）&lt;/td&gt;
+&lt;td&gt;授权频段，需遵守地区频段分配&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ZigBee&lt;/td&gt;
+&lt;td&gt;2.4 GHz（全球）、868 MHz（欧洲）、915 MHz（美国）&lt;/td&gt;
+&lt;td&gt;大多在2.4 GHz的非授权频段下使用，属于ISM频段&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;蓝牙&lt;/td&gt;
+&lt;td&gt;2.4 GHz&lt;/td&gt;
+&lt;td&gt;非授权频段，全球通用的ISM频段&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ANT+&lt;/td&gt;
+&lt;td&gt;2.4 GHz&lt;/td&gt;
+&lt;td&gt;非授权频段，使用ISM频段&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;红外(IR)&lt;/td&gt;
+&lt;td&gt;700 nm到1 mm（位于可见光以下）&lt;/td&gt;
+&lt;td&gt;非授权频段，通常用于短距离设备&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/c452aa1219633e9a.png&#34; alt=&#34;image&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;Channel Management&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Channel Management&#34;&gt;#&lt;/a&gt;Channel Management&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;通道管理&lt;br&gt;无线设备通常采用以下两种技术之一来管理频率通道：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;频率跳变扩频frequency hopping spread spectrum（FHSS）：&lt;ul&gt;
+&lt;li&gt;Bluetooth使用FHSS，通过在频率之间跳变来减少干扰。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;直接序列扩频direct sequence spread spectrum（DSSS）：&lt;ul&gt;
+&lt;li&gt;Wi-Fi和ZigBee使用DSSS，通过将信号分散在更宽的频带上来增强信号的抗干扰能力。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;天线&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;无线信号的传输：&lt;ul&gt;
+&lt;li&gt;无线信号源自导体上传递的电流，信号从发射器到达天线，天线将其转换为电磁波。&lt;/li&gt;
+&lt;li&gt;接收端的天线接收信号后，接收器将其转换回电流。&lt;/li&gt;
+&lt;li&gt;两个天线要使用相同的通道，必须调谐至相同的频率，以确保通信的一致性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;辐射模式radiation pattern ：&lt;ul&gt;
+&lt;li&gt;天线的辐射模式描述了其在三维空间中发送或接收电磁能量的相对强度。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;天线类型：&lt;ul&gt;
+&lt;li&gt;定向天线（Directional&amp;#x2F;Unidirectional antenna）：沿单一方向发出无线信号，适用于定向传输。&lt;/li&gt;
+&lt;li&gt;全向天线（Omnidirectional antenna）：以相同强度发出和接收信号，适用于全方位覆盖。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;天线范围：&lt;ul&gt;
+&lt;li&gt;天线的地理覆盖范围称为其射程，射程受天线的设计和周围环境的影响。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;Signal Propagation&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Signal Propagation&#34;&gt;#&lt;/a&gt;Signal Propagation&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;信号传播概述&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;传播（Propagation）：传播指的是波从一个点到另一个点的移动方式。&lt;/li&gt;
+&lt;li&gt;视距（LOS, Line-of-Sight）：信号直接沿直线从发射器到接收器。然而无线信号通常不沿直线传播。&lt;/li&gt;
+&lt;li&gt;当信号遇到障碍物时，可能会：&lt;ul&gt;
+&lt;li&gt;穿过物体&lt;/li&gt;
+&lt;li&gt;被物体吸收&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;信号衰减和干扰&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;衰减（Attenuation）：&lt;ul&gt;
+&lt;li&gt;随着信号远离传输源，信号强度逐渐减弱。&lt;/li&gt;
+&lt;li&gt;可以通过增加传输功率或使用信号扩展器（Wireless Range Extender）来增强或延长信号。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;褪色（Fading）：&lt;ul&gt;
+&lt;li&gt;信号遇到障碍物时，其能量会逐渐减弱，过度褪色会导致连接中断或数据传输缓慢。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;干扰（Interference）：&lt;ul&gt;
+&lt;li&gt;电磁波可能干扰无线通信，无线信号对噪声更加敏感。&lt;/li&gt;
+&lt;li&gt;信噪比Signal-to-noise ratio（SNR）：表示信号强度与噪声的比例，较高的SNR通常意味着更好的通信质量。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;反射、折射和其他影响&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;折射（Refraction）：当波通过物体时，其方向、速度和波长会改变。&lt;/li&gt;
+&lt;li&gt;反射（Reflection）：波遇到障碍物时，可能反射回源头。&lt;/li&gt;
+&lt;li&gt;散射（Scattering）：当信号遇到比波长小的物体时，信号会向多个方向散射。&lt;/li&gt;
+&lt;li&gt;衍射（Diffraction）：信号遇到障碍物时会被分成次级波，从而改变传播路径。这种多路径传播方式称为多路径信号（Multipath Signals）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;802.11 WLAN Standards&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#802.11 WLAN Standards&#34;&gt;#&lt;/a&gt;802.11 WLAN Standards&lt;/h1&gt;
+
+&lt;h2 id=&#34;WLAN Standards&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#WLAN Standards&#34;&gt;#&lt;/a&gt;WLAN Standards&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;工作层级：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;WLAN在OSI模型的第1层（物理层）和第2层（数据链路层）上工作。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;协议支持：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;WLAN支持更高层的OSI协议和操作系统，包括TCP&amp;#x2F;IP等网络协议栈。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Wi-Fi 标准：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;WLAN最常用的标准通常称为Wi-Fi（wireless fidelity无线保真）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;主要Wi-Fi标准：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;包括802.11b、802.11a、802.11g、802.11n、802.11ac 和 802.11ax。&lt;/li&gt;
+&lt;li&gt;从802.11n开始，标准在MAC子层（数据链路层的低层部分）对帧的使用方式进行了改进，以增强网络效率和吞吐量。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;LLC子层：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;LLC（逻辑链路控制）子层主要负责多路复用、流量和错误控制以及可靠性，确保数据的有序和可靠传输。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;Innovations&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Innovations&#34;&gt;#&lt;/a&gt;Innovations&lt;/h2&gt;
+随着802.11标准的发展，一些关键创新使得后期标准更快且更可靠：
+
+&lt;ol&gt;
+&lt;li&gt;通道绑定（Channel Bonding）：&lt;ul&gt;
+&lt;li&gt;将两个相邻的20 MHz通道绑定成一个40 MHz通道，这种方式可使单个通道的带宽提升一倍以上。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;MIMO（多输入多输出）：&lt;ul&gt;
+&lt;li&gt;多个接入点和客户端设备天线可以同时向一个或多个接收器发送信号。&lt;/li&gt;
+&lt;li&gt;MIMO提升了网络范围和吞吐量，提高了数据传输效率。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;MU-MIMO（多用户MIMO）：&lt;ul&gt;
+&lt;li&gt;一种更新的技术，允许多个天线同时为多个客户端服务。&lt;/li&gt;
+&lt;li&gt;MU-MIMO减少了网络拥堵，加速了数据传输，适用于WAVE 2 802.11ac产品。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;OFDMA（正交频分多址）：&lt;ul&gt;
+&lt;li&gt;支持802.11ax设备的多用户高效功能，提升了多用户访问的效率。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;帧聚合（Frame Aggregation）：&lt;ul&gt;
+&lt;li&gt;合并多个帧形成一个较大的帧，从而提高数据传输效率。&lt;/li&gt;
+&lt;li&gt;网络可以使用以下两种方法来聚合数据帧：&lt;ul&gt;
+&lt;li&gt;A-MSDU（聚合的MAC服务数据单元Aggregated Mac Service Data Unit）&lt;/li&gt;
+&lt;li&gt;A-MPDU（聚合的MAC协议数据单元Aggregated Mac Protocol Data Unit）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;Access Method&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Access Method&#34;&gt;#&lt;/a&gt;Access Method&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;物理地址标识：&lt;ul&gt;
+&lt;li&gt;802.11 MAC服务在帧中添加48位的物理地址，用于识别数据的源和目标。&lt;/li&gt;
+&lt;li&gt;采用与以太网相同的物理地址方案，使其能够轻松地与其他IEEE网络整合。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;CSMA&amp;#x2F;CA 访问控制：&lt;ul&gt;
+&lt;li&gt;无线设备设计上不支持同时传输和接收信号。&lt;/li&gt;
+&lt;li&gt;802.11标准规定使用CSMA&amp;#x2F;CA（Carrier Sense Multiple Access with Collision Avoidance载波侦听多路访问，避免碰撞）来管理共享介质的访问。&lt;/li&gt;
+&lt;li&gt;通过发送ACK确认包来验证每次传输，虽然这种方法需要比802.3更多的开销，但可提高数据传输的可靠性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;RTS&amp;#x2F;CTS 协议：&lt;ul&gt;
+&lt;li&gt;RTS&amp;#x2F;CTS（equest to Send&amp;#x2F;Clear to Send) 请求发送&amp;#x2F;清除发送）协议用于防止其他传输干扰数据包的传输。&lt;/li&gt;
+&lt;li&gt;虽然RTS&amp;#x2F;CTS会降低网络的整体效率，但在处理较大数据包的传输时，这一协议能有效提高传输稳定性。&lt;br&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/91de5cb0eb9ecd6e.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;Association and Wireless Topologies&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Association and Wireless Topologies&#34;&gt;#&lt;/a&gt;Association and Wireless Topologies&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;在无线网络中，关联（Association） 是指计算机与接入点（AP）之间交换数据包的过程，以便连接到互联网。扫描（Scanning）是无线设备寻找接入点的过程。扫描分为主动扫描（Active Scanning） 和被动扫描（Passive Scanning）：&lt;ul&gt;
+&lt;li&gt;主动扫描：无线客户端主动发送一个探测帧（Probe）寻找AP。&lt;/li&gt;
+&lt;li&gt;被动扫描：AP主动发送信号（Beacon帧），客户端监听此信号。&lt;/li&gt;
+&lt;li&gt;SSID（服务集标识符） 是识别接入点的唯一字符字符串，包含在信标帧中。建议用户更改默认SSID以增强安全性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;无线拓扑类型&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;IEEE定义了几种常见的无线拓扑结构：&lt;ol&gt;
+&lt;li&gt;IBSS（独立基本服务集Independent basic service set）：使用临时（ad hoc topology）拓扑结构，少量节点直接传输数据，不通过中间连接设备。&lt;/li&gt;
+&lt;li&gt;BSS（基本服务集basic service set）：使用基础设施（infrastructure topology）拓扑结构，一组站点共享一个AP，组内节点的标识符称为BSSID。&lt;/li&gt;
+&lt;li&gt;ESS（扩展服务集extended service set）：使用网状（mesh topology）拓扑结构，多个AP连接到同一个局域网（LAN），由无线局域网控制器管理。属于同一ESS的客户端共享一个特殊的标识符ESSID，这使得用户可以在不同AP之间漫游。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;IEEE 802.11 Frames&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#IEEE 802.11 Frames&#34;&gt;#&lt;/a&gt;IEEE 802.11 Frames&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;在IEEE 802.11标准中，MAC子层的帧类型被分为三大类：&lt;ol&gt;
+&lt;li&gt;管理帧（Management frames）：用于关联和重新关联的操作，帮助无线设备连接到接入点。&lt;/li&gt;
+&lt;li&gt;控制帧（Control frames）：控制信道访问和数据传输。这些帧用于确保无线信道的有效使用，常见的控制帧有ACK（确认）和RTS&amp;#x2F;CTS（请求发送&amp;#x2F;清除发送）帧。&lt;/li&gt;
+&lt;li&gt;数据帧（Data frames）：承载无线设备之间传输的实际数据内容。&lt;br&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/60ecf525d49f32c3.png&#34; alt=&#34;image&#34;&gt;&lt;br&gt;如图所示，802.11和802.3（以太网II）帧的结构不同，802.11帧包括更多的地址字段和用于无线传输的其他控制信息。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;Wi-Fi Network&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Wi-Fi Network&#34;&gt;#&lt;/a&gt;Wi-Fi Network&lt;/h1&gt;
+
+&lt;h2 id=&#34;Implementing a Wi-Fi Network&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Implementing a Wi-Fi Network&#34;&gt;#&lt;/a&gt;Implementing a Wi-Fi Network&lt;/h2&gt;
+
+
+&lt;ol&gt;
+&lt;li&gt;Determine the Design&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;设计小型办公室或家庭网络（SOHO网络）时，通常只需要一个接入点（AP）。该AP设备通常整合了交换、路由等网络功能，可以将无线客户端连接到局域网（LAN），并作为互联网网关。此外，许多家庭或办公室网络包括物联网（IoT）设备，例如健康监测器、智能音箱、智能恒温器、智能门铃、安全摄像头和智能冰箱等。&lt;br&gt;在决定安装AP的位置时，需要考虑以下因素：&lt;ul&gt;
+&lt;li&gt;距离：确保AP的信号能够覆盖预期的范围。&lt;/li&gt;
+&lt;li&gt;障碍物的类型和数量：建筑物的结构和材料可能会影响信号传输。&lt;/li&gt;
+&lt;li&gt;覆盖范围：要保证整个空间内都有足够的信号强度。&lt;/li&gt;
+&lt;li&gt;干扰：其他无线网络或设备可能会干扰信号。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;对于较大的无线局域网（WLAN），需要更系统地布置AP，可以进行现场调查，以评估客户端需求、设施特点和覆盖区域，确保在给定区域内提供可靠的无线连接。&lt;br&gt;详细的现场调查可能包括：&lt;ul&gt;
+&lt;li&gt;研究建筑图纸：识别潜在的障碍物。&lt;/li&gt;
+&lt;li&gt;Wi-Fi无线桥接需求：确定是否需要使用Wi-Fi接入点作为无线桥接，以便为远程有线网络提供接入。&lt;/li&gt;
+&lt;li&gt;多楼层AP需求：确定是否需要为特定楼层安装多个AP。&lt;/li&gt;
+&lt;li&gt;测量其他WLAN的信号覆盖和强度：避免信号冲突和干扰。&lt;/li&gt;
+&lt;li&gt;测试建议的AP位置：确保信号覆盖整个预期区域。&lt;/li&gt;
+&lt;li&gt;远距离测试：从空间的最远角落测试无线接入。&lt;/li&gt;
+&lt;li&gt;考虑环境中的材料：某些材料会影响无线信号传播。&lt;/li&gt;
+&lt;li&gt;无线和有线网络的整合：考虑如何将LAN的无线部分与有线部分集成。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Configure&lt;br&gt;在配置Wi-Fi连接设备和客户端时，可以选择不同的无线标准、天线强度和其他功能。以下是关键的配置要点：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;配置Wi-Fi连接设备&lt;br&gt;APs vary in which wireless standards they support, their antenna strength, and other features&lt;ul&gt;
+&lt;li&gt;管理员密码：为AP设置一个强密码，以防止未经授权的访问。&lt;/li&gt;
+&lt;li&gt;SSID及其广播：配置服务集标识符（SSID）并决定是否广播SSID。&lt;/li&gt;
+&lt;li&gt;安全选项：选择适当的加密协议（例如WPA2）以确保网络安全。&lt;/li&gt;
+&lt;li&gt;DHCP设置：决定是否启用动态主机配置协议（DHCP）来自动分配IP地址。&lt;/li&gt;
+&lt;li&gt;故障恢复：如果配置出错，可以强制重置AP，将所有更改恢复为默认值。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;配置Wi-Fi客户端&lt;br&gt;Configuration varies from one client type to another&lt;ul&gt;
+&lt;li&gt;自动检测SSID：如果AP正在广播SSID，附近的客户端设备会检测到，并提示用户选择连接。&lt;/li&gt;
+&lt;li&gt;设备上架（On-boarding）：安装特定应用或程序以允许设备访问网络的特定部分。&lt;/li&gt;
+&lt;li&gt;设备下架（Off-boarding）：移除设备上的特殊权限应用，并且在设备丢失或被盗的情况下，管理员可以通过远程擦除(remote wipe)功能保护网络安全。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;Wi-Fi Network Security&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Wi-Fi Network Security&#34;&gt;#&lt;/a&gt;Wi-Fi Network Security&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Wi-Fi网络安全&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;认证(Authentication)：客户端可以通过SSID密码或用户凭据登录网络。&lt;ul&gt;
+&lt;li&gt;MAC过滤(MAC filtering)：限制未授权设备的接入。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;加密算法(Encryption algorithms)：使用加密算法将数据转换为不可轻易读取的格式，以防信号被拦截。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;WPA（Wi-Fi Protected Access）&lt;br&gt;一种无线网络安全协议，主要特点如下：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;动态密钥分配：WPA会为每次传输动态分配一个独立的密钥，以提高数据传输的安全性。&lt;/li&gt;
+&lt;li&gt;TKIP（临时密钥完整性协议Temporal Key Integrity Protocol）：在802.11i标准中，WPA引入了TKIP作为加密密钥生成和管理方案，以增强基于旧WEP设备的安全性。TKIP带来了以下改进：&lt;ul&gt;
+&lt;li&gt;消息完整性：确保数据在传输过程中未被篡改。&lt;/li&gt;
+&lt;li&gt;密钥分发：为每个数据包生成一个唯一的加密密钥，防止密钥重用。&lt;/li&gt;
+&lt;li&gt;加密：提升数据的加密安全性，相比于WEP更加难以破解。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;WPA2（Wi-Fi Protected Access, Version 2）&lt;br&gt;WPA的增强版本，采用更强的数据保密方法来保护无线网络安全。其主要特点包括：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;CCMP协议：WPA2使用CCMP（计数器模式结合CBC(Cipher Block Chaining) MAC(Message Authentication Code)协议）来确保数据的保密性。CCMP提供了以下安全功能：&lt;ul&gt;
+&lt;li&gt;消息完整性：通过验证传入数据包的来源，确保数据来自声明的源，从而防止数据被篡改。&lt;/li&gt;
+&lt;li&gt;加密：使用AES（Advanced Encryption Standard高级加密标准）进行加密。AES相比TKIP提供了更快且更安全的加密方式，提高了数据的安全性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Other Security Configurations&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Additional security options include the following:&lt;ul&gt;
+&lt;li&gt;AP and antenna placement&lt;/li&gt;
+&lt;li&gt;Geofencing&lt;/li&gt;
+&lt;li&gt;Guest network&lt;/li&gt;
+&lt;li&gt;Wireless client isolation&lt;/li&gt;
+&lt;li&gt;Captive portal&lt;/li&gt;
+&lt;li&gt;IoT access considerations&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Security Threats to Wi-Fi Networks&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;War Driving：黑客通过驾驶装有无线数据接收设备的笔记本电脑在各地巡查，以发现未保护的无线网络，并尝试截获无线数据传输。&lt;/li&gt;
+&lt;li&gt;War Chalking：黑客在易受攻击的AP（接入点）附近的墙上或人行道上用粉笔画符号，告知其他黑客该位置的漏洞。&lt;/li&gt;
+&lt;li&gt;Evil Twin：在网络的地理区域内设置一个伪装的AP，以假装是授权的AP，从而诱骗用户连接到该恶意AP。&lt;/li&gt;
+&lt;li&gt;WPA Attack：通过拦截AP与设备之间传输的网络密钥来破解WPA安全协议的攻击，也被称为WPA破解。&lt;/li&gt;
+&lt;li&gt;WPS Attack：利用暴力破解的方式来破解WPS的PIN码，从而访问AP的设置。WPS PIN容易被暴力破解，使其成为一个较为脆弱的安全点。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;Wi-Fi Network Tools&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Two types of software tools you should have:&lt;ul&gt;
+&lt;li&gt;Spectrum analyzer – a device that can assess the quality of the wireless signal&lt;/li&gt;
+&lt;li&gt;Wireless analyzer (Wi-Fi analyzer) – software that can evaluate Wi-Fi network availability, optimize Wi-Fi signal settings, and help identify Wi-Fi security threats&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;List of capabilities common to wireless testing tools:&lt;ul&gt;
+&lt;li&gt;Identify transmitting access points, stations, and channels&lt;/li&gt;
+&lt;li&gt;Measure signal strength from an AP&lt;/li&gt;
+&lt;li&gt;Indicate the effects of attenuation, signal loss, and noise&lt;/li&gt;
+&lt;li&gt;Interpret signal strength information&lt;/li&gt;
+&lt;li&gt;Ensure proper association and reassociation between APs&lt;/li&gt;
+&lt;li&gt;Capture and interpret traffic&lt;/li&gt;
+&lt;li&gt;Measure throughput and assess data transmission errors&lt;/li&gt;
+&lt;li&gt;Analyze characteristics of each channel&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;Avoid Pitfalls&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;The following lists some wireless configuration pitfalls to avoid&lt;/li&gt;
+&lt;li&gt;No connection – when you cant get the Wi-Fi client to connect to the AP:&lt;ul&gt;
+&lt;li&gt;Wrong SSID&lt;/li&gt;
+&lt;li&gt;Encryption protocol mismatch&lt;/li&gt;
+&lt;li&gt;Incorrect passphrase&lt;/li&gt;
+&lt;li&gt;Static channel utilization&lt;/li&gt;
+&lt;li&gt;Mismatched RF band&lt;/li&gt;
+&lt;li&gt;Mismatched standards&lt;/li&gt;
+&lt;li&gt;Long AP association time&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slow connections – when dealing with slow Wi-Fi connections:&lt;ul&gt;
+&lt;li&gt;Insufficient wireless coverage&lt;/li&gt;
+&lt;li&gt;RF attenuation&amp;#x2F;signal loss&lt;/li&gt;
+&lt;li&gt;Interference&lt;/li&gt;
+&lt;li&gt;Channel overlap&lt;/li&gt;
+&lt;li&gt;Wireless standard specifications&lt;/li&gt;
+&lt;li&gt;Simultaneous wired and wireless connections&lt;/li&gt;
+&lt;li&gt;Problems with firmware updates&lt;/li&gt;
+&lt;li&gt;Incorrect antenna type&lt;/li&gt;
+&lt;li&gt;Mismatched antenna polarization&lt;/li&gt;
+&lt;li&gt;Client saturation or overcapacity&lt;/li&gt;
+&lt;li&gt;Client disassociation issues&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>
