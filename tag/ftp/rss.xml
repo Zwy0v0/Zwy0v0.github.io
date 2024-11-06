@@ -12,21 +12,23 @@
         <category>software security</category>
         <category>AFL</category>
         <category>Linux</category>
+        <category>C language</category>
+        <category>vulnerability</category>
         <category>HTTP</category>
         <category>XSS</category>
         <category>CSRF</category>
-        <category>C language</category>
-        <category>vulnerability</category>
+        <category>WAN</category>
+        <category>IPv6</category>
         <category>IP</category>
         <category>DHCP</category>
         <category>ICMP</category>
         <category>ARP</category>
         <category>router</category>
         <category>Supernet</category>
-        <category>TCP</category>
-        <category>UDP</category>
         <category>IPv4</category>
         <category>Subnet</category>
+        <category>TCP</category>
+        <category>UDP</category>
         <category>DNS</category>
         <category>SSH</category>
         <category>FTP</category>
@@ -37,10 +39,10 @@
         <category>SQL</category>
         <category>Wi-Fi</category>
         <category>WLANs</category>
-        <category>JavaScript</category>
         <category>gdb</category>
         <category>Blog</category>
         <category>日常</category>
+        <category>JavaScript</category>
         <item>
             <guid isPermalink="true">http://example.com/course/Layer-7-Application-layer-Protocols-and-Services/</guid>
             <title>Layer 7 - Application-layer Protocols and Services</title>
@@ -54,19 +56,20 @@
             <category>SMTP</category>
             <pubDate>Mon, 04 Nov 2024 13:27:37 +1000</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;Hypertext Transfer Protocol (HTTP)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Hypertext Transfer Protocol (HTTP)&#34;&gt;#&lt;/a&gt;Hypertext Transfer Protocol (HTTP)&lt;/h1&gt;
-
 &lt;ol&gt;
 &lt;li&gt;World Wide Web (WWW)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;The most popular service on the Internet&lt;/li&gt;
 &lt;li&gt;Immense collection of Web pages and other resources that can be downloaded across the Internet and displayed on a workstation via a web browser&lt;/li&gt;
-&lt;li&gt;The main concept is &lt;code&gt;hypertext&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;A system that allows related documents to be linked together&lt;ul&gt;
+&lt;li&gt;The main concept is  &lt;code&gt;hypertext&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;A system that allows related documents to be linked together
+&lt;ul&gt;
 &lt;li&gt;A “web” of electronically-linked documents&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Major functional components of the WWW&lt;ul&gt;
+&lt;li&gt;Major functional components of the WWW
+&lt;ul&gt;
 &lt;li&gt;HyperText Markup Language (HTML)&lt;/li&gt;
 &lt;li&gt;Hypertext Transfer Protocol (HTTP)&lt;/li&gt;
 &lt;li&gt;Uniform Resource Identifiers (URIs)&lt;/li&gt;
@@ -74,14 +77,17 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;HTTP&lt;br&gt;Originally, its main purpose was to transfer static web pages written in HTML&lt;/li&gt;
+&lt;li&gt;HTTP&lt;br&gt;
+Originally, its main purpose was to transfer static web pages written in HTML&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;Now, it is also used for general file transfer and downloading&amp;#x2F;displaying multimedia files&lt;/li&gt;
+&lt;li&gt;Now, it is also used for general file transfer and downloading/displaying multimedia files&lt;/li&gt;
 &lt;li&gt;Default TCP port number is 80&lt;/li&gt;
-&lt;li&gt;HTTP is an application-layer protocol&lt;ul&gt;
-&lt;li&gt;HTTP&amp;#x2F;2 is based on TCP as its Transport-layer protocol&lt;/li&gt;
-&lt;li&gt;HTTP&amp;#x2F;3 is based on QUIC as its Transport-layer protocol (RFC 9114, released on 6 June 2022)&lt;ul&gt;
+&lt;li&gt;HTTP is an application-layer protocol
+&lt;ul&gt;
+&lt;li&gt;HTTP/2 is based on TCP as its Transport-layer protocol&lt;/li&gt;
+&lt;li&gt;HTTP/3 is based on QUIC as its Transport-layer protocol (RFC 9114, released on 6 June 2022)
+&lt;ul&gt;
 &lt;li&gt;QUIC (RFC 9000, released in May 2021)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -94,34 +100,49 @@
 &lt;li&gt;HTTP Encapsulation&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;Example of how the layers work together:&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;start your Web browser and your home page is &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5leGFtcGxlLmNvbS8=&#34;&gt;http://www.example.com&lt;/span&gt;&lt;/p&gt;
+&lt;li&gt;Example of how the layers work together:
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;start your Web browser and your home page is &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5leGFtcGxlLmNvbQ==&#34;&gt;http://www.example.com&lt;/span&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The web browser formats a request for your home page by using the Application layer protocol HTTP&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;The web browser formats a request for your home page by using the Application layer protocol HTTP&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The request looks something like: &lt;code&gt;get the example.com home page&lt;/code&gt;&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;The request looks something like:  &lt;code&gt;get the example.com home page&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The unit of information the Application layer works with is simply called &lt;code&gt;data&lt;/code&gt;&lt;br&gt;The Application-layer protocol HTTP passes the request down to the Transport-layer protocol (TCP)&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;The unit of information the Application layer works with is simply called  &lt;code&gt;data&lt;/code&gt; &lt;br&gt;
+The Application-layer protocol HTTP passes the request down to the Transport-layer protocol (TCP)&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;TCP adds a header to the request&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;TCP adds a header to the request&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The unit of information the Transport layer works with is called a &lt;code&gt;segment&lt;/code&gt;&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;The unit of information the Transport layer works with is called a  &lt;code&gt;segment&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;TCP passes the segment to the Internetwork layer protocol (IP)&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;TCP passes the segment to the Internetwork layer protocol (IP)&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;IP places its header on the segment&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;IP places its header on the segment&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The unit of information is now called a &lt;code&gt;packet&lt;/code&gt;&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;The unit of information is now called a  &lt;code&gt;packet&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The packet is passed down to the Network access layer, where the NIC operates&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;The packet is passed down to the Network access layer, where the NIC operates&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;A &lt;code&gt;frame&lt;/code&gt; header and trailer are added&lt;br&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/6b810b6747c82aec.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;A  &lt;code&gt;frame&lt;/code&gt;  header and trailer are added&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/6b810b6747c82aec.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The frame is delivered to the network medium as bits&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;The frame is delivered to the network medium as bits&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;on its way to the &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5leGFtcGxlLmNvbS8=&#34;&gt;www.example.com&lt;/span&gt; server&lt;/li&gt;
+&lt;li&gt;on its way to the &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5leGFtcGxlLmNvbQ==&#34;&gt;www.example.com&lt;/span&gt; server&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;13&#34;&gt;
 &lt;li&gt;The web server processes it and returns a Web page&lt;/li&gt;
@@ -141,28 +162,33 @@
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;Every document on the Internet has a unique Uniform Resource Locator (URL)&lt;/li&gt;
-&lt;li&gt;All URLs consist of four parts:&lt;ul&gt;
-&lt;li&gt;Service type, e.g., http:&amp;#x2F;&amp;#x2F;&lt;/li&gt;
-&lt;li&gt;Host or domain name, e.g., example.com&lt;/li&gt;
+&lt;li&gt;All URLs consist of four parts:
+&lt;ul&gt;
+&lt;li&gt;Service type, e.g., http://&lt;/li&gt;
+&lt;li&gt;Host or domain name, e.g., &lt;a href=&#34;http://example.com&#34;&gt;example.com&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Directory or subdirectory information&lt;/li&gt;
 &lt;li&gt;Filename&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;6&#34;&gt;
-&lt;li&gt;Web Client&amp;#x2F;Server&lt;/li&gt;
+&lt;li&gt;Web Client/Server&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;Web client&lt;ul&gt;
-&lt;li&gt;To communicate with a web server, using Hypertext Transfer Protocol (HTTP)&lt;ul&gt;
+&lt;li&gt;Web client
+&lt;ul&gt;
+&lt;li&gt;To communicate with a web server, using Hypertext Transfer Protocol (HTTP)
+&lt;ul&gt;
 &lt;li&gt;Firefox, Edge, Chrome&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;To submit an HTTP request to the server&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Web server&lt;ul&gt;
-&lt;li&gt;To provide web content that can be accessed through the Internet&lt;ul&gt;
+&lt;li&gt;Web server
+&lt;ul&gt;
+&lt;li&gt;To provide web content that can be accessed through the Internet
+&lt;ul&gt;
 &lt;li&gt;Microsoft’s Internet Information Services (IIS)&lt;/li&gt;
 &lt;li&gt;Apache&lt;/li&gt;
 &lt;/ul&gt;
@@ -172,24 +198,25 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;Domain Name System (DNS)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Domain Name System (DNS)&#34;&gt;#&lt;/a&gt;Domain Name System (DNS)&lt;/h1&gt;
-
 &lt;h2 id=&#34;DNS&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#DNS&#34;&gt;#&lt;/a&gt;DNS&lt;/h2&gt;
-
 &lt;ol&gt;
 &lt;li&gt;Domain Names&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;Domain&lt;ul&gt;
+&lt;li&gt;Domain
+&lt;ul&gt;
 &lt;li&gt;Group of computers belonging to same organization&lt;/li&gt;
 &lt;li&gt;Share common part of IP address&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Domain name&lt;ul&gt;
-&lt;li&gt;Identifies domain (loc.gov)&lt;/li&gt;
+&lt;li&gt;Domain name
+&lt;ul&gt;
+&lt;li&gt;Identifies domain (&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2xvYy5nb3Y=&#34;&gt;loc.gov&lt;/span&gt;)&lt;/li&gt;
 &lt;li&gt;Associated with company, university, government organization&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Fully qualified host name (blogs.loc.gov)&lt;ul&gt;
+&lt;li&gt;Fully qualified host name (&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2Jsb2dzLmxvYy5nb3Y=&#34;&gt;blogs.loc.gov&lt;/span&gt;)
+&lt;ul&gt;
 &lt;li&gt;Local host name plus domain name&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -199,33 +226,37 @@
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;Commonly used analogy a “phone book” for the Internet&lt;/li&gt;
-&lt;li&gt;To keep the system manageable, the DNS is a hierarchical distributed naming service for computers&amp;#x2F;services&amp;#x2F;resources connected to the Internet&lt;/li&gt;
-&lt;li&gt;Translate human-friendly computer hostnames into IP addresses to locate computer resources&lt;ul&gt;
+&lt;li&gt;To keep the system manageable, the DNS is a hierarchical distributed naming service for computers/services/resources connected to the Internet&lt;/li&gt;
+&lt;li&gt;Translate human-friendly computer hostnames into IP addresses to locate computer resources
+&lt;ul&gt;
 &lt;li&gt;Computers do not use domain names, but binary addressing&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;DNS Database Structure&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#DNS Database Structure&#34;&gt;#&lt;/a&gt;DNS Database Structure&lt;/h2&gt;
-
 &lt;ol&gt;
 &lt;li&gt;DNS Database Structure&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;Can be best understood as a tree structure&lt;ul&gt;
+&lt;li&gt;Can be best understood as a tree structure
+&lt;ul&gt;
 &lt;li&gt;In the domain namespace, all domains meet at the root, identified by a single period (.)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Second-level domain (SLD) are usually the name of a company or institution&lt;/li&gt;
 &lt;li&gt;Subdomain is optional&lt;/li&gt;
 &lt;li&gt;Host level represents individual device&lt;/li&gt;
-&lt;li&gt;Some Well-known Top-level Domains&lt;table&gt;
+&lt;li&gt;Some Well-known Top-level Domains&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Domain suffix&lt;/th&gt;
 &lt;th&gt;Type of organization&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
 &lt;td&gt;ARPA&lt;/td&gt;
 &lt;td&gt;Reverse lookup domain (special Internet function)&lt;/td&gt;
 &lt;/tr&gt;
@@ -273,17 +304,18 @@
 &lt;td&gt;COOP&lt;/td&gt;
 &lt;td&gt;Cooperatives&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;Root Servers&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;Root servers are the authoritative name servers that serve the DNS root zone&lt;/li&gt;
 &lt;li&gt;Root servers are a network of hundreds of servers for redundancy in many countries around the world.&lt;/li&gt;
-&lt;li&gt;They are specified in the DNS root zone as 13 logical named authorities.&lt;ul&gt;
-&lt;li&gt;This does not mean that there are only 13 physical servers; each operator uses redundant computer equipment to provide reliable&lt;br&gt;service&lt;/li&gt;
+&lt;li&gt;They are specified in the DNS root zone as 13 logical named authorities.
+&lt;ul&gt;
+&lt;li&gt;This does not mean that there are only 13 physical servers; each operator uses redundant computer equipment to provide reliable&lt;br&gt;
+service&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -291,7 +323,8 @@
 &lt;li&gt;DNS Client (Resolver)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;DNS clients in most operating systems maintain a DNS cache, called a resolver cache&lt;ul&gt;
+&lt;li&gt;DNS clients in most operating systems maintain a DNS cache, called a resolver cache
+&lt;ul&gt;
 &lt;li&gt;Stores name and IP address pairs and other data&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -300,7 +333,8 @@
 &lt;li&gt;In Windows, the first DNS server configured is called the preferred DNS server and the second one is the alternate DNS server&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;DNS server&lt;br&gt;DNS servers are composed of the following:&lt;/li&gt;
+&lt;li&gt;DNS server&lt;br&gt;
+DNS servers are composed of the following:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;DNS zones – a database of primarily hostname and IP address pairs&lt;/li&gt;
@@ -308,10 +342,10 @@
 &lt;li&gt;Cache – results of queries are cached so that if the same query occurs again, the local DNS server can respond without having to contact another server&lt;/li&gt;
 &lt;li&gt;Root hints – file containing a list of all IP addresses of Internet root servers&lt;/li&gt;
 &lt;li&gt;DNS Server service – runs in the background and listens for DNS queries on UDP port 53&lt;/li&gt;
-&lt;li&gt;DNS Query Making its Way Through the DNS Hierarchy&lt;br&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/95ccdad58249c863.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
+&lt;li&gt;DNS Query Making its Way Through the DNS Hierarchy&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/95ccdad58249c863.png&#34; alt=&#34;img&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;DNS Database Records&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#DNS Database Records&#34;&gt;#&lt;/a&gt;DNS Database Records&lt;/h2&gt;
-
 &lt;ol&gt;
 &lt;li&gt;Resource records (RR)&lt;/li&gt;
 &lt;/ol&gt;
@@ -320,15 +354,17 @@
 &lt;li&gt;Divided into four classes, of which Internet class is of most interest to the users&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Most Commonly Used Record Types&lt;ol&gt;
+&lt;li&gt;Most Commonly Used Record Types
+&lt;ol&gt;
 &lt;li&gt;Start of Authority (SOA) record&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;Identifies the name server that is authoritative for a specific DNS database segment;&lt;/li&gt;
 &lt;li&gt;Identifies the master DNS server for a specific domain or sub-domain&lt;/li&gt;
-&lt;li&gt;First entry in the DNS file - both &lt;code&gt;domain.dns&lt;/code&gt; and &lt;code&gt;addr.in-addr.arpa.dns&lt;/code&gt; files - must be an SOA record&lt;/li&gt;
+&lt;li&gt;First entry in the DNS file - both  &lt;code&gt;domain.dns&lt;/code&gt;  and  &lt;code&gt;addr.in-addr.arpa.dns&lt;/code&gt;  files - must be an SOA record&lt;/li&gt;
 &lt;li&gt;Identifies the current name server as the best source of information for data in its zone&lt;/li&gt;
-&lt;li&gt;Both secondary and primary name servers can&lt;ul&gt;
+&lt;li&gt;Both secondary and primary name servers can
+&lt;ul&gt;
 &lt;li&gt;Designate themselves as authoritative in their own SOA records&lt;/li&gt;
 &lt;li&gt;This allows load-balancing across a primary and one or more secondary DNS servers in a domain&lt;/li&gt;
 &lt;/ul&gt;
@@ -368,15 +404,17 @@
 &lt;li&gt;Mapping Addresses to Names&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;Records in the &lt;code&gt;db.addr&lt;/code&gt; file are provided to support reverse DNS lookups&lt;/li&gt;
+&lt;li&gt;Records in the  &lt;code&gt;db.addr&lt;/code&gt;  file are provided to support reverse DNS lookups&lt;/li&gt;
 &lt;li&gt;Reverse address lookups are used primarily to determine if IP address that a user presents matches the domain name from which the user claims to originate&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;Resolving process&lt;ol&gt;
+&lt;li&gt;Resolving process
+&lt;ol&gt;
 &lt;li&gt;The DNS query is sent by the resolver to the local DNS server for resolution&lt;/li&gt;
 &lt;li&gt;If local DNS server does not recognise the address, then it queries the root server&lt;/li&gt;
 &lt;li&gt;If root server doesn’t recognize the domain name, the root will provide relevant information to the the resolver to contact the name server, which is the next level down&lt;/li&gt;
-&lt;li&gt;Repetition of the step to process each domain name in a top-down manner until the query is resolved, then&lt;ul&gt;
+&lt;li&gt;Repetition of the step to process each domain name in a top-down manner until the query is resolved, then
+&lt;ul&gt;
 &lt;li&gt;The resolver returns the resolved IP address to the requester&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -384,23 +422,25 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h1 id=&#34;Remote Login (Telnet) and Secure Shell (SSH)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Remote Login (Telnet) and Secure Shell (SSH)&#34;&gt;#&lt;/a&gt;Remote Login (Telnet) and Secure Shell (SSH)&lt;/h1&gt;
-
 &lt;ol&gt;
 &lt;li&gt;Remote Login (Telnet and SSH)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;A terminal emulation program for TCP&amp;#x2F;IP networks&lt;ul&gt;
+&lt;li&gt;A terminal emulation program for TCP/IP networks
+&lt;ul&gt;
 &lt;li&gt;Allows a user to remotely log in to a distant computer site&lt;/li&gt;
 &lt;li&gt;User usually needs a login ID and password to access a remote computer site&lt;/li&gt;
 &lt;li&gt;To provide access to a command-line interface on a remote host&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Telnet and SSH: network protocols for remote login&lt;ul&gt;
+&lt;li&gt;Telnet and SSH: network protocols for remote login
+&lt;ul&gt;
 &lt;li&gt;Telnet (Port 23) is not secure&lt;/li&gt;
 &lt;li&gt;SSH (Port 22) provides an encrypted channel between the client and server&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;SSH Clients&lt;ul&gt;
+&lt;li&gt;SSH Clients
+&lt;ul&gt;
 &lt;li&gt;PuTTY&lt;/li&gt;
 &lt;li&gt;use SSH from Windows Command window and MacOS terminal window&lt;/li&gt;
 &lt;/ul&gt;
@@ -410,16 +450,19 @@
 &lt;li&gt;Remote Desktop Software&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;Remote desktop software&lt;ul&gt;
-&lt;li&gt;Remote Desktop Protocol (RDP)&lt;ul&gt;
-&lt;li&gt;Uses Graphic User Interface (GUI) to manage&amp;#x2F;access Windows computers remotely&lt;/li&gt;
+&lt;li&gt;Remote desktop software
+&lt;ul&gt;
+&lt;li&gt;Remote Desktop Protocol (RDP)
+&lt;ul&gt;
+&lt;li&gt;Uses Graphic User Interface (GUI) to manage/access Windows computers remotely&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Independent Computing Architecture (ICA)&lt;/li&gt;
 &lt;li&gt;Virtual network computing (VNC)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Some remote desktop clients&lt;ul&gt;
+&lt;li&gt;Some remote desktop clients
+&lt;ul&gt;
 &lt;li&gt;Google’s Chrome Remote Desktop&lt;/li&gt;
 &lt;li&gt;Microsoft Remote Desktop&lt;/li&gt;
 &lt;li&gt;TeamViewer&lt;/li&gt;
@@ -427,9 +470,7 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;Simple Mail Transfer Protocol (SMTP)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Simple Mail Transfer Protocol (SMTP)&#34;&gt;#&lt;/a&gt;Simple Mail Transfer Protocol (SMTP)&lt;/h1&gt;
-
 &lt;h2 id=&#34;E-mail Protocol&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#E-mail Protocol&#34;&gt;#&lt;/a&gt;E-mail Protocol&lt;/h2&gt;
-
 &lt;ol&gt;
 &lt;li&gt;E-mail Protocols&lt;/li&gt;
 &lt;/ol&gt;
@@ -439,51 +480,56 @@
 &lt;li&gt;Simple Mail Transfer Protocol (SMTP) is the standard protocol for sending email over the Internet (uses TCP port 25)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;邮件系统的组成&lt;ol&gt;
+&lt;li&gt;邮件系统的组成
+&lt;ol&gt;
 &lt;li&gt;Mail User Agent (MUA) - 邮件用户代理&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;功能：MUA是电子邮件应用程序，用于创建、发送、接收、存储、回复和转发电子邮件。它还支持附件功能。&lt;/li&gt;
-&lt;li&gt;示例：如Outlook、Thunderbird等。&lt;/li&gt;
-&lt;li&gt;用途：通过SMTP协议发送邮件，通过POP或IMAP协议下载和接收邮件。&lt;/li&gt;
+&lt;li&gt;功能：MUA 是电子邮件应用程序，用于创建、发送、接收、存储、回复和转发电子邮件。它还支持附件功能。&lt;/li&gt;
+&lt;li&gt;示例：如 Outlook、Thunderbird 等。&lt;/li&gt;
+&lt;li&gt;用途：通过 SMTP 协议发送邮件，通过 POP 或 IMAP 协议下载和接收邮件。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;Message Transfer Agent (MTA) - 消息传输代理&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;功能：MTA负责准备和传输电子邮件消息，确保邮件能够在不同服务器之间传输。&lt;/li&gt;
-&lt;li&gt;用途：MTA在不同的邮件服务器之间传递邮件。&lt;/li&gt;
+&lt;li&gt;功能：MTA 负责准备和传输电子邮件消息，确保邮件能够在不同服务器之间传输。&lt;/li&gt;
+&lt;li&gt;用途：MTA 在不同的邮件服务器之间传递邮件。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;Multipurpose Internet Mail Extension (MIME) - 多用途互联网邮件扩展&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;功能：MIME用于将非文本格式的文件（如图像、音频、视频等）附加到电子邮件中，使得电子邮件可以包含多种格式的内容。&lt;/li&gt;
-&lt;li&gt;用途：通过MIME标准，电子邮件不仅能传输文本，还能传输附件，如图片、PDF等文件。&lt;/li&gt;
+&lt;li&gt;功能：MIME 用于将非文本格式的文件（如图像、音频、视频等）附加到电子邮件中，使得电子邮件可以包含多种格式的内容。&lt;/li&gt;
+&lt;li&gt;用途：通过 MIME 标准，电子邮件不仅能传输文本，还能传输附件，如图片、PDF 等文件。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;邮件系统的工作流程&lt;ul&gt;
-&lt;li&gt;发送邮件：MUA创建邮件并通过SMTP协议将其发送到MTA；MTA将邮件传递到收件人的SMTP服务器。&lt;/li&gt;
-&lt;li&gt;接收邮件：收件人的MUA通过POP或IMAP协议从SMTP服务器下载邮件&lt;br&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/b496d50c4b936cc4.png&#34; alt=&#34;email&#34;&gt;&lt;/li&gt;
+&lt;li&gt;邮件系统的工作流程
+&lt;ul&gt;
+&lt;li&gt;发送邮件：MUA 创建邮件并通过 SMTP 协议将其发送到 MTA；MTA 将邮件传递到收件人的 SMTP 服务器。&lt;/li&gt;
+&lt;li&gt;接收邮件：收件人的 MUA 通过 POP 或 IMAP 协议从 SMTP 服务器下载邮件&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/b496d50c4b936cc4.png&#34; alt=&#34;email&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;SMTP&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#SMTP&#34;&gt;#&lt;/a&gt;SMTP&lt;/h2&gt;
-
 &lt;ol&gt;
 &lt;li&gt;SMTP Communications&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;SMTP commands and reply codes immediately follow the TCP header&lt;/li&gt;
 &lt;li&gt;SMTP commands occur behind the scenes in some e-mail clients and some server-to-server mail transfers on the Internet&lt;/li&gt;
-&lt;li&gt;The majority of e-mail clients today use SMTP to send outgoing mail through some nearby SMTP server which assumes the task of storing or forwarding such messages, depending on addressee’s domain&lt;table&gt;
+&lt;li&gt;The majority of e-mail clients today use SMTP to send outgoing mail through some nearby SMTP server which assumes the task of storing or forwarding such messages, depending on addressee’s domain&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Command&lt;/th&gt;
 &lt;th&gt;Description&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
 &lt;td&gt;helo&lt;/td&gt;
 &lt;td&gt;Used by the client to identify itself&lt;/td&gt;
 &lt;/tr&gt;
@@ -507,26 +553,27 @@
 &lt;td&gt;vrfy&lt;/td&gt;
 &lt;td&gt;Used to verify the address of recipient&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/e4681fbfda7303a9.png&#34; alt=&#34;email&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;File Transfer Protocol (FTP)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#File Transfer Protocol (FTP)&#34;&gt;#&lt;/a&gt;File Transfer Protocol (FTP)&lt;/h1&gt;
-
 &lt;ol&gt;
 &lt;li&gt;FTP&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;FTP is a client&amp;#x2F;server protocol used for file transfer across the Internet&lt;ul&gt;
-&lt;li&gt;Uses two channels: TCP ports 20 and 21&lt;ul&gt;
+&lt;li&gt;FTP is a client/server protocol used for file transfer across the Internet
+&lt;ul&gt;
+&lt;li&gt;Uses two channels: TCP ports 20 and 21
+&lt;ul&gt;
 &lt;li&gt;Port 21 for control commands, Port 20 for transferring data&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Not a secure protocol&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Uses URL for an FTP site begins with &lt;code&gt;ftp://...&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;The 3 most common ways to access an FTP site:&lt;ul&gt;
+&lt;li&gt;Uses URL for an FTP site begins with  &lt;code&gt;ftp://...&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;The 3 most common ways to access an FTP site:
+&lt;ul&gt;
 &lt;li&gt;Through a browser&lt;/li&gt;
 &lt;li&gt;Using an FTP client program&lt;/li&gt;
 &lt;li&gt;Issuing FTP commands at a text-based command prompt&lt;/li&gt;
@@ -537,27 +584,30 @@
 &lt;li&gt;FTP connections&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;TCP-based Command Connection (control connection)&lt;ul&gt;
+&lt;li&gt;TCP-based Command Connection (control connection)
+&lt;ul&gt;
 &lt;li&gt;The command connection runs over TCP&lt;/li&gt;
 &lt;li&gt;Created automatically when FTP connection is established in response to open command from FTP client, using server FTP port number 21&lt;/li&gt;
 &lt;li&gt;The client uses a dynamic, or ephemeral, port number to handle the other end of a command connection&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;TCP-based Data Transfer Connection (data connection)&lt;ul&gt;
+&lt;li&gt;TCP-based Data Transfer Connection (data connection)
+&lt;ul&gt;
 &lt;li&gt;The data transfer connection also runs over TCP&lt;/li&gt;
 &lt;li&gt;Created by the server by default&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;Dynamic Host Configuration Protocol (DHCP)&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;Dynamic Host Configuration Protocol (DHCP)&#34;&gt;#&lt;/a&gt;Dynamic Host Configuration Protocol (DHCP)&lt;/h1&gt;
-
 &lt;ol&gt;
 &lt;li&gt;DHCP&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;DHCP is used to automatically assign IP addresses as needed&lt;ul&gt;
+&lt;li&gt;DHCP is used to automatically assign IP addresses as needed
+&lt;ul&gt;
 &lt;li&gt;When a computer is turned on, it requests an address from a server that is configured as a DHCP server&lt;/li&gt;
-&lt;li&gt;The server assigns an address for a specific amount of time (called&lt;br&gt;a lease)&lt;/li&gt;
+&lt;li&gt;The server assigns an address for a specific amount of time (called&lt;br&gt;
+a lease)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;DHCP Server service – runs in the background and listens on UDP port 67 for IP address requests&lt;/li&gt;
@@ -566,8 +616,10 @@
 &lt;li&gt;DHCP Server&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;A DHCP server is composed of the following:&lt;ul&gt;
-&lt;li&gt;IP address scope – a range of IP addresses the server leases to clients&lt;ul&gt;
+&lt;li&gt;A DHCP server is composed of the following:
+&lt;ul&gt;
+&lt;li&gt;IP address scope – a range of IP addresses the server leases to clients
+&lt;ul&gt;
 &lt;li&gt;Scope options – IP settings: default gateway, DNS servers, and other options&lt;/li&gt;
 &lt;li&gt;Reservations – an IP address tied to a particular MAC address&lt;/li&gt;
 &lt;li&gt;Exclusions – one or more IP addresses excluded from the IP address scope&lt;/li&gt;
@@ -575,35 +627,41 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;After an address is leased&lt;ul&gt;
+&lt;li&gt;After an address is leased
+&lt;ul&gt;
 &lt;li&gt;A record of the lease is stored in a database, including a lease expiration time&lt;/li&gt;
 &lt;li&gt;When 50% of the lease time has elapsed, the computer attempts to renew the lease from the same DHCP server that originally responded&lt;/li&gt;
-&lt;li&gt;If no response, the computer waits until lease is 87.5% expired, a broadcast DHCP renewal request is sent&lt;ul&gt;
+&lt;li&gt;If no response, the computer waits until lease is 87.5% expired, a broadcast DHCP renewal request is sent
+&lt;ul&gt;
 &lt;li&gt;If no response when lease expires, computer broadcasts a DCHP request for a new IP address&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Benefit of using DHCP&lt;ul&gt;
+&lt;li&gt;Benefit of using DHCP
+&lt;ul&gt;
 &lt;li&gt;Computers can easily be moved and requested new IP configuration from a DHCP server on the new segment&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;DHCP uses UDP&lt;ul&gt;
+&lt;li&gt;DHCP uses UDP
+&lt;ul&gt;
 &lt;li&gt;DHCP servers are usually located on the same network and DHCP messages are short&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;&lt;p&gt;DHCP Process&lt;br&gt;Broadcast packets used by the DHCP process:&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;DHCP Process&lt;br&gt;
+Broadcast packets used by the DHCP process:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;DHCPDISCOVER – the client announces to the network that it’s looking for a DHCP server&lt;/li&gt;
 &lt;li&gt;DHCPOFFER – the server replies and offers the client an IP address for lease&lt;/li&gt;
 &lt;li&gt;DHCPREQUEST – the client wants the offered IP address&lt;/li&gt;
-&lt;li&gt;DHCPACK – the server acknowledges the transaction and the client can now use the IP address&lt;/li&gt;
+&lt;li&gt;DHCPACK – the server acknowledges the transaction and the client can now use the IP address&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/065a09e3ea0c2cfe.png&#34; alt=&#34;DHCP&#34;&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/065a09e3ea0c2cfe.png&#34; alt=&#34;DHCP&#34;&gt;&lt;/p&gt;
  ]]></description>
         </item>
     </channel>

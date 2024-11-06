@@ -76,7 +76,7 @@ AtoposZz =  = final在后面追我T T</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">本文字数</span>
-    <span>6.6k</span>
+    <span>6.4k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -117,12 +117,12 @@ AtoposZz =  = final在后面追我T T</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a9382651.png"></li>
           <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf70db78e1.jpg"></li>
           <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf75f16bed.jpg"></li>
           <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf60a21b5d.jpg"></li>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf6bb9fdaf.jpg"></li>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf60cc9be5.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a94f1d92.png"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a9382651.png"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a9a63310.jpg"></li>
         </ul>
       </div>
     </header>
@@ -172,41 +172,53 @@ AtoposZz =  = final在后面追我T T</title>
     
 
     <h1 id="IPv4 Subnetting" class="active"><a class="anchor"  href="#IPv4 Subnetting">#</a>IPv4 Subnetting</h1>
-
 <ol>
 <li>为什么需要子网划分（Subnetting）</li>
 </ol>
 <ul>
-<li><p>在仅有一个 IP 地址范围的情况下，需要将其用于多个局域网（LAN）。将网络划分为更小的子网：将一个大的网络地址范围拆分为多个小的子网络（子网）。子网划分可以帮助组织多个楼层、部门或区域的网络结构，使其更易于管理。</p>
+<li>
+<p>在仅有一个 IP 地址范围的情况下，需要将其用于多个局域网（LAN）。将网络划分为更小的子网：将一个大的网络地址范围拆分为多个小的子网络（子网）。子网划分可以帮助组织多个楼层、部门或区域的网络结构，使其更易于管理。</p>
 </li>
-<li><p>原始结构：一个 LAN 网络中包含一个网络 ID 和主机 ID。</p>
+<li>
+<p>原始结构：一个 LAN 网络中包含一个网络 ID 和主机 ID。</p>
 </li>
-<li><p>划分后：在网络 ID 和主机 ID 之间插入一个子网 ID，使一个大的 IP 地址范围被拆分为多个小子网。子网划分后，每个楼层（或区域）可以拥有自己的子网，使用同一个网络 ID，但子网 ID 不同。最终效果是一个大的网络地址被分割成多个小的子网络，以满足不同区域的需求，并实现更高效的流量管理和网络隔离。<br><img data-src="https://cdn-fusion.imgcdn.store/i/2024/a479a9a1e392e680.png" alt="subnetting"></p>
+<li>
+<p>划分后：在网络 ID 和主机 ID 之间插入一个子网 ID，使一个大的 IP 地址范围被拆分为多个小子网。子网划分后，每个楼层（或区域）可以拥有自己的子网，使用同一个网络 ID，但子网 ID 不同。最终效果是一个大的网络地址被分割成多个小的子网络，以满足不同区域的需求，并实现更高效的流量管理和网络隔离。<br>
+<img data-src="https://cdn-fusion.imgcdn.store/i/2024/a479a9a1e392e680.png" alt="subnetting"></p>
 </li>
-<li><p>减少和管理广播域：网络分段限制了广播的范围，每个子网都具有独立的广播域，从而减少了广播流量。</p>
+<li>
+<p>减少和管理广播域：网络分段限制了广播的范围，每个子网都具有独立的广播域，从而减少了广播流量。</p>
 </li>
-<li><p>减少网络拥堵：将设备分配到不同的子网中，减少了每个子网中的设备数量，从而降低了网络拥堵的风险。</p>
+<li>
+<p>减少网络拥堵：将设备分配到不同的子网中，减少了每个子网中的设备数量，从而降低了网络拥堵的风险。</p>
 </li>
-<li><p>限制广播：广播只会在各自的子网中进行，避免了不必要的广播流量传播到整个网络中。</p>
+<li>
+<p>限制广播：广播只会在各自的子网中进行，避免了不必要的广播流量传播到整个网络中。</p>
 </li>
-<li><p>逻辑子网划分：根据部门或使用者类型（如员工&#x2F;访客）划分子网，以便于管理和控制访问权限。</p>
+<li>
+<p>逻辑子网划分：根据部门或使用者类型（如员工 / 访客）划分子网，以便于管理和控制访问权限。</p>
 </li>
-<li><p>支持不同的网络技术：不同的子网可以支持不同的网络技术（如 Ethernet、FDDI），实现技术兼容。</p>
+<li>
+<p>支持不同的网络技术：不同的子网可以支持不同的网络技术（如 Ethernet、FDDI），实现技术兼容。</p>
 </li>
-<li><p>支持广域网（WAN）连接：通过使用一个网络 ID（如 131.181.0.0&#x2F;16）将地理位置分散的局域网 (LAN) 连接在一起，例如可以划分为 131.181.0.0&#x2F;24、131.181.1.0&#x2F;24 等子网</p>
+<li>
+<p>支持广域网（WAN）连接：通过使用一个网络 ID（如 131.181.0.0/16）将地理位置分散的局域网 (LAN) 连接在一起，例如可以划分为 131.181.0.0/24、131.181.1.0/24 等子网</p>
 </li>
 </ul>
 <ol start="2">
 <li>网络分段的常见方式</li>
 </ol>
 <ul>
-<li>网络通常根据以下类别进行分段，以便更好地管理和控制流量：<ul>
+<li>网络通常根据以下类别进行分段，以便更好地管理和控制流量：
+<ul>
 <li>地理位置：按照物理位置（如楼层、建筑）对网络进行分段，使每个区域具有独立的广播域。</li>
 <li>部门边界：按照组织的部门（如财务部、技术部）划分子网，以确保各部门的流量和资源分开。</li>
 <li>设备类型：按照设备的类型（如电脑、打印机、服务器）进行分段，便于应用不同的安全策略和流量管理。</li>
 </ul>
 </li>
-<li>网络分段示例<br>假设一个企业从原有的 20 到 30 台计算机扩展到几百台设备，并且只有一个广播域（LAN）和一个默认路由器。可以通过以下方式优化网络：<ul>
+<li>网络分段示例<br>
+假设一个企业从原有的 20 到 30 台计算机扩展到几百台设备，并且只有一个广播域（LAN）和一个默认路由器。可以通过以下方式优化网络：
+<ul>
 <li>为每个楼层划分一个子网：在每个楼层安装一个路由器，以便每个楼层都有自己的 LAN 或广播域。</li>
 <li>配置子网客户端：将 IP 地址池划分为多个子网，并为每个子网分配独立的 IP 地址范围（即子网划分技术），以便客户端知道自己所在的子网内有哪些设备</li>
 </ul>
@@ -216,20 +228,24 @@ AtoposZz =  = final在后面追我T T</title>
 <li>如何识别网络和子网络</li>
 </ol>
 <ul>
-<li>在 IP 地址结构中，IP 地址分为两个部分：<ul>
+<li>在 IP 地址结构中，IP 地址分为两个部分：
+<ul>
 <li>网络 ID：标识 IP 地址所在的网络。</li>
 <li>主机 ID：标识网络中的具体主机或设备。</li>
 </ul>
 </li>
-<li>子网划分（Subnetting）<ul>
+<li>子网划分（Subnetting）
+<ul>
 <li>为了实现子网划分，我们可以借用一些主机 ID 位来表示子网络（子网），从而进一步细分网络 ID 部分。这样可以将一个大型网络划分成多个子网络，以便于更高效的管理和控制。</li>
 </ul>
 </li>
-<li>如何识别网络 ID 和子网 ID：<ul>
+<li>如何识别网络 ID 和子网 ID：
+<ul>
 <li>使用子网掩码来指示 IP 地址的哪一部分代表网络（包括子网络），哪一部分代表主机。</li>
 </ul>
 </li>
-<li>Example<ul>
+<li>Example
+<ul>
 <li>IP address 192.168.123.132 in binary: 11000000.10101000.01111011.10000100 (Class C)</li>
 <li>Subnet mask 255.255.255.0 in binary: 11111111.111111111.111111111.00000000</li>
 <li>Network I D: 192.168.123.0</li>
@@ -238,45 +254,75 @@ AtoposZz =  = final在后面追我T T</title>
 </li>
 </ul>
 <ol start="4">
-<li>地址结构 – 从两级到三级的子网划分<br>子网划分通过在主机 ID 中进一步划分子网 ID，实现了 IP 地址结构从两级到三级的转变。</li>
+<li>地址结构 – 从两级到三级的子网划分<br>
+子网划分通过在主机 ID 中进一步划分子网 ID，实现了 IP 地址结构从两级到三级的转变。</li>
 </ol>
 <ul>
-<li><p>示例：将子网掩码 255.255.255.0 应用于 B 类地址<br>对于一个默认的 B 类地址，网络 ID 部分通常为前 16 位，主机 ID 部分为后 16 位。<br>应用子网掩码 255.255.255.0 后，B 类地址的 16 位主机 ID 被划分为8 位的子网 ID和8 位的主机 ID。</p>
+<li>
+<p>示例：将子网掩码 255.255.255.0 应用于 B 类地址<br>
+对于一个默认的 B 类地址，网络 ID 部分通常为前 16 位，主机 ID 部分为后 16 位。<br>
+应用子网掩码 255.255.255.0 后，B 类地址的 16 位主机 ID 被划分为 8 位的子网 ID 和 8 位的主机 ID。</p>
 </li>
-<li><p>结果是一个三级结构：</p>
+<li>
+<p>结果是一个三级结构：</p>
 <ul>
 <li>网络 ID：前 16 位，用于标识外部网络。</li>
 <li>子网 ID：接下来的 8 位，用于标识内部子网。</li>
 <li>主机 ID：最后的 8 位，用于标识子网中的具体主机。</li>
 </ul>
 </li>
-<li><p>子网划分的特点<br>外部网络不可见性：外部网络（如互联网）无法看到子网和主机 ID 的具体结构，只识别到整个网络。<br>灵活的子网&#x2F;主机 ID 边界：用户可以根据需求定义子网和主机 ID 的边界，以满足不同规模的网络需求。<br><img data-src="https://cdn-fusion.imgcdn.store/i/2024/31ea5d544d94cd40.png" alt="subnetting"><br>给定的 IP 地址为 193.2.1.0，需要将其划分为 4 个子网。我们来回答以下问题：</p>
+<li>
+<p>子网划分的特点<br>
+外部网络不可见性：外部网络（如互联网）无法看到子网和主机 ID 的具体结构，只识别到整个网络。<br>
+灵活的子网 / 主机 ID 边界：用户可以根据需求定义子网和主机 ID 的边界，以满足不同规模的网络需求。<br>
+<img data-src="https://cdn-fusion.imgcdn.store/i/2024/31ea5d544d94cd40.png" alt="subnetting"><br>
+ 给定的 IP 地址为 193.2.1.0，需要将其划分为 4 个子网。我们来回答以下问题：</p>
 </li>
-<li><p>该地址的类别：<br>类别：C 类地址<br>分析：根据 193 的二进制表示 11000001，第一个字节的前 3 位是 110，所以这是一个 C 类地址。</p>
+<li>
+<p>该地址的类别：<br>
+类别：C 类地址<br>
+分析：根据 193 的二进制表示 11000001，第一个字节的前 3 位是 110，所以这是一个 C 类地址。</p>
 </li>
-<li><p>子网掩码：<br>原始 C 类地址的默认子网掩码是 255.255.255.0。<br>要划分为 4 个子网，我们需要从主机 ID 部分借用 2 位，将子网掩码改为 255.255.255.192（即 11111111.11111111.11111111.11000000）。</p>
+<li>
+<p>子网掩码：<br>
+原始 C 类地址的默认子网掩码是 255.255.255.0。<br>
+要划分为 4 个子网，我们需要从主机 ID 部分借用 2 位，将子网掩码改为 255.255.255.192（即 11111111.11111111.11111111.11000000）。</p>
 </li>
-<li><p>子网地址：<br>通过借用 2 位主机位，可以得到 4 个子网，地址范围如下：<br>子网 1：193.2.1.0 到 193.2.1.63  主机00xxxxxx<br>子网 2：193.2.1.64 到 193.2.1.127  主机01xxxxxx<br>子网 3：193.2.1.128 到 193.2.1.191 主机10xxxxxx<br>子网 4：193.2.1.192 到 193.2.1.254  主机11xxxxxx<br>每个子网中的有效 IP 地址数量：</p>
+<li>
+<p>子网地址：<br>
+通过借用 2 位主机位，可以得到 4 个子网，地址范围如下：<br>
+子网 1：193.2.1.0 到 193.2.1.63  主机 00xxxxxx<br>
+ 子网 2：193.2.1.64 到 193.2.1.127  主机 01xxxxxx<br>
+ 子网 3：193.2.1.128 到 193.2.1.191 主机 10xxxxxx<br>
+ 子网 4：193.2.1.192 到 193.2.1.254  主机 11xxxxxx<br>
+ 每个子网中的有效 IP 地址数量：</p>
 </li>
-<li><p>每个子网有 64 个地址，其中第一个地址为网络地址，最后一个地址为广播地址。<br>有效 IP 地址数量：每个子网有 62 个可用 IP 地址（64 - 2 &#x3D; 62）。<br><img data-src="https://cdn-fusion.imgcdn.store/i/2024/8fd2cfbb0424ec84.png" alt="subnetting"><br><img data-src="https://cdn-fusion.imgcdn.store/i/2024/b0bb30ef75cdd4f7.png" alt="subnetting"><br>Subnet broadcasts are used to send packets to all hosts within the subnet</p>
+<li>
+<p>每个子网有 64 个地址，其中第一个地址为网络地址，最后一个地址为广播地址。<br>
+有效 IP 地址数量：每个子网有 62 个可用 IP 地址（64 - 2 = 62）。<br>
+<img data-src="https://cdn-fusion.imgcdn.store/i/2024/8fd2cfbb0424ec84.png" alt="subnetting"><br>
+<img data-src="https://cdn-fusion.imgcdn.store/i/2024/b0bb30ef75cdd4f7.png" alt="subnetting"><br>
+Subnet broadcasts are used to send packets to all hosts within the subnet</p>
 </li>
 </ul>
 <ol start="5">
-<li><p>Exercise<br>Your ISP has been allocated a block of address 193.64.33.0&#x2F;24. Your organization needs to have 8 subnets for its structure. Figure out: 1) the subnet mask, 2) The 8 subnets; 3) the host range in each subnet</p>
+<li>
+<p>Exercise<br>
+Your ISP has been allocated a block of address 193.64.33.0/24. Your organization needs to have 8 subnets for its structure. Figure out: 1) the subnet mask, 2) The 8 subnets; 3) the host range in each subnet</p>
 <ol>
 <li>确定子网掩码</li>
 </ol>
 <ul>
-<li>&#x2F;24 表示默认子网掩码为 255.255.255.0，即主机部分有 8 位。</li>
-<li>为了划分出 8 个子网，需要借用 3 位（因为2**3 &#x3D; 8 个子网）。</li>
-<li>新的子网掩码为 &#x2F;27（即 24 + 3 &#x3D; 27），对应的子网掩码是 255.255.255.224。</li>
+<li>/24 表示默认子网掩码为 255.255.255.0，即主机部分有 8 位。</li>
+<li>为了划分出 8 个子网，需要借用 3 位（因为 2**3 = 8 个子网）。</li>
+<li>新的子网掩码为 /27（即 24 + 3 = 27），对应的子网掩码是 255.255.255.224。</li>
 </ul>
 <ol start="2">
-<li>划分出 8 个子网</li>
+<li>划分出 8 个子网<br>
+借用 3 位后，每个子网有 2**5=32 个地址（其中包含网络地址和广播地址）。因此，每个子网的间隔为 32。</li>
 </ol>
 </li>
 </ol>
-<p>借用 3 位后，每个子网有 2**5&#x3D;32 个地址（其中包含网络地址和广播地址）。因此，每个子网的间隔为 32。</p>
 <table>
 <thead>
 <tr>
@@ -287,68 +333,72 @@ AtoposZz =  = final在后面追我T T</title>
 <th>有效 IP 地址范围</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>子网 1</td>
-<td>193.64.33.0&#x2F;27</td>
+<td>193.64.33.0/27</td>
 <td>193.64.33.0 - 193.64.33.31</td>
 <td>193.64.33.31</td>
 <td>193.64.33.1 - 193.64.33.30</td>
 </tr>
 <tr>
 <td>子网 2</td>
-<td>193.64.33.32&#x2F;27</td>
+<td>193.64.33.32/27</td>
 <td>193.64.33.32 - 193.64.33.63</td>
 <td>193.64.33.63</td>
 <td>193.64.33.33 - 193.64.33.62</td>
 </tr>
 <tr>
 <td>子网 3</td>
-<td>193.64.33.64&#x2F;27</td>
+<td>193.64.33.64/27</td>
 <td>193.64.33.64 - 193.64.33.95</td>
 <td>193.64.33.95</td>
 <td>193.64.33.65 - 193.64.33.94</td>
 </tr>
 <tr>
 <td>子网 4</td>
-<td>193.64.33.96&#x2F;27</td>
+<td>193.64.33.96/27</td>
 <td>193.64.33.96 - 193.64.33.127</td>
 <td>193.64.33.127</td>
 <td>193.64.33.97 - 193.64.33.126</td>
 </tr>
 <tr>
 <td>子网 5</td>
-<td>193.64.33.128&#x2F;27</td>
+<td>193.64.33.128/27</td>
 <td>193.64.33.128 - 193.64.33.159</td>
 <td>193.64.33.159</td>
 <td>193.64.33.129 - 193.64.33.158</td>
 </tr>
 <tr>
 <td>子网 6</td>
-<td>193.64.33.160&#x2F;27</td>
+<td>193.64.33.160/27</td>
 <td>193.64.33.160 - 193.64.33.191</td>
 <td>193.64.33.191</td>
 <td>193.64.33.161 - 193.64.33.190</td>
 </tr>
 <tr>
 <td>子网 7</td>
-<td>193.64.33.192&#x2F;27</td>
+<td>193.64.33.192/27</td>
 <td>193.64.33.192 - 193.64.33.223</td>
 <td>193.64.33.223</td>
 <td>193.64.33.193 - 193.64.33.222</td>
 </tr>
 <tr>
 <td>子网 8</td>
-<td>193.64.33.224&#x2F;27</td>
+<td>193.64.33.224/27</td>
 <td>193.64.33.224 - 193.64.33.255</td>
 <td>193.64.33.255</td>
 <td>193.64.33.225 - 193.64.33.254</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <ol start="6">
-<li>VLSM（可变长子网掩码<br>VLSM（Variable Length Subnetting） 是一种允许使用不同长度子网掩码进行子网划分的技术。通过 VLSM，我们可以为具有不同主机数量需求的子网分配不同大小的子网掩码，最大限度地优化 IP 地址的使用。</li>
+<li>VLSM（可变长子网掩码<br>
+ VLSM（Variable Length Subnetting） 是一种允许使用不同长度子网掩码进行子网划分的技术。通过 VLSM，我们可以为具有不同主机数量需求的子网分配不同大小的子网掩码，最大限度地优化 IP 地址的使用。</li>
 </ol>
 <ul>
-<li>假设我们有一个 C 类地址 212.5.5.0，需求是：<ul>
+<li>假设我们有一个 C 类地址 212.5.5.0，需求是：
+<ul>
 <li>3 个子网需要支持 60 个主机</li>
 <li>2 个子网需要支持 30 个主机</li>
 </ul>
@@ -356,14 +406,15 @@ AtoposZz =  = final在后面追我T T</title>
 <li>初步子网划分</li>
 </ol>
 <ul>
-<li>借用 2 位子网位：默认 C 类地址 &#x2F;24 有 8 位主机位。</li>
-<li>借用 2 位主机位用于子网划分，得到 4 个子网，每个子网可以容纳约 60 个主机（6 位主机位，即 2**6-2&#x3D;62 个主机）。</li>
-<li>子网掩码变为 255.255.255.192，即 &#x2F;26。</li>
-<li>子网划分（每个子网有 62 个有效主机地址）：<ul>
-<li>子网 1：212.5.5.0&#x2F;26，IP 范围 212.5.5.1 - 212.5.5.62，广播地址 212.5.5.63</li>
-<li>子网 2：212.5.5.64&#x2F;26，IP 范围 212.5.5.65 - 212.5.5.126，广播地址 212.5.5.127</li>
-<li>子网 3：212.5.5.128&#x2F;26，IP 范围 212.5.5.129 - 212.5.5.190，广播地址 212.5.5.191</li>
-<li>子网 4：212.5.5.192&#x2F;26，IP 范围 212.5.5.193 - 212.5.5.254，广播地址 212.5.5.255</li>
+<li>借用 2 位子网位：默认 C 类地址 /24 有 8 位主机位。</li>
+<li>借用 2 位主机位用于子网划分，得到 4 个子网，每个子网可以容纳约 60 个主机（6 位主机位，即 2**6-2=62 个主机）。</li>
+<li>子网掩码变为 255.255.255.192，即 /26。</li>
+<li>子网划分（每个子网有 62 个有效主机地址）：
+<ul>
+<li>子网 1：212.5.5.0/26，IP 范围 212.5.5.1 - 212.5.5.62，广播地址 212.5.5.63</li>
+<li>子网 2：212.5.5.64/26，IP 范围 212.5.5.65 - 212.5.5.126，广播地址 212.5.5.127</li>
+<li>子网 3：212.5.5.128/26，IP 范围 212.5.5.129 - 212.5.5.190，广播地址 212.5.5.191</li>
+<li>子网 4：212.5.5.192/26，IP 范围 212.5.5.193 - 212.5.5.254，广播地址 212.5.5.255</li>
 </ul>
 </li>
 </ul>
@@ -372,30 +423,32 @@ AtoposZz =  = final在后面追我T T</title>
 </ol>
 <ul>
 <li>现在，需要将其中一个子网进一步划分，以满足 30 个主机的需求。进一步借用 1 位主机位：</li>
-<li>选择其中一个子网（例如 212.5.5.192&#x2F;26），再借用 1 位。借用后，我们可以将该子网划分为两个更小的子网，每个子网有 30 个有效主机地址（5 位主机位，即 2**5−2&#x3D;30 个主机）。</li>
-<li>子网掩码变为 255.255.255.224，即 &#x2F;27。</li>
-<li>新划分的子网（每个子网有 30 个有效主机地址）：<ul>
-<li>子网 4.1：212.5.5.192&#x2F;27，IP 范围 212.5.5.193 - 212.5.5.222，广播地址 212.5.5.223</li>
-<li>子网 4.2：212.5.5.224&#x2F;27，IP 范围 212.5.5.225 - 212.5.5.254，广播地址 212.5.5.255</li>
+<li>选择其中一个子网（例如 212.5.5.192/26），再借用 1 位。借用后，我们可以将该子网划分为两个更小的子网，每个子网有 30 个有效主机地址（5 位主机位，即 2**5−2=30 个主机）。</li>
+<li>子网掩码变为 255.255.255.224，即 /27。</li>
+<li>新划分的子网（每个子网有 30 个有效主机地址）：
+<ul>
+<li>子网 4.1：212.5.5.192/27，IP 范围 212.5.5.193 - 212.5.5.222，广播地址 212.5.5.223</li>
+<li>子网 4.2：212.5.5.224/27，IP 范围 212.5.5.225 - 212.5.5.254，广播地址 212.5.5.255</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 <h1 id="VLANs" class="active"><a class="anchor"  href="#VLANs">#</a>VLANs</h1>
-
 <ol>
 <li>VLAN（虚拟局域网）是一种通过将交换机上的端口分组的技术，使本地流量在交换机上被强制通过路由器，从而有效地控制和隔离网络流量。它将一个物理局域网划分为多个逻辑局域网，以减少广播流量和提升网络性能。</li>
 </ol>
 <ul>
-<li>VLAN 的作用<ul>
+<li>VLAN 的作用
+<ul>
 <li>限制广播域范围：VLAN 可以将交换机上的端口分组，形成多个逻辑分离的子网。这样，每个 VLAN 成为一个单独的广播域，限制了广播流量的传播范围。</li>
 <li>提升网络安全性：不同 VLAN 之间的通信需要通过路由器（或三层交换机），可以对不同 VLAN 之间的流量进行监控和管理，提升网络安全性。</li>
 <li>灵活的网络管理：VLAN 使得网络管理更加灵活，可以根据部门、楼层或设备类型分配 VLAN，而不必受物理位置限制。</li>
 </ul>
 </li>
 <li>示例： 假设有一个交换机有 24 个端口，可以将端口 1-12 分配到 VLAN 1，端口 13-24 分配到 VLAN 2。VLAN 1 和 VLAN 2 的设备互不通信，除非通过路由器连接，从而形成两个隔离的网络。</li>
-<li>使用 VLAN（虚拟局域网） 的主要原因包括以下几个方面：<ul>
+<li>使用 VLAN（虚拟局域网） 的主要原因包括以下几个方面：
+<ul>
 <li>隔离高流量或不稳定流量的连接：对于那些产生大量数据或流量模式不可预测的设备，使用 VLAN 可以将其流量隔离开，以免影响其他网络设备。</li>
 <li>识别需要优先处理数据的设备组：VLAN 可以用于标识和分组需要优先级的数据流（如视频会议、语音数据等），以便在网络中给予更高的处理优先级。</li>
 <li>包含依赖于传统协议的设备：一些设备可能使用与网络主流协议不兼容的旧协议。将这些设备放在独立的 VLAN 中可以避免协议冲突，并确保它们在网络中正常工作。</li>
@@ -409,12 +462,14 @@ AtoposZz =  = final在后面追我T T</title>
 <li>Managed switch:</li>
 </ol>
 <ul>
-<li>非管理型交换机：<ul>
+<li>非管理型交换机：
+<ul>
 <li>提供即插即用的简单操作，几乎不需要配置。</li>
 <li>没有分配 IP 地址，因此无法远程管理。</li>
 </ul>
 </li>
-<li>管理型交换机：<ul>
+<li>管理型交换机：
+<ul>
 <li>允许通过命令行界面或基于网页的管理 GUI 进行配置。</li>
 <li>通常分配有 IP 地址，支持远程管理。</li>
 <li>VLAN 只能通过管理型交换机来实现，用于逻辑分割网络以提高安全性和网络性能。</li>
@@ -427,34 +482,40 @@ AtoposZz =  = final在后面追我T T</title>
 </ol>
 <ul>
 <li>802.1Q 是 IEEE 制定的标准，规定了在以太网帧中添加 VLAN 信息的方式，以及交换机如何解读这些信息。这个标准广泛应用于 VLAN 实现。</li>
-<li>主要功能<ul>
+<li>主要功能
+<ul>
 <li>识别属于各个 VLAN 的传输：交换机在到达交换机的以太网帧中添加一个标签（Tag），用于标识该帧来自的端口以及其所属的 VLAN。该标签会一直伴随传输，直到到达路由器或目标设备连接的交换机端口。</li>
-<li>标签的传递和移除：<ul>
+<li>标签的传递和移除：
+<ul>
 <li>如果帧被路由到一个新的 VLAN：路由器会添加一个新的标签来标识帧的新 VLAN。</li>
-<li>标签的移除：当帧到达其最终的交换机端口（连接到目的设备的端口）时，标签会被移除。</li>
+<li>标签的移除：当帧到达其最终的交换机端口（连接到目的设备的端口）时，标签会被移除。<br>
+<img data-src="https://cdn-fusion.imgcdn.store/i/2024/eb628ecdefc24129.png" alt="image"></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<p><img data-src="https://cdn-fusion.imgcdn.store/i/2024/eb628ecdefc24129.png" alt="image"></p>
 <ol start="4">
-<li>交换机端口和中继（Trunks）<br>在交换机上，端口可以配置为 接入端口（Access Port） 或 中继端口（Trunk Port）：</li>
+<li>交换机端口和中继（Trunks）<br>
+在交换机上，端口可以配置为 接入端口（Access Port） 或 中继端口（Trunk Port）：</li>
 </ol>
 <ul>
-<li>接入端口（Access Port）：<ul>
+<li>接入端口（Access Port）：
+<ul>
 <li>用于连接单个节点或设备。</li>
 <li>典型的应用场景是连接计算机、打印机等设备到交换机。</li>
 <li>每个接入端口通常只属于一个 VLAN，用于接收和发送该 VLAN 的流量。</li>
 </ul>
 </li>
-<li>中继端口（Trunk Port）：<ul>
+<li>中继端口（Trunk Port）：
+<ul>
 <li>能够管理多个 VLAN 之间的流量。</li>
 <li>中继端口用于在交换机之间建立一个物理连接，通过该连接可以传输和接收来自多个 VLAN 的数据。</li>
 <li>中继端口将 VLAN 标签附加到以太网帧中，以确保不同 VLAN 的流量在传输中保持隔离。</li>
 </ul>
 </li>
-<li>中继（Trunk）<ul>
+<li>中继（Trunk）
+<ul>
 <li>中继 是交换机之间的一个单一物理连接，但可以通过它传输多个逻辑 VLAN 的数据。</li>
 <li>中继协议 负责在以太网帧中分配和解释 VLAN 标签，从而识别属于各个 VLAN 的数据流量</li>
 </ul>
@@ -464,12 +525,15 @@ AtoposZz =  = final在后面追我T T</title>
 <li>VLAN 和子网的关系</li>
 </ol>
 <ul>
-<li><p>每个 VLAN 都分配有自己的 IP 地址子网。这意味着每个 VLAN 相当于一个独立的网络，具有自己专用的 IP 地址范围。</p>
+<li>
+<p>每个 VLAN 都分配有自己的 IP 地址子网。这意味着每个 VLAN 相当于一个独立的网络，具有自己专用的 IP 地址范围。</p>
 </li>
-<li><p>示例网络（图中右下角示意图）展示了一个被划分为三个子网的网络：</p>
+<li>
+<p>示例网络（图中右下角示意图）展示了一个被划分为三个子网的网络：</p>
 <ul>
 <li>在这个网络中，尽管多个 VLAN 都连接到同一个路由器端口，但路由器可以看到每个 VLAN 作为一个独立的逻辑局域网。</li>
-<li>路由器会根据 VLAN ID 来区分流量，并为每个 VLAN 分配不同的子网进行 IP 地址管理。<br><img data-src="https://cdn-fusion.imgcdn.store/i/2024/ada329c62764baa3.png" alt="image"></li>
+<li>路由器会根据 VLAN ID 来区分流量，并为每个 VLAN 分配不同的子网进行 IP 地址管理。<br>
+<img data-src="https://cdn-fusion.imgcdn.store/i/2024/ada329c62764baa3.png" alt="image"></li>
 </ul>
 </li>
 </ul>
@@ -477,28 +541,33 @@ AtoposZz =  = final在后面追我T T</title>
 <li>VLAN 类型</li>
 </ol>
 <ul>
-<li>默认 VLAN（Default VLAN）：<ul>
+<li>默认 VLAN（Default VLAN）：
+<ul>
 <li>通常在交换机上预配置的 VLAN，初始状态下包含所有交换机端口。</li>
 <li>默认情况下，所有端口都属于该 VLAN，通常被配置为 VLAN 1。</li>
 </ul>
 </li>
-<li>本地 VLAN（Native VLAN）：<ul>
+<li>本地 VLAN（Native VLAN）：
+<ul>
 <li>用于接收所有未打标签的帧（即没有 VLAN 标签的流量）。</li>
 <li>当来自未标记的端口的流量进入中继端口时，本地 VLAN 会接收这些数据。</li>
 </ul>
 </li>
-<li>数据 VLAN（Data VLAN）：<ul>
+<li>数据 VLAN（Data VLAN）：
+<ul>
 <li>携带用户生成的流量，例如电子邮件、网页浏览和数据库更新等。</li>
 <li>用于常规用户数据传输，是大部分设备和用户数据所在的 VLAN。</li>
 </ul>
 </li>
-<li>管理 VLAN（Management VLAN）：<ul>
+<li>管理 VLAN（Management VLAN）：
+<ul>
 <li>用于提供对交换机的管理访问，允许管理员远程管理和配置交换机。</li>
 <li>通常为管理接口配置单独的 VLAN，以便与数据流量隔离，提高管理的安全性。</li>
 </ul>
 </li>
-<li>语音 VLAN（Voice VLAN）：<ul>
-<li>支持 VoIP（语音IP）流量的 VLAN，用于优化和优先处理语音通信数据。</li>
+<li>语音 VLAN（Voice VLAN）：
+<ul>
+<li>支持 VoIP（语音 IP）流量的 VLAN，用于优化和优先处理语音通信数据。</li>
 <li>语音 VLAN 可以减少延迟和抖动，提供更好的音质体验。</li>
 </ul>
 </li>
@@ -559,7 +628,7 @@ AtoposZz =  = final在后面追我T T</title>
     <div class="item left">
       
 
-  <a href="/course/Layer-3-IP-Addressing-and-IP-related-Protocols/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;18&#x2F;67123a9382651.png" title="Layer 3 - IP Addressing and IP-related Protocols">
+  <a href="/course/Layer-3-IP-Addressing-and-IP-related-Protocols/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;26&#x2F;671cf6029148a.jpg" title="Layer 3 - IP Addressing and IP-related Protocols">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> Network Systems</span>
   <h3>Layer 3 - IP Addressing and IP-related Protocols</h3>
@@ -595,7 +664,7 @@ AtoposZz =  = final在后面追我T T</title>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="/course/Network%20System%20Overall/" rel="bookmark" title="Network Systems Overall">Network Systems Overall</a></li><li><a href="/course/(Layers%201%20and%202)%20Physical%20and%20Data%20Link%20Layers/" rel="bookmark" title="Layers 1 and 2 - Physical and Data Link Layers">Layers 1 and 2 - Physical and Data Link Layers</a></li><li><a href="/course/Layer-3-IP-Addressing-and-IP-related-Protocols/" rel="bookmark" title="Layer 3 - IP Addressing and IP-related Protocols">Layer 3 - IP Addressing and IP-related Protocols</a></li><li class="active"><a href="/course/Layer-3-Subnetting-and-VLANs/" rel="bookmark" title="Layer 3 - Subnetting and VLANs">Layer 3 - Subnetting and VLANs</a></li><li><a href="/course/Layer-3-Routing-and-Superheating/" rel="bookmark" title="Layer 3 - Routing and Superheating">Layer 3 - Routing and Superheating</a></li><li><a href="/course/Layer-4-Transport-Protocols-TCP-and-UDP/" rel="bookmark" title="Layer 4 - Transport Protocols TCP and UDP">Layer 4 - Transport Protocols TCP and UDP</a></li><li><a href="/course/Layer-7-Application-layer-Protocols-and-Services/" rel="bookmark" title="Layer 7 - Application-layer Protocols and Services">Layer 7 - Application-layer Protocols and Services</a></li><li><a href="/course/Network-Security-Analysis/" rel="bookmark" title="Network Security Analysis">Network Security Analysis</a></li><li><a href="/course/Network-Security-Methods/" rel="bookmark" title="Network Security Methods">Network Security Methods</a></li><li><a href="/course/Wireless-Networking/" rel="bookmark" title="Wireless Networking">Wireless Networking</a></li>
+          <li><a href="/course/Network%20System%20Overall/" rel="bookmark" title="Network Systems Overall">Network Systems Overall</a></li><li><a href="/course/(Layers%201%20and%202)%20Physical%20and%20Data%20Link%20Layers/" rel="bookmark" title="Layers 1 and 2 - Physical and Data Link Layers">Layers 1 and 2 - Physical and Data Link Layers</a></li><li><a href="/course/Layer-3-IP-Addressing-and-IP-related-Protocols/" rel="bookmark" title="Layer 3 - IP Addressing and IP-related Protocols">Layer 3 - IP Addressing and IP-related Protocols</a></li><li class="active"><a href="/course/Layer-3-Subnetting-and-VLANs/" rel="bookmark" title="Layer 3 - Subnetting and VLANs">Layer 3 - Subnetting and VLANs</a></li><li><a href="/course/Layer-3-Routing-and-Superheating/" rel="bookmark" title="Layer 3 - Routing and Superheating">Layer 3 - Routing and Superheating</a></li><li><a href="/course/Layer-4-Transport-Protocols-TCP-and-UDP/" rel="bookmark" title="Layer 4 - Transport Protocols TCP and UDP">Layer 4 - Transport Protocols TCP and UDP</a></li><li><a href="/course/Layer-7-Application-layer-Protocols-and-Services/" rel="bookmark" title="Layer 7 - Application-layer Protocols and Services">Layer 7 - Application-layer Protocols and Services</a></li><li><a href="/course/Network-Security-Analysis/" rel="bookmark" title="Network Security Analysis">Network Security Analysis</a></li><li><a href="/course/Network-Security-Methods/" rel="bookmark" title="Network Security Methods">Network Security Methods</a></li><li><a href="/course/Wireless-Networking/" rel="bookmark" title="Wireless Networking">Wireless Networking</a></li><li><a href="/course/Wide-Area-Networking/" rel="bookmark" title="Wide Area Networking">Wide Area Networking</a></li><li><a href="/course/IoT/" rel="bookmark" title="IoT">IoT</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -609,7 +678,7 @@ AtoposZz =  = final在后面追我T T</title>
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">26</span>
+        <span class="count">28</span>
         <span class="name">文章</span>
       </a>
     </div>
@@ -621,7 +690,7 @@ AtoposZz =  = final在后面追我T T</title>
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">34</span>
+        <span class="count">36</span>
         <span class="name">标签</span>
       </a>
     </div>
@@ -716,7 +785,19 @@ AtoposZz =  = final在后面追我T T</title>
 <a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
 </div>
 
-    <span><a href="/course/Format-string-bugs/" title="Format string bugs">Format string bugs</a></span>
+    <span><a href="/course/C-language-basics-and-Computer-memory/" title="C language basics and Computer memory">C language basics and Computer memory</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Cross-Site-attack/" title="Cross-Site attack">Cross-Site attack</a></span>
   </li>
 
       
@@ -728,16 +809,7 @@ AtoposZz =  = final在后面追我T T</title>
 <a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
 </div>
 
-    <span><a href="/course/Layer-7-Application-layer-Protocols-and-Services/" title="Layer 7 - Application-layer Protocols and Services">Layer 7 - Application-layer Protocols and Services</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/dailysharing/hello-world/" title="Hello World">Hello World</a></span>
+    <span><a href="/course/Layer-4-Transport-Protocols-TCP-and-UDP/" title="Layer 4 - Transport Protocols TCP and UDP">Layer 4 - Transport Protocols TCP and UDP</a></span>
   </li>
 
       
@@ -746,22 +818,10 @@ AtoposZz =  = final在后面追我T T</title>
 <div class="breadcrumb">
 <a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
 </div>
 
-    <span><a href="/course/SQL-Injection/" title="SQL Injection">SQL Injection</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
-</div>
-
-    <span><a href="/course/C-language-basics-and-Computer-memory/" title="C language basics and Computer memory">C language basics and Computer memory</a></span>
+    <span><a href="/course/Network-Security-Analysis/" title="Network Security Analysis">Network Security Analysis</a></span>
   </li>
 
       
@@ -785,6 +845,18 @@ AtoposZz =  = final在后面追我T T</title>
 <a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
 </div>
 
+    <span><a href="/course/(Layers%201%20and%202)%20Physical%20and%20Data%20Link%20Layers/" title="Layers 1 and 2 - Physical and Data Link Layers">Layers 1 and 2 - Physical and Data Link Layers</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
+</div>
+
     <span><a href="/course/Network%20System%20Overall/" title="Network Systems Overall">Network Systems Overall</a></span>
   </li>
 
@@ -797,7 +869,19 @@ AtoposZz =  = final在后面追我T T</title>
 <a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
 </div>
 
-    <span><a href="/course/Stack-buffer-overflow/" title="Stack buffer overflow">Stack buffer overflow</a></span>
+    <span><a href="/course/Web-Application-Security/" title="Web Application Security">Web Application Security</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/study/" title="分类于 自学笔记">自学笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/study/JavaScript/" title="分类于 JavaScript">JavaScript</a>
+</div>
+
+    <span><a href="/study/js%E7%BB%A7%E6%89%BF/" title="js继承">js继承</a></span>
   </li>
 
       
@@ -806,22 +890,10 @@ AtoposZz =  = final在后面追我T T</title>
 <div class="breadcrumb">
 <a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
 </div>
 
-    <span><a href="/course/Network-Security-Methods/" title="Network Security Methods">Network Security Methods</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
-</div>
-
-    <span><a href="/course/(Layers%201%20and%202)%20Physical%20and%20Data%20Link%20Layers/" title="Layers 1 and 2 - Physical and Data Link Layers">Layers 1 and 2 - Physical and Data Link Layers</a></span>
+    <span><a href="/course/Format-string-bugs/" title="Format string bugs">Format string bugs</a></span>
   </li>
 
   </ul>

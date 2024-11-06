@@ -117,12 +117,12 @@ AtoposZz =  = final在后面追我T T</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a9a63310.jpg"></li>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf70db78e1.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf60a21b5d.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf60cc9be5.jpg"></li>
           <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a94b2174.png"></li>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf6bb9fdaf.jpg"></li>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf69b7c48b.jpg"></li>
           <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf75f16bed.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a97b6ba9.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf696303c4.jpg"></li>
         </ul>
       </div>
     </header>
@@ -172,19 +172,20 @@ AtoposZz =  = final在后面追我T T</title>
     
 
     <h1 id="Hypertext Transfer Protocol (HTTP)" class="active"><a class="anchor"  href="#Hypertext Transfer Protocol (HTTP)">#</a>Hypertext Transfer Protocol (HTTP)</h1>
-
 <ol>
 <li>World Wide Web (WWW)</li>
 </ol>
 <ul>
 <li>The most popular service on the Internet</li>
 <li>Immense collection of Web pages and other resources that can be downloaded across the Internet and displayed on a workstation via a web browser</li>
-<li>The main concept is <code>hypertext</code></li>
-<li>A system that allows related documents to be linked together<ul>
+<li>The main concept is  <code>hypertext</code></li>
+<li>A system that allows related documents to be linked together
+<ul>
 <li>A “web” of electronically-linked documents</li>
 </ul>
 </li>
-<li>Major functional components of the WWW<ul>
+<li>Major functional components of the WWW
+<ul>
 <li>HyperText Markup Language (HTML)</li>
 <li>Hypertext Transfer Protocol (HTTP)</li>
 <li>Uniform Resource Identifiers (URIs)</li>
@@ -192,14 +193,17 @@ AtoposZz =  = final在后面追我T T</title>
 </li>
 </ul>
 <ol start="2">
-<li>HTTP<br>Originally, its main purpose was to transfer static web pages written in HTML</li>
+<li>HTTP<br>
+Originally, its main purpose was to transfer static web pages written in HTML</li>
 </ol>
 <ul>
-<li>Now, it is also used for general file transfer and downloading&#x2F;displaying multimedia files</li>
+<li>Now, it is also used for general file transfer and downloading/displaying multimedia files</li>
 <li>Default TCP port number is 80</li>
-<li>HTTP is an application-layer protocol<ul>
-<li>HTTP&#x2F;2 is based on TCP as its Transport-layer protocol</li>
-<li>HTTP&#x2F;3 is based on QUIC as its Transport-layer protocol (RFC 9114, released on 6 June 2022)<ul>
+<li>HTTP is an application-layer protocol
+<ul>
+<li>HTTP/2 is based on TCP as its Transport-layer protocol</li>
+<li>HTTP/3 is based on QUIC as its Transport-layer protocol (RFC 9114, released on 6 June 2022)
+<ul>
 <li>QUIC (RFC 9000, released in May 2021)</li>
 </ul>
 </li>
@@ -212,34 +216,49 @@ AtoposZz =  = final在后面追我T T</title>
 <li>HTTP Encapsulation</li>
 </ol>
 <ul>
-<li>Example of how the layers work together:<ol>
-<li><p>start your Web browser and your home page is <span class="exturl" data-url="aHR0cDovL3d3dy5leGFtcGxlLmNvbS8=">http://www.example.com</span></p>
+<li>Example of how the layers work together:
+<ol>
+<li>
+<p>start your Web browser and your home page is <span class="exturl" data-url="aHR0cDovL3d3dy5leGFtcGxlLmNvbQ==">http://www.example.com</span></p>
 </li>
-<li><p>The web browser formats a request for your home page by using the Application layer protocol HTTP</p>
+<li>
+<p>The web browser formats a request for your home page by using the Application layer protocol HTTP</p>
 </li>
-<li><p>The request looks something like: <code>get the example.com home page</code></p>
+<li>
+<p>The request looks something like:  <code>get the example.com home page</code></p>
 </li>
-<li><p>The unit of information the Application layer works with is simply called <code>data</code><br>The Application-layer protocol HTTP passes the request down to the Transport-layer protocol (TCP)</p>
+<li>
+<p>The unit of information the Application layer works with is simply called  <code>data</code> <br>
+The Application-layer protocol HTTP passes the request down to the Transport-layer protocol (TCP)</p>
 </li>
-<li><p>TCP adds a header to the request</p>
+<li>
+<p>TCP adds a header to the request</p>
 </li>
-<li><p>The unit of information the Transport layer works with is called a <code>segment</code></p>
+<li>
+<p>The unit of information the Transport layer works with is called a  <code>segment</code></p>
 </li>
-<li><p>TCP passes the segment to the Internetwork layer protocol (IP)</p>
+<li>
+<p>TCP passes the segment to the Internetwork layer protocol (IP)</p>
 </li>
-<li><p>IP places its header on the segment</p>
+<li>
+<p>IP places its header on the segment</p>
 </li>
-<li><p>The unit of information is now called a <code>packet</code></p>
+<li>
+<p>The unit of information is now called a  <code>packet</code></p>
 </li>
-<li><p>The packet is passed down to the Network access layer, where the NIC operates</p>
+<li>
+<p>The packet is passed down to the Network access layer, where the NIC operates</p>
 </li>
-<li><p>A <code>frame</code> header and trailer are added<br><img data-src="https://cdn-fusion.imgcdn.store/i/2024/6b810b6747c82aec.png" alt="img"></p>
+<li>
+<p>A  <code>frame</code>  header and trailer are added<br>
+<img data-src="https://cdn-fusion.imgcdn.store/i/2024/6b810b6747c82aec.png" alt="img"></p>
 </li>
-<li><p>The frame is delivered to the network medium as bits</p>
+<li>
+<p>The frame is delivered to the network medium as bits</p>
 </li>
 </ol>
 <ul>
-<li>on its way to the <span class="exturl" data-url="aHR0cDovL3d3dy5leGFtcGxlLmNvbS8=">www.example.com</span> server</li>
+<li>on its way to the <span class="exturl" data-url="aHR0cDovL3d3dy5leGFtcGxlLmNvbQ==">www.example.com</span> server</li>
 </ul>
 <ol start="13">
 <li>The web server processes it and returns a Web page</li>
@@ -259,28 +278,33 @@ AtoposZz =  = final在后面追我T T</title>
 </ol>
 <ul>
 <li>Every document on the Internet has a unique Uniform Resource Locator (URL)</li>
-<li>All URLs consist of four parts:<ul>
-<li>Service type, e.g., http:&#x2F;&#x2F;</li>
-<li>Host or domain name, e.g., example.com</li>
+<li>All URLs consist of four parts:
+<ul>
+<li>Service type, e.g., http://</li>
+<li>Host or domain name, e.g., <a href="http://example.com">example.com</a></li>
 <li>Directory or subdirectory information</li>
 <li>Filename</li>
 </ul>
 </li>
 </ul>
 <ol start="6">
-<li>Web Client&#x2F;Server</li>
+<li>Web Client/Server</li>
 </ol>
 <ul>
-<li>Web client<ul>
-<li>To communicate with a web server, using Hypertext Transfer Protocol (HTTP)<ul>
+<li>Web client
+<ul>
+<li>To communicate with a web server, using Hypertext Transfer Protocol (HTTP)
+<ul>
 <li>Firefox, Edge, Chrome</li>
 </ul>
 </li>
 <li>To submit an HTTP request to the server</li>
 </ul>
 </li>
-<li>Web server<ul>
-<li>To provide web content that can be accessed through the Internet<ul>
+<li>Web server
+<ul>
+<li>To provide web content that can be accessed through the Internet
+<ul>
 <li>Microsoft’s Internet Information Services (IIS)</li>
 <li>Apache</li>
 </ul>
@@ -290,24 +314,25 @@ AtoposZz =  = final在后面追我T T</title>
 </li>
 </ul>
 <h1 id="Domain Name System (DNS)" class="active"><a class="anchor"  href="#Domain Name System (DNS)">#</a>Domain Name System (DNS)</h1>
-
 <h2 id="DNS" class="active"><a class="anchor"  href="#DNS">#</a>DNS</h2>
-
 <ol>
 <li>Domain Names</li>
 </ol>
 <ul>
-<li>Domain<ul>
+<li>Domain
+<ul>
 <li>Group of computers belonging to same organization</li>
 <li>Share common part of IP address</li>
 </ul>
 </li>
-<li>Domain name<ul>
-<li>Identifies domain (loc.gov)</li>
+<li>Domain name
+<ul>
+<li>Identifies domain (<span class="exturl" data-url="aHR0cDovL2xvYy5nb3Y=">loc.gov</span>)</li>
 <li>Associated with company, university, government organization</li>
 </ul>
 </li>
-<li>Fully qualified host name (blogs.loc.gov)<ul>
+<li>Fully qualified host name (<span class="exturl" data-url="aHR0cDovL2Jsb2dzLmxvYy5nb3Y=">blogs.loc.gov</span>)
+<ul>
 <li>Local host name plus domain name</li>
 </ul>
 </li>
@@ -317,33 +342,37 @@ AtoposZz =  = final在后面追我T T</title>
 </ol>
 <ul>
 <li>Commonly used analogy a “phone book” for the Internet</li>
-<li>To keep the system manageable, the DNS is a hierarchical distributed naming service for computers&#x2F;services&#x2F;resources connected to the Internet</li>
-<li>Translate human-friendly computer hostnames into IP addresses to locate computer resources<ul>
+<li>To keep the system manageable, the DNS is a hierarchical distributed naming service for computers/services/resources connected to the Internet</li>
+<li>Translate human-friendly computer hostnames into IP addresses to locate computer resources
+<ul>
 <li>Computers do not use domain names, but binary addressing</li>
 </ul>
 </li>
 </ul>
 <h2 id="DNS Database Structure" class="active"><a class="anchor"  href="#DNS Database Structure">#</a>DNS Database Structure</h2>
-
 <ol>
 <li>DNS Database Structure</li>
 </ol>
 <ul>
-<li>Can be best understood as a tree structure<ul>
+<li>Can be best understood as a tree structure
+<ul>
 <li>In the domain namespace, all domains meet at the root, identified by a single period (.)</li>
 </ul>
 </li>
 <li>Second-level domain (SLD) are usually the name of a company or institution</li>
 <li>Subdomain is optional</li>
 <li>Host level represents individual device</li>
-<li>Some Well-known Top-level Domains<table>
+<li>Some Well-known Top-level Domains</li>
+</ul>
+<table>
 <thead>
 <tr>
 <th>Domain suffix</th>
 <th>Type of organization</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>ARPA</td>
 <td>Reverse lookup domain (special Internet function)</td>
 </tr>
@@ -391,17 +420,18 @@ AtoposZz =  = final在后面追我T T</title>
 <td>COOP</td>
 <td>Cooperatives</td>
 </tr>
-</tbody></table>
-</li>
-</ul>
+</tbody>
+</table>
 <ol start="2">
 <li>Root Servers</li>
 </ol>
 <ul>
 <li>Root servers are the authoritative name servers that serve the DNS root zone</li>
 <li>Root servers are a network of hundreds of servers for redundancy in many countries around the world.</li>
-<li>They are specified in the DNS root zone as 13 logical named authorities.<ul>
-<li>This does not mean that there are only 13 physical servers; each operator uses redundant computer equipment to provide reliable<br>service</li>
+<li>They are specified in the DNS root zone as 13 logical named authorities.
+<ul>
+<li>This does not mean that there are only 13 physical servers; each operator uses redundant computer equipment to provide reliable<br>
+service</li>
 </ul>
 </li>
 </ul>
@@ -409,7 +439,8 @@ AtoposZz =  = final在后面追我T T</title>
 <li>DNS Client (Resolver)</li>
 </ol>
 <ul>
-<li>DNS clients in most operating systems maintain a DNS cache, called a resolver cache<ul>
+<li>DNS clients in most operating systems maintain a DNS cache, called a resolver cache
+<ul>
 <li>Stores name and IP address pairs and other data</li>
 </ul>
 </li>
@@ -418,7 +449,8 @@ AtoposZz =  = final在后面追我T T</title>
 <li>In Windows, the first DNS server configured is called the preferred DNS server and the second one is the alternate DNS server</li>
 </ul>
 <ol start="4">
-<li>DNS server<br>DNS servers are composed of the following:</li>
+<li>DNS server<br>
+DNS servers are composed of the following:</li>
 </ol>
 <ul>
 <li>DNS zones – a database of primarily hostname and IP address pairs</li>
@@ -426,10 +458,10 @@ AtoposZz =  = final在后面追我T T</title>
 <li>Cache – results of queries are cached so that if the same query occurs again, the local DNS server can respond without having to contact another server</li>
 <li>Root hints – file containing a list of all IP addresses of Internet root servers</li>
 <li>DNS Server service – runs in the background and listens for DNS queries on UDP port 53</li>
-<li>DNS Query Making its Way Through the DNS Hierarchy<br><img data-src="https://cdn-fusion.imgcdn.store/i/2024/95ccdad58249c863.png" alt="img"></li>
+<li>DNS Query Making its Way Through the DNS Hierarchy<br>
+<img data-src="https://cdn-fusion.imgcdn.store/i/2024/95ccdad58249c863.png" alt="img"></li>
 </ul>
 <h2 id="DNS Database Records" class="active"><a class="anchor"  href="#DNS Database Records">#</a>DNS Database Records</h2>
-
 <ol>
 <li>Resource records (RR)</li>
 </ol>
@@ -438,15 +470,17 @@ AtoposZz =  = final在后面追我T T</title>
 <li>Divided into four classes, of which Internet class is of most interest to the users</li>
 </ul>
 <ol start="2">
-<li>Most Commonly Used Record Types<ol>
+<li>Most Commonly Used Record Types
+<ol>
 <li>Start of Authority (SOA) record</li>
 </ol>
 <ul>
 <li>Identifies the name server that is authoritative for a specific DNS database segment;</li>
 <li>Identifies the master DNS server for a specific domain or sub-domain</li>
-<li>First entry in the DNS file - both <code>domain.dns</code> and <code>addr.in-addr.arpa.dns</code> files - must be an SOA record</li>
+<li>First entry in the DNS file - both  <code>domain.dns</code>  and  <code>addr.in-addr.arpa.dns</code>  files - must be an SOA record</li>
 <li>Identifies the current name server as the best source of information for data in its zone</li>
-<li>Both secondary and primary name servers can<ul>
+<li>Both secondary and primary name servers can
+<ul>
 <li>Designate themselves as authoritative in their own SOA records</li>
 <li>This allows load-balancing across a primary and one or more secondary DNS servers in a domain</li>
 </ul>
@@ -486,15 +520,17 @@ AtoposZz =  = final在后面追我T T</title>
 <li>Mapping Addresses to Names</li>
 </ol>
 <ul>
-<li>Records in the <code>db.addr</code> file are provided to support reverse DNS lookups</li>
+<li>Records in the  <code>db.addr</code>  file are provided to support reverse DNS lookups</li>
 <li>Reverse address lookups are used primarily to determine if IP address that a user presents matches the domain name from which the user claims to originate</li>
 </ul>
 <ol start="4">
-<li>Resolving process<ol>
+<li>Resolving process
+<ol>
 <li>The DNS query is sent by the resolver to the local DNS server for resolution</li>
 <li>If local DNS server does not recognise the address, then it queries the root server</li>
 <li>If root server doesn’t recognize the domain name, the root will provide relevant information to the the resolver to contact the name server, which is the next level down</li>
-<li>Repetition of the step to process each domain name in a top-down manner until the query is resolved, then<ul>
+<li>Repetition of the step to process each domain name in a top-down manner until the query is resolved, then
+<ul>
 <li>The resolver returns the resolved IP address to the requester</li>
 </ul>
 </li>
@@ -502,23 +538,25 @@ AtoposZz =  = final在后面追我T T</title>
 </li>
 </ol>
 <h1 id="Remote Login (Telnet) and Secure Shell (SSH)" class="active"><a class="anchor"  href="#Remote Login (Telnet) and Secure Shell (SSH)">#</a>Remote Login (Telnet) and Secure Shell (SSH)</h1>
-
 <ol>
 <li>Remote Login (Telnet and SSH)</li>
 </ol>
 <ul>
-<li>A terminal emulation program for TCP&#x2F;IP networks<ul>
+<li>A terminal emulation program for TCP/IP networks
+<ul>
 <li>Allows a user to remotely log in to a distant computer site</li>
 <li>User usually needs a login ID and password to access a remote computer site</li>
 <li>To provide access to a command-line interface on a remote host</li>
 </ul>
 </li>
-<li>Telnet and SSH: network protocols for remote login<ul>
+<li>Telnet and SSH: network protocols for remote login
+<ul>
 <li>Telnet (Port 23) is not secure</li>
 <li>SSH (Port 22) provides an encrypted channel between the client and server</li>
 </ul>
 </li>
-<li>SSH Clients<ul>
+<li>SSH Clients
+<ul>
 <li>PuTTY</li>
 <li>use SSH from Windows Command window and MacOS terminal window</li>
 </ul>
@@ -528,16 +566,19 @@ AtoposZz =  = final在后面追我T T</title>
 <li>Remote Desktop Software</li>
 </ol>
 <ul>
-<li>Remote desktop software<ul>
-<li>Remote Desktop Protocol (RDP)<ul>
-<li>Uses Graphic User Interface (GUI) to manage&#x2F;access Windows computers remotely</li>
+<li>Remote desktop software
+<ul>
+<li>Remote Desktop Protocol (RDP)
+<ul>
+<li>Uses Graphic User Interface (GUI) to manage/access Windows computers remotely</li>
 </ul>
 </li>
 <li>Independent Computing Architecture (ICA)</li>
 <li>Virtual network computing (VNC)</li>
 </ul>
 </li>
-<li>Some remote desktop clients<ul>
+<li>Some remote desktop clients
+<ul>
 <li>Google’s Chrome Remote Desktop</li>
 <li>Microsoft Remote Desktop</li>
 <li>TeamViewer</li>
@@ -545,9 +586,7 @@ AtoposZz =  = final在后面追我T T</title>
 </li>
 </ul>
 <h1 id="Simple Mail Transfer Protocol (SMTP)" class="active"><a class="anchor"  href="#Simple Mail Transfer Protocol (SMTP)">#</a>Simple Mail Transfer Protocol (SMTP)</h1>
-
 <h2 id="E-mail Protocol" class="active"><a class="anchor"  href="#E-mail Protocol">#</a>E-mail Protocol</h2>
-
 <ol>
 <li>E-mail Protocols</li>
 </ol>
@@ -557,51 +596,56 @@ AtoposZz =  = final在后面追我T T</title>
 <li>Simple Mail Transfer Protocol (SMTP) is the standard protocol for sending email over the Internet (uses TCP port 25)</li>
 </ul>
 <ol start="2">
-<li>邮件系统的组成<ol>
+<li>邮件系统的组成
+<ol>
 <li>Mail User Agent (MUA) - 邮件用户代理</li>
 </ol>
 <ul>
-<li>功能：MUA是电子邮件应用程序，用于创建、发送、接收、存储、回复和转发电子邮件。它还支持附件功能。</li>
-<li>示例：如Outlook、Thunderbird等。</li>
-<li>用途：通过SMTP协议发送邮件，通过POP或IMAP协议下载和接收邮件。</li>
+<li>功能：MUA 是电子邮件应用程序，用于创建、发送、接收、存储、回复和转发电子邮件。它还支持附件功能。</li>
+<li>示例：如 Outlook、Thunderbird 等。</li>
+<li>用途：通过 SMTP 协议发送邮件，通过 POP 或 IMAP 协议下载和接收邮件。</li>
 </ul>
 <ol start="2">
 <li>Message Transfer Agent (MTA) - 消息传输代理</li>
 </ol>
 <ul>
-<li>功能：MTA负责准备和传输电子邮件消息，确保邮件能够在不同服务器之间传输。</li>
-<li>用途：MTA在不同的邮件服务器之间传递邮件。</li>
+<li>功能：MTA 负责准备和传输电子邮件消息，确保邮件能够在不同服务器之间传输。</li>
+<li>用途：MTA 在不同的邮件服务器之间传递邮件。</li>
 </ul>
 <ol start="3">
 <li>Multipurpose Internet Mail Extension (MIME) - 多用途互联网邮件扩展</li>
 </ol>
 <ul>
-<li>功能：MIME用于将非文本格式的文件（如图像、音频、视频等）附加到电子邮件中，使得电子邮件可以包含多种格式的内容。</li>
-<li>用途：通过MIME标准，电子邮件不仅能传输文本，还能传输附件，如图片、PDF等文件。</li>
+<li>功能：MIME 用于将非文本格式的文件（如图像、音频、视频等）附加到电子邮件中，使得电子邮件可以包含多种格式的内容。</li>
+<li>用途：通过 MIME 标准，电子邮件不仅能传输文本，还能传输附件，如图片、PDF 等文件。</li>
 </ul>
 </li>
-<li>邮件系统的工作流程<ul>
-<li>发送邮件：MUA创建邮件并通过SMTP协议将其发送到MTA；MTA将邮件传递到收件人的SMTP服务器。</li>
-<li>接收邮件：收件人的MUA通过POP或IMAP协议从SMTP服务器下载邮件<br><img data-src="https://cdn-fusion.imgcdn.store/i/2024/b496d50c4b936cc4.png" alt="email"></li>
+<li>邮件系统的工作流程
+<ul>
+<li>发送邮件：MUA 创建邮件并通过 SMTP 协议将其发送到 MTA；MTA 将邮件传递到收件人的 SMTP 服务器。</li>
+<li>接收邮件：收件人的 MUA 通过 POP 或 IMAP 协议从 SMTP 服务器下载邮件<br>
+<img data-src="https://cdn-fusion.imgcdn.store/i/2024/b496d50c4b936cc4.png" alt="email"></li>
 </ul>
 </li>
 </ol>
 <h2 id="SMTP" class="active"><a class="anchor"  href="#SMTP">#</a>SMTP</h2>
-
 <ol>
 <li>SMTP Communications</li>
 </ol>
 <ul>
 <li>SMTP commands and reply codes immediately follow the TCP header</li>
 <li>SMTP commands occur behind the scenes in some e-mail clients and some server-to-server mail transfers on the Internet</li>
-<li>The majority of e-mail clients today use SMTP to send outgoing mail through some nearby SMTP server which assumes the task of storing or forwarding such messages, depending on addressee’s domain<table>
+<li>The majority of e-mail clients today use SMTP to send outgoing mail through some nearby SMTP server which assumes the task of storing or forwarding such messages, depending on addressee’s domain</li>
+</ul>
+<table>
 <thead>
 <tr>
 <th>Command</th>
 <th>Description</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>helo</td>
 <td>Used by the client to identify itself</td>
 </tr>
@@ -625,26 +669,27 @@ AtoposZz =  = final在后面追我T T</title>
 <td>vrfy</td>
 <td>Used to verify the address of recipient</td>
 </tr>
-</tbody></table>
-</li>
-</ul>
+</tbody>
+</table>
 <p><img data-src="https://cdn-fusion.imgcdn.store/i/2024/e4681fbfda7303a9.png" alt="email"></p>
 <h1 id="File Transfer Protocol (FTP)" class="active"><a class="anchor"  href="#File Transfer Protocol (FTP)">#</a>File Transfer Protocol (FTP)</h1>
-
 <ol>
 <li>FTP</li>
 </ol>
 <ul>
-<li>FTP is a client&#x2F;server protocol used for file transfer across the Internet<ul>
-<li>Uses two channels: TCP ports 20 and 21<ul>
+<li>FTP is a client/server protocol used for file transfer across the Internet
+<ul>
+<li>Uses two channels: TCP ports 20 and 21
+<ul>
 <li>Port 21 for control commands, Port 20 for transferring data</li>
 </ul>
 </li>
 <li>Not a secure protocol</li>
 </ul>
 </li>
-<li>Uses URL for an FTP site begins with <code>ftp://...</code></li>
-<li>The 3 most common ways to access an FTP site:<ul>
+<li>Uses URL for an FTP site begins with  <code>ftp://...</code></li>
+<li>The 3 most common ways to access an FTP site:
+<ul>
 <li>Through a browser</li>
 <li>Using an FTP client program</li>
 <li>Issuing FTP commands at a text-based command prompt</li>
@@ -655,27 +700,30 @@ AtoposZz =  = final在后面追我T T</title>
 <li>FTP connections</li>
 </ol>
 <ul>
-<li>TCP-based Command Connection (control connection)<ul>
+<li>TCP-based Command Connection (control connection)
+<ul>
 <li>The command connection runs over TCP</li>
 <li>Created automatically when FTP connection is established in response to open command from FTP client, using server FTP port number 21</li>
 <li>The client uses a dynamic, or ephemeral, port number to handle the other end of a command connection</li>
 </ul>
 </li>
-<li>TCP-based Data Transfer Connection (data connection)<ul>
+<li>TCP-based Data Transfer Connection (data connection)
+<ul>
 <li>The data transfer connection also runs over TCP</li>
 <li>Created by the server by default</li>
 </ul>
 </li>
 </ul>
 <h1 id="Dynamic Host Configuration Protocol (DHCP)" class="active"><a class="anchor"  href="Dynamic Host Configuration Protocol (DHCP)">#</a>Dynamic Host Configuration Protocol (DHCP)</h1>
-
 <ol>
 <li>DHCP</li>
 </ol>
 <ul>
-<li>DHCP is used to automatically assign IP addresses as needed<ul>
+<li>DHCP is used to automatically assign IP addresses as needed
+<ul>
 <li>When a computer is turned on, it requests an address from a server that is configured as a DHCP server</li>
-<li>The server assigns an address for a specific amount of time (called<br>a lease)</li>
+<li>The server assigns an address for a specific amount of time (called<br>
+a lease)</li>
 </ul>
 </li>
 <li>DHCP Server service – runs in the background and listens on UDP port 67 for IP address requests</li>
@@ -684,8 +732,10 @@ AtoposZz =  = final在后面追我T T</title>
 <li>DHCP Server</li>
 </ol>
 <ul>
-<li>A DHCP server is composed of the following:<ul>
-<li>IP address scope – a range of IP addresses the server leases to clients<ul>
+<li>A DHCP server is composed of the following:
+<ul>
+<li>IP address scope – a range of IP addresses the server leases to clients
+<ul>
 <li>Scope options – IP settings: default gateway, DNS servers, and other options</li>
 <li>Reservations – an IP address tied to a particular MAC address</li>
 <li>Exclusions – one or more IP addresses excluded from the IP address scope</li>
@@ -693,35 +743,41 @@ AtoposZz =  = final在后面追我T T</title>
 </li>
 </ul>
 </li>
-<li>After an address is leased<ul>
+<li>After an address is leased
+<ul>
 <li>A record of the lease is stored in a database, including a lease expiration time</li>
 <li>When 50% of the lease time has elapsed, the computer attempts to renew the lease from the same DHCP server that originally responded</li>
-<li>If no response, the computer waits until lease is 87.5% expired, a broadcast DHCP renewal request is sent<ul>
+<li>If no response, the computer waits until lease is 87.5% expired, a broadcast DHCP renewal request is sent
+<ul>
 <li>If no response when lease expires, computer broadcasts a DCHP request for a new IP address</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>Benefit of using DHCP<ul>
+<li>Benefit of using DHCP
+<ul>
 <li>Computers can easily be moved and requested new IP configuration from a DHCP server on the new segment</li>
 </ul>
 </li>
-<li>DHCP uses UDP<ul>
+<li>DHCP uses UDP
+<ul>
 <li>DHCP servers are usually located on the same network and DHCP messages are short</li>
 </ul>
 </li>
 </ul>
 <ol start="3">
-<li><p>DHCP Process<br>Broadcast packets used by the DHCP process:</p>
+<li>
+<p>DHCP Process<br>
+Broadcast packets used by the DHCP process:</p>
 <ol>
 <li>DHCPDISCOVER – the client announces to the network that it’s looking for a DHCP server</li>
 <li>DHCPOFFER – the server replies and offers the client an IP address for lease</li>
 <li>DHCPREQUEST – the client wants the offered IP address</li>
-<li>DHCPACK – the server acknowledges the transaction and the client can now use the IP address</li>
+<li>DHCPACK – the server acknowledges the transaction and the client can now use the IP address<br>
+<img data-src="https://cdn-fusion.imgcdn.store/i/2024/065a09e3ea0c2cfe.png" alt="DHCP"></li>
 </ol>
 </li>
 </ol>
-<p><img data-src="https://cdn-fusion.imgcdn.store/i/2024/065a09e3ea0c2cfe.png" alt="DHCP"></p>
 
       <div class="tags">
           <a href="/tags/network-system/" rel="tag"><i class="ic i-tag"></i> network system</a>
@@ -782,7 +838,7 @@ AtoposZz =  = final在后面追我T T</title>
     <div class="item left">
       
 
-  <a href="/course/Layer-4-Transport-Protocols-TCP-and-UDP/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;26&#x2F;671cf75f16bed.jpg" title="Layer 4 - Transport Protocols TCP and UDP">
+  <a href="/course/Layer-4-Transport-Protocols-TCP-and-UDP/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;18&#x2F;67123a9382651.png" title="Layer 4 - Transport Protocols TCP and UDP">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> Network Systems</span>
   <h3>Layer 4 - Transport Protocols TCP and UDP</h3>
@@ -792,7 +848,7 @@ AtoposZz =  = final在后面追我T T</title>
     <div class="item right">
       
 
-  <a href="/course/Network-Security-Analysis/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;26&#x2F;671cf6029148a.jpg" title="Network Security Analysis">
+  <a href="/course/Network-Security-Analysis/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;26&#x2F;671cf70db78e1.jpg" title="Network Security Analysis">
   <span class="type">下一篇</span>
   <span class="category"><i class="ic i-flag"></i> Network Systems</span>
   <h3>Network Security Analysis</h3>
@@ -818,7 +874,7 @@ AtoposZz =  = final在后面追我T T</title>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="/course/Network%20System%20Overall/" rel="bookmark" title="Network Systems Overall">Network Systems Overall</a></li><li><a href="/course/(Layers%201%20and%202)%20Physical%20and%20Data%20Link%20Layers/" rel="bookmark" title="Layers 1 and 2 - Physical and Data Link Layers">Layers 1 and 2 - Physical and Data Link Layers</a></li><li><a href="/course/Layer-3-IP-Addressing-and-IP-related-Protocols/" rel="bookmark" title="Layer 3 - IP Addressing and IP-related Protocols">Layer 3 - IP Addressing and IP-related Protocols</a></li><li><a href="/course/Layer-3-Subnetting-and-VLANs/" rel="bookmark" title="Layer 3 - Subnetting and VLANs">Layer 3 - Subnetting and VLANs</a></li><li><a href="/course/Layer-3-Routing-and-Superheating/" rel="bookmark" title="Layer 3 - Routing and Superheating">Layer 3 - Routing and Superheating</a></li><li><a href="/course/Layer-4-Transport-Protocols-TCP-and-UDP/" rel="bookmark" title="Layer 4 - Transport Protocols TCP and UDP">Layer 4 - Transport Protocols TCP and UDP</a></li><li class="active"><a href="/course/Layer-7-Application-layer-Protocols-and-Services/" rel="bookmark" title="Layer 7 - Application-layer Protocols and Services">Layer 7 - Application-layer Protocols and Services</a></li><li><a href="/course/Network-Security-Analysis/" rel="bookmark" title="Network Security Analysis">Network Security Analysis</a></li><li><a href="/course/Network-Security-Methods/" rel="bookmark" title="Network Security Methods">Network Security Methods</a></li><li><a href="/course/Wireless-Networking/" rel="bookmark" title="Wireless Networking">Wireless Networking</a></li>
+          <li><a href="/course/Network%20System%20Overall/" rel="bookmark" title="Network Systems Overall">Network Systems Overall</a></li><li><a href="/course/(Layers%201%20and%202)%20Physical%20and%20Data%20Link%20Layers/" rel="bookmark" title="Layers 1 and 2 - Physical and Data Link Layers">Layers 1 and 2 - Physical and Data Link Layers</a></li><li><a href="/course/Layer-3-IP-Addressing-and-IP-related-Protocols/" rel="bookmark" title="Layer 3 - IP Addressing and IP-related Protocols">Layer 3 - IP Addressing and IP-related Protocols</a></li><li><a href="/course/Layer-3-Subnetting-and-VLANs/" rel="bookmark" title="Layer 3 - Subnetting and VLANs">Layer 3 - Subnetting and VLANs</a></li><li><a href="/course/Layer-3-Routing-and-Superheating/" rel="bookmark" title="Layer 3 - Routing and Superheating">Layer 3 - Routing and Superheating</a></li><li><a href="/course/Layer-4-Transport-Protocols-TCP-and-UDP/" rel="bookmark" title="Layer 4 - Transport Protocols TCP and UDP">Layer 4 - Transport Protocols TCP and UDP</a></li><li class="active"><a href="/course/Layer-7-Application-layer-Protocols-and-Services/" rel="bookmark" title="Layer 7 - Application-layer Protocols and Services">Layer 7 - Application-layer Protocols and Services</a></li><li><a href="/course/Network-Security-Analysis/" rel="bookmark" title="Network Security Analysis">Network Security Analysis</a></li><li><a href="/course/Network-Security-Methods/" rel="bookmark" title="Network Security Methods">Network Security Methods</a></li><li><a href="/course/Wireless-Networking/" rel="bookmark" title="Wireless Networking">Wireless Networking</a></li><li><a href="/course/Wide-Area-Networking/" rel="bookmark" title="Wide Area Networking">Wide Area Networking</a></li><li><a href="/course/IoT/" rel="bookmark" title="IoT">IoT</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -832,7 +888,7 @@ AtoposZz =  = final在后面追我T T</title>
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">26</span>
+        <span class="count">28</span>
         <span class="name">文章</span>
       </a>
     </div>
@@ -844,7 +900,7 @@ AtoposZz =  = final在后面追我T T</title>
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">34</span>
+        <span class="count">36</span>
         <span class="name">标签</span>
       </a>
     </div>
@@ -934,91 +990,12 @@ AtoposZz =  = final在后面追我T T</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/study/" title="分类于 自学笔记">自学笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/study/JavaScript/" title="分类于 JavaScript">JavaScript</a>
-</div>
-
-    <span><a href="/study/JS%E4%B8%AD%E7%9A%84this%E4%B8%8E%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/" title="JS中的this与相关函数">JS中的this与相关函数</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
-</div>
-
-    <span><a href="/course/Layer-4-Transport-Protocols-TCP-and-UDP/" title="Layer 4 - Transport Protocols TCP and UDP">Layer 4 - Transport Protocols TCP and UDP</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/dailysharing/hello-world/" title="Hello World">Hello World</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
 <i class="ic i-angle-right"></i>
 <a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
 </div>
 
-    <span><a href="/course/AFL/" title="AFL">AFL</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
-</div>
-
-    <span><a href="/course/x86-architecture-and-Assembly-basics/" title="x86 architecture and Assembly basics">x86 architecture and Assembly basics</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
-</div>
-
-    <span><a href="/course/Web-Application-Security/" title="Web Application Security">Web Application Security</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
-</div>
-
-    <span><a href="/course/Layer-7-Application-layer-Protocols-and-Services/" title="Layer 7 - Application-layer Protocols and Services">Layer 7 - Application-layer Protocols and Services</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/dailysharing/" title="分类于 日常碎碎念">日常碎碎念</a>
-</div>
-
-    <span><a href="/dailysharing/%E7%AC%AC%E4%B8%80%E7%AF%87ovo/" title="第一篇ovo">第一篇ovo</a></span>
+    <span><a href="/course/Heap-buffer-overflow/" title="Heap buffer overflow">Heap buffer overflow</a></span>
   </li>
 
       
@@ -1043,6 +1020,90 @@ AtoposZz =  = final在后面追我T T</title>
 </div>
 
     <span><a href="/course/Network%20System%20Overall/" title="Network Systems Overall">Network Systems Overall</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
+</div>
+
+    <span><a href="/course/Wide-Area-Networking/" title="Wide Area Networking">Wide Area Networking</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Web-Application-Security/" title="Web Application Security">Web Application Security</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Security-Concepts/" title="Security Concepts">Security Concepts</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Cross-Site-attack/" title="Cross-Site attack">Cross-Site attack</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Integer-overflow/" title="Integer overflow">Integer overflow</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/SQL-Injection/" title="SQL Injection">SQL Injection</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Format-string-bugs/" title="Format string bugs">Format string bugs</a></span>
   </li>
 
   </ul>

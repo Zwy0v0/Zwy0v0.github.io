@@ -117,12 +117,12 @@ AtoposZz =  = final在后面追我T T</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf60a21b5d.jpg"></li>
           <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf60cc9be5.jpg"></li>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf6029148a.jpg"></li>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a9a63310.jpg"></li>
-          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf69b7c48b.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a94b2174.png"></li>
           <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf5fd1a28a.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf696303c4.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/26/671cf6029148a.jpg"></li>
+          <li class="item" data-background-image="https://img.picui.cn/free/2024/10/18/67123a97b6ba9.jpg"></li>
         </ul>
       </div>
     </header>
@@ -172,87 +172,101 @@ AtoposZz =  = final在后面追我T T</title>
     
 
     <h1 id="American Fuzzy Lop" class="active"><a class="anchor"  href="#American Fuzzy Lop">#</a> American Fuzzy Lop</h1>
-
 <h2 id="Definition" class="active"><a class="anchor"  href="#Definition">#</a>Definition</h2>
-
 <ol>
 <li>A security-oriented fuzzer that employs a novel type of compile-time instrumentation and genetic algorithms to automatically discover clean, interesting test cases that trigger new internal states in the targeted binary. Currently state-of-the-practice at fuzzing (together with forks)</li>
 </ol>
 <ul>
-<li>A type of coverage-based fuzzing: Instrument target programs to track test coverage </li>
-<li>A type of evolutionary&#x2F;genetic fuzzing: Attempt to generate inputs based on the response of the program</li>
+<li>A type of coverage-based fuzzing: Instrument target programs to track test coverage</li>
+<li>A type of evolutionary/genetic fuzzing: Attempt to generate inputs based on the response of the program</li>
 </ul>
 <ol start="2">
 <li>Why AFL</li>
 </ol>
 <ul>
-<li>The best general purpose fuzzer <ul>
-<li>For C&#x2F;C++&#x2F;Objective C programs</li>
+<li>The best general purpose fuzzer
+<ul>
+<li>For C/C++/Objective C programs</li>
 </ul>
 </li>
-<li>Effective and well-engineered with lots of heuristics <ul>
-<li>Fast – lots of test cases per second </li>
-<li>Clever – test cases are well chosen </li>
+<li>Effective and well-engineered with lots of heuristics
+<ul>
+<li>Fast – lots of test cases per second</li>
+<li>Clever – test cases are well chosen</li>
 <li>Easy to use (Linux and other platforms)</li>
 </ul>
 </li>
 <li>Deliver out-of-the-box performance far superior to mutation fuzzing or coverage-only tools</li>
 </ul>
 <ol start="3">
-<li>AFL Approach<ol>
-<li>Load user-supplied initial test cases into the queue </li>
-<li>Take next input file from the queue </li>
-<li>Attempt to trim the test case to the smallest size </li>
-<li>Repeatedly mutate the file using traditional fuzzing strategies </li>
-<li>If any of the generated mutations resulted in a new state transition recorded by the instrumentation, add mutated output as a new entry in the queue </li>
-<li>Go to 2<br><img data-src="https://img.picui.cn/free/2024/10/28/671f221b5c7ee.png" alt="img"></li>
+<li>AFL Approach
+<ol>
+<li>Load user-supplied initial test cases into the queue</li>
+<li>Take next input file from the queue</li>
+<li>Attempt to trim the test case to the smallest size</li>
+<li>Repeatedly mutate the file using traditional fuzzing strategies</li>
+<li>If any of the generated mutations resulted in a new state transition recorded by the instrumentation, add mutated output as a new entry in the queue</li>
+<li>Go to 2<br>
+<img data-src="https://img.picui.cn/free/2024/10/28/671f221b5c7ee.png" alt="img"></li>
 </ol>
 </li>
 </ol>
 <h2 id="Fuzzing Through AFL" class="active"><a class="anchor"  href="#Fuzzing Through AFL">#</a>Fuzzing Through AFL</h2>
-
 <ol>
-<li>Instrumenting Programs for AFL<br> Compile through AFL wrappers to generate an instrumented executable for fuzzing <ul>
-<li>Basically, replace <code>gcc</code> with <code>afl‐gcc</code> or <code>afl-clang</code> </li>
-<li>For simple compilation, <code>afl‐gcc test.c ‐o test</code><br>For larger projects that use the make build system, add to the Makefile: </li>
-<li><code>CC=path-to/afl-gcc</code> or <code>CC=path-to/afl-clang</code> </li>
-<li>This allows to build instrumented target program with the AFL wrappers<br>For C++ code, use the C++ wrappers <code>afl-g++</code> or <code>afl-clang++</code> </li>
-<li>For example in the Makefile: <code>CXX=path-to/afl-g++</code> or <code>CXX=path-to/afl-clang++</code><br>AFL 会在编译时插装目标程序的代码，以便在执行期间跟踪路径覆盖情况。插装后的二进制文件包含对<code> __afl_maybe_log</code> 的调用，该函数记录程序的执行状态。</li>
+<li>Instrumenting Programs for AFL<br>
+Compile through AFL wrappers to generate an instrumented executable for fuzzing
+<ul>
+<li>Basically, replace  <code>gcc</code>  with  <code>afl‐gcc</code>  or  <code>afl-clang</code></li>
+<li>For simple compilation,  <code>afl‐gcc test.c ‐o test</code> <br>
+For larger projects that use the make build system, add to the Makefile:</li>
+<li><code>CC=path-to/afl-gcc</code>  or  <code>CC=path-to/afl-clang</code></li>
+<li>This allows to build instrumented target program with the AFL wrappers<br>
+For C++ code, use the C++ wrappers  <code>afl-g++</code>  or  <code>afl-clang++</code></li>
+<li>For example in the Makefile:  <code>CXX=path-to/afl-g++</code>  or  <code>CXX=path-to/afl-clang++</code> <br>
+AFL 会在编译时插装目标程序的代码，以便在执行期间跟踪路径覆盖情况。插装后的二进制文件包含对 <code> __afl_maybe_log</code>  的调用，该函数记录程序的执行状态。</li>
 </ul>
 </li>
 <li>Fuzzing Through AFL</li>
 </ol>
 <ul>
-<li>Start fuzzing with AFL  <code>afl‐fuzz ‐i testcase ‐o output ./test @@</code> </li>
-<li>Test cases are under testcase </li>
-<li>The output produced by  goes to the output directory </li>
-<li>The special symbols <code>@@</code> tell AFL to take the file names under test case and feed it to test. Not needed if the program takes input from stdin </li>
-<li>Other common options: <ul>
-<li><code>-t</code> sets timeout for the executed process </li>
-<li><code>-m</code> sets memory limit for the executed process</li>
+<li>Start fuzzing with AFL   <code>afl‐fuzz ‐i testcase ‐o output ./test @@</code></li>
+<li>Test cases are under testcase</li>
+<li>The output produced by  goes to the output directory</li>
+<li>The special symbols  <code>@@</code>  tell AFL to take the file names under test case and feed it to test. Not needed if the program takes input from stdin</li>
+<li>Other common options:
+<ul>
+<li><code>-t</code>  sets timeout for the executed process</li>
+<li><code>-m</code>  sets memory limit for the executed process</li>
 </ul>
 </li>
 </ul>
 <ol start="3">
-<li>Initial Test Cases<br>Don’t waste too much time trying to synthesise your target’s input format<br>Find some real inputs that exercise as much of the target as possible<br>From the AFL user guide: <ul>
-<li>Keep the files small. Under 1 kB is ideal, although not strictly necessary </li>
+<li>Initial Test Cases<br>
+Don’t waste too much time trying to synthesise your target’s input format<br>
+Find some real inputs that exercise as much of the target as possible<br>
+From the AFL user guide:
+<ul>
+<li>Keep the files small. Under 1 kB is ideal, although not strictly necessary</li>
 <li>Use multiple test cases only if they are functionally different from each other</li>
 </ul>
 </li>
 <li>When To Stop</li>
 </ol>
 <ul>
-<li>Never, as fuzzing is part of continuous integration </li>
-<li>hen the <code>cycles counter</code> is green <ul>
-<li>Last new path was found many cycles ago </li>
+<li>Never, as fuzzing is part of continuous integration</li>
+<li>hen the  <code>cycles counter</code>  is green
+<ul>
+<li>Last new path was found many cycles ago</li>
 <li>Pending paths is zero</li>
 </ul>
 </li>
-<li>When the cycles counter is blue <ul>
+<li>When the cycles counter is blue
+<ul>
 <li>Last new path was found over a cycle ago</li>
 </ul>
 </li>
-<li>If you want to stop earlier, press Ctrl-C <ul>
+<li>If you want to stop earlier, press Ctrl-C
+<ul>
 <li>E.g. it’s been running for a while (hours + millions of executions + at least 2 cycles</li>
 </ul>
 </li>
@@ -261,32 +275,36 @@ AtoposZz =  = final在后面追我T T</title>
 <li>AFL Output</li>
 </ol>
 <ul>
-<li>File <code>fuzzer_stats</code> provides summary of stats UI </li>
-<li>File <code>plot_data</code> shows the progress of fuzzer </li>
-<li>Directory <code>queue</code> shows inputs that led to paths </li>
-<li>Directory <code>crashes</code> contains input that caused crash </li>
-<li>Directory <code>hangs</code> contains input that caused hang</li>
+<li>File  <code>fuzzer_stats</code>  provides summary of stats UI</li>
+<li>File  <code>plot_data</code>  shows the progress of fuzzer</li>
+<li>Directory  <code>queue</code>  shows inputs that led to paths</li>
+<li>Directory  <code>crashes</code>  contains input that caused crash</li>
+<li>Directory  <code>hangs</code>  contains input that caused hang</li>
 </ul>
 <ol start="6">
-<li>AFL Crashes<br>Unique if the associated execution paths involve any state transitions not seen previously. A single bug may be reached in multiple ways, but AFL can usually recognise<br>Crashes may be caused by failed assertions - as they abort</li>
+<li>AFL Crashes<br>
+Unique if the associated execution paths involve any state transitions not seen previously. A single bug may be reached in multiple ways, but AFL can usually recognise<br>
+Crashes may be caused by failed assertions - as they abort</li>
 </ol>
 <h1 id="Compiler-supported sanitizers" class="active"><a class="anchor"  href="#Compiler-supported sanitizers">#</a>Compiler-supported sanitizers</h1>
-
 <ol>
 <li>Sanitisers 和加固措施</li>
 </ol>
 <ul>
 <li>Sanitisers（内存清理器）：通过在二进制文件中插入额外的代码，检查不良的运行条件。提高模糊测试效果。</li>
-<li>Common compiler-supported sanitisers: ASan, MSan, UBSan, TSan </li>
-<li>加固选项：使内存错误的检测更容易。<code>AFL_HARDEN=1</code>：AFL 的硬化选项，用于检测更多的内存错误。</li>
-<li>注意：Sanitisers 通常不兼容，因此建议：<ul>
-<li>大多数模糊测试运行时启用 <code>AFL_HARDEN</code>。</li>
+<li>Common compiler-supported sanitisers: ASan, MSan, UBSan, TSan</li>
+<li>加固选项：使内存错误的检测更容易。 <code>AFL_HARDEN=1</code> ：AFL 的硬化选项，用于检测更多的内存错误。</li>
+<li>注意：Sanitisers 通常不兼容，因此建议：
+<ul>
+<li>大多数模糊测试运行时启用  <code>AFL_HARDEN</code> 。</li>
 <li>小部分测试运行时分别启用每个 Sanitisers，以覆盖不同类型的内存错误。</li>
 </ul>
 </li>
 </ul>
 <ol start="2">
-<li>ASan（Address Sanitizer）Compile with <code>-fsanitize=address</code><br>检测内容：<ul>
+<li>ASan（Address Sanitizer）Compile with  <code>-fsanitize=address</code> <br>
+ 检测内容：
+<ul>
 <li>堆、栈和全局变量的越界访问。</li>
 <li>Use-after-free、double-free、invalid free。</li>
 <li>内存泄漏。</li>
@@ -295,22 +313,27 @@ AtoposZz =  = final在后面追我T T</title>
 </ol>
 <p>性能影响：大约 2 倍的运行时间开销。</p>
 <figure class="highlight c"><figcaption><span>ASan Example1</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> N 10 </span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span> </span><br><span class="line">&#123; </span><br><span class="line">    <span class="type">char</span> s[N] = <span class="string">&quot;123456789&quot;</span>; </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= N; i++) </span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>, s[i]); </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>); </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
-<p>Loop bound goes past the end of the array, cannot assess <code>s[10]</code></p>
+<p>Loop bound goes past the end of the array, cannot assess  <code>s[10]</code></p>
  <figure class="highlight c"><figcaption><span>ASan Example2</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span> </span><br><span class="line"> &#123; </span><br><span class="line">     <span class="type">int</span> *a = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">int</span>) * <span class="number">100</span>); </span><br><span class="line">     <span class="built_in">free</span>(a); </span><br><span class="line">     <span class="keyword">return</span> a[<span class="number">5</span>]; </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 <p>The array is dereferenced after it is free</p>
  <figure class="highlight c"><figcaption><span>ASan Example3</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span> </span><br><span class="line"> &#123; </span><br><span class="line">     <span class="type">char</span> *s = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">char</span>) * <span class="number">10</span>); </span><br><span class="line">     <span class="built_in">free</span>(s); </span><br><span class="line">     <span class="built_in">free</span>(s);</span><br><span class="line">     <span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>, s);</span><br><span class="line">     <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 <p>The array is double-freed</p>
 <ol start="3">
-<li>MSan（Memory Sanitizer） Compile with <code>-fsanitize=memory</code><br>检测未初始化的内存使用。<br>性能影响：大约 3 倍的运行时间开销。</li>
+<li>MSan（Memory Sanitizer） Compile with  <code>-fsanitize=memory</code> <br>
+ 检测未初始化的内存使用。<br>
+性能影响：大约 3 倍的运行时间开销。</li>
 </ol>
  <figure class="highlight c"><figcaption><span>MSan Example1</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span> </span><br><span class="line"> &#123; </span><br><span class="line">     <span class="type">int</span> a[<span class="number">10</span>]; </span><br><span class="line">     a[<span class="number">2</span>] = <span class="number">0</span>; </span><br><span class="line">     <span class="keyword">if</span> (a[argc]) </span><br><span class="line">         <span class="built_in">printf</span>(<span class="string">&quot;print something\n&quot;</span>); </span><br><span class="line">     <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 <p>The array is allocated on <strong>stack</strong>, but only partially initialised</p>
  <figure class="highlight c"><figcaption><span>MSan Example2</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span> </span><br><span class="line"> &#123; </span><br><span class="line">     <span class="type">int</span> a = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">int</span>) * <span class="number">10</span>);</span><br><span class="line">     a[<span class="number">2</span>] = <span class="number">0</span>; </span><br><span class="line">     <span class="keyword">if</span> (a[argc]) </span><br><span class="line">         <span class="built_in">printf</span>(<span class="string">&quot;print something\n&quot;</span>); </span><br><span class="line">     <span class="built_in">free</span>(a); </span><br><span class="line">     <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 <p>The array is allocated on <strong>heap</strong>, but only partially initialised</p>
 <ol start="4">
-<li>UBSan（Undefined Behavior Sanitizer） Compile with <code>-fsanitize=undefined</code><br>检测：<ul>
+<li>UBSan（Undefined Behavior Sanitizer） Compile with  <code>-fsanitize=undefined</code> <br>
+ 检测：
+<ul>
 <li>解引用空指针。</li>
-<li>有符号整数溢出。<br>性能影响：大约 20% 的运行时间开销。</li>
+<li>有符号整数溢出。<br>
+性能影响：大约 20% 的运行时间开销。</li>
 </ul>
 </li>
 </ol>
@@ -319,51 +342,66 @@ AtoposZz =  = final在后面追我T T</title>
  <figure class="highlight c"><figcaption><span>UBSan Example2</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">foo</span> </span></span><br><span class="line"><span class="class"> &#123;</span> </span><br><span class="line">     <span class="type">int</span> a, b; </span><br><span class="line"> &#125;; </span><br><span class="line"> <span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span> </span><br><span class="line"> &#123; </span><br><span class="line">     <span class="class"><span class="keyword">struct</span> <span class="title">foo</span> *<span class="title">x</span> =</span> <span class="literal">NULL</span>; </span><br><span class="line">     <span class="type">int</span> m = x-&gt;a;  <span class="comment">// 访问空指针</span></span><br><span class="line">     <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 <p>Accessing a null pointer is undefined</p>
 <ol start="5">
-<li>TSan（Thread Sanitizer）<br>检测数据竞争（data races）。<br>性能影响：运行时间开销约为 5-15 倍，内存开销约为 5-10 倍。</li>
+<li>TSan（Thread Sanitizer）<br>
+检测数据竞争（data races）。<br>
+性能影响：运行时间开销约为 5-15 倍，内存开销约为 5-10 倍。</li>
 </ol>
 <h1 id="Others" class="active"><a class="anchor"  href="#Others">#</a>Others</h1>
-
 <ol>
-<li><p>Parallel Fuzzing(High performance fuzzing)<br> Run concurrent fuzzing jobs on multicore systems </p>
+<li>
+<p>Parallel Fuzzing(High performance fuzzing)<br>
+Run concurrent fuzzing jobs on multicore systems</p>
 <ul>
-<li>One master instance, one slave per core </li>
-<li>Use the afl-gotcpu tool to measure per-core pre-emption rate<br>Run the master (-M) like this: </li>
-<li><code>./afl-fuzz -i testcase_dir -o sync_dir -M fuzzer01</code><br>Then, run the slaves (-S) instances like this: </li>
-<li><code>./afl-fuzz -i testcase_dir -o sync_dir -S fuzzer02</code> </li>
+<li>One master instance, one slave per core</li>
+<li>Use the afl-gotcpu tool to measure per-core pre-emption rate<br>
+Run the master (-M) like this:</li>
+<li><code>./afl-fuzz -i testcase_dir -o sync_dir -M fuzzer01</code> <br>
+Then, run the slaves (-S) instances like this:</li>
+<li><code>./afl-fuzz -i testcase_dir -o sync_dir -S fuzzer02</code></li>
 <li><code>./afl-fuzz -i testcase_dir -o sync_dir -S fuzzer03</code></li>
 </ul>
 </li>
-<li><p>Fuzzer Dictionaries(Improve fuzzer mutations)<br>By default, AFL mutation engine is optimised for compact data formats<br>Custom dictionaries can help the fuzzer access paths it otherwise wouldn’t <code>afl-fuzz -x mydict</code><br>Get them from: </p>
+<li>
+<p>Fuzzer Dictionaries(Improve fuzzer mutations)<br>
+By default, AFL mutation engine is optimised for compact data formats<br>
+Custom dictionaries can help the fuzzer access paths it otherwise wouldn’t  <code>afl-fuzz -x mydict</code> <br>
+Get them from:</p>
 <ul>
-<li><code>dictionaries</code> directory in AFL </li>
-<li><code>libtokencap</code> directory in AFL <ul>
-<li>Create a dictionary by intercepting calls like <code>strcmp</code> and <code>memcmp</code></li>
+<li><code>dictionaries</code>  directory in AFL</li>
+<li><code>libtokencap</code>  directory in AFL
+<ul>
+<li>Create a dictionary by intercepting calls like  <code>strcmp</code>  and  <code>memcmp</code></li>
 </ul>
 </li>
 <li><span class="exturl" data-url="aHR0cHM6Ly9jaHJvbWl1bS5nb29nbGVzb3VyY2UuY29tL2Nocm9taXVtL3NyYy8rL21hc3Rlci90ZXN0aW5nL2xpYmZ1enplci9mdXp6ZXJzL2RpY3Rz">Online resource</span></li>
 </ul>
 </li>
-<li><p>Limitations of Fuzzing</p>
+<li>
+<p>Limitations of Fuzzing</p>
 </li>
 </ol>
 <ul>
-<li>Hard to tell when to stop </li>
-<li>Test the target in the exact configuration you provided, on the input source you set up </li>
-<li>Can get stuck (e.g. checksums) </li>
+<li>Hard to tell when to stop</li>
+<li>Test the target in the exact configuration you provided, on the input source you set up</li>
+<li>Can get stuck (e.g. checksums)</li>
 <li>Crashes only (typical of most fuzzers). Only notice problems that can be automatically detected</li>
-<li>Need to build target from source </li>
-<li>stdin or file input only </li>
-<li>Coverage-based instrumentation won’t guide it towards all crashes<ul>
-<li><code>x = 1/(input – 1234)</code> ：在这种情况下，AFL 可能难以找到输入 1234，从而导致无法检测到除零错误。</li>
+<li>Need to build target from source</li>
+<li>stdin or file input only</li>
+<li>Coverage-based instrumentation won’t guide it towards all crashes
+<ul>
+<li><code>x = 1/(input – 1234)</code>  ：在这种情况下，AFL 可能难以找到输入 1234，从而导致无法检测到除零错误。</li>
 </ul>
 </li>
-<li>No automatic parallelisation </li>
-<li>Linux&#x2F;macOS only</li>
+<li>No automatic parallelisation</li>
+<li>Linux/macOS only</li>
 </ul>
 <ol start="4">
-<li>libFuzzer: Guided Fuzzing for APIs<br>The other top general purpose fuzzer <ul>
-<li>Use similar algorithms to AFL </li>
-<li>Build it with special compiler instrumentation (LLVM)<br>Targets functions rather than programs </li>
+<li>libFuzzer: Guided Fuzzing for APIs<br>
+The other top general purpose fuzzer
+<ul>
+<li>Use similar algorithms to AFL</li>
+<li>Build it with special compiler instrumentation (LLVM)<br>
+Targets functions rather than programs</li>
 <li>Testers have to write a harness</li>
 </ul>
 </li>
@@ -425,7 +463,7 @@ AtoposZz =  = final在后面追我T T</title>
     <div class="item left">
       
 
-  <a href="/course/Fuzz-testing/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;26&#x2F;671cf696303c4.jpg" title="Fuzz testing">
+  <a href="/course/Fuzz-testing/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;26&#x2F;671cf60a21b5d.jpg" title="Fuzz testing">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> Principles of Software Security</span>
   <h3>Fuzz testing</h3>
@@ -435,7 +473,7 @@ AtoposZz =  = final在后面追我T T</title>
     <div class="item right">
       
 
-  <a href="/course/Heap-buffer-overflow/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;26&#x2F;671cf5fd1a28a.jpg" title="Heap buffer overflow">
+  <a href="/course/Heap-buffer-overflow/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;img.picui.cn&#x2F;free&#x2F;2024&#x2F;10&#x2F;18&#x2F;67123a9a63310.jpg" title="Heap buffer overflow">
   <span class="type">下一篇</span>
   <span class="category"><i class="ic i-flag"></i> Principles of Software Security</span>
   <h3>Heap buffer overflow</h3>
@@ -475,7 +513,7 @@ AtoposZz =  = final在后面追我T T</title>
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">26</span>
+        <span class="count">28</span>
         <span class="name">文章</span>
       </a>
     </div>
@@ -487,7 +525,7 @@ AtoposZz =  = final在后面追我T T</title>
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">34</span>
+        <span class="count">36</span>
         <span class="name">标签</span>
       </a>
     </div>
@@ -582,7 +620,19 @@ AtoposZz =  = final在后面追我T T</title>
 <a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
 </div>
 
-    <span><a href="/course/SQL-Injection/" title="SQL Injection">SQL Injection</a></span>
+    <span><a href="/course/Security-Concepts/" title="Security Concepts">Security Concepts</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Format-string-bugs/" title="Format string bugs">Format string bugs</a></span>
   </li>
 
       
@@ -594,7 +644,7 @@ AtoposZz =  = final在后面追我T T</title>
 <a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
 </div>
 
-    <span><a href="/course/Layer-3-IP-Addressing-and-IP-related-Protocols/" title="Layer 3 - IP Addressing and IP-related Protocols">Layer 3 - IP Addressing and IP-related Protocols</a></span>
+    <span><a href="/course/Layer-3-Routing-and-Superheating/" title="Layer 3 - Routing and Superheating">Layer 3 - Routing and Superheating</a></span>
   </li>
 
       
@@ -606,7 +656,31 @@ AtoposZz =  = final在后面追我T T</title>
 <a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
 </div>
 
-    <span><a href="/course/Layer-4-Transport-Protocols-TCP-and-UDP/" title="Layer 4 - Transport Protocols TCP and UDP">Layer 4 - Transport Protocols TCP and UDP</a></span>
+    <span><a href="/course/(Layers%201%20and%202)%20Physical%20and%20Data%20Link%20Layers/" title="Layers 1 and 2 - Physical and Data Link Layers">Layers 1 and 2 - Physical and Data Link Layers</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+</div>
+
+    <span><a href="/course/Fuzz-testing/" title="Fuzz testing">Fuzz testing</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/study/" title="分类于 自学笔记">自学笔记</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/study/JavaScript/" title="分类于 JavaScript">JavaScript</a>
+</div>
+
+    <span><a href="/study/js%E7%BB%A7%E6%89%BF/" title="js继承">js继承</a></span>
   </li>
 
       
@@ -627,22 +701,19 @@ AtoposZz =  = final在后面追我T T</title>
 <div class="breadcrumb">
 <a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
+<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
 </div>
 
-    <span><a href="/course/Integer-overflow/" title="Integer overflow">Integer overflow</a></span>
+    <span><a href="/course/Network%20System%20Overall/" title="Network Systems Overall">Network Systems Overall</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/course/Principles-of-Software-Security/" title="分类于 Principles of Software Security">Principles of Software Security</a>
 </div>
 
-    <span><a href="/course/Cross-Site-attack/" title="Cross-Site attack">Cross-Site attack</a></span>
+    <span><a href="/dailysharing/hello-world/" title="Hello World">Hello World</a></span>
   </li>
 
       
@@ -655,42 +726,6 @@ AtoposZz =  = final在后面追我T T</title>
 </div>
 
     <span><a href="/course/C-language-basics-and-Computer-memory/" title="C language basics and Computer memory">C language basics and Computer memory</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
-</div>
-
-    <span><a href="/course/Wireless-Networking/" title="Wireless Networking">Wireless Networking</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
-</div>
-
-    <span><a href="/course/Network-Security-Analysis/" title="Network Security Analysis">Network Security Analysis</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/course/" title="分类于 课程笔记">课程笔记</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/course/Network-Systems/" title="分类于 Network Systems">Network Systems</a>
-</div>
-
-    <span><a href="/course/Layer-3-Subnetting-and-VLANs/" title="Layer 3 - Subnetting and VLANs">Layer 3 - Subnetting and VLANs</a></span>
   </li>
 
   </ul>

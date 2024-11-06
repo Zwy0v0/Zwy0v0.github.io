@@ -1,0 +1,860 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title> • Posts by &#34;wan&#34; tag</title>
+        <link>http://example.com</link>
+        <description>🌸</description>
+        <language>zh-CN</language>
+        <pubDate>Wed, 06 Nov 2024 18:25:04 +1000</pubDate>
+        <lastBuildDate>Wed, 06 Nov 2024 18:25:04 +1000</lastBuildDate>
+        <category>network system</category>
+        <category>C</category>
+        <category>software security</category>
+        <category>AFL</category>
+        <category>Linux</category>
+        <category>C language</category>
+        <category>vulnerability</category>
+        <category>HTTP</category>
+        <category>XSS</category>
+        <category>CSRF</category>
+        <category>WAN</category>
+        <category>IPv6</category>
+        <category>IP</category>
+        <category>DHCP</category>
+        <category>ICMP</category>
+        <category>ARP</category>
+        <category>router</category>
+        <category>Supernet</category>
+        <category>IPv4</category>
+        <category>Subnet</category>
+        <category>TCP</category>
+        <category>UDP</category>
+        <category>DNS</category>
+        <category>SSH</category>
+        <category>FTP</category>
+        <category>SMTP</category>
+        <category>OSI</category>
+        <category>TCP/IP</category>
+        <category>Network Security</category>
+        <category>SQL</category>
+        <category>Wi-Fi</category>
+        <category>WLANs</category>
+        <category>gdb</category>
+        <category>Blog</category>
+        <category>日常</category>
+        <category>JavaScript</category>
+        <item>
+            <guid isPermalink="true">http://example.com/course/IoT/</guid>
+            <title>IoT</title>
+            <link>http://example.com/course/IoT/</link>
+            <category>network system</category>
+            <category>WAN</category>
+            <category>IPv6</category>
+            <pubDate>Wed, 06 Nov 2024 18:25:04 +1000</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;Network Virtualization&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Network Virtualization&#34;&gt;#&lt;/a&gt;Network Virtualization&lt;/h1&gt;
+&lt;h2 id=&#34;Virtual Architecture&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Virtual Architecture&#34;&gt;#&lt;/a&gt;Virtual Architecture&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;虚拟化架构概述&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;虚拟化 (Virtualization)：是某种事物的虚拟或逻辑版本，而非实际的物理版本。&lt;/li&gt;
+&lt;li&gt;宿主机 (Host)：指托管虚拟机的物理计算机。&lt;/li&gt;
+&lt;li&gt;来宾 (Guest)：指每个虚拟机 (VM)。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;虚拟化核心组件：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Hypervisor（管理程序）：创建并管理虚拟机，同时负责在宿主机与其来宾虚拟机之间分配和共享资源。&lt;/li&gt;
+&lt;li&gt;Hypervisor 类型：
+&lt;ul&gt;
+&lt;li&gt;类型 1（Type 1）：直接安装在计算机上，没有依赖操作系统，被称为裸机管理程序。&lt;/li&gt;
+&lt;li&gt;类型 2（Type 2）：作为应用程序安装在宿主操作系统中，被称为托管管理程序。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;虚拟机配置：&lt;br&gt;
+- 虚拟机的软件和硬件特性在创建时由管理程序指定，可以根据需要进行自定义，包括：
+&lt;ul&gt;
+&lt;li&gt;安装的来宾操作系统&lt;/li&gt;
+&lt;li&gt;分配的内存大小&lt;/li&gt;
+&lt;li&gt;硬盘大小&lt;/li&gt;
+&lt;li&gt;处理器类型等&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/fd0d57f0e9890d92.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;Network Connection Types&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Network Connection Types&#34;&gt;#&lt;/a&gt;Network Connection Types&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;网络连接类型概述&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;vNIC（虚拟网卡）：每个虚拟机 (VM) 都拥有自己的 vNIC，使其可以连接到其他机器；vNIC 工作在数据链路层。&lt;/li&gt;
+&lt;li&gt;vNIC 数量：每个虚拟机可以拥有多个 vNIC，但最大数量取决于管理程序的限制。&lt;/li&gt;
+&lt;li&gt;连接机制：
+&lt;ul&gt;
+&lt;li&gt;当为虚拟机选择 vNIC 时，管理程序会创建该虚拟机与宿主机之间的连接。&lt;/li&gt;
+&lt;li&gt;这种连接可以被称为桥接 (bridge) 或虚拟交换机 (vSwitch)。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;虚拟交换机 (vSwitch)：一个宿主机可以支持多个 vSwitch，这些 vSwitch 由管理程序控制。&lt;/li&gt;
+&lt;li&gt;网络配置模式：vNIC 的配置方式决定了虚拟机是加入虚拟网络，还是尝试加入宿主机连接的物理局域网 (LAN)&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/3ed47c20a495478f.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Bridged Mode&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;在桥接模式下，虚拟网卡 (vNIC) 使用主机的物理网卡 (NIC) 直接访问物理网络。&lt;/li&gt;
+&lt;li&gt;虚拟机从物理网络上的 DHCP 服务器获取自己的 IP 地址、默认网关和子网掩码。&lt;/li&gt;
+&lt;li&gt;对于网络中的其他节点而言，虚拟机就像是网络中的普通客户端或服务器。&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/f7ea334b5d6cb4d8.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;NAT Mode&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;在 NAT 模式下，虚拟网卡 (vNIC) 依赖主机作为 NAT 设备来访问网络。&lt;/li&gt;
+&lt;li&gt;虚拟机的 IP 地址信息是从主机获取的，主机的 Hypervisor 作为 DHCP 服务器提供地址分配。&lt;/li&gt;
+&lt;li&gt;这种连接模式适用于不需要被其他网络节点通过已知地址访问的虚拟机。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Host-only Mode&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;在 Host-only 模式下，同一主机上的虚拟机可以与彼此以及主机交换数据。&lt;/li&gt;
+&lt;li&gt;这些虚拟机无法与主机之外的节点进行通信。&lt;/li&gt;
+&lt;li&gt;虚拟网卡 (vNIC) 不会通过主机的物理网卡 (NIC) 发送或接收数据。&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/a6c11b2f0aa44aad.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;Pros and Cons of Virtualization&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Pros and Cons of Virtualization&#34;&gt;#&lt;/a&gt;Pros and Cons of Virtualization&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;优点：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;资源利用效率高：虚拟化允许多个虚拟机（VM）共享同一个物理服务器的资源，从而提高资源利用率。&lt;/li&gt;
+&lt;li&gt;成本和能源节省：通过减少对多台物理服务器的需求，企业可以节省硬件成本、电力和冷却费用。&lt;/li&gt;
+&lt;li&gt;故障和威胁隔离：每个虚拟机独立运行，因此影响一个虚拟机的故障或威胁不会波及其他虚拟机。&lt;/li&gt;
+&lt;li&gt;简化备份、恢复和复制：虚拟化简化了备份和恢复流程，使得创建副本和数据恢复更为便捷。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;缺点：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;性能下降：与专用的物理机器相比，虚拟化环境会引入额外开销，导致性能下降。&lt;/li&gt;
+&lt;li&gt;复杂性增加：管理虚拟化环境需要专业知识，会增加 IT 基础设施的复杂性。&lt;/li&gt;
+&lt;li&gt;许可费用增加：虚拟化平台和客户操作系统实例的许可费用可能会导致更高的成本。&lt;/li&gt;
+&lt;li&gt;单点故障：如果物理主机发生故障，所有在该主机上的虚拟机可能会受到影响，除非配置了冗余或故障转移解决方案。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;Network Functions Virtualization&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Network Functions Virtualization&#34;&gt;#&lt;/a&gt;Network Functions Virtualization&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;NFV（网络功能虚拟化）：是将物理和虚拟网络架构合并的过程。&lt;/li&gt;
+&lt;li&gt;优点：提供灵活且节约成本的网络设备虚拟化选项。&lt;/li&gt;
+&lt;li&gt;网络设备的虚拟化选项：
+&lt;ul&gt;
+&lt;li&gt;虚拟防火墙：将防火墙的操作系统安装在一台廉价服务器上的虚拟机中。&lt;/li&gt;
+&lt;li&gt;虚拟路由器：将路由器的虚拟机安装在服务器上，取代传统昂贵的硬件路由器。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;虚拟化网络功能的优势：
+&lt;ul&gt;
+&lt;li&gt;快速迁移：在硬件故障或维护的情况下，虚拟设备可以快速且有时自动地从一台服务器迁移到另一台。&lt;/li&gt;
+&lt;li&gt;资源利用效率更高：物理资源的分配和利用更为高效。&lt;/li&gt;
+&lt;li&gt;服务易于扩展：能够根据网络需求的变化灵活调整服务规模&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;Cloud Architecture&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Cloud Architecture&#34;&gt;#&lt;/a&gt;Cloud Architecture&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;云计算：指通过网络灵活地向多个客户端提供数据存储、应用程序和服务的模式。&lt;/li&gt;
+&lt;li&gt;云计算的特征包括：
+&lt;ul&gt;
+&lt;li&gt;按需服务：用户可以根据需求动态调整使用的服务。&lt;/li&gt;
+&lt;li&gt;广泛的网络访问：通过互联网或其他网络广泛访问云资源。&lt;/li&gt;
+&lt;li&gt;资源池化：将物理或虚拟资源集成在一起，按需分配给用户。&lt;/li&gt;
+&lt;li&gt;计量服务：按使用量进行计费，确保用户只为实际使用的资源付费。&lt;/li&gt;
+&lt;li&gt;快速弹性：存储容量可以迅速或自动地进行扩展或缩减，以适应需求的变化。&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/7507bb3ce4dfd68e.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Cloud Service Models&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;本地部署 (On-premises)：所有硬件、软件及其他资源均位于组织所在地并由其管理。&lt;/li&gt;
+&lt;li&gt;IaaS (Infrastructure as a Service 基础设施即服务)：虚拟提供硬件服务和网络基础设施设备，包含如 HVDs（托管虚拟桌面）等终端用户接口。&lt;/li&gt;
+&lt;li&gt;PaaS (Platform as a Service 平台即服务)：提供操作系统、操作系统提供给应用程序的运行时库或模块，以及运行操作系统的硬件。&lt;/li&gt;
+&lt;li&gt;SaaS (Software as a Service 软件即服务)：直接提供应用程序。&lt;/li&gt;
+&lt;li&gt;XaaS (Anything as a Service 万物即服务)：根据客户的具体需求，云可以提供任何功能的组合。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;服务模型&lt;/th&gt;
+&lt;th&gt;由用户提供&lt;/th&gt;
+&lt;th&gt;由供应商提供&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;On-premises&lt;/td&gt;
+&lt;td&gt;应用程序、数据存储、操作系统、虚拟化、服务器、存储、网络&lt;/td&gt;
+&lt;td&gt;无&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;IaaS&lt;/td&gt;
+&lt;td&gt;应用程序、数据存储、操作系统&lt;/td&gt;
+&lt;td&gt;虚拟化、服务器、存储、网络&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PaaS&lt;/td&gt;
+&lt;td&gt;应用程序、数据存储&lt;/td&gt;
+&lt;td&gt;操作系统、虚拟化、服务器、存储、网络&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SaaS&lt;/td&gt;
+&lt;td&gt;无&lt;/td&gt;
+&lt;td&gt;应用程序、数据存储、操作系统、虚拟化、服务器、存储、网络&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Cloud Deployment Models 云部署模型&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;公有云 (Public cloud)：通过公共传输线路提供的服务。&lt;/li&gt;
+&lt;li&gt;私有云 (Private cloud)：由组织在其自有数据中心的服务器上建立的服务。&lt;/li&gt;
+&lt;li&gt;社区云 (Community cloud)：在多个组织之间共享的服务。&lt;/li&gt;
+&lt;li&gt;混合云 (Hybrid cloud)：将多种服务模型组合到一个部署中。&lt;/li&gt;
+&lt;li&gt;多云 (Multicloud)：在单一部署中组合了多种服务。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Orchestration and Automation&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;IaC（infrastructure as code 基础设施即代码）：IaC 是通过计算机可读的配置文件中使用文本命令来创建和管理云资源的过程。它允许对云资源的更改进行日志记录，使得基础设施管理更简单，并且可以进行版本控制。&lt;/li&gt;
+&lt;li&gt;自动化 (Automation)：自动化是指计算机对特定事件的编程响应。通过编写脚本，某些任务可以在无需人工干预的情况下自动运行。&lt;/li&gt;
+&lt;li&gt;编排 (Automation)：编排指的是将多个任务或工作流进行协调和自动化，以使它们协同工作，形成一个复杂的、统一的流程。随着越来越多的云维护和安全任务被转换为代码，编排能够帮助将复杂的过程整合成自动化工作流。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Connectivity and Security&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Potential risks and limitations include the following:
+&lt;ul&gt;
+&lt;li&gt;ISP outages&lt;/li&gt;
+&lt;li&gt;ISP-imposed bandwidth limitations&lt;/li&gt;
+&lt;li&gt;Cloud provider’s outages&lt;/li&gt;
+&lt;li&gt;Cloud provider’s backup and security systems&lt;/li&gt;
+&lt;li&gt;Misconfiguration that exposes one client’s data to another client&lt;/li&gt;
+&lt;li&gt;Unauthorized access to data by cloud provider employees or illegitimate users&lt;/li&gt;
+&lt;li&gt;Breaches of confidentiality&lt;/li&gt;
+&lt;li&gt;Failure to comply with data security regulations&lt;/li&gt;
+&lt;li&gt;Questions over ownership of intellectual property stored in the cloud&lt;/li&gt;
+&lt;li&gt;Questions over data maintenance&lt;/li&gt;
+&lt;li&gt;Risk to the network, proprietary data, or customer information caused by BYOC&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Way to reduce risks of cloud computing include the following:
+&lt;ul&gt;
+&lt;li&gt;Use encryption&lt;/li&gt;
+&lt;li&gt;Carefully choose the method by which your network connects to your cloud resources&lt;/li&gt;
+&lt;li&gt;Consider the following methods:
+&lt;ul&gt;
+&lt;li&gt;Internet&lt;/li&gt;
+&lt;li&gt;VPN (virtual private network)&lt;/li&gt;
+&lt;li&gt;Remote access connections&lt;/li&gt;
+&lt;li&gt;Leased line&lt;/li&gt;
+&lt;li&gt;Dedicated direct connection&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;IPv6&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#IPv6&#34;&gt;#&lt;/a&gt;IPv6&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Internet Protocol v6 (IPv6)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;IPv6 (RFC 2460)：下一代互联网协议&lt;/li&gt;
+&lt;li&gt;完全重新设计 IP 地址体系&lt;/li&gt;
+&lt;li&gt;分层的 128 位地址，具有独立的主机标识符&lt;/li&gt;
+&lt;li&gt;无状态自动配置：无需手动配置即可自动生成地址&lt;/li&gt;
+&lt;li&gt;简化路由和地址管理，提高网络效率&lt;/li&gt;
+&lt;li&gt;尽管大部分流量尚未转换到 IPv6，但：
+&lt;ul&gt;
+&lt;li&gt;大多数 PC 操作系统已具备 IPv6 支持&lt;/li&gt;
+&lt;li&gt;各国政府开始要求部署 IPv6&lt;/li&gt;
+&lt;li&gt;大多数路由器已支持 IPv6&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/e2016f84ba1bfc1f.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;IPv6 术语：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Link（链路）：也称为本地链路，是由路由器界定的任何局域网&lt;/li&gt;
+&lt;li&gt;Neighbors（邻居）：同一链路上的两个或多个节点&lt;/li&gt;
+&lt;li&gt;Dual stacked（双栈）：网络配置为同时使用 IPv4 和 IPv6&lt;/li&gt;
+&lt;li&gt;Tunneling（隧道）：IPv6 使用的一种方法，通过 IPv4 网络传输 IPv6 数据包&lt;/li&gt;
+&lt;li&gt;Interface ID（接口 ID）：IPv6 地址的最后 64 位或 4 组，用于标识接口&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;IPv6 地址类型&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;单播地址（Unicast address）：用于指定网络上的单个节点
+&lt;ul&gt;
+&lt;li&gt;全局地址（Global address）：可以在互联网上路由&lt;/li&gt;
+&lt;li&gt;链路本地地址（Link local address）：用于与同一链路上的节点通信&lt;/li&gt;
+&lt;li&gt;环回地址（Loopback address）：用于测试接口和支持协议栈的正常运行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;多播地址（Multicast address）：将数据包传递给网络上的所有节点&lt;/li&gt;
+&lt;li&gt;任播地址（Anycast address）：可以标识多个目的地，数据包会传送到最近的目的地&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/1234c8da95d92bdd.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;IPv6 autoconfiguration&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;IPv6 地址设计使得计算机可以自动配置其链路本地 IP 地址，这个过程被称为 SLAAC（无状态地址自动配置，Stateless Address Autoconfiguration）。&lt;/li&gt;
+&lt;li&gt;步骤：
+&lt;ul&gt;
+&lt;li&gt;创建 IPv6 地址：计算机使用 FE80::/64 作为前 64 位（称为前缀），最后的 64 位通过网络适配器的 MAC 地址生成。&lt;/li&gt;
+&lt;li&gt;检查唯一性：计算机检查其 IP 地址在网络中是否唯一。&lt;/li&gt;
+&lt;li&gt;请求路由器配置信息：计算机发送一个称为 RS（路由器请求，Router Solicitation）的消息，询问网络中是否有路由器可以提供配置信息。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;IoT&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#IoT&#34;&gt;#&lt;/a&gt;IoT&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;物联网 (Internet of Things, IoT)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;概念：连接物理和数字领域，将日常物品转化为可感知、通信和处理数据的对象。&lt;/li&gt;
+&lt;li&gt;别名：又称为网络物理系统（Cyber-Physical Systems）。&lt;br&gt;
+核心构建模块：传感器网络。&lt;/li&gt;
+&lt;li&gt;应用：在物联网中，传感器网络是关键，用于感知和收集周围环境的数据。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Smart Sensors and Sensor Networks&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;智能传感器和传感器网络概念，结合了以下三个主要要素：
+&lt;ul&gt;
+&lt;li&gt;感知 (Sensing)：传感器可以收集环境数据，比如交通流量、水位、温度等信息。&lt;/li&gt;
+&lt;li&gt;网络 (Networking)：这些传感器设备通过网络互联，组成一个传感器网络，实现数据的实时传输和共享。&lt;/li&gt;
+&lt;li&gt;计算 (Computation)：数据可以在网络中被处理、存储，甚至分析以提供有用的信息。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;应用领域
+&lt;ul&gt;
+&lt;li&gt;环境监测：用于交通、栖息地、污染、危险、和安全等领域的数据采集。&lt;/li&gt;
+&lt;li&gt;工业监测：用于机器监控和诊断、电力和电信网格监控等。&lt;/li&gt;
+&lt;li&gt;人本计算：构建智能化、关注人的空间和环境，比如智能家居和办公环境。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;不受限制的微型传感器可以放置在任何地方，检测从交通流量到温度的各种信息，逐渐发展为类似于地球神经系统的结构&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Building Blocks of IoT Applications&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;硬件
+&lt;ul&gt;
+&lt;li&gt;处理器：负责数据的处理和控制。&lt;/li&gt;
+&lt;li&gt;无线电：提供无线通信功能，用于设备之间的数据传输。&lt;/li&gt;
+&lt;li&gt;传感器：收集环境信息，如温度、湿度、光线等。&lt;/li&gt;
+&lt;li&gt;执行器：用于执行特定的动作或响应，如打开 / 关闭设备。&lt;/li&gt;
+&lt;li&gt;电池：为设备提供电力，使其可以独立工作。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;软件
+&lt;ul&gt;
+&lt;li&gt;操作系统：管理设备的硬件资源，提供系统基础服务。&lt;/li&gt;
+&lt;li&gt;网络协议：支持设备之间的通信和数据传输。&lt;/li&gt;
+&lt;li&gt;设备驱动程序：使操作系统和硬件组件之间能够进行通信。&lt;/li&gt;
+&lt;li&gt;可视化：将数据转化为用户友好的图形界面，帮助用户理解数据。&lt;/li&gt;
+&lt;li&gt;数据分析：处理和分析收集到的数据，得出有意义的见解。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;物联网（IoT）应用的五层 OSI 模型件：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;应用层（Application Layer）：代表常用的应用协议，如 MQTT 和 CoAP，用于数据的传递与通信。&lt;/li&gt;
+&lt;li&gt;传输层（Transport Layer）：使用传输控制协议（TCP）和用户数据报协议（UDP）来保障数据的可靠传输。&lt;/li&gt;
+&lt;li&gt;网络层（Network Layer）：RPL 协议常用，用于低功耗和有损网络中的路由。&lt;/li&gt;
+&lt;li&gt;MAC 层（MAC Layer）：包括 TSCH、LoRaWAN 和 ZigBee 等协议，提供数据链路层的访问控制。&lt;/li&gt;
+&lt;li&gt;物理层（PHY Layer）：标准如 IEEE 802.15.4、IEEE 802.11 和 LoRa 提供了物理连接规范。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;End-to-End Design&lt;br&gt;
+ 在物联网（IoT）部署中，计算、通信和传感是关键组成部分。为了设计有效的 IoT 系统，必须全面考虑以下问题：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;计算、传感和通信的内容：明确哪些数据需要被计算、感知和传输，以确保信息的准确性和相关性。&lt;/li&gt;
+&lt;li&gt;计算的位置：决定计算是在本地（设备端）还是在云端完成。例如，是否需要在设备上实时处理数据，或是将数据发送到云端进行进一步分析。&lt;/li&gt;
+&lt;li&gt;通信的频率：考虑通信的频率，频繁通信会消耗大量电池，因此需要在性能需求和电池寿命之间找到平衡点。&lt;/li&gt;
+&lt;li&gt;管理和数据敏感性：
+&lt;ul&gt;
+&lt;li&gt;确定谁将负责管理 IoT 部署，确保系统的安全性和稳定性。&lt;/li&gt;
+&lt;li&gt;检查应用中是否包含敏感信息，如果有，则需要考虑如何保护这些信息，以免泄露或被滥用。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/course/Wide-Area-Networking/</guid>
+            <title>Wide Area Networking</title>
+            <link>http://example.com/course/Wide-Area-Networking/</link>
+            <category>network system</category>
+            <category>WAN</category>
+            <pubDate>Wed, 06 Nov 2024 10:56:48 +1000</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;WAN&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#WAN&#34;&gt;#&lt;/a&gt;WAN&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;定义：广域网（WAN）跨越很大的地理距离，提供高数据吞吐量的长距离通信。&lt;/li&gt;
+&lt;li&gt;选择 WAN 类型的考虑因素：
+&lt;ul&gt;
+&lt;li&gt;流量负载：预计传输的数据量。&lt;/li&gt;
+&lt;li&gt;预算：设置和维护的财务预算。&lt;/li&gt;
+&lt;li&gt;地理范围：覆盖的物理距离和区域。&lt;/li&gt;
+&lt;li&gt;技术可用性：该区域内可用的技术选项。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;LAN 和 WAN 的主要区别：
+&lt;ul&gt;
+&lt;li&gt;连接焦点：
+&lt;ul&gt;
+&lt;li&gt;局域网（LAN） 连接单个节点（如计算机和设备）。&lt;/li&gt;
+&lt;li&gt;广域网（WAN） 则连接不同地点的整个网络，通常覆盖更大区域。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;层次差异：
+&lt;ul&gt;
+&lt;li&gt;第 1 层和第 2 层（物理层和数据链路层）在访问方法、拓扑结构和媒体上有显著区别。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;从 第 3 层（网络层）及以上，LAN 和 WAN 使用相同的协议。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;所有权：
+&lt;ul&gt;
+&lt;li&gt;LAN 通常为个人或组织私有。&lt;/li&gt;
+&lt;li&gt;WAN 则通常由 电信公司 或 网络服务提供商（NSP） 拥有和运营。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;Entry Point Equipment&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Entry Point Equipment&#34;&gt;#&lt;/a&gt;Entry Point Equipment&lt;/h1&gt;
+接入点设备:
+&lt;ul&gt;
+&lt;li&gt;DSL 或有线互联网：在家中使用 DSL 或有线互联网服务时，需将路由器连接到调制解调器。&lt;/li&gt;
+&lt;li&gt;调制解调器（Modem）：一种用于数字信号和模拟信号转换的设备。&lt;/li&gt;
+&lt;li&gt;数据终端设备（Data Terminal Equipment DTE）：
+&lt;ul&gt;
+&lt;li&gt;客户端在 WAN 上的终端设备。&lt;/li&gt;
+&lt;li&gt;负责 LAN 通信，通常由客户拥有。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;数据通信设备（Data Communications Equipment DCE）：
+&lt;ul&gt;
+&lt;li&gt;运营商在 WAN 上的终端设备。&lt;/li&gt;
+&lt;li&gt;负责 WAN 通信，通常由 ISP 拥有。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;用户驻地设备（customer premises equipment CPE）：位于客户场所的设备。&lt;/li&gt;
+&lt;li&gt;分界点（Demarc）：定义了运营商和客户责任的分界点。
+&lt;ul&gt;
+&lt;li&gt;分界点常见设备
+&lt;ul&gt;
+&lt;li&gt;NIU（network interface unit 网络接口单元）：连接 ISP 的本地环路与客户网络。&lt;/li&gt;
+&lt;li&gt;线路驱动器 (Line driver)：充当信号放大器，可增强信号以覆盖更大距离。&lt;/li&gt;
+&lt;li&gt;CSU/DSU (channel service unit/data service unit)（信道服务单元 / 数据服务单元）：用于 ISP 与客户之间的专线连接。&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/9a88c192919a6ac9.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;Routing&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Routing&#34;&gt;#&lt;/a&gt;Routing&lt;/h1&gt;
+&lt;h2 id=&#34;Routing Protocols&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Routing Protocols&#34;&gt;#&lt;/a&gt;Routing Protocols&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;路由器的功能：&lt;/li&gt;
+&lt;li&gt;路由器连接两个或多个网络，并在网络之间传输数据包。&lt;/li&gt;
+&lt;li&gt;主要功能包括：
+&lt;ul&gt;
+&lt;li&gt;连接不同类型的网络（如 LAN 和 WAN）。&lt;/li&gt;
+&lt;li&gt;解析第 3 层甚至第 4 层的地址信息。&lt;/li&gt;
+&lt;li&gt;决定数据从 A 点到 B 点的最佳路径。&lt;/li&gt;
+&lt;li&gt;如果首选路径不可用，可以重新路由流量到另一条路径。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;路由器的可选功能：
+&lt;ul&gt;
+&lt;li&gt;过滤广播传输。&lt;/li&gt;
+&lt;li&gt;阻止特定类型的流量进入网络。&lt;/li&gt;
+&lt;li&gt;支持同时的本地和远程连接。&lt;/li&gt;
+&lt;li&gt;提供高网络容错能力，通过冗余组件确保稳定。&lt;/li&gt;
+&lt;li&gt;监控网络流量并报告统计数据。&lt;/li&gt;
+&lt;li&gt;诊断内部或其他连接问题，并发出警报。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;路由器类别：
+&lt;ul&gt;
+&lt;li&gt;核心路由器（Core Routers / Interior Routers）：负责在同一自治系统（AS）内的网络之间传输数据。&lt;/li&gt;
+&lt;li&gt;边缘路由器（Edge Routers / Border Routers）：连接自治系统与外部网络。&lt;/li&gt;
+&lt;li&gt;外部路由器（Exterior Routers）：组织外部自治系统的路由器，用于在不同的自治系统之间传输数据。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/67afd23372d34cc4.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;Routing Tables&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Routing Tables&#34;&gt;#&lt;/a&gt;Routing Tables&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;路由表是由路由器维护的一个数据库，用于存储主机和网络的位置信息，以及到达它们的最优路径。路由表在网络中或跨多个网络传输数据包时至关重要。&lt;/li&gt;
+&lt;li&gt;目的：路由表帮助路由器确定到达目的主机的 “下一跳” 或下一个路由器，从而确保数据能够高效地在网络中传输。&lt;/li&gt;
+&lt;li&gt;内容：
+&lt;ul&gt;
+&lt;li&gt;目的网络 ID：即路由器可以到达的网络的 IP 地址或网络标识符。&lt;/li&gt;
+&lt;li&gt;子网掩码：用于指定网络内的 IP 地址范围，帮助路由器识别 IP 地址中的网络部分。&lt;/li&gt;
+&lt;li&gt;网关：指定下一跳路由器的 IP 地址，数据将通过这个网关路由器转发到其目的地。&lt;/li&gt;
+&lt;li&gt;接口：指明数据应通过哪个特定的路由器接口或端口发送，以便到达目的地。&lt;/li&gt;
+&lt;li&gt;路由度量：这些是分配给每条路由的值，当存在多条路径时，路由器通过度量值选择最佳路径。较低的度量值通常表示优先选择的路径。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Destination network ID&lt;/th&gt;
+&lt;th&gt;Netmask&lt;/th&gt;
+&lt;th&gt;Gateway&lt;/th&gt;
+&lt;th&gt;Interface&lt;/th&gt;
+&lt;th&gt;Routing metrics (tie breaker)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;LAN A’s IP address&lt;/td&gt;
+&lt;td&gt;LAN A’s netmask&lt;/td&gt;
+&lt;td&gt;None (This is router A’s own LAN)&lt;/td&gt;
+&lt;td&gt;Port that points toward switch A&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;LAN B’s IP address&lt;/td&gt;
+&lt;td&gt;LAN B’s netmask&lt;/td&gt;
+&lt;td&gt;Router B’s IP address&lt;/td&gt;
+&lt;td&gt;Port that points toward router B&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;LAN C’s IP address&lt;/td&gt;
+&lt;td&gt;LAN C’s netmask&lt;/td&gt;
+&lt;td&gt;Router C’s IP address&lt;/td&gt;
+&lt;td&gt;Port that points toward router C&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;LAN D’s IP address&lt;/td&gt;
+&lt;td&gt;LAN D’s netmask&lt;/td&gt;
+&lt;td&gt;Router B’s IP address&lt;/td&gt;
+&lt;td&gt;Port that points toward router B&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;LAN D’s IP address&lt;/td&gt;
+&lt;td&gt;LAN D’s netmask&lt;/td&gt;
+&lt;td&gt;Router C’s IP address&lt;/td&gt;
+&lt;td&gt;Port that points toward router C&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;IP address on the Internet&lt;/td&gt;
+&lt;td&gt;That host’s netmask&lt;/td&gt;
+&lt;td&gt;Router B’s IP address&lt;/td&gt;
+&lt;td&gt;Port that points toward router B&lt;/td&gt;
+&lt;td&gt;23&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;0.0.0.0 (wildcard entry for any network)&lt;/td&gt;
+&lt;td&gt;0 (wildcard entry for any netmask)&lt;/td&gt;
+&lt;td&gt;Router B’s IP address&lt;/td&gt;
+&lt;td&gt;Port that points toward router B&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/e08c54ff188d16d7.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;Routing Path Types&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Routing Path Types&#34;&gt;#&lt;/a&gt;Routing Path Types&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;路由路径的确定方式有两种：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;静态路由：
+&lt;ul&gt;
+&lt;li&gt;由网络管理员手动配置路由表，以沿特定路径引导消息。&lt;/li&gt;
+&lt;li&gt;适用于简单的网络环境，例如小型企业和其 ISP 之间的静态路由连接。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;动态路由：
+&lt;ul&gt;
+&lt;li&gt;路由器会自动计算两个网络之间的最佳路径，并将此信息保存在路由表中。&lt;/li&gt;
+&lt;li&gt;动态路由可以检测故障或拥堵的路由，并通过不同的路径重新路由消息。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;route&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;The route utility allows you to view a host’s routing table&lt;/li&gt;
+&lt;li&gt;The  &lt;code&gt;route&lt;/code&gt;  command can also be used to add or delete static routes&lt;/li&gt;
+&lt;li&gt;The following are some variations of the  &lt;code&gt;route&lt;/code&gt;  command for different operating systems:
+&lt;ul&gt;
+&lt;li&gt;On a Linux or UNIX system, use the command  &lt;code&gt;route&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;On a Windows-based system, use the command  &lt;code&gt;route print&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;On a Cisco IOS, use the command  &lt;code&gt;show ip route&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Routing Protocols to Determine Best Paths&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;路由协议使路由器之间能够相互通信，以便确定最佳路径。路由器会根据以下标准对路由协议的数据的可靠性和优先级进行评估：
+&lt;ul&gt;
+&lt;li&gt;AD（管理距离 administrative distance）：一个数值，用于指示协议的可靠性，数值越低表示优先级越高。&lt;/li&gt;
+&lt;li&gt;收敛时间 (Convergence time)：在发生变化或网络中断时识别出最佳路径所需的时间。收敛时间越短，网络适应变化的速度越快。&lt;/li&gt;
+&lt;li&gt;开销（Overhead）：支持协议所施加在底层网络上的负担。开销越小，协议对网络资源的占用越少，效率越高。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;Routing Metrics&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Routing Metrics&#34;&gt;#&lt;/a&gt;Routing Metrics&lt;/h2&gt;
+路由度量是用于路由器决定到达目的地最佳路径的一些属性，包括：
+&lt;ul&gt;
+&lt;li&gt;跳数 (Hop count)：路径上经过的中间设备数量。&lt;/li&gt;
+&lt;li&gt;理论带宽和实际吞吐量 (Theoretical bandwidth and actual throughput)：路径上的带宽能力和实际数据传输速度。&lt;/li&gt;
+&lt;li&gt;延迟或潜伏时间 (Delay or latency)：潜在路径上的延迟。&lt;/li&gt;
+&lt;li&gt;负载 (Load)：路径上流量或处理负载的压力。&lt;/li&gt;
+&lt;li&gt;最大传输单元 (MTU)：在不进行分片的情况下，路径上允许的最大 IP 包大小（以字节为单位）。&lt;/li&gt;
+&lt;li&gt;路由成本 (Routing cost)：分配给特定路由的值，通常与开销或优先级有关。&lt;/li&gt;
+&lt;li&gt;路径的可靠性 (Reliability)：潜在路径的稳定性和故障率。&lt;/li&gt;
+&lt;li&gt;网络拓扑 (Topology)：网络的物理或逻辑结构。&lt;/li&gt;
+&lt;li&gt;无线链路质量 (Wireless link quality)：无线网络中信号的强度和干扰情况。&lt;/li&gt;
+&lt;li&gt;能耗 (Energy cost)：对于能耗敏感的设备，路径上使用的能量消耗。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;Routing Redundancy&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Routing Redundancy&#34;&gt;#&lt;/a&gt;Routing Redundancy&lt;/h2&gt;
+在大型网络中，应该通过地理位置不同的硬件和网络媒体与多个ISP连接，以确保网络的稳定性和冗余。
+&lt;ul&gt;
+&lt;li&gt;两种冗余技术：
+&lt;ul&gt;
+&lt;li&gt;Active-active 冗余：所有冗余资源始终处于活动状态，工作均匀分布在它们之间。&lt;/li&gt;
+&lt;li&gt;Active-passive 冗余：只有一个或少数冗余资源处于活动状态，其余备份设备处于待机状态。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;FHRP（首跳冗余协议 First Hop Redundancy Protocol）：可以提供一个 VIP（虚拟 IP）地址作为默认网关，可能指向多个路由器，以实现更高的可用性。&lt;/li&gt;
+&lt;li&gt;路由冗余协议：
+&lt;ul&gt;
+&lt;li&gt;VRRP（虚拟路由冗余协议 Virtual Router Redundancy Protocol）：行业标准协议，指定一个主路由器和其他备份路由器。&lt;/li&gt;
+&lt;li&gt;HSRP（热备份路由协议 Hot Standby Routing Protocol）：Cisco 专有协议，指定一个主路由器、一个待机路由器和其他备份路由器。&lt;/li&gt;
+&lt;li&gt;GLBP（网关负载平衡协议 Gateway Load Balancing Protocol）：根据优先级对网关进行加权，流量在所有网关之间负载平衡。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;WAN Connectivity&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#WAN Connectivity&#34;&gt;#&lt;/a&gt;WAN Connectivity&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;广域网（WAN）连接的选项包括以下几种：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;宽带连接：使用共享电缆和带宽，多个客户共享相同的网络资源。
+&lt;ul&gt;
+&lt;li&gt;ISP（互联网服务提供商）尽力提供与广告相符的带宽，但无法保证。&lt;/li&gt;
+&lt;li&gt;带宽是不对称的（异步的）asymmetrical (asynchronous) ，下载速度通常比上传速度快。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;专用互联网接入 dedicated internet access（DIA）：带宽专门分配给单个客户。
+&lt;ul&gt;
+&lt;li&gt;带宽是对称的（同步的）symmetrical (synchronous) ，即下载和上传速度大致相同。&lt;/li&gt;
+&lt;li&gt;对于需要在线备份大量数据的企业，这种对称带宽非常重要。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;DSL (Digital Subscriber Line)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;DSL（数字用户线路）是一种在公用交换电话网络 public switched telephone network（PSTN）上运行的广域网连接方法。它能够在一条线路上支持多个数据和语音通道。对于长距离传输，DSL 需要中继器。客户与电信局（CO）的距离会影响实际的吞吐量，DSL 使用了先进的数据调制技术，通过幅度或相位调制在更高的频率上传输数据。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;DSL 类型&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;不同种类的 DSL 根据其吞吐率、数据调制技术、容量和距离限制有所不同，xDSL 代表所有 DSL 类型，&amp;quot;x&amp;quot; 可以用具体的 DSL 类型代替。常见的 DSL 类型包括：&lt;/li&gt;
+&lt;li&gt;ADSL（asymmetric DSL 非对称 DSL）：下载速度快于上传速度，是最常见的 DSL 类型，适合视频会议和网页浏览。&lt;/li&gt;
+&lt;li&gt;VDSL（very high bit rate DSL or variable DSL 超高速率 DSL 或可变 DSL）：比 ADSL 速度更快，也为非对称连接。&lt;/li&gt;
+&lt;li&gt;SDSL（对称 DSLsymmetric DSL）：上传和下载速度相同，最高可达 2 Mbps，适合大量数据的上传和下载。&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/79a4e80a0b1c3c25.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;这张图显示了 DSL 的频率分配情况：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;0 - 4 kHz：用于语音通道，这部分频率专门用于传统的电话语音通信。&lt;/li&gt;
+&lt;li&gt;4 - 26 kHz：上行 DSL 频段，这部分频率用于从用户端向网络上行传输数据。&lt;/li&gt;
+&lt;li&gt;26 - 138 kHz (ADSL)：这是下行 DSL 频段，通常用于 ADSL 的下行数据传输。&lt;/li&gt;
+&lt;li&gt;138 - 1104 kHz (ADSL2)：扩展的下行频段，为 ADSL2 提供更高的下行带宽。&lt;/li&gt;
+&lt;li&gt;1104 - 2208 kHz (ADSL2+)：进一步扩展的下行频段，为 ADSL2 + 提供最高的下行带宽。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;Equipments&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Equipments&#34;&gt;#&lt;/a&gt;Equipments&lt;/h1&gt;
+&lt;h2 id=&#34;Cable Broadband&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Cable Broadband&#34;&gt;#&lt;/a&gt;Cable Broadband&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Cable Broadband 概述&lt;br&gt;
+定义：Cable Broadband（又称 Cable Internet 或 Cable Modem Access）基于用于传输电视信号的同轴电缆线路。&lt;br&gt;
+标准：由国际合作标准化努力形成了 DOCSIS（Data Over Cable Service Interface Specifications）规范。&lt;br&gt;
+服务特点：
+&lt;ul&gt;
+&lt;li&gt;通常提供非对称速度，例如下载速度可达 70 Mbps，上传速度为 7 Mbps。&lt;/li&gt;
+&lt;li&gt;最新的 DOCSIS 4.0 标准支持对称的多千兆速度，最高可达 10 Gbps 下载和 6 Gbps 上传。&lt;br&gt;
+HFC (hybrid fiber coaxial) 网络：使用光纤电缆将电缆公司的分配中心连接到分配集线器，再到靠近用户的光节点。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Cable Broadband 工作原理&lt;br&gt;
+ Cable Modem：
+&lt;ul&gt;
+&lt;li&gt;负责信号的调制和解调，以便通过电缆线路进行传输和接收。&lt;/li&gt;
+&lt;li&gt;工作于 OSI 模型的物理层和数据链路层。&lt;/li&gt;
+&lt;li&gt;可以连接到其他网络设备，如路由器或交换机。&lt;/li&gt;
+&lt;li&gt;可以使用带有 SOHO 路由器功能的设备来组合 Cable Modem，从而在整个网络中共享带宽。&lt;br&gt;
+连接特点：提供专用且连续的连接，但是本地线路需由多个用户共享，这引发了安全性和实际吞吐量的关注。&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/594d06dcc0d28d7d.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;Fiber&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Fiber&#34;&gt;#&lt;/a&gt;Fiber&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;随着 ISP（互联网服务提供商）在广域网（WAN）连接服务中的发展趋势，越来越多地提供以下光纤连接类型：
+&lt;ul&gt;
+&lt;li&gt;FTTN（Fiber-to-the-Node 或 Fiber-to-the-Neighborhood）：光纤延伸至附近的节点或社区。&lt;/li&gt;
+&lt;li&gt;FTTC（Fiber-to-the-Curb）：光纤延伸至街道边缘，距离用户更近。&lt;/li&gt;
+&lt;li&gt;FTTB（Fiber-to-the-Building）或 FTTH（Fiber-to-the-Home）：光纤直接延伸到建筑物或家庭用户，提供更直接和高效的连接。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;都市光网络
+&lt;ul&gt;
+&lt;li&gt;MONs（Metropolitan Optical Networks）：都市光网络，通过光纤直接将连接带到客户，以满足大城市或都市区高密度用户的需求。&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/1a9a1283e05af231.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;Leased Lines&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Leased Lines&#34;&gt;#&lt;/a&gt;Leased Lines&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;租用线路提供了专用带宽的光纤连接，通常为企业和高需求用户提供稳定可靠的网络服务。租用线路的主要优势包括：
+&lt;ul&gt;
+&lt;li&gt;专用带宽：带宽不被其他用户共享，确保了连接的稳定性。&lt;/li&gt;
+&lt;li&gt;对称带宽：下载和上传速度相同，适用于需要大量数据传输的应用。&lt;/li&gt;
+&lt;li&gt;服务等级协议（SLA）保证：通常伴有 SLA，确保服务质量、正常运行时间和性能。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;租用线路的持续月费会根据多个因素有很大差异，包括：
+&lt;ul&gt;
+&lt;li&gt;所需带宽：更高的带宽意味着更高的费用。&lt;/li&gt;
+&lt;li&gt;与 ISP 交换机的距离或公司内部不同地点之间的距离：较长的距离可能会增加费用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;MPLS (Multiprotocol Label Switching) &#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#MPLS (Multiprotocol Label Switching) &#34;&gt;#&lt;/a&gt;MPLS (Multiprotocol Label Switching) &lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;MPLS（Multiprotocol Label Switching，多协议标签交换）是一种网络技术，允许多种第 3 层协议在多个面向连接的第 2 层协议上进行传输。它能够处理各种类型的有效负载，因此被广泛应用于 ISP 的网络中，用于在客户站点之间转移流量。&lt;/li&gt;
+&lt;li&gt;MPLS 标签包含了信息，指示路由器下一个应该转发消息的位置，有时也包含优先级信息。MPLS 的主要优势包括：
+&lt;ul&gt;
+&lt;li&gt;高可扩展性：适用于需要大规模业务支持的企业网络。&lt;/li&gt;
+&lt;li&gt;流量优先级控制：客户可以在广域网（WAN）中对流量进行优先级设置。&lt;/li&gt;
+&lt;li&gt;更高的可靠性、可预测性和安全性：通过标签标记流量，使网络传输更加稳定可靠。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;这种技术尤其适合需要可靠数据传输的企业客户，例如需要跨地域进行高优先级数据传输的场景。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;SD-WAN&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#SD-WAN&#34;&gt;#&lt;/a&gt;SD-WAN&lt;/h2&gt;
+SD-WAN（Software-defined WAN软件定义广域网）通过抽象和集中化的控制方式来管理跨越多种基础设施的网络功能。相比传统的广域网（WAN），SD-WAN 提供了更多的灵活性和成本效益，特别适用于多地点和多分支的企业网络。以下是 SD-WAN 的主要优势：
+&lt;ul&gt;
+&lt;li&gt;传输无关性（Transport Agnostic）
+&lt;ul&gt;
+&lt;li&gt;SD-WAN 能够管理多种类型的网络连接（例如光纤、DSL、电缆等），无需依赖特定的传输介质。&lt;/li&gt;
+&lt;li&gt;不管使用哪种类型的连接，SD-WAN 都能对其进行集中控制和管理。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;主动 - 主动负载平衡和自动故障切换
+&lt;ul&gt;
+&lt;li&gt;SD-WAN 能够根据设定的流量优先级动态决定如何使用现有的网络连接，从而实现流量的均衡分配。&lt;/li&gt;
+&lt;li&gt;当某个连接出现故障时，系统会自动切换至备用连接，确保网络的连续性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;基于意图的管理（Intent-based Management）
+&lt;ul&gt;
+&lt;li&gt;网络管理员可以根据业务需求设置网络管理策略，例如限制特定应用的带宽使用，以保证其他高优先级应用的流畅运行。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;零接触配置（Zero-touch Provisioning）
+&lt;ul&gt;
+&lt;li&gt;SD-WAN 支持远程配置，即使在没有技术人员支持的远程地点也能快速部署和设置。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;成本降低
+&lt;ul&gt;
+&lt;li&gt;SD-WAN 能够部分替代 MPLS 或租赁线路等传统连接方式，从而减少网络成本，提高网络连接的性价比。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;Wireless WANs&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Wireless WANs&#34;&gt;#&lt;/a&gt;Wireless WANs&lt;/h1&gt;
+Wireless WANS are specifically designed for high-throughput; long-distance digital data exchange
+&lt;h2 id=&#34;Cellular&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Cellular&#34;&gt;#&lt;/a&gt;Cellular&lt;/h2&gt;
+蜂窝网络最初是为模拟电话服务设计的，但如今已能够提供数据和语音通信。蜂窝技术随着时间的推移经历了多个发展阶段，每一代的特性如下：
+&lt;ul&gt;
+&lt;li&gt;1G (first generation)：以模拟信号为主，仅支持语音传输。&lt;/li&gt;
+&lt;li&gt;2G (第二代)：采用数字传输，速度最高可达 240 Kbps。&lt;/li&gt;
+&lt;li&gt;3G (第三代)：支持数据传输，速率最高可达 384 Kbps，开始采用分组交换技术以提高数据传输效率。&lt;/li&gt;
+&lt;li&gt;4G (第四代)：采用全 IP 网络进行数据和语音传输，传输速率范围在 100 Mbps 到 1 Gbps 之间，标志着移动网络进入高速互联网时代。&lt;/li&gt;
+&lt;li&gt;5G (第五代)：要求最低速率为 1 Gbps，最高下载速率可达 20 Gbps，上传速率最高为 10 Gbps，为更高的带宽和低延迟应用提供支持，例如物联网和增强现实（AR）。&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/60bfe4248c298ad0.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;Satellite&#34; class=&#34;active&#34;&gt;&lt;a class=&#34;anchor&#34;  href=&#34;#Satellite&#34;&gt;#&lt;/a&gt;Satellite&lt;/h2&gt;
+如今，卫星广泛用于传输消费者的语音、视频、音乐和数据。卫星通信依赖于卫星轨道和地面站之间的传输过程。
+&lt;ul&gt;
+&lt;li&gt;卫星轨道
+&lt;ul&gt;
+&lt;li&gt;地球同步轨道 (GEO)
+&lt;ul&gt;
+&lt;li&gt;大多数卫星绕地球在地球同步轨道上运行，这意味着卫星的轨道速度与地球自转速度相同。&lt;/li&gt;
+&lt;li&gt;地球同步轨道上的卫星保持在地球上同一地点的上方，便于稳定的通信连接。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;传输过程
+&lt;ul&gt;
+&lt;li&gt;信息通过地面的发射器发送至卫星，这一过程称为上行链路。&lt;/li&gt;
+&lt;li&gt;卫星上的转发器接收并放大信号，再将其传回地面站，这一过程称为下行链路。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;卫星互联网服务
+&lt;ul&gt;
+&lt;li&gt;一些公司通过 GEO 卫星提供高带宽的互联网接入服务。&lt;/li&gt;
+&lt;li&gt;卫星互联网服务通常为不对称连接，带宽在多个用户之间共享。&lt;/li&gt;
+&lt;li&gt;传输速率根据服务提供商的控制和调度而有所不同。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;卫星互联网因其广覆盖的特性，常用于偏远地区或传统网络难以覆盖的区域。然而，由于距离远、带宽共享的限制，其速率和稳定性在一定程度上会受到影响&lt;br&gt;
+&lt;img data-src=&#34;https://cdn-fusion.imgcdn.store/i/2024/308a32500f285eb4.png&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>
